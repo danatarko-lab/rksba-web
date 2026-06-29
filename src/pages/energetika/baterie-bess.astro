@@ -1,13 +1,234 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-const metadata = { title: 'Batérie (BESS) — RKS' };
+const metadata = {
+  title: 'Batériové úložiská (BESS) pre firmy — RKS',
+  description:
+    'Batériové úložisko (BESS) ukladá lacnú alebo vlastnú elektrinu a využije ju, keď je drahá alebo potrebná. Znižuje špičky, využíva fotovoltiku a zálohuje prevádzku. RKS navrhuje batériu podľa dát a úžitkov — nie podľa kapacity v kWh.',
+};
+
+const tok = [
+  { title: 'Výroba (FVE)', desc: 'vyrába energiu', accent: false },
+  { title: 'Uloženie (BESS)', desc: 'ukladá výrobu', accent: false },
+  { title: 'Riadenie (EMS)', desc: 'rozhoduje a zlaďuje', accent: false },
+  { title: 'Využitie v správnom čase', desc: 'energia tam, kde má hodnotu', accent: true },
+];
+
+const postup = [
+  { title: 'Analýza spotreby a špičiek', desc: 'Zistíme váš profil odberu, špičky a profil výroby.' },
+  { title: 'Definícia úžitkov', desc: 'Určíme, čo má batéria riešiť — špičky, vlastnú spotrebu, zálohu, alebo kombináciu.' },
+  { title: 'Business case', desc: 'Spočítame návratnosť cez kombináciu úžitkov, nie cez jeden.' },
+  { title: 'Návrh a realizácia', desc: 'Nadimenzujeme batériu a riadenie, zrealizujeme projekt pod jednou strechou.' },
+  { title: 'Servis a monitoring', desc: 'Sledovanie stavu batérie a údržba počas životnosti.' },
+];
+
+const faqs = [
+  {
+    q: 'Oplatí sa batéria k fotovoltike?',
+    a: 'Často áno — ak veľkú časť výroby dnes predávate do siete za nízku cenu alebo máte spotrebu aj večer. Či sa to oplatí konkrétne u vás, ukáže analýza spotreby.',
+  },
+  {
+    q: 'Je batéria vhodná aj bez fotovoltiky?',
+    a: 'Áno, môže byť. Aj bez fotovoltiky batéria dokáže znižovať odberové špičky, optimalizovať rezervovanú kapacitu, posúvať spotrebu do lacnejších hodín a zálohovať prevádzku. Fotovoltika hodnotu batérie zvyšuje, ale nie je podmienkou.',
+  },
+  {
+    q: 'Ako sa počíta návratnosť batérie?',
+    a: 'Cez kombináciu úžitkov — koľko ušetríte na špičkách, koľko vlastnej výroby využijete navyše, akú hodnotu má záloha. Návratnosť postavená len na jednom úžitku býva slabá.',
+  },
+  {
+    q: 'Funguje batéria ako záloha pri výpadku prúdu?',
+    a: 'Môže — ak je tak navrhnutá. Nie každá batéria automaticky zálohuje prevádzku; backup režim treba do návrhu zahrnúť.',
+  },
+  {
+    q: 'Akú veľkú batériu potrebujeme?',
+    a: 'Takú, ktorá pokryje vaše úžitky — špičky, vlastnú spotrebu, zálohu. Veľkosť nevychádza z „koľko kWh chceme", ale z profilu spotreby a cieľov prevádzky.',
+  },
+  {
+    q: 'Pripravujeme väčší / štandalone projekt — viete pomôcť?',
+    a: 'Áno. Pri väčších projektoch vstupuje do hry pripojenie, financovanie a prevádzkový model. Ozvite sa a prejdeme konkrétnu situáciu.',
+  },
+];
 ---
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
     <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/energetika">← Energetika</a></p>
-    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Batérie (BESS)</h1>
-    <p class="text-lg text-muted">Obsah dorobíme neskôr.</p>
+
+    <p class="text-sm font-medium uppercase tracking-wider text-primary mb-3">Energetické riešenia pre firmy a budovy</p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">Batériové úložiská (BESS) pre firmy</h1>
+    <p class="text-xl md:text-2xl text-muted mb-6">Hodnota batérie nie je v kWh. Je v tom, čo vám ušetrí.</p>
+
+    <p class="text-lg border-l-4 border-primary bg-primary/5 rounded-r-lg p-4 mb-6">
+      Batériové úložisko (BESS) ukladá lacnú alebo vlastnú elektrinu a využije ju vtedy, keď je drahá alebo potrebná.
+      Firmám pomáha znižovať špičky, využiť vlastnú fotovoltiku a zálohovať prevádzku. RKS navrhuje batériu podľa dát a
+      kombinácie úžitkov — nie podľa kapacity v kWh.
+    </p>
+
+    <p class="text-lg text-muted mb-8">
+      Batéria sa často kupuje ako „doplnok k fotovoltike" — a práve preto býva zle nadimenzovaná. Jej hodnota nie je v
+      tom, koľko energie uloží, ale v tom, čo všetko vám v danej prevádzke umožní: znížiť drahé špičky, využiť vlastnú
+      výrobu večer, ochrániť prevádzku pri výpadku. Rovnako ako pri EMS a fotovoltike nezačíname technológiou, ale
+      analýzou vašej spotreby a cieľov.
+    </p>
+
+    <div class="mb-4"><a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a></div>
+
+    <div class="prose prose-lg max-w-none">
+      <h2>Najčastejšie dôvody, prečo firmy uvažujú o BESS</h2>
+      <p>Firmy za nami prichádzajú zvyčajne v jednej z týchto situácií:</p>
+      <ul>
+        <li>rastú im náklady na rezervovanú kapacitu,</li>
+        <li>majú veľké odberové špičky,</li>
+        <li>končí sa im podpora na staršiu fotovoltiku,</li>
+        <li>chcú zálohovať kritickú prevádzku,</li>
+        <li>pribudli im EV nabíjačky a zvýšili odber,</li>
+        <li>majú prebytky z fotovoltiky, ktoré predávajú do siete za nízku cenu.</li>
+      </ul>
+      <p>Ak sa v niektorej spoznávate, batéria môže byť odpoveď — ale až po prepočte.</p>
+
+      <h2>Akú hodnotu prináša batériové úložisko</h2>
+      <p>Batériové úložisko pre firmu má viac úloh — a najlepšia návratnosť vzniká ich kombináciou:</p>
+      <ul>
+        <li><strong>Zníženie špičiek (peak shaving).</strong> Batéria pokryje krátke odberové špičky, takže nemusíte platiť za vysokú rezervovanú kapacitu.</li>
+        <li><strong>Využitie vlastnej fotovoltiky.</strong> Uloží dennú výrobu na čas, keď ju reálne spotrebujete.</li>
+        <li><strong>Časový posun spotreby.</strong> Nabije sa, keď je elektrina lacná, a využije ju, keď je drahá.</li>
+        <li><strong>Záloha prevádzky (backup).</strong> Pri výpadku siete udrží kritické časti prevádzky v chode.</li>
+        <li><strong>Zníženie rezervovanej kapacity.</strong> Riadením odberu cez batériu sa dá optimalizovať príkon, za ktorý platíte.</li>
+      </ul>
+
+      <blockquote class="not-prose my-8 border-l-4 border-primary bg-primary/5 rounded-r-lg p-6">
+        <p class="text-xl md:text-2xl font-semibold text-gray-800 leading-snug">
+          Žiadny z týchto úžitkov sám osebe nemusí batériu zaplatiť. Spolu ju však často áno.
+        </p>
+      </blockquote>
+
+      <h2>Prečo batéria nie je len kWh</h2>
+      <p>
+        Najčastejšia chyba je vybrať batériu podľa kapacity — „koľko kWh". Lenže rovnaká kapacita môže mať úplne inú
+        hodnotu podľa toho, ako sa využíva. Batéria, ktorá len ukladá prebytky z fotovoltiky, sa správa inak než batéria,
+        ktorá zároveň zráža špičky a zálohuje prevádzku.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Prístup k návrhu</th>
+            <th>Výsledok</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Výber podľa kapacity (kWh)</td><td>Riziko predimenzovania a slabej návratnosti</td></tr>
+          <tr><td>Výber podľa dát a úžitkov</td><td>Správna veľkosť, vyššia návratnosť</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Preto BESS nenavrhujeme od kapacity, ale od úžitkov: zistíme váš profil spotreby, špičky a ciele prevádzky — a z
+        toho vyplynie, aká batéria (a či vôbec) sa vám oplatí.
+      </p>
+
+      <div class="not-prose my-8">
+        <div class="flex flex-col md:flex-row md:items-stretch gap-3">
+          {
+            tok.map((t, i) => (
+              <>
+                <div class={`flex-1 rounded-xl p-4 text-center ${t.accent ? 'border border-primary/30 bg-primary/5' : 'border border-gray-200 bg-white'}`}>
+                  <p class={`font-semibold ${t.accent ? 'text-primary' : ''}`}>{t.title}</p>
+                  <p class="text-sm text-muted mt-1">{t.desc}</p>
+                </div>
+                {i < tok.length - 1 && (
+                  <div class="flex items-center justify-center text-primary text-2xl font-bold rotate-90 md:rotate-0" aria-hidden="true">→</div>
+                )}
+              </>
+            ))
+          }
+        </div>
+      </div>
+
+      <h2>Kedy sa batéria oplatí</h2>
+      <p>Batéria dáva zmysel najmä vtedy, ak:</p>
+      <ul>
+        <li>máte výrazné odberové špičky a platíte vysokú rezervovanú kapacitu,</li>
+        <li>máte fotovoltiku, ale veľkú časť výroby predávate do siete za nízku cenu,</li>
+        <li>vaša spotreba pokračuje aj po západe slnka,</li>
+        <li>potrebujete zálohovať kritickú prevádzku pri výpadku,</li>
+        <li>ceny elektriny u vás výrazne kolíšu počas dňa.</li>
+      </ul>
+      <p>Ak nič z toho neplatí, povieme vám to — batéria nie je riešenie pre každého.</p>
+
+      <h2>Batéria, fotovoltika a riadenie ako jeden celok</h2>
+      <p>
+        Batéria naplno funguje len vtedy, keď ju niečo riadi. <a href="/energetika/energy-management">Energy Management
+        (EMS)</a> rozhoduje, kedy batériu nabíjať, kedy z nej čerpať a ako ju zladiť s
+        <a href="/energetika/fotovoltika">fotovoltikou</a>, nabíjaním a prevádzkou. Bez riadenia je batéria len drahý
+        zásobník; s riadením je nástroj na znižovanie nákladov.
+      </p>
+
+      <h2>Pre developerov a väčšie projekty</h2>
+      <p>
+        Okrem batérií pre vlastnú spotrebu firiem sa venujeme aj väčším a štandalone projektom, kde vstupuje do hry iná
+        logika — bankovateľnosť, viaczdrojový výnosový model, pripojenie do siete a prevádzkový model.
+      </p>
+      <p>
+        Pri takýchto projektoch rozhoduje najmä kombinácia výnosov (projekt by nemal stáť len na jednom zdroji príjmu),
+        pripojenie do siete (jeden z najkritickejších krokov, rieši sa hneď na začiatku) a pripravenosť na financovanie.
+      </p>
+      <p>Ak pripravujete väčší alebo štandalone projekt, ozvite sa — prejdeme s vami konkrétnu situáciu.</p>
+
+      <h2>Ako postupujeme</h2>
+      <p>Postupujeme v krokoch, aby ste investovali až vtedy, keď viete prečo:</p>
+      <div class="not-prose my-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        {
+          postup.map((s, i) => (
+            <div class="rounded-xl border border-gray-200 bg-white p-5">
+              <div class="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white text-sm font-semibold mb-3">
+                {i + 1}
+              </div>
+              <p class="font-semibold mb-1">{s.title}</p>
+              <p class="text-sm text-muted">{s.desc}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <h2>Pre koho je BESS vhodné</h2>
+      <ul>
+        <li>výrobné podniky s výraznými špičkami,</li>
+        <li>prevádzky s fotovoltikou a večernou spotrebou,</li>
+        <li>areály, kde je dôležitá odolnosť prevádzky (backup),</li>
+        <li>firmy s vysokou rezervovanou kapacitou,</li>
+        <li>väčšie a štandalone projekty (samostatná logika, viď vyššie).</li>
+      </ul>
+
+      <h2>Prečo RKS</h2>
+      <ul>
+        <li><strong>Návrh od úžitkov, nie od kWh.</strong> Batériu dimenzujeme podľa toho, čo má vo vašej prevádzke riešiť.</li>
+        <li><strong>Kombinácia úžitkov = návratnosť.</strong> Počítame business case cez viac úžitkov naraz.</li>
+        <li><strong>Celý koncept pod jednou strechou.</strong> Batériu prepojíme s <a href="/energetika/fotovoltika">fotovoltikou</a> a <a href="/energetika/energy-management">EMS</a> do jedného riadeného celku.</li>
+        <li><strong>Technické zázemie od 1991.</strong> Projektovanie, elektroinštalácie a realizácia sú náš domáci terén.</li>
+      </ul>
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Časté otázky</h2>
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 p-5">
+            <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
+              {faq.q}
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="text-muted mt-3">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Zistite, či sa vám batéria oplatí</h2>
+      <p class="text-muted mb-6 max-w-xl mx-auto">
+        Začnime nezáväznou konzultáciou a analýzou vašej spotreby a špičiek. Navrhneme batériu podľa toho, čo má vo vašej
+        prevádzke riešiť — s prepočtom návratnosti cez kombináciu úžitkov.
+      </p>
+      <a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+    </div>
   </section>
 </Layout>
