@@ -1,13 +1,106 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-const metadata = { title: 'Q&A — Rádiokomunikácie — RKS' };
+const metadata = {
+  title: 'Q&A — Rádiokomunikácie — RKS',
+  description:
+    'Najčastejšie otázky o profesionálnych rádiových sieťach, digitálnej komunikácii (DMR/MOTOTRBO), návrhu, audite, servise a legislatíve. Odpovede od spoločnosti RKS.',
+};
+
+const faqs = [
+  {
+    q: 'Kedy sa oplatí používať profesionálne rádiostanice namiesto mobilných telefónov?',
+    a: 'Všade tam, kde pracovníci potrebujú okamžitú skupinovú komunikáciu, vysokú spoľahlivosť a nezávislosť od mobilných operátorov — najmä vo výrobe, energetike, logistike, stavebníctve, bezpečnostných službách a pri správe kritickej infraštruktúry.',
+  },
+  {
+    q: 'Aký je rozdiel medzi analógovou a digitálnou rádiovou sieťou?',
+    a: 'Digitálne siete poskytujú kvalitnejší prenos hlasu, vyššiu kapacitu, šifrovanie, GPS lokalizáciu, dátové služby a jednoduchšiu správu. Analógové siete sú vhodné pre jednoduchšie aplikácie.',
+  },
+  {
+    q: 'Musím mať povolenie na používanie profesionálnych rádiostaníc?',
+    a: 'Záleží od prevádzky. Niektoré stanice pracujú na voľných frekvenciách, profesionálne siete využívajú individuálne pridelené frekvencie. RKS pomáha s výberom riešenia aj s administratívou.',
+  },
+  {
+    q: 'Aký dosah majú profesionálne rádiostanice?',
+    a: 'Závisí od výkonu, terénu, frekvencií a infraštruktúry. V otvorenom priestore niekoľko kilometrov; s retranslačnými stanicami alebo digitálnou sieťou možno pokryť celé mestá alebo rozsiahle areály.',
+  },
+  {
+    q: 'Čo je DMR?',
+    a: 'DMR (Digital Mobile Radio) je medzinárodný štandard digitálnej rádiovej komunikácie pre profesionálne využitie — spoľahlivejšia komunikácia, efektívnejšie využitie frekvencií a pokročilé funkcie.',
+  },
+  {
+    q: 'Čo je systém MOTOTRBO?',
+    a: 'Profesionálna platforma Motorola Solutions na štandarde DMR — hlasová komunikácia, GPS lokalizácia, šifrovanie, dátové služby, telemetria a integrácia s dispečerskými aplikáciami.',
+  },
+  {
+    q: 'Musíme pri modernizácii vymeniť všetky rádiostanice?',
+    a: 'Nie vždy. Po audite siete často odporúčame zachovať funkčné zariadenia a modernizovať len časti, ktoré už nespĺňajú požiadavky prevádzky.',
+  },
+  {
+    q: 'Ako prebieha návrh novej rádiovej siete?',
+    a: 'Začína analýzou potrieb. Nasleduje návrh pokrytia, výber technológie, projektová dokumentácia, návrh frekvencií, realizácia, konfigurácia a zaškolenie používateľov.',
+  },
+  {
+    q: 'Čo obsahuje audit rádiovej siete?',
+    a: 'Kontrolu technického stavu zariadení, meranie parametrov, analýzu pokrytia, preverenie konfigurácie a návrh odporúčaní na modernizáciu alebo rozšírenie.',
+  },
+  {
+    q: 'Aké organizácie využívajú profesionálne rádiové siete?',
+    a: 'Výrobné podniky, energetické spoločnosti, logistické centrá, mestá a obce, bezpečnostné služby, letiská, dopravné spoločnosti aj prevádzkovatelia kritickej infraštruktúry.',
+  },
+  {
+    q: 'Zabezpečuje RKS aj servis a dlhodobú podporu?',
+    a: 'Áno. Záručný aj pozáručný servis, pravidelnú údržbu, servisné zmluvy, konfiguráciu zariadení aj technickú podporu počas celej životnosti systému.',
+  },
+  {
+    q: 'Ako dlho trvá realizácia profesionálnej rádiovej siete?',
+    a: 'Závisí od rozsahu. Menšie riešenia v priebehu niekoľkých dní; rozsiahle siete s dokumentáciou a povoľovacími procesmi zvyčajne niekoľko týždňov.',
+  },
+  {
+    q: 'Je možné zabezpečiť komunikáciu proti odpočúvaniu?',
+    a: 'Áno. Moderné digitálne siete podporujú viac úrovní šifrovania a riadenia prístupu.',
+  },
+  {
+    q: 'Môžu profesionálne rádiové siete fungovať aj bez mobilného signálu?',
+    a: 'Áno — to je jedna z ich najväčších výhod. Sú nezávislé od verejných operátorov a pri správnom návrhu zostávajú funkčné aj v oblastiach bez mobilného pokrytia alebo počas výpadkov.',
+  },
+  {
+    q: 'Prečo spolupracovať so spoločnosťou RKS?',
+    a: 'RKS zabezpečuje kompletný životný cyklus profesionálnych rádiových systémov — od analýzy potrieb cez návrh, projektovanie, realizáciu a konfiguráciu až po dlhodobý servis, modernizáciu a technickú podporu. Zákazník má jedno kontaktné miesto pre celý komunikačný systém.',
+  },
+];
 ---
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
     <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/radiokomunikacie">← Rádiokomunikácie</a></p>
-    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Q&A — Rádiokomunikácie</h1>
-    <p class="text-lg text-muted">Obsah dorobíme neskôr.</p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Časté otázky — Rádiokomunikácie</h1>
+
+    <p class="text-lg text-muted mb-10 max-w-3xl">
+      Najčastejšie otázky o profesionálnych rádiových sieťach, digitálnej komunikácii (DMR a MOTOTRBO), návrhu, audite,
+      servise aj legislatíve. Nenašli ste odpoveď na svoju otázku? Radi vám poradíme.
+    </p>
+
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 p-5">
+            <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
+              {faq.q}
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="text-muted mt-3">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Potrebujete poradiť s rádiovou komunikáciou?</h2>
+      <p class="text-muted mb-6 max-w-xl mx-auto">
+        Navrhneme riešenie prispôsobené vašej prevádzke — od výberu technológie po realizáciu a servis.
+      </p>
+      <a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+    </div>
   </section>
 </Layout>
