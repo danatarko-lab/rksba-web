@@ -54,6 +54,7 @@ export const headerData = {
       text: 'Energetika',
       href: getPermalink('/energetika'),
       links: [
+        { text: 'Základné informácie', href: getPermalink('/energetika') },
         { text: 'Energy Management (EMS)', href: getPermalink('/energetika/energy-management') },
         { text: 'Fotovoltika (FVE)', href: getPermalink('/energetika/fotovoltika') },
         { text: 'Batérie (BESS)', href: getPermalink('/energetika/baterie-bess') },
@@ -94,7 +95,7 @@ export const footerData = {
         { text: 'Mototrbo', href: getPermalink('/radiokomunikacie/produkty/mototrbo') },
         { text: 'Servis rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/servis-radiostanic') },
         { text: '„Potvrďte príjem"', href: getPermalink('/radiokomunikacie/newsletter') },
-        { text: 'Prípadové štúdie', href: getPermalink('/radiokomunikacie/pripadove-studie') },
+        { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
       ],
     },
     {
