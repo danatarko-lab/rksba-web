@@ -44,6 +44,7 @@ export const headerData = {
           links: [
             { text: '„Potvrďte príjem" (Newsletter)', href: getPermalink('/radiokomunikacie/newsletter') },
             { text: 'Q&A (Rádio)', href: getPermalink('/radiokomunikacie/q-a') },
+            { text: 'RKS Chatbot', href: 'https://rks-radio-expert.vercel.app/' },
             { text: 'Prípadové štúdie', href: getPermalink('/radiokomunikacie/pripadove-studie') },
           ],
         },
