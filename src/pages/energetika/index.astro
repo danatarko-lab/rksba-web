@@ -1,32 +1,236 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-const metadata = { title: 'Energetika — RKS' };
+const metadata = {
+  title: 'Energetické riešenia pre firmy — RKS',
+  description:
+    'RKS znižuje firmám náklady na energie cez meranie a analýzu dát: Energy Management, fotovoltika, batériové úložiská, nabíjanie elektromobilov a smart building — navrhnuté podľa reálnej spotreby.',
+};
 
-const services = [
-  { title: 'Energy Management (EMS)', desc: 'Riadenie a optimalizácia spotreby energie.', href: '/energetika/energy-management' },
-  { title: 'Fotovoltika (FVE)', desc: 'Návrh a realizácia fotovoltických elektrární.', href: '/energetika/fotovoltika' },
-  { title: 'Batérie (BESS)', desc: 'Batériové úložiská a peak shaving.', href: '/energetika/baterie-bess' },
-  { title: 'EV nabíjačky', desc: 'Nabíjacia infraštruktúra pre firmy.', href: '/energetika/ev-nabijacky' },
-  { title: 'Smart building', desc: 'Automatizácia budov (Loxone).', href: '/energetika/smart-building' },
+const dodavame = [
+  {
+    kicker: 'Riadenie spotreby energie',
+    title: 'Energy Management (EMS)',
+    href: '/energetika/energy-management',
+    desc: 'Vrstva, ktorá prepája všetko ostatné a riadi špičky, zdroje a náklady.',
+  },
+  {
+    kicker: 'Vlastná výroba elektriny',
+    title: 'Fotovoltika (FVE)',
+    href: '/energetika/fotovoltika',
+    desc: 'Navrhnutá podľa reálnej spotreby, nie podľa počtu panelov.',
+  },
+  {
+    kicker: 'Akumulácia energie',
+    title: 'Batérie (BESS)',
+    href: '/energetika/baterie-bess',
+    desc: 'Úložisko pre špičky, vlastnú spotrebu a odolnosť prevádzky.',
+  },
+  {
+    kicker: 'Riadené nabíjanie',
+    title: 'EV nabíjačky',
+    href: '/energetika/ev-nabijacky',
+    desc: 'Nabíjanie ako súčasť riadeného systému budovy, nie izolovaná zásuvka.',
+  },
+  {
+    kicker: 'Inteligentná budova',
+    title: 'Smart building',
+    href: '/energetika/smart-building',
+    desc: 'Prepojenie energie, technológií a prevádzky do jedného merateľného celku.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Od čoho začať, keď chceme znížiť náklady na energie?',
+    a: 'Od dát. Bez podrobného merania spotreby sa nedá spoľahlivo povedať, čo sa oplatí. Preto začíname počiatočnou analýzou nákladov a spotreby — a až na jej základe navrhujeme ďalší krok.',
+  },
+  {
+    q: 'Čo je Energy Management System (EMS)?',
+    a: 'EMS je systém na riadenie spotreby energie. Meria, kde a kedy energiu spotrebúvate, pomáha riadiť špičky a rezervovanú kapacitu a prepája jednotlivé technológie (fotovoltika, batéria, nabíjanie) do jedného riadeného celku. Nie je to len softvér — je to nástroj na znižovanie nákladov.',
+  },
+  {
+    q: 'Oplatí sa fotovoltika aj bez batérie?',
+    a: 'Niekedy áno, niekedy nie — závisí to od vášho profilu spotreby. Ak spotrebujete väčšinu výroby priamo počas dňa, fotovoltika môže dávať zmysel aj samostatne. Ak chcete riešiť aj špičky, večernú spotrebu alebo odolnosť, batéria zvyšuje hodnotu celého riešenia. Práve preto to posudzujeme na dátach, nie paušálne.',
+  },
+  {
+    q: 'Musíme hneď investovať do fotovoltiky alebo batérie?',
+    a: 'Nie. Často dáva zmysel začať monitoringom a riadením spotreby a do väčších investícií ísť až vtedy, keď ich podporujú dáta a prepočet návratnosti.',
+  },
+  {
+    q: 'Riešite len technológiu, alebo aj návratnosť?',
+    a: 'Oboje. Pre nás je technické riešenie len polovica — druhá je business case: koľko to stojí, koľko ušetrí a kedy sa vráti.',
+  },
+  {
+    q: 'Pre aké firmy sú vaše riešenia určené?',
+    a: 'Pre firmy, prevádzky, budovy a areály s reálnou spotrebou — výroba, logistika, retail, kancelárie, hotely, nemocnice, verejné budovy. Nezameriavame sa na domácnosti.',
+  },
+  {
+    q: 'Dokážete projekt aj zrealizovať, alebo len navrhnete?',
+    a: 'Zabezpečíme celý cyklus — od posúdenia a návrhu cez dodávku a realizáciu až po servis.',
+  },
 ];
 ---
 
 <Layout metadata={metadata}>
-  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
-    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Energetika</h1>
-    <p class="text-lg text-muted max-w-2xl mb-10">
-      Energetika pre komerčné prevádzky — znížte spotrebu o 10 až 30 %, získajte prehľad, kontrolu a ROI. [placeholder]
+  <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/">← Domov</a></p>
+
+    <p class="text-sm font-medium uppercase tracking-wider text-primary mb-3">Energetické riešenia pre firmy a budovy</p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">Energetické riešenia pre firmy</h1>
+    <p class="text-xl md:text-2xl text-muted mb-6">Energetika, ktorá začína dátami</p>
+
+    <p class="text-lg border-l-4 border-primary bg-primary/5 rounded-r-lg p-4 mb-6">
+      RKS pomáha firmám znižovať náklady na energie pomocou merania, analýzy dát a správne navrhnutých technológií.
+      Navrhujeme a dodávame Energy Management, fotovoltiku, batériové úložiská, nabíjanie elektromobilov aj smart building
+      — vždy na základe vašej reálnej spotreby.
     </p>
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+    <p class="text-lg text-muted mb-8">
+      Ceny elektriny prestali byť predvídateľné. Pribúdajú dáta, technológie aj regulácia — a rozhodnutie, čo s tým, padá
+      na ľudí, ktorí majú na starosti aj desať iných vecí. Či už ste finančný riaditeľ, prevádzkar alebo správca budovy:
+      bez merania a jasného prepočtu sa investícia do energetiky robí naslepo. Začneme tým, že zistíme, kde reálne miniete
+      energiu a čo sa oplatí — až potom hovoríme o technológii.
+    </p>
+
+    <div class="mb-4"><a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a></div>
+
+    <div class="prose prose-lg max-w-none">
+      <h2>Čo riešime</h2>
+      <p>Firmy za nami prichádzajú s jedným z týchto problémov — alebo s ich kombináciou:</p>
+      <ul>
+        <li>
+          <strong>Vysoké a nepredvídateľné náklady na elektrinu.</strong> Faktúra rastie, ale nie je jasné, čím presne a
+          kde sa dá ušetriť.
+        </li>
+        <li><strong>Chýbajúce dáta.</strong> Spotreba sa nemeria dostatočne podrobne, takže sa rozhoduje od oka.</li>
+        <li>
+          <strong>Špičky a rezervovaná kapacita.</strong> Platíte za príkon, ktorý sa využíva len chvíľu — a nikto to
+          neriadi. EMS vám ukáže, kde špičky vznikajú a ako ich znížiť.
+        </li>
+        <li>
+          <strong>Neistota okolo investícií.</strong> Má zmysel fotovoltika? Batéria? Riadenie spotreby? V akom poradí a
+          za aké peniaze?
+        </li>
+        <li>
+          <strong>Odolnosť prevádzky.</strong> Čo sa stane s prevádzkou pri výpadku siete — a koľko taký výpadok stojí.
+        </li>
+      </ul>
+      <p>
+        Naša úloha nie je predať vám iba HW ako panely či batériové riešenia. Je to pomôcť vám pochopiť vlastnú spotrebu a
+        rozhodnúť sa na základe čísel.
+      </p>
+
+      <h2>Komu pomáhame</h2>
+      <p>Zameriavame sa na firmy a prevádzky s reálnou spotrebou — nie na domácnosti:</p>
+      <ul>
+        <li>výrobné podniky a energeticky náročné prevádzky,</li>
+        <li>logistické a priemyselné areály,</li>
+        <li>obchodné a retailové prevádzky,</li>
+        <li>kancelárske budovy a hotely,</li>
+        <li>nemocnice a verejné budovy,</li>
+        <li>väčšie areály s kombináciou viacerých technológií.</li>
+      </ul>
+      <p>
+        Typický klient už dnes rieši vysoké ceny elektriny, často má alebo zvažuje fotovoltiku a potrebuje lepšiu
+        kontrolu nad spotrebou — ale chce pred investíciou vidieť čísla.
+      </p>
+    </div>
+
+    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mt-12 mb-3">Čo dodávame</h2>
+    <p class="text-muted mb-6 max-w-3xl">
+      Pokrývame celý energetický koncept budovy alebo areálu — podľa toho, aký výsledok potrebujete:
+    </p>
+    <div class="grid gap-5 sm:grid-cols-2">
       {
-        services.map((s) => (
-          <a href={s.href} class="block rounded-xl border border-gray-200 p-6 transition hover:border-primary">
-            <h2 class="text-xl font-semibold mb-2">{s.title}</h2>
-            <p class="text-sm text-muted">{s.desc}</p>
+        dodavame.map((s) => (
+          <a
+            href={s.href}
+            class="group block rounded-xl border border-gray-200 bg-white p-6 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
+          >
+            <p class="text-xs font-medium uppercase tracking-wider text-muted mb-1">{s.kicker}</p>
+            <h3 class="text-lg font-medium mb-1">{s.title}</h3>
+            <p class="text-sm text-muted mb-4">{s.desc}</p>
+            <span class="inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:underline">
+              Otvoriť <span aria-hidden="true">→</span>
+            </span>
           </a>
         ))
       }
+    </div>
+    <p class="text-sm text-muted mt-4">
+      EMS = Energy Management System, systém riadenia energie. FVE = fotovoltická elektráreň. BESS = Battery Energy
+      Storage System, batériové úložisko.
+    </p>
+
+    <div class="prose prose-lg max-w-none mt-12">
+      <h2>Prečo nezačíname technológiou</h2>
+      <p>Väčšina firiem v energetike začne ponukou: panely, batéria, nabíjačka. My nie.</p>
+      <p>
+        Technológia je odpoveď — ale len vtedy, keď poznáme otázku. Bez podrobného merania spotreby sa nedá spoľahlivo
+        povedať, či sa vám fotovoltika oplatí, či potrebujete batériu, alebo či najväčšiu úsporu prinesie len lepšie
+        riadenie špičiek. Preto najprv zistíme, ako a kedy energiu reálne spotrebúvate — a až potom navrhujeme riešenie.
+      </p>
+      <p>
+        Znamená to, že vám niekedy povieme aj to, že investíciu zatiaľ nepotrebujete. To je v poriadku — naším cieľom je
+        správne rozhodnutie, nie predaj boxu.
+      </p>
+
+      <h2>Ako pracujeme</h2>
+      <p>Postupujeme v krokoch, aby ste neinvestovali skôr, než viete prečo:</p>
+      <ol>
+        <li><strong>Analýza.</strong> Začneme počiatočnou analýzou vašich nákladov na energie a spotreby — kde, kedy a koľko miniete.</li>
+        <li><strong>Dáta.</strong> Identifikujeme špičky, úniky a príležitosti. Bez merania nenavrhujeme technológiu.</li>
+        <li><strong>Návrh.</strong> Pripravíme technicko-ekonomické riešenie — nielen čo nainštalovať, ale čo sa kedy oplatí a aká je návratnosť.</li>
+        <li><strong>Realizácia.</strong> Od projektu cez dodávku po montáž — pod jednou strechou, s našimi kapacitami a partnermi.</li>
+        <li><strong>Servis.</strong> Dlhodobá podpora, monitoring a údržba, aby riešenie fungovalo počas celej životnosti.</li>
+      </ol>
+      <p>
+        Nepotrebujete kúpiť celé riešenie naraz. Často dáva zmysel začať monitoringom a investovať až vtedy, keď máte
+        dáta.
+      </p>
+
+      <h2>Prečo RKS</h2>
+      <ul>
+        <li>
+          <strong>Prepájame techniku s ekonomikou.</strong> Nielen čo je technicky možné, ale čo dáva zmysel finančne a
+          prevádzkovo.
+        </li>
+        <li>
+          <strong>Technické zázemie od 1991.</strong> Na technických projektoch pre priemysel a infraštruktúru pôsobíme
+          viac ako 30 rokov — energetika stavia na týchto skúsenostiach.
+        </li>
+        <li>
+          <strong>End-to-end riešenie.</strong> Poskladáme návrh, partnerov aj realizáciu — od prvého posúdenia po servis.
+        </li>
+        <li>
+          <strong>Rozhodnutie na základe dát.</strong> Neinvestujete naslepo; každý krok stojí na meraní a business case.
+        </li>
+      </ul>
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Časté otázky</h2>
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 p-5">
+            <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
+              {faq.q}
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="text-muted mt-3">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Chcete vedieť, kde reálne miniete energiu?</h2>
+      <p class="text-muted mb-6 max-w-xl mx-auto">
+        Začnime nezáväznou konzultáciou a počiatočnou analýzou vašich nákladov na energie. Ukážeme vám, čo sa vo vašej
+        prevádzke oplatí — skôr, než do čohokoľvek investujete.
+      </p>
+      <a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
     </div>
   </section>
 </Layout>
