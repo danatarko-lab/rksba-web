@@ -1,0 +1,102 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+import heroServis from '~/assets/images/radiokomunikacie/service-05.webp';
+
+const metadata = {
+  title: 'Servis a oprava rádiostaníc — RKS',
+  description:
+    'Záručný aj pozáručný servis profesionálnych rádiostaníc Motorola, Midland, Vertex a Icom. Opravy, diagnostika, montáž aj servis sirén a rozhlasov.',
+};
+
+const faqs = [
+  {
+    q: 'Rádiostanice ktorých značiek servisujete?',
+    a: 'Ponúkame kompletný servis profesionálnych rádiostaníc značiek Motorola, Midland, Vertex a Icom.',
+  },
+  {
+    q: 'Musím mať na servis zmluvu?',
+    a: 'Nie nutne. Servis poskytujeme jednorazovo na základe objednávky, alebo je možné uzavrieť zmluvu o celoročnom poskytovaní servisných prác.',
+  },
+  {
+    q: 'Servisujete aj sirény a rozhlasové ústredne?',
+    a: 'Áno. Zabezpečujeme montáž a servis elektronických sirén značiek Sircom, PSE, Ergatec a EVS, ako aj rozhlasových ústrední značky TOA.',
+  },
+  {
+    q: 'Sú ceny opráv vopred známe?',
+    a: 'Áno. Poskytujeme garantované ceny opráv, príslušenstva aj servisných prác.',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/radiokomunikacie">← Rádiokomunikácie</a></p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Servis a oprava rádiostaníc</h1>
+
+    <div class="grid items-center gap-8 lg:gap-10 lg:grid-cols-5 mb-12">
+      <p class="text-lg text-muted lg:col-span-3">
+        Poskytujeme záručný aj pozáručný servis dodaných zariadení. Servisné práce zabezpečujú servisné skupiny s
+        pravidelne školenými technikmi a skúsenosťami z inštalácií veľkých zákaziek. Servis ponúkame jednorazovo aj na
+        základe celoročnej zmluvy.
+      </p>
+      <div class="lg:col-span-2 aspect-[4/3] overflow-hidden rounded-2xl shadow-sm">
+        <Image
+          src={heroServis}
+          alt="Servis a oprava profesionálnej rádiostanice RKS"
+          widths={[400, 600, 768]}
+          sizes="(max-width: 1023px) 100vw, 40vw"
+          loading="eager"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+      <h2>Servis profesionálnych rádiostaníc</h2>
+      <p>Pre rádiostanice Motorola, Midland, Vertex a Icom ponúkame:</p>
+      <ul>
+        <li>bežnú údržbu a inšpekčné prehliadky,</li>
+        <li>servisné a mechanické opravy vrátane expresných opráv,</li>
+        <li>diagnostiku a softvérové nastavenie parametrov,</li>
+        <li>montáž a demontáž vozidlových, základňových a retranslačných rádiostaníc,</li>
+        <li>predaj príslušenstva a doplnkov vrátane montáže.</li>
+      </ul>
+
+      <h2>Montáž a servis sirén a rozhlasov</h2>
+      <p>
+        Zabezpečujeme montáž a servis elektronických sirén značiek Sircom, PSE, Ergatec a EVS a rozhlasových ústrední
+        značky TOA — bežnú údržbu, inšpekčné prehliadky, servisné a mechanické opravy, montážne práce, diagnostiku a
+        softvérové nastavenie parametrov.
+      </p>
+
+      <h2>Ako servis funguje</h2>
+      <p>
+        Servis môže byť poskytnutý jednorazovo na základe objednávky, alebo je možné uzavrieť zmluvu o celoročnom
+        poskytovaní servisných prác. Pri všetkých opravách platia garantované ceny opráv, príslušenstva a servisných
+        prác.
+      </p>
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Časté otázky</h2>
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 p-5">
+            <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
+              {faq.q}
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="text-muted mt-3">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Potrebujete opraviť alebo zaservisovať techniku?</h2>
+      <p class="text-muted mb-6 max-w-xl mx-auto">Ozvite sa nám — dohodneme jednorazový servis alebo celoročnú zmluvu.</p>
+      <a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+    </div>
+  </section>
+</Layout>

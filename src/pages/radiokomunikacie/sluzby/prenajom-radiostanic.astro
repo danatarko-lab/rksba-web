@@ -1,0 +1,108 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+import heroPrenajom from '~/assets/images/radiokomunikacie/hospitality-21.webp';
+
+const metadata = {
+  title: 'Prenájom rádiostaníc (vysielačiek) — RKS',
+  description:
+    'Prenájom profesionálnych rádiostaníc Motorola pre firmy a podujatia. Okamžitá prevádzka, nízke vstupné náklady, kompletný servis. Cenník na vyžiadanie.',
+};
+
+const faqs = [
+  {
+    q: 'Potrebujem na prenajaté rádiostanice povolenie?',
+    a: 'Nie. Prenajímateľ nepotrebuje na používanie prenajatých rádiostaníc vlastné povolenie — RKS je držiteľom povolenia vydaného Úradom pre reguláciu elektronických komunikácií a poštových služieb. Rádiostanice sa prevádzkujú na základe zmluvy medzi RKS a užívateľom.',
+  },
+  {
+    q: 'Kedy sa oplatí prenájom?',
+    a: 'Pri potrebe komunikácie na obmedzenú dobu — pokrytie prechodného nedostatku rádiostaníc, dočasná komunikácia pri montážach a inštaláciách technológií, alebo organizovanie kultúrnych, spoločenských a športových podujatí.',
+  },
+  {
+    q: 'Čo ak sa rádiostanica počas prenájmu pokazí?',
+    a: 'V prípade poruchy zariadenia, ktoré nie je možné opraviť na počkanie, poskytneme náhradné zariadenie.',
+  },
+  {
+    q: 'Dá sa zapožičať aj príslušenstvo?',
+    a: 'Áno, k rádiostaniciam je možné zapožičať aj príslušenstvo (napr. rezervné akumulátory, náhlavné súpravy či mikrofóny).',
+  },
+  {
+    q: 'Aká je cena prenájmu?',
+    a: 'Cena závisí od typu zariadenia, počtu kusov a dĺžky prenájmu. Aktuálny cenník nájmu rádiostaníc a príslušenstva vám radi pošleme na vyžiadanie.',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/radiokomunikacie">← Rádiokomunikácie</a></p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Prenájom rádiostaníc</h1>
+
+    <div class="grid items-center gap-8 lg:gap-10 lg:grid-cols-5 mb-12">
+      <p class="text-lg text-muted lg:col-span-3">
+        Prenájom rádiostaníc je výhodným riešením, keď vznikne potreba komunikácie na obmedzenú dobu. RKS je držiteľom
+        povolenia na poskytovanie služieb v oblasti prenájmu rádiostaníc — služba je určená pre firmy a organizácie.
+      </p>
+      <div class="lg:col-span-2 aspect-[4/3] overflow-hidden rounded-2xl shadow-sm">
+        <Image
+          src={heroPrenajom}
+          alt="Profesionálna rádiostanica na prenájom"
+          widths={[400, 600, 768]}
+          sizes="(max-width: 1023px) 100vw, 40vw"
+          loading="eager"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+      <h2>Kedy využiť prenájom</h2>
+      <p>
+        Prenájom oceníte pri jednorazových podujatiach aj prevádzkových situáciách — keď treba pokryť prechodný
+        nedostatok rádiostaníc, dočasne zabezpečiť komunikáciu pracovníkov pri montážnych prácach a inštaláciách
+        technológií, alebo pri organizovaní kultúrnych, spoločenských a športových akcií. Prenajaté rádiostanice sa
+        prevádzkujú na základe zmluvy medzi spoločnosťou RKS a užívateľom.
+      </p>
+
+      <h2>Výhody prenájmu</h2>
+      <ul>
+        <li>prenajímateľ nepotrebuje vlastné povolenie na používanie rádiostaníc,</li>
+        <li>možnosť okamžitého prevádzkovania a jednoduchá obsluha zariadení,</li>
+        <li>nízke vstupné náklady,</li>
+        <li>spoľahlivosť profesionálnych rádiostaníc Motorola,</li>
+        <li>možnosť zapožičania príslušenstva,</li>
+        <li>kompletný servis vrátane náhradného zariadenia pri poruche.</li>
+      </ul>
+
+      <h2>Cenník na vyžiadanie</h2>
+      <p>
+        Cena prenájmu závisí od typu zariadenia (prenosná či vozidlová rádiostanica), počtu kusov, dĺžky prenájmu a
+        zapožičaného príslušenstva. Aktuálny cenník nájmu rádiostaníc a príslušenstva vám radi pošleme na vyžiadanie —
+        stačí sa nám ozvať.
+      </p>
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Časté otázky</h2>
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 p-5">
+            <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
+              {faq.q}
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="text-muted mt-3">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Potrebujete rádiostanice na prenájom?</h2>
+      <p class="text-muted mb-6 max-w-xl mx-auto">
+        Napíšte nám počet kusov a termín — pošleme vám cenník a pripravíme rádiostanice na okamžité nasadenie.
+      </p>
+      <a href="/kontakt" class="btn-primary inline-flex">Vyžiadať cenník a konzultáciu</a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,32 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = { title: 'Q&A — RKS' };
+
+const sections = [
+  { title: 'Rádiokomunikácie', href: '/radiokomunikacie/q-a' },
+  { title: 'Energetika', href: '/energetika/q-a' },
+  { title: 'Všeobecné', href: '#vseobecne' },
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Q&A</h1>
+    <p class="text-lg text-muted mb-10">Najčastejšie otázky rozdelené podľa oblasti. [placeholder]</p>
+
+    {
+      sections.map((s) => (
+        <div id={s.title === 'Všeobecné' ? 'vseobecne' : undefined} class="mb-8 border-b border-gray-200 pb-6">
+          <h2 class="text-2xl font-semibold mb-2">{s.title}</h2>
+          <p class="text-muted">Otázky a odpovede dorobíme neskôr.</p>
+          {s.href.startsWith('/') && (
+            <a class="text-primary hover:underline text-sm" href={s.href}>
+              Prejsť na Q&A: {s.title} →
+            </a>
+          )}
+        </div>
+      ))
+    }
+  </section>
+</Layout>

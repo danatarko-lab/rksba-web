@@ -1,0 +1,70 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { headerData } from '~/navigation';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = { title: 'Mapa stránky — RKS' };
+
+// Doplnkové samostatné stránky mimo hlavného menu
+const standalone = [
+  { text: 'Q&A (centralizovaná)', href: getPermalink('/q-a') },
+  { text: 'O nás', href: getPermalink('/o-nas') },
+  { text: 'Ochrana osobných údajov', href: getPermalink('/ochrana-osobnych-udajov') },
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">Mapa stránky</h1>
+
+    <ul class="space-y-2 text-base">
+      <li><a class="text-primary hover:underline" href={getPermalink('/')}>Domov</a></li>
+
+      {
+        headerData.links.map((top) => (
+          <li>
+            <a class="text-primary hover:underline font-medium" href={top.href}>
+              {top.text}
+            </a>
+            {top.links && top.links.length > 0 && (
+              <ul class="ml-5 mt-2 space-y-1 border-l border-gray-200 pl-4">
+                {top.links.map((child) =>
+                  child.links && child.links.length > 0 ? (
+                    <li>
+                      <span class="font-medium text-default">{child.text}</span>
+                      <ul class="ml-5 mt-1 space-y-1 border-l border-gray-200 pl-4">
+                        {child.links.map((leaf) => (
+                          <li>
+                            <a class="text-muted hover:text-primary hover:underline" href={leaf.href}>
+                              {leaf.text}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ) : (
+                    <li>
+                      <a class="text-muted hover:text-primary hover:underline" href={child.href}>
+                        {child.text}
+                      </a>
+                    </li>
+                  )
+                )}
+              </ul>
+            )}
+          </li>
+        ))
+      }
+
+      {
+        standalone.map((item) => (
+          <li>
+            <a class="text-primary hover:underline font-medium" href={item.href}>
+              {item.text}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>

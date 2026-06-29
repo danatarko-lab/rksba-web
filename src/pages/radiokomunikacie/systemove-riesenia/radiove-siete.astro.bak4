@@ -1,0 +1,167 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+import heroDigitalizacia from '~/assets/images/rk-digitalizacia-siete.webp';
+
+const metadata = {
+  title: 'Rádiové siete pre firmy a organizácie — RKS',
+  description:
+    'Návrh, projektovanie, realizácia a servis profesionálnych rádiových sietí. Vybavíme aj legislatívu od pridelenia frekvencií po kolaudáciu.',
+};
+
+const faqs = [
+  {
+    q: 'Kedy je výhodnejšia rádiová sieť ako mobilní operátori?',
+    a: 'Pri komunikácii viacerých osôb alebo skupín naraz, kde sú dôležité nízke prevádzkové náklady bez ohľadu na intenzitu komunikácie, nezávislosť od verejných sietí a možnosť dispečerského riadenia. Rádiostanice fungujú aj v podzemných, uzavretých alebo hlučných priestoroch.',
+  },
+  {
+    q: 'Potrebujeme na prevádzku rádiostaníc povolenie?',
+    a: 'Záleží od spôsobu prevádzky. Na voľných frekvenciách v pásme 446 MHz (PMR) sa vysiela na základe všeobecného povolenia bez poplatkov. Pre vlastnú alebo spoločnú frekvenciu prideľuje frekvencie Úrad pre reguláciu elektronických komunikácií a poštových služieb na základe žiadosti.',
+  },
+  {
+    q: 'Aký je rozdiel medzi vlastnou frekvenciou a vstupom do verejnej siete?',
+    a: 'Pri vlastnej frekvencii ste držiteľom povolenia a prevádzkujete vlastnú infraštruktúru. Pri vstupe do hromadnej (verejnej) siete využívate retranslačnú stanicu prevádzkovateľa telekomunikačných služieb — rádiostanice môžete začať používať okamžite, bez budovania vlastnej siete.',
+  },
+  {
+    q: 'Postaráte sa aj o legislatívu a povolenia?',
+    a: 'Áno. Pre zákazníkov zabezpečujeme kompletnú legislatívu od pridelenia prevádzkových frekvencií až po získanie stavebného povolenia a kolaudačného rozhodnutia.',
+  },
+  {
+    q: 'Dá sa komunikácia zabezpečiť proti odpočúvaniu?',
+    a: 'Áno. Pri použití selektívnej voľby sa navzájom počujú iba vybraní účastníci a v prípade potreby je možné rádiostanice doplniť o utajovače komunikácie s rôznymi stupňami ochrany.',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/radiokomunikacie">← Rádiokomunikácie</a></p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Rádiové siete</h1>
+
+    <div class="grid items-center gap-8 lg:gap-10 lg:grid-cols-5 mb-12">
+      <p class="text-lg text-muted lg:col-span-3">
+        Rádiová sieť je nevyhnutná všade tam, kde potrebuje komunikovať viacero osôb na malú alebo veľkú vzdialenosť. Pre
+        mnoho firiem je komunikácia cez rádiostanice neoddeliteľnou súčasťou prevádzky. Navrhneme, naprojektujeme a
+        zrealizujeme sieť presne podľa vašich potrieb a možností regulačného úradu.
+      </p>
+      <Image
+        src={heroDigitalizacia}
+        alt="Digitalizácia rádiovej siete — prechod z analógovej na digitálnu komunikáciu"
+        widths={[400, 600, 768]}
+        sizes="(max-width: 1023px) 100vw, 40vw"
+        loading="eager"
+        class="w-full rounded-2xl object-cover shadow-sm lg:col-span-2"
+      />
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+      <h2>Kedy sa oplatí vlastná rádiová sieť</h2>
+      <p>
+        Kým pre spojenie dvoch osôb na veľkú vzdialenosť môže stačiť verejný mobilný operátor, pre celý rad
+        komunikačných potrieb je výhodnejšia nezávislá rádiová komunikácia. Jej hlavné prednosti:
+      </p>
+      <ul>
+        <li>nízke prevádzkové náklady bez ohľadu na intenzitu komunikácie,</li>
+        <li>nezávislosť od iných komunikačných zariadení a verejných sietí,</li>
+        <li>budovanie infraštruktúry siete podľa prevádzkových potrieb používateľa,</li>
+        <li>dispečerské riadenie — dispečer oslovuje jednotlivcov alebo celé skupiny,</li>
+        <li>otvorená komunikácia v skupine aj individuálna komunikácia vybraných účastníkov,</li>
+        <li>spojenie v podzemných, uzavretých alebo výbušných priestoroch (vybrané typy rádiostaníc),</li>
+        <li>dostatočná hlasitosť a odolnosť pri práci v hlučnom a priemyselnom prostredí.</li>
+      </ul>
+
+      <h2>Druhy prevádzky podľa frekvencií</h2>
+      <p>
+        Rádiovú komunikáciu možno podľa použitých frekvencií a spôsobu prevádzky rozdeliť do niekoľkých skupín:
+      </p>
+      <ul>
+        <li>
+          <strong>Voľné frekvencie (PMR).</strong> Na základe všeobecného (generálneho) povolenia môžu fyzické aj
+          právnické osoby komunikovať na vybraných frekvenciách v pásme 446 MHz, bez pridelenia frekvencií a bez
+          poplatkov, s maximálnym výkonom 0,5 W. Nevýhodou je malý dosah a neobmedzený počet ďalších používateľov v
+          lokalite.
+        </li>
+        <li>
+          <strong>Spoločné frekvencie.</strong> Prevádzka na niekoľkých vybraných frekvenciách s obmedzením výkonu (1;
+          2,5 alebo 5 W) pre mobilné prostriedky. Frekvencie prideľuje regulačný úrad pre konkrétne územie; výška
+          poplatku závisí od počtu rádiostaníc a rozsahu územia.
+        </li>
+        <li>
+          <strong>Vlastná frekvencia.</strong> Frekvencie pridelené priamo používateľovi pre danú lokalitu s
+          podmienkami na vyžiarený výkon a umiestnenie antén. Vyššou formou je retranslačná stanica na vyvýšenom mieste,
+          ktorá automaticky sprostredkuje komunikáciu pre ostatné rádiostanice.
+        </li>
+        <li>
+          <strong>Vstup do hromadnej (verejnej) siete.</strong> Prevádzka cez retranslačnú stanicu prevádzkovateľa s
+          povolením na telekomunikačné služby. Vhodné pre firmy, ktoré nechcú alebo nemôžu budovať vlastnú sieť —
+          rádiostanice je možné nasadiť okamžite na základe zmluvy.
+        </li>
+      </ul>
+
+      <h2>Typy sietí podľa spôsobu prevádzky</h2>
+      <ul>
+        <li>
+          <strong>Zväzkové (trunkové) siete</strong> — pre veľké množstvo hovorových skupín na menšom území. Systém
+          automaticky prideľuje voľnú frekvenciu vybranej skupine; umožňuje individuálnu aj skupinovú komunikáciu.
+        </li>
+        <li>
+          <strong>Plošné siete</strong> — vzájomným prepojením a synchronizáciou viacerých retranslačných staníc sa
+          pokryje väčšie územie; vhodné pre firmy s rozsiahlym územím.
+        </li>
+        <li>
+          <strong>Líniové siete</strong> — prepojenie retranslačných staníc v línii pre pokrytie dlhého územia.
+        </li>
+      </ul>
+
+      <h2>Návrh, projektovanie a realizácia</h2>
+      <p>
+        Návrhy rádiových sietí spracovávame na základe vašich požiadaviek, našich skúseností a konzultácií s regulačným
+        úradom. Pri spracovaní využívame geografické merania pomocou GPS, merania šírenia rádiového signálu, digitálny
+        model terénu, výpočty intermodulačných produktov a dlhoročnú spoluprácu s úradom.
+      </p>
+      <p>Pre siete väčšieho rozsahu zabezpečíme kompletnú dokumentáciu (v rozsahu podľa sadzobníka UNIKA):</p>
+      <ul>
+        <li>projektová dokumentácia pre územné a stavebné rozhodnutie,</li>
+        <li>realizačná projektová dokumentácia a dokumentácia skutkového stavu,</li>
+        <li>vyjadrenia dotknutých osôb a organizácií,</li>
+        <li>získanie stavebného povolenia a kolaudačného rozhodnutia.</li>
+      </ul>
+      <p>
+        Realizáciu rádiových sietí vykonávame na kľúč a poskytujeme záručný aj pozáručný servis prostredníctvom
+        vyškolených servisných skupín. Pre kratšie obdobie alebo bez vstupnej investície ponúkame aj prenájom rádiovej
+        siete.
+      </p>
+
+      <h2>Legislatíva</h2>
+      <p>
+        Vysielacie rádiové frekvencie je v zmysle Zákona o elektronických komunikáciách č. 351/2011 Z. z. v znení
+        neskorších predpisov možné používať len na základe všeobecného povolenia na používanie frekvencií alebo na
+        základe individuálneho povolenia na používanie frekvencií. Na základe vašich potrieb, finančných možností a
+        možností regulačného úradu pre pridelenie frekvencií vám odporučíme najvhodnejší spôsob komunikácie.
+      </p>
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Časté otázky</h2>
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 p-5">
+            <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
+              {faq.q}
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="text-muted mt-3">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Potrebujete spoľahlivú rádiovú sieť?</h2>
+      <p class="text-muted mb-6 max-w-xl mx-auto">
+        Navrhneme riešenie na mieru — od výberu spôsobu komunikácie po realizáciu a servis.
+      </p>
+      <a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+    </div>
+  </section>
+</Layout>

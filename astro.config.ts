@@ -26,6 +26,14 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 export default defineConfig({
   output: 'static',
 
+  redirects: {
+    // Pozdravy riaditeľa presunuté z Energetiky do Rádiokomunikácií.
+    '/energetika/blog/radiova-siet-funguje-v-akom-je-stave': {
+      status: 301,
+      destination: '/radiokomunikacie/newsletter/radiova-siet-funguje-v-akom-je-stave',
+    },
+  },
+
   integrations: [
     sitemap(),
     mdx(),

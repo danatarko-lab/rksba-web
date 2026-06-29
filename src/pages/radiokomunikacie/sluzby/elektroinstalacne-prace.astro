@@ -1,0 +1,108 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+import heroElektro from '~/assets/images/radiokomunikacie/stavba-r5-3.webp';
+
+const metadata = {
+  title: 'Elektroinštalačné práce — RKS',
+  description:
+    'Elektroinštalačné práce do 1000 V — silnoprúdové, dátové a slaboprúdové rozvody, bleskozvody, prepäťová ochrana, rozvody EPS, kamerových a rozhlasových systémov.',
+};
+
+const faqs = [
+  {
+    q: 'Aké elektroinštalačné práce vykonávate?',
+    a: 'Realizujeme elektroinštalačné práce do 1000 V — silnoprúdové, dátové aj slaboprúdové rozvody, identifikáciu a opravy inštalácií, rekonštrukcie elektroinštalácie a rozvádzačov, montáž bleskozvodov a prepäťovej ochrany.',
+  },
+  {
+    q: 'Robíte aj slaboprúdové a dátové rozvody?',
+    a: 'Áno. Montujeme metalické aj optické slaboprúdové rozvody, dátové a telefónne rozvody, rozvody pre ochranu objektov, kamerové systémy, evakuačné a domáce rozhlasy, rozvody EPS aj analógové koaxiálne VF rozvody.',
+  },
+  {
+    q: 'Prepojíte elektroinštaláciu s rádiovými a varovnými systémami?',
+    a: 'Áno. Pri komplexných dodávkach rádiových sietí a systémov VAR-VYR dbáme na správne prepojenie všetkých systémov a zohľadnenie ich nárokov do jedného funkčného celku spoločne s elektroinštaláciou.',
+  },
+  {
+    q: 'Máte potrebné oprávnenia?',
+    a: 'Áno. Práca a návrh systémov elektroinštalácie si vyžadujú splnené legislatívne predpoklady a oprávnenia — tejto oblasti venujeme osobitnú pozornosť.',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/radiokomunikacie">← Rádiokomunikácie</a></p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Elektroinštalačné práce</h1>
+
+    <div class="grid items-center gap-8 lg:gap-10 lg:grid-cols-5 mb-12">
+      <p class="text-lg text-muted lg:col-span-3">
+        Elektrická inštalácia je neoddeliteľnou súčasťou každej stavby už pri jej vzniku. Jej prevedenie a správne
+        nadimenzovanie prvkov a vedení má priamy vplyv na komfort užívania objektu, jeho bezpečnosť aj na celkové
+        hodnotenie kvality stavby.
+      </p>
+      <div class="lg:col-span-2 aspect-[3/4] overflow-hidden rounded-2xl shadow-sm">
+        <Image
+          src={heroElektro}
+          alt="Pracovník s rádiostanicou pri elektroinštalačných prácach na stavbe"
+          widths={[400, 600, 768]}
+          sizes="(max-width: 1023px) 100vw, 40vw"
+          loading="eager"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+      <h2>Komplexná realizácia inštalácie</h2>
+      <p>
+        Elektrická inštalácia väčšiny objektov pozostáva z vnútorných silnoprúdových rozvodov, vnútorných dátových
+        rozvodov a vonkajších rozvodov. Komplexná realizácia často zahŕňa aj prekládky rôznych vedení NN či telefónnych
+        káblov, ktoré bránia vo výstavbe. Vhodnou koordináciou projektu dosiahneme optimálne rozloženie prípojných bodov,
+        rozvodných skríň a rozvádzačov tak, aby boli rozvody pripravené aj na budúce rozšírenia.
+      </p>
+
+      <h2>Čo ponúkame</h2>
+      <ul>
+        <li>elektroinštalačné práce do 1000 V,</li>
+        <li>identifikácia a opravy elektrickej inštalácie,</li>
+        <li>rekonštrukcie elektroinštalácie a rozvádzačov,</li>
+        <li>montáž bleskozvodov,</li>
+        <li>ochrana elektrických sietí a zariadení pred prepätím vzniknutým atmosférickými výbojmi,</li>
+        <li>montáž slaboprúdových rozvodov (metalické, optické),</li>
+        <li>montáž dátových a telefónnych rozvodov,</li>
+        <li>montáž rozvodov pre ochranu objektov, kamerové systémy, evakuačné a domáce rozhlasy,</li>
+        <li>montáž rozvodov EPS (elektrická požiarna signalizácia),</li>
+        <li>montáž analógových koaxiálnych VF rozvodov.</li>
+      </ul>
+
+      <h2>Súčasť funkčného celku</h2>
+      <p>
+        Pri projektovaní inštalácií je nutná znalosť a kooperácia s dodávateľmi technológií, ktoré priamo nadväzujú na
+        rozvody napájania. Pri návrhu využívame vlastné kapacity projektantov, ktorí sledujú najnovšie trendy aj
+        legislatívne normy. Pri komplexných dodávkach rádiových sietí a systémov VAR-VYR dbáme na správne prepojenie
+        všetkých systémov do jedného funkčného celku spoločne s elektroinštaláciou.
+      </p>
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Časté otázky</h2>
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 p-5">
+            <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
+              {faq.q}
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="text-muted mt-3">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Plánujete elektroinštaláciu alebo rekonštrukciu?</h2>
+      <p class="text-muted mb-6 max-w-xl mx-auto">Zrealizujeme silnoprúdové aj slaboprúdové rozvody na kľúč.</p>
+      <a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+    </div>
+  </section>
+</Layout>

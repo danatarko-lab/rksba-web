@@ -1,182 +1,124 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
     {
-      text: 'Homes',
+      text: 'Rádiokomunikácie',
+      href: getPermalink('/radiokomunikacie'),
       links: [
         {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
+          text: 'Služby',
+          links: [
+            { text: 'Základné informácie', href: getPermalink('/radiokomunikacie/sluzby/zakladne-informacie') },
+            { text: 'Servis rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/servis-radiostanic') },
+            { text: 'Prenájom rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/prenajom-radiostanic') },
+            { text: 'Návrh rádiových sietí', href: getPermalink('/radiokomunikacie/sluzby/navrh-radiovych-sieti') },
+            { text: 'Návrh autonómnych systémov', href: getPermalink('/radiokomunikacie/sluzby/navrh-autonomnych-systemov') },
+            {
+              text: 'Projekty elektrických zariadení',
+              href: getPermalink('/radiokomunikacie/sluzby/projekty-elektrickych-zariadeni'),
+            },
+            { text: 'Elektroinštalačné práce', href: getPermalink('/radiokomunikacie/sluzby/elektroinstalacne-prace') },
+            { text: 'Digitálny systém MOTOTRBO', href: getPermalink('/radiokomunikacie/sluzby/digitalny-system-mototrbo') },
+            { text: 'Audit sietí', href: getPermalink('/radiokomunikacie/sluzby/audit-sieti') },
+            { text: 'Digitalizácia sietí', href: getPermalink('/radiokomunikacie/sluzby/digitalizacia-sieti') },
+          ],
         },
         {
-          text: 'Startup',
-          href: getPermalink('/homes/startup'),
+          text: 'Systémové riešenia',
+          links: [
+            { text: 'Rádiové siete', href: getPermalink('/radiokomunikacie/systemove-riesenia/radiove-siete') },
+            {
+              text: 'Autonómne systémy varovania',
+              href: getPermalink('/radiokomunikacie/systemove-riesenia/autonomne-systemy-varovania'),
+            },
+            { text: 'Evakuačný rozhlas a ozvučenie', href: getPermalink('/radiokomunikacie/systemove-riesenia/evakuacny-rozhlas') },
+          ],
         },
         {
-          text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
+          text: 'Produkty',
+          links: [{ text: 'Mototrbo', href: getPermalink('/radiokomunikacie/produkty/mototrbo') }],
         },
         {
-          text: 'Personal',
-          href: getPermalink('/homes/personal'),
+          text: 'Aktuality',
+          links: [
+            { text: '„Potvrďte príjem" (Newsletter)', href: getPermalink('/radiokomunikacie/newsletter') },
+            { text: 'Q&A (Rádio)', href: getPermalink('/radiokomunikacie/q-a') },
+            { text: 'Prípadové štúdie', href: getPermalink('/radiokomunikacie/pripadove-studie') },
+          ],
         },
       ],
     },
     {
-      text: 'Pages',
+      text: 'Energetika',
+      href: getPermalink('/energetika'),
       links: [
-        {
-          text: 'Features (Anchor Link)',
-          href: getPermalink('/#features'),
-        },
-        {
-          text: 'Services',
-          href: getPermalink('/services'),
-        },
-        {
-          text: 'Pricing',
-          href: getPermalink('/pricing'),
-        },
-        {
-          text: 'About us',
-          href: getPermalink('/about'),
-        },
-        {
-          text: 'Contact',
-          href: getPermalink('/contact'),
-        },
-        {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
-        },
+        { text: 'Energy Management (EMS)', href: getPermalink('/energetika/energy-management') },
+        { text: 'Fotovoltika (FVE)', href: getPermalink('/energetika/fotovoltika') },
+        { text: 'Batérie (BESS)', href: getPermalink('/energetika/baterie-bess') },
+        { text: 'EV nabíjačky', href: getPermalink('/energetika/ev-nabijacky') },
+        { text: 'Smart building', href: getPermalink('/energetika/smart-building') },
+        // — obsah —
+        { text: 'Blog', href: getPermalink('/energetika/blog') },
+        { text: 'Q&A (Energetika)', href: getPermalink('/energetika/q-a') },
+        { text: 'Prípadové štúdie', href: getPermalink('/energetika/pripadove-studie') },
       ],
     },
-    {
-      text: 'Landing',
-      links: [
-        {
-          text: 'Lead Generation',
-          href: getPermalink('/landing/lead-generation'),
-        },
-        {
-          text: 'Long-form Sales',
-          href: getPermalink('/landing/sales'),
-        },
-        {
-          text: 'Click-Through',
-          href: getPermalink('/landing/click-through'),
-        },
-        {
-          text: 'Product Details (or Services)',
-          href: getPermalink('/landing/product'),
-        },
-        {
-          text: 'Coming Soon or Pre-Launch',
-          href: getPermalink('/landing/pre-launch'),
-        },
-        {
-          text: 'Subscription',
-          href: getPermalink('/landing/subscription'),
-        },
-      ],
-    },
-    {
-      text: 'Blog',
-      links: [
-        {
-          text: 'Blog List',
-          href: getBlogPermalink(),
-        },
-        {
-          text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
-        },
-        {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
-        },
-      ],
-    },
-    {
-      text: 'Widgets',
-      href: '#',
-    },
+    { text: 'Aktuality', href: getPermalink('/aktuality') },
+    { text: 'Kontakt', href: getPermalink('/kontakt') },
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/arthelokyo/astrowind', target: '_blank' }],
+  // TODO: po dodaní Calendly URL nahradiť href Calendly odkazom
+  actions: [{ text: 'Dohodnúť nezáväznú konzultáciu', href: getPermalink('/kontakt'), variant: 'primary' }],
 };
 
 export const footerData = {
+  address: [
+    'Sídlo: Rajecká 36, 821 07 Bratislava',
+    'Prevádzka: Vajnorská 6A, 900 28 Ivanka pri Dunaji',
+    'IČO: 30841275 · DIČ: 2020328398',
+    'IČ DPH: SK2020328398',
+    'OR: Mestský súd Bratislava III',
+    'IBAN: SK17 1100 0000 0026 2802 1295',
+  ],
   links: [
     {
-      title: 'Product',
+      title: 'Rádiokomunikácie',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
+        { text: 'Rádiové siete', href: getPermalink('/radiokomunikacie/systemove-riesenia/radiove-siete') },
+        {
+          text: 'Autonómne systémy varovania',
+          href: getPermalink('/radiokomunikacie/systemove-riesenia/autonomne-systemy-varovania'),
+        },
+        { text: 'Evakuačný rozhlas', href: getPermalink('/radiokomunikacie/systemove-riesenia/evakuacny-rozhlas') },
+        { text: 'Mototrbo', href: getPermalink('/radiokomunikacie/produkty/mototrbo') },
+        { text: 'Servis rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/servis-radiostanic') },
+        { text: '„Potvrďte príjem"', href: getPermalink('/radiokomunikacie/newsletter') },
+        { text: 'Prípadové štúdie', href: getPermalink('/radiokomunikacie/pripadove-studie') },
       ],
     },
     {
-      title: 'Platform',
+      title: 'Energetika',
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
+        { text: 'Energy Management', href: getPermalink('/energetika/energy-management') },
+        { text: 'Fotovoltika', href: getPermalink('/energetika/fotovoltika') },
+        { text: 'Batérie BESS', href: getPermalink('/energetika/baterie-bess') },
+        { text: 'EV nabíjačky', href: getPermalink('/energetika/ev-nabijacky') },
+        { text: 'Smart building', href: getPermalink('/energetika/smart-building') },
+        { text: 'Blog', href: getPermalink('/energetika/blog') },
+        { text: 'Prípadové štúdie', href: getPermalink('/energetika/pripadove-studie') },
       ],
     },
     {
-      title: 'Support',
+      title: 'Kontakt',
       links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
-      ],
-    },
-    {
-      title: 'Company',
-      links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        { text: '+421 903 717 634', href: 'tel:+421903717634' },
+        { text: 'rks@rksba.sk', href: 'mailto:rks@rksba.sk' },
+        { text: 'Po–Pi: 08:00 – 16:30', href: getPermalink('/kontakt') },
+        { text: 'Dohodnúť nezáväznú konzultáciu', href: getPermalink('/kontakt'), class: 'btn-primary text-sm mt-2 inline-flex' },
       ],
     },
   ],
-  secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
-  ],
-  socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/arthelokyo/astrowind' },
-  ],
-  footNote: `
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://github.com/arthelokyo"> Arthelokyo</a> · All rights reserved.
-  `,
+  secondaryLinks: [],
+  socialLinks: [],
+  footNote: `© RKS 2026 · <a class="hover:underline" href="${getPermalink('/q-a')}">Q&A</a> · <a class="hover:underline" href="${getPermalink('/ochrana-osobnych-udajov')}">Ochrana osobných údajov</a> · <a class="hover:underline" href="${getPermalink('/mapa-stranky')}">Mapa stránky</a>`,
 };

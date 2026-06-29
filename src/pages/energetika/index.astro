@@ -1,0 +1,32 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = { title: 'Energetika — RKS' };
+
+const services = [
+  { title: 'Energy Management (EMS)', desc: 'Riadenie a optimalizácia spotreby energie.', href: '/energetika/energy-management' },
+  { title: 'Fotovoltika (FVE)', desc: 'Návrh a realizácia fotovoltických elektrární.', href: '/energetika/fotovoltika' },
+  { title: 'Batérie (BESS)', desc: 'Batériové úložiská a peak shaving.', href: '/energetika/baterie-bess' },
+  { title: 'EV nabíjačky', desc: 'Nabíjacia infraštruktúra pre firmy.', href: '/energetika/ev-nabijacky' },
+  { title: 'Smart building', desc: 'Automatizácia budov (Loxone).', href: '/energetika/smart-building' },
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Energetika</h1>
+    <p class="text-lg text-muted max-w-2xl mb-10">
+      Energetika pre komerčné prevádzky — znížte spotrebu o 10 až 30 %, získajte prehľad, kontrolu a ROI. [placeholder]
+    </p>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        services.map((s) => (
+          <a href={s.href} class="block rounded-xl border border-gray-200 p-6 transition hover:border-primary">
+            <h2 class="text-xl font-semibold mb-2">{s.title}</h2>
+            <p class="text-sm text-muted">{s.desc}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,27 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+import heroMototrbo from '~/assets/images/radiokomunikacie/battery-impres-07.webp';
+
+const metadata = { title: 'Digitálny systém MOTOTRBO — RKS' };
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/radiokomunikacie">← Rádiokomunikácie</a></p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Digitálny systém MOTOTRBO</h1>
+    <div class="grid items-center gap-8 lg:gap-10 lg:grid-cols-5 mb-12">
+      <p class="text-lg text-muted lg:col-span-3">Obsah dorobíme.</p>
+      <div class="lg:col-span-2 aspect-[4/3] overflow-hidden rounded-2xl shadow-sm">
+        <Image
+          src={heroMototrbo}
+          alt="Digitálne rádiostanice Motorola MOTOTRBO"
+          widths={[400, 600, 768]}
+          sizes="(max-width: 1023px) 100vw, 40vw"
+          loading="eager"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
+</Layout>
