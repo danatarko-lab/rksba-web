@@ -47,14 +47,36 @@ const why = [
 ---
 
 <Layout metadata={metadata}>
-  <!-- SEKCIA 1 — HERO -->
-  <section class="mx-auto max-w-5xl px-4 sm:px-6 pt-12 pb-8 md:pt-20 md:pb-12 text-center">
-    <p class="text-sm font-medium uppercase tracking-wider text-primary mb-3">
-      Slovenská technologická firma od 1991
-    </p>
-    <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-balance">
-      30 rokov technológií pre slovenský B2B trh
-    </h1>
+  <!-- SEKCIA 1 — HERO (video pozadie) -->
+  <section class="relative isolate overflow-hidden">
+    <!-- video pozadie -->
+    <video
+      class="absolute inset-0 -z-10 h-full w-full object-cover"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="/videos/rks-hero-poster-opt.jpg"
+      aria-hidden="true"
+      tabindex="-1"
+    >
+      <source src="/videos/rks-hero.mp4" type="video/mp4" />
+    </video>
+    <!-- tmavý overlay pre čitateľnosť bieleho textu -->
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/55 via-black/45 to-black/65"></div>
+
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 py-24 md:py-36 text-center">
+      <p class="text-sm font-medium uppercase tracking-wider text-white/90 mb-3">
+        Slovenská technologická firma od 1991
+      </p>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-balance text-white drop-shadow-lg">
+        30 rokov technológií pre slovenský B2B trh
+      </h1>
+      <div class="mt-8">
+        <a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+      </div>
+    </div>
   </section>
 
   <!-- SEKCIA 2 — 4 ŠTVORCOVÉ KARTY -->
