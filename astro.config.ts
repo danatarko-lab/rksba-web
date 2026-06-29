@@ -32,6 +32,11 @@ export default defineConfig({
       status: 301,
       destination: '/radiokomunikacie/newsletter/radiova-siet-funguje-v-akom-je-stave',
     },
+    // Prípadové štúdie rádiokomunikácií žijú na vlastnej RKS stránke mototrbo.sk.
+    '/radiokomunikacie/pripadove-studie': {
+      status: 301,
+      destination: 'https://mototrbo.sk/pripadove-studie',
+    },
   },
 
   integrations: [
