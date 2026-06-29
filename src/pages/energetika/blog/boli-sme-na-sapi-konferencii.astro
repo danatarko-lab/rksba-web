@@ -1,0 +1,98 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Zúčastnili sme sa na SAPI konferencii — RKS',
+  description:
+    'Tri zistenia zo SAPI konferencie v Senci: limitom nie je počet panelov, ale sieť; batéria je srdce ekonomiky; rozhodujú dáta. Čo to znamená pre slovenské firmy.',
+};
+
+const post = {
+  title: 'Zúčastnili sme sa na SAPI konferencii',
+  date: '1. 6. 2026',
+};
+---
+
+<Layout metadata={metadata}>
+  <div class="bg-gradient-to-br from-[#0b1b3a] via-[#13234d] to-primary text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-14 md:py-20">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-5">Blog · Energetika</p>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight">{post.title}</h1>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+    <p class="text-sm text-muted mb-8"><a class="hover:underline" href="/energetika/blog">← Blog</a></p>
+    <p class="text-sm text-muted pb-8 mb-10 border-b border-gray-200">{post.date}</p>
+
+    <p class="text-lg italic border-l-4 border-primary bg-primary/5 rounded-r-lg p-4 mb-8">
+      Dva dni na konferencii SAPI (Slovenská asociácia udržateľnej energetiky) v Senci nás utvrdili v jednom — najväčšou
+      výzvou slovenskej energetiky nie je vyrobiť čistú elektrinu, ale dostať ju cez sieť do správneho miesta a v správnom
+      čase. A presne tam sa rozhoduje o tom, koľko firma za energiu naozaj zaplatí.
+    </p>
+
+    <div class="prose prose-lg max-w-none">
+      <p>
+        Strávili sme dva dni na 16. ročníku konferencie SAPI v Senci. Počúvali sme distribútorov, regulátora,
+        prevádzkovateľov sietí aj firmy, ktoré transformáciu reálne stavajú. Tu sú tri veci, ktoré sme si odniesli.
+      </p>
+
+      <h2>Limitom už nie je počet panelov, ale sila siete</h2>
+      <p>
+        Zaznelo to z viacerých strán: technicky vieme vyrobiť čistú elektrinu lacno — marginálne náklady slnka a vetra sú
+        prakticky nulové. Problém je sieť. Podiel nestabilných zdrojov v Európe už presiahol 55 % a blíži sa k hranici, za
+        ktorou sa stráca stabilita sústavy. Západoslovenská distribučná to ukázala na jednoduchej simulácii: čím menej
+        stabilného výkonu v sústave, tým exponenciálne viac fotovoltiky a batérií treba na jej vyváženie.
+      </p>
+      <p>
+        Dôsledok pre firmy je jasný. Projekt „na zelenej lúke" naráža na fyzikálne limity — kapacitu drôtov a
+        transformátorov. Ale ako zaznelo na paneli o integrácii OZE: ak nasýtite vlastnú spotrebu priamo v mieste a
+        neprenášate nestabilitu do siete, s pripojením problém mať nebudete. Inak povedané: vlastná spotreba v areáli je
+        dnes najmenej trecia a najrýchlejšia cesta.
+      </p>
+      <p>
+        Mimochodom, pekné krédo distribútora, ktoré na konferencii zožalo potlesk: „Je to mapa pripojiteľnosti, nie mapa
+        nepripojiteľnosti." Mapy voľnej kapacity sú na Slovensku po novom online a verejné — dobrá správa pre každého, kto
+        plánuje investíciu.
+      </p>
+
+      <h2>Batéria už nie je doplnok, ale srdce ekonomiky</h2>
+      <p>
+        Slovenský trh priniesol ceny až mínus 500 eur za MWh — výroba bola vysoká, dopyt nízky. To nie je anomália, to je
+        nová normálnosť. A práve preto má batéria zmysel: lacnú slnečnú elektrinu cez deň uloží a využije vtedy, keď je
+        drahá. Z úložiska sa stáva nástroj, ktorý zároveň stabilizuje aj šetrí.
+      </p>
+      <p>
+        Fotovoltika bez batérie a bez riadenia spotreby tak postupne stráca ekonomiku. Otázka pre firmy už nie je „koľko
+        panelov", ale „koľko z vyrobenej energie reálne využijem".
+      </p>
+
+      <h2>Platí „najprv dáta, potom technológia" — a platí to pre celú sústavu</h2>
+      <p>
+        Toto bol pre nás najsilnejší moment, lebo je to presne prístup, s ktorým k firmám chodíme. Distribučné spoločnosti
+        dnes „vidia" sieť cez stovky tisíc meracích bodov — bez dát sa nedá nič riadiť, nieto obchodovať s flexibilitou.
+        Smart meter nie je cieľ, je to len enabler. To isté platí na úrovni jednej firmy: bez profilu spotreby je každá
+        investícia do batérie alebo fotovoltiky len drahý odhad.
+      </p>
+      <p>
+        A ešte jedna myšlienka, ktorá rezonovala naprieč panelmi: najväčšou brzdou transformácie nie je technológia, ale
+        predvídateľnosť pravidiel. Technicky vieme takmer všetko. Čo chýba, je stabilné prostredie a jasná vízia — lebo
+        práve od nej závisí návratnosť investícií firiem.
+      </p>
+
+      <h2>Náš záver</h2>
+      <p>
+        Energetika sa nevyhráva nákupom technológie, ale pochopením vlastnej spotreby. Preto vo firmách nezačíname
+        predajom batérie ani panelov, ale dátami. Až tie ukážu, čo má naozaj zmysel.
+      </p>
+    </div>
+
+    <div class="mt-12 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+      <p class="text-muted mb-6 max-w-xl mx-auto">
+        Ak vás zaujíma, kde vo vašej prevádzke uniká hodnota a či dáva zmysel fotovoltika, batéria alebo riadenie spotreby
+        — ozvite sa nám na nezáväznú konzultáciu.
+      </p>
+      <a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+    </div>
+  </article>
+</Layout>
