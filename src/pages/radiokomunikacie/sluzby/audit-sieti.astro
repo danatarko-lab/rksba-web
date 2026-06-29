@@ -3,15 +3,39 @@ import Layout from '~/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
 import heroAudit from '~/assets/images/radiokomunikacie/dispatcher-20.webp';
 
-const metadata = { title: 'Audit sietí — RKS' };
+const metadata = {
+  title: 'Audit rádiových sietí — analýza a modernizácia — RKS',
+  description:
+    'Profesionálny audit rádiových sietí, rádiostaníc a komunikačnej infraštruktúry. Posúdime technický stav, pokrytie, bezpečnosť aj možnosti modernizácie. Výstupom je správa s odporúčaniami.',
+};
+
+const faqs = [
+  {
+    q: 'Ako dlho audit trvá?',
+    a: 'Podľa veľkosti siete od jedného dňa po niekoľko dní.',
+  },
+  {
+    q: 'Musíme po audite meniť všetky zariadenia?',
+    a: 'Nie. Cieľom je navrhnúť ekonomicky najvýhodnejšie riešenie — funkčné zariadenia spravidla zachováme.',
+  },
+  {
+    q: 'Dostaneme písomnú správu?',
+    a: 'Áno. Audit končí podrobnou správou s odporúčaniami.',
+  },
+];
 ---
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
     <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/radiokomunikacie">← Rádiokomunikácie</a></p>
-    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Audit sietí</h1>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Audit rádiových sietí</h1>
+
     <div class="grid items-center gap-8 lg:gap-10 lg:grid-cols-5 mb-12">
-      <p class="text-lg text-muted lg:col-span-3">Obsah dorobíme.</p>
+      <p class="text-lg text-muted lg:col-span-3">
+        To, že komunikačný systém dnes funguje, ešte neznamená, že poznáte jeho skutočný stav. Audit rádiovej siete dá
+        objektívny obraz o technickom stave zariadení, kvalite pokrytia, bezpečnosti komunikácie a možnostiach rozvoja —
+        s konkrétnymi odporúčaniami, ktoré znižujú prevádzkové riziká.
+      </p>
       <div class="lg:col-span-2 aspect-[4/3] overflow-hidden rounded-2xl shadow-sm">
         <Image
           src={heroAudit}
@@ -22,6 +46,52 @@ const metadata = { title: 'Audit sietí — RKS' };
           class="w-full h-full object-cover"
         />
       </div>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+      <h2>Čo audit zahŕňa</h2>
+      <ul>
+        <li>kontrola rádiostaníc a príslušenstva,</li>
+        <li>meranie technických parametrov,</li>
+        <li>analýza pokrytia signálom,</li>
+        <li>preverenie konfigurácie siete,</li>
+        <li>kontrola frekvenčných povolení,</li>
+        <li>návrh modernizácie a odporúčanie ďalšieho postupu.</li>
+      </ul>
+
+      <h2>Kedy audit odporúčame</h2>
+      <p>
+        Pri výpadkoch komunikácie, nedostatočnom pokrytí, zastaraných zariadeniach, plánovanej modernizácii, rozšírení
+        prevádzky, zvýšených bezpečnostných požiadavkách alebo pred zavedením digitálnej komunikácie.
+      </p>
+
+      <h2>Výstup auditu</h2>
+      <p>
+        Prehľadná technická správa: technický stav siete, identifikované riziká, odporúčané opatrenia, návrh
+        modernizácie a orientačné priority investícií. Cieľom nie je vymeniť všetko — ale navrhnúť ekonomicky
+        najvýhodnejšie riešenie.
+      </p>
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Časté otázky</h2>
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 p-5">
+            <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
+              {faq.q}
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="text-muted mt-3">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Neviete, v akom stave je vaša rádiová sieť?</h2>
+      <p class="text-muted mb-6 max-w-xl mx-auto">Objednajte si odborný audit a získajte nezávislé odporúčania.</p>
+      <a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
     </div>
   </section>
 </Layout>

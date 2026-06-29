@@ -3,15 +3,39 @@ import Layout from '~/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
 import heroMototrbo from '~/assets/images/radiokomunikacie/battery-impres-07.webp';
 
-const metadata = { title: 'Digitálny systém MOTOTRBO — RKS' };
+const metadata = {
+  title: 'Digitálny systém MOTOTRBO — profesionálne DMR rádiové siete — RKS',
+  description:
+    'Digitálny systém Motorola MOTOTRBO: spoľahlivá hlasová komunikácia, GPS lokalizácia, šifrovanie, dispečing a správa rádiových sietí pre firmy a organizácie. Návrh, dodávka, konfigurácia, servis.',
+};
+
+const faqs = [
+  {
+    q: 'Čo je MOTOTRBO?',
+    a: 'Digitálny komunikačný systém Motorola na medzinárodnom štandarde DMR.',
+  },
+  {
+    q: 'Dá sa prejsť z analógu na MOTOTRBO?',
+    a: 'Áno. Modernizáciu možno realizovať postupne podľa potrieb organizácie.',
+  },
+  {
+    q: 'Dá sa komunikácia šifrovať?',
+    a: 'Áno. MOTOTRBO podporuje viac úrovní šifrovania.',
+  },
+];
 ---
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
     <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/radiokomunikacie">← Rádiokomunikácie</a></p>
     <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Digitálny systém MOTOTRBO</h1>
+
     <div class="grid items-center gap-8 lg:gap-10 lg:grid-cols-5 mb-12">
-      <p class="text-lg text-muted lg:col-span-3">Obsah dorobíme.</p>
+      <p class="text-lg text-muted lg:col-span-3">
+        MOTOTRBO je profesionálny digitálny rádiový systém na štandarde DMR (Digital Mobile Radio). Prináša spoľahlivú
+        komunikáciu, vysokú kvalitu zvuku, bezpečné šifrovanie a pokročilé funkcie, ktoré zefektívňujú každodennú
+        prevádzku. RKS riešenia MOTOTRBO navrhuje, dodáva, konfiguruje a servisuje — vrátane kompletnej infraštruktúry.
+      </p>
       <div class="lg:col-span-2 aspect-[4/3] overflow-hidden rounded-2xl shadow-sm">
         <Image
           src={heroMototrbo}
@@ -22,6 +46,53 @@ const metadata = { title: 'Digitálny systém MOTOTRBO — RKS' };
           class="w-full h-full object-cover"
         />
       </div>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+      <h2>Hlavné výhody systému MOTOTRBO</h2>
+      <ul>
+        <li>digitálna kvalita hlasu a vyššia kapacita siete,</li>
+        <li>GPS lokalizácia používateľov,</li>
+        <li>šifrovanie komunikácie,</li>
+        <li>skupinové aj individuálne hovory,</li>
+        <li>textové správy a telemetria,</li>
+        <li>vzdialená správa zariadení,</li>
+        <li>integrácia s dispečerským softvérom.</li>
+      </ul>
+
+      <h2>Kde sa MOTOTRBO využíva</h2>
+      <p>Výroba, energetika, logistika, doprava, letiská, bezpečnostné služby, priemyselné areály, mestá a obce.</p>
+
+      <h2>Prečo s RKS</h2>
+      <p>
+        Riešenia MOTOTRBO navrhujeme podľa reálnych prevádzkových potrieb zákazníka — zabezpečujeme projektovanie,
+        konfiguráciu, školenie používateľov aj dlhodobý servis. Dodávame, konfigurujeme a servisujeme systémy Motorola
+        MOTOTRBO.
+      </p>
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Časté otázky</h2>
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 p-5">
+            <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
+              {faq.q}
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="text-muted mt-3">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Zaujíma vás digitálny systém MOTOTRBO?</h2>
+      <p class="text-muted mb-6 max-w-xl mx-auto">
+        Pripravíme návrh riešenia pre vašu organizáciu. Pozrite si aj
+        <a class="text-primary hover:underline" href="/radiokomunikacie/produkty/mototrbo">konkrétne zariadenia a modely →</a>
+      </p>
+      <a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
     </div>
   </section>
 </Layout>

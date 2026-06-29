@@ -4,23 +4,23 @@ import { Image } from 'astro:assets';
 import heroServis from '~/assets/images/radiokomunikacie/service-05.webp';
 
 const metadata = {
-  title: 'Servis a oprava rádiostaníc — RKS',
+  title: 'Servis profesionálnych rádiostaníc Motorola, Midland, Vertex, Icom — RKS',
   description:
-    'Záručný aj pozáručný servis profesionálnych rádiostaníc Motorola, Midland, Vertex a Icom. Opravy, diagnostika, montáž aj servis sirén a rozhlasov.',
+    'Záručný aj pozáručný servis rádiostaníc Motorola, Midland, Vertex a Icom. Diagnostika, opravy, programovanie, montáž vozidlových zostáv aj servis sirén a rozhlasov.',
 };
 
 const faqs = [
   {
     q: 'Rádiostanice ktorých značiek servisujete?',
-    a: 'Ponúkame kompletný servis profesionálnych rádiostaníc značiek Motorola, Midland, Vertex a Icom.',
+    a: 'Motorola, Midland, Vertex a Icom — vrátane digitálnych systémov MOTOTRBO.',
   },
   {
     q: 'Musím mať na servis zmluvu?',
-    a: 'Nie nutne. Servis poskytujeme jednorazovo na základe objednávky, alebo je možné uzavrieť zmluvu o celoročnom poskytovaní servisných prác.',
+    a: 'Nie. Servis poskytujeme jednorazovo na objednávku, alebo na celoročnú servisnú zmluvu.',
   },
   {
     q: 'Servisujete aj sirény a rozhlasové ústredne?',
-    a: 'Áno. Zabezpečujeme montáž a servis elektronických sirén značiek Sircom, PSE, Ergatec a EVS, ako aj rozhlasových ústrední značky TOA.',
+    a: 'Áno. Elektronické sirény Sircom, PSE, Ergatec a EVS a rozhlasové ústredne TOA.',
   },
   {
     q: 'Sú ceny opráv vopred známe?',
@@ -36,9 +36,9 @@ const faqs = [
 
     <div class="grid items-center gap-8 lg:gap-10 lg:grid-cols-5 mb-12">
       <p class="text-lg text-muted lg:col-span-3">
-        Poskytujeme záručný aj pozáručný servis dodaných zariadení. Servisné práce zabezpečujú servisné skupiny s
-        pravidelne školenými technikmi a skúsenosťami z inštalácií veľkých zákaziek. Servis ponúkame jednorazovo aj na
-        základe celoročnej zmluvy.
+        Keď rádiostanica vypadne, stojí komunikácia — a často aj prevádzka. Poskytujeme záručný aj pozáručný servis
+        profesionálnych rádiostaníc, ktorý zabezpečujú servisné skupiny s pravidelne školenými technikmi a skúsenosťami
+        z veľkých inštalácií. Servis riešime jednorazovo aj na celoročnú zmluvu, s garantovanými cenami opráv vopred.
       </p>
       <div class="lg:col-span-2 aspect-[4/3] overflow-hidden rounded-2xl shadow-sm">
         <Image
@@ -53,29 +53,41 @@ const faqs = [
     </div>
 
     <div class="prose prose-lg max-w-none">
-      <h2>Servis profesionálnych rádiostaníc</h2>
-      <p>Pre rádiostanice Motorola, Midland, Vertex a Icom ponúkame:</p>
+      <h2>Servisované značky</h2>
+      <p>
+        Kompletný servis profesionálnych rádiostaníc značiek <strong>Motorola, Midland, Vertex a Icom</strong> — vrátane
+        digitálnych systémov Motorola MOTOTRBO.
+      </p>
+
+      <h2>Čo servis zahŕňa</h2>
       <ul>
-        <li>bežnú údržbu a inšpekčné prehliadky,</li>
-        <li>servisné a mechanické opravy vrátane expresných opráv,</li>
-        <li>diagnostiku a softvérové nastavenie parametrov,</li>
-        <li>montáž a demontáž vozidlových, základňových a retranslačných rádiostaníc,</li>
+        <li>bežná údržba a inšpekčné prehliadky,</li>
+        <li>servisné a mechanické opravy vrátane expresných,</li>
+        <li>diagnostika a softvérové nastavenie parametrov,</li>
+        <li>programovanie rádiostaníc a konfigurácia siete,</li>
+        <li>montáž a demontáž vozidlových, základňových a retranslačných staníc,</li>
         <li>predaj príslušenstva a doplnkov vrátane montáže.</li>
       </ul>
 
-      <h2>Montáž a servis sirén a rozhlasov</h2>
+      <h2>Servis sirén a rozhlasov</h2>
       <p>
-        Zabezpečujeme montáž a servis elektronických sirén značiek Sircom, PSE, Ergatec a EVS a rozhlasových ústrední
-        značky TOA — bežnú údržbu, inšpekčné prehliadky, servisné a mechanické opravy, montážne práce, diagnostiku a
-        softvérové nastavenie parametrov.
+        Okrem rádiostaníc zabezpečujeme montáž a servis elektronických sirén značiek
+        <strong>Sircom, PSE, Ergatec a EVS</strong> a rozhlasových ústrední značky <strong>TOA</strong> — údržbu,
+        prehliadky, opravy, diagnostiku aj softvérové nastavenie.
       </p>
 
       <h2>Ako servis funguje</h2>
       <p>
-        Servis môže byť poskytnutý jednorazovo na základe objednávky, alebo je možné uzavrieť zmluvu o celoročnom
-        poskytovaní servisných prác. Pri všetkých opravách platia garantované ceny opráv, príslušenstva a servisných
-        prác.
+        Servis poskytujeme jednorazovo na základe objednávky, alebo na základe zmluvy o celoročnom servise. Pri všetkých
+        opravách platia garantované ceny opráv, príslušenstva aj servisných prác — viete vopred, na čom ste.
       </p>
+
+      <h2>Výhody servisnej zmluvy</h2>
+      <ul>
+        <li>pravidelné kontroly a preventívna údržba,</li>
+        <li>prednostné a kratšie servisné termíny,</li>
+        <li>nižšie riziko neplánovaných výpadkov.</li>
+      </ul>
     </div>
 
     <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Časté otázky</h2>
@@ -95,7 +107,7 @@ const faqs = [
 
     <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
       <h2 class="text-xl md:text-2xl font-semibold mb-3">Potrebujete opraviť alebo zaservisovať techniku?</h2>
-      <p class="text-muted mb-6 max-w-xl mx-auto">Ozvite sa nám — dohodneme jednorazový servis alebo celoročnú zmluvu.</p>
+      <p class="text-muted mb-6 max-w-xl mx-auto">Dohodneme jednorazový servis alebo celoročnú zmluvu.</p>
       <a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
     </div>
   </section>

@@ -6,29 +6,25 @@ import heroEvakuacia from '~/assets/images/radiokomunikacie/evacuation-5.webp';
 const metadata = {
   title: 'Evakuačný rozhlas a ozvučenie objektov — RKS',
   description:
-    'Návrh a dodávka evakuačného rozhlasu a ozvučenia podľa noriem STN EN 60849 a EN 54. Pre haly, hotely, stanice a verejné objekty.',
+    'Návrh a dodávka evakuačného rozhlasu a ozvučenia podľa noriem STN EN 60849 a EN 54. Pre haly, hotely, stanice, školy a verejné objekty. S automatickou kontrolou zvukového reťazca.',
 };
 
 const faqs = [
   {
     q: 'Načo slúži evakuačný rozhlas?',
-    a: 'V prvom rade na zaistenie bezpečnej evakuácie rozsiahlych objektov pri ohrození. Informuje užívateľov a návštevníkov o nutnosti opustiť objekt — buď cez obsluhu ohlasovne požiaru, alebo prehratím vopred nahovorených poplachových správ. Mimo požiarneho ohrozenia slúži aj na bežné odovzdávanie informácií či hudobnú kulisu.',
+    a: 'Na zaistenie bezpečnej evakuácie pri ohrození — informuje o nutnosti opustiť objekt cez obsluhu ohlasovne požiaru alebo vopred nahovorenými správami. Slúži aj na bežné odovzdávanie informácií.',
   },
   {
-    q: 'Aké normy musí evakuačný rozhlas spĺňať?',
-    a: 'Rozhlasové systémy pre evakuáciu osôb (domáci, evakuačný, požiarny rozhlas, núdzový zvukový systém) musia podľa normy STN EN 60849 – Núdzové zvukové systémy spĺňať celú škálu požiadaviek. Všetky komponenty zároveň musia spĺňať požiadavky normy EN 54.',
+    q: 'Aké normy musí spĺňať?',
+    a: 'Podľa STN EN 60849 musí spĺňať celú škálu požiadaviek; všetky komponenty zároveň normu EN 54.',
   },
   {
     q: 'Prečo nestačí bežné ozvučenie?',
-    a: 'Mnohé systémy majú modulárnu koncepciu, takže z rovnakých komponentov možno zostaviť ústredňu, ktorá normu spĺňa, aj takú, ktorá ju nespĺňa. Pri návrhu je preto dôležité zvoliť certifikovaný systém a dohliadnuť, aby konfigurácia ústredne spĺňala všetky aplikovateľné požiadavky normy.',
+    a: 'Pri modulárnych systémoch možno zostaviť ústredňu, ktorá normu spĺňa, aj takú, ktorá nie. Kľúčové je zvoliť certifikovaný systém a správnu konfiguráciu.',
   },
   {
     q: 'Čo znamená automatická kontrola zvukového reťazca?',
-    a: 'Ústredňa musí trvale kontrolovať bezporuchovú funkciu celej cesty, cez ktorú prechádza zvukový signál — riadiacu jednotku, mikrofónne stanice aj s káblami, výkonové zosilňovače, 100 V rozvody aj prepojovacie káble — a poruchy hlásiť. Pri výpadku prevádzkového zosilňovača sa automaticky zapojí záložný.',
-  },
-  {
-    q: 'V akých objektoch sa ozvučenie nasadzuje?',
-    a: 'Týka sa hotelov, letiskových hál, vlakových a autobusových staníc, výrobných hál aj systémov civilnej obrany — všade, kde treba bezpečne odovzdať informácie väčšiemu počtu ľudí.',
+    a: 'Ústredňa trvale kontroluje celú cestu signálu — riadiacu jednotku, mikrofóny aj s káblami, zosilňovače, 100 V rozvody — a poruchy hlási; pri výpadku zapojí záložný zosilňovač.',
   },
 ];
 ---
@@ -36,13 +32,13 @@ const faqs = [
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
     <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/radiokomunikacie">← Rádiokomunikácie</a></p>
-    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Evakuačný rozhlas a ozvučenie</h1>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Evakuačný rozhlas a ozvučenie objektov</h1>
 
     <div class="grid items-center gap-8 lg:gap-10 lg:grid-cols-5 mb-12">
       <p class="text-lg text-muted lg:col-span-3">
-        Ozvučenie priestorov slúži v prvom rade na zaistenie bezpečnej evakuácie rozsiahlych objektov pri akomkoľvek
-        nebezpečenstve. Navrhneme a dodáme evakuačný rozhlas, ktorý za každých okolností splní svoju funkciu pri ochrane
-        životov a zdravia osôb.
+        Pri evakuácii rozsiahleho objektu musí byť hlasový pokyn počuteľný a zrozumiteľný za každých okolností — od toho
+        závisia životy. Navrhneme a dodáme evakuačný rozhlas spĺňajúci normy STN EN 60849 a EN 54, ktorý za každých
+        okolností splní svoju funkciu pri ochrane osôb.
       </p>
       <div class="lg:col-span-2 aspect-[4/3] overflow-hidden rounded-2xl shadow-sm">
         <Image
@@ -59,41 +55,38 @@ const faqs = [
     <div class="prose prose-lg max-w-none">
       <h2>Na čo slúži evakuačný rozhlas</h2>
       <p>
-        Evakuačný rozhlas informuje užívateľov a návštevníkov objektov o nutnosti opustiť objekt pri ohrození zdravia,
-        života alebo majetku. Informovanie môže vykonať obsluha ohlasovne požiaru, prípadne sa do reproduktorov
-        prehrávajú vopred nahovorené poplachové správy. Správne ozvučenie však môžu vyžadovať aj iné situácie než len
-        požiarne ohrozenie — týka sa hotelov, letiskových hál, vlakových a autobusových staníc, výrobných hál či systémov
-        civilnej obrany.
+        Evakuačný rozhlas informuje užívateľov a návštevníkov o nutnosti opustiť objekt pri ohrození. Informovanie
+        vykoná obsluha ohlasovne požiaru, prípadne sa prehrajú vopred nahovorené poplachové správy. Mimo požiarneho
+        ohrozenia slúži aj na bežné odovzdávanie informácií. Týka sa hotelov, letiskových hál, vlakových a autobusových
+        staníc, výrobných hál, škôl, nemocníc či systémov civilnej obrany.
       </p>
 
       <h2>Normy STN EN 60849 a EN 54</h2>
       <p>
-        Rozhlasové systémy, ktoré slúžia na evakuáciu osôb (domáci rozhlas, evakuačný rozhlas, požiarny rozhlas, núdzový
-        zvukový systém a iné), musia podľa normy STN EN 60849 – Núdzové zvukové systémy spĺňať celú škálu požiadaviek,
-        ktoré zabezpečia, že systém bude za všetkých okolností pripravený plniť svoju funkciu. Všetky komponenty
-        evakuačného rozhlasu zároveň musia spĺňať požiadavky normy EN 54.
+        Rozhlasové systémy na evakuáciu osôb musia podľa normy <strong>STN EN 60849 — Núdzové zvukové systémy</strong>
+        spĺňať celú škálu požiadaviek, ktoré zabezpečia, že systém bude za všetkých okolností pripravený plniť svoju
+        funkciu. Všetky komponenty zároveň musia spĺňať požiadavky normy <strong>EN 54</strong>.
       </p>
       <p>
-        Časť požiadaviek sa týka výbavy samotnej rozhlasovej ústredne, ďalšie závisia od iných faktorov — napríklad
-        požadovaná minimálna úroveň zrozumiteľnosti je daná vhodným typom, počtom a citlivosťou reproduktorov a ich
-        správnou inštaláciou. Keďže väčšina systémov má modulárnu koncepciu, je pri návrhu dôležité zvoliť certifikovaný
-        systém a zároveň zabezpečiť, aby konfigurácia ústredne spĺňala všetky aplikovateľné požiadavky normy.
+        Keďže väčšina systémov má modulárnu koncepciu, z rovnakých komponentov možno zostaviť ústredňu, ktorá normu
+        spĺňa, aj takú, ktorá ju nespĺňa. Pri návrhu je preto kľúčové zvoliť certifikovaný systém a zabezpečiť, aby
+        konfigurácia ústredne spĺňala všetky aplikovateľné požiadavky normy.
       </p>
 
       <h2>Automatická kontrola zvukového reťazca</h2>
       <p>
-        Kľúčovou vlastnosťou je automatická kontrola celého zosilňovacieho a riadiaceho reťazca — ústredňa musí
-        kontrolovať bezporuchovú funkciu celej cesty zvukového signálu aj vlastných riadiacich obvodov. Konkrétne ide o:
+        Ústredňa musí trvale kontrolovať bezporuchovú funkciu celej cesty zvukového signálu aj vlastných riadiacich
+        obvodov:
       </p>
       <ul>
-        <li>kontrolu funkcie riadiacej jednotky ústredne s chybovým hlásením,</li>
-        <li>kontrolu mikrofónnych staníc vrátane vložky mikrofónu a kábla k ústredni,</li>
-        <li>kontrolu výkonových zosilňovačov a prepojovacích káblov vo vnútri ústredne,</li>
+        <li>kontrola riadiacej jednotky ústredne s chybovým hlásením,</li>
+        <li>kontrola mikrofónnych staníc vrátane vložky a kábla,</li>
+        <li>kontrola výkonových zosilňovačov a prepojovacích káblov,</li>
         <li>automatické zapojenie záložného zosilňovača pri výpadku prevádzkového,</li>
-        <li>kontrolu 100 V rozvodov s chybovým hlásením,</li>
-        <li>protokolovanie všetkých neštandardných stavov v pamäti systému,</li>
-        <li>generátor výstražných signálov s adresovaním do všetkých alebo zvolených zón,</li>
-        <li>jednotku digitálneho záznamu evakuačného hlásenia pod automatickou kontrolou.</li>
+        <li>kontrola 100 V rozvodov s chybovým hlásením,</li>
+        <li>protokolovanie neštandardných stavov v pamäti,</li>
+        <li>generátor výstražných signálov s adresovaním do zón,</li>
+        <li>jednotka digitálneho záznamu hlásenia pod automatickou kontrolou.</li>
       </ul>
     </div>
 
@@ -114,9 +107,7 @@ const faqs = [
 
     <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
       <h2 class="text-xl md:text-2xl font-semibold mb-3">Plánujete evakuačný rozhlas alebo ozvučenie?</h2>
-      <p class="text-muted mb-6 max-w-xl mx-auto">
-        Navrhneme systém spĺňajúci normy STN EN 60849 a EN 54 pre váš objekt.
-      </p>
+      <p class="text-muted mb-6 max-w-xl mx-auto">Navrhneme systém spĺňajúci normy STN EN 60849 a EN 54 pre váš objekt.</p>
       <a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
     </div>
   </section>

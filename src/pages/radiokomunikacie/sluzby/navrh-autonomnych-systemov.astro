@@ -2,16 +2,50 @@
 import Layout from '~/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
 import heroAutonomneNavrh from '~/assets/images/radiokomunikacie/manufacturing-49.webp';
+import imgMeranie from '~/assets/images/radiokomunikacie/autonomne-systemy/meranie-akustickeho-pozadia.webp';
+import imgHladina from '~/assets/images/radiokomunikacie/autonomne-systemy/urcenie-hladiny-signalu.webp';
+import imgMapa from '~/assets/images/radiokomunikacie/autonomne-systemy/mapa-pokrytia.webp';
+import imgEkvi from '~/assets/images/radiokomunikacie/autonomne-systemy/ekvipotencialy-signal.webp';
+import imgGraficky from '~/assets/images/radiokomunikacie/autonomne-systemy/graficky-navrh.webp';
+import imgBlokAus from '~/assets/images/radiokomunikacie/autonomne-systemy/blokova-schema-aus.webp';
+import imgBlokRc from '~/assets/images/radiokomunikacie/autonomne-systemy/blokova-schema-rc.webp';
+import imgSchemaRf from '~/assets/images/radiokomunikacie/autonomne-systemy/schema-radiovej-siete.webp';
+import imgViditelnost from '~/assets/images/radiokomunikacie/autonomne-systemy/analyza-signal-viditelnost.webp';
 
-const metadata = { title: 'Návrh autonómnych systémov — RKS' };
+const metadata = {
+  title: 'Návrh a projektovanie autonómnych systémov varovania — RKS',
+  description:
+    'Meranie, návrh a projektovanie autonómnych systémov varovania a vyrozumenia podľa vyhlášky MV SR č. 388/2006 Z. z. Akustický návrh, mapa pokrytia sirén, rádiová sieť, monitoring a projektová dokumentácia.',
+};
+
+const faqs = [
+  {
+    q: 'Navrhujete systém podľa legislatívy?',
+    a: 'Áno. Projekt pripravujeme v zmysle vyhlášky MV SR č. 388/2006 Z. z.; územie ohrozenia podľa vyhlášky 300/1996.',
+  },
+  {
+    q: 'Robíte aj akustické a terénne merania?',
+    a: 'Áno. Súčasťou návrhu sú akustické merania, preverenie rádiového pokrytia a ďalšie podklady pre správny technický návrh.',
+  },
+  {
+    q: 'Viete pripraviť realizačný projekt?',
+    a: 'Áno. Dodávame systémový návrh aj realizačnú projektovú dokumentáciu podľa rozsahu diela.',
+  },
+];
 ---
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
     <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/radiokomunikacie">← Rádiokomunikácie</a></p>
-    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Návrh autonómnych systémov</h1>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Návrh a projektovanie autonómnych systémov varovania</h1>
+
     <div class="grid items-center gap-8 lg:gap-10 lg:grid-cols-5 mb-12">
-      <p class="text-lg text-muted lg:col-span-3">Obsah dorobíme.</p>
+      <p class="text-lg text-muted lg:col-span-3">
+        Aby výstraha v krízovej situácii spoľahlivo zasiahla celé ohrozené územie, musí byť systém navrhnutý presne — na
+        základe meraní, nie odhadu. RKS spracováva kompletný technický návrh autonómneho systému varovania a vyrozumenia
+        (AuS) v zmysle vyhlášky MV SR č. 388/2006 Z. z.: od akustického merania cez návrh sirén a rádiovej siete až po
+        projektovú dokumentáciu na schválenie.
+      </p>
       <div class="lg:col-span-2 aspect-[3/4] overflow-hidden rounded-2xl shadow-sm">
         <Image
           src={heroAutonomneNavrh}
@@ -22,6 +56,145 @@ const metadata = { title: 'Návrh autonómnych systémov — RKS' };
           class="w-full h-full object-cover"
         />
       </div>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+      <h2>Ako prebieha návrh — 7 krokov</h2>
+      <p>
+        Návrh autonómneho systému (AuS) varovania a vyrozumenia spracovávame v zmysle
+        <strong>vyhlášky MV SR č. 388/2006 Z. z.</strong> Postup pozostáva zo siedmich krokov:
+      </p>
+
+      <h3>1. Určenie územia ochranných opatrení</h3>
+      <p>
+        Na základe rozsahu ohrozenia nebezpečnou látkou alebo vodnou stavbou sa v zmysle
+        <strong>vyhlášky MV SR č. 300/1996</strong> určí polomer hranice oblasti ohrozenia — územie, v ktorom je
+        ohrozovateľ povinný vybudovať AuS.
+      </p>
+
+      <h3>2. Akustický návrh systému</h3>
+      <p>
+        Vo vybraných bodoch územia zmeriame akustické pozadie, určíme hladinu výstražného zvukového signálu (metodika
+        podľa vyhlášky 388/2006) a spracujeme mapu pokrytia výstražným akustickým signálom. Súčasťou je výber miest pre
+        sirény, ich výkonu a smerových charakteristík.
+      </p>
+      <figure class="not-prose my-6 max-w-xl">
+        <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+          <Image src={imgMeranie} alt="Mapa bodov merania akustického pozadia v ohrozenom území" widths={[400, 700]} sizes="(max-width: 768px) 100vw, 576px" loading="lazy" class="w-full h-auto" />
+        </div>
+        <figcaption class="text-sm text-muted mt-2">Meranie akustického pozadia vo vybraných bodoch územia</figcaption>
+      </figure>
+      <figure class="not-prose my-6 max-w-xl">
+        <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+          <Image src={imgHladina} alt="Určenie hladiny výstražného zvukového signálu" widths={[400, 700]} sizes="(max-width: 768px) 100vw, 576px" loading="lazy" class="w-full h-auto" />
+        </div>
+        <figcaption class="text-sm text-muted mt-2">Určenie hladiny výstražného zvukového signálu</figcaption>
+      </figure>
+      <figure class="not-prose my-6 max-w-xl">
+        <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+          <Image src={imgMapa} alt="Mapa pokrytia výstražným akustickým signálom" widths={[400, 700]} sizes="(max-width: 768px) 100vw, 576px" loading="lazy" class="w-full h-auto" />
+        </div>
+        <figcaption class="text-sm text-muted mt-2">Mapa pokrytia výstražným akustickým signálom</figcaption>
+      </figure>
+
+      <h3>3. Grafický návrh systému</h3>
+      <p>
+        Sirény sa na základe meraní výkonovo dimenzujú, umiestnia a smerujú tak, aby pri aktivácii optimálne pokryli
+        ohrozené územie. Vyhodnotenie prebieha numericko-grafickými metódami. Najprv sa navrhne jedna siréna v areáli
+        ohrozovateľa; ak nestačí na pokrytie, dopĺňajú sa ďalšie v obývaných oblastiach.
+      </p>
+      <figure class="not-prose my-6 max-w-xl">
+        <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+          <Image src={imgEkvi} alt="Ekvipotenciály akustického signálu sirény" widths={[400, 600]} sizes="(max-width: 768px) 100vw, 576px" loading="lazy" class="w-full h-auto" />
+        </div>
+        <figcaption class="text-sm text-muted mt-2">Ekvipotenciály akustického signálu</figcaption>
+      </figure>
+      <figure class="not-prose my-6 max-w-xl">
+        <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+          <Image src={imgGraficky} alt="Grafický návrh rozmiestnenia sirén v ohrozenom území" widths={[400, 700]} sizes="(max-width: 768px) 100vw, 576px" loading="lazy" class="w-full h-auto" />
+        </div>
+        <figcaption class="text-sm text-muted mt-2">Grafický návrh rozmiestnenia sirén</figcaption>
+      </figure>
+
+      <h3>4. Návrh konfigurácie AuS</h3>
+      <p>
+        Bloková schéma zobrazuje prepojenie funkčných celkov — riadiace centrum prepojené so systémom monitorujúcim únik
+        nebezpečnej látky, radiáciu alebo poškodenie vodnej stavby.
+      </p>
+      <figure class="not-prose my-6 max-w-md">
+        <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+          <Image src={imgBlokAus} alt="Bloková schéma autonómneho systému varovania" widths={[350, 700]} sizes="(max-width: 768px) 100vw, 448px" loading="lazy" class="w-full h-auto" />
+        </div>
+        <figcaption class="text-sm text-muted mt-2">Bloková schéma autonómneho systému varovania</figcaption>
+      </figure>
+      <figure class="not-prose my-6 max-w-md">
+        <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+          <Image src={imgBlokRc} alt="Bloková schéma riadiaceho centra autonómneho systému" widths={[350, 700]} sizes="(max-width: 768px) 100vw, 448px" loading="lazy" class="w-full h-auto" />
+        </div>
+        <figcaption class="text-sm text-muted mt-2">Bloková schéma riadiaceho centra</figcaption>
+      </figure>
+
+      <h3>5. Návrh rádiovej siete AuS</h3>
+      <p>
+        Spoľahlivé spojenie medzi riadiacim centrom a sirénami: frekvenčná schéma, návrh bezdrôtovej komunikácie, analýza
+        pokrytia rádiovým signálom (softvérové preverenie viditeľnosti a úrovne signálu medzi bodmi), výber anténnych
+        systémov a spracovanie podkladov na pridelenie frekvencie regulačným úradom.
+      </p>
+      <figure class="not-prose my-6 max-w-md">
+        <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+          <Image src={imgSchemaRf} alt="Frekvenčná schéma rádiovej siete autonómneho systému varovania" widths={[350, 700]} sizes="(max-width: 768px) 100vw, 448px" loading="lazy" class="w-full h-auto" />
+        </div>
+        <figcaption class="text-sm text-muted mt-2">Frekvenčná schéma rádiovej siete</figcaption>
+      </figure>
+      <figure class="not-prose my-6 max-w-xl">
+        <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+          <Image src={imgViditelnost} alt="Analýza viditeľnosti a úrovne rádiového signálu medzi bodmi" widths={[400, 679]} sizes="(max-width: 768px) 100vw, 576px" loading="lazy" class="w-full h-auto" />
+        </div>
+        <figcaption class="text-sm text-muted mt-2">Analýza signálu a viditeľnosti medzi bodmi siete</figcaption>
+      </figure>
+
+      <h3>6. Návrh monitorovacieho systému AuS</h3>
+      <p>
+        Pre optimálny výber senzorov sa na miestach možného úniku vykonajú merania pozadia vybraných nebezpečných látok.
+        Navrhneme typy senzorov, riadiacu jednotku a ich rozmiestnenie.
+      </p>
+
+      <h3>7. Projektová dokumentácia AuS</h3>
+      <p>
+        Spracovanie projektu výstavby, ktorý podlieha schvaľovaniu MV SR, odboru civilnej ochrany — naše riešenie spĺňa
+        náležitosti pre schválenie podľa vyhlášky 388/2006 Z. z. Následne spracujeme realizačný projekt podľa rozsahu
+        diela a požiadaviek investora.
+      </p>
+
+      <h2>Prečo RKS</h2>
+      <p>
+        Pri autonómnych systémoch prepájame skúsenosti z rádiokomunikácií, projektovania elektrických zariadení, civilnej
+        ochrany a akustického návrhu do jedného funkčného riešenia — technicky spoľahlivého, legislatívne použiteľného a
+        pripraveného na realizáciu.
+      </p>
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Časté otázky</h2>
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 p-5">
+            <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
+              {faq.q}
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="text-muted mt-3">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Potrebujete navrhnúť autonómny systém varovania?</h2>
+      <p class="text-muted mb-6 max-w-xl mx-auto">
+        Pripravíme technický návrh aj ďalší postup realizácie podľa typu objektu a rizika.
+      </p>
+      <a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
     </div>
   </section>
 </Layout>

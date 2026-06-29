@@ -3,15 +3,39 @@ import Layout from '~/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
 import heroZakladne from '~/assets/images/radiokomunikacie/radio-07.webp';
 
-const metadata = { title: 'Základné informácie — RKS' };
+const metadata = {
+  title: 'Profesionálne rádiokomunikácie pre firmy a organizácie — RKS',
+  description:
+    'RKS navrhuje, projektuje, realizuje a servisuje profesionálne rádiové siete a komunikačné systémy pre priemysel, energetiku, logistiku aj verejnú správu. Od roku 1991.',
+};
+
+const faqs = [
+  {
+    q: 'Kedy je vhodná profesionálna rádiová sieť?',
+    a: 'Keď potrebuje komunikovať viac pracovníkov naraz, je potrebná okamžitá komunikácia, alebo prevádzka nesmie byť závislá od mobilných operátorov.',
+  },
+  {
+    q: 'Aký je rozdiel medzi analógovou a digitálnou rádiovou sieťou?',
+    a: 'Digitálne siete prinášajú vyššiu kvalitu hlasu, šifrovanie, GPS lokalizáciu, efektívnejšie využitie frekvencií a jednoduchšiu správu siete.',
+  },
+  {
+    q: 'Zabezpečuje RKS kompletnú realizáciu?',
+    a: 'Áno. Od analýzy požiadaviek cez projektovanie, realizáciu a legislatívu až po servis.',
+  },
+];
 ---
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
     <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/radiokomunikacie">← Rádiokomunikácie</a></p>
-    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Základné informácie</h1>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Profesionálne rádiokomunikácie pre firmy a organizácie</h1>
+
     <div class="grid items-center gap-8 lg:gap-10 lg:grid-cols-5 mb-12">
-      <p class="text-lg text-muted lg:col-span-3">Obsah dorobíme.</p>
+      <p class="text-lg text-muted lg:col-span-3">
+        Tam, kde musí komunikácia fungovať okamžite a spoľahlivo — bez závislosti od verejných mobilných sietí — sú
+        profesionálne rádiové systémy najistejšou voľbou. RKS dodáva komplexné rádiokomunikačné riešenia od roku 1991:
+        od návrhu a projektovania cez realizáciu až po dlhodobý servis a modernizáciu.
+      </p>
       <div class="lg:col-span-2 aspect-[4/3] overflow-hidden rounded-2xl shadow-sm">
         <Image
           src={heroZakladne}
@@ -22,6 +46,57 @@ const metadata = { title: 'Základné informácie — RKS' };
           class="w-full h-full object-cover"
         />
       </div>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+      <h2>Čo zabezpečujeme</h2>
+      <p>Pod jednou strechou pokrývame celý životný cyklus rádiového systému:</p>
+      <ul>
+        <li>návrh a projektovanie rádiových sietí,</li>
+        <li>realizáciu sietí na kľúč,</li>
+        <li>servis rádiostaníc značiek Motorola, Midland, Vertex a Icom,</li>
+        <li>prenájom rádiostaníc,</li>
+        <li>digitalizáciu analógových systémov,</li>
+        <li>audit existujúcich sietí,</li>
+        <li>návrh autonómnych systémov varovania,</li>
+        <li>projektovanie elektrických zariadení a elektroinštalačné práce.</li>
+      </ul>
+
+      <h2>Prečo profesionálna rádiová sieť</h2>
+      <p>
+        Profesionálna rádiová sieť umožňuje okamžitú skupinovú komunikáciu jediným stlačením tlačidla, bez vytáčania
+        čísla. Je nezávislá od mobilných operátorov, má nízke prevádzkové náklady bez ohľadu na intenzitu komunikácie a
+        funguje spoľahlivo aj v hlučnom priemyselnom prostredí, podzemných alebo uzavretých priestoroch. Moderné
+        digitálne systémy navyše podporujú GPS lokalizáciu, šifrovanie, dispečerské riadenie a integráciu s ďalšími
+        technológiami.
+      </p>
+
+      <h2>Pre koho sú riešenia určené</h2>
+      <p>
+        Výrobné podniky, energetika, logistické centrá, letiská, stavebné spoločnosti, mestá a obce, priemyselné areály,
+        bezpečnostné služby a prevádzkovatelia kritickej infraštruktúry.
+      </p>
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Časté otázky</h2>
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 p-5">
+            <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
+              {faq.q}
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="text-muted mt-3">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Potrebujete spoľahlivú rádiovú komunikáciu?</h2>
+      <p class="text-muted mb-6 max-w-xl mx-auto">Navrhneme riešenie prispôsobené vašej prevádzke.</p>
+      <a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
     </div>
   </section>
 </Layout>

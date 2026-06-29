@@ -4,27 +4,27 @@ import { Image } from 'astro:assets';
 import heroAutonomne from '~/assets/images/radiokomunikacie/factory-21.webp';
 
 const metadata = {
-  title: 'Autonómne systémy varovania a vyrozumenia — RKS',
+  title: 'Autonómne systémy varovania a vyrozumenia (VAR-VYR) — RKS',
   description:
-    'Návrh, projekt a dodávka autonómnych systémov varovania a vyrozumenia (VAR-VYR) podľa vyhlášky MV SR č. 388/2006 Z. z. pre ohrozovateľov.',
+    'Návrh, projekt a dodávka autonómnych systémov varovania a vyrozumenia podľa vyhlášky MV SR č. 388/2006 Z. z. Pre ohrozovateľov nebezpečnými látkami a vodnými stavbami.',
 };
 
 const faqs = [
   {
     q: 'Kto má povinnosť vybudovať autonómny systém varovania?',
-    a: 'Zo zákona o civilnej ochrane č. 42/1994 Z. z. a zákona č. 261/2002 Z. z. o prevencii závažných priemyselných havárií vyplýva právnickým osobám a podnikateľom, ktorí vyrábajú, skladujú alebo manipulujú s nebezpečnými látkami a tým ohrozujú život, zdravie alebo majetok, povinnosť na vlastné náklady zabezpečiť systém monitorovania, varovania a vyrozumenia a trvale ho udržiavať v prevádzke.',
+    a: 'Právnické osoby a podnikatelia, ktorí vyrábajú, skladujú alebo manipulujú s nebezpečnými látkami a tým ohrozujú život, zdravie alebo majetok — na vlastné náklady (zákon č. 42/1994 Z. z. a č. 261/2002 Z. z.).',
   },
   {
     q: 'Podľa akej legislatívy systém navrhujete?',
-    a: 'Návrh autonómneho systému (AuS) varovania a vyrozumenia spracovávame v zmysle vyhlášky MV SR č. 388/2006 Z. z. o podrobnostiach na zabezpečenie technických a prevádzkových podmienok informačného systému civilnej ochrany. Územie ohrozenia sa určuje v zmysle vyhlášky MV SR č. 300/1996.',
-  },
-  {
-    q: 'Ako sa určí, koľko sirén a kde je potrebné umiestniť?',
-    a: 'Vychádza sa z merania akustického pozadia vo vybraných bodoch územia a z mapy pokrytia výstražným signálom. Sirény sa výkonovo dimenzujú, umiestňujú a smerujú tak, aby optimálne pokryli ohrozené územie. Najprv sa navrhne jedna siréna v areáli ohrozovateľa; ak nestačí, dopĺňajú sa ďalšie v obývaných oblastiach.',
+    a: 'Podľa vyhlášky MV SR č. 388/2006 Z. z.; územie ohrozenia podľa vyhlášky 300/1996.',
   },
   {
     q: 'Schvaľuje projekt nejaký orgán?',
-    a: 'Áno. Projekt výstavby podlieha schvaľovaniu MV SR, odboru civilnej ochrany. Nami vyhotovené projektové riešenie spĺňa náležitosti pre schválenie podľa vyhlášky MV SR č. 388/2006 Z. z.',
+    a: 'Áno. Projekt výstavby podlieha schvaľovaniu MV SR, odboru civilnej ochrany. Naše riešenie spĺňa náležitosti pre schválenie podľa vyhlášky 388/2006 Z. z.',
+  },
+  {
+    q: 'Ako sa určí počet a umiestnenie sirén?',
+    a: 'Z merania akustického pozadia a mapy pokrytia výstražným signálom. Najprv sa navrhne jedna siréna v areáli ohrozovateľa; ak nestačí, dopĺňajú sa ďalšie.',
   },
 ];
 ---
@@ -32,13 +32,14 @@ const faqs = [
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
     <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/radiokomunikacie">← Rádiokomunikácie</a></p>
-    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Autonómne systémy varovania</h1>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Autonómne systémy varovania a vyrozumenia</h1>
 
     <div class="grid items-center gap-8 lg:gap-10 lg:grid-cols-5 mb-12">
       <p class="text-lg text-muted lg:col-span-3">
-        Autonómny systém varovania a vyrozumenia (VAR-VYR) chráni životy a majetok na ohrozenom území. Pre
-        prevádzkovateľov s povinnosťou monitorovať územie a varovať obyvateľstvo spracujeme návrh, projekt aj dodávku
-        celého systému.
+        Pri úniku nebezpečnej látky alebo havárii vodnej stavby rozhodujú o ochrane životov minúty. Autonómny systém
+        varovania a vyrozumenia (VAR-VYR) zabezpečí, že výstraha spoľahlivo zasiahne celé ohrozené územie. Pre
+        prevádzkovateľov so zákonnou povinnosťou varovať obyvateľstvo spracujeme návrh, projekt aj dodávku celého
+        systému — v súlade s vyhláškou MV SR č. 388/2006 Z. z.
       </p>
       <div class="lg:col-span-2 aspect-[4/3] overflow-hidden rounded-2xl shadow-sm">
         <Image
@@ -56,50 +57,42 @@ const faqs = [
       <h2>Zákonná povinnosť ohrozovateľa</h2>
       <p>
         Zo zákona o civilnej ochrane č. 42/1994 Z. z. a zákona č. 261/2002 Z. z. o prevencii závažných priemyselných
-        havárií vyplýva pre právnické osoby a podnikateľov, ktorí vyrábajú a skladujú nebezpečné látky alebo s nimi
-        manipulujú a tým ohrozujú život, zdravie alebo majetok, povinnosť na vlastné náklady zabezpečiť systém
-        monitorovania územia, varovania obyvateľstva a vyrozumenia (VAR-VYR) osôb na ohrozenom území a trvale ho
-        udržiavať v prevádzke.
+        havárií vyplýva právnickým osobám a podnikateľom, ktorí vyrábajú, skladujú alebo manipulujú s nebezpečnými
+        látkami a tým ohrozujú život, zdravie alebo majetok, povinnosť <strong>na vlastné náklady</strong> zabezpečiť
+        systém monitorovania územia, varovania obyvateľstva a vyrozumenia (VAR-VYR) a <strong>trvale ho udržiavať v
+        prevádzke</strong>.
       </p>
 
-      <h2>Meranie, návrh a projektovanie</h2>
+      <h2>Čo je autonómny systém varovania</h2>
       <p>
-        Návrh autonómneho systému (AuS) spracovávame v zmysle vyhlášky MV SR č. 388/2006 Z. z. o podrobnostiach na
-        zabezpečenie technických a prevádzkových podmienok informačného systému civilnej ochrany. Dodávka systému
-        pozostáva z týchto krokov:
+        Technický systém, ktorý včas varuje osoby na ohrozenom území pri úniku nebezpečnej látky, radiácii, havárii
+        vodnej stavby alebo inej mimoriadnej udalosti. Tvoria ho spravidla elektronické sirény, riadiace centrum,
+        monitorovacie senzory a rádiová komunikácia, ktorá ich spája.
       </p>
-      <ul>
-        <li>
-          <strong>Určenie územia ochranných opatrení</strong> — polomer hranice oblasti ohrozenia podľa rozsahu
-          ohrozenia nebezpečnou látkou alebo vodnou stavbou (v zmysle vyhlášky MV SR č. 300/1996).
-        </li>
-        <li>
-          <strong>Akustický návrh</strong> — meranie akustického pozadia vo vybraných bodoch, určenie hladiny
-          výstražného zvukového signálu a spracovanie mapy pokrytia výstražným akustickým signálom.
-        </li>
-        <li>
-          <strong>Grafický návrh a konfigurácia AuS</strong> — výkonové dimenzovanie, umiestnenie a smerovanie
-          elektronických sirén tak, aby optimálne pokryli ohrozené územie; bloková schéma prepojenia funkčných celkov.
-        </li>
-        <li>
-          <strong>Návrh rádiovej siete AuS</strong> — frekvenčná schéma, analýza pokrytia rádiovým signálom, výber
-          anténnych systémov a podklady na pridelenie frekvencie regulačným úradom.
-        </li>
-        <li>
-          <strong>Návrh monitorovacieho systému</strong> — výber a rozmiestnenie senzorov pre monitorovanie možného
-          úniku nebezpečných látok.
-        </li>
-        <li>
-          <strong>Projektová dokumentácia</strong> — projekt výstavby na schválenie MV SR, odborom civilnej ochrany, a
-          realizačný projekt.
-        </li>
-      </ul>
+
+      <h2>Pre koho je riešenie určené</h2>
+      <p>
+        Chemické a technologické prevádzky, energetické objekty, vodné stavby, priemyselné areály a prevádzky s
+        nebezpečnými látkami, obce a mestá v ohrozenom území, kritická infraštruktúra.
+      </p>
+
+      <h2>Ako systém navrhujeme</h2>
+      <p>
+        Návrh autonómneho systému (AuS) spracovávame v zmysle <strong>vyhlášky MV SR č. 388/2006 Z. z.</strong>; územie
+        ohrozenia podľa <strong>vyhlášky MV SR č. 300/1996</strong>. Proces zahŕňa určenie ohrozeného územia, akustický
+        návrh a meranie, návrh a rozmiestnenie sirén, návrh rádiovej siete, monitorovací systém a projektovú
+        dokumentáciu na schválenie MV SR.
+      </p>
+      <p>
+        Detailný postup návrhu (akustické merania, mapy pokrytia, schémy, dokumentácia) nájdete na stránke
+        <a href="/radiokomunikacie/sluzby/navrh-autonomnych-systemov">Návrh autonómnych systémov →</a>
+      </p>
 
       <h2>Realizácia a prevádzka</h2>
       <p>
-        Na základe schváleného návrhu zabezpečíme realizáciu autonómnych systémov varovania a vyrozumenia osôb. Riadiace
-        centrum AuS prepojíme so systémom monitorujúcim únik nebezpečnej látky, radiáciu alebo poškodenie vodnej stavby,
-        aby bol systém trvale pripravený plniť svoju funkciu.
+        Na základe schváleného návrhu zabezpečíme realizáciu. Riadiace centrum prepojíme so systémom, ktorý monitoruje
+        únik nebezpečnej látky, radiáciu alebo poškodenie vodnej stavby — aby bol systém trvale pripravený plniť svoju
+        funkciu.
       </p>
     </div>
 
@@ -119,7 +112,7 @@ const faqs = [
     </div>
 
     <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
-      <h2 class="text-xl md:text-2xl font-semibold mb-3">Máte povinnosť varovať obyvateľstvo?</h2>
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Týka sa vás povinnosť varovať obyvateľstvo?</h2>
       <p class="text-muted mb-6 max-w-xl mx-auto">
         Posúdime vaše ohrozené územie a navrhneme systém VAR-VYR podľa platnej legislatívy.
       </p>

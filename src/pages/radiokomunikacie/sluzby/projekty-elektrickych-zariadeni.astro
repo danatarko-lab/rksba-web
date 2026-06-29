@@ -6,25 +6,21 @@ import heroProjektovanie from '~/assets/images/radiokomunikacie/city-11.webp';
 const metadata = {
   title: 'Projektovanie elektrických zariadení — RKS',
   description:
-    'Technická a konštrukčná dokumentácia elektrických zariadení na kľúč — NN rozvody, EPS, evakuačný rozhlas, EZS/PSN, štruktúrovaná kabeláž, trafostanice.',
+    'Technická a konštrukčná dokumentácia elektrických zariadení na kľúč — NN rozvody, EPS, evakuačný rozhlas, EZS/PSN, štruktúrovaná kabeláž, trafostanice VN/NN. V súlade s STN EN a UNIKA.',
 };
 
 const faqs = [
   {
     q: 'V akom rozsahu spracovávate dokumentáciu?',
-    a: 'Ponúkame kompletnú technickú a konštrukčnú dokumentáciu v úrovni Lay Out aj na kľúč — od vnútorných a vonkajších NN rozvodov cez slaboprúdové systémy až po transformačné stanice VN/NN bez obmedzenia výkonu.',
-  },
-  {
-    q: 'Aké stupne projektovej dokumentácie dodávate?',
-    a: 'Dokumentáciu zhotovujeme v súlade s UNIKA vo všetkých stupňoch: PD pre územné rozhodnutie, PD pre stavebné povolenie, realizačnú PD a dokumentáciu skutkového zhotovenia.',
+    a: 'Kompletnú technickú a konštrukčnú dokumentáciu v úrovni Lay Out aj na kľúč — od NN rozvodov cez slaboprúdové systémy až po trafostanice VN/NN bez obmedzenia výkonu.',
   },
   {
     q: 'Máte oprávnenia na požiarne a zabezpečovacie systémy?',
-    a: 'Áno. EPS spracovávame v súlade s STN EN 54-1 a súvisiacimi (oprávnenie od výrobcov ESSER a ARITECH), požiarny evakuačný rozhlas podľa STN EN 54-16 a STN EN 54-24 a EZS/PSN s oprávnením od výrobcu PARADOX (Canada).',
+    a: 'Áno. EPS v súlade s STN EN 54-1 (oprávnenie ESSER, ARITECH), požiarny evakuačný rozhlas podľa STN EN 54-16 a 54-24, EZS/PSN s oprávnením od výrobcu PARADOX (Canada).',
   },
   {
     q: 'Riešite aj špecifické prostredia?',
-    a: 'Áno. Pri návrhu zariadení do špecifických prostredí (napr. atómové elektrárne, dispečerské pracoviská) kladieme dôraz na koordináciu s daným druhom prevádzky a na elektromagnetickú kompatibilitu (EMC) zariadení.',
+    a: 'Áno. Pri návrhu do prostredí ako atómové elektrárne či dispečerské pracoviská kladieme dôraz na koordináciu s prevádzkou a na EMC zariadení.',
   },
 ];
 ---
@@ -36,9 +32,9 @@ const faqs = [
 
     <div class="grid items-center gap-8 lg:gap-10 lg:grid-cols-5 mb-12">
       <p class="text-lg text-muted lg:col-span-3">
-        Kvalitne spracovaná projektová dokumentácia je základom každej úspešnej realizácie. Pripravíme technickú a
-        konštrukčnú dokumentáciu elektrických zariadení v úrovni Lay Out aj na kľúč, s ohľadom na bezpečnosť, správne
-        dimenzovanie a elektromagnetickú kompatibilitu.
+        Každá úspešná realizácia začína kvalitným projektom — chyba v dokumentácii sa na stavbe predraží. Pripravíme
+        technickú a konštrukčnú dokumentáciu elektrických zariadení v úrovni Lay Out aj na kľúč, s dôrazom na bezpečnosť,
+        správne dimenzovanie a elektromagnetickú kompatibilitu (EMC).
       </p>
       <div class="lg:col-span-2 aspect-[4/3] overflow-hidden rounded-2xl shadow-sm">
         <Image
@@ -55,33 +51,35 @@ const faqs = [
     <div class="prose prose-lg max-w-none">
       <h2>Na čo pri návrhu dbáme</h2>
       <p>
-        Okrem správneho dimenzovania s ohľadom na prirodzený nárast energetickej bilancie navrhujeme ochranné a
-        bezpečnostné prvky z pohľadu úrazovosti elektrickým prúdom aj ochrany pred účinkami bleskových prúdov a
-        prevádzkových prepätí. Dôležitú úlohu zohráva elektromagnetická kompatibilita (EMC) používaných zariadení. Pri
-        slaboprúdových rozvodoch kladieme dôraz na ergonómiu, komfort a kvalitu prenosu informácií so zreteľom na
-        ekonomické aspekty riešenia.
+        Okrem dimenzovania s ohľadom na nárast energetickej bilancie navrhujeme ochranné a bezpečnostné prvky z pohľadu
+        úrazovosti elektrickým prúdom aj ochrany pred bleskovými prúdmi a prevádzkovými prepätiami. Dôležitú úlohu
+        zohráva elektromagnetická kompatibilita (EMC). Pri slaboprúdových rozvodoch kladieme dôraz na ergonómiu, komfort
+        a kvalitu prenosu informácií so zreteľom na ekonomiku riešenia.
       </p>
 
       <h2>Rozsah dokumentácie</h2>
       <ul>
         <li>elektrické rozvody NN — vnútorné priemyselné elektroinštalácie,</li>
-        <li>vonkajšie káblové a sekundárne vzdušné rozvody NN — energetické rozvody,</li>
-        <li>elektronická požiarna signalizácia (EPS) v súlade s STN EN 54-1 a súvisiacimi (oprávnenie ESSER, ARITECH),</li>
-        <li>požiarny evakuačný rozhlas (PR) v súlade s STN EN 54-16 a STN EN 54-24,</li>
-        <li>elektronický zabezpečovací systém (EZS) / poplachový systém narušenia (PSN) — oprávnenie PARADOX (Canada),</li>
-        <li>štruktúrovaná kabeláž (STK) v súlade s STN EN 50173-1/2 a prislúchajúcimi,</li>
+        <li>vonkajšie káblové a sekundárne vzdušné rozvody NN,</li>
+        <li>
+          <strong>elektronická požiarna signalizácia (EPS)</strong> v súlade s STN EN 54-1 a súvisiacimi — oprávnenie od
+          výrobcov <strong>ESSER a ARITECH</strong>,
+        </li>
+        <li><strong>požiarny evakuačný rozhlas (PR)</strong> v súlade s STN EN 54-16 a STN EN 54-24,</li>
+        <li>
+          <strong>elektronický zabezpečovací systém (EZS) / poplachový systém narušenia (PSN)</strong> — oprávnenie od
+          výrobcu <strong>PARADOX (Canada)</strong>,
+        </li>
+        <li><strong>štruktúrovaná kabeláž (STK)</strong> v súlade s STN EN 50173-1/2,</li>
         <li>transformačné stanice VN/NN bez obmedzenia výkonu,</li>
         <li>odborné prehliadky a skúšky vyhradených technických zariadení elektrických vrátane bleskozvodov.</li>
       </ul>
 
       <h2>Stupne projektovej dokumentácie</h2>
-      <p>Uvedené dokumentácie zhotovujeme v súlade s UNIKA vo všetkých stupňoch vyhotovenia:</p>
-      <ul>
-        <li>PD pre územné rozhodnutie,</li>
-        <li>PD pre stavebné povolenie,</li>
-        <li>realizačná PD,</li>
-        <li>dokumentácia skutkového zhotovenia.</li>
-      </ul>
+      <p>
+        V súlade s <strong>UNIKA</strong> vo všetkých stupňoch: PD pre územné rozhodnutie, PD pre stavebné povolenie,
+        realizačná PD, dokumentácia skutkového zhotovenia.
+      </p>
     </div>
 
     <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Časté otázky</h2>
