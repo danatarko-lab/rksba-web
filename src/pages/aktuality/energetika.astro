@@ -4,20 +4,26 @@ import Layout from '~/layouts/PageLayout.astro';
 const metadata = { title: 'Aktuality — Energetika — RKS' };
 
 const tabs = [
+  { label: 'Energy Memo', href: '/energetika/blog' },
+  { label: 'Q&A', href: '/energetika/q-a' },
+  { label: 'Prípadové štúdie', href: '/energetika/pripadove-studie' },
+];
+
+const cards = [
   {
-    id: 'blog',
-    label: 'Blog',
-    card: { title: 'Blog — Energetika', desc: 'Odborné články o energetike pre firmy.', href: '/energetika/blog' },
+    title: 'Energy Memo — Energetika',
+    desc: 'Odborné články o energetike pre firmy.',
+    href: '/energetika/blog',
   },
   {
-    id: 'qa',
-    label: 'Q&A',
-    card: { title: 'Q&A — Energetika', desc: 'Časté otázky k FVE, BESS, EMS a smart building.', href: '/energetika/q-a' },
+    title: 'Q&A — Energetika',
+    desc: 'Časté otázky k FVE, BESS, EMS a smart building.',
+    href: '/energetika/q-a',
   },
   {
-    id: 'pripadove-studie',
-    label: 'Prípadové štúdie',
-    card: { title: 'Prípadové štúdie — Energetika', desc: 'Realizované energetické projekty.', href: '/energetika/pripadove-studie' },
+    title: 'Prípadové štúdie — Energetika',
+    desc: 'Realizované energetické projekty.',
+    href: '/energetika/pripadove-studie',
   },
 ];
 ---
@@ -27,59 +33,34 @@ const tabs = [
     <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/aktuality">← Aktuality</a></p>
     <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">Energetika</h1>
 
-    <div class="flex flex-wrap gap-6 border-b border-gray-200 mb-8" role="tablist">
+    <div class="flex flex-wrap gap-6 border-b border-gray-200 mb-8">
       {
-        tabs.map((tab, i) => (
-          <button
-            type="button"
-            role="tab"
-            data-tab={tab.id}
-            class:list={[
-              'aktuality-tab -mb-px border-b-2 pb-3 text-base font-medium transition',
-              i === 0 ? 'border-primary text-primary' : 'border-transparent text-muted hover:text-gray-700',
-            ]}
-            aria-selected={i === 0 ? 'true' : 'false'}
+        tabs.map((tab) => (
+          <a
+            href={tab.href}
+            class="-mb-px inline-flex items-center gap-1 border-b-2 border-transparent pb-3 text-base font-medium text-muted transition hover:text-gray-700"
           >
             {tab.label}
-          </button>
+          </a>
         ))
       }
     </div>
 
-    {
-      tabs.map((tab, i) => (
-        <div data-panel={tab.id} class:list={['aktuality-panel', { hidden: i !== 0 }]}>
+    <div class="grid gap-5 sm:grid-cols-2">
+      {
+        cards.map((card) => (
           <a
-            href={tab.card.href}
-            class="group block max-w-md rounded-xl border border-gray-200 bg-white p-6 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
+            href={card.href}
+            class="group block rounded-xl border border-gray-200 bg-white p-6 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
           >
-            <h2 class="text-lg font-medium mb-1">{tab.card.title}</h2>
-            <p class="text-sm text-muted mb-4">{tab.card.desc}</p>
+            <h2 class="text-lg font-medium mb-1">{card.title}</h2>
+            <p class="text-sm text-muted mb-4">{card.desc}</p>
             <span class="inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:underline">
               Otvoriť <span aria-hidden="true">→</span>
             </span>
           </a>
-        </div>
-      ))
-    }
+        ))
+      }
+    </div>
   </section>
 </Layout>
-
-<script>
-  document.querySelectorAll('.aktuality-tab').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const id = btn.getAttribute('data-tab');
-      document.querySelectorAll('.aktuality-tab').forEach((b) => {
-        const active = b === btn;
-        b.classList.toggle('border-primary', active);
-        b.classList.toggle('text-primary', active);
-        b.classList.toggle('border-transparent', !active);
-        b.classList.toggle('text-muted', !active);
-        b.setAttribute('aria-selected', active ? 'true' : 'false');
-      });
-      document.querySelectorAll('.aktuality-panel').forEach((panel) => {
-        panel.classList.toggle('hidden', panel.getAttribute('data-panel') !== id);
-      });
-    });
-  });
-</script>

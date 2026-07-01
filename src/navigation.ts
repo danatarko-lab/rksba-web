@@ -61,7 +61,7 @@ export const headerData = {
         { text: 'EV nabíjačky', href: getPermalink('/energetika/ev-nabijacky') },
         { text: 'Smart building', href: getPermalink('/energetika/smart-building') },
         // — obsah —
-        { text: 'Blog', href: getPermalink('/energetika/blog') },
+        { text: 'Energy Memo', href: getPermalink('/energetika/blog') },
         { text: 'Q&A (Energetika)', href: getPermalink('/energetika/q-a') },
         { text: 'Prípadové štúdie', href: getPermalink('/energetika/pripadove-studie') },
       ],
@@ -106,7 +106,7 @@ export const footerData = {
         { text: 'Batérie BESS', href: getPermalink('/energetika/baterie-bess') },
         { text: 'EV nabíjačky', href: getPermalink('/energetika/ev-nabijacky') },
         { text: 'Smart building', href: getPermalink('/energetika/smart-building') },
-        { text: 'Blog', href: getPermalink('/energetika/blog') },
+        { text: 'Energy Memo', href: getPermalink('/energetika/blog') },
         { text: 'Prípadové štúdie', href: getPermalink('/energetika/pripadove-studie') },
       ],
     },
