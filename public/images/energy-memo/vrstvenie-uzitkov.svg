@@ -1,0 +1,19 @@
+<svg width="100%" viewBox="0 0 680 320" role="img" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif">
+<title>Vrstvenie úžitkov batériového úložiska</title>
+<desc>Stĺpec zložený zo štyroch vrstiev úžitkov batérie: vlastná spotreba z fotovoltiky, zníženie odberových špičiek, záloha prevádzky a flexibilita ako budúci potenciál.</desc>
+<rect x="0" y="0" width="680" height="320" rx="12" fill="#f4f6f9" stroke="#d3d1c7" stroke-width="0.5"/>
+<rect x="70" y="232" width="140" height="48" fill="#1f3a5f"/>
+<rect x="70" y="182" width="140" height="48" fill="#2f6fb0"/>
+<rect x="70" y="132" width="140" height="48" fill="#1d9e75"/>
+<rect x="70" y="82" width="140" height="48" fill="#b9c6d6" stroke="#8aa0b8" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="210" y1="256" x2="250" y2="256" stroke="#9a988f" stroke-width="0.75"/>
+<line x1="210" y1="206" x2="250" y2="206" stroke="#9a988f" stroke-width="0.75"/>
+<line x1="210" y1="156" x2="250" y2="156" stroke="#9a988f" stroke-width="0.75"/>
+<line x1="210" y1="106" x2="250" y2="106" stroke="#9a988f" stroke-width="0.75"/>
+<text x="256" y="260" fill="#33322e" font-size="14">Vlastná spotreba z fotovoltiky</text>
+<text x="256" y="210" fill="#33322e" font-size="14">Zníženie odberových špičiek</text>
+<text x="256" y="160" fill="#33322e" font-size="14">Záloha prevádzky</text>
+<text x="256" y="102" fill="#33322e" font-size="14">Flexibilita — budúci potenciál</text>
+<text x="256" y="118" fill="#6b6a64" font-size="12">(na SK zatiaľ neobchodované)</text>
+<text x="140" y="303" fill="#6b6a64" font-size="12" text-anchor="middle">Kombinácia úžitkov = ekonomická hodnota</text>
+</svg>

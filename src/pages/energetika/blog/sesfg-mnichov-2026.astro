@@ -2,14 +2,62 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'Energy Memo: batériové úložiská ako aktívny zdroj hodnoty | RKS',
+  title: 'Budúcnosť firemnej energetiky: prečo už nestačí postaviť fotovoltiku | RKS',
   description:
-    'Prečo sa batéria mení z nákladu na aktívny zdroj hodnoty — tri poznatky z konferencie Solar Energy Storage Future Germany.',
+    'Analýza trendov vo firemnej energetike z konferencie Solar Energy Storage Future Germany 2026: revenue stacking, EMS, pripojenie do siete (grid connection), AI a prečo softvér vytvára väčšiu hodnotu než hardvér.',
 };
 
 const post = {
-  title: 'Batériové úložiská prestávajú byť nákladom. Stávajú sa aktívnym zdrojom hodnoty.',
+  title: 'Budúcnosť firemnej energetiky: prečo už nestačí postaviť fotovoltiku',
   date: '30. júna 2026',
+};
+
+const trends = [
+  { trend: 'Flexibilita', meaning: 'Energia má rôznu hodnotu v rôznom čase' },
+  { trend: 'EMS', meaning: 'Softvér riadi energetiku' },
+  { trend: 'BESS', meaning: 'Batéria je investičné aktívum' },
+  { trend: 'Grid connection', meaning: 'Pripojenie je strategická výhoda' },
+  { trend: 'AI', meaning: 'Lepšie rozhodovanie' },
+];
+
+const faqs = [
+  {
+    q: 'Čo je revenue stacking?',
+    a: 'Revenue stacking je kombinácia viacerých zdrojov ekonomickej hodnoty z jedného batériového úložiska naraz — napríklad vlastná spotreba, znižovanie odberových špičiek a záloha. Práve kombinácia úžitkov rozhoduje o návratnosti, nie samotná kapacita.',
+  },
+  {
+    q: 'Prečo už nestačí samotná fotovoltika?',
+    a: 'Pretože o úspechu projektu dnes rozhoduje, koľko vyrobenej energie firma reálne využije a ako ju riadi, nie koľko jej vyrobí. Bez riadenia a vysokej vlastnej spotreby sa ekonomika projektu oslabuje.',
+  },
+  {
+    q: 'Akú úlohu zohráva EMS?',
+    a: 'Energy Management System (EMS) rozhoduje, kedy energiu vyrobiť, uložiť, spotrebovať alebo obchodovať. O ekonomike projektu rozhoduje viac než samotná batéria.',
+  },
+  {
+    q: 'Prečo sú batérie investičným aktívom?',
+    a: 'Pretože to isté úložisko môže mať rôznu návratnosť podľa spôsobu riadenia a kombinácie úžitkov. Posudzuje sa preto ako investícia — cez business case, cash flow a riziká, nie ako nákup zariadenia.',
+  },
+  {
+    q: 'Čo znamená flexibilita v energetike?',
+    a: 'Flexibilita je schopnosť prispôsobiť výrobu alebo spotrebu energie situácii v sieti alebo cenám elektriny. Na Slovensku sa ako zdroj príjmu zatiaľ otvorene neobchoduje, preto ju berieme ako budúci potenciál.',
+  },
+  {
+    q: 'Ako AI pomáha energetickým projektom?',
+    a: 'AI zlepšuje predpovede (počasie, ceny), plánovanie nabíjania, detekciu porúch a optimalizáciu obchodovania. Nevytvára hodnotu sama — pomáha ju vytvárať na základe dát.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
 };
 ---
 
@@ -18,7 +66,9 @@ const post = {
     <div class="mx-auto max-w-3xl px-4 sm:px-6 py-14 md:py-20">
       <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-5">Energy Memo · Energetika</p>
       <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight">{post.title}</h1>
-      <p class="mt-5 text-lg text-white/80">Business pohľad na energetické investície a trendy.</p>
+      <p class="mt-5 text-lg text-white/80">
+        Budúcnosť nebude patriť tým, ktorí postavia najviac panelov. Ale tým, ktorí budú vedieť energiu najlepšie riadiť.
+      </p>
     </div>
   </div>
 
@@ -27,67 +77,188 @@ const post = {
     <p class="text-sm text-muted pb-8 mb-10 border-b border-gray-200">{post.date}</p>
 
     <div class="prose prose-lg max-w-none">
-      <h2>Prečo je to dôležité?</h2>
+      <div class="not-prose my-8 border border-gray-200 rounded-xl p-5">
+        <p class="font-bold mb-2">TL;DR</p>
+        <p class="text-muted">
+          Konferencia Solar Energy Storage Future Germany 2026 ukázala, že budúcnosť firemnej energetiky už nestojí na
+          samotnej fotovoltike ani batériách. Rozhodujúce bude inteligentné riadenie energie, flexibilita, kvalitné dáta
+          a schopnosť vytvárať ekonomickú hodnotu z energetických aktív.
+        </p>
+      </div>
+
       <p>
-        Batériové úložiská boli ešte donedávna vnímané najmä ako doplnok fotovoltických elektrární. Dnes sa ich úloha
-        výrazne mení. Vďaka novým obchodným modelom, rozvoju flexibility a inteligentnému riadeniu sa batérie stávajú
-        aktívnou súčasťou ekonomiky energetických projektov.
+        Keď sme išli na konferenciu Solar Energy Storage Future Germany 2026 v Mníchove, čakali sme diskusie o nových
+        batériách, meničoch a ďalšej generácii fotovoltických panelov. Najväčším prekvapením bolo, že o hardvéri sa
+        hovorilo najmenej. Takmer každá prednáška sa točila okolo optimalizácie, business modelov, flexibility, softvéru,
+        obchodovania s elektrinou, financovania projektov a pripojenia do siete. Energetika sa mení — a viac, než si
+        väčšina firiem uvedomuje.
+      </p>
+      <p>
+        Tento článok vznikol na základe poznatkov z konferencie Solar Energy Storage Future Germany v Mníchove a
+        skúseností tímu RKS pri návrhu energetických riešení pre výrobné podniky a komerčné budovy.
+      </p>
+
+      <figure class="my-8 max-w-sm mx-auto">
+        <img src="/images/energy-memo/mnichov-optimalizacia.jpg" alt="Panelová diskusia na konferencii Solar Energy Storage Future Germany 2026 v Mníchove" class="w-full rounded-xl border border-gray-200" />
+        <figcaption class="text-sm text-muted mt-2">Panel „From Expansion to Optimization" — Solar Energy Storage Future Germany 2026, Mníchov.</figcaption>
+      </figure>
+
+      <div class="not-prose my-8 border border-gray-200 rounded-xl p-5">
+        <p class="font-bold mb-4">5 hlavných trendov z konferencie</p>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b border-gray-200">
+                <th class="py-2 pr-4 font-semibold">Trend</th>
+                <th class="py-2 font-semibold">Čo znamená</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                trends.map((t) => (
+                  <tr class="border-b border-gray-100 last:border-0">
+                    <td class="py-2 pr-4 font-medium whitespace-nowrap">{t.trend}</td>
+                    <td class="py-2 text-muted">{t.meaning}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h2>Batéria už nie je zariadenie. Je to investičné aktívum.</h2>
+      <p>
+        Ešte pred niekoľkými rokmi bola batéria jednoduchá: nabije sa, vybije sa, hotovo. Dnes môže mať to isté batériové
+        úložisko (Battery Energy Storage System – BESS) dve úplne rozdielne ekonomiky — nie kvôli technológii, ale kvôli
+        spôsobu, akým je riadené.
+      </p>
+      <p>
+        Na konferencii sa opakovalo jedno spojenie: revenue stacking. Revenue stacking znamená kombináciu viacerých
+        zdrojov ekonomickej hodnoty z jedného batériového úložiska naraz — napríklad vlastná spotreba, znižovanie
+        odberových špičiek, arbitráž, podporné služby, flexibilita a budúce trhy. Otázka preto už nie je „akú batériu
+        kúpiť?", ale „ako z nej vytvoriť čo najväčšiu hodnotu?".
       </p>
 
       <figure class="my-8">
-        <div class="aspect-[16/9] w-full rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center text-sm text-muted px-4 text-center">Fotografia z konferencie Solar Energy Storage Future Germany</div>
+        <img src="/images/energy-memo/vrstvenie-uzitkov.svg" alt="Vrstvenie úžitkov batériového úložiska" class="w-full rounded-xl border border-gray-200" />
+        <figcaption class="text-sm text-muted mt-2">Hodnota batérie vzniká vrstvením úžitkov (revenue stacking), nie z kapacity v kWh.</figcaption>
       </figure>
 
-      <h2>Čo sme si odniesli z konferencie Solar Energy Storage Future Germany</h2>
+      <h2>Európa nemá problém s batériami. Má problém so sieťou.</h2>
       <p>
-        Na konferencii v Mníchove sa stretli developeri, výrobcovia technológií, investori aj prevádzkovatelia
-        energetických systémov. Najväčším prekvapením nebola nová technológia, ale spôsob, akým sa mení ekonomika
-        energetických projektov.
+        Nie je problém vyrobiť elektrinu — problém je dostať ju tam, kde ju niekto potrebuje. Preto sa investori čoraz
+        menej zaoberajú tým, aká bude batéria či panely, a čoraz viac tým, kde je trafostanica, aké sú podmienky
+        pripojenia, aká je kapacita siete, aké bude obmedzovanie výroby a aká je hodnota samotného pripojenia.
+      </p>
+      <p>
+        Grid connection (pripojenie do distribučnej siete) sa preto začína označovať za nové zlato energetiky.
       </p>
 
-      <h3>1. EMS prestáva byť len monitorovacím systémom</h3>
+      <h2>Softvér začína vytvárať väčšiu hodnotu než hardvér</h2>
       <p>
-        Energetický manažment dnes rozhoduje o tom, ako efektívne firma využije vlastnú energiu. Softvér sa stáva
-        nástrojom pre optimalizáciu prevádzky, nie iba zobrazovanie grafov.
+        Pred desiatimi rokmi rozhodovalo, ktorú batériu kúpiš. Dnes rozhoduje, ako ju budeš riadiť.
+        <a href="/energetika/energy-management">Energy Management System (EMS)</a> prestáva byť systémom, ktorý iba
+        ukazuje grafy, a stáva sa mozgom celej energetiky — rozhoduje, kedy nabíjať, kedy vybíjať, kedy obchodovať, kedy
+        šetriť batériu a kedy maximalizovať cash flow.
       </p>
+      <p>Softvér prestáva energetiku podporovať. Softvér sa stáva energetikou.</p>
 
       <figure class="my-8">
-        <div class="aspect-[16/9] w-full rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center text-sm text-muted px-4 text-center">Fotografia z prezentácie EMS alebo výstaviska</div>
+        <img src="/images/energy-memo/mnichov-ai.jpg" alt="Panel Digital & AI na konferencii Solar Energy Storage Future Germany 2026 v Mníchove" class="w-full rounded-xl border border-gray-200" />
+        <figcaption class="text-sm text-muted mt-2">Panel „Digital & AI: How Software-Defined Energy Unlocks Efficiency" — Solar Energy Storage Future Germany 2026, Mníchov.</figcaption>
       </figure>
 
-      <h3>2. Jeden zdroj príjmov už nestačí</h3>
+      <h2>AI nie je cieľ, ale vrstva optimalizácie</h2>
       <p>
-        Úspešné projekty dnes kombinujú viac možností využitia batériového úložiska. Práve schopnosť prepájať rôzne
-        obchodné modely bude čoraz dôležitejšia pri hodnotení návratnosti investície.
+        AI v energetike neslúži na nahradenie ľudí. Pomáha robiť lepšie rozhodnutia na základe veľkého množstva dát —
+        lepšie predpovedá počasie, plánuje nabíjanie, odhaľuje poruchy a optimalizuje obchodovanie. AI nevytvára hodnotu
+        sama; pomáha ju vytvárať.
       </p>
-
-      <figure class="my-8">
-        <div class="aspect-[16/9] w-full rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center text-sm text-muted px-4 text-center">Fotografia panelovej diskusie alebo BESS riešenia</div>
-      </figure>
-
-      <h3>3. Flexibilita sa stáva konkurenčnou výhodou</h3>
-      <p>
-        Budúcnosť nebude patriť len firmám, ktoré vyrábajú vlastnú elektrinu. Výhodu získajú tie, ktoré ju dokážu
-        efektívne riadiť, ukladať a využívať v správnom čase.
-      </p>
-
-      <figure class="my-8">
-        <div class="aspect-[16/9] w-full rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center text-sm text-muted px-4 text-center">Fotografia z konferencie alebo technológie</div>
-      </figure>
 
       <h2>Čo to znamená pre slovenské firmy?</h2>
       <p>
-        Pri rozhodovaní o energetických projektoch už nestačí počítať len výrobu elektriny alebo jednoduchú dobu
-        návratnosti. Rovnako dôležité bude pochopiť, ako môže projekt ovplyvniť cash flow, flexibilitu prevádzky a
-        budúce možnosti rozvoja firmy. Práve preto bude kvalitný business case zohrávať čoraz väčšiu úlohu pri
-        rozhodovaní o investíciách.
+        Ak ste výrobná firma, logistické centrum alebo prevádzkujete energeticky náročný areál, zmena sa vás týka skôr,
+        než sa môže zdať. Pri rozhodovaní o energetických projektoch už nestačí riešiť cenu panelov, výkon batérie a
+        jednoduchú návratnosť. Čoraz dôležitejšie bude odpovedať na otázky: ako projekt ovplyvní cash flow? aké nové
+        príjmy môže vytvoriť? aké riziká prináša? ako bude fungovať o päť rokov? dá sa rozšíriť? ako ovplyvní hodnotu
+        firmy? To sú dnes otázky, ktoré si kladú investori aj banky.
       </p>
 
-      <h2>Energy Memo takeaway</h2>
+      <div class="not-prose my-6 border-l-4 border-primary/40 bg-primary/5 rounded-r-lg p-4">
+        <p class="font-bold mb-1">Poznámka k príjmom</p>
+        <p class="text-muted">
+          Časť zdrojov revenue stackingu (arbitráž, obchodovanie, podporné služby aFRR/mFRR) je dnes reálna najmä v
+          západnej Európe. Na Slovensku sa tieto trhy zatiaľ otvorene neobchodujú — preto ekonomiku projektov staviame na
+          overených úžitkoch (vlastná spotreba, znižovanie špičiek, záloha) a zvyšok berieme ako budúci potenciál, na
+          ktorý sa oplatí byť pripravený.
+        </p>
+      </div>
+
       <p class="not-italic text-xl font-medium border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
-        Najväčšiu hodnotu neprinesie technológia sama o sebe. Rozhodujúce bude, ako dobre ju firma dokáže premeniť na
-        ekonomický prínos.
+        Budúcnosť energetiky nebude patriť tým, ktorí vlastnia najlepšie technológie. Bude patriť tým, ktorí z nich
+        dokážu vytvoriť najväčšiu hodnotu.
       </p>
+
+      <h2>Čo si z konferencie odnášame</h2>
+      <ul>
+        <li>Energetika sa presúva od výroby k riadeniu.</li>
+        <li>Softvér bude rozhodovať viac než hardvér.</li>
+        <li>Batéria je ekonomický nástroj, nie zariadenie.</li>
+        <li>EMS sa stáva mozgom energetiky.</li>
+        <li>Dáta budú rozhodovať o návratnosti investícií.</li>
+      </ul>
+
+      <div class="not-prose my-8 border border-gray-200 rounded-xl p-5">
+        <p class="font-bold mb-3">Zhrnutie v 30 sekundách</p>
+        <ul class="space-y-2">
+          <li class="flex gap-3">
+            <svg class="w-5 h-5 flex-shrink-0 text-primary mt-0.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-muted">Batéria už nie je len úložisko energie.</span>
+          </li>
+          <li class="flex gap-3">
+            <svg class="w-5 h-5 flex-shrink-0 text-primary mt-0.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-muted">EMS riadi ekonomiku celej prevádzky.</span>
+          </li>
+          <li class="flex gap-3">
+            <svg class="w-5 h-5 flex-shrink-0 text-primary mt-0.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-muted">Flexibilita bude novým zdrojom hodnoty.</span>
+          </li>
+          <li class="flex gap-3">
+            <svg class="w-5 h-5 flex-shrink-0 text-primary mt-0.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-muted">Pripojenie do siete sa stáva strategickou výhodou.</span>
+          </li>
+          <li class="flex gap-3">
+            <svg class="w-5 h-5 flex-shrink-0 text-primary mt-0.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-muted">Budúcnosť patrí dátam a optimalizácii.</span>
+          </li>
+        </ul>
+      </div>
+
+      <h2>Súvisiace riešenia</h2>
+      <ul>
+        <li><a href="/energetika/baterie-bess">Batériové úložiská (BESS)</a> – ako z batérie vytvoriť zdroj hodnoty.</li>
+        <li><a href="/energetika/energy-management">Energy Management System (EMS)</a> – ako softvér riadi ekonomiku prevádzky.</li>
+        <li><a href="/energetika/fotovoltika">Fotovoltika pre firmy</a> – návrh podľa reálnej spotreby.</li>
+        <li><a href="/energetika">Energetické riešenia pre firmy</a> – prehľad služieb RKS.</li>
+      </ul>
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Často kladené otázky</h2>
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 p-5">
+            <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
+              {faq.q}
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="text-muted mt-3">{faq.a}</p>
+          </details>
+        ))
+      }
     </div>
   </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </Layout>
