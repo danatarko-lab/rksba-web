@@ -2,14 +2,58 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'Energy Memo: elektrická sieť ako nový limit energetických projektov | RKS',
+  title: 'SAPI konferencia 2026: 5 trendov, ktoré menia energetické investície firiem | RKS',
   description:
-    'Prečo o úspechu energetického projektu čoraz viac rozhoduje kapacita siete a kvalitné dáta — tri poznatky zo SAPI.',
+    'Aké trendy zazneli na SAPI konferencii 2026? Zistite, prečo budúcnosť firemnej energetiky stojí na dátach, EMS, fotovoltike, batériových úložiskách (BESS), flexibilite a vlastnej spotrebe energie.',
 };
 
 const post = {
-  title: 'Elektrická sieť sa stáva novým limitom energetických projektov',
+  title: 'SAPI konferencia 2026: 5 trendov, ktoré menia budúcnosť firemnej energetiky',
   date: '1. 6. 2026',
+};
+
+const faqs = [
+  {
+    q: 'Oplatí sa dnes firme fotovoltika?',
+    a: 'Áno, ale iba vtedy, keď je navrhnutá podľa reálnej spotreby a väčšinu vyrobenej elektriny dokáže firma sama spotrebovať.',
+  },
+  {
+    q: 'Potrebujem k fotovoltike aj batériu?',
+    a: 'Nie vždy. Záleží od vášho spotrebového profilu, cien elektriny, rezervovanej kapacity a cieľov projektu. Preto odporúčame rozhodovať na základe dát, nie všeobecných odporúčaní.',
+  },
+  {
+    q: 'Čo je Energy Management System (EMS)?',
+    a: 'EMS je systém, ktorý meria, vyhodnocuje a riadi spotrebu energie. Prepája fotovoltiku, batériové úložiská, nabíjanie elektromobilov a ďalšie technológie do jedného inteligentného celku.',
+  },
+  {
+    q: 'Prečo nezačať výberom technológie?',
+    a: 'Pretože rovnaké riešenie môže mať v dvoch firmách úplne inú ekonomiku. Správny návrh vždy vychádza z dát, nie z katalógu technológií.',
+  },
+  {
+    q: 'Ako zistím, či sa investícia oplatí?',
+    a: 'Prvým krokom je analýza spotreby a príprava business case. Ten ukáže očakávané úspory, návratnosť, dopad na cash flow aj hlavné riziká projektu.',
+  },
+  {
+    q: 'Čo znamená flexibilita v energetike?',
+    a: 'Flexibilita znamená schopnosť prispôsobiť výrobu alebo spotrebu energie aktuálnej situácii v elektrizačnej sústave alebo cenám elektriny. Moderné riešenia dokážu energiu vyrobiť, uložiť a spotrebovať v najvýhodnejšom čase, čím znižujú náklady aj zaťaženie siete.',
+  },
+  {
+    q: 'Čo je vlastná spotreba energie?',
+    a: 'Vlastná spotreba predstavuje podiel elektriny vyrobenej napríklad fotovoltikou, ktorú firma spotrebuje priamo vo svojej prevádzke. Čím vyšší je tento podiel, tým väčší ekonomický prínos má fotovoltická elektráreň.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
 };
 ---
 
@@ -18,7 +62,7 @@ const post = {
     <div class="mx-auto max-w-3xl px-4 sm:px-6 py-14 md:py-20">
       <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-5">Energy Memo · Energetika</p>
       <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight">{post.title}</h1>
-      <p class="mt-5 text-lg text-white/80">Business pohľad na energetické investície a trendy.</p>
+      <p class="mt-5 text-lg text-white/80">Budúcnosť patrí dátam, flexibilite a vlastnej spotrebe energie.</p>
     </div>
   </div>
 
@@ -27,73 +71,274 @@ const post = {
     <p class="text-sm text-muted pb-8 mb-10 border-b border-gray-200">{post.date}</p>
 
     <div class="prose prose-lg max-w-none">
-      <h2>Prečo je to dôležité?</h2>
-      <p>
-        Ešte pred niekoľkými rokmi bola hlavnou témou energetických projektov výroba elektriny. Dnes sa diskusia posúva
-        ďalej. Čoraz viac projektov nenaráža na výkon fotovoltických panelov, ale na kapacitu distribučnej siete,
-        možnosti pripojenia a efektívne riadenie vyrobenej energie.
-      </p>
-      <p>
-        Pre firmy to znamená, že úspešný projekt už nie je len otázkou technológie. Rozhodujúce bude, ako dokáže energia
-        zapadnúť do reálnej prevádzky a ekonomiky podniku.
+      <p class="text-xl text-gray-700">
+        SAPI konferencia 2026 ukázala, že budúcnosť firemnej energetiky nebude stáť len na výrobe elektriny, ale
+        predovšetkým na dátach, inteligentnom riadení spotreby a flexibilite. V článku prinášame päť najdôležitejších
+        trendov z konferencie a vysvetľujeme, čo znamenajú pre výrobné podniky, komerčné budovy a energeticky náročné
+        prevádzky.
       </p>
 
-      <figure class="my-8">
-        <div class="aspect-[16/9] w-full rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center text-sm text-muted px-4 text-center">Fotografia zo SAPI</div>
-      </figure>
+      <div class="not-prose my-8 border border-gray-200 rounded-xl p-5">
+        <p class="font-bold mb-3">Z článku sa dozviete</p>
+        <ul class="list-disc pl-5 space-y-1 text-muted">
+          <li>prečo už samotná fotovoltika nestačí,</li>
+          <li>akú úlohu zohrávajú Energy Management System (EMS) a batériové úložiská (BESS),</li>
+          <li>prečo sa hodnota energie presúva od výroby k jej riadeniu,</li>
+          <li>prečo sú kvalitné dáta základom každého investičného rozhodnutia,</li>
+          <li>ako sa mení pohľad na energetické investície vo firmách.</li>
+        </ul>
+      </div>
 
-      <h2>Čo sme si odniesli z konferencie SAPI</h2>
       <p>
-        Na konferencii SAPI zaznelo množstvo zaujímavých prezentácií od distribučných spoločností, investorov aj
-        technologických partnerov. Namiesto kompletného reportu prinášame tri myšlienky, ktoré podľa nás stoja za
-        pozornosť každého, kto rozhoduje o energetických investíciách.
+        Energetika sa za posledných niekoľko rokov zmenila viac než za predchádzajúce desaťročia. Rastúci podiel
+        obnoviteľných zdrojov, volatilné ceny elektriny, nové regulačné požiadavky a rozvoj batériových úložísk zásadne
+        menia spôsob, akým firmy plánujú svoje investície do energie.
+      </p>
+      <p>
+        Na 16. ročníku konferencie SAPI (Slovenská asociácia udržateľnej energetiky) v Senci sa stretli distribučné
+        spoločnosti, prevádzkovatelia sústavy, výrobcovia technológií, developeri energetických projektov, investori aj
+        odborníci z praxe. Nešlo len o predstavenie nových technológií — väčšina diskusií sa sústredila na to, ako sa
+        mení ekonomika energetických projektov a podľa akých pravidiel sa budú firmy rozhodovať v najbližších rokoch.
+      </p>
+      <p>
+        Tento prehľad vychádza z diskusií na konferencii SAPI 2026 a z našich skúseností pri návrhu energetických
+        riešení pre firmy. Z konferencie sme si odniesli päť hlavných trendov, ktoré podľa nás najviac ovplyvnia
+        rozhodovanie výrobných podnikov, komerčných budov a energeticky náročných prevádzok.
       </p>
 
-      <h3>1. Elektrická sieť sa stáva novým limitom</h3>
-      <p>
-        Výkon technológií rastie rýchlejšie ako možnosti distribučnej siete. Aj technicky kvalitný projekt môže naraziť
-        na obmedzenia pri pripojení alebo prevádzke. Preto bude čoraz dôležitejšie uvažovať nad energetikou komplexne –
-        od výroby až po riadenie spotreby.
-      </p>
-
-      <figure class="my-8">
-        <div class="aspect-[16/9] w-full rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center text-sm text-muted px-4 text-center">Fotografia z prezentácie alebo panelovej diskusie</div>
-      </figure>
-
-      <h3>2. Batériové úložiská menia svoju úlohu</h3>
-      <p>
-        Batéria už nie je len spôsob, ako uskladniť prebytky z fotovoltiky. Stáva sa nástrojom, ktorý pomáha riadiť
-        spotrebu, reagovať na situáciu na trhu a zvyšovať ekonomiku celého projektu. To zásadne mení spôsob, akým sa na
-        batériové úložiská pozerajú investori aj firmy.
-      </p>
-
-      <figure class="my-8">
-        <div class="aspect-[16/9] w-full rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center text-sm text-muted px-4 text-center">Fotografia BESS alebo vystavovateľov</div>
-      </figure>
-
-      <h3>3. Dáta budú rozhodovať viac ako výkon technológií</h3>
-      <p>
-        Veľká časť diskusií sa netočila okolo otázky, aké zariadenia použiť. Oveľa častejšie zaznievalo: ako správne
-        vyhodnocovať spotrebu, ako pripraviť business case a ako pracovať s flexibilitou. Práve kvalitné dáta budú
-        základom dobrých investičných rozhodnutí.
-      </p>
-
-      <figure class="my-8">
-        <div class="aspect-[16/9] w-full rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center text-sm text-muted px-4 text-center">Fotografia publika alebo prezentácie o dátach</div>
-      </figure>
-
-      <h2>Čo to znamená pre slovenské firmy?</h2>
-      <p>
-        Aj keď boli mnohé prezentácie zamerané na veľké projekty, rovnaké princípy platia aj pre výrobné podniky,
-        logistické centrá či priemyselné areály. Energetické projekty dnes už nie sú len otázkou technológie. Sú otázkou
-        správneho načasovania, kvalitných dát a dobre pripraveného business case. Firmy, ktoré začnú s prípravou skôr,
-        budú mať väčší priestor reagovať na meniace sa podmienky trhu.
-      </p>
-
-      <h2>Energy Memo takeaway</h2>
       <p class="not-italic text-xl font-medium border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
-        Budúcnosť energetiky nebude stáť na tom, kto vyrobí viac elektriny. Ale na tom, kto ju bude vedieť lepšie riadiť.
+        Budúcnosť energetiky nebude stáť na tom, kto vyrobí viac elektriny. Rozhodujúce bude, kto ju dokáže lepšie
+        riadiť.
       </p>
+
+      <h2>1. Fotovoltika už sama nestačí</h2>
+      <p>
+        Pred niekoľkými rokmi bola hlavnou otázkou: koľko panelov sa zmestí na strechu? Dnes je správna otázka úplne
+        iná: koľko z vyrobenej elektriny dokáže firma reálne využiť?
+      </p>
+      <p>
+        Počas konferencie zaznelo, že výroba elektriny z obnoviteľných zdrojov už prestáva byť najväčším problémom.
+        Solárna energia je lacná a technológie sú dostupnejšie než kedykoľvek predtým. Limitom sa stáva elektrická sieť.
+        Dostupnú kapacitu na pripojenie si dnes viete overiť aj vo verejnej
+        <a href="https://zsdis.sk/Uvod/Online-sluzby/Mapa-pripojitelnosti">mape pripojiteľnosti ZSDIS</a>.
+      </p>
+
+      <figure class="my-8">
+        <img
+          src="/images/energy-memo/mapa-kapacity.svg"
+          alt="Ilustračná mapa dostupnej kapacity siete"
+          class="w-full rounded-xl border border-gray-200"
+        />
+        <figcaption class="text-sm text-muted mt-2">
+          Ilustračná mapa dostupnej kapacity — kde sa dá pripojiť nový zdroj.
+        </figcaption>
+      </figure>
+
+      <p>
+        Čím viac fotovoltických elektrární pribúda, tým väčší význam má lokálna spotreba energie, riadenie odberu,
+        flexibilita, akumulácia a inteligentné energetické systémy. Pre firmy to znamená zásadnú zmenu uvažovania:
+        úspešný projekt dnes nie je ten, ktorý vyrobí najviac elektriny, ale ten, ktorý dokáže maximalizovať vlastnú
+        spotrebu a minimalizovať nákup elektriny zo siete.
+      </p>
+
+      <div class="not-prose my-6 border-l-4 border-primary/40 bg-primary/5 rounded-r-lg p-4">
+        <p class="font-bold mb-1">Čo to znamená pre vašu firmu?</p>
+        <p class="text-muted">
+          Ak uvažujete o <a class="text-primary hover:underline" href="/energetika/fotovoltika">fotovoltike</a>,
+          nezačínajte veľkosťou strechy ani počtom panelov. Začnite analýzou spotreby — práve spotrebový profil
+          rozhoduje o tom, či bude projekt ekonomicky úspešný.
+        </p>
+      </div>
+
+      <h2>2. Hodnota energie sa presúva od výroby k riadeniu</h2>
+      <p>
+        Inými slovami: čoraz väčšiu hodnotu nebude mať samotná výroba elektriny, ale schopnosť rozhodnúť, kedy energiu
+        vyrobiť, uložiť, spotrebovať alebo predať.
+      </p>
+      <p>
+        Jednou z najsilnejších tém konferencie bola flexibilita. Energetika sa postupne mení z jednoduchého modelu
+        „vyrobiť → spotrebovať" na komplexnejší systém „vyrobiť → uložiť → riadiť → spotrebovať v správnom čase". To je
+        dôvod, prečo sa čoraz viac hovorí o
+        <a href="/energetika/energy-management">Energy Management System (EMS)</a>,
+        <a href="/energetika/baterie-bess">batériových úložiskách (BESS)</a>, inteligentnom riadení spotreby, flexibilite
+        a virtuálnych elektrárňach.
+      </p>
+      <p>
+        Energia má inú hodnotu o dvanástej na obed a inú o šiestej večer. Schopnosť rozhodnúť, kedy energiu spotrebovať,
+        uložiť alebo predať, sa postupne stáva rovnako dôležitou ako samotná výroba.
+      </p>
+
+      <div class="not-prose my-6 border-l-4 border-primary/40 bg-primary/5 rounded-r-lg p-4">
+        <p class="font-bold mb-1">Čo to znamená pre vašu firmu?</p>
+        <p class="text-muted">
+          Technológia sama osebe nestačí. Najväčšia hodnota vzniká až vtedy, keď spolupracujú fotovoltika, batériové
+          úložisko, EMS a riadenie spotreby.
+        </p>
+      </div>
+
+      <h2>3. Batériové úložiská už nie sú doplnok</h2>
+      <p>
+        Batériové úložiská (Battery Energy Storage System – BESS) boli donedávna vnímané ako voliteľný doplnok
+        fotovoltiky. To sa mení.
+      </p>
+      <p>
+        Na konferencii zaznelo viacero príkladov, ktoré ukázali, že BESS dnes rieši omnoho viac než len ukladanie
+        energie. Správne navrhnuté batériové úložisko môže pomôcť znižovať odberové špičky, zvýšiť vlastnú spotrebu
+        energie z fotovoltiky, stabilizovať prevádzku, vytvoriť zálohu pre kritické technológie a pripraviť firmu na
+        budúce služby flexibility.
+      </p>
+      <p>
+        Dôležité je pochopiť jednu vec: batéria nemá hodnotu preto, že má určitú kapacitu, ale preto, čo dokáže vo vašej
+        prevádzke vyriešiť. Rovnaké batériové úložisko môže mať pre dve firmy úplne inú ekonomiku.
+      </p>
+
+      <div class="not-prose my-6 border-l-4 border-primary/40 bg-primary/5 rounded-r-lg p-4">
+        <p class="font-bold mb-1">Čo to znamená pre vašu firmu?</p>
+        <p class="text-muted">
+          Pri batériách by prvá otázka nikdy nemala byť „akú veľkú batériu potrebujeme?". Správna otázka znie: „aký
+          problém má batéria vyriešiť?"
+        </p>
+      </div>
+
+      <h2>4. Dáta sú cennejšie než technológia</h2>
+      <p>Jedna myšlienka sa opakovala prakticky vo všetkých odborných paneloch.</p>
+
+      <p class="not-italic text-xl font-medium border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        Bez kvalitných dát sa moderná energetika nedá efektívne riadiť.
+      </p>
+
+      <p>
+        Distribučné spoločnosti dnes pracujú so stovkami tisíc inteligentných meracích bodov — nie preto, aby zbierali
+        dáta, ale preto, aby vedeli robiť lepšie rozhodnutia. Rovnaké pravidlo platí aj vo firmách: bez poznania
+        spotreby, odberových špičiek, rezervovanej kapacity, výrobných profilov a cien elektriny je každá investícia do
+        fotovoltiky alebo batérie iba kvalifikovaný odhad.
+      </p>
+      <p>
+        Práve preto v RKS nezačíname technológiou. Začíname dátami. Až následne pripravujeme business case a odporúčame
+        riešenie.
+      </p>
+
+      <div class="not-prose my-6 border-l-4 border-primary/40 bg-primary/5 rounded-r-lg p-4">
+        <p class="font-bold mb-1">Čo to znamená pre vašu firmu?</p>
+        <p class="text-muted">
+          Ak dnes neviete odpovedať na otázku „kedy počas dňa spotrebúvame najviac energie?", pravdepodobne ešte nie ste
+          pripravení rozhodovať o investícii do energetiky.
+        </p>
+      </div>
+
+      <h2>5. Najväčšou výzvou už nie je technológia, ale správne rozhodnutie</h2>
+      <p>
+        Dnes už väčšina potrebných technológií existuje a je komerčne dostupná — fotovoltika, batériové úložiská, EMS aj
+        riadenie flexibility. Rozhodujúcou konkurenčnou výhodou sa preto nestáva samotná technológia, ale schopnosť
+        správne ju navrhnúť, ekonomicky vyhodnotiť a dlhodobo riadiť.
+      </p>
+      <p>
+        Najväčším rizikom sa stáva nesprávne investičné rozhodnutie. Preto sa počas konferencie veľa hovorilo o
+        ekonomike projektov, business case, návratnosti, financovaní, regulácii a rizikách. Energetický projekt dnes nie
+        je technologický projekt — je to investičné rozhodnutie. A ako každá investícia musí obstáť pred vedením firmy,
+        finančným riaditeľom aj bankou.
+      </p>
+
+      <div class="not-prose my-6 border-l-4 border-primary/40 bg-primary/5 rounded-r-lg p-4">
+        <p class="font-bold mb-1">Čo to znamená pre vašu firmu?</p>
+        <p class="text-muted">
+          Pred rozhodnutím o investícii by ste mali poznať odpovede minimálne na tieto otázky: Aký problém projekt
+          rieši? Aké úspory prinesie? Aký bude dopad na cash flow? Aké riziká projekt prináša? Čo sa stane, ak sa zmenia
+          ceny elektriny? Je riešenie pripravené na budúci rast firmy? Ak tieto odpovede nemáte, ešte nie je čas kupovať
+          technológiu.
+        </p>
+      </div>
+
+      <h2>Čo sme si zo SAPI konferencie odniesli my</h2>
+      <p>
+        Najväčším potvrdením pre nás bolo, že smer, ktorým sa vydáva energetika, je rovnaký ako prístup, ktorý dlhodobo
+        presadzujeme. Nie „najprv technológia", ale „najprv dáta, potom business case, až následne technológia".
+      </p>
+      <p>
+        Veríme, že každá investícia do energetiky by mala byť založená na reálnych dátach, ekonomickom vyhodnotení a
+        jasne definovaných cieľoch. Fotovoltika, batériové úložisko alebo EMS nie sú cieľom — sú nástrojmi. Skutočným
+        cieľom je nižší účet za energie, lepšia predvídateľnosť nákladov, vyššia odolnosť prevádzky a rozumné investičné
+        rozhodnutie.
+      </p>
+
+      <h2>Aké kroky odporúčame firmám?</h2>
+      <p>
+        Na základe diskusií zo SAPI konferencie aj našich skúseností z praxe odporúčame pri plánovaní energetických
+        investícií postupovať v tomto poradí:
+      </p>
+      <ol>
+        <li>Zmerať a analyzovať reálnu spotrebu energie.</li>
+        <li>Identifikovať odberové špičky a rezervovanú kapacitu.</li>
+        <li>Pripraviť technicko-ekonomický business case.</li>
+        <li>Vybrať vhodnú kombináciu technológií (EMS, fotovoltika, BESS, nabíjanie elektromobilov).</li>
+        <li>Priebežne monitorovať výsledky a systém ďalej optimalizovať.</li>
+      </ol>
+      <p>Takýto postup výrazne znižuje riziko nesprávnej investície a zvyšuje návratnosť projektu.</p>
+
+      <div class="not-prose my-8 border border-gray-200 rounded-xl p-5">
+        <p class="font-bold mb-3">Zhrnutie v 30 sekundách</p>
+        <ul class="space-y-2">
+          <li class="flex gap-3">
+            <svg class="w-5 h-5 flex-shrink-0 text-primary mt-0.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-muted">Fotovoltika už sama nestačí.</span>
+          </li>
+          <li class="flex gap-3">
+            <svg class="w-5 h-5 flex-shrink-0 text-primary mt-0.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-muted">Najväčšiu hodnotu má energia, ktorú firma spotrebuje vo vlastnej prevádzke.</span>
+          </li>
+          <li class="flex gap-3">
+            <svg class="w-5 h-5 flex-shrink-0 text-primary mt-0.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-muted">Batériové úložiská sa stávajú prirodzenou súčasťou moderných energetických projektov.</span>
+          </li>
+          <li class="flex gap-3">
+            <svg class="w-5 h-5 flex-shrink-0 text-primary mt-0.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-muted">Dáta a Energy Management System sú základom každého správneho rozhodnutia.</span>
+          </li>
+          <li class="flex gap-3">
+            <svg class="w-5 h-5 flex-shrink-0 text-primary mt-0.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-muted">Energetické projekty by sa mali posudzovať ako investície – nie ako nákup technológie.</span>
+          </li>
+        </ul>
+      </div>
+
+      <h2>Súvisiace riešenia</h2>
+      <ul>
+        <li><a href="/energetika/energy-management">Energy Management System (EMS)</a> – ako merať a riadiť spotrebu energie.</li>
+        <li><a href="/energetika/fotovoltika">Fotovoltika pre firmy</a> – návrh podľa reálnej spotreby, nie podľa veľkosti strechy.</li>
+        <li><a href="/energetika/baterie-bess">Batériové úložiská (BESS)</a> – ako zvýšiť vlastnú spotrebu a znižovať odberové špičky.</li>
+        <li><a href="/energetika">Energetické riešenia pre firmy</a> – prehľad služieb RKS.</li>
+      </ul>
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Často kladené otázky</h2>
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 p-5">
+            <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
+              {faq.q}
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="text-muted mt-3">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">
+        Potrebujete vedieť, či sa energetický projekt oplatí aj vo vašej firme?
+      </h2>
+      <p class="text-muted mb-6">
+        Každá prevádzka má iný profil spotreby, iné prevádzkové požiadavky aj odlišné investičné ciele. Preto nezačíname
+        ponukou technológie, ale analýzou vašej spotreby, prevádzky a ekonomiky projektu. Na základe reálnych dát
+        pripravíme business case, ktorý vám pomôže rozhodnúť sa, či je vhodným riešením Energy Management System (EMS),
+        fotovoltika, batériové úložisko (BESS) alebo ich kombinácia.
+      </p>
+      <a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+      <p class="text-muted italic text-center mt-6">Najprv dáta. Potom business case. Až následne technológia.</p>
     </div>
   </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </Layout>

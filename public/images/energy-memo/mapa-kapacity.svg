@@ -1,0 +1,19 @@
+<svg width="100%" viewBox="0 0 680 383" role="img" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif">
+<title>Ilustračná mapa dostupnej kapacity siete</title>
+<desc>Abstraktná mapa s farebnými zónami dostupnej kapacity elektrickej siete, prepojovacími vedeniami, trafostanicami a značkou lokality.</desc>
+<rect x="0" y="0" width="680" height="330" rx="12" fill="#eaeef3" stroke="#d3d1c7" stroke-width="0.5"/>
+<path d="M80,70 C110,40 190,45 210,90 C230,135 180,178 130,172 C85,166 50,110 80,70 Z" fill="#8cc152" fill-opacity="0.55"/>
+<path d="M450,88 C492,58 582,70 602,120 C616,160 560,196 505,186 C460,178 420,124 450,88 Z" fill="#8cc152" fill-opacity="0.55"/>
+<path d="M250,138 C300,98 422,110 470,160 C512,202 470,262 380,266 C288,270 208,200 250,138 Z" fill="#5b9bd5" fill-opacity="0.5"/>
+<path d="M90,222 C130,196 212,206 226,250 C239,291 190,321 140,313 C95,306 55,252 90,222 Z" fill="#5b9bd5" fill-opacity="0.5"/>
+<path d="M500,226 C540,201 616,210 626,256 C634,292 586,316 540,309 C500,303 466,256 500,226 Z" fill="#5b9bd5" fill-opacity="0.5"/>
+<polyline points="120,90 250,150 350,180 520,120" fill="none" stroke="#9a988f" stroke-width="0.75"/>
+<polyline points="350,180 150,250" fill="none" stroke="#9a988f" stroke-width="0.75"/>
+<polyline points="350,180 560,250" fill="none" stroke="#9a988f" stroke-width="0.75"/>
+<polyline points="350,180 400,300" fill="none" stroke="#9a988f" stroke-width="0.75"/>
+<circle cx="120" cy="90" r="3.5" fill="#1f3a5f"/><circle cx="350" cy="180" r="3.5" fill="#1f3a5f"/><circle cx="520" cy="120" r="3.5" fill="#1f3a5f"/><circle cx="150" cy="250" r="3.5" fill="#1f3a5f"/><circle cx="560" cy="250" r="3.5" fill="#1f3a5f"/><circle cx="400" cy="300" r="3.5" fill="#1f3a5f"/><circle cx="250" cy="150" r="3.5" fill="#1f3a5f"/>
+<path d="M300,116 C288,116 280,125 280,136 C280,150 300,168 300,168 C300,168 320,150 320,136 C320,125 312,116 300,116 Z" fill="#d85a30"/>
+<circle cx="300" cy="135" r="5.5" fill="#ffffff"/>
+<rect x="40" y="352" width="14" height="14" rx="3" fill="#8cc152"/><text x="62" y="363" fill="#33322e" font-size="14">Dostupná kapacita 5 MW</text>
+<rect x="300" y="352" width="14" height="14" rx="3" fill="#5b9bd5"/><text x="322" y="363" fill="#33322e" font-size="14">Dostupná kapacita 1 MW</text>
+</svg>
