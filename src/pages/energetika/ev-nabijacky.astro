@@ -1,13 +1,221 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-const metadata = { title: 'EV nabíjačky — RKS' };
+const metadata = {
+  title: 'Firemné nabíjanie elektromobilov: nabíjacia infraštruktúra pre firmy | RKS',
+  description:
+    'Nabíjacia infraštruktúra pre elektromobily vo firmách a areáloch. Kapacita prípojky, inteligentné riadenie nabíjania (load balancing), prepojenie s fotovoltikou, EMS a business case investície.',
+};
+
+const faqs = [
+  {
+    q: 'Potrebujeme kvôli nabíjačkám posilniť prípojku?',
+    a: 'Nie vždy. Závisí od počtu nabíjacích bodov, ich výkonu a rezervovanej kapacity vašej prípojky. Posilneniu sa často dá vyhnúť inteligentným riadením nabíjania (load balancing), ktoré rozloží dostupný výkon podľa aktuálnej spotreby budovy.',
+  },
+  {
+    q: 'Čo je load balancing?',
+    a: 'Inteligentné rozloženie dostupného výkonu medzi nabíjacie body tak, aby sa neprekročila kapacita prípojky. Umožňuje nabíjať viac vozidiel bez nákladného posilnenia prípojky.',
+  },
+  {
+    q: 'Čo je dynamické riadenie nabíjania?',
+    a: 'Nabíjací výkon sa priebežne prispôsobuje aktuálnej spotrebe budovy, výrobe z fotovoltiky alebo cenám elektriny. Vďaka tomu nabíjanie nezvyšuje odberové špičky.',
+  },
+  {
+    q: 'Môžeme nabíjať elektromobily z fotovoltiky?',
+    a: 'Áno. Pri prepojení nabíjania s fotovoltikou a riadením cez EMS je možné prednostne využívať vlastnú vyrobenú elektrinu a znižovať náklady na nabíjanie.',
+  },
+  {
+    q: 'Koľko stojí firemná nabíjacia infraštruktúra?',
+    a: 'Závisí od počtu nabíjacích bodov, stavu prípojky, potreby posilnenia kapacity a od toho, či sa dopĺňa fotovoltika alebo batéria. Preto k projektu pristupujeme cez analýzu a business case, ktorý ukáže reálnu ekonomiku investície.',
+  },
+  {
+    q: 'Je lepšie AC alebo DC nabíjanie?',
+    a: 'Závisí od využitia. AC (pomalšie) sa hodí tam, kde vozidlá stoja dlhšie, napríklad pri kanceláriách alebo cez noc. DC (rýchle) tam, kde treba nabiť rýchlo, napríklad v logistike. Väčšina firemných areálov kombinuje oba typy.',
+  },
+  {
+    q: 'Dá sa infraštruktúra neskôr rozšíriť?',
+    a: 'Áno, ak je tak navrhnutá od začiatku. Preto už pri návrhu zohľadňujeme plánovaný rast vozového parku, aby sa kapacita a počet nabíjacích bodov dali postupne rozširovať.',
+  },
+  {
+    q: 'Koľko elektromobilov zvládne naša existujúca prípojka?',
+    a: 'Závisí od vašej rezervovanej kapacity a od výkonu jednotlivých nabíjacích bodov. S inteligentným riadením nabíjania (load balancing) sa na tej istej prípojke zvyčajne dá nabíjať výrazne viac vozidiel než pri pevne nastavenom výkone. Presné číslo určí analýza spotreby a profilu odberu.',
+  },
+  {
+    q: 'Musíme kvôli nabíjaniu meniť trafostanicu?',
+    a: 'Väčšinou nie. Zásah do trafostanice alebo posilnenie prípojky býva potrebné až pri veľkom počte rýchlonabíjacích bodov. Pri správnom návrhu a riadení nabíjania sa mu často dá vyhnúť alebo ho aspoň oddialiť.',
+  },
+  {
+    q: 'Oplatí sa budovať nabíjaciu infraštruktúru už dnes, ak máme zatiaľ len niekoľko elektromobilov?',
+    a: 'Áno, ak sa navrhne s ohľadom na budúci rast. Často je ekonomicky výhodnejšie pripraviť kapacitu a kabeláž už pri prvej etape, než neskôr opakovane zasahovať do existujúcej infraštruktúry.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
+};
 ---
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
     <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/energetika">← Energetika</a></p>
-    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">EV nabíjačky</h1>
-    <p class="text-lg text-muted">Obsah dorobíme neskôr.</p>
+
+    <p class="text-sm font-medium uppercase tracking-wider text-primary mb-3">Energetické riešenia pre firmy a budovy</p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">
+      Firemná nabíjacia infraštruktúra pre elektromobily
+    </h1>
+    <p class="text-xl md:text-2xl text-muted mb-6">
+      Najväčším problémom firemného nabíjania nie sú nabíjačky, ale energia.
+    </p>
+
+    <p class="text-lg border-l-4 border-primary bg-primary/5 rounded-r-lg p-4 mb-6">
+      Firemná nabíjacia infraštruktúra pre elektromobily zahŕňa nabíjacie stanice, ale rovnako aj kapacitu prípojky,
+      inteligentné riadenie nabíjania a prepojenie s fotovoltikou či batériou. V RKS ju navrhujeme podľa dát o prevádzke
+      a business case tak, aby ekonomicky fungovala aj pri raste vozového parku a meniacich sa cenách elektriny.
+    </p>
+
+    <p class="text-lg text-muted mb-8">
+      Elektrifikácia firemných vozových parkov sa zrýchľuje. Mnohé firmy však pri plánovaní nabíjacej infraštruktúry
+      riešia najmä výber nabíjačiek, hoci v praxi je to jeden z posledných krokov. O úspechu projektu rozhoduje najmä to,
+      či existujúca prípojka zvládne nové zaťaženie, ako bude nabíjanie ovplyvňovať spotrebu elektriny a či je
+      infraštruktúra pripravená na budúci rast firmy. V RKS začíname dátami, analýzou prevádzky a business case, a až
+      následne navrhujeme riešenie.
+    </p>
+
+    <div class="mb-4"><a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a></div>
+
+    <div class="prose prose-lg max-w-none">
+      <h2>Pre koho je riešenie určené</h2>
+      <p>
+        Pomáhame pripraviť nabíjaciu infraštruktúru pre výrobné podniky, logistické a dopravné spoločnosti,
+        administratívne budovy, hotely a komerčné objekty, developerské projekty, firemné vozové parky a priemyselné
+        areály.
+      </p>
+
+      <h2>Najčastejšie chyby pri firemnom nabíjaní</h2>
+      <p>
+        Najväčším rizikom nebýva výber technológie, ale nesprávne navrhnutá infraštruktúra. Predimenzované riešenie
+        zbytočne zvyšuje investičné náklady, poddimenzované obmedzí budúci rozvoj firmy. Preto návrh vždy overujeme na
+        reálnych dátach a business case. Firmy najčastejšie:
+      </p>
+      <ul>
+        <li>nakúpia nabíjačky skôr, než overia kapacitu prípojky,</li>
+        <li>riešia výkon jednej stanice namiesto celého areálu,</li>
+        <li>nezohľadnia budúci rast vozového parku,</li>
+        <li>vynechajú EMS a inteligentné riadenie,</li>
+        <li>nevyužijú fotovoltiku,</li>
+        <li>podcenia load balancing.</li>
+      </ul>
+
+      <h2>Aké otázky riešime</h2>
+      <p>Každá firma je iná, preto sa na začiatku nepýtame „koľko nabíjačiek potrebujete?". Pýtame sa:</p>
+      <ul>
+        <li>Zvládne vaša existujúca prípojka plánovaný počet nabíjacích bodov?</li>
+        <li>Je potrebné zvýšiť rezervovanú kapacitu?</li>
+        <li>Má zmysel doplniť <a href="/energetika/fotovoltika">fotovoltiku</a> alebo <a href="/energetika/baterie-bess">batériové úložisko</a>?</li>
+        <li>Ako ovplyvní nabíjanie vaše mesačné náklady na elektrinu?</li>
+        <li>Aký bude business case celej investície?</li>
+        <li>Ako pripraviť infraštruktúru na ďalší rast elektromobility vo firme?</li>
+      </ul>
+      <p>Práve odpovede na tieto otázky rozhodujú o tom, či bude investícia ekonomicky úspešná.</p>
+
+      <h2>Ako súvisí nabíjanie elektromobilov s EMS</h2>
+      <p>
+        Nabíjanie elektromobilov patrí medzi najväčšie nové spotrebiče vo firemnej energetike. Bez inteligentného
+        riadenia môže výrazne zvýšiť odberové špičky, distribučné poplatky aj celkové náklady na elektrinu. Prepojenie
+        nabíjacej infraštruktúry s <a href="/energetika/energy-management">Energy Management System (EMS)</a> umožňuje
+        riadiť výkon nabíjania podľa aktuálnej spotreby budovy, výroby z fotovoltiky alebo nastavených priorít. Vďaka
+        tomu sa dá efektívnejšie využívať existujúca prípojka bez zbytočných investícií do jej posilnenia.
+      </p>
+
+      <div class="not-prose my-8 border-l-4 border-primary/40 bg-primary/5 rounded-r-lg p-5">
+        <p class="font-bold mb-2">Čo to znamená pre finančné riadenie firmy?</p>
+        <p class="text-muted mb-3">Správne navrhnutá nabíjacia infraštruktúra môže:</p>
+        <ul class="list-disc pl-5 space-y-1 text-muted">
+          <li>oddialiť investície do posilnenia prípojky,</li>
+          <li>znížiť distribučné poplatky,</li>
+          <li>lepšie využiť elektrinu z fotovoltiky,</li>
+          <li>zlepšiť dlhodobý cash flow projektu.</li>
+        </ul>
+      </div>
+
+      <h2>Čo vieme zabezpečiť</h2>
+      <p>
+        Každý projekt pripravujeme technologicky neutrálne. Vyberáme riešenie, ktoré najlepšie zodpovedá požiadavkám
+        projektu, nie konkrétnemu výrobcovi alebo platforme.
+      </p>
+      <p>Každý projekt navrhujeme ako súčasť celého energetického systému. Podľa potrieb projektu zabezpečujeme:</p>
+      <ul>
+        <li>analýzu energetickej infraštruktúry,</li>
+        <li>posúdenie kapacity distribučnej prípojky,</li>
+        <li>business case investície,</li>
+        <li>návrh nabíjacej infraštruktúry,</li>
+        <li>inteligentné riadenie nabíjania (load balancing),</li>
+        <li>integráciu s fotovoltikou a batériovým úložiskom,</li>
+        <li>prepojenie s EMS,</li>
+        <li>koordináciu realizácie prostredníctvom overených partnerov.</li>
+      </ul>
+
+      <h2>Ako postupujeme</h2>
+      <ol>
+        <li>Analýza prevádzky a energetických potrieb.</li>
+        <li>Posúdenie distribučnej prípojky a rezervovanej kapacity.</li>
+        <li>Vypracovanie business case vrátane scenárov vývoja spotreby a cien energií.</li>
+        <li>Návrh optimálnej architektúry riešenia.</li>
+        <li>Koordinácia realizácie.</li>
+        <li>Integrácia do existujúceho energetického systému.</li>
+      </ol>
+
+      <h2>Ako rozmýšľame</h2>
+      <p>
+        Na trhu nájdete množstvo dodávateľov nabíjacích staníc. Naším cieľom je navrhnúť nabíjaciu infraštruktúru, ktorá
+        bude ekonomicky dávať zmysel, nebude zbytočne zaťažovať distribučnú prípojku a bude pripravená na ďalší rozvoj
+        firmy. Ak analýza ukáže, že investícia momentálne nedáva ekonomický zmysel, povieme vám to.
+      </p>
+
+      <h2>Súvisiace riešenia</h2>
+      <ul>
+        <li><a href="/energetika/energy-management">Energy Management System (EMS)</a></li>
+        <li><a href="/energetika/fotovoltika">Fotovoltika pre firmy</a></li>
+        <li><a href="/energetika/baterie-bess">Batériové úložiská (BESS)</a></li>
+        <li><a href="/energetika/smart-building">Smart building</a></li>
+        <li><a href="/energetika">Energetické riešenia pre firmy</a></li>
+      </ul>
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Časté otázky</h2>
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 p-5">
+            <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
+              {faq.q}
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="text-muted mt-3">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Plánujete elektrifikáciu firemného vozového parku?</h2>
+      <p class="text-muted mb-6 max-w-xl mx-auto">
+        Začnime rozhovorom. Na úvodnej nezáväznej konzultácii prejdeme vašu prevádzku a možnosti existujúcej prípojky a
+        spoločne určíme, či má zmysel pokračovať do podrobnej analýzy a business case. Ak sa ukáže, že projekt zatiaľ
+        nedáva zmysel, povieme vám to.
+      </p>
+      <a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+    </div>
   </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </Layout>

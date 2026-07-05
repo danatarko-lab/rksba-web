@@ -58,7 +58,7 @@ export const headerData = {
         { text: 'Energy Management (EMS)', href: getPermalink('/energetika/energy-management') },
         { text: 'Fotovoltika (FVE)', href: getPermalink('/energetika/fotovoltika') },
         { text: 'Batérie (BESS)', href: getPermalink('/energetika/baterie-bess') },
-        { text: 'EV nabíjačky', href: getPermalink('/energetika/ev-nabijacky') },
+        { text: 'Nabíjanie elektromobilov', href: getPermalink('/energetika/ev-nabijacky') },
         { text: 'Smart building', href: getPermalink('/energetika/smart-building') },
         // — obsah —
         { text: 'Energy Memo', href: getPermalink('/energetika/blog') },
@@ -104,7 +104,7 @@ export const footerData = {
         { text: 'Energy Management', href: getPermalink('/energetika/energy-management') },
         { text: 'Fotovoltika', href: getPermalink('/energetika/fotovoltika') },
         { text: 'Batérie BESS', href: getPermalink('/energetika/baterie-bess') },
-        { text: 'EV nabíjačky', href: getPermalink('/energetika/ev-nabijacky') },
+        { text: 'Nabíjanie elektromobilov', href: getPermalink('/energetika/ev-nabijacky') },
         { text: 'Smart building', href: getPermalink('/energetika/smart-building') },
         { text: 'Energy Memo', href: getPermalink('/energetika/blog') },
         { text: 'Prípadové štúdie', href: getPermalink('/energetika/pripadove-studie') },
