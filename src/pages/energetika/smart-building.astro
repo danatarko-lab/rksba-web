@@ -1,13 +1,223 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-const metadata = { title: 'Smart building — RKS' };
+const metadata = {
+  title: 'Smart Building: inteligentné riadenie budov pre firmy | RKS',
+  description:
+    'Inteligentné riadenie budov (Smart Building) prepája energetiku, technológie a dáta budovy do jedného celku. Nižšie prevádzkové náklady, lepšie dáta, jednoduchšia správa a podpora ESG.',
+};
+
+const systemy = [
+  {
+    system: 'BMS (Building Management System)',
+    riesi: 'Riadenie technológií budovy, ako sú vykurovanie, chladenie, vzduchotechnika alebo osvetlenie.',
+    href: null,
+  },
+  {
+    system: 'EMS (Energy Management System)',
+    riesi: 'Meranie, analýza a optimalizácia spotreby, výroby a akumulácie energie.',
+    href: '/energetika/energy-management',
+  },
+  {
+    system: 'Smart Building',
+    riesi: 'Prepája technológie budovy, energetiku, automatizáciu a dáta do jedného inteligentne riadeného celku.',
+    href: null,
+  },
+];
+
+const faqs = [
+  {
+    q: 'Čo je Smart Building?',
+    a: 'Budova, ktorá prepája svoje technológie, energetiku, meranie a dáta do jedného inteligentne riadeného celku. Cieľom nie je viac technológií, ale nižšie prevádzkové náklady, lepšie dáta a jednoduchšia správa.',
+  },
+  {
+    q: 'Čo je Building Management System (BMS)?',
+    a: 'Systém na riadenie technológií budovy, ako sú vykurovanie, chladenie, vzduchotechnika alebo osvetlenie. Zameriava sa na prevádzku a komfort budovy, nie na energetickú a nákladovú stránku.',
+  },
+  {
+    q: 'Aký je rozdiel medzi EMS a BMS?',
+    a: 'BMS riadi technológie budovy a jej prevádzku. Energy Management System (EMS) rieši energetickú stránku: meranie, analýzu a optimalizáciu spotreby, výroby a akumulácie energie. V inteligentnej budove sa navzájom dopĺňajú.',
+  },
+  {
+    q: 'Dá sa inteligentné riadenie doplniť aj do existujúcej budovy?',
+    a: 'Áno. Vo väčšine prípadov sa dá existujúca budova postupne prepojiť a doplniť o riadenie bez výmeny všetkých technológií.',
+  },
+  {
+    q: 'Musíme meniť všetky technológie naraz?',
+    a: 'Nie. Riešenie navrhujeme etapovo, aby sa dalo realizovať postupne podľa priorít a investičných možností.',
+  },
+  {
+    q: 'Oplatí sa modernizovať staršiu budovu?',
+    a: 'Často áno. Najprv však analyzujeme, kde vznikajú najväčšie energetické straty a ktoré opatrenia prinesú najvyššiu ekonomickú hodnotu, aby investícia dávala zmysel.',
+  },
+  {
+    q: 'Ako sa pripravuje business case pre modernizáciu budovy?',
+    a: 'Vychádza z analýzy prevádzky a energetických tokov. Vyhodnocuje očakávané úspory, dopad na prevádzkové náklady a cash flow, riziká a scenáre, aby ste sa rozhodovali na základe čísel.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
+};
 ---
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
     <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/energetika">← Energetika</a></p>
-    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Smart building</h1>
-    <p class="text-lg text-muted">Obsah dorobíme neskôr.</p>
+
+    <p class="text-sm font-medium uppercase tracking-wider text-primary mb-3">Energetické riešenia pre firmy a budovy</p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">Inteligentné riadenie budov (Smart Building)</h1>
+    <p class="text-xl md:text-2xl text-muted mb-6">
+      Inteligentná budova nie je budova plná technológií, ale budova, ktorá efektívne riadi energiu aj prevádzku.
+    </p>
+
+    <p class="text-lg border-l-4 border-primary bg-primary/5 rounded-r-lg p-4 mb-6">
+      Inteligentné riadenie budov (Smart Building) prepája technológie budovy, energetiku a dáta do jedného riadeného
+      celku. V RKS ho navrhujeme podľa toho, ako budova reálne funguje a kde vznikajú najväčšie náklady, nie podľa výberu
+      jednej platformy.
+    </p>
+
+    <p class="text-lg text-muted mb-8">
+      Moderné administratívne budovy, výrobné haly, logistické centrá či hotely obsahujú desiatky technológií:
+      vykurovanie, chladenie, vzduchotechniku, osvetlenie, tienenie, fotovoltiku, nabíjacie stanice alebo bezpečnostné
+      systémy. Často však fungujú oddelene. Výsledkom sú vyššie prevádzkové náklady, zložitejšia správa budovy a
+      nedostatok dát pre správne rozhodovanie. V RKS pomáhame tieto technológie prepojiť do jedného inteligentne
+      riadeného systému, ktorý zlepšuje energetickú efektívnosť aj každodennú prevádzku budovy.
+    </p>
+
+    <div class="mb-4"><a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a></div>
+
+    <div class="prose prose-lg max-w-none">
+      <h2>Pre koho je riešenie určené</h2>
+      <p>
+        Navrhujeme riešenia pre administratívne budovy, výrobné podniky, logistické centrá, hotely, obchodné centrá,
+        developerské projekty a komerčné areály.
+      </p>
+
+      <h2>Aké výsledky prináša inteligentné riadenie budov</h2>
+      <p>Správne navrhnutý systém prináša merateľné prínosy:</p>
+      <ul>
+        <li>nižšie prevádzkové náklady,</li>
+        <li>lepšie využitie energie,</li>
+        <li>menej porúch a servisných zásahov,</li>
+        <li>kvalitnejšie dáta pre rozhodovanie,</li>
+        <li>jednoduchšiu správu budovy,</li>
+        <li>vyšší komfort používateľov,</li>
+        <li>podporu ESG reportingu,</li>
+        <li>pripravenosť na budúce rozšírenie technológií.</li>
+      </ul>
+
+      <h2>Smart Building, BMS a EMS: aký je rozdiel</h2>
+      <p>Tieto pojmy sa často zamieňajú, no každý rieši inú oblasť.</p>
+      <div class="not-prose my-8 overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b border-gray-200">
+              <th class="py-2 pr-4 font-semibold align-top">Systém</th>
+              <th class="py-2 font-semibold align-top">Čo rieši</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              systemy.map((s) => (
+                <tr class="border-b border-gray-100 last:border-0 align-top">
+                  <td class="py-2 pr-4 font-medium">
+                    {s.href ? (
+                      <a class="text-primary hover:underline" href={s.href}>
+                        {s.system}
+                      </a>
+                    ) : (
+                      s.system
+                    )}
+                  </td>
+                  <td class="py-2 text-muted">{s.riesi}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Čo dokážeme integrovať</h2>
+      <p>
+        Podľa typu objektu možno do jedného systému prepojiť napríklad: vykurovanie, chladenie, vzduchotechniku,
+        osvetlenie, tienenie, <a href="/energetika/fotovoltika">fotovoltiku</a>,
+        <a href="/energetika/baterie-bess">batériové úložisko</a>,
+        <a href="/energetika/ev-nabijacky">nabíjacie stanice</a>, meranie energií, bezpečnostné systémy a ďalšie
+        technológie budovy.
+      </p>
+
+      <h2>Ako postupujeme</h2>
+      <p>Každý projekt začíname pochopením toho, ako budova funguje, nie výberom technológie. Postupujeme v krokoch:</p>
+      <ol>
+        <li>Analýza prevádzky a energetických tokov.</li>
+        <li>Identifikácia príležitostí na optimalizáciu.</li>
+        <li>Vypracovanie business case.</li>
+        <li>Návrh etapovej implementácie.</li>
+        <li>Integrácia jednotlivých systémov.</li>
+        <li>Optimalizácia prevádzky.</li>
+      </ol>
+      <p>Vďaka tomu možno projekt realizovať postupne podľa priorít a investičných možností.</p>
+
+      <h2>Ako rozmýšľame</h2>
+      <p>
+        Inteligentná budova podľa nás nie je cieľ, ale výsledok správnych rozhodnutí. Najskôr chceme pochopiť, ako budova
+        funguje, kde vznikajú najväčšie energetické straty a ktoré opatrenia prinesú najvyššiu ekonomickú hodnotu. Až
+        následne navrhujeme technológie. Ak analýza ukáže, že niektoré opatrenia neprinesú očakávaný prínos, odporučíme
+        inú cestu.
+      </p>
+
+      <h2>Partneri a realizácia</h2>
+      <p>
+        Pri realizácii spolupracujeme s overenými technologickými partnermi a vyberáme riešenia podľa potrieb konkrétneho
+        projektu. Naším cieľom je navrhnúť otvorené riešenie, ktoré bude spoľahlivé, rozšíriteľné a pripravené na budúce
+        potreby budovy.
+      </p>
+
+      <h2>Súvisiace riešenia</h2>
+      <ul>
+        <li><a href="/energetika/energy-management">Energy Management System (EMS)</a></li>
+        <li><a href="/energetika/fotovoltika">Fotovoltika pre firmy</a></li>
+        <li><a href="/energetika/baterie-bess">Batériové úložiská (BESS)</a></li>
+        <li><a href="/energetika/ev-nabijacky">Nabíjanie elektromobilov</a></li>
+        <li><a href="/energetika">Energetické riešenia pre firmy</a></li>
+      </ul>
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Časté otázky</h2>
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 p-5">
+            <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
+              {faq.q}
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="text-muted mt-3">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Zvažujete inteligentné riadenie vašej budovy?</h2>
+      <p class="text-muted mb-6 max-w-xl mx-auto">
+        Začnime rozhovorom o tom, ako budova funguje a kde vznikajú najväčšie náklady. Na úvodnej nezáväznej konzultácii
+        posúdime priestor na optimalizáciu a spoločne určíme, či má zmysel pokračovať do podrobnej analýzy a business
+        case.
+      </p>
+      <a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+    </div>
   </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </Layout>
