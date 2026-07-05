@@ -54,6 +54,18 @@ const faqs = [
     q: 'Ako sa pripravuje business case pre modernizáciu budovy?',
     a: 'Vychádza z analýzy prevádzky a energetických tokov. Vyhodnocuje očakávané úspory, dopad na prevádzkové náklady a cash flow, riziká a scenáre, aby ste sa rozhodovali na základe čísel.',
   },
+  {
+    q: 'Oplatí sa Smart Building aj pre existujúce budovy?',
+    a: 'Áno. Väčšina úspor pochádza z lepšieho prepojenia a riadenia technológií, ktoré v budove už sú. Inteligentné riadenie sa dá zaviesť aj do staršej budovy, spravidla po etapách a podľa toho, kde je najväčší ekonomický prínos.',
+  },
+  {
+    q: 'Musíme používať jedného výrobcu technológií?',
+    a: 'Nie. Pri návrhu sme technologicky nezávislí. Riešenie vyberáme podľa potrieb projektu, existujúcej infraštruktúry a ekonomiky investície, nie podľa jednej platformy či značky.',
+  },
+  {
+    q: 'Dá sa inteligentné riadenie zavádzať postupne?',
+    a: 'Áno. Odporúčaný postup je po etapách. Začne sa tam, kde je najväčší potenciál úspor (napríklad vykurovanie, vzduchotechnika alebo osvetlenie), a systém sa postupne rozširuje o ďalšie technológie a budovy.',
+  },
 ];
 
 const faqSchema = {
@@ -97,6 +109,18 @@ const faqSchema = {
     <div class="mb-4"><a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a></div>
 
     <div class="prose prose-lg max-w-none">
+      <h2>Prečo dnes firmy riešia inteligentné riadenie budov?</h2>
+      <p>Dopyt po inteligentnom riadení dnes ženie prevádzková a ekonomická realita:</p>
+      <ul>
+        <li>rast cien energií,</li>
+        <li>rastúce prevádzkové náklady budov,</li>
+        <li>nedostatok kvalifikovaných technikov,</li>
+        <li>prísnejšie požiadavky na ESG a vykazovanie,</li>
+        <li>pribúdanie technológií v budove, ktoré treba koordinovať,</li>
+        <li>náročnejšia správa viacerých objektov,</li>
+        <li>príprava na elektromobilitu a vlastné obnoviteľné zdroje.</li>
+      </ul>
+
       <h2>Pre koho je riešenie určené</h2>
       <p>
         Navrhujeme riešenia pre administratívne budovy, výrobné podniky, logistické centrá, hotely, obchodné centrá,
@@ -147,6 +171,64 @@ const faqSchema = {
         </table>
       </div>
 
+      <p class="not-prose text-lg border-l-4 border-primary bg-primary/5 rounded-r-lg p-4 my-8">
+        Inteligentné riadenie sa nespolieha na odhady. Rozhoduje na základe dát o spotrebe, prevádzke budovy a správaní
+        jednotlivých technológií.
+      </p>
+
+      <h2>Inteligentné riadenie budov je investícia, nie cieľ</h2>
+      <p>
+        Inteligentné riadenie je investícia, ktorá má priniesť merateľnú ekonomickú hodnotu. Business case môže zahŕňať:
+      </p>
+      <ul>
+        <li>nižšie prevádzkové náklady,</li>
+        <li>nižšie servisné náklady,</li>
+        <li>lepšie využitie technológií, ktoré v budove už sú,</li>
+        <li>vyšší komfort používateľov,</li>
+        <li>vyššiu hodnotu nehnuteľnosti,</li>
+        <li>kvalitnejšie dáta pre ESG vykazovanie,</li>
+        <li>pripravenosť na budúce rozšírenie (fotovoltika, batéria, nabíjanie elektromobilov).</li>
+      </ul>
+
+      <div class="not-prose my-8 border-l-4 border-primary/40 bg-primary/5 rounded-r-lg p-5">
+        <p class="font-bold mb-2">Čo to znamená pre finančné riadenie firmy?</p>
+        <p class="text-muted">
+          Správne navrhnuté inteligentné riadenie môže znížiť prevádzkové náklady, predĺžiť životnosť technológií,
+          oddialiť niektoré investície, zlepšiť cash flow a vytvoriť kvalitné dáta pre investičné rozhodovanie.
+        </p>
+      </div>
+
+      <div class="not-prose my-8">
+        <div class="flex flex-col items-center gap-2">
+          {
+            [
+              'Výrobná hala',
+              'Fotovoltika',
+              'Batériové úložisko',
+              'HVAC',
+              'Nabíjanie elektromobilov',
+              'BMS',
+              'EMS',
+              'Jedno inteligentné riadenie',
+            ].map((box, i, arr) => (
+              <>
+                <div
+                  class={`w-full max-w-xs rounded-xl border p-3 text-center font-medium ${i === arr.length - 1 ? 'border-primary/30 bg-primary/5 text-primary' : 'border-gray-200 bg-white'}`}
+                >
+                  {box}
+                </div>
+                {i < arr.length - 1 && (
+                  <div class="text-primary text-xl leading-none" aria-hidden="true">
+                    ↓
+                  </div>
+                )}
+              </>
+            ))
+          }
+        </div>
+        <p class="text-sm text-muted italic text-center mt-3">Ilustračná schéma, nie referencia konkrétneho klienta.</p>
+      </div>
+
       <h2>Čo dokážeme integrovať</h2>
       <p>
         Podľa typu objektu možno do jedného systému prepojiť napríklad: vykurovanie, chladenie, vzduchotechniku,
@@ -182,6 +264,18 @@ const faqSchema = {
         projektu. Naším cieľom je navrhnúť otvorené riešenie, ktoré bude spoľahlivé, rozšíriteľné a pripravené na budúce
         potreby budovy.
       </p>
+      <p>
+        Pri návrhu nie sme viazaní na jedného výrobcu ani jednu platformu. Vyberáme riešenie podľa potrieb projektu,
+        existujúcej infraštruktúry a ekonomiky investície.
+      </p>
+
+      <h2>Inteligentné budovy budúcnosti</h2>
+      <p>
+        Moderné budovy prestávajú byť len spotrebiteľmi energie. Postupne budú aj vyrábať energiu, ukladať ju, nabíjať
+        elektromobily, komunikovať s distribučnou sieťou, reagovať na ceny elektriny a optimalizovať spotrebu v reálnom
+        čase. Smart Building je systém, ktorý všetky tieto technológie prepája do jedného riadenia. Práve v tomto bode sa
+        inteligentné riadenie budov stretáva s témami, ktorým sa venujeme v EMS, batériových úložiskách a v Energy Memo.
+      </p>
 
       <h2>Súvisiace riešenia</h2>
       <ul>
@@ -211,9 +305,9 @@ const faqSchema = {
     <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
       <h2 class="text-xl md:text-2xl font-semibold mb-3">Zvažujete inteligentné riadenie vašej budovy?</h2>
       <p class="text-muted mb-6 max-w-xl mx-auto">
-        Začnime rozhovorom o tom, ako budova funguje a kde vznikajú najväčšie náklady. Na úvodnej nezáväznej konzultácii
-        posúdime priestor na optimalizáciu a spoločne určíme, či má zmysel pokračovať do podrobnej analýzy a business
-        case.
+        Na úvodnej konzultácii spoločne posúdime, kde vo vašej budove vznikajú najväčšie prevádzkové náklady, ktoré
+        technológie spolu nekomunikujú a ktoré opatrenia majú najväčší potenciál priniesť merateľnú ekonomickú hodnotu.
+        Ak analýza ukáže, že investícia momentálne nedáva ekonomický zmysel, povieme vám to.
       </p>
       <a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
     </div>
