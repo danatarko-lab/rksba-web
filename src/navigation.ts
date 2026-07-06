@@ -64,7 +64,6 @@ export const headerData = {
         { text: 'Energy Memo', href: getPermalink('/energetika/blog') },
         { text: 'Q&A (Energetika)', href: getPermalink('/energetika/q-a') },
         { text: 'Slovník pojmov', href: getPermalink('/energetika/slovnik') },
-        { text: 'Prípadové štúdie', href: getPermalink('/energetika/pripadove-studie') },
       ],
     },
     { text: 'Aktuality', href: getPermalink('/aktuality') },
@@ -109,7 +108,6 @@ export const footerData = {
         { text: 'Inteligentné budovy', href: getPermalink('/energetika/smart-building') },
         { text: 'Energy Memo', href: getPermalink('/energetika/blog') },
         { text: 'Slovník pojmov', href: getPermalink('/energetika/slovnik') },
-        { text: 'Prípadové štúdie', href: getPermalink('/energetika/pripadove-studie') },
       ],
     },
     {
