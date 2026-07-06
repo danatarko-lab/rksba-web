@@ -1,0 +1,432 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Batéria za babku, hodnota inde: čo Intersolar 2026 ukázal o budúcnosti energetiky | RKS',
+  description:
+    'Energy Memo z Intersolar Europe 2026 v Mníchove: prečo batéria zlacnela na približne 133 EUR/kWh, hodnota sa presúva do softvéru a EMS, sieť je úzkym hrdlom a čo si z toho má odniesť firma v SK a CZ.',
+  openGraph: {
+    images: [{ url: '/images/energy-memo/intersolar-2026/welcome-messe-munchen-1.webp' }],
+  },
+};
+
+const post = {
+  title: 'Batéria za babku, hodnota inde',
+  date: '26. 6. 2026',
+};
+---
+
+<Layout metadata={metadata}>
+  <div class="bg-gradient-to-br from-[#0b1b3a] via-[#13234d] to-primary text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-14 md:py-20">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-5">Energy Memo · Energetika</p>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight">{post.title}</h1>
+      <p class="mt-5 text-lg text-white/80">
+        Čo nám Intersolar Europe 2026 ukázal o budúcnosti energetiky, batériových úložísk a investičných rozhodnutí
+      </p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+    <p class="text-sm text-muted mb-8"><a class="hover:underline" href="/energetika/blog">← Energy Memo</a></p>
+    <p class="text-sm text-muted pb-8 mb-10 border-b border-gray-200">
+      {post.date} · Analýza z miesta · Mníchov, 23. až 25. jún 2026 · RKS Energetika
+    </p>
+
+    <figure class="my-8">
+      <img
+        src="/images/energy-memo/intersolar-2026/site-plan-messe-munchen.webp"
+        alt="The smarter E Europe 2026, Messe München, 105 000 návštevníkov, 19 hál"
+        class="w-full rounded-xl border border-gray-200"
+      />
+    </figure>
+
+    <div class="prose prose-lg max-w-none">
+      <p>
+        V roku 2014 sa batériové úložisko v Nemecku predávalo za približne 1 800 EUR/kWh. Dnes, o dvanásť rokov neskôr,
+        sa v nemeckom maloobchode objaví domáce úložisko s kapacitou približne 2,24 kWh za 299 eur, teda okolo
+        <strong>133 EUR/kWh</strong>. Batéria sa stala bežným spotrebným tovarom.
+      </p>
+      <p>
+        A práve to je odkaz tohtoročného Intersolaru, zhrnutý do jednej vety: <strong>hardvér zlacnel a zovšednel,
+        hodnota sa presunula inam.</strong> Do softvéru, optimalizácie,
+        <a href="/energetika/slovnik#flexibilita">flexibility</a> a obchodovania. Kto to pochopí, vyhrá. Kto bude ďalej
+        predávať „škatule", bude súťažiť už len cenou.
+      </p>
+      <p class="not-italic text-xl font-medium border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        Technológie sa stávajú komoditou. Rozhodujúce bude, ako ich firmy dokážu riadiť, prepájať a ekonomicky využívať.
+      </p>
+      <p>
+        Boli sme tam. Tu je, čo sme videli, a čo si z toho má odniesť firma, ktorá predáva energetiku slovenským a českým
+        zákazníkom.
+      </p>
+
+      <h2>Kľúčové zistenia</h2>
+      <ol>
+        <li>Hardvér sa stáva komoditou: batéria spadla z približne 1 800 na približne 133 EUR/kWh za dvanásť rokov.</li>
+        <li>Hodnota sa presúva do softvéru a riadenia, nie do samotného železa.</li>
+        <li><a href="/energetika/slovnik#ems">EMS</a> rozhoduje o ekonomike projektu. Mozog je dôležitejší než škatuľa.</li>
+        <li>Pripojenie do siete získava strategickú hodnotu. Úzkym hrdlom je sieť, nie panely či batérie.</li>
+        <li>AI mení spôsob riadenia energetických aktív: od analýzy k samostatnému konaniu.</li>
+      </ol>
+      <p>
+        <em>A ešte jedno zistenie pre domácich: stredná a východná Európa je na výstave vidieť. Zo Slovenska 5 firiem
+        plus nominácia na ocenenie (PowereX), z Česka 14 firiem.</em>
+      </p>
+
+      <h2>1. Čísla, ktoré rámujú celý ročník</h2>
+      <p>
+        The smarter E Europe je zastrešujúci veľtrh, pod ktorý patria štyri paralelné výstavy: <strong>Intersolar
+        Europe</strong> (fotovoltika), <strong>ees Europe</strong> (úložiská), <strong>EM-Power Europe</strong> (siete,
+        energetický manažment, flexibilita) a <strong>Power2Drive Europe</strong> (nabíjanie a e-mobilita). Tento rok sa
+        konal po prvýkrát v termíne od utorka do štvrtka, 23. až 25. júna.
+      </p>
+
+      <figure class="my-8">
+        <img
+          src="/images/energy-memo/intersolar-2026/welcome-messe-munchen-1.webp"
+          alt="Vstup na The smarter E Europe 2026 v Mníchove"
+          class="w-full rounded-xl border border-gray-200"
+        />
+      </figure>
+
+      <p>Oficiálne záverečné čísla organizátora (Solar Promotion, 25. 6. 2026):</p>
+      <ul>
+        <li><strong>približne 105 000 návštevníkov</strong> zo 163 krajín za tri dni</li>
+        <li><strong>2 650 vystavovateľov</strong> z 52 krajín, mnohí si oproti minulému roku rozšírili plochu; viac než 66 % bolo mimo Nemecka</li>
+        <li><strong>19 výstavných hál</strong> plus vonkajšia plocha; vyše 3 000 účastníkov odborných konferencií</li>
+      </ul>
+      <p>
+        Ústrednou témou bola <em>„Renewables 24/7 – Secure Energy for a Changing World"</em>, teda otázka, či vedia
+        obnoviteľné zdroje spoľahlivo dodávať elektrinu nonstop, bez fosílneho základného zaťaženia. Špeciálna expozícia
+        to demonštrovala naživo cez štyri oblasti: priemysel, komerciu, domácnosti a mobilitu.
+      </p>
+
+      <blockquote class="not-prose my-6 border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        <p class="text-lg font-medium text-gray-800">
+          „Fosílne palivá sú minulosťou; budúcnosť jednoznačne patrí obnoviteľným zdrojom."
+        </p>
+        <p class="text-sm text-muted mt-2">Solar Promotion, záverečná tlačová správa, 25. 6. 2026</p>
+      </blockquote>
+
+      <h2>2. Veľký príbeh: hodnota sa presúva z hardvéru do softvéru</h2>
+      <p>
+        Ešte pred pár rokmi bola batéria „zariadenie, ktoré skladuje elektrinu". Dnes je to <strong>finančné aktívum,
+        sieťové aktívum a obchodné aktívum</strong> súčasne. Samotná batéria sa stáva komoditou. Hodnota sa presúva do
+        toho, ako ju prevádzkujete: do optimalizácie, dispečingu, predpovedí a účasti na trhoch.
+      </p>
+      <p>
+        Tento posun bol na výstave cítiť všade. Oficiálne znenie ocenenia smarter E Award to pomenovalo priamo:
+        <em>hardvérové špecifikácie ustúpili do pozadia a hlavným nositeľom hodnoty sa stala softvérová architektúra.</em>
+      </p>
+
+      <h3>EMS ako mozog systému</h3>
+      <p>
+        Energetický manažment (EMS, Energy Management System) prestal byť „doplnkom". Je to operačný systém celého
+        projektu. Bez neho batéria len skladuje elektrinu. S ním sa mení na aktívum, ktoré zarába. EMS rozhoduje, kedy sa
+        batéria nabíja a vybíja, na ktoré trhy vstupuje, ako riadi degradáciu a ako reaguje na cenové signály.
+      </p>
+      <p>
+        Dôsledok pre prax je tvrdý: zle nastavený EMS dokáže zničiť ekonomiku projektu. Batéria vydrží pätnásť rokov a
+        zlé rozhodnutia robené každý deň počas tých pätnástich rokov sa nasčítajú do obrovského rozdielu vo výnose.
+      </p>
+      <p class="not-italic text-xl font-medium border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        Dnes už nerozhoduje iba to, akú batériu kúpite. Čoraz viac rozhoduje kvalita algoritmov, ktoré ju riadia počas
+        celej životnosti projektu.
+      </p>
+
+      <h3>AI vstupuje do každej časti hodnotového reťazca</h3>
+      <p>
+        Umelá inteligencia nebola na výstave marketingová ozdoba. Riešila konkrétne problémy: návrh a dimenzovanie
+        systémov, prediktívnu údržbu, detekciu porúch, predpovede počasia a cien, optimalizáciu obchodovania. Silná téma
+        bola <strong>agentická AI</strong>, teda AI, ktorá nielen odporúča, ale aj koná.
+      </p>
+      <p>
+        Ten posun je väčší, než sa zdá. Dnes AI <strong>analyzuje a odporúča</strong>. Zajtra bude <strong>plánovať,
+        objednávať servis, optimalizovať, obchodovať a samostatne vykonávať celé pracovné postupy</strong>: sama
+        zdiagnostikuje poruchu, identifikuje náhradný diel, naplánuje technika a pripraví dokumentáciu. Z nástroja sa
+        stáva prevádzkovateľ.
+      </p>
+      <p>Jeden z citátov, ktoré ostali visieť vo vzduchu, prišiel od hráča v oblasti úložísk:</p>
+      <blockquote class="not-prose my-6 border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        <p class="text-lg font-medium text-gray-800">
+          „Úzkym hrdlom pre rast AI a priemyslu je čoraz viac dostupnosť spoľahlivej, cenovo dostupnej a nízkouhlíkovej
+          energie."
+        </p>
+        <p class="text-sm text-muted mt-2">Kevin Huang, Envision, Intersolar 2026, 24. 6.</p>
+      </blockquote>
+
+      <h2>3. Sieť je úzke hrdlo, nie panely, nie batérie</h2>
+      <p class="not-italic text-xl font-medium border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        Európa nemá problém s batériami ani s panelmi. Má problém so sieťou.
+      </p>
+      <p>
+        Integrácia do siete je najväčšou brzdou energetickej transformácie. Zdĺhavé povoľovanie a nedostatok kapacity
+        siete zastavia aj technologicky vyspelý projekt. Otázka pre investorov sa preto posúva od „aký menič a aká
+        batéria" k „aké sú práva na pripojenie, aké sú obmedzenia siete, aké je riziko orezania výroby
+        (<a href="/energetika/slovnik#curtailment">curtailment</a>)".
+      </p>
+      <p>
+        Práve preto sa <strong>bod pripojenia do siete stáva strategickým aktívom</strong>. V mnohých regiónoch je dnes
+        ťažšie získať pripojenie než financovanie. A práve preto sa v projektoch tak silno tlačí na hybridné elektrárne:
+        solár aj úložisko za jedným pripojením, čím sa existujúca infraštruktúra využíva inteligentnejšie.
+      </p>
+      <p class="not-italic text-xl font-medium border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        Pripojenie do siete sa postupne stáva podobným aktívom ako lukratívny stavebný pozemok. Jeho hodnota rastie s
+        tým, ako ubúda dostupná kapacita.
+      </p>
+      <p>
+        Nemecko ukazuje, kam to smeruje: <a href="/energetika/slovnik#grid-forming">grid-forming</a> meniče (meniče,
+        ktoré aktívne tvoria a stabilizujú sieť) sa stávajú štandardom. SMA na výstave uviedla riešenie s účinnosťou
+        konverzie 99,5 % a jej zástupca to zhrnul jednoducho: <em>hybridné riešenia sa stávajú nevyhnutnosťou.</em>
+      </p>
+
+      <figure class="my-8">
+        <img
+          src="/images/energy-memo/intersolar-2026/huawei-fusionsolar.webp"
+          alt="Huawei FusionSolar, grid-forming ESS pre komerčný a priemyselný segment"
+          class="w-full rounded-xl border border-gray-200"
+        />
+      </figure>
+
+      <h2>4. Prečo batéria potrebuje solár a solár potrebuje batériu</h2>
+      <p>
+        Čím viac solárov postavíme, tým viac elektriny vzniká v rovnakom čase (na poludnie). Ponuka prudko rastie, ceny
+        padajú, občas pod nulu. Tomuto javu sa hovorí
+        <strong><a href="/energetika/slovnik#kanibalizacia-cien">kanibalizácia soláru</a></strong>: čím je solár
+        úspešnejší, tým viac si ničí vlastnú ekonomiku. Nemecko v roku 2024 zaznamenalo stovky hodín so zápornými cenami.
+      </p>
+      <p>
+        Riešenie, ktoré na Intersolare rezonovalo najviac, je úložisko. Solár samotný to má čoraz ťažšie; solár plus
+        batéria funguje výrazne lepšie, lebo batéria posunie energiu do času, keď má vyššiu hodnotu. Z premenlivej
+        komodity sa stáva riaditeľný produkt.
+      </p>
+      <p>
+        Analytická reč výstavy tomu dala jasný rámec. Intersolar 2026 bol o <em>„zvládnutej volatilite"</em> a o prechode
+        solárneho priemyslu do ďalšej fázy s hybridnými systémami. Veľkokapacitné úložiská sú „game changer", pretože
+        ukladajú prebytky a vracajú ich, keď treba.
+      </p>
+
+      <h2>5. Pohľad z terénu: trh, ktorý „chce byť normálny"</h2>
+      <p>
+        Zaujímavý postreh zaznel od ľudí, ktorí chodia na Intersolar každý rok. Kým predtým bol jeden rok „o plávajúcej
+        fotovoltike", iný „o farebných paneloch a solárnych taškách", tento rok mal trh iný pocit. Klasické panely v
+        mnohých variantoch, meniče, veľa batérií, nabíjačky. Menej extravagantných produktov, viac zrelosti.
+      </p>
+      <blockquote class="not-prose my-6 border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        <p class="text-lg font-medium text-gray-800">„Tento rok mám pocit, že trh chce byť normálny."</p>
+        <p class="text-sm text-muted mt-2">postreh z terénu, Intersolar 2026</p>
+      </blockquote>
+      <p>
+        Neznamená to nudu, znamená to dospelosť. Trh sa presúva z rastovej fázy do fázy efektivity, z fázy dotácií do
+        trhovej zrelosti, z logiky „koľko megawattov" do logiky systémovej integrácie. Súčasne visí nad odvetvím
+        niekoľko geopolitických otáznikov: možný zákaz čínskych meničov (ktorý by paradoxne mohol v niektorých prípadoch
+        znamenať menej európskych meničov na trhu), clá a čínska exportná politika.
+      </p>
+      <p>Čo sme videli na vlastné oči, pár detailov, ktoré dobre ilustrujú náladu ročníka:</p>
+      <ul>
+        <li><strong>Growatt</strong> prezentoval C&amp;I All-in-One ESS (RISE 261H-2H) do 1,25 MW / 2,61 MWh, úložisko s kvapalinovým chladením priamo pre komerčný a priemyselný segment (stánok B3.230).</li>
+        <li><strong>Huawei</strong> testoval meniče v boxe pri 100 % vlhkosti a 5 % soľnej hmle. Odolnosť ako marketingové posolstvo.</li>
+        <li><strong>CEMS / euPVMaster / Enecess</strong>: „C&amp;I PV Asset Optimization", teda softvér na optimalizáciu komerčných FVE aktív (stánok B5.556). Presne ten posun k softvéru v praxi.</li>
+        <li><strong>Octopus Energy</strong> a expozícia „Renewables 24/7 Deep Dive" v hale C5. Panel „E-Mobility Driving the Energy Transition" vyčíslil potenciál V2G/V2H/V2B/V2L až na 100 miliárd eur úspor v systémových nákladoch do roku 2040.</li>
+        <li><strong>Roboti vo fotovoltike</strong>, nastupujúca téma: automatizovaná výstavba veľkých pozemných elektrární. Na výstave sme videli napríklad Libra Robotics s autonómnymi robotmi na inštaláciu panelov (stánok C4.450D); podobný smer potvrdzuje aj ocenený systém HeliomatiX od Goldbeck Solar.</li>
+      </ul>
+
+      <figure class="my-8">
+        <img
+          src="/images/energy-memo/intersolar-2026/libra-robotics.webp"
+          alt="Libra Robotics, autonómne roboty na inštaláciu solárnych panelov"
+          class="w-full rounded-xl border border-gray-200"
+        />
+      </figure>
+
+      <h2>6. Víťazi The smarter E Award 2026</h2>
+      <p>
+        Ocenenia sa vyhlásili 22. júna večer (Opening Night) v piatich kategóriách, tri víťazi v každej. Pre nás sú
+        najrelevantnejšie úložiská a smart integrated energy. Výber tých, ktoré stojí za to sledovať:
+      </p>
+      <div class="not-prose my-8 overflow-x-auto">
+        <table class="w-full text-left border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-gray-200">
+              <th class="py-2 pr-4 font-semibold align-top">Kategória</th>
+              <th class="py-2 pr-4 font-semibold align-top">Víťaz / produkt</th>
+              <th class="py-2 font-semibold align-top">Prečo je to zaujímavé</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-100 align-top"><td class="py-2 pr-4">Úložiská</td><td class="py-2 pr-4">Sungrow, PowerTitan 3.0</td><td class="py-2 text-muted">Kontajner: vyše 1,87 MW PCS a 7,14 MWh; 92 % round-trip účinnosť plus funkcie pre stabilitu siete.</td></tr>
+            <tr class="border-b border-gray-100 align-top"><td class="py-2 pr-4">Úložiská</td><td class="py-2 pr-4">PHENOGY, 1-Series</td><td class="py-2 text-muted">Sodíkovo-iónové úložisko bez lítia a grafitu, vyše 10 000 cyklov. „Goodbye lithium" v praxi.</td></tr>
+            <tr class="border-b border-gray-100 align-top"><td class="py-2 pr-4">Úložiská</td><td class="py-2 pr-4">Int. Power Supply, Exeron CheckMate</td><td class="py-2 text-muted">Obojsmerný menič pre <a href="/energetika/slovnik#bess">BESS</a>, 3,3 MW/m³, grid-forming schopnosti.</td></tr>
+            <tr class="border-b border-gray-100 align-top"><td class="py-2 pr-4">E-mobilita</td><td class="py-2 pr-4">HagerEnergy, edsn</td><td class="py-2 text-muted">V2G DC nabíjačka; cez OCPP a Modbus prepája dom, auto a trh s elektrinou.</td></tr>
+            <tr class="border-b border-gray-100 align-top"><td class="py-2 pr-4">Fotovoltika</td><td class="py-2 pr-4">Goldbeck Solar, HeliomatiX</td><td class="py-2 text-muted">Robotický systém na automatizovanú výstavbu veľkých solárnych parkov.</td></tr>
+            <tr class="align-top"><td class="py-2 pr-4">Vynikajúce projekty</td><td class="py-2 pr-4">Fluence + DTEK (Ukrajina)</td><td class="py-2 text-muted">6 decentralizovaných BESS spustených na diaľku; núdzová elektrina pre 600 000 domácností.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Poznámka pre domácich: v kategórii Vynikajúce projekty bol medzi finalistami aj <strong>PowereX zo
+        Slovenska</strong>. O tom viac nižšie.
+      </p>
+
+      <figure class="my-8">
+        <img
+          src="/images/energy-memo/intersolar-2026/e3dc-edsn-v2g.webp"
+          alt="E3/DC edsn, obojsmerná V2G DC nabíjačka, víťaz E-Mobility ocenenia"
+          class="w-full rounded-xl border border-gray-200"
+        />
+      </figure>
+
+      <h2>7. Kto tam bol zo Slovenska a Česka</h2>
+      <p>
+        Toto je časť, ktorá nás zaujíma najviac. A keďže čísla berieme priamo z oficiálneho zoznamu vystavovateľov
+        organizátora, sú presné.
+      </p>
+
+      <h3>Slovensko: 5 firiem + 1 nominácia</h3>
+      <div class="not-prose my-8 overflow-x-auto">
+        <table class="w-full text-left border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-gray-200">
+              <th class="py-2 pr-4 font-semibold">Firma</th>
+              <th class="py-2 pr-4 font-semibold">Výstava</th>
+              <th class="py-2 font-semibold">Stánok</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">PowereX j. s. a.</td><td class="py-2 pr-4">EM-Power Europe</td><td class="py-2">C5.620</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">BEZ TRANSFORMÁTORY, a.s.</td><td class="py-2 pr-4">EM-Power Europe</td><td class="py-2">B5.115</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">INO-HUB Energy j.s.a.</td><td class="py-2 pr-4">ees Europe</td><td class="py-2">B1.510</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">Solargis s.r.o.</td><td class="py-2 pr-4">Intersolar Europe</td><td class="py-2">B3.580</td></tr>
+            <tr><td class="py-2 pr-4">Qualysoft Information Technology, s.r.o.</td><td class="py-2 pr-4">Intersolar Europe</td><td class="py-2">FM.703/15</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Vlajkovou loďou je <strong>PowereX (Bratislava)</strong>, platforma virtuálnej elektrárne poháňaná AI. Firma sa
+        dostala medzi finalistov smarter E Award 2026 (kategória Vynikajúce projekty) za projekt, ktorý prepája zálohovú
+        energetickú infraštruktúru slovenských telekomunikácií do jednej virtuálnej elektrárne.
+      </p>
+      <p class="not-italic text-xl font-medium border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        PowereX ukazuje, že aj slovenské firmy sa posúvajú od predaja technológií k inteligentnému riadeniu
+        energetických aktív. Presne tým smerom, ktorý dominoval celej konferencii.
+      </p>
+      <p>
+        Stojí za povšimnutie, že hneď <strong>tri z piatich</strong> slovenských firiem sú v halách EM-Power a ees, teda
+        v zóne sietí, flexibility a úložísk, nie „len" pri paneloch. To pekne kopíruje hlavný trend výstavy: hodnota sa
+        presúva k softvéru, sieti a manažmentu energie.
+      </p>
+
+      <h3>Česko: 14 firiem + Solární asociace + AKU-BAT</h3>
+      <p>
+        Českú stopu bolo na výstave cítiť výrazne: 14 firiem s vlastným stánkom, k tomu tím Solární asociace a účasť
+        asociácie AKU-BAT. Riaditeľ Solární asociace to zhrnul výstižne: v Mníchove stretne viac členov asociácie než na
+        valnej hromade.
+      </p>
+      <div class="not-prose my-8 overflow-x-auto">
+        <table class="w-full text-left border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-gray-200">
+              <th class="py-2 pr-4 font-semibold">Firma</th>
+              <th class="py-2 pr-4 font-semibold">Výstava</th>
+              <th class="py-2 font-semibold">Stánok</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">BAYO.S (skrutkové základy pre BESS, skid, carporty)</td><td class="py-2 pr-4">Intersolar</td><td class="py-2">A6.612</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">ComAp a.s.</td><td class="py-2 pr-4">EM-Power</td><td class="py-2">B5.655</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">ETD TRANSFORMÁTORY a.s.</td><td class="py-2 pr-4">EM-Power</td><td class="py-2">C5.111</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">GAZ Energy a.s.</td><td class="py-2 pr-4">ees Europe</td><td class="py-2">C2.171</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">Greenbuddies</td><td class="py-2 pr-4">Intersolar</td><td class="py-2">A3.109</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">KASKA s.r.o.</td><td class="py-2 pr-4">Intersolar</td><td class="py-2">A5.654</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">ONERGY POWER s.r.o.</td><td class="py-2 pr-4">ees Europe</td><td class="py-2">B2.134</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">PHOTOMATE s.r.o.</td><td class="py-2 pr-4">Intersolar</td><td class="py-2">C1.230</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">Raylyst Solar s.r.o.</td><td class="py-2 pr-4">Intersolar</td><td class="py-2">C1.260</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">RSBP spol. s r. o.</td><td class="py-2 pr-4">ees Europe</td><td class="py-2">B2.786</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">SOLSOL s.r.o.</td><td class="py-2 pr-4">Intersolar</td><td class="py-2">C4.620</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">sunaffairs s.r.o.</td><td class="py-2 pr-4">ees Europe</td><td class="py-2">C4.250</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">Union Grid s.r.o.</td><td class="py-2 pr-4">ees Europe</td><td class="py-2">B0.335</td></tr>
+            <tr><td class="py-2 pr-4">Volthein s.r.o.</td><td class="py-2 pr-4">ees Europe</td><td class="py-2">B0.335</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Pre kontext, ako je región zastúpený: <strong>Poľsko 26 firiem, Rakúsko 63, Maďarsko 6, Ukrajina 3</strong>, a
+        Nemecko ako domáci hráč vyše 800. Stredná a východná Európa je na výstave jednoznačne prítomná; nie sme diváci,
+        sme účastníci.
+      </p>
+
+      <h2>8. Čo si z toho má odniesť firma v SK a CZ</h2>
+      <p>
+        Nemecko býva pre náš región predstihom o pár rokov. Nie každý trend sa prenesie jeden k jednému, ale smer je
+        rovnaký. Päť vecí, ktoré platia aj u nás:
+      </p>
+      <ol>
+        <li><strong>Sieť bude aj u nás úzkym hrdlom.</strong> S rastom obnoviteľných zdrojov porastie tlak na kapacitu siete. Kto rozumie pripojeniu a jeho ekonomike, má náskok.</li>
+        <li><strong>Flexibilita bude mať cenu.</strong> Hodnota flexibilných aktív (batérie, riaditeľné odbery) porastie. Regulačný rámec sa v oboch krajinách vyvíja a podmienky účasti úložísk na jednotlivých trhoch sa medzi SK a CZ výrazne líšia. Práve preto treba biznis plán stavať na aktuálnom stave regulácie, nie na predpokladoch.</li>
+        <li><strong>Zákazník kupuje use-case a návratnosť, nie technológiu.</strong> Priemyselný zákazník potrebuje optimalizáciu a business case, nie zoznam parametrov. Diagnostika a ekonomika musia ostať u vás, nie u technického dodávateľa.</li>
+        <li><strong>Softvér a EMS sú diferenciátor.</strong> Kto vie k železu pridať mozog (riadenie, monitoring, optimalizáciu, prípadne účasť na trhu), predáva hodnotu, nie cenu.</li>
+        <li><strong>Komplexita je príležitosť.</strong> Trh sa nezjednodušuje, zložitosť rastie. A rastúca komplexita vytvára priestor pre dôveryhodných integrátorov a poradcov, ktorí vedia spojiť technológiu, ekonomiku a reguláciu do jedného funkčného celku.</li>
+      </ol>
+      <blockquote class="not-prose my-6 border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        <p class="text-lg font-medium text-gray-800">
+          „Budúci víťazi nebudú nutne tí s najlepšími batériami. Budú to tí s najlepšou optimalizáciou."
+        </p>
+        <p class="text-sm text-muted mt-2">opakovaná téza z pódií Intersolaru 2026</p>
+      </blockquote>
+
+      <h2>Záver: od megawattov k mozgu</h2>
+      <p>
+        Pred pár rokmi sme sa na energetickú transformáciu pozerali cez optiku výroby: viac solárov, viac veterníkov,
+        viac megawattov. Intersolar 2026 hovorí niečo iné. Nasledujúca dekáda nebude primárne o stavaní ďalších aktív,
+        bude o tom, <strong>prevádzkovať ich lepšie.</strong>
+      </p>
+      <p>
+        Technológia už existuje. Batérie sú lacné, panely sú lacné, meniče sú vyspelé. Výzva sa presunula ku
+        koordinácii, optimalizácii a exekúcii: k spojeniu energie, softvéru, flexibility, regulácie a financií do jedného
+        koherentného systému. A presne tam sa bude tvoriť hodnota.
+      </p>
+      <p>
+        Pred desiatimi rokmi bola konkurenčnou výhodou technológia. Dnes je technológia dostupná takmer každému. Rozdiel
+        preto nevzniká pri nákupe batérie. Vzniká pri rozhodnutiach, ktoré firma robí počas celej životnosti projektu.
+      </p>
+      <p>
+        Preto sa víťazi najbližších rokov budú odlišovať menej technológiou a viac schopnosťou prepájať energetiku, dáta,
+        reguláciu a ekonomiku do jedného funkčného celku. Nie integrátor, nie EPC, nie predajca. <strong>Partner.</strong>
+      </p>
+      <p>Batéria je za babku. Hodnota je inde. A my vieme, kde.</p>
+      <blockquote class="not-prose my-6 border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        <p class="text-lg font-medium text-gray-800">
+          „Ak bola prvá dekáda energetickej transformácie o megawattoch, tá nasledujúca bude o algoritmoch, dátach a
+          schopnosti robiť lepšie investičné rozhodnutia. Technológie sú dnes dostupnejšie než kedykoľvek predtým.
+          Skutočnou konkurenčnou výhodou sa stáva schopnosť premeniť ich na ekonomickú hodnotu."
+        </p>
+      </blockquote>
+
+      <h2>Súvisiace články</h2>
+      <ul>
+        <li><a href="/energetika/blog/boli-sme-na-sapi-konferencii">SAPI konferencia 2026: 5 trendov, ktoré menia budúcnosť firemnej energetiky</a></li>
+        <li><a href="/energetika/blog/sesfg-mnichov-2026">Budúcnosť firemnej energetiky: 10 trendov z konferencie v Mníchove</a></li>
+      </ul>
+
+      <h2>Súvisiace témy</h2>
+      <ul>
+        <li><a href="/energetika/energy-management">Čo je Energy Management System (EMS)</a></li>
+        <li><a href="/energetika/baterie-bess">Batériové úložiská (BESS)</a></li>
+        <li><a href="/energetika/fotovoltika">Firemná fotovoltika</a></li>
+        <li><a href="/energetika/slovnik">Slovník energetických pojmov</a></li>
+      </ul>
+
+      <h2>Zdroje a poznámky</h2>
+      <ol>
+        <li>Oficiálny zoznam vystavovateľov The smarter E Europe 2026 (filter Slovakia / Czech Republic), thesmartere.de: počty a čísla stánkov.</li>
+        <li>Záverečná tlačová správa The smarter E Europe, Solar Promotion, 25. 6. 2026 (približne 105 000 návštevníkov, 2 650 vystavovateľov).</li>
+        <li>The smarter E Award 2026: víťazi vyhlásení 22. 6. 2026; tlačová správa thesmartere-award.com a pveurope.eu.</li>
+        <li>Intersolar Europe: tlačové materiály k hybridným elektrárňam a „zvládnutej volatilite" (jún 2026); pv-tech.org (SMA), prnewswire (Envision).</li>
+        <li>Cena batérie: Lidl TRONIC 2,24 kWh, akciová cena máj 2026; historické ceny úložísk podľa nemeckých trhových prehľadov.</li>
+        <li>Regulačný kontext SK/CZ: verejne dostupné informácie prevádzkovateľov sústav a legislatívny vývoj v oboch krajinách.</li>
+        <li>Vlastné poznámky a fotodokumentácia autora z miesta.</li>
+      </ol>
+    </div>
+  </article>
+</Layout>
