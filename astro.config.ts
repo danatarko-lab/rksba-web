@@ -26,6 +26,11 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 export default defineConfig({
   output: 'static',
 
+  // Servuj URL s koncovou lomkou aj bez nej (žiadne 404 pri odkazoch z vyhľadávania).
+  // Interné odkazy generuje permalinks.ts bez lomky (config.yaml trailingSlash: false),
+  // canonical sa nemení.
+  trailingSlash: 'ignore',
+
   redirects: {
     // Pozdravy riaditeľa presunuté z Energetiky do Rádiokomunikácií.
     '/energetika/blog/radiova-siet-funguje-v-akom-je-stave': {

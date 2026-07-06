@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && pagefind --site dist && node scripts/typografia.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "check": "npm run check:astro && npm run check:eslint && npm run check:prettier",
@@ -54,6 +54,7 @@
     "globals": "^17.6.0",
     "js-yaml": "^4.1.1",
     "mdast-util-to-string": "^4.0.0",
+    "pagefind": "^1.5.2",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
     "puppeteer-core": "^25.1.0",

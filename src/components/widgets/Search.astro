@@ -1,0 +1,138 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<div
+  id="rks-search-modal"
+  transition:persist="rks-search"
+  data-pagefind-ignore
+  role="dialog"
+  aria-modal="true"
+  aria-label="Vyhľadávanie"
+  class="hidden fixed inset-0 z-[60]"
+>
+  <div data-rks-search-backdrop class="absolute inset-0 bg-black/50"></div>
+  <div class="relative mx-auto mt-16 sm:mt-24 w-[92%] max-w-[640px] rounded-xl bg-white shadow-2xl">
+    <div class="flex items-center justify-between border-b border-gray-100 px-4 py-3">
+      <span class="text-sm font-semibold text-gray-800">Vyhľadávanie</span>
+      <button
+        type="button"
+        data-rks-search-close
+        aria-label="Zavrieť vyhľadávanie"
+        class="rounded-lg p-1.5 text-muted hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+      >
+        <Icon name="tabler:x" class="w-5 h-5" />
+      </button>
+    </div>
+    <div class="p-4">
+      <div id="search"></div>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+  #search {
+    --pagefind-ui-primary: var(--aw-color-primary);
+    --pagefind-ui-text: var(--aw-color-text-default);
+    --pagefind-ui-background: #fff;
+    --pagefind-ui-border-radius: 8px;
+    --pagefind-ui-font: inherit;
+  }
+</style>
+
+<script>
+  (function () {
+    if (window.__rksSearchInit) return;
+    window.__rksSearchInit = true;
+
+    let loaded = false;
+
+    function focusInput() {
+      const modal = document.getElementById('rks-search-modal');
+      const input = modal && modal.querySelector('input');
+      if (input) input.focus();
+    }
+
+    function loadPagefind() {
+      if (loaded) return;
+      loaded = true;
+
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '/pagefind/pagefind-ui.css';
+      document.head.appendChild(link);
+
+      const script = document.createElement('script');
+      script.src = '/pagefind/pagefind-ui.js';
+      script.onload = function () {
+        function rksFixUrl(u) {
+          if (!u) return u;
+          u = u.replace(/\/(#)/, '$1').replace(/\/$/, '');
+          return u === '' ? '/' : u;
+        }
+        new window.PagefindUI({
+          element: '#search',
+          showSubResults: true,
+          showImages: false,
+          processResult: function (result) {
+            if (result) {
+              result.url = rksFixUrl(result.url);
+              if (Array.isArray(result.sub_results)) {
+                result.sub_results.forEach(function (sr) {
+                  sr.url = rksFixUrl(sr.url);
+                });
+              }
+            }
+            return result;
+          },
+          translations: {
+            placeholder: 'Hľadať na webe RKS',
+            clear_search: 'Vymazať',
+            load_more: 'Načítať ďalšie výsledky',
+            search_label: 'Vyhľadávanie na webe',
+            filters_label: 'Filtre',
+            zero_results: 'Pre výraz [SEARCH_TERM] sa nenašli žiadne výsledky',
+            many_results: 'Počet výsledkov pre [SEARCH_TERM]: [COUNT]',
+            one_result: '[COUNT] výsledok pre [SEARCH_TERM]',
+            alt_search: 'Pre [SEARCH_TERM] neboli výsledky, zobrazujem výsledky pre [DIFFERENT_TERM]',
+            search_suggestion: 'Pre [SEARCH_TERM] neboli výsledky, skúste jeden z týchto výrazov:',
+            searching: 'Hľadám [SEARCH_TERM]...',
+          },
+        });
+        setTimeout(focusInput, 120);
+      };
+      document.head.appendChild(script);
+    }
+
+    function openSearch() {
+      const modal = document.getElementById('rks-search-modal');
+      if (!modal) return;
+      modal.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+      loadPagefind();
+      setTimeout(focusInput, 120);
+    }
+
+    function closeSearch() {
+      const modal = document.getElementById('rks-search-modal');
+      if (!modal) return;
+      modal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    document.addEventListener('click', function (e) {
+      const t = e.target;
+      if (!t || !t.closest) return;
+      if (t.closest('[data-rks-search-open]')) {
+        e.preventDefault();
+        openSearch();
+      } else if (t.closest('[data-rks-search-close]') || t.closest('[data-rks-search-backdrop]')) {
+        closeSearch();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeSearch();
+    });
+  })();
+</script>
