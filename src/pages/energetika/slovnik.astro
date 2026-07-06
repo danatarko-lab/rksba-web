@@ -7,12 +7,25 @@ const metadata = {
     'Jednoduché vysvetlenia energetických pojmov pre firmy: BESS, EMS, revenue stacking, flexibilita, peak shaving, co-location, arbitráž, VPP a ďalšie.',
 };
 
+const SVC = {
+  ems: { label: 'Riadenie energie (EMS)', href: '/energetika/energy-management' },
+  bess: { label: 'Batériové úložisko (BESS)', href: '/energetika/baterie-bess' },
+  fve: { label: 'Fotovoltika', href: '/energetika/fotovoltika' },
+  sb: { label: 'Inteligentné budovy', href: '/energetika/smart-building' },
+  ev: { label: 'Nabíjanie elektromobilov', href: '/energetika/ev-nabijacky' },
+};
+const ART = {
+  a001: { label: 'SAPI konferencia 2026: 5 trendov', href: '/energetika/blog/boli-sme-na-sapi-konferencii' },
+  a002: { label: '10 trendov z konferencie v Mníchove', href: '/energetika/blog/sesfg-mnichov-2026' },
+};
+
 const terms = [
   {
     id: 'agregacia',
     term: 'Agregácia (agregátor)',
     def: 'Spájanie viacerých menších zdrojov, batérií alebo spotrebičov do jedného celku, ktorý ich spoločne ponúka na trhu alebo v podporných službách.',
     related: ['vpp', 'flexibilita', 'podporne-sluzby'],
+    articles: [ART.a002],
   },
   {
     id: 'arbitraz',
@@ -21,12 +34,14 @@ const terms = [
     def: 'Uloženie alebo nákup elektriny, keď je lacná, a jej využitie alebo predaj, keď je drahá. Zisk vzniká z cenového rozdielu.',
     why: 'Jeden zo zdrojov príjmu batérie vo vyspelých trhoch. Na Slovensku závisí od dostupnosti a likvidity trhu.',
     related: ['revenue-stacking', 'flexibilita', 'bess'],
+    services: [SVC.bess],
   },
   {
     id: 'behind-the-meter',
     term: 'Behind-the-Meter (BTM)',
     def: 'Batéria alebo fotovoltika za elektromerom zákazníka, zameraná najmä na optimalizáciu jeho vlastnej spotreby.',
     related: ['vlastna-spotreba', 'bess', 'fve'],
+    services: [SVC.bess],
   },
   {
     id: 'bess',
@@ -35,6 +50,8 @@ const terms = [
     def: 'Batériové úložisko elektriny, ktoré uloží energiu a dodá ju späť podľa potreby, napríklad do špičky alebo z prebytkov fotovoltiky.',
     why: 'Hodnota batérie nie je v kapacite v kWh, ale v tom, koľko úžitkov vo firme obslúži naraz.',
     related: ['ems', 'revenue-stacking', 'peak-shaving', 'co-location'],
+    services: [SVC.bess],
+    articles: [ART.a001, ART.a002],
   },
   {
     id: 'bms',
@@ -42,6 +59,7 @@ const terms = [
     abbr: 'Building / Battery Management System',
     def: 'Skratka BMS má dva významy. Building Management System riadi technológie budovy (kúrenie, vetranie, chladenie, osvetlenie). Battery Management System je riadiaci systém batérie, ktorý sleduje napätie, prúd a teplotu článkov a chráni ju.',
     related: ['ems', 'bess'],
+    services: [SVC.sb],
   },
   {
     id: 'business-case',
@@ -49,6 +67,7 @@ const terms = [
     def: 'Ekonomické zdôvodnenie investície: koľko stojí, čo prinesie, kedy sa vráti a aké nesie riziká.',
     why: 'V RKS je základom rozhodovania, technológia prichádza až po ňom.',
     related: ['rezervovana-kapacita'],
+    services: [SVC.ems],
   },
   {
     id: 'co-location',
@@ -56,6 +75,8 @@ const terms = [
     def: 'Umiestnenie viacerých technológií, najčastejšie fotovoltiky a batérie, na jednom mieste so zdieľaným pripojením do siete.',
     why: 'Zdieľané pripojenie a lepšie využitie infraštruktúry často zlepšujú ekonomiku projektu.',
     related: ['bess', 'fve', 'grid-congestion'],
+    services: [SVC.bess, SVC.fve],
+    articles: [ART.a002],
   },
   {
     id: 'curtailment',
@@ -63,6 +84,7 @@ const terms = [
     def: 'Nútené obmedzenie výroby elektriny, keď ju sieť nedokáže prijať. Časť možnej výroby sa stratí.',
     why: 'Zvyšuje hodnotu akumulácie, batéria dokáže uložiť inak orezanú výrobu.',
     related: ['grid-congestion', 'redispatch', 'bess'],
+    articles: [ART.a002],
   },
   {
     id: 'ems',
@@ -70,6 +92,8 @@ const terms = [
     def: 'Riadiaci systém, ktorý meria, vyhodnocuje a optimalizuje výrobu, spotrebu a akumuláciu energie v reálnom čase, napríklad kedy nabíjať batériu, ako reagovať na ceny alebo ako znižovať špičky.',
     why: 'O ekonomike energetického projektu často rozhoduje viac než samotný hardvér.',
     related: ['bms', 'bess', 'flexibilita', 'load-balancing'],
+    services: [SVC.ems],
+    articles: [ART.a001, ART.a002],
   },
   {
     id: 'flexibilita',
@@ -77,6 +101,8 @@ const terms = [
     def: 'Schopnosť meniť výrobu, spotrebu alebo skladovanie energie podľa potrieb siete alebo cien na trhu. Technická flexibilita slúži sieti, obchodná trhu.',
     why: 'Stáva sa jedným z hlavných zdrojov hodnoty batérií. Na Slovensku ju berieme zatiaľ ako budúci potenciál.',
     related: ['podporne-sluzby', 'arbitraz', 'agregacia'],
+    services: [SVC.bess, SVC.ems],
+    articles: [ART.a001, ART.a002],
   },
   {
     id: 'fve',
@@ -85,6 +111,8 @@ const terms = [
     def: 'Zariadenie, ktoré premieňa slnečné žiarenie na elektrinu na vlastnú spotrebu alebo dodávku do siete.',
     why: 'Najvyššiu ekonomickú hodnotu má vtedy, keď firma väčšinu vyrobenej elektriny spotrebuje priamo.',
     related: ['vlastna-spotreba', 'bess', 'co-location'],
+    services: [SVC.fve],
+    articles: [ART.a001, ART.a002],
   },
   {
     id: 'grid-congestion',
@@ -92,6 +120,7 @@ const terms = [
     def: 'Stav, keď je sieť preplnená a nedokáže preniesť všetku elektrinu z miesta výroby do miesta spotreby.',
     why: 'Kapacita siete sa stáva jedným z hlavných limitov nových energetických projektov.',
     related: ['curtailment', 'rezervovana-kapacita'],
+    articles: [ART.a002],
   },
   {
     id: 'load-balancing',
@@ -99,6 +128,7 @@ const terms = [
     def: 'Automatické rozdeľovanie dostupného výkonu medzi nabíjačky a spotrebiče tak, aby sa nepreťažila prípojka.',
     why: 'Umožňuje nabíjať viac elektromobilov bez nákladného posilnenia prípojky.',
     related: ['ems', 'rezervovana-kapacita'],
+    services: [SVC.ev, SVC.sb],
   },
   {
     id: 'peak-shaving',
@@ -106,6 +136,8 @@ const terms = [
     def: 'Znižovanie krátkodobých odberových špičiek pomocou batérie alebo riadenia spotreby, aby firma neplatila za vysokú rezervovanú kapacitu.',
     why: 'Patrí medzi najspoľahlivejšie úžitky batérie s priamym vplyvom na distribučné poplatky.',
     related: ['rezervovana-kapacita', 'bess', 'ems'],
+    services: [SVC.ems, SVC.bess],
+    articles: [ART.a001],
   },
   {
     id: 'podporne-sluzby',
@@ -113,6 +145,7 @@ const terms = [
     def: 'Služby, ktorými zdroje pomáhajú prevádzkovateľovi siete udržať jej stabilitu, najmä reguláciu frekvencie, za čo dostávajú odmenu. FCR je najrýchlejšia, aFRR automatická a mFRR manuálna regulačná rezerva.',
     why: 'Potenciálny zdroj príjmu batérií. Na Slovensku je účasť batérií zatiaľ regulačne obmedzená.',
     related: ['flexibilita', 'agregacia', 'revenue-stacking'],
+    services: [SVC.bess],
   },
   {
     id: 'redispatch',
@@ -126,6 +159,8 @@ const terms = [
     def: 'Kombinovanie viacerých zdrojov príjmu z jedného zariadenia, najčastejšie batérie, naraz. Napríklad vlastná spotreba, znižovanie špičiek, arbitráž alebo podporné služby.',
     why: 'Práve kombinácia úžitkov, nie jeden zdroj, rozhoduje o návratnosti batériového projektu.',
     related: ['bess', 'arbitraz', 'flexibilita', 'podporne-sluzby'],
+    services: [SVC.bess],
+    articles: [ART.a002, ART.a001],
   },
   {
     id: 'rezervovana-kapacita',
@@ -133,6 +168,7 @@ const terms = [
     def: 'Zmluvne vyhradený a spoplatnený výkon v mieste pripojenia, bez ohľadu na to, koľko firma reálne odoberie.',
     why: 'Býva jednou z najväčších položiek faktúry, jej optimalizácia je častý zdroj úspor.',
     related: ['peak-shaving', 'grid-congestion'],
+    services: [SVC.ems, SVC.ev],
   },
   {
     id: 'vlastna-spotreba',
@@ -140,6 +176,8 @@ const terms = [
     def: 'Podiel vyrobenej elektriny, napríklad z fotovoltiky, ktorý firma spotrebuje priamo vo svojej prevádzke.',
     why: 'Čím vyššia vlastná spotreba, tým lepšia ekonomika fotovoltiky.',
     related: ['fve', 'bess'],
+    services: [SVC.fve, SVC.bess],
+    articles: [ART.a001],
   },
   {
     id: 'vpp',
@@ -147,6 +185,7 @@ const terms = [
     abbr: 'Virtual Power Plant',
     def: 'Softvérové prepojenie mnohých malých zdrojov a batérií, ktoré spolu fungujú a sú riadené aj obchodované ako jedna elektráreň.',
     related: ['agregacia', 'flexibilita'],
+    articles: [ART.a001],
   },
   {
     id: "15-minutovy-produkt",
@@ -2183,6 +2222,32 @@ const termSchema = {
                       </a>
                     </>
                   ))}
+              </p>
+            )}
+            {t.services && t.services.length > 0 && (
+              <p class="text-sm text-muted mt-3">
+                <span class="font-semibold text-gray-800">Súvisiace riešenia:</span>{' '}
+                {t.services.map((s, i) => (
+                  <>
+                    {i > 0 && ', '}
+                    <a class="text-primary hover:underline" href={s.href}>
+                      {s.label}
+                    </a>
+                  </>
+                ))}
+              </p>
+            )}
+            {t.articles && t.articles.length > 0 && (
+              <p class="text-sm text-muted mt-3">
+                <span class="font-semibold text-gray-800">Súvisiace články:</span>{' '}
+                {t.articles.map((a, i) => (
+                  <>
+                    {i > 0 && ', '}
+                    <a class="text-primary hover:underline" href={a.href}>
+                      {a.label}
+                    </a>
+                  </>
+                ))}
               </p>
             )}
           </div>

@@ -23,11 +23,14 @@ const faqs = [
   { q: "Musíme investovať do všetkého naraz (EMS, fotovoltika aj batéria)?",
     a: "Nie. Postupujeme po krokoch a často sa začína meraním a riadením (EMS), ktoré samo osebe znižuje náklady. Fotovoltika a batéria pribúdajú vtedy, keď to dáva ekonomický zmysel." },
   { q: "Ako spolu súvisia EMS, fotovoltika a batéria?",
-    a: "Tvoria jeden riadený celok: EMS = pochopte svoju energiu, fotovoltika = vyrábajte vlastnú rozumne, batéria = využite ju v správnom čase. Najvyššia hodnota nevzniká z jednej technológie, ale z ich prepojenia." },
+    a: "Tvoria jeden riadený celok: EMS = pochopte svoju energiu, fotovoltika = vyrábajte vlastnú rozumne, batéria = využite ju v správnom čase. Najvyššia hodnota nevzniká z jednej technológie, ale z ich prepojenia.",
+    links: [{ label: 'Riadenie energie (EMS)', href: '/energetika/energy-management' }, { label: 'Batériové úložisko', href: '/energetika/baterie-bess' }, { label: 'Fotovoltika', href: '/energetika/fotovoltika' }] },
   { q: "Čo je Energy Management System (EMS)?",
-    a: "EMS je systém, ktorý meria, vyhodnocuje a riadi spotrebu energie. Funguje ako riadiace centrum, rozhoduje, kedy vyrábať, ukladať a spotrebovať a ako reagovať na ceny elektriny. Nedá sa riadiť to, čo sa nemeria, preto býva EMS základom celého riešenia." },
+    a: "EMS je systém, ktorý meria, vyhodnocuje a riadi spotrebu energie. Funguje ako riadiace centrum, rozhoduje, kedy vyrábať, ukladať a spotrebovať a ako reagovať na ceny elektriny. Nedá sa riadiť to, čo sa nemeria, preto býva EMS základom celého riešenia.",
+    links: [{ label: 'EMS stránka', href: '/energetika/energy-management' }, { label: 'EMS v slovníku', href: '/energetika/slovnik#ems' }] },
   { q: "Oplatí sa firme fotovoltika?",
-    a: "Hodnota fotovoltiky nie je v tom, koľko vyrobí, ale koľko energie firma spotrebuje priamo. Rozhoduje teda váš profil spotreby, nie veľkosť inštalácie, preto fotovoltiku dimenzujeme od spotreby a návratnosti." },
+    a: "Hodnota fotovoltiky nie je v tom, koľko vyrobí, ale koľko energie firma spotrebuje priamo. Rozhoduje teda váš profil spotreby, nie veľkosť inštalácie, preto fotovoltiku dimenzujeme od spotreby a návratnosti.",
+    links: [{ label: 'Fotovoltika', href: '/energetika/fotovoltika' }, { label: 'Vlastná spotreba', href: '/energetika/slovnik#vlastna-spotreba' }] },
   { q: "V čom je hodnota batérie, nie je to len kapacita v kWh?",
     a: "Hodnota batérie nie je v kapacite (kWh), ale v tom, čo vo vašej prevádzke rieši: zníženie drahých špičiek, využitie vlastnej výroby večer a zálohu prevádzky. Rovnaká kapacita môže mať úplne inú hodnotu podľa toho, ako sa využíva." },
   { q: "Pomôžete, aj keď už máme fotovoltiku alebo iné riešenie od iného dodávateľa?",
@@ -39,23 +42,29 @@ const faqs = [
   { q: "Pomáhate aj s ESG?",
     a: "Áno, riešenie poskytuje merateľné podklady pre ESG reporting (priamy aj nepriamy) a môže byť výhodou vo verejných aj firemných tendroch. ESG tu nie je o imidži, ale o dátach a konkurencieschopnosti." },
   { q: 'Čo je batériové úložisko (BESS) a na čo firme slúži?',
-    a: 'Batériové úložisko ukladá elektrinu a dodá ju vtedy, keď ju firma potrebuje, napríklad do večernej špičky alebo z prebytkov fotovoltiky. Firme pomáha znižovať odberové špičky, zvyšovať vlastnú spotrebu a lepšie reagovať na ceny. Koľko z toho dáva zmysel, vždy posúdime cez business case na konkrétnu prevádzku.' },
+    a: 'Batériové úložisko ukladá elektrinu a dodá ju vtedy, keď ju firma potrebuje, napríklad do večernej špičky alebo z prebytkov fotovoltiky. Firme pomáha znižovať odberové špičky, zvyšovať vlastnú spotrebu a lepšie reagovať na ceny. Koľko z toho dáva zmysel, vždy posúdime cez business case na konkrétnu prevádzku.',
+    links: [{ label: 'BESS stránka', href: '/energetika/baterie-bess' }, { label: 'BESS v slovníku', href: '/energetika/slovnik#bess' }] },
   { q: 'Čo je vlastná spotreba a prečo je pri fotovoltike taká dôležitá?',
-    a: 'Vlastná spotreba je podiel vyrobenej elektriny, ktorý firma spotrebuje priamo vo svojej prevádzke. Čím vyššia, tým lepšia ekonomika fotovoltiky, pretože ušetrená elektrina má väčšiu hodnotu než tá dodaná do siete. Práve preto sa k fotovoltike často dopĺňa batéria alebo inteligentné riadenie spotreby.' },
+    a: 'Vlastná spotreba je podiel vyrobenej elektriny, ktorý firma spotrebuje priamo vo svojej prevádzke. Čím vyššia, tým lepšia ekonomika fotovoltiky, pretože ušetrená elektrina má väčšiu hodnotu než tá dodaná do siete. Práve preto sa k fotovoltike často dopĺňa batéria alebo inteligentné riadenie spotreby.',
+    links: [{ label: 'Fotovoltika', href: '/energetika/fotovoltika' }, { label: 'Vlastná spotreba', href: '/energetika/slovnik#vlastna-spotreba' }] },
   { q: 'Čo znamená flexibilita v energetike a prečo sa o nej hovorí?',
-    a: 'Flexibilita je schopnosť meniť výrobu, spotrebu alebo skladovanie energie podľa potreby siete alebo cien na trhu. Vďaka nej vie firma reagovať na drahé a lacné hodiny a lepšie využiť vlastné zdroje. Stáva sa jedným z hlavných zdrojov hodnoty batérií, na Slovensku ju zatiaľ berieme ako rastúci potenciál.' },
+    a: 'Flexibilita je schopnosť meniť výrobu, spotrebu alebo skladovanie energie podľa potreby siete alebo cien na trhu. Vďaka nej vie firma reagovať na drahé a lacné hodiny a lepšie využiť vlastné zdroje. Stáva sa jedným z hlavných zdrojov hodnoty batérií, na Slovensku ju zatiaľ berieme ako rastúci potenciál.',
+    links: [{ label: 'Batériové úložisko', href: '/energetika/baterie-bess' }, { label: 'Flexibilita', href: '/energetika/slovnik#flexibilita' }] },
   { q: 'Prečo je dnes dôležité riadiť energiu, nielen ju vyrábať?',
     a: 'Vyrobiť energiu je dnes ľahšie než ju dobre využiť. Hodnota čoraz viac vzniká v tom, ako firma energiu riadi: kedy ju spotrebuje, kedy uloží a ako prepojí jednotlivé technológie. Samotný hardvér je komodita. Preto sa sústredíme na riadenie a ekonomiku, nie na predaj jednej technológie.' },
   { q: 'Aký je rozdiel medzi úsporou energie a optimalizáciou energie?',
     a: 'Úspora znamená spotrebovať menej energie. Optimalizácia znamená využívať energiu inteligentnejšie, teda presúvať spotrebu v čase, znižovať odberové špičky, lepšie využívať vlastnú výrobu alebo reagovať na ceny elektriny. V moderných energetických projektoch často prináša najväčšiu hodnotu práve optimalizácia, nie samotné znižovanie spotreby.' },
   { q: 'Čo je business case a prečo ho pripravujeme pred návrhom riešenia?',
-    a: 'Business case porovnáva náklady, očakávané úspory, možné príjmy, riziká a scenáre vývoja projektu. Pomáha rozhodnúť, či investícia dáva ekonomický zmysel ešte pred výberom technológií. Preto v RKS nezačíname predajom zariadení, ale analýzou dát a business case.' },
+    a: 'Business case porovnáva náklady, očakávané úspory, možné príjmy, riziká a scenáre vývoja projektu. Pomáha rozhodnúť, či investícia dáva ekonomický zmysel ešte pred výberom technológií. Preto v RKS nezačíname predajom zariadení, ale analýzou dát a business case.',
+    links: [{ label: 'Business case v slovníku', href: '/energetika/slovnik#business-case' }] },
   { q: 'Ako zistíme, či má naša firma potenciál znížiť náklady na energie?',
     a: 'Najlepší ukazovateľ je vaša spotreba v čase a štruktúra faktúry. Z priebehu spotreby a rozloženia nákladov (energia, rezervovaná kapacita, špičky) sa dá rýchlo odhadnúť, kde je priestor. Na úvodnej konzultácii sa spolu pozrieme na tieto dáta a povieme, či má hlbšia analýza zmysel.' },
   { q: 'Ako sa dá znížiť platba za rezervovanú kapacitu?',
-    a: 'Platba za rezervovanú kapacitu závisí od výkonu, ktorý máte vyhradený, a od vašich špičiek. Znižovať sa dá riadením spotreby a batériou, ktorá pokryje krátke špičky (peak shaving), prípadne správnym nastavením rezervovaného príkonu. Konkrétny potenciál vidno až z priebehu vašej spotreby.' },
+    a: 'Platba za rezervovanú kapacitu závisí od výkonu, ktorý máte vyhradený, a od vašich špičiek. Znižovať sa dá riadením spotreby a batériou, ktorá pokryje krátke špičky (peak shaving), prípadne správnym nastavením rezervovaného príkonu. Konkrétny potenciál vidno až z priebehu vašej spotreby.',
+    links: [{ label: 'Riadenie energie (EMS)', href: '/energetika/energy-management' }, { label: 'Rezervovaná kapacita', href: '/energetika/slovnik#rezervovana-kapacita' }] },
   { q: 'Musíme kvôli novým technológiám posilniť elektrickú prípojku?',
-    a: 'Nie vždy. Pri viacerých technológiách (fotovoltika, batéria, nabíjačky) sa dá inteligentným riadením záťaže rozdeliť dostupný výkon tak, aby sa prípojka nepreťažila. Často sa tým vyhnete nákladnému posilňovaniu prípojky. Či to stačí, závisí od vašej spotreby a plánov, posúdime to z dát.' },
+    a: 'Nie vždy. Pri viacerých technológiách (fotovoltika, batéria, nabíjačky) sa dá inteligentným riadením záťaže rozdeliť dostupný výkon tak, aby sa prípojka nepreťažila. Často sa tým vyhnete nákladnému posilňovaniu prípojky. Či to stačí, závisí od vašej spotreby a plánov, posúdime to z dát.',
+    links: [{ label: 'Nabíjanie elektromobilov', href: '/energetika/ev-nabijacky' }, { label: 'Load balancing', href: '/energetika/slovnik#load-balancing' }] },
   { q: 'Oplatí sa investovať do energetických riešení aj pri nižších cenách elektriny?',
     a: 'Áno. Hodnota energetického riešenia nevzniká len z vysokej ceny elektriny, ale aj z jej výkyvov a zo štruktúry vašej faktúry, kde býva veľká časť nákladov v distribúcii a rezervovanej kapacite. Aj pri nižších cenách vie dobré riešenie šetriť. Či sa oplatí práve teraz, ukáže business case. Ak nedáva zmysel, povieme vám to.' },
 ];
@@ -94,6 +103,19 @@ const faqSchema = {
               <span class="text-primary transition group-open:rotate-45" aria-hidden="true">+</span>
             </summary>
             <p class="text-muted mt-3">{faq.a}</p>
+            {faq.links && faq.links.length > 0 && (
+              <p class="text-sm text-muted mt-3">
+                <span class="font-semibold text-gray-800">Viac:</span>{' '}
+                {faq.links.map((l, i) => (
+                  <>
+                    {i > 0 && ', '}
+                    <a class="text-primary hover:underline" href={l.href}>
+                      {l.label}
+                    </a>
+                  </>
+                ))}
+              </p>
+            )}
           </details>
         ))
       }
