@@ -1,0 +1,75 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Produkty | RKS',
+  description:
+    'Produkty RKS: katalóg produktov, rádiostanice Mototrbo, CALTTA a Motorola, varovacie a evakuačné systémy.',
+};
+
+const cards = [
+  {
+    title: 'Katalóg produktov',
+    href: '/katalog-produktov',
+    desc: 'Parametre, dokumentácia a servisné informácie k produktom.',
+  },
+  {
+    title: 'Rádiostanice Mototrbo (DMR)',
+    href: 'https://mototrbo.sk',
+    desc: 'Digitálny rádiový systém Motorola MOTOTRBO.',
+  },
+  {
+    title: 'Rádiostanice CALTTA',
+    href: '/produkty/radiostanice-caltta',
+    desc: 'Rádiostanice CALTTA v ponuke RKS.',
+  },
+  {
+    title: 'Rádiostanice Motorola EVX',
+    href: '/katalog-produktov/kategoria/prenosne-radiostanice-digitalne-evx',
+    desc: 'Digitálne rádiostanice Motorola radu EVX.',
+  },
+  {
+    title: 'Rádiostanice Motorola analógové',
+    href: '/katalog-produktov/kategoria/radiostanice',
+    desc: 'Analógové rádiostanice Motorola.',
+  },
+  {
+    title: 'Varovacie a vyrozumievacie systémy',
+    href: '/katalog-produktov/kategoria/varovacie-a-vyrozumievacie-systemy',
+    desc: 'Elektronické sirény a vyrozumievacie systémy.',
+  },
+  {
+    title: 'Evakuačné systémy',
+    href: '/katalog-produktov/kategoria/evakuacne-systemy',
+    desc: 'Evakuačný rozhlas a ozvučovacie systémy.',
+  },
+];
+
+const isExternal = (h) => h.startsWith('http');
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Produkty</h1>
+    <p class="text-lg text-muted mb-10 max-w-2xl">
+      Rádiostanice, evakuačné a varovacie systémy. Prehľad produktových radov a katalóg s parametrami, dokumentáciou a
+      servisnými informáciami.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        cards.map((c) => (
+          <a
+            href={c.href}
+            target={isExternal(c.href) ? '_blank' : undefined}
+            rel={isExternal(c.href) ? 'noopener noreferrer' : undefined}
+            class="group block rounded-xl border border-gray-200 p-6 hover:shadow-md hover:border-primary/40 transition"
+          >
+            <h2 class="font-semibold group-hover:text-primary">{c.title}</h2>
+            <p class="text-sm text-muted mt-1">{c.desc}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

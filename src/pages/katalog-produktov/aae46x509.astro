@@ -1,0 +1,259 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const p = {
+  "title": "AAE46X509",
+  "slides": [
+    "/images/katalog-produktov/768/main.webp"
+  ],
+  "popis_html": "<p> Vodeodolný repromikrofón s audio konektorom (MH-66F4B)</p>",
+  "parametre": [
+    {
+      "nazov": "Konektor",
+      "hodnota": "3,5 mm jack"
+    },
+    {
+      "nazov": "Audio konektor",
+      "hodnota": "Áno"
+    },
+    {
+      "nazov": "Núdzové tlačidlo",
+      "hodnota": "Nie"
+    },
+    {
+      "nazov": "Programovateľné tlačidlo",
+      "hodnota": "Nie"
+    },
+    {
+      "nazov": "Regulátor hlasitosti",
+      "hodnota": "Nie"
+    },
+    {
+      "nazov": "Redukcia okolitého hluku",
+      "hodnota": "Áno"
+    },
+    {
+      "nazov": "Windporting",
+      "hodnota": "Nie"
+    },
+    {
+      "nazov": "Krytie",
+      "hodnota": "IP54"
+    }
+  ],
+  "dokumenty": []
+};
+const sidebar = "<nav class=\"rks-tree text-sm\" aria-label=\"Kategórie produktov\"><ul class=\"space-y-1\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/evakuacne-systemy\" class=\"rks-link text-default hover:text-primary\">Evakuačné systémy<span class=\"text-muted text-xs ml-2\">68</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/evakuacny-rozhlasovy-system-sx-2000\" class=\"rks-link text-default hover:text-primary\">Evakuačný rozhlasový systém SX-2000<span class=\"text-muted text-xs ml-2\">18</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/audio-jednotky\" class=\"rks-link text-default hover:text-primary\">Audio jednotky<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofonne-stanice-133\" class=\"rks-link text-default hover:text-primary\">Mikrofónne stanice<span class=\"text-muted text-xs ml-2\">2</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/moduly\" class=\"rks-link text-default hover:text-primary\">Moduly<span class=\"text-muted text-xs ml-2\">8</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/systemove-riadiace-jednotky-130\" class=\"rks-link text-default hover:text-primary\">Systémové riadiace jednotky<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/systemove-vykonove-zosilnovace-131\" class=\"rks-link text-default hover:text-primary\">Systémové výkonové zosilňovače<span class=\"text-muted text-xs ml-2\">2</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/evakuacny-rozhlasovy-system-vm-3000\" class=\"rks-link text-default hover:text-primary\">Evakuačný rozhlasový systém VM-3000<span class=\"text-muted text-xs ml-2\">15</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofonne-stanice\" class=\"rks-link text-default hover:text-primary\">Mikrofónne stanice<span class=\"text-muted text-xs ml-2\">4</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/systemove-napajanie\" class=\"rks-link text-default hover:text-primary\">Systémové napájanie<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/systemove-riadiace-jednotky\" class=\"rks-link text-default hover:text-primary\">Systémové riadiace jednotky<span class=\"text-muted text-xs ml-2\">4</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/systemove-vykonove-zosilnovace\" class=\"rks-link text-default hover:text-primary\">Systémové výkonové zosilňovače<span class=\"text-muted text-xs ml-2\">4</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/evakuacny-rozhlasovy-system-vx-3000\" class=\"rks-link text-default hover:text-primary\">Evakuačný rozhlasový systém VX-3000<span class=\"text-muted text-xs ml-2\">14</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ethernetove-prepinace\" class=\"rks-link text-default hover:text-primary\">Ethernetové prepínače<span class=\"text-muted text-xs ml-2\">1</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofonne-stanice-167\" class=\"rks-link text-default hover:text-primary\">Mikrofónne stanice<span class=\"text-muted text-xs ml-2\">4</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/moduly-166\" class=\"rks-link text-default hover:text-primary\">Moduly<span class=\"text-muted text-xs ml-2\">1</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/systemove-napajanie-165\" class=\"rks-link text-default hover:text-primary\">Systémové napájanie<span class=\"text-muted text-xs ml-2\">2</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/systemove-ramy\" class=\"rks-link text-default hover:text-primary\">Systémové rámy<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/systemove-zosilnovace\" class=\"rks-link text-default hover:text-primary\">Systémové zosilňovače<span class=\"text-muted text-xs ml-2\">3</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/reproduktory-100v\" class=\"rks-link text-default hover:text-primary\">Reproduktory 100V<span class=\"text-muted text-xs ml-2\">19</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nastenne-reproduktory\" class=\"rks-link text-default hover:text-primary\">Nástenné reproduktory<span class=\"text-muted text-xs ml-2\">8</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/stropne-reproduktory\" class=\"rks-link text-default hover:text-primary\">Stropné reproduktory<span class=\"text-muted text-xs ml-2\">5</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/tlakove-reproduktory\" class=\"rks-link text-default hover:text-primary\">Tlakové reproduktory<span class=\"text-muted text-xs ml-2\">6</span></a></li></ul></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/zalozne-akumulatory\" class=\"rks-link text-default hover:text-primary\">Záložné akumulátory<span class=\"text-muted text-xs ml-2\">2</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/radiostanice\" class=\"rks-link text-default hover:text-primary\">Rádiostanice<span class=\"text-muted text-xs ml-2\">373</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/lodne-radiostanice\" class=\"rks-link text-default hover:text-primary\">Lodné rádiostanice<span class=\"text-muted text-xs ml-2\">40</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory-marine\" class=\"rks-link text-default hover:text-primary\">Akumulátory (Marine)<span class=\"text-muted text-xs ml-2\">5</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-marine\" class=\"rks-link text-default hover:text-primary\">Antény (Marine)<span class=\"text-muted text-xs ml-2\">1</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky-marine\" class=\"rks-link text-default hover:text-primary\">Nabíjačky (Marine)<span class=\"text-muted text-xs ml-2\">18</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie-marine\" class=\"rks-link text-default hover:text-primary\">Nosenie (Marine)<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony-marine\" class=\"rks-link text-default hover:text-primary\">Repromikrofóny (Marine)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla-marine\" class=\"rks-link text-default hover:text-primary\">Slúchadlá (Marine)<span class=\"text-muted text-xs ml-2\">1</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-radiostanice\" class=\"rks-link text-default hover:text-primary\">Prenosné rádiostanice<span class=\"text-muted text-xs ml-2\">201</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-komercne-radiostanice\" class=\"rks-link text-default hover:text-primary\">Komerčné rádiostanice<span class=\"text-muted text-xs ml-2\">62</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory-cp\" class=\"rks-link text-default hover:text-primary\">Akumulátory (CP)<span class=\"text-muted text-xs ml-2\">5</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-cp\" class=\"rks-link text-default hover:text-primary\">Antény (CP)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-prislusenstvo-cp\" class=\"rks-link text-default hover:text-primary\">Iné príslušenstvo (CP)<span class=\"text-muted text-xs ml-2\">7</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky-cp\" class=\"rks-link text-default hover:text-primary\">Nabíjačky (CP)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie-cp\" class=\"rks-link text-default hover:text-primary\">Nosenie (CP)<span class=\"text-muted text-xs ml-2\">11</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy-cp\" class=\"rks-link text-default hover:text-primary\">Náhlavné súpravy (CP)<span class=\"text-muted text-xs ml-2\">8</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony-cp\" class=\"rks-link text-default hover:text-primary\">Repromikrofóny (CP)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla-cp\" class=\"rks-link text-default hover:text-primary\">Slúchadlá (CP)<span class=\"text-muted text-xs ml-2\">18</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-profesionalne-radiostanice\" class=\"rks-link text-default hover:text-primary\">Profesionálne rádiostanice<span class=\"text-muted text-xs ml-2\">74</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory-gp\" class=\"rks-link text-default hover:text-primary\">Akumulátory (GP)<span class=\"text-muted text-xs ml-2\">7</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-gp\" class=\"rks-link text-default hover:text-primary\">Antény (GP)<span class=\"text-muted text-xs ml-2\">8</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-prislusenstvo-gp\" class=\"rks-link text-default hover:text-primary\">Iné príslušenstvo (GP)<span class=\"text-muted text-xs ml-2\">4</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky-gp\" class=\"rks-link text-default hover:text-primary\">Nabíjačky (GP)<span class=\"text-muted text-xs ml-2\">5</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie-gp\" class=\"rks-link text-default hover:text-primary\">Nosenie (GP)<span class=\"text-muted text-xs ml-2\">16</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy-gp\" class=\"rks-link text-default hover:text-primary\">Náhlavné súpravy (GP)<span class=\"text-muted text-xs ml-2\">10</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony-gp\" class=\"rks-link text-default hover:text-primary\">Repromikrofóny (GP)<span class=\"text-muted text-xs ml-2\">5</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla-gp\" class=\"rks-link text-default hover:text-primary\">Slúchadlá (GP)<span class=\"text-muted text-xs ml-2\">13</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/profesionalne-radiostanice-atex\" class=\"rks-link text-default hover:text-primary\">Profesionálne rádiostanice ATEX<span class=\"text-muted text-xs ml-2\">18</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory-gp-atex\" class=\"rks-link text-default hover:text-primary\">Akumulátory (GP ATEX)<span class=\"text-muted text-xs ml-2\">1</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-gp-atex\" class=\"rks-link text-default hover:text-primary\">Antény (GP ATEX)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-prislusenstvo-gp-atex\" class=\"rks-link text-default hover:text-primary\">Iné príslušenstvo (GP ATEX)<span class=\"text-muted text-xs ml-2\">1</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie-gp-atex\" class=\"rks-link text-default hover:text-primary\">Nosenie (GP ATEX)<span class=\"text-muted text-xs ml-2\">5</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy-gp-atex\" class=\"rks-link text-default hover:text-primary\">Náhlavné súpravy (GP ATEX)<span class=\"text-muted text-xs ml-2\">4</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony-gp-atex\" class=\"rks-link text-default hover:text-primary\">Repromikrofóny (GP ATEX)<span class=\"text-muted text-xs ml-2\">2</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/profesionalne-radiostanice-kompaktne\" class=\"rks-link text-default hover:text-primary\">Profesionálne rádiostanice kompaktné<span class=\"text-muted text-xs ml-2\">37</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory-gpmini\" class=\"rks-link text-default hover:text-primary\">Akumulátory (GPmini)<span class=\"text-muted text-xs ml-2\">2</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-gpmini\" class=\"rks-link text-default hover:text-primary\">Antény (GPmini)<span class=\"text-muted text-xs ml-2\">1</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-prislusenstvo-gpmini\" class=\"rks-link text-default hover:text-primary\">Iné príslušenstvo (GPmini)<span class=\"text-muted text-xs ml-2\">4</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie-gpmini\" class=\"rks-link text-default hover:text-primary\">Nosenie (GPmini)<span class=\"text-muted text-xs ml-2\">9</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy-gpmini\" class=\"rks-link text-default hover:text-primary\">Náhlavné súpravy (GPmini)<span class=\"text-muted text-xs ml-2\">4</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony-gpmini\" class=\"rks-link text-default hover:text-primary\">Repromikrofóny (GPmini)<span class=\"text-muted text-xs ml-2\">1</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla-gpmini\" class=\"rks-link text-default hover:text-primary\">Slúchadlá (GPmini)<span class=\"text-muted text-xs ml-2\">14</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/profesionalne-radiostanice-odolne\" class=\"rks-link text-default hover:text-primary\">Profesionálne rádiostanice odolné<span class=\"text-muted text-xs ml-2\">10</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory-gp-r\" class=\"rks-link text-default hover:text-primary\">Akumulátory (GP-R)<span class=\"text-muted text-xs ml-2\">2</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-gp-r\" class=\"rks-link text-default hover:text-primary\">Antény (GP-R)<span class=\"text-muted text-xs ml-2\">4</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony-gp-r\" class=\"rks-link text-default hover:text-primary\">Repromikrofóny (GP-R)<span class=\"text-muted text-xs ml-2\">1</span></a></li></ul></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-radiostanice-analogove-vx\" class=\"rks-link text-default hover:text-primary\">Prenosné rádiostanice analógové VX<span class=\"text-muted text-xs ml-2\">24</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-vx\" class=\"rks-link text-default hover:text-primary\">Antény (VX)<span class=\"text-muted text-xs ml-2\">7</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie-vx\" class=\"rks-link text-default hover:text-primary\">Nosenie (VX)<span class=\"text-muted text-xs ml-2\">12</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-radiostanice-digitalne-evx\" class=\"rks-link text-default hover:text-primary\">Prenosné rádiostanice digitálne EVX<span class=\"text-muted text-xs ml-2\">49</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory-evx\" class=\"rks-link text-default hover:text-primary\">Akumulátory (EVX)<span class=\"text-muted text-xs ml-2\">4</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-evx\" class=\"rks-link text-default hover:text-primary\">Antény (EVX)<span class=\"text-muted text-xs ml-2\">14</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky-evx\" class=\"rks-link text-default hover:text-primary\">Nabíjačky (EVX)<span class=\"text-muted text-xs ml-2\">7</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie-evx\" class=\"rks-link text-default hover:text-primary\">Nosenie (EVX)<span class=\"text-muted text-xs ml-2\">8</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy-evx\" class=\"rks-link text-default hover:text-primary\">Náhlavné súpravy (EVX)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony-evx\" class=\"rks-link text-primary font-semibold\">Repromikrofóny (EVX)<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla-evx\" class=\"rks-link text-default hover:text-primary\">Slúchadlá (EVX)<span class=\"text-muted text-xs ml-2\">5</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prevadzace\" class=\"rks-link text-default hover:text-primary\">Prevádzače<span class=\"text-muted text-xs ml-2\">15</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-prevadzace\" class=\"rks-link text-default hover:text-primary\">Iné príslušenstvo (Prevádzače)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver\" class=\"rks-link text-default hover:text-primary\">Softvér (Prevádzače)<span class=\"text-muted text-xs ml-2\">10</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/vozidlove-radiostanice\" class=\"rks-link text-default hover:text-primary\">Vozidlové rádiostanice<span class=\"text-muted text-xs ml-2\">37</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/zakladnove-komercne\" class=\"rks-link text-default hover:text-primary\">Komerčné rádiostanice<span class=\"text-muted text-xs ml-2\">26</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-cm\" class=\"rks-link text-default hover:text-primary\">Antény (CM)<span class=\"text-muted text-xs ml-2\">5</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-prislusenstvo-cm\" class=\"rks-link text-default hover:text-primary\">Iné príslušenstvo (CM)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/instalacia-cm\" class=\"rks-link text-default hover:text-primary\">Inštalácia (CM)<span class=\"text-muted text-xs ml-2\">7</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofony-cm\" class=\"rks-link text-default hover:text-primary\">Mikrofóny (CM)<span class=\"text-muted text-xs ml-2\">5</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/reproduktory-cm\" class=\"rks-link text-default hover:text-primary\">Reproduktory (CM)<span class=\"text-muted text-xs ml-2\">2</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/zakladnove-profesionalne\" class=\"rks-link text-default hover:text-primary\">Profesionálne rádiostanice<span class=\"text-muted text-xs ml-2\">11</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/instalacia-gm\" class=\"rks-link text-default hover:text-primary\">Inštalácia (GM)<span class=\"text-muted text-xs ml-2\">2</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofony-gm\" class=\"rks-link text-default hover:text-primary\">Mikrofóny (GM)<span class=\"text-muted text-xs ml-2\">3</span></a></li></ul></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/vozidlove-radiostanice-analogove-vx\" class=\"rks-link text-default hover:text-primary\">Vozidlové rádiostanice analógové VX<span class=\"text-muted text-xs ml-2\">7</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofony-vx\" class=\"rks-link text-default hover:text-primary\">Mikrofóny (VX)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/reproduktory-vx\" class=\"rks-link text-default hover:text-primary\">Reproduktory (VX)<span class=\"text-muted text-xs ml-2\">2</span></a></li></ul></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/varovacie-a-vyrozumievacie-systemy\" class=\"rks-link text-default hover:text-primary\">Varovacie a vyrozumievacie systémy<span class=\"text-muted text-xs ml-2\">5</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-gray-200\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/elektronicke-sireny\" class=\"rks-link text-default hover:text-primary\">Elektronické sirény<span class=\"text-muted text-xs ml-2\">5</span></a></li></ul></li></ul></nav>";
+const breadcrumb = [
+  {
+    "name": "Produkty",
+    "url": "/produkty"
+  },
+  {
+    "name": "Katalóg produktov",
+    "url": "/katalog-produktov"
+  },
+  {
+    "name": "Rádiostanice",
+    "url": "/katalog-produktov/kategoria/radiostanice"
+  },
+  {
+    "name": "Prenosné rádiostanice digitálne EVX",
+    "url": "/katalog-produktov/kategoria/prenosne-radiostanice-digitalne-evx"
+  },
+  {
+    "name": "Repromikrofóny (EVX)",
+    "url": "/katalog-produktov/kategoria/repromikrofony-evx"
+  },
+  {
+    "name": "AAE46X509",
+    "url": null
+  }
+];
+const ctaHeading = "Servis a príslušenstvo aj pre ukončené modely";
+const ctaText = "Tento produkt už výrobca nedodáva, my ho stále servisujeme. Batérie, príslušenstvo a opravy riešime aj pre ukončené modely.";
+const metadata = {
+  "title": "AAE46X509, katalóg produktov | RKS",
+  "description": "Vodeodolný repromikrofón s audio konektorom (MH-66F4B)"
+};
+const jsonld = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "AAE46X509",
+    "description": "Vodeodolný repromikrofón s audio konektorom (MH-66F4B)",
+    "category": "Produkty / Rádiostanice / Prenosné rádiostanice digitálne EVX / Repromikrofóny (EVX)",
+    "image": [
+      "/images/katalog-produktov/768/main.webp"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Produkty",
+        "item": "/produkty"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Katalóg produktov",
+        "item": "/katalog-produktov"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Rádiostanice",
+        "item": "/katalog-produktov/kategoria/radiostanice"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Prenosné rádiostanice digitálne EVX",
+        "item": "/katalog-produktov/kategoria/prenosne-radiostanice-digitalne-evx"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Repromikrofóny (EVX)",
+        "item": "/katalog-produktov/kategoria/repromikrofony-evx"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "AAE46X509"
+      }
+    ]
+  }
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
+      <aside class="mb-8 lg:mb-0 lg:sticky lg:top-24 lg:self-start">
+        <details class="rks-cats rounded-xl border border-gray-200 p-4 lg:border-0 lg:p-0">
+          <summary class="rks-cats-toggle cursor-pointer font-semibold lg:hidden flex items-center justify-between gap-2 rounded-lg bg-gray-50 px-4 py-3"><span>Kategórie produktov</span><span class="rks-cats-arrow" aria-hidden="true"></span></summary>
+          <div class="rks-tree-wrap mt-3 lg:mt-0" set:html={sidebar} />
+        </details>
+      </aside>
+
+      <div class="min-w-0">
+        <nav class="text-sm text-muted mb-2" aria-label="Omrvinky">
+          {breadcrumb.map((b, i) => (
+            <>
+              {i > 0 && <span class="px-1">/</span>}
+              {b.url ? <a class="hover:underline" href={b.url}>{b.name}</a> : <span>{b.name}</span>}
+            </>
+          ))}
+        </nav>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">{p.title}</h1>
+
+        <div class="rks-gallery relative max-w-md mb-8" data-rks-gallery>
+          <div class="rks-track flex overflow-x-auto snap-x snap-mandatory scroll-smooth rounded-xl border border-gray-200 bg-white" data-track>
+            {p.slides.map((src, i) => (
+              <div class="rks-slide shrink-0 basis-full snap-center p-4">
+                <img src={src} alt={`${p.title}, obrázok ${i + 1}`} class="w-full h-auto mx-auto" loading={i === 0 ? 'eager' : 'lazy'} />
+              </div>
+            ))}
+          </div>
+          {p.slides.length > 1 && (
+            <>
+              <button type="button" data-prev aria-label="Predchádzajúci obrázok" class="absolute left-2 top-1/2 -translate-y-1/2 h-9 w-9 inline-flex items-center justify-center rounded-full bg-white/90 border border-gray-200 shadow-sm hover:bg-white">‹</button>
+              <button type="button" data-next aria-label="Ďalší obrázok" class="absolute right-2 top-1/2 -translate-y-1/2 h-9 w-9 inline-flex items-center justify-center rounded-full bg-white/90 border border-gray-200 shadow-sm hover:bg-white">›</button>
+              <div class="mt-2 text-center text-sm text-muted" data-counter>1 / {p.slides.length}</div>
+            </>
+          )}
+        </div>
+
+        <div class="prose prose-lg max-w-none" set:html={p.popis_html} />
+
+        {p.parametre.length > 0 && (
+          <>
+            <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">Parametre</h2>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse text-sm">
+                <tbody>
+                  {p.parametre.map((r) => (
+                    <tr class="border-b border-gray-100 align-top">
+                      <th class="py-2 pr-4 font-medium whitespace-nowrap">{r.nazov}</th>
+                      <td class="py-2 text-muted">{r.hodnota}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
+        )}
+
+        {p.dokumenty.length > 0 && (
+          <>
+            <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">Dokumenty</h2>
+            <ul class="text-muted">
+              {p.dokumenty.map((d) => (
+                <li>{d.subor} ({d.typ})</li>
+              ))}
+            </ul>
+          </>
+        )}
+
+        <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+          <h2 class="text-xl md:text-2xl font-semibold mb-3">{ctaHeading}</h2>
+          <p class="text-muted mb-6 max-w-xl mx-auto">{ctaText}</p>
+          <a href="/kontakt" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+
+  <style is:global>
+    @media (min-width: 1024px) {
+      .rks-cats > summary { display: none; }
+      .rks-cats > .rks-tree-wrap { display: block !important; }
+    }
+    .rks-track::-webkit-scrollbar { display: none; }
+    .rks-track { scrollbar-width: none; }
+    .rks-tree .rks-li { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 0.5rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-leaf { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-li > .rks-link { min-width: 0; }
+    .rks-tree .rks-children { grid-column: 1 / -1; display: none; }
+    .rks-tree .rks-disc[open] ~ .rks-children { display: block; }
+    .rks-tree .rks-disc { display: inline-flex; }
+    .rks-tree summary.rks-arrow { list-style: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; color: #6b7280; }
+    .rks-tree summary.rks-arrow::-webkit-details-marker { display: none; }
+    .rks-tree summary.rks-arrow::before { content: ""; border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-tree .rks-disc[open] > summary.rks-arrow::before { transform: rotate(90deg); }
+    .rks-cats-arrow::before { content: ""; display: inline-block; color: #6b7280; border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-cats[open] > .rks-cats-toggle .rks-cats-arrow::before { transform: rotate(90deg); }
+  </style>
+
+  <script is:inline>
+    function rksInitGalleries() {
+      document.querySelectorAll('[data-rks-gallery]').forEach(function (g) {
+        if (g.dataset.rksInit) return;
+        g.dataset.rksInit = '1';
+        var track = g.querySelector('[data-track]');
+        var counter = g.querySelector('[data-counter]');
+        var prev = g.querySelector('[data-prev]');
+        var next = g.querySelector('[data-next]');
+        var total = track ? track.children.length : 0;
+        if (!track || total <= 1) return;
+        function upd() {
+          var i = Math.round(track.scrollLeft / track.clientWidth) + 1;
+          if (counter) counter.textContent = i + ' / ' + total;
+        }
+        if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' }); });
+        if (next) next.addEventListener('click', function () { track.scrollBy({ left: track.clientWidth, behavior: 'smooth' }); });
+        track.addEventListener('scroll', upd, { passive: true });
+        upd();
+      });
+    }
+    document.addEventListener('astro:page-load', rksInitGalleries);
+    rksInitGalleries();
+  </script>
+</Layout>

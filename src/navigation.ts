@@ -51,6 +51,29 @@ export const headerData = {
       ],
     },
     {
+      text: 'Produkty',
+      links: [
+        { text: 'Rádiostanice Mototrbo (DMR)', href: 'https://mototrbo.sk' },
+        { text: 'Rádiostanice CALTTA', href: getPermalink('/produkty/radiostanice-caltta') },
+        {
+          text: 'Rádiostanice Motorola EVX',
+          href: getPermalink('/katalog-produktov/kategoria/prenosne-radiostanice-digitalne-evx'),
+        },
+        {
+          text: 'Rádiostanice Motorola analógové',
+          href: getPermalink('/katalog-produktov/kategoria/radiostanice'),
+        },
+        {
+          text: 'Varovacie a vyrozumievacie systémy',
+          href: getPermalink('/katalog-produktov/kategoria/varovacie-a-vyrozumievacie-systemy'),
+        },
+        {
+          text: 'Evakuačné systémy',
+          href: getPermalink('/katalog-produktov/kategoria/evakuacne-systemy'),
+        },
+      ],
+    },
+    {
       text: 'Energetika',
       href: getPermalink('/energetika'),
       links: [
@@ -96,6 +119,26 @@ export const footerData = {
         { text: 'Servis rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/servis-radiostanic') },
         { text: '„Potvrďte príjem"', href: getPermalink('/radiokomunikacie/newsletter') },
         { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
+      ],
+    },
+    {
+      title: 'Produkty',
+      links: [
+        { text: 'Rádiostanice Mototrbo (DMR)', href: 'https://mototrbo.sk' },
+        { text: 'Rádiostanice CALTTA', href: getPermalink('/produkty/radiostanice-caltta') },
+        {
+          text: 'Rádiostanice Motorola EVX',
+          href: getPermalink('/katalog-produktov/kategoria/prenosne-radiostanice-digitalne-evx'),
+        },
+        {
+          text: 'Rádiostanice Motorola analógové',
+          href: getPermalink('/katalog-produktov/kategoria/radiostanice'),
+        },
+        {
+          text: 'Varovacie a vyrozumievacie systémy',
+          href: getPermalink('/katalog-produktov/kategoria/varovacie-a-vyrozumievacie-systemy'),
+        },
+        { text: 'Evakuačné systémy', href: getPermalink('/katalog-produktov/kategoria/evakuacne-systemy') },
       ],
     },
     {
