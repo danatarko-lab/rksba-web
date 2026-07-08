@@ -37,12 +37,16 @@ const p = {
   ],
   "dokumenty": [
     {
-      "subor": "PC-2369EN_Brochure.pdf",
-      "typ": "Brochure"
+      "subor": "PC-2369EN_Specification.pdf",
+      "titul": "PC-2369EN Špecifikácia (EN)"
     },
     {
-      "subor": "PC-2369EN_Specification.pdf",
-      "typ": "Specification"
+      "subor": "PC-2369EN_Brochure.pdf",
+      "titul": "PC-2369EN Prospekt (EN)"
+    },
+    {
+      "subor": "PC-1869_2369_2852_2869_Installation_Manual.pdf",
+      "titul": "PC-2369EN Inštalačný návod (EN)"
     }
   ]
 };
@@ -197,9 +201,18 @@ const jsonld = [
         {p.dokumenty.length > 0 && (
           <>
             <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">Dokumenty</h2>
-            <ul class="text-muted">
+            <ul class="space-y-1">
               {p.dokumenty.map((d) => (
-                <li>{d.subor} ({d.typ})</li>
+                <li>
+                  <a
+                    href={`/dokumenty/katalog/${encodeURIComponent(d.subor)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-primary hover:underline"
+                  >
+                    {d.titul}
+                  </a>
+                </li>
               ))}
             </ul>
           </>

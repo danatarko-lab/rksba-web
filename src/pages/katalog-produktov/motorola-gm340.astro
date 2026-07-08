@@ -47,20 +47,20 @@ const p = {
   ],
   "dokumenty": [
     {
-      "subor": "GM340_UG_cz.pdf",
-      "typ": "User Guide"
+      "subor": "GM340_Prospekt.pdf",
+      "titul": "GM340 Prospekt (CZ)"
     },
     {
       "subor": "GM340_Brochure.pdf",
-      "typ": "Brochure"
+      "titul": "GM340 Prospekt (EN)"
     },
     {
       "subor": "GM340_UG_en.pdf",
-      "typ": "User Guide"
+      "titul": "GM340 Návod (EN)"
     },
     {
-      "subor": "GM340_Prospekt.pdf",
-      "typ": "Brochure"
+      "subor": "GM340_UG_cz.pdf",
+      "titul": "GM340 Návod (CZ)"
     }
   ]
 };
@@ -217,9 +217,18 @@ const jsonld = [
         {p.dokumenty.length > 0 && (
           <>
             <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">Dokumenty</h2>
-            <ul class="text-muted">
+            <ul class="space-y-1">
               {p.dokumenty.map((d) => (
-                <li>{d.subor} ({d.typ})</li>
+                <li>
+                  <a
+                    href={`/dokumenty/katalog/${encodeURIComponent(d.subor)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-primary hover:underline"
+                  >
+                    {d.titul}
+                  </a>
+                </li>
               ))}
             </ul>
           </>

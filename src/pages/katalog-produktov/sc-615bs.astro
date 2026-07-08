@@ -31,12 +31,12 @@ const p = {
   ],
   "dokumenty": [
     {
-      "subor": "SC-615BS_Specification.pdf",
-      "typ": "Specification"
+      "subor": "SC-615BS_Brochure.pdf",
+      "titul": "SC-615BS Prospekt (EN)"
     },
     {
-      "subor": "SC-615BS_Brochure.pdf",
-      "typ": "Brochure"
+      "subor": "SC-615BS_Specification.pdf",
+      "titul": "SC-615BS Špecifikácia (EN)"
     }
   ]
 };
@@ -189,9 +189,18 @@ const jsonld = [
         {p.dokumenty.length > 0 && (
           <>
             <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">Dokumenty</h2>
-            <ul class="text-muted">
+            <ul class="space-y-1">
               {p.dokumenty.map((d) => (
-                <li>{d.subor} ({d.typ})</li>
+                <li>
+                  <a
+                    href={`/dokumenty/katalog/${encodeURIComponent(d.subor)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-primary hover:underline"
+                  >
+                    {d.titul}
+                  </a>
+                </li>
               ))}
             </ul>
           </>
