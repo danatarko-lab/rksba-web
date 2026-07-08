@@ -1,2 +1,5 @@
+# Faza pripomienkovania na new.rksba.sk: cely web je docasne noindex cez meta robots.
+# Crawling zamerne NEblokujeme (Disallow zostava prazdny), aby roboti videli noindex, nofollow na strankach.
+# Vypnutie pri prechode na rksba.sk: v src/config.yaml nastav metadata robots index a follow na true.
 User-agent: *
 Disallow:
