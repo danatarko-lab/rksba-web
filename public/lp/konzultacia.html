@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dohodnúť úvodnú konzultáciu | RKS</title>
+<meta name="robots" content="noindex">
+<style>
+  :root { --blue:#2D4FDB; --navy:#16223A; --grey:#5B6470; --bg:#F5F6F8; --border:#D8DCE5; }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:Inter,-apple-system,'Segoe UI',Arial,sans-serif; background:var(--bg); color:var(--navy); min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px; }
+  .card { background:#fff; border-radius:20px; box-shadow:0 10px 40px rgba(22,34,58,.12); max-width:560px; width:100%; padding:40px 44px; }
+  h1 { font-size:26px; margin-bottom:10px; }
+  .sub { color:var(--grey); font-size:15.5px; line-height:1.5; margin-bottom:26px; }
+  label { display:block; font-weight:600; font-size:14.5px; margin:16px 0 6px; }
+  label .req { color:var(--blue); }
+  input[type=text], input[type=email], input[type=tel] { width:100%; padding:13px 14px; font-size:15.5px; border:1px solid var(--border); border-radius:10px; outline:none; }
+  input:focus { border-color:var(--blue); box-shadow:0 0 0 3px rgba(45,79,219,.12); }
+  .row { display:flex; gap:14px; } .row > div { flex:1; }
+  .chk { display:flex; gap:10px; align-items:flex-start; margin:18px 0 6px; font-size:14px; color:var(--navy); line-height:1.5; }
+  .chk input { margin-top:3px; width:17px; height:17px; }
+  .btn { width:100%; margin-top:18px; background:var(--blue); color:#fff; font-size:16.5px; font-weight:600; padding:15px; border:0; border-radius:10px; cursor:pointer; }
+  .btn:hover { background:#2441bb; }
+  .legal { color:var(--grey); font-size:12.5px; line-height:1.5; margin-top:12px; }
+  .legal a, .chk a { color:var(--blue); text-decoration:none; }
+  .hidden { display:none; }
+  .err { color:#B00000; font-size:13px; margin-top:10px; display:none; }
+  #step2 h1 { margin-bottom:6px; }
+  .cal-note { color:var(--grey); font-size:13.5px; margin-top:14px; }
+  .honeypot { position:absolute; left:-9999px; opacity:0; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+  KONZULTAČNÝ FORMULÁR RKS — dvojkrokový lead-capture
+  Krok 1: kontakt + súhlas  →  Krok 2: Calendly booking
+  Lead je uložený UŽ PRI ODOSLANÍ formulára — ak návštevník
+  booking nedokončí, kontakt aj súhlas ostávajú zachytené.
+
+  PRED NASADENÍM NASTAVIŤ (CONFIG nižšie):
+  1) LEAD_ENDPOINT — URL backendu/CRM, kam sa POST-ne lead (JSON).
+     Ukladajte: všetky polia + consent texty + timestamp + UTM.
+  2) CALENDLY_URL — reálny Calendly link RKS.
+  3) PRIVACY_URL — odkaz na Zásady ochrany osobných údajov.
+============================================================ -->
+
+<div class="card" id="step1">
+  <h1>Dohodnite si úvodnú konzultáciu</h1>
+  <p class="sub">Nechajte nám kontakt a hneď si vyberte termín, ktorý vám vyhovuje. Konzultácia je bezplatná a nezáväzná, bez potreby technických dát.</p>
+
+  <form id="leadForm" novalidate>
+    <label>Celé meno <span class="req">*</span></label>
+    <input type="text" name="name" required placeholder="Ján Novák">
+
+    <label>Spoločnosť <span class="req">*</span></label>
+    <input type="text" name="company" required placeholder="Firma s.r.o.">
+
+    <div class="row">
+      <div>
+        <label>Pracovný e-mail <span class="req">*</span></label>
+        <input type="email" name="email" required placeholder="jan.novak@firma.sk">
+      </div>
+      <div>
+        <label>Telefón</label>
+        <input type="tel" name="phone" placeholder="+421 ...">
+      </div>
+    </div>
+
+    <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off">
+
+    <div class="chk">
+      <input type="checkbox" name="newsletter" id="nl">
+      <label for="nl" style="font-weight:400; margin:0;">Chcem dostávať novinky a tipy o rádiokomunikáciách od RKS. Súhlas je dobrovoľný, môžem ho kedykoľvek odvolať odhlásením v každom e-maile. Viac v <a href="#PRIVACY_URL">Zásadách ochrany osobných údajov</a>.</label>
+    </div>
+
+    <button class="btn" type="submit">Odoslať a vybrať termín</button>
+    <p class="err" id="errMsg">Vyplňte prosím meno, spoločnosť a platný e-mail.</p>
+    <p class="legal">Kliknutím na Odoslať súhlasíte, aby vás RKS kontaktoval ohľadom vášho dopytu. Viac v <a href="#PRIVACY_URL">Zásadách ochrany osobných údajov</a>.</p>
+  </form>
+</div>
+
+<div class="card hidden" id="step2">
+  <h1>Ďakujeme! Vyberte si termín</h1>
+  <p class="sub">Váš kontakt máme. Teraz si vyberte čas, ktorý vám vyhovuje.</p>
+  <!-- Calendly inline embed -->
+  <div class="calendly-inline-widget" data-url="" style="min-width:100%;height:640px;"></div>
+  <p class="cal-note">Ak vám žiadny termín nevyhovuje, nič sa nedeje, ozveme sa vám sami na zadaný kontakt.</p>
+</div>
+
+<script>
+const CONFIG = {
+  LEAD_ENDPOINT: "",                                            // TODO: URL backendu / CRM webhooku
+  CALENDLY_URL: "https://calendly.com/VASE-KONTO/uvodna-konzultacia", // TODO: reálny Calendly link
+  PRIVACY_URL: "/ochrana-osobnych-udajov"                       // realna URL zasad ochrany osobnych udajov tohto webu
+};
+
+// prepíš placeholder odkazy na zásady
+document.querySelectorAll('a[href="#PRIVACY_URL"]').forEach(a => a.href = CONFIG.PRIVACY_URL);
+
+// UTM z URL (prenesené z infolettera cez landing page)
+const params = new URLSearchParams(location.search);
+const utm = {};
+["utm_source","utm_medium","utm_campaign","utm_content"].forEach(k => { if (params.get(k)) utm[k] = params.get(k); });
+
+document.getElementById("leadForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+  const f = e.target;
+  if (f.website.value) return; // honeypot — bot
+  const email = f.email.value.trim();
+  if (!f.name.value.trim() || !f.company.value.trim() || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+    document.getElementById("errMsg").style.display = "block"; return;
+  }
+  // jemné filtrovanie generických adries (súhlas má dávať konkrétna osoba) — pri druhom odoslaní pustí ďalej
+  if (!window.genWarned && /^(info|office|sekretariat|obchod|podatelna|kontakt|recepcia)@/i.test(email)) {
+    const em = document.getElementById("errMsg");
+    em.textContent = "Uveďte prosím pracovný e-mail konkrétnej osoby (nie info@, office@ a pod.), aby sme vedeli, s kým komunikujeme. Ak inú adresu nemáte, odošlite formulár ešte raz.";
+    em.style.display = "block"; window.genWarned = true; return;
+  }
+  const lead = {
+    name: f.name.value.trim(),
+    company: f.company.value.trim(),
+    email: email,
+    phone: f.phone.value.trim(),
+    newsletter_optin: f.newsletter.checked,
+    consent_contact_text: "Kliknutím na Odoslať súhlasíte, aby vás RKS kontaktoval ohľadom vášho dopytu.",
+    consent_newsletter_text: f.newsletter.checked ? "Chcem dostávať novinky a tipy o rádiokomunikáciách od RKS." : null,
+    submitted_at: new Date().toISOString(),
+    page: location.href,
+    ...utm
+  };
+  try {
+    if (CONFIG.LEAD_ENDPOINT) {
+      await fetch(CONFIG.LEAD_ENDPOINT, { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(lead) });
+    } else {
+      console.warn("LEAD_ENDPOINT nie je nastavený — lead sa neukladá!", lead);
+    }
+  } catch(err) { console.error("Lead sa nepodarilo odoslať:", err); }
+  // krok 2 — Calendly (zobrazí sa aj pri chybe odoslania, lead je dôležitejší ako UX blokácia)
+  document.getElementById("step1").classList.add("hidden");
+  const s2 = document.getElementById("step2");
+  s2.classList.remove("hidden");
+  const w = s2.querySelector(".calendly-inline-widget");
+  // predvyplnenie mena/e-mailu v Calendly
+  const cal = new URL(CONFIG.CALENDLY_URL);
+  cal.searchParams.set("name", lead.name);
+  cal.searchParams.set("email", lead.email);
+  w.dataset.url = cal.toString();
+  const s = document.createElement("script");
+  s.src = "https://assets.calendly.com/assets/external/widget.js";
+  document.body.appendChild(s);
+});
+</script>
+</body>
+</html>
