@@ -36,10 +36,6 @@ export const headerData = {
           ],
         },
         {
-          text: 'Produkty',
-          links: [{ text: 'Mototrbo', href: getPermalink('/radiokomunikacie/produkty/mototrbo') }],
-        },
-        {
           text: 'Aktuality',
           links: [
             { text: '„Potvrďte príjem" (Newsletter)', href: getPermalink('/radiokomunikacie/newsletter') },

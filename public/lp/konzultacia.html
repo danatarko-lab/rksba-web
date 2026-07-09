@@ -21,6 +21,9 @@
   .chk input { margin-top:3px; width:17px; height:17px; }
   .btn { width:100%; margin-top:18px; background:var(--blue); color:#fff; font-size:16.5px; font-weight:600; padding:15px; border:0; border-radius:10px; cursor:pointer; }
   .btn:hover { background:#2441bb; }
+  a.btn { display:block; text-align:center; text-decoration:none; box-sizing:border-box; }
+  .btn.ghost { background:transparent; color:var(--blue); border:1.5px solid var(--border); }
+  .btn.ghost:hover { background:#EEF2FA; }
   .legal { color:var(--grey); font-size:12.5px; line-height:1.5; margin-top:12px; }
   .legal a, .chk a { color:var(--blue); text-decoration:none; }
   .hidden { display:none; }
@@ -83,15 +86,22 @@
 <div class="card hidden" id="step2">
   <h1>Ďakujeme! Vyberte si termín</h1>
   <p class="sub">Váš kontakt máme. Teraz si vyberte čas, ktorý vám vyhovuje.</p>
-  <!-- Calendly inline embed -->
-  <div class="calendly-inline-widget" data-url="" style="min-width:100%;height:640px;"></div>
-  <p class="cal-note">Ak vám žiadny termín nevyhovuje, nič sa nedeje, ozveme sa vám sami na zadaný kontakt.</p>
+  <div id="calWrap">
+    <!-- Calendly inline embed -->
+    <div class="calendly-inline-widget" data-url="" style="min-width:100%;height:640px;"></div>
+    <p class="cal-note">Ak vám žiadny termín nevyhovuje, nič sa nedeje, ozveme sa vám sami na zadaný kontakt.</p>
+    <button class="btn ghost" type="button" id="skipCal">Termín si vyberiem neskôr</button>
+  </div>
+  <div id="calDone" class="hidden">
+    <p class="sub">Ďakujeme, váš kontakt máme. Ozveme sa vám.</p>
+    <a class="btn ghost" href="/">Späť na web</a>
+  </div>
 </div>
 
 <script>
 const CONFIG = {
-  LEAD_ENDPOINT: "",                                            // TODO: URL backendu / CRM webhooku
-  CALENDLY_URL: "https://calendly.com/VASE-KONTO/uvodna-konzultacia", // TODO: reálny Calendly link
+  LEAD_ENDPOINT: "https://rks-radio-expert.vercel.app/api/lead", // endpoint sa nasadzuje; fetch chyba je osetrena try/catch
+  CALENDLY_URL: "https://calendly.com/rks-konzultacia/rks-konzultacia",
   PRIVACY_URL: "/ochrana-osobnych-udajov"                       // realna URL zasad ochrany osobnych udajov tohto webu
 };
 
@@ -149,6 +159,12 @@ document.getElementById("leadForm").addEventListener("submit", async function(e)
   const s = document.createElement("script");
   s.src = "https://assets.calendly.com/assets/external/widget.js";
   document.body.appendChild(s);
+});
+
+// Krok 2 je odmietnutelny: skry Calendly a zobraz podakovanie.
+document.getElementById("skipCal").addEventListener("click", function(){
+  document.getElementById("calWrap").classList.add("hidden");
+  document.getElementById("calDone").classList.remove("hidden");
 });
 </script>
 </body>
