@@ -152,7 +152,7 @@ export const footerData = {
     {
       title: 'Kontakt',
       links: [
-        { text: '+421 903 717 634', href: 'tel:+421903717634' },
+        { text: '+421 903 277 654', href: 'tel:+421903277654' },
         { text: 'rks@rksba.sk', href: 'mailto:rks@rksba.sk' },
         { text: 'Po–Pi: 08:00 – 16:30', href: getPermalink('/kontakt') },
         { text: 'Dohodnúť nezáväznú konzultáciu', href: getPermalink('/kontakt'), class: 'btn-primary text-sm mt-2 inline-flex' },
