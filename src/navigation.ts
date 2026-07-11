@@ -62,6 +62,7 @@ export const headerData = {
             { text: 'Q&A Rádiokomunikácie', href: getPermalink('/radiokomunikacie/q-a') },
             { text: 'RKS Chatbot', href: 'https://rks-radio-expert.vercel.app/' },
             { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
+            { text: 'Prihlásiť sa na odber', href: getPermalink('/newsletter-odber') },
           ],
         },
       ],
@@ -173,6 +174,7 @@ export const footerData = {
         { text: 'Q&A Rádiokomunikácie', href: getPermalink('/radiokomunikacie/q-a') },
         { text: 'RKS Chatbot', href: 'https://rks-radio-expert.vercel.app/' },
         { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
+        { text: 'Prihlásiť sa na odber', href: getPermalink('/newsletter-odber') },
       ],
     },
     {

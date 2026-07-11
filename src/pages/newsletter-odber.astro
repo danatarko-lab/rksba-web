@@ -1,0 +1,146 @@
+---
+// Standalone stranka /newsletter-odber: prihlasenie na odber noviniek.
+// Rovnaky layout a styl ako presuhlas.astro. ZIADNY vlastny noindex (web je zatial
+// noindex globalne cez config); tato stranka sa ma raz indexovat.
+// POST na /api/lead (kind: newsletter). Krok 2 je len podakovanie, ziadny Calendly.
+---
+
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Odber noviniek RKS | RKS</title>
+<style>
+  :root { --blue:#2D4FDB; --navy:#16223A; --grey:#5B6470; --bg:#EEF2FA; --border:#DCE3F0; }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:Inter,-apple-system,'Segoe UI',Arial,sans-serif; background:var(--bg); color:var(--navy); line-height:1.55; display:grid; place-items:center; min-height:100vh; padding:24px; }
+  .card { background:#fff; border:1px solid var(--border); border-radius:16px; padding:34px 30px; max-width:520px; width:100%; box-shadow:0 8px 30px rgba(4,6,30,.06); }
+  h1 { font-size:24px; margin-bottom:12px; }
+  .sub { color:var(--grey); font-size:15px; margin-bottom:20px; }
+  label { display:block; font-weight:600; font-size:14px; margin:14px 0 6px; }
+  input[type=email], input[type=text] { width:100%; font-size:16px; padding:13px 14px; border:1px solid var(--border); border-radius:10px; }
+  .radios { display:flex; flex-direction:column; gap:8px; margin-top:4px; }
+  .radios label { display:flex; align-items:center; gap:10px; font-weight:400; font-size:14.5px; margin:0; cursor:pointer; }
+  .radios input { width:18px; height:18px; }
+  .opt { display:flex; align-items:flex-start; gap:10px; font-weight:400; font-size:13.5px; color:var(--grey); margin:18px 0 4px; cursor:pointer; }
+  .opt input { width:18px; height:18px; margin-top:1px; flex:0 0 auto; }
+  .opt a { color:var(--blue); }
+  .consent { color:var(--grey); font-size:13.5px; margin:8px 0 0; }
+  .consent a { color:var(--blue); }
+  .btn { width:100%; margin-top:18px; background:var(--blue); color:#fff; font-size:16.5px; font-weight:600; padding:15px; border:0; border-radius:10px; cursor:pointer; }
+  .btn:hover { background:#2441bb; }
+  a.btn { display:block; text-align:center; text-decoration:none; box-sizing:border-box; }
+  .btn.ghost { background:transparent; color:var(--blue); border:1.5px solid var(--border); }
+  .btn.ghost:hover { background:#EEF2FA; }
+  .err { display:none; color:#B42318; font-size:13.5px; margin-top:10px; }
+  .soft-link { display:block; margin-top:16px; font-size:13px; color:var(--grey); }
+  .soft-link a { color:var(--grey); text-decoration:underline; }
+  .honeypot { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+  .hidden { display:none; }
+</style>
+</head>
+<body>
+
+<div class="card" id="step1">
+  <h1>Odber noviniek RKS</h1>
+  <p class="sub">Nechajte nám e-mail a vyberte, čo vás zaujíma. Novinky a tipy vám budeme posielať len občas.</p>
+  <form id="newsletterForm" novalidate>
+    <label for="email">E-mail</label>
+    <input id="email" name="email" type="email" required placeholder="jan.novak@firma.sk" />
+
+    <label for="company">Firma</label>
+    <input id="company" name="company" type="text" placeholder="Firma s.r.o." />
+
+    <label>Oblasť záujmu</label>
+    <div class="radios">
+      <label><input type="radio" name="segment" value="bezpecnostne-systemy-radiove-siete" required /> Bezpečnostné systémy a rádiové siete</label>
+      <label><input type="radio" name="segment" value="energetika" /> Energetika</label>
+      <label><input type="radio" name="segment" value="obe" /> Obe</label>
+    </div>
+
+    <label class="opt">
+      <input type="checkbox" id="optin" name="optin" required />
+      <span>Súhlasím so zasielaním noviniek a tipov od RKS na uvedený e-mail. Súhlas môžem kedykoľvek odvolať na <a href="mailto:rksba@rksba.sk">rksba@rksba.sk</a>.</span>
+    </label>
+    <p class="consent">Viac v <a href="/ochrana-osobnych-udajov">Zásadách ochrany osobných údajov</a>.</p>
+
+    <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off" />
+
+    <button class="btn" type="submit">Prihlásiť sa na odber</button>
+    <p class="err" id="errMsg">Skontrolujte, prosím, zadané údaje.</p>
+  </form>
+</div>
+
+<div class="card hidden" id="done">
+  <h1>Hotovo, ste prihlásení</h1>
+  <p class="sub">Novinky vám budú chodiť na zadaný e-mail. Odhlásiť sa môžete kedykoľvek.</p>
+  <a class="btn ghost" href="/">Späť na web</a>
+  <p class="soft-link">Chcete sa pozhovárať o svojej sieti? <a href="/lp/konzultacia.html?utm_source=web&utm_medium=newsletter&utm_campaign=odber">Dohodnite si nezáväznú konzultáciu.</a></p>
+</div>
+
+<script is:inline>
+  const CONSENT_TEXT =
+    "Súhlasím so zasielaním noviniek a tipov od RKS na uvedený e-mail. Súhlas môžem kedykoľvek odvolať na rksba@rksba.sk.";
+  const LEAD_ENDPOINT = "https://rks-radio-expert.vercel.app/api/lead";
+
+  const form = document.getElementById("newsletterForm");
+  const errMsg = document.getElementById("errMsg");
+
+  function showErr(text) {
+    errMsg.textContent = text;
+    errMsg.style.display = "block";
+  }
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    if (form.website.value) return; // honeypot
+    const email = document.getElementById("email").value.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      showErr("Uveďte prosím platný e-mail.");
+      return;
+    }
+    const seg = form.querySelector('input[name="segment"]:checked');
+    if (!seg) {
+      showErr("Vyberte prosím oblasť záujmu.");
+      return;
+    }
+    if (!document.getElementById("optin").checked) {
+      showErr("Pre prihlásenie na odber je potrebný súhlas so zasielaním.");
+      return;
+    }
+    errMsg.style.display = "none";
+
+    const params = new URLSearchParams(location.search);
+    const utm = {};
+    ["utm_source", "utm_medium", "utm_campaign", "utm_content"].forEach((k) => {
+      if (params.get(k)) utm[k] = params.get(k);
+    });
+
+    const payload = {
+      kind: "newsletter",
+      email: email,
+      company: document.getElementById("company").value.trim(),
+      segment: seg.value,
+      newsletter_optin: true,
+      consent_newsletter_text: CONSENT_TEXT,
+      submitted_at: new Date().toISOString(),
+      page: location.href,
+      ...utm,
+    };
+    try {
+      await fetch(LEAD_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+    } catch (err) {
+      console.error("Odber sa nepodarilo odoslat:", err);
+    }
+    // Podakovanie ukazeme aj pri chybe odoslania (suhlas je dolezitejsi ako UX blokacia).
+    document.getElementById("step1").classList.add("hidden");
+    document.getElementById("done").classList.remove("hidden");
+  });
+</script>
+</body>
+</html>
