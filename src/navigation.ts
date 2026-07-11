@@ -55,6 +55,15 @@ export const headerData = {
             { text: 'Archív produktov', href: getPermalink('/katalog-produktov/kategoria/radiostanice') },
           ],
         },
+        {
+          text: 'Aktuality',
+          links: [
+            { text: 'Newsletter Potvrďte príjem', href: getPermalink('/radiokomunikacie/newsletter') },
+            { text: 'Q&A Rádiokomunikácie', href: getPermalink('/radiokomunikacie/q-a') },
+            { text: 'RKS Chatbot', href: 'https://rks-radio-expert.vercel.app/' },
+            { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
+          ],
+        },
       ],
     },
     {
@@ -70,16 +79,6 @@ export const headerData = {
         { text: 'Energy Memo', href: getPermalink('/energetika/blog') },
         { text: 'Q&A (Energetika)', href: getPermalink('/energetika/q-a') },
         { text: 'Slovník pojmov', href: getPermalink('/energetika/slovnik') },
-      ],
-    },
-    {
-      text: 'Aktuality',
-      links: [
-        { text: 'Všetky aktuality', href: getPermalink('/aktuality') },
-        { text: 'Newsletter Potvrďte príjem', href: getPermalink('/radiokomunikacie/newsletter') },
-        { text: 'Q&A Rádiokomunikácie', href: getPermalink('/radiokomunikacie/q-a') },
-        { text: 'RKS Chatbot', href: 'https://rks-radio-expert.vercel.app/' },
-        { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
       ],
     },
     { text: 'Kontakt', href: getPermalink('/kontakt') },

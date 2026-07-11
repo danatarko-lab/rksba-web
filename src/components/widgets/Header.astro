@@ -102,10 +102,10 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                       <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden lg:inline" />
                     </button>
                     {isMega ? (
-                      <div class="dropdown-menu lg:backdrop-blur-md dark:lg:bg-dark rounded lg:absolute lg:left-1/2 lg:-translate-x-1/2 pl-4 lg:pl-0 lg:hidden font-medium lg:bg-white/90 drop-shadow-xl">
-                        <div class="lg:grid lg:grid-cols-4 lg:gap-x-8 lg:gap-y-2 lg:p-6 lg:min-w-[840px]">
+                      <div class="dropdown-menu lg:backdrop-blur-md dark:lg:bg-dark rounded lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:max-w-[calc(100vw-1rem)] lg:overflow-x-auto pl-4 lg:pl-0 lg:hidden font-medium lg:bg-white/90 drop-shadow-xl">
+                        <div class="lg:grid lg:grid-cols-5 lg:gap-x-6 lg:gap-y-2 lg:p-6 lg:min-w-[960px]">
                           {links.map((group) => (
-                            <div class="lg:min-w-[190px]">
+                            <div class="lg:min-w-[170px]">
                               <div class="text-xs uppercase tracking-wider text-muted px-5 lg:px-2 pt-3 lg:pt-0 pb-1">
                                 {group.text}
                               </div>
