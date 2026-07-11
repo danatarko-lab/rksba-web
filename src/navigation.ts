@@ -58,7 +58,7 @@ export const headerData = {
         {
           text: 'Aktuality',
           links: [
-            { text: 'Newsletter Potvrďte príjem', href: getPermalink('/radiokomunikacie/newsletter') },
+            { text: 'Newsletter „Potvrďte príjem“', href: getPermalink('/radiokomunikacie/newsletter') },
             { text: 'Q&A Rádiokomunikácie', href: getPermalink('/radiokomunikacie/q-a') },
             { text: 'RKS Chatbot', href: 'https://rks-radio-expert.vercel.app/' },
             { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
@@ -69,17 +69,26 @@ export const headerData = {
     },
     {
       text: 'Energetika',
-      href: getPermalink('/energetika'),
       links: [
-        { text: 'Základné informácie', href: getPermalink('/energetika') },
-        { text: 'Energy Management (EMS)', href: getPermalink('/energetika/energy-management') },
-        { text: 'Fotovoltika (FVE)', href: getPermalink('/energetika/fotovoltika') },
-        { text: 'Batérie (BESS)', href: getPermalink('/energetika/baterie-bess') },
-        { text: 'Nabíjanie elektromobilov', href: getPermalink('/energetika/ev-nabijacky') },
-        { text: 'Inteligentné budovy', href: getPermalink('/energetika/smart-building') },
-        { text: 'Energy Memo', href: getPermalink('/energetika/blog') },
-        { text: 'Q&A (Energetika)', href: getPermalink('/energetika/q-a') },
-        { text: 'Slovník pojmov', href: getPermalink('/energetika/slovnik') },
+        {
+          text: 'Riešenia',
+          links: [
+            { text: 'Základné informácie', href: getPermalink('/energetika') },
+            { text: 'Energy Management (EMS)', href: getPermalink('/energetika/energy-management') },
+            { text: 'Fotovoltika (FVE)', href: getPermalink('/energetika/fotovoltika') },
+            { text: 'Batérie (BESS)', href: getPermalink('/energetika/baterie-bess') },
+            { text: 'Nabíjanie elektromobilov', href: getPermalink('/energetika/ev-nabijacky') },
+            { text: 'Inteligentné budovy', href: getPermalink('/energetika/smart-building') },
+          ],
+        },
+        {
+          text: 'Aktuality',
+          links: [
+            { text: 'Energy Memo', href: getPermalink('/energetika/blog') },
+            { text: 'Q&A (Energetika)', href: getPermalink('/energetika/q-a') },
+            { text: 'Slovník pojmov', href: getPermalink('/energetika/slovnik') },
+          ],
+        },
       ],
     },
     { text: 'Kontakt', href: getPermalink('/kontakt') },
@@ -170,7 +179,7 @@ export const footerData = {
       title: 'Aktuality',
       links: [
         { text: 'Všetky aktuality', href: getPermalink('/aktuality') },
-        { text: 'Newsletter Potvrďte príjem', href: getPermalink('/radiokomunikacie/newsletter') },
+        { text: 'Newsletter „Potvrďte príjem“', href: getPermalink('/radiokomunikacie/newsletter') },
         { text: 'Q&A Rádiokomunikácie', href: getPermalink('/radiokomunikacie/q-a') },
         { text: 'RKS Chatbot', href: 'https://rks-radio-expert.vercel.app/' },
         { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },

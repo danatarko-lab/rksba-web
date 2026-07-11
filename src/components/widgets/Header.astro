@@ -90,6 +90,18 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         {
           links.map(({ text, href, links }) => {
             const isMega = !!links?.some((l) => Array.isArray(l.links) && l.links.length);
+            const megaCount = links?.length || 0;
+            const megaColsClass =
+              { 2: 'lg:grid-cols-2', 3: 'lg:grid-cols-3', 4: 'lg:grid-cols-4', 5: 'lg:grid-cols-5' }[megaCount] ||
+              'lg:grid-cols-4';
+            const megaMinWClass =
+              megaCount >= 5
+                ? 'lg:min-w-[960px]'
+                : megaCount === 4
+                  ? 'lg:min-w-[820px]'
+                  : megaCount === 3
+                    ? 'lg:min-w-[620px]'
+                    : 'lg:min-w-[420px]';
             return (
               <li class={links?.length ? 'dropdown' : ''}>
                 {links?.length ? (
@@ -103,7 +115,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                     </button>
                     {isMega ? (
                       <div class="dropdown-menu lg:backdrop-blur-md dark:lg:bg-dark rounded lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:max-w-[calc(100vw-1rem)] lg:overflow-x-auto pl-4 lg:pl-0 lg:hidden font-medium lg:bg-white/90 drop-shadow-xl">
-                        <div class="lg:grid lg:grid-cols-5 lg:gap-x-6 lg:gap-y-2 lg:p-6 lg:min-w-[960px]">
+                        <div class:list={['lg:grid lg:gap-x-6 lg:gap-y-2 lg:p-6', megaColsClass, megaMinWClass]}>
                           {links.map((group) => (
                             <div class="lg:min-w-[170px]">
                               <div class="text-xs uppercase tracking-wider text-muted px-5 lg:px-2 pt-3 lg:pt-0 pb-1">
