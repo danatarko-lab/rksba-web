@@ -3,69 +3,57 @@ import { getPermalink } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Rádiokomunikácie',
-      href: getPermalink('/radiokomunikacie'),
+      text: 'Bezpečnostné systémy a rádiové siete',
       links: [
+        {
+          text: 'Bezpečnostné systémy',
+          links: [
+            {
+              text: 'Autonómne systémy varovania',
+              href: getPermalink('/radiokomunikacie/systemove-riesenia/autonomne-systemy-varovania'),
+            },
+            {
+              text: 'Evakuačný rozhlas a ozvučenie',
+              href: getPermalink('/radiokomunikacie/systemove-riesenia/evakuacny-rozhlas'),
+            },
+          ],
+        },
+        {
+          text: 'Rádiové siete',
+          links: [
+            { text: 'Rádiové siete', href: getPermalink('/radiokomunikacie/systemove-riesenia/radiove-siete') },
+            { text: 'Návrh rádiových sietí', href: getPermalink('/radiokomunikacie/sluzby/navrh-radiovych-sieti') },
+            { text: 'Návrh autonómnych systémov', href: getPermalink('/radiokomunikacie/sluzby/navrh-autonomnych-systemov') },
+            { text: 'Audit rádiových sietí', href: getPermalink('/radiokomunikacie/sluzby/audit-sieti') },
+            { text: 'Digitalizácia sietí', href: getPermalink('/radiokomunikacie/sluzby/digitalizacia-sieti') },
+            { text: 'Servis rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/servis-radiostanic') },
+            { text: 'Prenájom rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/prenajom-radiostanic') },
+          ],
+        },
         {
           text: 'Služby',
           links: [
-            { text: 'Základné informácie', href: getPermalink('/radiokomunikacie/sluzby/zakladne-informacie') },
-            { text: 'Servis rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/servis-radiostanic') },
-            { text: 'Prenájom rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/prenajom-radiostanic') },
-            { text: 'Návrh rádiových sietí', href: getPermalink('/radiokomunikacie/sluzby/navrh-radiovych-sieti') },
-            { text: 'Návrh autonómnych systémov', href: getPermalink('/radiokomunikacie/sluzby/navrh-autonomnych-systemov') },
             {
               text: 'Projekty elektrických zariadení',
               href: getPermalink('/radiokomunikacie/sluzby/projekty-elektrickych-zariadeni'),
             },
             { text: 'Elektroinštalačné práce', href: getPermalink('/radiokomunikacie/sluzby/elektroinstalacne-prace') },
-            { text: 'Digitálny systém MOTOTRBO', href: getPermalink('/radiokomunikacie/sluzby/digitalny-system-mototrbo') },
-            { text: 'Audit sietí', href: getPermalink('/radiokomunikacie/sluzby/audit-sieti') },
-            { text: 'Digitalizácia sietí', href: getPermalink('/radiokomunikacie/sluzby/digitalizacia-sieti') },
+            { text: 'Servis rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/servis-radiostanic') },
+            { text: 'Prenájom rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/prenajom-radiostanic') },
           ],
         },
         {
-          text: 'Systémové riešenia',
+          text: 'Produkty',
           links: [
-            { text: 'Rádiové siete', href: getPermalink('/radiokomunikacie/systemove-riesenia/radiove-siete') },
+            { text: 'Rádiostanice MOTOTRBO (DMR)', href: 'https://mototrbo.sk' },
+            { text: 'Rádiostanice CALTTA', href: getPermalink('/produkty/radiostanice-caltta') },
             {
-              text: 'Autonómne systémy varovania',
-              href: getPermalink('/radiokomunikacie/systemove-riesenia/autonomne-systemy-varovania'),
+              text: 'Varovacie a vyrozumievacie systémy',
+              href: getPermalink('/katalog-produktov/kategoria/varovacie-a-vyrozumievacie-systemy'),
             },
-            { text: 'Evakuačný rozhlas a ozvučenie', href: getPermalink('/radiokomunikacie/systemove-riesenia/evakuacny-rozhlas') },
+            { text: 'Evakuačné systémy', href: getPermalink('/katalog-produktov/kategoria/evakuacne-systemy') },
+            { text: 'Archív produktov', href: getPermalink('/katalog-produktov/kategoria/radiostanice') },
           ],
-        },
-        {
-          text: 'Aktuality',
-          links: [
-            { text: '„Potvrďte príjem" (Newsletter)', href: getPermalink('/radiokomunikacie/newsletter') },
-            { text: 'Q&A (Rádio)', href: getPermalink('/radiokomunikacie/q-a') },
-            { text: 'RKS Chatbot', href: 'https://rks-radio-expert.vercel.app/' },
-            { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
-          ],
-        },
-      ],
-    },
-    {
-      text: 'Produkty',
-      links: [
-        { text: 'Rádiostanice Mototrbo (DMR)', href: 'https://mototrbo.sk' },
-        { text: 'Rádiostanice CALTTA', href: getPermalink('/produkty/radiostanice-caltta') },
-        {
-          text: 'Rádiostanice Motorola EVX',
-          href: getPermalink('/katalog-produktov/kategoria/prenosne-radiostanice-digitalne-evx'),
-        },
-        {
-          text: 'Rádiostanice Motorola analógové',
-          href: getPermalink('/katalog-produktov/kategoria/radiostanice'),
-        },
-        {
-          text: 'Varovacie a vyrozumievacie systémy',
-          href: getPermalink('/katalog-produktov/kategoria/varovacie-a-vyrozumievacie-systemy'),
-        },
-        {
-          text: 'Evakuačné systémy',
-          href: getPermalink('/katalog-produktov/kategoria/evakuacne-systemy'),
         },
       ],
     },
@@ -79,17 +67,31 @@ export const headerData = {
         { text: 'Batérie (BESS)', href: getPermalink('/energetika/baterie-bess') },
         { text: 'Nabíjanie elektromobilov', href: getPermalink('/energetika/ev-nabijacky') },
         { text: 'Inteligentné budovy', href: getPermalink('/energetika/smart-building') },
-        // — obsah —
         { text: 'Energy Memo', href: getPermalink('/energetika/blog') },
         { text: 'Q&A (Energetika)', href: getPermalink('/energetika/q-a') },
         { text: 'Slovník pojmov', href: getPermalink('/energetika/slovnik') },
       ],
     },
-    { text: 'Aktuality', href: getPermalink('/aktuality') },
+    {
+      text: 'Aktuality',
+      links: [
+        { text: 'Všetky aktuality', href: getPermalink('/aktuality') },
+        { text: 'Newsletter Potvrďte príjem', href: getPermalink('/radiokomunikacie/newsletter') },
+        { text: 'Q&A Rádiokomunikácie', href: getPermalink('/radiokomunikacie/q-a') },
+        { text: 'RKS Chatbot', href: 'https://rks-radio-expert.vercel.app/' },
+        { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
+      ],
+    },
     { text: 'Kontakt', href: getPermalink('/kontakt') },
   ],
   // TODO: po dodaní Calendly URL nahradiť href Calendly odkazom
-  actions: [{ text: 'Dohodnúť nezáväznú konzultáciu', href: getPermalink('/kontakt'), variant: 'primary' }],
+  actions: [
+    {
+      text: 'Dohodnúť nezáväznú konzultáciu',
+      href: '/lp/konzultacia.html?utm_source=web&utm_medium=cta&utm_campaign=web',
+      variant: 'primary',
+    },
+  ],
 };
 
 export const footerData = {
@@ -103,38 +105,53 @@ export const footerData = {
   ],
   links: [
     {
-      title: 'Rádiokomunikácie',
+      title: 'Bezpečnostné systémy',
       links: [
-        { text: 'Rádiové siete', href: getPermalink('/radiokomunikacie/systemove-riesenia/radiove-siete') },
         {
           text: 'Autonómne systémy varovania',
           href: getPermalink('/radiokomunikacie/systemove-riesenia/autonomne-systemy-varovania'),
         },
-        { text: 'Evakuačný rozhlas', href: getPermalink('/radiokomunikacie/systemove-riesenia/evakuacny-rozhlas') },
-        { text: 'Mototrbo', href: getPermalink('/radiokomunikacie/produkty/mototrbo') },
+        {
+          text: 'Evakuačný rozhlas a ozvučenie',
+          href: getPermalink('/radiokomunikacie/systemove-riesenia/evakuacny-rozhlas'),
+        },
+      ],
+    },
+    {
+      title: 'Rádiové siete',
+      links: [
+        { text: 'Rádiové siete', href: getPermalink('/radiokomunikacie/systemove-riesenia/radiove-siete') },
+        { text: 'Návrh rádiových sietí', href: getPermalink('/radiokomunikacie/sluzby/navrh-radiovych-sieti') },
+        { text: 'Návrh autonómnych systémov', href: getPermalink('/radiokomunikacie/sluzby/navrh-autonomnych-systemov') },
+        { text: 'Audit rádiových sietí', href: getPermalink('/radiokomunikacie/sluzby/audit-sieti') },
+        { text: 'Digitalizácia sietí', href: getPermalink('/radiokomunikacie/sluzby/digitalizacia-sieti') },
         { text: 'Servis rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/servis-radiostanic') },
-        { text: '„Potvrďte príjem"', href: getPermalink('/radiokomunikacie/newsletter') },
-        { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
+        { text: 'Prenájom rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/prenajom-radiostanic') },
+      ],
+    },
+    {
+      title: 'Služby',
+      links: [
+        {
+          text: 'Projekty elektrických zariadení',
+          href: getPermalink('/radiokomunikacie/sluzby/projekty-elektrickych-zariadeni'),
+        },
+        { text: 'Elektroinštalačné práce', href: getPermalink('/radiokomunikacie/sluzby/elektroinstalacne-prace') },
+        { text: 'Servis rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/servis-radiostanic') },
+        { text: 'Prenájom rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/prenajom-radiostanic') },
       ],
     },
     {
       title: 'Produkty',
       links: [
-        { text: 'Rádiostanice Mototrbo (DMR)', href: 'https://mototrbo.sk' },
+        { text: 'Rádiostanice MOTOTRBO (DMR)', href: 'https://mototrbo.sk' },
         { text: 'Rádiostanice CALTTA', href: getPermalink('/produkty/radiostanice-caltta') },
-        {
-          text: 'Rádiostanice Motorola EVX',
-          href: getPermalink('/katalog-produktov/kategoria/prenosne-radiostanice-digitalne-evx'),
-        },
-        {
-          text: 'Rádiostanice Motorola analógové',
-          href: getPermalink('/katalog-produktov/kategoria/radiostanice'),
-        },
         {
           text: 'Varovacie a vyrozumievacie systémy',
           href: getPermalink('/katalog-produktov/kategoria/varovacie-a-vyrozumievacie-systemy'),
         },
         { text: 'Evakuačné systémy', href: getPermalink('/katalog-produktov/kategoria/evakuacne-systemy') },
+        { text: 'Archív produktov', href: getPermalink('/katalog-produktov/kategoria/radiostanice') },
       ],
     },
     {
@@ -150,11 +167,21 @@ export const footerData = {
       ],
     },
     {
+      title: 'Aktuality',
+      links: [
+        { text: 'Všetky aktuality', href: getPermalink('/aktuality') },
+        { text: 'Newsletter Potvrďte príjem', href: getPermalink('/radiokomunikacie/newsletter') },
+        { text: 'Q&A Rádiokomunikácie', href: getPermalink('/radiokomunikacie/q-a') },
+        { text: 'RKS Chatbot', href: 'https://rks-radio-expert.vercel.app/' },
+        { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
+      ],
+    },
+    {
       title: 'Kontakt',
       links: [
         { text: '+421 903 277 654', href: 'tel:+421903277654' },
         { text: 'rks@rksba.sk', href: 'mailto:rks@rksba.sk' },
-        { text: 'Po–Pi: 08:00 – 16:30', href: getPermalink('/kontakt') },
+        { text: 'Po az Pi: 08:00 do 16:30', href: getPermalink('/kontakt') },
         { text: 'Dohodnúť nezáväznú konzultáciu', href: getPermalink('/kontakt'), class: 'btn-primary text-sm mt-2 inline-flex' },
       ],
     },

@@ -118,6 +118,8 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                                         { 'aw-link-active': h3 === currentPath },
                                       ]}
                                       href={h3}
+                                      target={typeof h3 === 'string' && h3.startsWith('http') ? '_blank' : undefined}
+                                      rel={typeof h3 === 'string' && h3.startsWith('http') ? 'noopener noreferrer' : undefined}
                                     >
                                       {t3}
                                     </a>
@@ -138,6 +140,8 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                                 { 'aw-link-active': href2 === currentPath },
                               ]}
                               href={href2}
+                              target={typeof href2 === 'string' && href2.startsWith('http') ? '_blank' : undefined}
+                              rel={typeof href2 === 'string' && href2.startsWith('http') ? 'noopener noreferrer' : undefined}
                             >
                               {text2}
                             </a>
