@@ -23,7 +23,10 @@ export const headerData = {
           links: [
             { text: 'Rádiové siete', href: getPermalink('/radiokomunikacie/systemove-riesenia/radiove-siete') },
             { text: 'Návrh rádiových sietí', href: getPermalink('/radiokomunikacie/sluzby/navrh-radiovych-sieti') },
-            { text: 'Návrh autonómnych systémov', href: getPermalink('/radiokomunikacie/sluzby/navrh-autonomnych-systemov') },
+            {
+              text: 'Návrh autonómnych systémov',
+              href: getPermalink('/radiokomunikacie/sluzby/navrh-autonomnych-systemov'),
+            },
             { text: 'Audit rádiových sietí', href: getPermalink('/radiokomunikacie/sluzby/audit-sieti') },
             { text: 'Digitalizácia sietí', href: getPermalink('/radiokomunikacie/sluzby/digitalizacia-sieti') },
             { text: 'Servis rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/servis-radiostanic') },
@@ -134,7 +137,10 @@ export const footerData = {
       links: [
         { text: 'Rádiové siete', href: getPermalink('/radiokomunikacie/systemove-riesenia/radiove-siete') },
         { text: 'Návrh rádiových sietí', href: getPermalink('/radiokomunikacie/sluzby/navrh-radiovych-sieti') },
-        { text: 'Návrh autonómnych systémov', href: getPermalink('/radiokomunikacie/sluzby/navrh-autonomnych-systemov') },
+        {
+          text: 'Návrh autonómnych systémov',
+          href: getPermalink('/radiokomunikacie/sluzby/navrh-autonomnych-systemov'),
+        },
         { text: 'Audit rádiových sietí', href: getPermalink('/radiokomunikacie/sluzby/audit-sieti') },
         { text: 'Digitalizácia sietí', href: getPermalink('/radiokomunikacie/sluzby/digitalizacia-sieti') },
         { text: 'Servis rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/servis-radiostanic') },
@@ -202,7 +208,11 @@ export const footerData = {
         { text: '+421 903 277 654', href: 'tel:+421903277654' },
         { text: 'rks@rksba.sk', href: 'mailto:rks@rksba.sk' },
         { text: 'Po az Pi: 08:00 do 16:30', href: getPermalink('/kontakt') },
-        { text: 'Dohodnúť nezáväznú konzultáciu', href: getPermalink('/kontakt'), class: 'btn-primary text-sm mt-2 inline-flex' },
+        {
+          text: 'Dohodnúť nezáväznú konzultáciu',
+          href: getPermalink('/kontakt'),
+          class: 'btn-primary text-sm mt-2 inline-flex',
+        },
       ],
     },
   ],

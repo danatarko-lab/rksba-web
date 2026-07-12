@@ -37,7 +37,9 @@ const faqs = [
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
     <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/radiokomunikacie">← Rádiokomunikácie</a></p>
-    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Návrh a projektovanie autonómnych systémov varovania</h1>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+      Návrh a projektovanie autonómnych systémov varovania
+    </h1>
 
     <div class="grid items-center gap-8 lg:gap-10 lg:grid-cols-5 mb-12">
       <p class="text-lg text-muted lg:col-span-3">
@@ -68,8 +70,8 @@ const faqs = [
       <h3>1. Určenie územia ochranných opatrení</h3>
       <p>
         Na základe rozsahu ohrozenia nebezpečnou látkou alebo vodnou stavbou sa v zmysle
-        <strong>vyhlášky MV SR č. 300/1996</strong> určí polomer hranice oblasti ohrozenia — územie, v ktorom je
-        ohrozovateľ povinný vybudovať AuS.
+        <strong>vyhlášky MV SR č. 300/1996</strong> určí polomer hranice oblasti ohrozenia — územie, v ktorom je ohrozovateľ
+        povinný vybudovať AuS.
       </p>
 
       <h3>2. Akustický návrh systému</h3>
@@ -80,19 +82,40 @@ const faqs = [
       </p>
       <figure class="not-prose my-6 max-w-xl">
         <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
-          <Image src={imgMeranie} alt="Mapa bodov merania akustického pozadia v ohrozenom území" widths={[400, 700]} sizes="(max-width: 768px) 100vw, 576px" loading="lazy" class="w-full h-auto" />
+          <Image
+            src={imgMeranie}
+            alt="Mapa bodov merania akustického pozadia v ohrozenom území"
+            widths={[400, 700]}
+            sizes="(max-width: 768px) 100vw, 576px"
+            loading="lazy"
+            class="w-full h-auto"
+          />
         </div>
         <figcaption class="text-sm text-muted mt-2">Meranie akustického pozadia vo vybraných bodoch územia</figcaption>
       </figure>
       <figure class="not-prose my-6 max-w-xl">
         <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
-          <Image src={imgHladina} alt="Určenie hladiny výstražného zvukového signálu" widths={[400, 700]} sizes="(max-width: 768px) 100vw, 576px" loading="lazy" class="w-full h-auto" />
+          <Image
+            src={imgHladina}
+            alt="Určenie hladiny výstražného zvukového signálu"
+            widths={[400, 700]}
+            sizes="(max-width: 768px) 100vw, 576px"
+            loading="lazy"
+            class="w-full h-auto"
+          />
         </div>
         <figcaption class="text-sm text-muted mt-2">Určenie hladiny výstražného zvukového signálu</figcaption>
       </figure>
       <figure class="not-prose my-6 max-w-xl">
         <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
-          <Image src={imgMapa} alt="Mapa pokrytia výstražným akustickým signálom" widths={[400, 700]} sizes="(max-width: 768px) 100vw, 576px" loading="lazy" class="w-full h-auto" />
+          <Image
+            src={imgMapa}
+            alt="Mapa pokrytia výstražným akustickým signálom"
+            widths={[400, 700]}
+            sizes="(max-width: 768px) 100vw, 576px"
+            loading="lazy"
+            class="w-full h-auto"
+          />
         </div>
         <figcaption class="text-sm text-muted mt-2">Mapa pokrytia výstražným akustickým signálom</figcaption>
       </figure>
@@ -105,13 +128,27 @@ const faqs = [
       </p>
       <figure class="not-prose my-6 max-w-xl">
         <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
-          <Image src={imgEkvi} alt="Ekvipotenciály akustického signálu sirény" widths={[400, 600]} sizes="(max-width: 768px) 100vw, 576px" loading="lazy" class="w-full h-auto" />
+          <Image
+            src={imgEkvi}
+            alt="Ekvipotenciály akustického signálu sirény"
+            widths={[400, 600]}
+            sizes="(max-width: 768px) 100vw, 576px"
+            loading="lazy"
+            class="w-full h-auto"
+          />
         </div>
         <figcaption class="text-sm text-muted mt-2">Ekvipotenciály akustického signálu</figcaption>
       </figure>
       <figure class="not-prose my-6 max-w-xl">
         <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
-          <Image src={imgGraficky} alt="Grafický návrh rozmiestnenia sirén v ohrozenom území" widths={[400, 700]} sizes="(max-width: 768px) 100vw, 576px" loading="lazy" class="w-full h-auto" />
+          <Image
+            src={imgGraficky}
+            alt="Grafický návrh rozmiestnenia sirén v ohrozenom území"
+            widths={[400, 700]}
+            sizes="(max-width: 768px) 100vw, 576px"
+            loading="lazy"
+            class="w-full h-auto"
+          />
         </div>
         <figcaption class="text-sm text-muted mt-2">Grafický návrh rozmiestnenia sirén</figcaption>
       </figure>
@@ -123,32 +160,60 @@ const faqs = [
       </p>
       <figure class="not-prose my-6 max-w-md">
         <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
-          <Image src={imgBlokAus} alt="Bloková schéma autonómneho systému varovania" widths={[350, 700]} sizes="(max-width: 768px) 100vw, 448px" loading="lazy" class="w-full h-auto" />
+          <Image
+            src={imgBlokAus}
+            alt="Bloková schéma autonómneho systému varovania"
+            widths={[350, 700]}
+            sizes="(max-width: 768px) 100vw, 448px"
+            loading="lazy"
+            class="w-full h-auto"
+          />
         </div>
         <figcaption class="text-sm text-muted mt-2">Bloková schéma autonómneho systému varovania</figcaption>
       </figure>
       <figure class="not-prose my-6 max-w-md">
         <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
-          <Image src={imgBlokRc} alt="Bloková schéma riadiaceho centra autonómneho systému" widths={[350, 700]} sizes="(max-width: 768px) 100vw, 448px" loading="lazy" class="w-full h-auto" />
+          <Image
+            src={imgBlokRc}
+            alt="Bloková schéma riadiaceho centra autonómneho systému"
+            widths={[350, 700]}
+            sizes="(max-width: 768px) 100vw, 448px"
+            loading="lazy"
+            class="w-full h-auto"
+          />
         </div>
         <figcaption class="text-sm text-muted mt-2">Bloková schéma riadiaceho centra</figcaption>
       </figure>
 
       <h3>5. Návrh rádiovej siete AuS</h3>
       <p>
-        Spoľahlivé spojenie medzi riadiacim centrom a sirénami: frekvenčná schéma, návrh bezdrôtovej komunikácie, analýza
-        pokrytia rádiovým signálom (softvérové preverenie viditeľnosti a úrovne signálu medzi bodmi), výber anténnych
-        systémov a spracovanie podkladov na pridelenie frekvencie regulačným úradom.
+        Spoľahlivé spojenie medzi riadiacim centrom a sirénami: frekvenčná schéma, návrh bezdrôtovej komunikácie,
+        analýza pokrytia rádiovým signálom (softvérové preverenie viditeľnosti a úrovne signálu medzi bodmi), výber
+        anténnych systémov a spracovanie podkladov na pridelenie frekvencie regulačným úradom.
       </p>
       <figure class="not-prose my-6 max-w-md">
         <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
-          <Image src={imgSchemaRf} alt="Frekvenčná schéma rádiovej siete autonómneho systému varovania" widths={[350, 700]} sizes="(max-width: 768px) 100vw, 448px" loading="lazy" class="w-full h-auto" />
+          <Image
+            src={imgSchemaRf}
+            alt="Frekvenčná schéma rádiovej siete autonómneho systému varovania"
+            widths={[350, 700]}
+            sizes="(max-width: 768px) 100vw, 448px"
+            loading="lazy"
+            class="w-full h-auto"
+          />
         </div>
         <figcaption class="text-sm text-muted mt-2">Frekvenčná schéma rádiovej siete</figcaption>
       </figure>
       <figure class="not-prose my-6 max-w-xl">
         <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
-          <Image src={imgViditelnost} alt="Analýza viditeľnosti a úrovne rádiového signálu medzi bodmi" widths={[400, 679]} sizes="(max-width: 768px) 100vw, 576px" loading="lazy" class="w-full h-auto" />
+          <Image
+            src={imgViditelnost}
+            alt="Analýza viditeľnosti a úrovne rádiového signálu medzi bodmi"
+            widths={[400, 679]}
+            sizes="(max-width: 768px) 100vw, 576px"
+            loading="lazy"
+            class="w-full h-auto"
+          />
         </div>
         <figcaption class="text-sm text-muted mt-2">Analýza signálu a viditeľnosti medzi bodmi siete</figcaption>
       </figure>
@@ -168,9 +233,9 @@ const faqs = [
 
       <h2>Prečo RKS</h2>
       <p>
-        Pri autonómnych systémoch prepájame skúsenosti z rádiokomunikácií, projektovania elektrických zariadení, civilnej
-        ochrany a akustického návrhu do jedného funkčného riešenia — technicky spoľahlivého, legislatívne použiteľného a
-        pripraveného na realizáciu.
+        Pri autonómnych systémoch prepájame skúsenosti z rádiokomunikácií, projektovania elektrických zariadení,
+        civilnej ochrany a akustického návrhu do jedného funkčného riešenia — technicky spoľahlivého, legislatívne
+        použiteľného a pripraveného na realizáciu.
       </p>
     </div>
 
@@ -181,7 +246,9 @@ const faqs = [
           <details class="group rounded-xl border border-gray-200 p-5">
             <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
               {faq.q}
-              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">+</span>
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">
+                +
+              </span>
             </summary>
             <p class="text-muted mt-3">{faq.a}</p>
           </details>
@@ -194,7 +261,9 @@ const faqs = [
       <p class="text-muted mb-6 max-w-xl mx-auto">
         Pripravíme technický návrh aj ďalší postup realizácie podľa typu objektu a rizika.
       </p>
-      <a href="/lp/konzultacia.html?utm_source=web&amp;utm_campaign=web" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+      <a href="/lp/konzultacia.html?utm_source=web&utm_campaign=web" class="btn-primary inline-flex"
+        >Dohodnúť nezáväznú konzultáciu</a
+      >
     </div>
   </section>
 </Layout>

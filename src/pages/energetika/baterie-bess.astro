@@ -16,7 +16,10 @@ const tok = [
 
 const postup = [
   { title: 'Analýza spotreby a špičiek', desc: 'Zistíme váš profil odberu, špičky a profil výroby.' },
-  { title: 'Definícia úžitkov', desc: 'Určíme, čo má batéria riešiť — špičky, vlastnú spotrebu, zálohu, alebo kombináciu.' },
+  {
+    title: 'Definícia úžitkov',
+    desc: 'Určíme, čo má batéria riešiť — špičky, vlastnú spotrebu, zálohu, alebo kombináciu.',
+  },
   { title: 'Business case', desc: 'Spočítame návratnosť cez kombináciu úžitkov, nie cez jeden.' },
   { title: 'Návrh a realizácia', desc: 'Nadimenzujeme batériu a riadenie, zrealizujeme projekt pod jednou strechou.' },
   { title: 'Servis a monitoring', desc: 'Sledovanie stavu batérie a údržba počas životnosti.' },
@@ -54,7 +57,9 @@ const faqs = [
   <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
     <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/energetika">← Energetika</a></p>
 
-    <p class="text-sm font-medium uppercase tracking-wider text-primary mb-3">Energetické riešenia pre firmy a budovy</p>
+    <p class="text-sm font-medium uppercase tracking-wider text-primary mb-3">
+      Energetické riešenia pre firmy a budovy
+    </p>
     <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">Batériové úložiská (BESS) pre firmy</h1>
     <p class="text-xl md:text-2xl text-muted mb-6">Hodnota batérie nie je v kWh. Je v tom, čo vám ušetrí.</p>
 
@@ -71,7 +76,11 @@ const faqs = [
       analýzou vašej spotreby a cieľov.
     </p>
 
-    <div class="mb-4"><a href="/lp/konzultacia.html?utm_source=web&amp;utm_campaign=energetika" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a></div>
+    <div class="mb-4">
+      <a href="/lp/konzultacia.html?utm_source=web&utm_campaign=energetika" class="btn-primary inline-flex"
+        >Dohodnúť nezáväznú konzultáciu</a
+      >
+    </div>
 
     <div class="prose prose-lg max-w-none">
       <h2>Najčastejšie dôvody, prečo firmy uvažujú o BESS</h2>
@@ -89,11 +98,17 @@ const faqs = [
       <h2>Akú hodnotu prináša batériové úložisko</h2>
       <p>Batériové úložisko pre firmu má viac úloh — a najlepšia návratnosť vzniká ich kombináciou:</p>
       <ul>
-        <li><strong>Zníženie špičiek (<a href="/energetika/slovnik#peak-shaving">peak shaving</a>).</strong> Batéria pokryje krátke odberové špičky, takže nemusíte platiť za vysokú rezervovanú kapacitu.</li>
+        <li>
+          <strong>Zníženie špičiek (<a href="/energetika/slovnik#peak-shaving">peak shaving</a>).</strong> Batéria pokryje
+          krátke odberové špičky, takže nemusíte platiť za vysokú rezervovanú kapacitu.
+        </li>
         <li><strong>Využitie vlastnej fotovoltiky.</strong> Uloží dennú výrobu na čas, keď ju reálne spotrebujete.</li>
         <li><strong>Časový posun spotreby.</strong> Nabije sa, keď je elektrina lacná, a využije ju, keď je drahá.</li>
         <li><strong>Záloha prevádzky (backup).</strong> Pri výpadku siete udrží kritické časti prevádzky v chode.</li>
-        <li><strong>Zníženie rezervovanej kapacity.</strong> Riadením odberu cez batériu sa dá optimalizovať príkon, za ktorý platíte.</li>
+        <li>
+          <strong>Zníženie rezervovanej kapacity.</strong> Riadením odberu cez batériu sa dá optimalizovať príkon, za ktorý
+          platíte.
+        </li>
       </ul>
 
       <blockquote class="not-prose my-8 border-l-4 border-primary bg-primary/5 rounded-r-lg p-6">
@@ -105,8 +120,8 @@ const faqs = [
       <h2>Prečo batéria nie je len kWh</h2>
       <p>
         Najčastejšia chyba je vybrať batériu podľa kapacity — „koľko kWh". Lenže rovnaká kapacita môže mať úplne inú
-        hodnotu podľa toho, ako sa využíva. Batéria, ktorá len ukladá prebytky z fotovoltiky, sa správa inak než batéria,
-        ktorá zároveň zráža špičky a zálohuje prevádzku.
+        hodnotu podľa toho, ako sa využíva. Batéria, ktorá len ukladá prebytky z fotovoltiky, sa správa inak než
+        batéria, ktorá zároveň zráža špičky a zálohuje prevádzku.
       </p>
       <table>
         <thead>
@@ -130,12 +145,19 @@ const faqs = [
           {
             tok.map((t, i) => (
               <>
-                <div class={`flex-1 rounded-xl p-4 text-center ${t.accent ? 'border border-primary/30 bg-primary/5' : 'border border-gray-200 bg-white'}`}>
+                <div
+                  class={`flex-1 rounded-xl p-4 text-center ${t.accent ? 'border border-primary/30 bg-primary/5' : 'border border-gray-200 bg-white'}`}
+                >
                   <p class={`font-semibold ${t.accent ? 'text-primary' : ''}`}>{t.title}</p>
                   <p class="text-sm text-muted mt-1">{t.desc}</p>
                 </div>
                 {i < tok.length - 1 && (
-                  <div class="flex items-center justify-center text-primary text-2xl font-bold rotate-90 md:rotate-0" aria-hidden="true">→</div>
+                  <div
+                    class="flex items-center justify-center text-primary text-2xl font-bold rotate-90 md:rotate-0"
+                    aria-hidden="true"
+                  >
+                    →
+                  </div>
                 )}
               </>
             ))
@@ -156,16 +178,18 @@ const faqs = [
 
       <h2>Batéria, fotovoltika a riadenie ako jeden celok</h2>
       <p>
-        Batéria naplno funguje len vtedy, keď ju niečo riadi. <a href="/energetika/energy-management">Energy Management
-        (EMS)</a> rozhoduje, kedy batériu nabíjať, kedy z nej čerpať a ako ju zladiť s
+        Batéria naplno funguje len vtedy, keď ju niečo riadi. <a href="/energetika/energy-management"
+          >Energy Management (EMS)</a
+        > rozhoduje, kedy batériu nabíjať, kedy z nej čerpať a ako ju zladiť s
         <a href="/energetika/fotovoltika">fotovoltikou</a>, nabíjaním a prevádzkou. Bez riadenia je batéria len drahý
         zásobník; s riadením je nástroj na znižovanie nákladov.
       </p>
 
       <h2>Pre developerov a väčšie projekty</h2>
       <p>
-        Okrem batérií pre <a href="/energetika/slovnik#vlastna-spotreba">vlastnú spotrebu</a> firiem sa venujeme aj väčším a štandalone projektom, kde vstupuje do hry iná
-        logika — bankovateľnosť, viaczdrojový výnosový model, pripojenie do siete a prevádzkový model.
+        Okrem batérií pre <a href="/energetika/slovnik#vlastna-spotreba">vlastnú spotrebu</a> firiem sa venujeme aj väčším
+        a štandalone projektom, kde vstupuje do hry iná logika — bankovateľnosť, viaczdrojový výnosový model, pripojenie do
+        siete a prevádzkový model.
       </p>
       <p>
         Pri takýchto projektoch rozhoduje najmä kombinácia výnosov (projekt by nemal stáť len na jednom zdroji príjmu),
@@ -200,10 +224,22 @@ const faqs = [
 
       <h2>Prečo RKS</h2>
       <ul>
-        <li><strong>Návrh od úžitkov, nie od kWh.</strong> Batériu dimenzujeme podľa toho, čo má vo vašej prevádzke riešiť.</li>
-        <li><strong>Kombinácia úžitkov = návratnosť.</strong> Počítame <a href="/energetika/slovnik#business-case">business case</a> cez viac úžitkov naraz.</li>
-        <li><strong>Celý koncept pod jednou strechou.</strong> Batériu prepojíme s <a href="/energetika/fotovoltika">fotovoltikou</a> a <a href="/energetika/energy-management">EMS</a> do jedného riadeného celku.</li>
-        <li><strong>Technické zázemie od 1991.</strong> Projektovanie, elektroinštalácie a realizácia sú náš domáci terén.</li>
+        <li>
+          <strong>Návrh od úžitkov, nie od kWh.</strong> Batériu dimenzujeme podľa toho, čo má vo vašej prevádzke riešiť.
+        </li>
+        <li>
+          <strong>Kombinácia úžitkov = návratnosť.</strong> Počítame <a href="/energetika/slovnik#business-case"
+            >business case</a
+          > cez viac úžitkov naraz.
+        </li>
+        <li>
+          <strong>Celý koncept pod jednou strechou.</strong> Batériu prepojíme s <a href="/energetika/fotovoltika"
+            >fotovoltikou</a
+          > a <a href="/energetika/energy-management">EMS</a> do jedného riadeného celku.
+        </li>
+        <li>
+          <strong>Technické zázemie od 1991.</strong> Projektovanie, elektroinštalácie a realizácia sú náš domáci terén.
+        </li>
       </ul>
 
       <h2>Súvisiace riešenia</h2>
@@ -214,8 +250,16 @@ const faqs = [
 
       <h2>Odporúčané čítanie</h2>
       <ul>
-        <li><a href="/energetika/blog/boli-sme-na-sapi-konferencii">SAPI konferencia 2026: 5 trendov, ktoré menia budúcnosť firemnej energetiky</a></li>
-        <li><a href="/energetika/blog/sesfg-mnichov-2026">Budúcnosť firemnej energetiky: 10 trendov z konferencie v Mníchove</a></li>
+        <li>
+          <a href="/energetika/blog/boli-sme-na-sapi-konferencii"
+            >SAPI konferencia 2026: 5 trendov, ktoré menia budúcnosť firemnej energetiky</a
+          >
+        </li>
+        <li>
+          <a href="/energetika/blog/sesfg-mnichov-2026"
+            >Budúcnosť firemnej energetiky: 10 trendov z konferencie v Mníchove</a
+          >
+        </li>
       </ul>
     </div>
 
@@ -226,7 +270,9 @@ const faqs = [
           <details class="group rounded-xl border border-gray-200 p-5">
             <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
               {faq.q}
-              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">+</span>
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">
+                +
+              </span>
             </summary>
             <p class="text-muted mt-3">{faq.a}</p>
           </details>
@@ -237,10 +283,12 @@ const faqs = [
     <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
       <h2 class="text-xl md:text-2xl font-semibold mb-3">Zistite, či sa vám batéria oplatí</h2>
       <p class="text-muted mb-6 max-w-xl mx-auto">
-        Začnime nezáväznou konzultáciou a analýzou vašej spotreby a špičiek. Navrhneme batériu podľa toho, čo má vo vašej
-        prevádzke riešiť — s prepočtom návratnosti cez kombináciu úžitkov.
+        Začnime nezáväznou konzultáciou a analýzou vašej spotreby a špičiek. Navrhneme batériu podľa toho, čo má vo
+        vašej prevádzke riešiť — s prepočtom návratnosti cez kombináciu úžitkov.
       </p>
-      <a href="/lp/konzultacia.html?utm_source=web&amp;utm_campaign=energetika" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+      <a href="/lp/konzultacia.html?utm_source=web&utm_campaign=energetika" class="btn-primary inline-flex"
+        >Dohodnúť nezáväznú konzultáciu</a
+      >
     </div>
   </section>
 </Layout>

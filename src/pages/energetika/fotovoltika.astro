@@ -12,7 +12,10 @@ const postup = [
   { title: 'Návrh podľa vlastnej spotreby', desc: 'Nadimenzujeme FVE tak, aby ste čo najviac výroby využili priamo.' },
   { title: 'Business case', desc: 'Spočítame návratnosť — koľko vyrobíte, koľko spotrebujete, koľko ušetríte.' },
   { title: 'Realizácia', desc: 'Projekt, dodávka a montáž pod jednou strechou.' },
-  { title: 'Monitoring', desc: 'Sledovanie výroby a údržba, aby elektráreň dlhodobo dávala výkon, s ktorým ste počítali.' },
+  {
+    title: 'Monitoring',
+    desc: 'Sledovanie výroby a údržba, aby elektráreň dlhodobo dávala výkon, s ktorým ste počítali.',
+  },
 ];
 
 const faqs = [
@@ -51,7 +54,9 @@ const faqs = [
   <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
     <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/energetika">← Energetika</a></p>
 
-    <p class="text-sm font-medium uppercase tracking-wider text-primary mb-3">Energetické riešenia pre firmy a budovy</p>
+    <p class="text-sm font-medium uppercase tracking-wider text-primary mb-3">
+      Energetické riešenia pre firmy a budovy
+    </p>
     <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">Fotovoltika (FVE) pre firmy a budovy</h1>
     <p class="text-xl md:text-2xl text-muted mb-6">Nie je dôležité, koľko vyrobíte. Dôležité je, koľko spotrebujete.</p>
 
@@ -62,44 +67,68 @@ const faqs = [
     </p>
 
     <p class="text-lg text-muted mb-8">
-      Fotovoltika je dnes najčastejšia prvá investícia do firemnej energetiky — a zároveň miesto, kde sa najviac chybuje.
-      Veľa firiem si nechá navrhnúť elektráreň podľa toho, koľko panelov sa zmestí na strechu. Lenže hodnota fotovoltiky
-      nie je v tom, koľko vyrobí, ale koľko z tej výroby firma reálne využije. Energia vyrobená v čase, keď prevádzka nič
-      nespotrebúva, sa do návratnosti takmer neráta.
+      Fotovoltika je dnes najčastejšia prvá investícia do firemnej energetiky — a zároveň miesto, kde sa najviac
+      chybuje. Veľa firiem si nechá navrhnúť elektráreň podľa toho, koľko panelov sa zmestí na strechu. Lenže hodnota
+      fotovoltiky nie je v tom, koľko vyrobí, ale koľko z tej výroby firma reálne využije. Energia vyrobená v čase, keď
+      prevádzka nič nespotrebúva, sa do návratnosti takmer neráta.
     </p>
 
-    <div class="mb-4"><a href="/lp/konzultacia.html?utm_source=web&amp;utm_campaign=energetika" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a></div>
+    <div class="mb-4">
+      <a href="/lp/konzultacia.html?utm_source=web&utm_campaign=energetika" class="btn-primary inline-flex"
+        >Dohodnúť nezáväznú konzultáciu</a
+      >
+    </div>
 
     <div class="prose prose-lg max-w-none">
       <h2>Ako vyzerá dobrá firemná fotovoltika</h2>
       <p>Dobre navrhnutá firemná FVE nie je o technológii, ale o ekonomike. Stojí na štyroch veciach:</p>
       <ul>
-        <li><strong>Vysoká <a href="/energetika/slovnik#vlastna-spotreba">vlastná spotreba</a></strong> — čo najviac výroby využijete priamo, nie predáte do siete za zlomok ceny.</li>
+        <li>
+          <strong>Vysoká <a href="/energetika/slovnik#vlastna-spotreba">vlastná spotreba</a></strong> — čo najviac výroby
+          využijete priamo, nie predáte do siete za zlomok ceny.
+        </li>
         <li><strong>Správna veľkosť</strong> — elektráreň dimenzovaná podľa spotreby, nie podľa plochy strechy.</li>
-        <li><strong>Prepojenie s riadením</strong> — FVE zladená s <a href="/energetika/energy-management">Energy Managementom (EMS)</a> a prevádzkou.</li>
-        <li><strong>Pripravenosť na budúci rozvoj</strong> — priestor doplniť batériu či nabíjanie, keď to bude dávať zmysel.</li>
+        <li>
+          <strong>Prepojenie s riadením</strong> — FVE zladená s <a href="/energetika/energy-management"
+            >Energy Managementom (EMS)</a
+          > a prevádzkou.
+        </li>
+        <li>
+          <strong>Pripravenosť na budúci rozvoj</strong> — priestor doplniť batériu či nabíjanie, keď to bude dávať zmysel.
+        </li>
       </ul>
 
       <h2>Čo skutočne rozhoduje o návratnosti FVE</h2>
       <p>Návratnosť fotovoltiky nestojí na počte panelov, ale na súlade výroby a spotreby:</p>
       <ul>
-        <li><strong>Profil spotreby.</strong> Kedy energiu reálne spotrebúvate — počas dňa, v noci, cez víkend? FVE vyrába cez deň; ak vtedy nemáte spotrebu, výroba uniká do siete za nízku výkupnú cenu.</li>
-        <li><strong>Miera vlastnej spotreby.</strong> Koľko percent výroby spotrebujete priamo. Čím viac, tým rýchlejšia návratnosť.</li>
-        <li><strong>Správna veľkosť investície.</strong> Predimenzovaná FVE vyrába prebytky, ktoré sa nevyplatia; poddimenzovaná nevyužije potenciál. Správna veľkosť vychádza z dát.</li>
-        <li><strong>Cena, za ktorú dnes nakupujete elektrinu.</strong> Čím drahšia elektrina, tým hodnotnejšia každá samospotrebovaná kilowatthodina.</li>
+        <li>
+          <strong>Profil spotreby.</strong> Kedy energiu reálne spotrebúvate — počas dňa, v noci, cez víkend? FVE vyrába cez
+          deň; ak vtedy nemáte spotrebu, výroba uniká do siete za nízku výkupnú cenu.
+        </li>
+        <li>
+          <strong>Miera vlastnej spotreby.</strong> Koľko percent výroby spotrebujete priamo. Čím viac, tým rýchlejšia návratnosť.
+        </li>
+        <li>
+          <strong>Správna veľkosť investície.</strong> Predimenzovaná FVE vyrába prebytky, ktoré sa nevyplatia; poddimenzovaná
+          nevyužije potenciál. Správna veľkosť vychádza z dát.
+        </li>
+        <li>
+          <strong>Cena, za ktorú dnes nakupujete elektrinu.</strong> Čím drahšia elektrina, tým hodnotnejšia každá samospotrebovaná
+          kilowatthodina.
+        </li>
       </ul>
       <p>Práve preto fotovoltiku nenavrhujeme od strechy, ale od spotreby.</p>
 
       <h2>Prečo nestačí „dať panely na strechu"</h2>
       <p>
-        Najčastejšia chyba je navrhnúť elektráreň podľa plochy strechy a očakávať, že úspora príde sama. Ak ale prevádzka
-        spotrebúva energiu inokedy, než FVE vyrába, veľká časť výroby sa predá do siete za zlomok ceny, za ktorú elektrinu
-        nakupujete — a návratnosť investície sa natiahne.
+        Najčastejšia chyba je navrhnúť elektráreň podľa plochy strechy a očakávať, že úspora príde sama. Ak ale
+        prevádzka spotrebúva energiu inokedy, než FVE vyrába, veľká časť výroby sa predá do siete za zlomok ceny, za
+        ktorú elektrinu nakupujete — a návratnosť investície sa natiahne.
       </p>
       <p>
-        Preto najprv zisťujeme, ako vaša spotreba vyzerá v čase, a až potom navrhujeme veľkosť a konfiguráciu elektrárne.
-        Často sa ukáže, že menšia, dobre navrhnutá FVE s vyššou vlastnou spotrebou je výhodnejšia než veľká, ktorá vyrába
-        do siete.
+        Preto najprv zisťujeme, ako vaša spotreba vyzerá v čase, a až potom navrhujeme veľkosť a konfiguráciu
+        elektrárne. Často sa ukáže, že menšia, dobre navrhnutá FVE s vyššou vlastnou spotrebou je výhodnejšia než veľká,
+        ktorá vyrába do siete.
       </p>
 
       <h2>Najčastejšie chyby pri návrhu firemnej fotovoltiky</h2>
@@ -110,7 +139,9 @@ const faqs = [
         <li>Podcenenie <a href="/energetika/slovnik#rezervovana-kapacita">rezervovanej kapacity</a> a špičiek.</li>
         <li>Žiadne riadenie (EMS) — technológie nezladené do jedného celku.</li>
         <li>Batéria kúpená dodatočne, bez pôvodného konceptu.</li>
-        <li>Návrh bez <a href="/energetika/slovnik#business-case">business case</a> — investícia bez prepočtu návratnosti.</li>
+        <li>
+          Návrh bez <a href="/energetika/slovnik#business-case">business case</a> — investícia bez prepočtu návratnosti.
+        </li>
       </ul>
       <p>Týmto chybám sa dá vyhnúť jediným spôsobom: začať dátami, nie technológiou.</p>
 
@@ -120,10 +151,19 @@ const faqs = [
         takých prípadoch dáva zmysel uvažovať o doplnení:
       </p>
       <ul>
-        <li><a href="/energetika/baterie-bess">Batériové úložisko (BESS)</a> — uloží dennú výrobu na čas, keď ju reálne spotrebujete, a pomôže aj so špičkami a odolnosťou prevádzky.</li>
-        <li><a href="/energetika/energy-management">Energy Management (EMS)</a> — riadi, kedy spotrebovať vlastnú výrobu, kedy nabíjať batériu a ako celé portfólio zladiť s prevádzkou.</li>
+        <li>
+          <a href="/energetika/baterie-bess">Batériové úložisko (BESS)</a> — uloží dennú výrobu na čas, keď ju reálne spotrebujete,
+          a pomôže aj so špičkami a odolnosťou prevádzky.
+        </li>
+        <li>
+          <a href="/energetika/energy-management">Energy Management (EMS)</a> — riadi, kedy spotrebovať vlastnú výrobu, kedy
+          nabíjať batériu a ako celé portfólio zladiť s prevádzkou.
+        </li>
       </ul>
-      <p>Fotovoltika, batéria a riadenie spotreby dávajú najväčší zmysel ako jeden riadený celok — nie ako tri samostatné nákupy.</p>
+      <p>
+        Fotovoltika, batéria a riadenie spotreby dávajú najväčší zmysel ako jeden riadený celok — nie ako tri samostatné
+        nákupy.
+      </p>
 
       <div class="not-prose my-8">
         <div class="flex flex-col md:flex-row md:items-stretch gap-3">
@@ -131,17 +171,32 @@ const faqs = [
             <p class="font-semibold">Fotovoltika (FVE)</p>
             <p class="text-sm text-muted mt-1">vyrába energiu</p>
           </div>
-          <div class="flex items-center justify-center text-primary text-2xl font-bold rotate-90 md:rotate-0" aria-hidden="true">→</div>
+          <div
+            class="flex items-center justify-center text-primary text-2xl font-bold rotate-90 md:rotate-0"
+            aria-hidden="true"
+          >
+            →
+          </div>
           <div class="flex-1 rounded-xl border border-gray-200 bg-white p-4 text-center">
             <p class="font-semibold">Batérie (BESS)</p>
             <p class="text-sm text-muted mt-1">ukladá výrobu</p>
           </div>
-          <div class="flex items-center justify-center text-primary text-2xl font-bold rotate-90 md:rotate-0" aria-hidden="true">→</div>
+          <div
+            class="flex items-center justify-center text-primary text-2xl font-bold rotate-90 md:rotate-0"
+            aria-hidden="true"
+          >
+            →
+          </div>
           <div class="flex-1 rounded-xl border border-gray-200 bg-white p-4 text-center">
             <p class="font-semibold">Energy Management (EMS)</p>
             <p class="text-sm text-muted mt-1">riadi a zlaďuje</p>
           </div>
-          <div class="flex items-center justify-center text-primary text-2xl font-bold rotate-90 md:rotate-0" aria-hidden="true">→</div>
+          <div
+            class="flex items-center justify-center text-primary text-2xl font-bold rotate-90 md:rotate-0"
+            aria-hidden="true"
+          >
+            →
+          </div>
           <div class="flex-1 rounded-xl border border-primary/30 bg-primary/5 p-4 text-center">
             <p class="font-semibold text-primary">Jeden riadený celok</p>
             <p class="text-sm text-muted mt-1">zladené a merateľné</p>
@@ -151,14 +206,12 @@ const faqs = [
 
       <h2>Máte staršiu fotovoltiku?</h2>
       <p>
-        Ak už fotovoltiku máte — najmä staršiu — jej hodnotu sa často dá zvýšiť. Doplnenie batérie umožní uložiť výrobu a
-        využiť ju neskôr namiesto predaja do siete. Pri elektrárňach, ktorým sa končí podpora, pomáha batéria a nový
+        Ak už fotovoltiku máte — najmä staršiu — jej hodnotu sa často dá zvýšiť. Doplnenie batérie umožní uložiť výrobu
+        a využiť ju neskôr namiesto predaja do siete. Pri elektrárňach, ktorým sa končí podpora, pomáha batéria a nový
         obchodný model udržať ekonomiku prevádzky. A modernizácia meničov či riadenia (repowering) môže zvýšiť výnos a
         spoľahlivosť.
       </p>
-      <p>
-        Aj tu platí: najprv posúdime dáta a stav existujúcej elektrárne, až potom navrhujeme, čo sa oplatí doplniť.
-      </p>
+      <p>Aj tu platí: najprv posúdime dáta a stav existujúcej elektrárne, až potom navrhujeme, čo sa oplatí doplniť.</p>
 
       <h2>Ako postupujeme</h2>
       <p>Postupujeme v krokoch, aby ste investovali až vtedy, keď viete prečo:</p>
@@ -185,16 +238,27 @@ const faqs = [
         <li>areály, kde sa FVE kombinuje s batériou, nabíjaním alebo riadením spotreby.</li>
       </ul>
       <p>
-        Najlepšiu návratnosť má fotovoltika tam, kde sa spotreba prekrýva s výrobou — teda kde sa cez deň reálne pracuje a
-        spotrebúva.
+        Najlepšiu návratnosť má fotovoltika tam, kde sa spotreba prekrýva s výrobou — teda kde sa cez deň reálne pracuje
+        a spotrebúva.
       </p>
 
       <h2>Prečo RKS</h2>
       <ul>
-        <li><strong>Návrh od spotreby, nie od strechy.</strong> FVE dimenzujeme podľa vašich dát, aby sa čo najviac výroby využilo priamo.</li>
-        <li><strong>Technika aj návratnosť.</strong> Nedodávame panely — dodávame riešenie s prepočtom, ktorý dáva zmysel.</li>
-        <li><strong>Celý koncept pod jednou strechou.</strong> FVE vieme prepojiť s <a href="/energetika/baterie-bess">batériou</a>, nabíjaním aj <a href="/energetika/energy-management">EMS</a> do jedného riadeného celku.</li>
-        <li><strong>Technické zázemie od 1991.</strong> Projektovanie, elektroinštalácie a realizácia sú náš domáci terén.</li>
+        <li>
+          <strong>Návrh od spotreby, nie od strechy.</strong> FVE dimenzujeme podľa vašich dát, aby sa čo najviac výroby využilo
+          priamo.
+        </li>
+        <li>
+          <strong>Technika aj návratnosť.</strong> Nedodávame panely — dodávame riešenie s prepočtom, ktorý dáva zmysel.
+        </li>
+        <li>
+          <strong>Celý koncept pod jednou strechou.</strong> FVE vieme prepojiť s <a href="/energetika/baterie-bess"
+            >batériou</a
+          >, nabíjaním aj <a href="/energetika/energy-management">EMS</a> do jedného riadeného celku.
+        </li>
+        <li>
+          <strong>Technické zázemie od 1991.</strong> Projektovanie, elektroinštalácie a realizácia sú náš domáci terén.
+        </li>
       </ul>
 
       <h2>Súvisiace riešenia</h2>
@@ -205,8 +269,16 @@ const faqs = [
 
       <h2>Odporúčané čítanie</h2>
       <ul>
-        <li><a href="/energetika/blog/boli-sme-na-sapi-konferencii">SAPI konferencia 2026: 5 trendov, ktoré menia budúcnosť firemnej energetiky</a></li>
-        <li><a href="/energetika/blog/sesfg-mnichov-2026">Budúcnosť firemnej energetiky: 10 trendov z konferencie v Mníchove</a></li>
+        <li>
+          <a href="/energetika/blog/boli-sme-na-sapi-konferencii"
+            >SAPI konferencia 2026: 5 trendov, ktoré menia budúcnosť firemnej energetiky</a
+          >
+        </li>
+        <li>
+          <a href="/energetika/blog/sesfg-mnichov-2026"
+            >Budúcnosť firemnej energetiky: 10 trendov z konferencie v Mníchove</a
+          >
+        </li>
       </ul>
     </div>
 
@@ -217,7 +289,9 @@ const faqs = [
           <details class="group rounded-xl border border-gray-200 p-5">
             <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
               {faq.q}
-              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">+</span>
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">
+                +
+              </span>
             </summary>
             <p class="text-muted mt-3">{faq.a}</p>
           </details>
@@ -228,10 +302,12 @@ const faqs = [
     <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
       <h2 class="text-xl md:text-2xl font-semibold mb-3">Zistite, či sa vám fotovoltika naozaj oplatí</h2>
       <p class="text-muted mb-6 max-w-xl mx-auto">
-        Začnime nezáväznou konzultáciou a analýzou vašej spotreby. Navrhneme fotovoltiku podľa toho, koľko energie reálne
-        využijete — s jasným prepočtom návratnosti.
+        Začnime nezáväznou konzultáciou a analýzou vašej spotreby. Navrhneme fotovoltiku podľa toho, koľko energie
+        reálne využijete — s jasným prepočtom návratnosti.
       </p>
-      <a href="/lp/konzultacia.html?utm_source=web&amp;utm_campaign=energetika" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+      <a href="/lp/konzultacia.html?utm_source=web&utm_campaign=energetika" class="btn-primary inline-flex"
+        >Dohodnúť nezáväznú konzultáciu</a
+      >
     </div>
   </section>
 </Layout>
