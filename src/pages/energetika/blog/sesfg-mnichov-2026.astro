@@ -1,5 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import NewsletterCTA from '~/components/widgets/NewsletterCTA.astro';
 
 const metadata = {
   title: 'Solar Energy Storage Future Germany 2026: 10 trendov, ktoré menia firemnú energetiku | RKS',
@@ -279,6 +280,7 @@ const faqSchema = {
         ))
       }
     </div>
+    <NewsletterCTA />
   </article>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

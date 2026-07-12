@@ -87,6 +87,7 @@ export const headerData = {
             { text: 'Energy Memo', href: getPermalink('/energetika/blog') },
             { text: 'Q&A (Energetika)', href: getPermalink('/energetika/q-a') },
             { text: 'Slovník pojmov', href: getPermalink('/energetika/slovnik') },
+            { text: 'Prihlásiť sa na odber', href: getPermalink('/newsletter-odber') },
           ],
         },
       ],

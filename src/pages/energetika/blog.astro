@@ -1,5 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import NewsletterCTA from '~/components/widgets/NewsletterCTA.astro';
 
 const metadata = {
   title: 'Energy Memo — energetika pre firmy očami financií | RKS',
@@ -61,5 +62,7 @@ const posts = [
         ))
       }
     </div>
+
+    <NewsletterCTA />
   </section>
 </Layout>

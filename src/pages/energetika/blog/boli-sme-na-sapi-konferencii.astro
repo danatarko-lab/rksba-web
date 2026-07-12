@@ -1,5 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import NewsletterCTA from '~/components/widgets/NewsletterCTA.astro';
 
 const metadata = {
   title: 'SAPI konferencia 2026: 5 trendov, ktoré menia energetické investície firiem | RKS',
@@ -369,6 +370,7 @@ const faqSchema = {
       <a href="/lp/konzultacia.html?utm_source=web&amp;utm_campaign=energetika" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
       <p class="text-muted italic text-center mt-6">Najprv dáta. Potom business case. Až následne technológia.</p>
     </div>
+    <NewsletterCTA />
   </article>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

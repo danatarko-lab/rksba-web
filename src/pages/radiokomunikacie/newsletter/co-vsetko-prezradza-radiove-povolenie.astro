@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
 import ceoPortret from '~/assets/images/rks-ceo-portret.webp';
+import NewsletterCTA from '~/components/widgets/NewsletterCTA.astro';
 
 const metadata = {
   title: 'Viete, čo všetko o vašej firme prezrádza rádiové povolenie? — RKS',
@@ -234,5 +235,7 @@ const post = {
         </div>
       </div>
     </div>
+
+    <NewsletterCTA />
   </article>
 </Layout>

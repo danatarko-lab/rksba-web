@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
 import ceoPortret from '~/assets/images/rks-ceo-portret.webp';
+import NewsletterCTA from '~/components/widgets/NewsletterCTA.astro';
 
 const metadata = { title: 'Newsletter — Pozdrav od riaditeľa — RKS' };
 
@@ -73,5 +74,7 @@ const posts = [
         ))
       }
     </div>
+
+    <NewsletterCTA />
   </section>
 </Layout>
