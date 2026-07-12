@@ -61,6 +61,7 @@ export default [
     },
   },
   {
-    ignores: ['dist', 'node_modules', '.github', 'types.generated.d.ts', '.astro'],
+    // src/pages/katalog-produktov je generovany skriptom (gen_all_pages.py), rucne sa neupravuje.
+    ignores: ['dist', 'node_modules', '.github', 'types.generated.d.ts', '.astro', 'src/pages/katalog-produktov/**'],
   },
 ];

@@ -2,3 +2,13 @@ dist
 node_modules
 .github
 .changeset
+
+# Generovany katalog produktov (prepisuje ho gen_all_pages.py), neformatovat.
+src/pages/katalog-produktov/
+
+# Rucne ladene landing pages, neformatovat.
+public/lp/
+
+# Pracovne poznamky a handoff dokumenty.
+_brief*.md
+rksba_web_handoff.md

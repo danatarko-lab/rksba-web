@@ -5,6 +5,10 @@ import { getPermalink } from '~/utils/permalinks';
 
 const metadata = { title: 'Mapa stránky — RKS' };
 
+// Rekurzivny tvar polozky navigacie: bud odkaz (href), alebo skupina (links).
+type NavLink = { text: string; href?: string; links?: NavLink[] };
+const navLinks = headerData.links as NavLink[];
+
 // Doplnkové samostatné stránky mimo hlavného menu
 const standalone = [
   { text: 'Q&A (centralizovaná)', href: getPermalink('/q-a') },
@@ -21,7 +25,7 @@ const standalone = [
       <li><a class="text-primary hover:underline" href={getPermalink('/')}>Domov</a></li>
 
       {
-        headerData.links.map((top) => (
+        navLinks.map((top) => (
           <li>
             <a class="text-primary hover:underline font-medium" href={top.href}>
               {top.text}

@@ -101,7 +101,7 @@ export const headerData = {
     {
       text: 'Dohodnúť nezáväznú konzultáciu',
       href: '/lp/konzultacia.html?utm_source=web&utm_medium=cta&utm_campaign=web',
-      variant: 'primary',
+      variant: 'primary' as const,
     },
   ],
 };

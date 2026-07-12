@@ -42,8 +42,12 @@ import { Icon } from 'astro-icon/components';
 
 <script>
   (function () {
-    if (window.__rksSearchInit) return;
-    window.__rksSearchInit = true;
+    const w = window as unknown as {
+      __rksSearchInit?: boolean;
+      PagefindUI?: new (opts: Record<string, unknown>) => void;
+    };
+    if (w.__rksSearchInit) return;
+    w.__rksSearchInit = true;
 
     let loaded = false;
 
@@ -70,7 +74,7 @@ import { Icon } from 'astro-icon/components';
           u = u.replace(/\/(#)/, '$1').replace(/\/$/, '');
           return u === '' ? '/' : u;
         }
-        new window.PagefindUI({
+        new w.PagefindUI!({
           element: '#search',
           showSubResults: true,
           showImages: false,
@@ -121,7 +125,7 @@ import { Icon } from 'astro-icon/components';
     }
 
     document.addEventListener('click', function (e) {
-      const t = e.target;
+      const t = e.target as Element | null;
       if (!t || !t.closest) return;
       if (t.closest('[data-rks-search-open]')) {
         e.preventDefault();

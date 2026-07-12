@@ -1,4 +1,4 @@
-// Post-build typografia: doplní nezalomiteľné medzery ( ) do textových uzlov
+// Post-build typografia: doplní nezalomiteľné medzery do textových uzlov
 // všetkých .html v dist/ okrem dist/pagefind/. Nemení obsah textov, len medzery.
 // Preskakuje tagy, atribúty a obsah <script>, <style>, <pre>, <code>, <textarea>.
 // Čistý Node, bez závislostí.
@@ -18,10 +18,7 @@ function typografia(text) {
     // 1. Jednopísmenové predložky a spojky: a i o s u v z k (aj veľké).
     text = text.replace(/(^|[^\p{L}])([aiosuvzkAIOSUVZK]) /gu, `$1$2${NBSP}`);
     // 2. Dvojpísmenové predložky/spojky (aj s veľkým začiatočným písmenom).
-    text = text.replace(
-      /(^|[^\p{L}])(za|zo|do|od|po|na|vo|ku|so|či|Za|Zo|Do|Od|Po|Na|Vo|Ku|So|Či) /gu,
-      `$1$2${NBSP}`
-    );
+    text = text.replace(/(^|[^\p{L}])(za|zo|do|od|po|na|vo|ku|so|či|Za|Zo|Do|Od|Po|Na|Vo|Ku|So|Či) /gu, `$1$2${NBSP}`);
     // 3. Oddeľovač tisícov: číslica + medzera + tri číslice (nie ďalšia číslica).
     text = text.replace(/(\d) (\d{3})(?!\d)/g, `$1${NBSP}$2`);
     // 4. Číslo a percento.
