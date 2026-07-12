@@ -91,6 +91,8 @@ export const headerData = {
         },
       ],
     },
+    { text: 'Certifikáty', href: getPermalink('/certifikaty') },
+    { text: 'Referencie', href: getPermalink('/referencie') },
     { text: 'Kontakt', href: getPermalink('/kontakt') },
   ],
   // TODO: po dodaní Calendly URL nahradiť href Calendly odkazom
@@ -184,6 +186,13 @@ export const footerData = {
         { text: 'RKS Chatbot', href: 'https://rks-radio-expert.vercel.app/' },
         { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
         { text: 'Prihlásiť sa na odber', href: getPermalink('/newsletter-odber') },
+      ],
+    },
+    {
+      title: 'Firma',
+      links: [
+        { text: 'Certifikáty', href: getPermalink('/certifikaty') },
+        { text: 'Referencie', href: getPermalink('/referencie') },
       ],
     },
     {

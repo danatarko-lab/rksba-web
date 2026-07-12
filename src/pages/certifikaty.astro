@@ -1,0 +1,114 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Certifikáty a oprávnenia | RKS',
+  description:
+    'Certifikáty a oprávnenia RKS: partnerstvo Motorola Solutions, systémy manažérstva ISO 9001, 14001 a 45001 a oprávnenia Technickej inšpekcie na opravu a výrobu vyhradených elektrických zariadení.',
+};
+
+const certs = [
+  {
+    name: 'Motorola PartnerEmpower, Silver Authorized Reseller 2026',
+    scope: 'LTE Devices, Professional and Commercial Radio Devices, WAVE PTX',
+    validity: 'do 31. 3. 2027',
+  },
+  {
+    name: 'STN EN ISO 9001:2016',
+    number: 'Q 227/23',
+    validity: 'do 14. 1. 2027',
+    image: '/images/certifikaty/iso-9001.webp',
+    alt: 'Certifikát STN EN ISO 9001:2016',
+  },
+  {
+    name: 'STN EN ISO 14001:2016',
+    number: 'E 227/23',
+    validity: 'do 14. 1. 2027',
+    image: '/images/certifikaty/iso-14001.webp',
+    alt: 'Certifikát STN EN ISO 14001:2016',
+  },
+  {
+    name: 'STN EN ISO 45001',
+    validity: 'obrázok certifikátu doplníme',
+  },
+  {
+    name: 'Oprávnenie Technickej inšpekcie',
+    number: '303/1/2013 EZ-O (OU,R,M) E2 A,B',
+    note: 'oprava vyhradených technických zariadení elektrických do 1000 V vrátane bleskozvodov, aj v objektoch s nebezpečenstvom výbuchu',
+    image: '/images/certifikaty/opravnenie-ti-303.webp',
+    alt: 'Oprávnenie Technickej inšpekcie 303/1/2013 EZ-O na opravu vyhradených technických zariadení elektrických',
+  },
+  {
+    name: 'Oprávnenie Technickej inšpekcie',
+    number: '304/1/2013 EZ-V E4 A',
+    note: 'výroba vyhradených technických zariadení elektrických',
+    image: '/images/certifikaty/opravnenie-ti-304.webp',
+    alt: 'Oprávnenie Technickej inšpekcie 304/1/2013 EZ-V na výrobu vyhradených technických zariadení elektrických',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-5xl px-4 sm:px-6 py-12 md:py-16">
+    <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/">← Domov</a></p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Certifikáty a oprávnenia</h1>
+
+    <p class="text-lg text-muted max-w-3xl mb-10">
+      Certifikáty a oprávnenia potvrdzujú odbornú spôsobilosť RKS v predaji, inštalácii, údržbe a servise
+      rádiokomunikačných zariadení. Dokladajú, že naše postupy spĺňajú medzinárodné normy kvality, ochrany životného
+      prostredia a bezpečnosti pri práci. Certifikácie pravidelne obnovujeme.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        certs.map((cert) => (
+          <article class="flex flex-col rounded-xl border border-gray-200 p-6">
+            {cert.image ? (
+              <a
+                href={cert.image}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mb-4 block aspect-[3/2] overflow-hidden rounded-lg border border-gray-200 bg-gray-50"
+                aria-label={`Otvoriť certifikát v plnej veľkosti: ${cert.name}`}
+              >
+                <img src={cert.image} alt={cert.alt} loading="lazy" class="h-full w-full object-contain" />
+              </a>
+            ) : (
+              <div class="mb-4 flex aspect-[3/2] items-center justify-center rounded-lg border border-dashed border-gray-300 bg-gray-50 text-center text-sm text-muted px-3">
+                Obrázok certifikátu doplníme
+              </div>
+            )}
+            <h2 class="text-lg font-semibold tracking-tight">{cert.name}</h2>
+            <dl class="mt-3 space-y-1 text-sm">
+              {cert.number && (
+                <div>
+                  <dt class="inline font-medium">Číslo: </dt>
+                  <dd class="inline text-muted">{cert.number}</dd>
+                </div>
+              )}
+              {cert.scope && (
+                <div>
+                  <dt class="inline font-medium">Rozsah: </dt>
+                  <dd class="inline text-muted">{cert.scope}</dd>
+                </div>
+              )}
+              <div>
+                <dt class="inline font-medium">Platnosť: </dt>
+                <dd class="inline text-muted">{cert.validity ?? 'platnosť sa overuje'}</dd>
+              </div>
+            </dl>
+            {cert.note && <p class="mt-3 text-sm text-muted">{cert.note}</p>}
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Potrebujete overeného partnera na svoj projekt?</h2>
+      <p class="text-muted mb-6 max-w-xl mx-auto">
+        Radi vám doložíme platné certifikáty a oprávnenia k rozsahu prác, ktorý pripravujeme.
+      </p>
+      <a href="/lp/konzultacia.html?utm_source=web&amp;utm_campaign=web" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+    </div>
+  </section>
+</Layout>
