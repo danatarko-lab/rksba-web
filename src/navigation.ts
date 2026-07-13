@@ -48,7 +48,7 @@ export const headerData = {
         {
           text: 'Produkty',
           links: [
-            { text: 'Rádiostanice MOTOTRBO (DMR)', href: 'https://mototrbo.sk' },
+            { text: 'Rádiostanice MOTOROLA (DMR)', href: 'https://mototrbo.sk' },
             { text: 'Rádiostanice CALTTA', href: getPermalink('/produkty/radiostanice-caltta') },
             {
               text: 'Varovacie a vyrozumievacie systémy',
@@ -162,7 +162,7 @@ export const footerData = {
     {
       title: 'Produkty',
       links: [
-        { text: 'Rádiostanice MOTOTRBO (DMR)', href: 'https://mototrbo.sk' },
+        { text: 'Rádiostanice MOTOROLA (DMR)', href: 'https://mototrbo.sk' },
         { text: 'Rádiostanice CALTTA', href: getPermalink('/produkty/radiostanice-caltta') },
         {
           text: 'Varovacie a vyrozumievacie systémy',
@@ -205,7 +205,7 @@ export const footerData = {
     {
       title: 'Kontakt',
       links: [
-        { text: '+421 903 277 654', href: 'tel:+421903277654' },
+        { text: '+421 903 717 634', href: 'tel:+421903717634' },
         { text: 'rks@rksba.sk', href: 'mailto:rks@rksba.sk' },
         { text: 'Po az Pi: 08:00 do 16:30', href: getPermalink('/kontakt') },
         {
