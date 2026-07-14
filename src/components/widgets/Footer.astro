@@ -28,7 +28,10 @@ const { tagline = '', contact = {}, cta, copyright = '', legal = '', bottomLinks
     <div class="grid gap-10 md:grid-cols-3 md:gap-8">
       <!-- Vlavo: logo + tagline -->
       <div>
-        <a href={getHomePermalink()} class="inline-block text-2xl font-bold tracking-tight text-white">RKS</a>
+        <a href={getHomePermalink()} class="inline-block text-white">
+          <span class="text-2xl font-bold tracking-tight">RKS</span>
+          <span class="ml-1.5 text-sm font-normal text-white/60">spol. s r.o.</span>
+        </a>
         {tagline && <p class="mt-4 max-w-xs text-sm text-white/70">{tagline}</p>}
       </div>
 

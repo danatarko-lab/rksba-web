@@ -119,7 +119,7 @@ export const footerData = {
   },
   copyright: '© RKS 2026',
   legal:
-    'RKS, spol. s r.o. · Sídlo: Rajecká 36, 821 07 Bratislava · IČO 30841275 · DIČ 2020328398 · IČ DPH SK2020328398 · Zapísaná v OR Mestský súd Bratislava III',
+    'Sídlo: Rajecká 36, 821 07 Bratislava · IČO: 30841275 · DIČ: 2020328398 · IČ DPH: SK2020328398 · Zapísaná v OR: Mestský súd Bratislava III',
   bottomLinks: [
     { text: 'Ochrana osobných údajov', href: getPermalink('/ochrana-osobnych-udajov') },
     { text: 'Mapa stránky', href: getPermalink('/mapa-stranky') },
