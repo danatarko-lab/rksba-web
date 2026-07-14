@@ -66,6 +66,7 @@ export const headerData = {
             { text: 'RKS Chatbot', href: 'https://rks-radio-expert.vercel.app/' },
             { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
             { text: 'Prihlásiť sa na odber', href: getPermalink('/newsletter-odber') },
+            { text: 'Slovník pojmov', href: getPermalink('/slovnik') },
           ],
         },
       ],

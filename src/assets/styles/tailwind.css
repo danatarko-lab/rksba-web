@@ -115,3 +115,9 @@
 .dd *:first-child {
   margin-top: 0;
 }
+
+/* Odkazy na slovníkové heslá, ktoré po builde vkladá scripts/slovnik-tooltipy.mjs. */
+.pojem {
+  border-bottom: 1px dotted;
+  cursor: help;
+}

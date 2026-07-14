@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && pagefind --site dist && node scripts/typografia.mjs",
+    "build": "astro build && pagefind --site dist && node scripts/slovnik-tooltipy.mjs && node scripts/typografia.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "check": "npm run check:astro && npm run check:eslint && npm run check:prettier",

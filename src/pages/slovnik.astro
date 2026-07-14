@@ -1,0 +1,109 @@
+---
+import fs from 'node:fs';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Slovník pojmov | RKS',
+  description:
+    'Odborné pojmy z rádiokomunikácií, vysvetlené jednoducho. Rádiostanice, antény a systémy: skratky ako PTT, VOX, UHF, IP55 a ďalšie na jednom mieste.',
+};
+
+type Term = { id: number; slug: string; pojem: string; kategoria: string; definicia: string };
+
+const terms: Term[] = JSON.parse(fs.readFileSync('_materials/slovnik/slovnik.json', 'utf-8'));
+
+// Diakritiku odstránime pre vyhľadávanie, aby "antena" našla "anténa".
+const normalize = (s: string) =>
+  s
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '');
+
+const firstSentence = (def: string) => {
+  const m = def.match(/^(.*?[.!?])(\s|$)/);
+  return (m ? m[1] : def).trim();
+};
+
+const CATEGORIES = ['Rádiostanice', 'Antény', 'Systémy'];
+
+const sections = CATEGORIES.map((kat) => ({
+  kat,
+  items: terms.filter((t) => t.kategoria === kat).sort((a, b) => a.pojem.localeCompare(b.pojem, 'sk')),
+}));
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/radiokomunikacie">← Rádiokomunikácie</a></p>
+
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Slovník pojmov</h1>
+    <p class="text-lg text-muted mb-8 max-w-3xl">
+      Odborné pojmy z rádiokomunikácií, vysvetlené jednoducho. Nájdite skratky, funkcie rádiostaníc, typy antén a
+      systémové riešenia na jednom mieste, každý pojem má vlastnú stránku.
+    </p>
+
+    <div class="mb-10">
+      <label for="slovnik-hladaj" class="sr-only">Hľadať pojem</label>
+      <input
+        id="slovnik-hladaj"
+        type="search"
+        autocomplete="off"
+        placeholder="Hľadať pojem (napríklad IP55, VOX, anténa)..."
+        class="w-full rounded-lg border border-gray-300 px-4 py-3 text-base focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+      />
+      <p id="slovnik-prazdne" class="hidden mt-3 text-sm text-muted">Žiadny pojem nezodpovedá hľadaniu.</p>
+    </div>
+
+    <div id="slovnik-sekcie" class="space-y-10">
+      {
+        sections.map((s) => (
+          <section data-sekcia aria-labelledby={`sek-${normalize(s.kat)}`}>
+            <h2 id={`sek-${normalize(s.kat)}`} class="text-xl md:text-2xl font-semibold tracking-tight mb-4">
+              {s.kat} <span class="font-normal text-muted text-base">({s.items.length})</span>
+            </h2>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+              {s.items.map((t) => (
+                <li data-heslo data-search={`${normalize(t.pojem)} ${normalize(t.definicia)}`}>
+                  <a class="text-primary hover:underline" href={`/slovnik/${t.slug}`}>
+                    {t.pojem}
+                  </a>
+                  <span class="block text-sm text-muted">{firstSentence(t.definicia)}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      const input = document.getElementById('slovnik-hladaj');
+      const prazdne = document.getElementById('slovnik-prazdne');
+      if (!input) return;
+      const hesla = Array.prototype.slice.call(document.querySelectorAll('[data-heslo]'));
+      const sekcie = Array.prototype.slice.call(document.querySelectorAll('[data-sekcia]'));
+      const norm = function (s) {
+        return s
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/\p{Diacritic}/gu, '');
+      };
+      input.addEventListener('input', function () {
+        const q = norm(input.value.trim());
+        let viditelne = 0;
+        hesla.forEach(function (li) {
+          const zhoda = q === '' || (li.getAttribute('data-search') || '').indexOf(q) !== -1;
+          li.hidden = !zhoda;
+          if (zhoda) viditelne++;
+        });
+        sekcie.forEach(function (sek) {
+          const nejake = sek.querySelectorAll('[data-heslo]:not([hidden])').length > 0;
+          sek.hidden = !nejake;
+        });
+        if (prazdne) prazdne.classList.toggle('hidden', viditelne !== 0);
+      });
+    })();
+  </script>
+</Layout>
