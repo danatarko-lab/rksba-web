@@ -3,7 +3,102 @@ import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
   title: 'Rádiostanice CALTTA | RKS',
-  description: 'Rádiostanice CALTTA v ponuke RKS.',
+  description:
+    'Profesionálne DMR rádiostanice CALTTA PH600 a PH660. Krytie IP68, norma MIL-STD-810G a výdrž 20 hodín na jedno nabitie. Porovnanie modelov, funkcie a časté otázky.',
+};
+
+const modely = [
+  {
+    nazov: 'CALTTA PH600',
+    obrazok: '/images/caltta/ph600.webp',
+    alt: 'CALTTA PH600, profesionálna DMR rádiostanica',
+    popis:
+      'Kompaktná rádiostanica pre prevádzky, kde sa pracuje s niekoľkými kanálmi a dôležitá je jednoduchosť a rýchle zaškolenie.',
+    parametre: ['32 kanálov, 2 zóny', '270 g, 100 x 54,5 x 37,5 mm'],
+  },
+  {
+    nazov: 'CALTTA PH660',
+    obrazok: '/images/caltta/ph660.webp',
+    alt: 'CALTTA PH660, profesionálna DMR rádiostanica s displejom',
+    popis:
+      'Rádiostanica s displejom pre väčšie siete s viacerými skupinami, kde používateľ potrebuje vidieť kanál, správy a stav.',
+    parametre: ['1024 kanálov, 64 zón', '290 g, 100 x 54,5 x 36,5 mm', 'displej 1,75" LCD, hodiny reálneho času'],
+  },
+];
+
+const tabulka = [
+  { riadok: 'Kanály', ph600: '32', ph660: '1024' },
+  { riadok: 'Zóny', ph600: '2', ph660: '64' },
+  { riadok: 'Displej', ph600: 'bez displeja', ph660: '1,75" LCD, 240 x 180' },
+  { riadok: 'Hodiny reálneho času', ph600: 'nie', ph660: 'áno' },
+  { riadok: 'Hmotnosť', ph600: '270 g', ph660: '290 g' },
+  { riadok: 'Krytie', ph600: 'IP68', ph660: 'IP68' },
+  { riadok: 'Odolnostná norma', ph600: 'MIL-STD-810G', ph660: 'MIL-STD-810G' },
+  { riadok: 'Prevádzková teplota', ph600: '-30 až +60 °C', ph660: '-30 až +60 °C' },
+  { riadok: 'Batéria', ph600: '2600 mAh', ph660: '2600 mAh' },
+  { riadok: 'Výdrž (5-5-90)', ph600: '20 h digitál, 16 h analóg', ph660: '20 h digitál, 16 h analóg' },
+  { riadok: 'Frekvenčné pásma', ph600: 'UHF 400-470, VHF 136-174', ph660: 'rovnaké' },
+  { riadok: 'Vysielací výkon', ph600: '1 alebo 4 W UHF, 1 alebo 5 W VHF', ph660: 'rovnaké' },
+  { riadok: 'Režim', ph600: 'DMR Tier II a analóg', ph660: 'DMR Tier II a analóg' },
+];
+
+const funkcie = [
+  {
+    nadpis: 'Bezpečnostné funkcie',
+    body: [
+      'Tiesňové volanie a samostatné tlačidlo SOS',
+      'Man Down, hlásenie pádu pracovníka',
+      'Lone Worker, kontrola osamelého pracovníka',
+      'Vzdialené zablokovanie a odblokovanie rádiostanice',
+      'Autentifikácia pri registrácii do siete',
+      'Šifrovanie z konca na koniec',
+    ],
+  },
+  {
+    nadpis: 'Hlasové služby',
+    body: ['Individuálny, skupinový a hromadný hovor', 'Upozornenie na volanie', 'Prioritné prerušenie hovoru'],
+  },
+  {
+    nadpis: 'Dátové služby',
+    body: ['Textové a stavové správy, určenie polohy'],
+  },
+  {
+    nadpis: 'Voliteľné doplnky',
+    body: ['GPS a Glonass, Bluetooth, hlasový záznam, šifrovanie, doplnková doska (option board), vibračné zvonenie'],
+  },
+];
+
+const faqs = [
+  {
+    q: 'Aký je rozdiel medzi CALTTA PH600 a PH660?',
+    a: 'PH600 je kompaktný model s 32 kanálmi, 2 zónami a bez displeja, vhodný do jednoduchších prevádzok. PH660 má 1024 kanálov, 64 zón a displej 1,75" s hodinami reálneho času, vhodný do väčších sietí s viacerými skupinami a textovými správami. Krytie, odolnosť, batéria aj bezpečnostné funkcie sú rovnaké.',
+  },
+  {
+    q: 'Znesú rádiostanice CALTTA vodu a prach?',
+    a: 'Áno. Obidva modely majú krytie IP68 a spĺňajú normu odolnosti MIL-STD-810G, takže zvládnu prach, vlhkosť aj náročné prostredie. Prevádzková teplota je -30 až +60 °C.',
+  },
+  {
+    q: 'Ako dlho vydržia na jedno nabitie?',
+    a: 'So štandardnou batériou 2600 mAh vydržia približne 20 hodín v digitálnom režime a 16 hodín v analógovom, pri cykle 5-5-90.',
+  },
+  {
+    q: 'Podporujú GPS a šifrovanie?',
+    a: 'Áno, ako voliteľné doplnky. K dispozícii je polohovanie GPS a Glonass aj šifrovanie z konca na koniec (softvérové aj hardvérové). Súčasťou bezpečnostných funkcií je aj tiesňové volanie, Man Down a Lone Worker.',
+  },
+  {
+    q: 'Fungujú s existujúcou analógovou sieťou?',
+    a: 'Áno. Obidva modely pracujú v digitálnom režime DMR Tier II aj v analógovom režime, takže sa dajú nasadiť aj popri existujúcej analógovej sieti a na digitál prejsť postupne.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: { '@type': 'Answer', text: faq.a },
+  })),
 };
 ---
 
@@ -12,10 +107,120 @@ const metadata = {
     <p class="text-sm text-muted mb-2">
       <a class="hover:underline" href="/produkty">← Produkty</a> / Rádiostanice CALTTA
     </p>
-    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Rádiostanice CALTTA</h1>
 
-    {/* PLACEHOLDER: obsah stránky doplní Dana */}
-    <p class="text-lg text-muted">Obsah tejto stránky pripravujeme.</p>
+    <!-- Hero -->
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Rádiostanice CALTTA</h1>
+    <p class="text-lg text-muted max-w-3xl">
+      Profesionálne DMR rádiostanice do náročných prevádzok. Krytie IP68, vojenská norma MIL-STD-810G a výdrž 20 hodín
+      na jedno nabitie. Modely PH600 a PH660.
+    </p>
+
+    <!-- Dva modely -->
+    <div class="grid gap-6 md:grid-cols-2 mt-12">
+      {
+        modely.map((m) => (
+          <div class="flex flex-col rounded-xl border border-gray-200 p-6">
+            <div class="mb-5 flex h-56 items-center justify-center rounded-lg bg-gray-50">
+              <img src={m.obrazok} alt={m.alt} loading="lazy" class="h-full w-auto object-contain p-3" />
+            </div>
+            <h2 class="text-xl font-semibold tracking-tight">{m.nazov}</h2>
+            <p class="text-base text-muted mt-2">{m.popis}</p>
+            <ul class="mt-4 space-y-1 text-base">
+              {m.parametre.map((p) => (
+                <li class="flex gap-2">
+                  <span class="text-primary" aria-hidden="true">
+                    +
+                  </span>
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Porovnavacia tabulka -->
+    <h2 class="text-2xl font-semibold tracking-tight mt-16 mb-6">Porovnanie modelov</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border-collapse text-base">
+        <thead>
+          <tr class="border-b border-gray-200">
+            <th class="py-3 pr-4 font-semibold align-top"></th>
+            <th class="py-3 pr-4 font-semibold align-top">PH600</th>
+            <th class="py-3 font-semibold align-top">PH660</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            tabulka.map((r) => (
+              <tr class="border-b border-gray-100 align-top">
+                <td class="py-3 pr-4 font-medium">{r.riadok}</td>
+                <td class="py-3 pr-4 text-muted">{r.ph600}</td>
+                <td class="py-3 text-muted">{r.ph660}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Co obe vedia -->
+    <h2 class="text-2xl font-semibold tracking-tight mt-16 mb-6">Čo obidva modely vedia</h2>
+    <div class="grid gap-6 sm:grid-cols-2">
+      {
+        funkcie.map((f) => (
+          <div class="rounded-xl border border-gray-200 p-6">
+            <h3 class="text-lg font-semibold mb-3">{f.nadpis}</h3>
+            <ul class="space-y-1.5 text-base text-muted">
+              {f.body.map((b) => (
+                <li class="flex gap-2">
+                  <span class="text-primary" aria-hidden="true">
+                    +
+                  </span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Kedy si vybrat ktory -->
+    <h2 class="text-2xl font-semibold tracking-tight mt-16 mb-4">Kedy si vybrať ktorý</h2>
+    <div class="space-y-4 text-base text-muted max-w-3xl">
+      <p>
+        PH600 zvoľte, keď máte niekoľko kanálov, jednu prevádzku a chcete rádiostanicu, ktorú sa nový človek naučí
+        obsluhovať za päť minút.
+      </p>
+      <p>
+        PH660 zvoľte, keď máte viac skupín alebo lokalít, potrebujete textové správy a chcete, aby používateľ videl na
+        displeji, na akom kanáli je a čo mu prišlo.
+      </p>
+    </div>
+
+    <!-- Typicke nasadenie -->
+    <h2 class="text-2xl font-semibold tracking-tight mt-16 mb-4">Typické nasadenie</h2>
+    <p class="text-base text-muted max-w-3xl">Výroba, logistika, správa objektov, stavebníctvo.</p>
+
+    <!-- Caste otazky -->
+    <h2 class="text-2xl font-semibold tracking-tight mt-16 mb-6">Časté otázky</h2>
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 p-5">
+            <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
+              {faq.q}
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">
+                +
+              </span>
+            </summary>
+            <p class="text-base text-muted mt-3">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
 
     <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
       <h2 class="text-xl md:text-2xl font-semibold mb-3">Máte otázku k rádiostaniciam CALTTA?</h2>
@@ -25,4 +230,6 @@ const metadata = {
       >
     </div>
   </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </Layout>
