@@ -16,10 +16,11 @@ export interface Props {
   };
   cta?: { text: string; href: string };
   copyright?: string;
+  legal?: string;
   bottomLinks?: Array<{ text: string; href: string }>;
 }
 
-const { tagline = '', contact = {}, cta, copyright = '', bottomLinks = [] } = Astro.props;
+const { tagline = '', contact = {}, cta, copyright = '', legal = '', bottomLinks = [] } = Astro.props;
 ---
 
 <footer class="bg-[#0b1b3a] text-white not-prose">
@@ -71,8 +72,9 @@ const { tagline = '', contact = {}, cta, copyright = '', bottomLinks = [] } = As
     </div>
 
     <!-- Spodny pasik -->
-    <div class="mt-10 border-t border-white/15 pt-6 text-sm text-white/70">
-      <p>
+    <div class="mt-10 border-t border-white/15 pt-6">
+      {legal && <p class="text-xs text-white/50">{legal}</p>}
+      <p class="mt-2 text-sm text-white/70">
         {copyright}
         {
           bottomLinks.map((link) => (
