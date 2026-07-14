@@ -118,8 +118,8 @@ const nastroje = [
           >
             <div>
               <h2 class="text-2xl font-semibold tracking-tight mb-3">{card.title}</h2>
-              <p class="text-base text-muted">{card.description}</p>
-              <p class="text-sm text-muted mt-4">
+              <p class="text-lg text-muted">{card.description}</p>
+              <p class="text-base text-muted mt-4">
                 <span class="font-semibold text-gray-800">Typické využitie:</span> {card.vyuzitie}
               </p>
             </div>
@@ -140,8 +140,8 @@ const nastroje = [
         pristup.map((item) => (
           <div class="flex flex-col items-center text-center">
             <Icon name={item.icon} class="w-8 h-8 text-primary mb-3" />
-            <p class="text-base font-semibold">{item.title}</p>
-            <p class="text-sm text-muted mt-2">{item.text}</p>
+            <p class="text-lg font-semibold">{item.title}</p>
+            <p class="text-base text-muted mt-2">{item.text}</p>
           </div>
         ))
       }
@@ -182,9 +182,9 @@ const nastroje = [
               class="group flex flex-col rounded-xl border border-gray-200 bg-white p-6 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
             >
               <p class="text-xs font-semibold uppercase tracking-wider text-primary mb-2">{item.vetva}</p>
-              <h3 class="text-lg font-semibold tracking-tight">{item.post.title}</h3>
-              <p class="text-sm text-muted mt-1">{item.post.date}</p>
-              <p class="text-sm text-muted mt-3">{firstSentence(item.post.excerpt)}</p>
+              <h3 class="text-xl font-semibold tracking-tight">{item.post.title}</h3>
+              <p class="text-base text-muted mt-1">{item.post.date}</p>
+              <p class="text-base text-muted mt-3">{firstSentence(item.post.excerpt)}</p>
             </a>
           ))
         }
@@ -205,7 +205,7 @@ const nastroje = [
             >
               <div>
                 <h3 class="text-lg font-semibold tracking-tight mb-2">{item.title}</h3>
-                <p class="text-sm text-muted">{item.text}</p>
+                <p class="text-base text-muted">{item.text}</p>
               </div>
               <span class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:underline">
                 Otvoriť <span aria-hidden="true">→</span>

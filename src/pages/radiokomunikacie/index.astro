@@ -164,8 +164,8 @@ const faqSchema = {
       {
         dovera.map((item) => (
           <div class="rounded-xl border border-gray-200 p-5">
-            <p class="text-lg font-semibold tracking-tight">{item.big}</p>
-            <p class="text-sm text-muted mt-1">{item.small}</p>
+            <p class="text-xl font-semibold tracking-tight">{item.big}</p>
+            <p class="text-base text-muted mt-1">{item.small}</p>
           </div>
         ))
       }
@@ -187,8 +187,8 @@ const faqSchema = {
             class="group flex flex-col justify-between rounded-xl border border-gray-200 bg-white p-6 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
           >
             <div>
-              <h3 class="text-lg font-semibold mb-2">{item.title}</h3>
-              <p class="text-sm text-muted">{item.desc}</p>
+              <h3 class="text-xl font-semibold mb-2">{item.title}</h3>
+              <p class="text-base text-muted">{item.desc}</p>
             </div>
             <span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:underline">
               Zobraziť <span aria-hidden="true">→</span>
@@ -209,8 +209,8 @@ const faqSchema = {
             class="group flex flex-col justify-between rounded-xl border border-gray-200 bg-white p-6 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
           >
             <div>
-              <h3 class="text-lg font-semibold mb-2">{item.title}</h3>
-              <p class="text-sm text-muted">{item.desc}</p>
+              <h3 class="text-xl font-semibold mb-2">{item.title}</h3>
+              <p class="text-base text-muted">{item.desc}</p>
             </div>
             <span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:underline">
               Zobraziť <span aria-hidden="true">→</span>
@@ -230,8 +230,8 @@ const faqSchema = {
             href={item.href}
             class="group flex items-center justify-between rounded-xl border border-gray-200 bg-white p-5 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
           >
-            <span class="font-medium">{item.title}</span>
-            <span class="text-primary" aria-hidden="true">
+            <span class="text-lg font-medium">{item.title}</span>
+            <span class="text-primary text-lg" aria-hidden="true">
               →
             </span>
           </a>
@@ -249,8 +249,8 @@ const faqSchema = {
             href={item.href}
             class="group flex items-center justify-between rounded-xl border border-gray-200 bg-white p-5 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
           >
-            <span class="font-medium">{item.title}</span>
-            <span class="text-primary" aria-hidden="true">
+            <span class="text-lg font-medium">{item.title}</span>
+            <span class="text-primary text-lg" aria-hidden="true">
               →
             </span>
           </a>
@@ -270,7 +270,7 @@ const faqSchema = {
           >
             <div>
               <h3 class="text-lg font-semibold mb-2">{item.title}</h3>
-              {item.desc && <p class="text-sm text-muted">{item.desc}</p>}
+              {item.desc && <p class="text-base text-muted">{item.desc}</p>}
             </div>
             <span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:underline">
               Otvoriť <span aria-hidden="true">→</span>
