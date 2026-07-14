@@ -1,56 +1,78 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Layout from '~/layouts/PageLayout.astro';
+import { energyMemo, newsletter, newest, firstSentence } from '~/data/aktuality';
 
 const metadata = {
   title: 'RKS: bezpečnostné systémy, rádiové siete a energetika pre firmy',
   ignoreTitleTemplate: true,
 };
 
-const cards = [
+// Dve velke karty, kazda s inym dorazom
+const karty = [
   {
     title: 'Bezpečnostné systémy a rádiové siete',
     description:
-      'Rádiové siete, varovacie a evakuačné systémy, MOTOTRBO. Pre záchranné zložky, samosprávy a priemysel.',
-    cta: 'Vstúpiť',
+      'Kritická komunikácia, ktorá funguje aj vtedy, keď vypadnú mobilné siete. Rádiové siete, systémy varovania a evakuačný rozhlas.',
+    vyuzitie: 'jadrové elektrárne, železnice, chemický priemysel, výrobné závody, samosprávy',
     href: '/radiokomunikacie',
   },
   {
     title: 'Energetika',
-    description: 'EMS, fotovoltika, batérie, EV nabíjačky, smart building. Pre B2B firmy a komerčné budovy.',
-    cta: 'Vstúpiť',
+    description:
+      'Znižovanie nákladov na energie a prevádzku budov. EMS, fotovoltika, batérie, EV nabíjačky, smart building.',
+    vyuzitie: 'komerčné budovy, výrobné závody, logistické centrá',
     href: '/energetika',
-  },
-  {
-    title: 'Aktuality',
-    description: 'Newslettre, blogy, časté otázky a prípadové štúdie.',
-    cta: 'Otvoriť',
-    href: '/aktuality',
-  },
-  {
-    title: 'Kontakt',
-    description: '+421 903 277 654\nrks@rksba.sk\nVajnorská 6A, Ivanka pri Dunaji',
-    cta: 'Kontaktovať',
-    href: '/kontakt',
   },
 ];
 
-const why = [
-  { title: '30+ rokov skúseností (od 1991)', icon: 'tabler:award' },
-  { title: 'Silní technologickí partneri', icon: 'tabler:building-skyscraper' },
-  { title: 'Projekt + realizácia + servis pod jednou strechou', icon: 'tabler:home' },
+// Ako rozmyslame (nahradza Preco RKS)
+const pristup = [
   {
-    title: 'Certifikovaná kvalita a oprávnenia',
-    text: 'Systém manažérstva ISO 9001, 14001 a 45001. Oprávnenie Technickej inšpekcie SR na opravu a výrobu vyhradených elektrických zariadení do 1000 V.',
-    icon: 'tabler:certificate',
+    title: 'Navrhujeme podľa ekonomiky projektu.',
+    text: 'Riešenie musí dávať zmysel aj v tabuľke, nielen v katalógu. Začíname analýzou, nie produktom.',
+    icon: 'tabler:calculator',
+  },
+  {
+    title: 'Technológie prepájame do jedného celku.',
+    text: 'Rádiová sieť, varovanie a energetika nie sú tri oddelené svety. Navrhujeme ich tak, aby spolu fungovali.',
+    icon: 'tabler:plug-connected',
+  },
+  {
+    title: 'Myslíme na budúce rozšírenie.',
+    text: 'Sieť, ktorá sa nedá rozšíriť, je len odložený problém. Navrhujeme s rezervou.',
+    icon: 'tabler:arrows-maximize',
+  },
+  {
+    title: 'Servisujeme to, čo navrhneme.',
+    text: 'Nezmizneme po odovzdaní. Projekt, realizácia aj servis sú pod jednou strechou.',
+    icon: 'tabler:tool',
+  },
+];
+
+// Najnovsie clanky z oboch vetiev (dynamicky z ~/data/aktuality)
+const aktuality = [
+  { vetva: 'Bezpečnostné systémy a rádiové siete', post: newest(newsletter) },
+  { vetva: 'Energetika', post: newest(energyMemo) },
+];
+
+const nastroje = [
+  {
+    title: 'RKS Chatbot',
+    text: 'Odborný poradca. Odpovie na 347 otázok.',
+    href: 'https://rks-radio-expert.vercel.app/',
+  },
+  {
+    title: 'Slovník pojmov',
+    text: '50 odborných hesiel, od PTT po krytie IP67.',
+    href: '/slovnik',
   },
 ];
 ---
 
 <Layout metadata={metadata}>
-  <!-- SEKCIA 1 — HERO (video pozadie) -->
+  <!-- SEKCIA 1: HERO (video pozadie) -->
   <section class="relative isolate overflow-hidden">
-    <!-- video pozadie -->
     <video
       class="absolute inset-0 -z-10 h-full w-full object-cover"
       autoplay
@@ -64,16 +86,19 @@ const why = [
     >
       <source src="/videos/rks-hero.mp4" type="video/mp4" />
     </video>
-    <!-- tmavý overlay pre čitateľnosť bieleho textu -->
     <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/55 via-black/45 to-black/65"></div>
 
     <div class="mx-auto max-w-5xl px-4 sm:px-6 py-24 md:py-36 text-center">
       <p class="text-sm font-medium uppercase tracking-wider text-white/90 mb-3">
-        Slovenská technologická firma od 1991
+        Slovenská technologická firma od roku 1991
       </p>
       <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-balance text-white drop-shadow-lg">
-        30 rokov technológií pre slovenský B2B trh
+        Bezpečnostné systémy, rádiové siete a energetika pre firmy
       </h1>
+      <p class="mt-5 text-lg text-white/90 max-w-3xl mx-auto text-balance drop-shadow">
+        Od roku 1991 navrhujeme riešenia od prvej analýzy až po servis. Dodávame do jadrových elektrární, na železnice,
+        do plynárenstva a priemyslu.
+      </p>
       <div class="mt-8">
         <a href="/lp/konzultacia.html?utm_source=web&utm_campaign=web" class="btn-primary inline-flex"
           >Dohodnúť nezáväznú konzultáciu</a
@@ -82,21 +107,24 @@ const why = [
     </div>
   </section>
 
-  <!-- SEKCIA 2 — 4 ŠTVORCOVÉ KARTY -->
-  <section class="mx-auto max-w-7xl px-4 sm:px-6 pb-12 md:pb-20">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  <!-- SEKCIA 2: DVE VELKE KARTY -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {
-        cards.map((card) => (
+        karty.map((card) => (
           <a
             href={card.href}
-            class="group flex aspect-square flex-col justify-between rounded-xl border border-gray-200 bg-white p-8 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
+            class="group flex flex-col justify-between rounded-2xl border border-gray-200 bg-white p-8 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
           >
             <div>
-              <h2 class="text-2xl font-medium tracking-tight mb-3">{card.title}</h2>
-              <p class="text-base text-muted whitespace-pre-line">{card.description}</p>
+              <h2 class="text-2xl font-semibold tracking-tight mb-3">{card.title}</h2>
+              <p class="text-base text-muted">{card.description}</p>
+              <p class="text-sm text-muted mt-4">
+                <span class="font-semibold text-gray-800">Typické využitie:</span> {card.vyuzitie}
+              </p>
             </div>
             <span class="mt-6 inline-flex items-center gap-1 font-medium text-primary group-hover:underline">
-              {card.cta} <span aria-hidden="true">→</span>
+              Vstúpiť <span aria-hidden="true">→</span>
             </span>
           </a>
         ))
@@ -104,29 +132,29 @@ const why = [
     </div>
   </section>
 
-  <!-- SEKCIA 3 — PREČO RKS -->
+  <!-- SEKCIA 3: AKO ROZMYSLAME -->
   <section class="mx-auto max-w-6xl px-4 sm:px-6 pb-16 md:pb-24">
-    <h2 class="text-2xl md:text-3xl font-medium tracking-tight text-center mb-10">Prečo RKS</h2>
+    <h2 class="text-2xl md:text-3xl font-medium tracking-tight text-center mb-10">Ako rozmýšľame</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       {
-        why.map((item) => (
+        pristup.map((item) => (
           <div class="flex flex-col items-center text-center">
             <Icon name={item.icon} class="w-8 h-8 text-primary mb-3" />
-            <p class="text-base font-medium">{item.title}</p>
-            {item.text && <p class="text-sm text-muted mt-1">{item.text}</p>}
+            <p class="text-base font-semibold">{item.title}</p>
+            <p class="text-sm text-muted mt-2">{item.text}</p>
           </div>
         ))
       }
     </div>
   </section>
 
-  <!-- SEKCIA 4 — OVERENÁ ODBORNOSŤ -->
+  <!-- SEKCIA 4: OVERENA ODBORNOST -->
   <section class="mx-auto max-w-6xl px-4 sm:px-6 pb-16 md:pb-24">
     <div class="rounded-2xl border border-gray-200 bg-gray-50 p-8 md:p-12 text-center">
       <h2 class="text-2xl md:text-3xl font-medium tracking-tight mb-4">Overená odbornosť</h2>
       <p class="text-base md:text-lg text-muted max-w-3xl mx-auto">
-        Za 35 rokov praxe sme si vybudovali zázemie doložené certifikáciami. Máme zavedené systémy manažérstva podľa
-        noriem ISO 9001, ISO 14001 a ISO 45001 a sme autorizovaný partner Motorola Solutions. Držíme oprávnenia
+        Za viac ako 30 rokov praxe sme si vybudovali zázemie doložené certifikáciami. Máme zavedené systémy manažérstva
+        podľa noriem ISO 9001, ISO 14001 a ISO 45001 a sme autorizovaný partner Motorola Solutions. Držíme oprávnenia
         Technickej inšpekcie na opravu aj výrobu vyhradených elektrických zariadení. Naše referencie zahŕňajú jadrové
         elektrárne, železnice, plynárenstvo a priemysel.
       </p>
@@ -137,6 +165,54 @@ const why = [
           class="inline-flex items-center rounded-full border border-primary px-5 py-2.5 font-semibold text-primary transition hover:bg-primary/5"
           >Referencie</a
         >
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKCIA 5: AKTUALITY A NASTROJE -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 pb-16 md:pb-24">
+    <h2 class="text-2xl md:text-3xl font-medium tracking-tight mb-8">Aktuality a nástroje</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Vlavo: aktuality z oboch vetiev -->
+      <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {
+          aktuality.map((item) => (
+            <a
+              href={item.post.href}
+              class="group flex flex-col rounded-xl border border-gray-200 bg-white p-6 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
+            >
+              <p class="text-xs font-semibold uppercase tracking-wider text-primary mb-2">{item.vetva}</p>
+              <h3 class="text-lg font-semibold tracking-tight">{item.post.title}</h3>
+              <p class="text-sm text-muted mt-1">{item.post.date}</p>
+              <p class="text-sm text-muted mt-3">{firstSentence(item.post.excerpt)}</p>
+            </a>
+          ))
+        }
+        <p class="sm:col-span-2 text-sm">
+          <a href="/newsletter-odber" class="text-primary font-medium hover:underline"
+            >Prihlásiť sa na odber <span aria-hidden="true">→</span></a
+          >
+        </p>
+      </div>
+
+      <!-- Vpravo: nastroje -->
+      <div class="grid grid-cols-1 gap-6">
+        {
+          nastroje.map((item) => (
+            <a
+              href={item.href}
+              class="group flex flex-col justify-between rounded-xl border border-gray-200 bg-white p-6 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
+            >
+              <div>
+                <h3 class="text-lg font-semibold tracking-tight mb-2">{item.title}</h3>
+                <p class="text-sm text-muted">{item.text}</p>
+              </div>
+              <span class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:underline">
+                Otvoriť <span aria-hidden="true">→</span>
+              </span>
+            </a>
+          ))
+        }
       </div>
     </div>
   </section>
