@@ -9,8 +9,9 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: 'RKS — energetické riešenia a rádiokomunikácie pre firmy'
-    template: '%s — RKS'
+    # Jednotlivé stránky už majú v title "| RKS", preto šablóna nič nepridáva.
+    default: 'RKS: bezpečnostné systémy, rádiové siete a energetika pre firmy'
+    template: '%s'
   description: 'Slovenská technologická firma od 1991. Energetika, rádiokomunikácie, varovné systémy pre firmy a komerčné budovy.'
   robots:
     # Faza pripomienkovania na new.rksba.sk: cely web je noindex, nofollow.
