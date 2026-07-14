@@ -1,13 +1,134 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Layout from '~/layouts/PageLayout.astro';
 
-const metadata = { title: 'O nás | RKS' };
+const metadata = {
+  title: 'O nás | RKS',
+  description:
+    'RKS, spol. s r.o. je slovenská technologická firma. Od roku 1991 navrhujeme, staviame a servisujeme rádiové siete, systémy varovania a vyrozumenia, evakuačný rozhlas a energetické riešenia pre firmy.',
+};
+
+// Prevzate doslova z bloku "Ako rozmyslame" na domovskej stranke, aby si firma neprotirecila.
+const akoPracujeme = [
+  {
+    title: 'Navrhujeme podľa ekonomiky projektu.',
+    text: 'Riešenie musí dávať zmysel aj v tabuľke, nielen v katalógu. Začíname analýzou, nie produktom.',
+    icon: 'tabler:calculator',
+  },
+  {
+    title: 'Technológie prepájame do jedného celku.',
+    text: 'Rádiová sieť, varovanie a energetika nie sú tri oddelené svety. Navrhujeme ich tak, aby spolu fungovali.',
+    icon: 'tabler:plug-connected',
+  },
+  {
+    title: 'Myslíme na budúce rozšírenie.',
+    text: 'Sieť, ktorá sa nedá rozšíriť, je len odložený problém. Navrhujeme s rezervou.',
+    icon: 'tabler:arrows-maximize',
+  },
+  {
+    title: 'Servisujeme to, čo navrhneme.',
+    text: 'Nezmizneme po odovzdaní. Projekt, realizácia aj servis sú pod jednou strechou.',
+    icon: 'tabler:tool',
+  },
+];
+
+// Mena su prevzate zo stranky /referencie.
+const referencie = [
+  'Slovenské elektrárne (EMO Mochovce, EBO Jaslovské Bohunice)',
+  'Železnice SR',
+  'SPP',
+  'Národná diaľničná spoločnosť',
+  'Duslo',
+  'Zentiva',
+  'RAJO',
+  'Evonik',
+  'Slovakiaring',
+];
 ---
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
     <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/">← Domov</a></p>
     <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">O nás</h1>
-    <p class="text-lg text-muted">Obsah dorobíme neskôr.</p>
+    <p class="text-lg text-muted max-w-3xl">
+      RKS, spol. s r.o. je slovenská technologická firma. Od roku 1991 navrhujeme, staviame a servisujeme rádiové siete,
+      systémy varovania a vyrozumenia, evakuačný rozhlas a energetické riešenia pre firmy.
+    </p>
+
+    <!-- Co robime -->
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-4">Čo robíme</h2>
+    <p class="text-base text-muted max-w-3xl">
+      V bezpečnostných systémoch a rádiových sieťach navrhujeme, staviame a servisujeme profesionálne rádiové siete,
+      systémy varovania a vyrozumenia a evakuačný rozhlas (<a
+        class="text-primary hover:underline"
+        href="/radiokomunikacie">Bezpečnostné systémy a rádiové siete</a
+      >). V energetike navrhujeme a dodávame energetické riešenia pre firmy a komerčné budovy (<a
+        class="text-primary hover:underline"
+        href="/energetika">Energetika</a
+      >).
+    </p>
+
+    <!-- Ako pracujeme -->
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Ako pracujeme</h2>
+    <div class="grid gap-8 sm:grid-cols-2">
+      {
+        akoPracujeme.map((item) => (
+          <div class="flex gap-4">
+            <Icon name={item.icon} class="w-8 h-8 flex-none text-primary" />
+            <div>
+              <p class="text-lg font-semibold">{item.title}</p>
+              <p class="text-base text-muted mt-1">{item.text}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Cim to dokladame -->
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-4">Čím to dokladáme</h2>
+    <p class="text-base text-muted max-w-3xl">
+      Odbornosť dokladáme certifikátmi a oprávneniami: systémy manažérstva podľa noriem STN EN ISO 9001:2016, STN EN ISO
+      14001:2016 a STN ISO 45001:2019, autorizované partnerstvo Motorola PartnerEmpower (Silver Authorized Reseller
+      2026) a oprávnenia Technickej inšpekcie SR na opravu aj výrobu vyhradených technických zariadení elektrických.
+    </p>
+    <p class="mt-4 text-base">
+      <a href="/certifikaty" class="text-primary font-medium hover:underline"
+        >Pozrieť certifikáty <span aria-hidden="true">→</span></a
+      >
+    </p>
+
+    <!-- Komu dodavame -->
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-4">Komu dodávame</h2>
+    <p class="text-base text-muted max-w-3xl mb-5">Medzi našich zákazníkov patria napríklad:</p>
+    <div class="flex flex-wrap gap-3">
+      {
+        referencie.map((name) => (
+          <span class="rounded-lg border border-gray-200 bg-white px-4 py-2 text-base font-medium">{name}</span>
+        ))
+      }
+    </div>
+    <p class="mt-5 text-base">
+      <a href="/referencie" class="text-primary font-medium hover:underline"
+        >Všetky referencie <span aria-hidden="true">→</span></a
+      >
+    </p>
+
+    <!-- Sidlo a kontakt -->
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-4">Sídlo a kontakt</h2>
+    <p class="text-base text-muted max-w-3xl">
+      Sídlo, adresu prevádzky a kontaktné údaje nájdete na stránke
+      <a class="text-primary hover:underline" href="/kontakt">Kontakt</a>.
+    </p>
+
+    <!-- CTA -->
+    <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Máte projekt, ktorý treba navrhnúť a postaviť?</h2>
+      <p class="text-muted mb-6 max-w-xl mx-auto">Prejdeme si vašu prevádzku a navrhneme riešenie na mieru.</p>
+      <a href="/lp/konzultacia.html?utm_source=web&utm_campaign=web" class="btn-primary inline-flex"
+        >Dohodnúť nezáväznú konzultáciu</a
+      >
+    </div>
   </section>
+
+  <!-- TODO: doplniť fotky a mená tímu, keď budú k dispozícii -->
 </Layout>
