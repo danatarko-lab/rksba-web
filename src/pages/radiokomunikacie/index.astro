@@ -6,69 +6,146 @@ import heroRadiostanica from '~/assets/images/rk-hub-radiostanica.webp';
 const metadata = {
   title: 'Bezpečnostné systémy a rádiové siete | RKS',
   description:
-    'Komplexné rádiokomunikačné a varovné systémy od roku 1991. Návrh, projekt, realizácia a servis rádiových sietí, sirén a evakuačného rozhlasu.',
+    'Od roku 1991 navrhujeme, staviame a servisujeme rádiové siete, systémy varovania a evakuačný rozhlas. Technológie Motorola Solutions a CALTTA.',
 };
 
-const systemoveRiesenia = [
+// Pas doveryhodnosti (fakty potvrdene na /certifikaty)
+const dovera = [
+  { big: '30+ rokov', small: 'na trhu, od roku 1991' },
+  { big: '3 normy ISO', small: '9001 kvalita, 14001 životné prostredie, 45001 bezpečnosť práce' },
+  { big: 'Motorola Silver', small: 'autorizovaný partner PartnerEmpower' },
+  { big: 'Technická inšpekcia SR', small: 'oprávnenie na opravu aj výrobu vyhradených technických zariadení' },
+];
+
+const bezpecnostne = [
   {
-    title: 'Rádiové siete',
-    desc: 'Profesionálna komunikácia pre firmy a organizácie — od voľných frekvencií po vlastné a trunkové siete.',
-    href: '/radiokomunikacie/systemove-riesenia/radiove-siete',
-  },
-  {
-    title: 'Autonómne systémy varovania',
-    desc: 'Systémy varovania a vyrozumenia (VAR-VYR) pre ohrozovateľov podľa vyhlášky MV SR č. 388/2006 Z. z.',
+    title: 'Autonómne systémy varovania (VAR-VYR)',
+    desc: 'Pre ohrozovateľov podľa vyhlášky MV SR č. 388/2006 Z. z. Sirény, ovládanie, prepojenie na krízové riadenie.',
     href: '/radiokomunikacie/systemove-riesenia/autonomne-systemy-varovania',
   },
   {
     title: 'Evakuačný rozhlas a ozvučenie',
-    desc: 'Evakuačný rozhlas a ozvučenie objektov podľa noriem STN EN 60849 a EN 54.',
+    desc: 'Certifikované systémy podľa STN EN 60849 a EN 54. Nie je to bežné ozvučenie, je to bezpečnostný systém.',
     href: '/radiokomunikacie/systemove-riesenia/evakuacny-rozhlas',
   },
 ];
 
-const sluzby = [
+const radioveSiete = [
   {
-    title: 'Servis a oprava rádiostaníc',
-    desc: 'Záručný aj pozáručný servis zabezpečujú školení technici a servisné skupiny s dlhoročnými skúsenosťami.',
+    title: 'Rádiové siete',
+    desc: 'Od voľných frekvencií po vlastné a trunkové siete.',
+    href: '/radiokomunikacie/systemove-riesenia/radiove-siete',
   },
   {
-    title: 'Prenájom rádiostaníc',
-    desc: 'RKS je držiteľom povolenia od Úradu pre reguláciu elektronických komunikácií a poštových služieb na prenájom rádiostaníc.',
+    title: 'Návrh rádiových sietí',
+    desc: 'Meranie pokrytia, návrh, výpočet a projekt.',
+    href: '/radiokomunikacie/sluzby/navrh-radiovych-sieti',
   },
   {
-    title: 'Projektovanie elektrických zariadení',
-    desc: 'Projektová príprava elektrických zariadení vrátane transformácie IEC noriem do projektov.',
+    title: 'Audit rádiových sietí',
+    desc: 'Máte sieť a nefunguje, ako má? Zmeriame, kde je problém.',
+    href: '/radiokomunikacie/sluzby/audit-sieti',
   },
   {
-    title: 'Elektroinštalačné práce',
-    desc: 'Silnoprúdové aj dátové rozvody a vonkajšie rozvody — realizácia na kľúč.',
+    title: 'Digitalizácia sietí',
+    desc: 'Prechod z analógovej siete na digitálnu bez prerušenia prevádzky.',
+    href: '/radiokomunikacie/sluzby/digitalizacia-sieti',
   },
 ];
 
-const sluzbyLinks = [
-  { title: 'Základné informácie', href: '/radiokomunikacie/sluzby/zakladne-informacie' },
+const sluzby = [
   { title: 'Servis rádiostaníc', href: '/radiokomunikacie/sluzby/servis-radiostanic' },
   { title: 'Prenájom rádiostaníc', href: '/radiokomunikacie/sluzby/prenajom-radiostanic' },
-  { title: 'Návrh rádiových sietí', href: '/radiokomunikacie/sluzby/navrh-radiovych-sieti' },
-  { title: 'Návrh autonómnych systémov', href: '/radiokomunikacie/sluzby/navrh-autonomnych-systemov' },
   { title: 'Projekty elektrických zariadení', href: '/radiokomunikacie/sluzby/projekty-elektrickych-zariadeni' },
   { title: 'Elektroinštalačné práce', href: '/radiokomunikacie/sluzby/elektroinstalacne-prace' },
-  { title: 'Digitálny systém MOTOTRBO', href: '/radiokomunikacie/sluzby/digitalny-system-mototrbo' },
-  { title: 'Audit sietí', href: '/radiokomunikacie/sluzby/audit-sieti' },
-  { title: 'Digitalizácia sietí', href: '/radiokomunikacie/sluzby/digitalizacia-sieti' },
+  { title: 'Základné informácie', href: '/radiokomunikacie/sluzby/zakladne-informacie' },
 ];
+
+const produkty = [
+  { title: 'Rádiostanice MOTOROLA (DMR)', href: 'https://mototrbo.sk' },
+  { title: 'Rádiostanice CALTTA', href: '/produkty/radiostanice-caltta' },
+  {
+    title: 'Varovacie a vyrozumievacie systémy',
+    href: '/katalog-produktov/kategoria/varovacie-a-vyrozumievacie-systemy',
+  },
+  { title: 'Evakuačné systémy', href: '/katalog-produktov/kategoria/evakuacne-systemy' },
+  { title: 'Archív produktov', href: '/katalog-produktov/kategoria/radiostanice' },
+];
+
+const nastroje = [
+  {
+    title: 'RKS Chatbot',
+    desc: 'Odborný poradca. Odpovie na 347 otázok o rádiových sieťach a bezpečnostných systémoch.',
+    href: 'https://rks-radio-expert.vercel.app/',
+  },
+  { title: 'Slovník pojmov', desc: '50 odborných hesiel, od PTT po krytie IP67.', href: '/slovnik' },
+  { title: 'Q&A Rádiokomunikácie', href: '/radiokomunikacie/q-a' },
+  { title: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
+  { title: 'Newsletter „Potvrďte príjem“', href: '/radiokomunikacie/newsletter' },
+];
+
+// Referencie (mena potvrdene na /referencie, loga doplnime neskor)
+const referencie = [
+  'Slovenské elektrárne (EMO Mochovce, EBO Bohunice)',
+  'Železnice SR',
+  'SPP',
+  'Národná diaľničná spoločnosť',
+  'Duslo',
+  'Zentiva',
+  'RAJO',
+  'Evonik',
+  'Slovakiaring',
+];
+
+// Caste otazky. Odpovede su prevzate z existujucich stranok (/radiokomunikacie/q-a
+// a /radiokomunikacie/systemove-riesenia/evakuacny-rozhlas); typograficke pomlcky
+// su nahradene obycajnou interpunkciou, slova su nezmenene.
+const faqs = [
+  {
+    q: 'Kedy sa oplatí používať profesionálne rádiostanice namiesto mobilných telefónov?',
+    a: 'Všade tam, kde pracovníci potrebujú okamžitú skupinovú komunikáciu, vysokú spoľahlivosť a nezávislosť od mobilných operátorov, najmä vo výrobe, energetike, logistike, stavebníctve, bezpečnostných službách a pri správe kritickej infraštruktúry.',
+  },
+  {
+    q: 'Aký je rozdiel medzi analógovou a digitálnou rádiovou sieťou?',
+    a: 'Digitálne siete poskytujú kvalitnejší prenos hlasu, vyššiu kapacitu, šifrovanie, GPS lokalizáciu, dátové služby a jednoduchšiu správu. Analógové siete sú vhodné pre jednoduchšie aplikácie.',
+  },
+  {
+    q: 'Musím mať povolenie na používanie profesionálnych rádiostaníc?',
+    a: 'Záleží od prevádzky. Niektoré stanice pracujú na voľných frekvenciách, profesionálne siete využívajú individuálne pridelené frekvencie. RKS pomáha s výberom riešenia aj s administratívou.',
+  },
+  {
+    q: 'Aký dosah majú profesionálne rádiostanice?',
+    a: 'Závisí od výkonu, terénu, frekvencií a infraštruktúry. V otvorenom priestore niekoľko kilometrov; s retranslačnými stanicami alebo digitálnou sieťou možno pokryť celé mestá alebo rozsiahle areály.',
+  },
+  {
+    q: 'Načo slúži evakuačný rozhlas?',
+    a: 'Na zaistenie bezpečnej evakuácie pri ohrození, informuje o nutnosti opustiť objekt cez obsluhu ohlasovne požiaru alebo vopred nahovorenými správami. Slúži aj na bežné odovzdávanie informácií.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
+};
 ---
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
-    <div class="grid items-center gap-8 lg:gap-12 lg:grid-cols-2 mb-14">
+    <!-- Hero -->
+    <div class="grid items-center gap-8 lg:gap-12 lg:grid-cols-2 mb-12">
       <div>
-        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Rádiokomunikácie</h1>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Bezpečnostné systémy a rádiové siete</h1>
         <p class="text-lg text-muted">
-          Už od roku 1991 dodávame komplexné rádiokomunikačné, varovné a krízové systémy. Pre záchranné zložky,
-          priemysel a samosprávy zabezpečujeme návrh, projekt, realizáciu aj servis — s technológiami značiek ako
-          Motorola, Midland, Vertex či Icom.
+          Od roku 1991 navrhujeme, staviame a servisujeme rádiové siete, systémy varovania a evakuačný rozhlas. Pre
+          priemysel, energetiku, dopravu a samosprávy. Dodávame technológie Motorola Solutions a CALTTA.
         </p>
       </div>
       <Image
@@ -82,11 +159,29 @@ const sluzbyLinks = [
       />
     </div>
 
-    <!-- Systémové riešenia — rozcestník -->
-    <h2 class="text-2xl font-semibold tracking-tight mb-6">Systémové riešenia</h2>
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-16">
+    <!-- Pas doveryhodnosti -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
       {
-        systemoveRiesenia.map((item) => (
+        dovera.map((item) => (
+          <div class="rounded-xl border border-gray-200 p-5">
+            <p class="text-lg font-semibold tracking-tight">{item.big}</p>
+            <p class="text-sm text-muted mt-1">{item.small}</p>
+          </div>
+        ))
+      }
+    </div>
+    <p class="mb-16 text-sm">
+      <a href="/certifikaty" class="text-primary font-medium hover:underline"
+        >Pozrieť certifikáty <span aria-hidden="true">→</span></a
+      >
+    </p>
+
+    <!-- Bezpecnostne systemy -->
+    <h2 class="text-2xl font-semibold tracking-tight mb-2">Bezpečnostné systémy</h2>
+    <p class="text-muted max-w-3xl mb-6">Varovanie, vyrozumenie a evakuácia. Tam, kde ide o ľudské životy.</p>
+    <div class="grid gap-6 sm:grid-cols-2 mb-16">
+      {
+        bezpecnostne.map((item) => (
           <a
             href={item.href}
             class="group flex flex-col justify-between rounded-xl border border-gray-200 bg-white p-6 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
@@ -103,43 +198,132 @@ const sluzbyLinks = [
       }
     </div>
 
-    <!-- Služby zákazníkom -->
-    <h2 class="text-2xl font-semibold tracking-tight mb-2">Služby zákazníkom</h2>
-    <p class="text-muted max-w-3xl mb-6">
-      Okrem systémových riešení poskytujeme celý rad odborných služieb pre prevádzku a údržbu rádiokomunikačnej
-      techniky.
-    </p>
-    <div class="grid gap-6 sm:grid-cols-2 mb-8">
+    <!-- Radiove siete -->
+    <h2 class="text-2xl font-semibold tracking-tight mb-2">Rádiové siete</h2>
+    <p class="text-muted max-w-3xl mb-6">Aby sa vaši ľudia dovolali vždy. Aj tam, kde nie je signál.</p>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-16">
       {
-        sluzby.map((item) => (
-          <div class="rounded-xl border border-gray-200 p-6">
-            <h3 class="text-lg font-semibold mb-2">{item.title}</h3>
-            <p class="text-sm text-muted">{item.desc}</p>
-          </div>
+        radioveSiete.map((item) => (
+          <a
+            href={item.href}
+            class="group flex flex-col justify-between rounded-xl border border-gray-200 bg-white p-6 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
+          >
+            <div>
+              <h3 class="text-lg font-semibold mb-2">{item.title}</h3>
+              <p class="text-sm text-muted">{item.desc}</p>
+            </div>
+            <span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:underline">
+              Zobraziť <span aria-hidden="true">→</span>
+            </span>
+          </a>
         ))
       }
     </div>
 
-    <div class="rounded-xl border border-gray-200 p-6 mb-16">
-      <h3 class="text-base font-semibold mb-4">Všetky služby</h3>
-      <ul class="grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3 text-sm">
-        {
-          sluzbyLinks.map((item) => (
-            <li>
-              <a href={item.href} class="text-muted hover:text-primary hover:underline">
-                {item.title}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-      <p class="mt-5 text-sm">
-        <a href="/radiokomunikacie/produkty/mototrbo" class="text-primary font-medium hover:underline">
-          Produkty: digitálny systém Mototrbo →
-        </a>
-      </p>
+    <!-- Sluzby (zoznam, bez kariet) -->
+    <h2 class="text-2xl font-semibold tracking-tight mb-2">Služby</h2>
+    <p class="text-muted max-w-3xl mb-6">Prevádzka, údržba a všetko, čo k tomu patrí.</p>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-16">
+      {
+        sluzby.map((item) => (
+          <a
+            href={item.href}
+            class="group flex items-center justify-between rounded-xl border border-gray-200 bg-white p-5 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
+          >
+            <span class="font-medium">{item.title}</span>
+            <span class="text-primary" aria-hidden="true">
+              →
+            </span>
+          </a>
+        ))
+      }
     </div>
 
+    <!-- Produkty -->
+    <h2 class="text-2xl font-semibold tracking-tight mb-2">Produkty</h2>
+    <p class="text-muted max-w-3xl mb-6">Čo dodávame a čo držíme na sklade.</p>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-16">
+      {
+        produkty.map((item) => (
+          <a
+            href={item.href}
+            class="group flex items-center justify-between rounded-xl border border-gray-200 bg-white p-5 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
+          >
+            <span class="font-medium">{item.title}</span>
+            <span class="text-primary" aria-hidden="true">
+              →
+            </span>
+          </a>
+        ))
+      }
+    </div>
+
+    <!-- Nastroje a aktuality -->
+    <h2 class="text-2xl font-semibold tracking-tight mb-2">Nástroje a aktuality</h2>
+    <p class="text-muted max-w-3xl mb-6">Poradíme aj bez toho, aby ste museli volať.</p>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-4">
+      {
+        nastroje.map((item) => (
+          <a
+            href={item.href}
+            class="group flex flex-col justify-between rounded-xl border border-gray-200 bg-white p-6 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
+          >
+            <div>
+              <h3 class="text-lg font-semibold mb-2">{item.title}</h3>
+              {item.desc && <p class="text-sm text-muted">{item.desc}</p>}
+            </div>
+            <span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:underline">
+              Otvoriť <span aria-hidden="true">→</span>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+    <p class="mb-16 text-sm">
+      <a href="/newsletter-odber" class="text-primary font-medium hover:underline"
+        >Prihlásiť sa na odber <span aria-hidden="true">→</span></a
+      >
+    </p>
+
+    <!-- Referencie -->
+    <h2 class="text-2xl font-semibold tracking-tight mb-6">Dodávali sme pre</h2>
+    <div class="flex flex-wrap gap-3 mb-4">
+      {
+        referencie.map((name) => (
+          <span class="rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium">{name}</span>
+        ))
+      }
+    </div>
+    <p class="mb-16 text-sm">
+      <a href="/referencie" class="text-primary font-medium hover:underline"
+        >Všetky referencie <span aria-hidden="true">→</span></a
+      >
+    </p>
+
+    <!-- Caste otazky -->
+    <h2 class="text-2xl font-semibold tracking-tight mb-6">Časté otázky</h2>
+    <div class="space-y-4 mb-4">
+      {
+        faqs.map((faq) => (
+          <details class="group rounded-xl border border-gray-200 p-5">
+            <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
+              {faq.q}
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">
+                +
+              </span>
+            </summary>
+            <p class="text-muted mt-3">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+    <p class="mb-16 text-sm">
+      <a href="/radiokomunikacie/q-a" class="text-primary font-medium hover:underline"
+        >Všetkých 15 otázok <span aria-hidden="true">→</span></a
+      >
+    </p>
+
+    <!-- Konzultacia -->
     <div class="rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
       <h2 class="text-xl md:text-2xl font-semibold mb-3">Nie ste si istí, ktoré riešenie potrebujete?</h2>
       <p class="text-muted mb-6 max-w-xl mx-auto">Poradíme vám a navrhneme komunikačné riešenie na mieru.</p>
@@ -148,4 +332,6 @@ const sluzbyLinks = [
       >
     </div>
   </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </Layout>

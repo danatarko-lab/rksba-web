@@ -16,6 +16,10 @@ export const headerData = {
               text: 'Evakuačný rozhlas a ozvučenie',
               href: getPermalink('/radiokomunikacie/systemove-riesenia/evakuacny-rozhlas'),
             },
+            {
+              text: 'Návrh autonómnych systémov',
+              href: getPermalink('/radiokomunikacie/sluzby/navrh-autonomnych-systemov'),
+            },
           ],
         },
         {
@@ -23,14 +27,8 @@ export const headerData = {
           links: [
             { text: 'Rádiové siete', href: getPermalink('/radiokomunikacie/systemove-riesenia/radiove-siete') },
             { text: 'Návrh rádiových sietí', href: getPermalink('/radiokomunikacie/sluzby/navrh-radiovych-sieti') },
-            {
-              text: 'Návrh autonómnych systémov',
-              href: getPermalink('/radiokomunikacie/sluzby/navrh-autonomnych-systemov'),
-            },
             { text: 'Audit rádiových sietí', href: getPermalink('/radiokomunikacie/sluzby/audit-sieti') },
             { text: 'Digitalizácia sietí', href: getPermalink('/radiokomunikacie/sluzby/digitalizacia-sieti') },
-            { text: 'Servis rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/servis-radiostanic') },
-            { text: 'Prenájom rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/prenajom-radiostanic') },
           ],
         },
         {
@@ -43,6 +41,7 @@ export const headerData = {
             { text: 'Elektroinštalačné práce', href: getPermalink('/radiokomunikacie/sluzby/elektroinstalacne-prace') },
             { text: 'Servis rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/servis-radiostanic') },
             { text: 'Prenájom rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/prenajom-radiostanic') },
+            { text: 'Základné informácie', href: getPermalink('/radiokomunikacie/sluzby/zakladne-informacie') },
           ],
         },
         {
@@ -59,14 +58,14 @@ export const headerData = {
           ],
         },
         {
-          text: 'Aktuality',
+          text: 'Nástroje a aktuality',
           links: [
-            { text: 'Newsletter „Potvrďte príjem“', href: getPermalink('/radiokomunikacie/newsletter') },
-            { text: 'Q&A Rádiokomunikácie', href: getPermalink('/radiokomunikacie/q-a') },
             { text: 'RKS Chatbot', href: 'https://rks-radio-expert.vercel.app/' },
-            { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
-            { text: 'Prihlásiť sa na odber', href: getPermalink('/newsletter-odber') },
             { text: 'Slovník pojmov', href: getPermalink('/slovnik') },
+            { text: 'Q&A Rádiokomunikácie', href: getPermalink('/radiokomunikacie/q-a') },
+            { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
+            { text: 'Newsletter „Potvrďte príjem“', href: getPermalink('/radiokomunikacie/newsletter') },
+            { text: 'Prihlásiť sa na odber', href: getPermalink('/newsletter-odber') },
           ],
         },
       ],
