@@ -16,10 +16,6 @@ export const headerData = {
               text: 'Evakuačný rozhlas a ozvučenie',
               href: getPermalink('/radiokomunikacie/systemove-riesenia/evakuacny-rozhlas'),
             },
-            {
-              text: 'Návrh autonómnych systémov',
-              href: getPermalink('/radiokomunikacie/sluzby/navrh-autonomnych-systemov'),
-            },
           ],
         },
         {
