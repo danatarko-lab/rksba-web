@@ -40,6 +40,15 @@ const dodavame = [
   },
 ];
 
+const kroky = [
+  { t: 'Dáta', d: 'Meranie a analýza spotreby (15-minútové dáta, faktúry, rezervovaná kapacita).' },
+  { t: 'Business case', d: 'Čísla, návratnosť, scenáre.' },
+  { t: 'Návrh riešenia', d: 'EMS, FVE, batérie, EV, smart building, podľa ekonomiky, nie katalógu.' },
+  { t: 'Súťaž dodávateľov', d: 'Technológiu vyberáme minimálne z dvoch ponúk, nezávisle od značiek.' },
+  { t: 'Realizácia', d: 'Stavajú certifikovaní partneri pod naším vedením; my riadime, dozorujeme a preberáme.' },
+  { t: 'Meranie výsledku', d: 'Po spustení vyhodnocujeme, či sľúbená úspora reálne prichádza.' },
+];
+
 const faqs = [
   {
     q: 'Od čoho začať, keď chceme znížiť náklady na energie?',
@@ -83,9 +92,10 @@ const faqs = [
     <p class="text-xl md:text-2xl text-muted mb-6">Energetika, ktorá začína dátami</p>
 
     <p class="text-lg border-l-4 border-primary bg-primary/5 rounded-r-lg p-4 mb-6">
-      RKS pomáha firmám znižovať náklady na energie pomocou merania, analýzy dát a správne navrhnutých technológií.
-      Navrhujeme a dodávame Energy Management, fotovoltiku, batériové úložiská, nabíjanie elektromobilov aj smart
-      building — vždy na základe vašej reálnej spotreby.
+      Tvoríme energetické projekty od dát po prevádzku. Zmeriame vašu spotrebu, spočítame business case, navrhneme
+      riešenie a technológiu vyberieme v súťaži, podľa vašich čísel, nie podľa toho, čo má kto na sklade. Realizáciu
+      stavajú certifikovaní partneri pod naším vedením; my projekt riadime, preberáme a ručíme za výsledok. A po
+      spustení meriame, či úspora, ktorú sme sľúbili v tabuľke, naozaj chodí na účet.
     </p>
 
     <p class="text-lg text-muted mb-8">
@@ -143,10 +153,29 @@ const faqs = [
       </p>
     </div>
 
-    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mt-12 mb-3">Čo dodávame</h2>
+    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mt-12 mb-3">Ako vzniká projekt</h2>
     <p class="text-muted mb-6 max-w-3xl">
-      Pokrývame celý energetický koncept budovy alebo areálu — podľa toho, aký výsledok potrebujete:
+      Energetický projekt u nás nevzniká ponukou technológie, ale postupom v šiestich krokoch, od dát až po overenie
+      výsledku:
     </p>
+    <ol class="grid gap-4 sm:grid-cols-2 mb-10">
+      {
+        kroky.map((k, i) => (
+          <li class="flex gap-4 rounded-xl border border-gray-200 bg-white p-5">
+            <span class="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-primary/10 font-semibold text-primary">
+              {i + 1}
+            </span>
+            <div>
+              <p class="font-semibold">{k.t}</p>
+              <p class="text-sm text-muted mt-1">{k.d}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+
+    <h3 class="text-xl font-semibold tracking-tight mt-10 mb-3">Čím projekt skladáme</h3>
+    <p class="text-muted mb-6 max-w-3xl">Stavebné prvky, ktoré navrhujeme a v súťaži vyberáme podľa vašej ekonomiky:</p>
     <div class="grid gap-5 sm:grid-cols-2">
       {
         dodavame.map((s) => (
@@ -183,6 +212,10 @@ const faqs = [
       </p>
 
       <h2>Ako pracujeme</h2>
+      <p class="not-prose text-lg border-l-4 border-primary bg-primary/5 rounded-r-lg p-4">
+        Sme ako architekt vašej stavby: architekt vám nepredáva tehly, navrhne dom, vyberie remeselníkov, dozoruje
+        stavbu a ručí za výsledok. My to isté robíme s vašou energetikou.
+      </p>
       <p>Postupujeme v krokoch, aby ste neinvestovali skôr, než viete prečo:</p>
       <ol>
         <li>
@@ -210,6 +243,10 @@ const faqs = [
 
       <h2>Prečo RKS</h2>
       <ul>
+        <li>
+          <strong>Nezávislý výber technológie.</strong> Návrh nie je viazaný na žiadnu značku, dodávateľov súťažíme podľa
+          vášho business casu, minimálne z dvoch ponúk.
+        </li>
         <li>
           <strong>Prepájame techniku s ekonomikou.</strong> Nielen čo je technicky možné, ale čo dáva zmysel finančne a prevádzkovo.
         </li>
