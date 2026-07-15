@@ -4,7 +4,7 @@ import Layout from '~/layouts/PageLayout.astro';
 const metadata = {
   title: 'Batériové úložiská (BESS) pre firmy | RKS',
   description:
-    'Batériové úložisko (BESS) ukladá lacnú alebo vlastnú elektrinu a využije ju, keď je drahá alebo potrebná. Znižuje špičky, využíva fotovoltiku a zálohuje prevádzku. RKS navrhuje batériu podľa dát a úžitkov — nie podľa kapacity v kWh.',
+    'Batériové úložisko (BESS) ukladá lacnú alebo vlastnú elektrinu a využije ju, keď je drahá alebo potrebná. Znižuje špičky, využíva fotovoltiku a zálohuje prevádzku. RKS navrhuje batériu podľa dát a úžitkov, nie podľa kapacity v kWh.',
 };
 
 const tok = [
@@ -18,7 +18,7 @@ const postup = [
   { title: 'Analýza spotreby a špičiek', desc: 'Zistíme váš profil odberu, špičky a profil výroby.' },
   {
     title: 'Definícia úžitkov',
-    desc: 'Určíme, čo má batéria riešiť — špičky, vlastnú spotrebu, zálohu, alebo kombináciu.',
+    desc: 'Určíme, čo má batéria riešiť: špičky, vlastnú spotrebu, zálohu, alebo kombináciu.',
   },
   { title: 'Business case', desc: 'Spočítame návratnosť cez kombináciu úžitkov, nie cez jeden.' },
   { title: 'Návrh a realizácia', desc: 'Nadimenzujeme batériu a riadenie, zrealizujeme projekt pod jednou strechou.' },
@@ -28,7 +28,7 @@ const postup = [
 const faqs = [
   {
     q: 'Oplatí sa batéria k fotovoltike?',
-    a: 'Často áno — ak veľkú časť výroby dnes predávate do siete za nízku cenu alebo máte spotrebu aj večer. Či sa to oplatí konkrétne u vás, ukáže analýza spotreby.',
+    a: 'Často áno, ak veľkú časť výroby dnes predávate do siete za nízku cenu alebo máte spotrebu aj večer. Či sa to oplatí konkrétne u vás, ukáže analýza spotreby.',
   },
   {
     q: 'Je batéria vhodná aj bez fotovoltiky?',
@@ -36,18 +36,18 @@ const faqs = [
   },
   {
     q: 'Ako sa počíta návratnosť batérie?',
-    a: 'Cez kombináciu úžitkov — koľko ušetríte na špičkách, koľko vlastnej výroby využijete navyše, akú hodnotu má záloha. Návratnosť postavená len na jednom úžitku býva slabá.',
+    a: 'Cez kombináciu úžitkov: koľko ušetríte na špičkách, koľko vlastnej výroby využijete navyše, akú hodnotu má záloha. Návratnosť postavená len na jednom úžitku býva slabá.',
   },
   {
     q: 'Funguje batéria ako záloha pri výpadku prúdu?',
-    a: 'Môže — ak je tak navrhnutá. Nie každá batéria automaticky zálohuje prevádzku; backup režim treba do návrhu zahrnúť.',
+    a: 'Môže, ak je tak navrhnutá. Nie každá batéria automaticky zálohuje prevádzku; backup režim treba do návrhu zahrnúť.',
   },
   {
     q: 'Akú veľkú batériu potrebujeme?',
-    a: 'Takú, ktorá pokryje vaše úžitky — špičky, vlastnú spotrebu, zálohu. Veľkosť nevychádza z „koľko kWh chceme", ale z profilu spotreby a cieľov prevádzky.',
+    a: 'Takú, ktorá pokryje vaše úžitky: špičky, vlastnú spotrebu, zálohu. Veľkosť nevychádza z „koľko kWh chceme", ale z profilu spotreby a cieľov prevádzky.',
   },
   {
-    q: 'Pripravujeme väčší / štandalone projekt — viete pomôcť?',
+    q: 'Pripravujeme väčší / štandalone projekt, viete pomôcť?',
     a: 'Áno. Pri väčších projektoch vstupuje do hry pripojenie, financovanie a prevádzkový model. Ozvite sa a prejdeme konkrétnu situáciu.',
   },
 ];
@@ -66,11 +66,11 @@ const faqs = [
     <p class="text-lg border-l-4 border-primary bg-primary/5 rounded-r-lg p-4 mb-6">
       Batériové úložisko (BESS) ukladá lacnú alebo vlastnú elektrinu a využije ju vtedy, keď je drahá alebo potrebná.
       Firmám pomáha znižovať špičky, využiť vlastnú fotovoltiku a zálohovať prevádzku. RKS navrhuje batériu podľa dát a
-      kombinácie úžitkov — nie podľa kapacity v kWh.
+      kombinácie úžitkov, nie podľa kapacity v kWh.
     </p>
 
     <p class="text-lg text-muted mb-8">
-      Batéria sa často kupuje ako „doplnok k fotovoltike" — a práve preto býva zle nadimenzovaná. Jej hodnota nie je v
+      Batéria sa často kupuje ako „doplnok k fotovoltike", a práve preto býva zle nadimenzovaná. Jej hodnota nie je v
       tom, koľko energie uloží, ale v tom, čo všetko vám v danej prevádzke umožní: znížiť drahé špičky, využiť vlastnú
       výrobu večer, ochrániť prevádzku pri výpadku. Rovnako ako pri EMS a fotovoltike nezačíname technológiou, ale
       analýzou vašej spotreby a cieľov.
@@ -93,10 +93,10 @@ const faqs = [
         <li>pribudli im EV nabíjačky a zvýšili odber,</li>
         <li>majú prebytky z fotovoltiky, ktoré predávajú do siete za nízku cenu.</li>
       </ul>
-      <p>Ak sa v niektorej spoznávate, batéria môže byť odpoveď — ale až po prepočte.</p>
+      <p>Ak sa v niektorej spoznávate, batéria môže byť odpoveď, ale až po prepočte.</p>
 
       <h2>Akú hodnotu prináša batériové úložisko</h2>
-      <p>Batériové úložisko pre firmu má viac úloh — a najlepšia návratnosť vzniká ich kombináciou:</p>
+      <p>Batériové úložisko pre firmu má viac úloh, a najlepšia návratnosť vzniká ich kombináciou:</p>
       <ul>
         <li>
           <strong>Zníženie špičiek (<a href="/energetika/slovnik#peak-shaving">peak shaving</a>).</strong> Batéria pokryje
@@ -119,7 +119,7 @@ const faqs = [
 
       <h2>Prečo batéria nie je len kWh</h2>
       <p>
-        Najčastejšia chyba je vybrať batériu podľa kapacity — „koľko kWh". Lenže rovnaká kapacita môže mať úplne inú
+        Najčastejšia chyba je vybrať batériu podľa kapacity, „koľko kWh". Lenže rovnaká kapacita môže mať úplne inú
         hodnotu podľa toho, ako sa využíva. Batéria, ktorá len ukladá prebytky z fotovoltiky, sa správa inak než
         batéria, ktorá zároveň zráža špičky a zálohuje prevádzku.
       </p>
@@ -136,7 +136,7 @@ const faqs = [
         </tbody>
       </table>
       <p>
-        Preto BESS nenavrhujeme od kapacity, ale od úžitkov: zistíme váš profil spotreby, špičky a ciele prevádzky — a z
+        Preto BESS nenavrhujeme od kapacity, ale od úžitkov: zistíme váš profil spotreby, špičky a ciele prevádzky, a z
         toho vyplynie, aká batéria (a či vôbec) sa vám oplatí.
       </p>
 
@@ -174,7 +174,7 @@ const faqs = [
         <li>potrebujete zálohovať kritickú prevádzku pri výpadku,</li>
         <li>ceny elektriny u vás výrazne kolíšu počas dňa.</li>
       </ul>
-      <p>Ak nič z toho neplatí, povieme vám to — batéria nie je riešenie pre každého.</p>
+      <p>Ak nič z toho neplatí, povieme vám to, batéria nie je riešenie pre každého.</p>
 
       <h2>Batéria, fotovoltika a riadenie ako jeden celok</h2>
       <p>
@@ -188,14 +188,14 @@ const faqs = [
       <h2>Pre developerov a väčšie projekty</h2>
       <p>
         Okrem batérií pre <a href="/energetika/slovnik#vlastna-spotreba">vlastnú spotrebu</a> firiem sa venujeme aj väčším
-        a štandalone projektom, kde vstupuje do hry iná logika — bankovateľnosť, viaczdrojový výnosový model, pripojenie do
+        a štandalone projektom, kde vstupuje do hry iná logika, bankovateľnosť, viaczdrojový výnosový model, pripojenie do
         siete a prevádzkový model.
       </p>
       <p>
         Pri takýchto projektoch rozhoduje najmä kombinácia výnosov (projekt by nemal stáť len na jednom zdroji príjmu),
         pripojenie do siete (jeden z najkritickejších krokov, rieši sa hneď na začiatku) a pripravenosť na financovanie.
       </p>
-      <p>Ak pripravujete väčší alebo štandalone projekt, ozvite sa — prejdeme s vami konkrétnu situáciu.</p>
+      <p>Ak pripravujete väčší alebo štandalone projekt, ozvite sa, prejdeme s vami konkrétnu situáciu.</p>
 
       <h2>Ako postupujeme</h2>
       <p>Postupujeme v krokoch, aby ste investovali až vtedy, keď viete prečo:</p>
@@ -284,7 +284,7 @@ const faqs = [
       <h2 class="text-xl md:text-2xl font-semibold mb-3">Zistite, či sa vám batéria oplatí</h2>
       <p class="text-muted mb-6 max-w-xl mx-auto">
         Začnime nezáväznou konzultáciou a analýzou vašej spotreby a špičiek. Navrhneme batériu podľa toho, čo má vo
-        vašej prevádzke riešiť — s prepočtom návratnosti cez kombináciu úžitkov.
+        vašej prevádzke riešiť, s prepočtom návratnosti cez kombináciu úžitkov.
       </p>
       <a href="/lp/konzultacia.html?utm_source=web&utm_campaign=energetika" class="btn-primary inline-flex"
         >Dohodnúť nezáväznú konzultáciu</a
