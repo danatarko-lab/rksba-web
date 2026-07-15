@@ -74,7 +74,7 @@
 
     <div class="chk">
       <input type="checkbox" name="newsletter" id="nl">
-      <label for="nl" style="font-weight:400; margin:0;">Chcem dostávať novinky a tipy o rádiokomunikáciách od RKS. Súhlas je dobrovoľný, môžem ho kedykoľvek odvolať odhlásením v každom e-maile. Viac v <a href="#PRIVACY_URL">Zásadách ochrany osobných údajov</a>.</label>
+      <label for="nl" style="font-weight:400; margin:0;">Chcem dostávať novinky a tipy od RKS. Súhlas je dobrovoľný, môžem ho kedykoľvek odvolať odhlásením v každom e-maile. Viac v <a href="#PRIVACY_URL">Zásadách ochrany osobných údajov</a>.</label>
     </div>
 
     <button class="btn" type="submit">Odoslať a vybrať termín</button>
@@ -135,7 +135,7 @@ document.getElementById("leadForm").addEventListener("submit", async function(e)
     phone: f.phone.value.trim(),
     newsletter_optin: f.newsletter.checked,
     consent_contact_text: "Kliknutím na Odoslať súhlasíte, aby vás RKS kontaktoval ohľadom vášho dopytu.",
-    consent_newsletter_text: f.newsletter.checked ? "Chcem dostávať novinky a tipy o rádiokomunikáciách od RKS." : null,
+    consent_newsletter_text: f.newsletter.checked ? "Chcem dostávať novinky a tipy od RKS." : null,
     submitted_at: new Date().toISOString(),
     page: location.href,
     ...utm
