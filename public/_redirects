@@ -584,9 +584,11 @@
 /vozidlove-radiostanice-archiv/profesionalne/mikrofony/item/410-mdrmn4026.html /katalog-produktov/mdrmn4026 301
 /vozidlove-radiostanice-archiv/profesionalne/napajanie.html /katalog-produktov/kategoria/zakladnove-profesionalne 301
 /vozidlove-radiostanice-archiv/profesionalne/reproduktory.html /katalog-produktov/kategoria/zakladnove-profesionalne 301
-/vysledky-vyhladavania.html 404 410
+/vysledky-vyhladavania.html / 301
 /zalozne-akumulatory.html /katalog-produktov/kategoria/zalozne-akumulatory 301
 /zalozne-akumulatory/item/826-yuasa-npl100-12.html /katalog-produktov/yuasa-npl100-12 301
 /zalozne-akumulatory/item/839-yuasa-np65-12.html /katalog-produktov/yuasa-np65-12 301
 /component/seoglossary/* /slovnik 301
+/component/search/* / 301
+/component/finder/* / 301
 # === END redirects-generuj.mjs ===

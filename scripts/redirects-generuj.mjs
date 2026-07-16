@@ -10,7 +10,10 @@
  *
  * Pravidla:
  *  - Riadok:  /stara/cesta   /nova/cesta   301
- *  - Junk (nova_url je "410"):  /stara/cesta   404   410
+ *  - Junk (nova_url je "410"):  /stara/cesta   /   301
+ *    Cloudflare Pages _redirects nepodporuje status 410 ani 404, len
+ *    presmerovacie kody (301, 302, 303, 307, 308). Odpad preto presmerujeme
+ *    301 na "/". Sentinel "410" v CSV ostava a znaci "odpad na zahodenie".
  *  - Cloudflare berie PRVU zhodu, preto konkretne pravidla idu pred zastupne (so *).
  *    Zastupne pravidla su az na konci.
  *  - Blok medzi znackami BEGIN/END sa pri kazdom behu prepise. Rucne pridane
@@ -121,7 +124,8 @@ for (const r of raw) {
   }
   const wild = r.from.includes('*') || r.to.includes('*');
   if (r.to === '410') {
-    rules.push({ from: r.from, to: '404', status: '410', wild, typ: r.typ });
+    // Cloudflare Pages nepodporuje 410 ani 404; odpad presmerujeme 301 na "/".
+    rules.push({ from: r.from, to: '/', status: '301', wild, typ: r.typ });
   } else {
     rules.push({ from: r.from, to: r.to, status: '301', wild, typ: r.typ });
   }
