@@ -14,18 +14,17 @@ export interface Props {
     address?: string;
     hours?: string;
   };
-  cta?: { text: string; href: string };
   copyright?: string;
   legal?: string;
   bottomLinks?: Array<{ text: string; href: string }>;
 }
 
-const { tagline = '', contact = {}, cta, copyright = '', legal = '', bottomLinks = [] } = Astro.props;
+const { tagline = '', contact = {}, copyright = '', legal = '', bottomLinks = [] } = Astro.props;
 ---
 
 <footer class="bg-[#0b1b3a] text-white not-prose">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-    <div class="grid gap-10 md:grid-cols-3 md:gap-8">
+    <div class="grid gap-10 md:grid-cols-2 md:gap-8">
       <!-- Vlavo: logo + tagline -->
       <div>
         <a href={getHomePermalink()} class="inline-block text-white">
@@ -62,17 +61,6 @@ const { tagline = '', contact = {}, cta, copyright = '', legal = '', bottomLinks
           {contact.address && <li>{contact.address}</li>}
           {contact.hours && <li>{contact.hours}</li>}
         </ul>
-      </div>
-
-      <!-- Vpravo: konzultacia -->
-      <div class="md:text-right">
-        {
-          cta && (
-            <a href={cta.href} class="btn-primary inline-flex">
-              {cta.text}
-            </a>
-          )
-        }
       </div>
     </div>
 
