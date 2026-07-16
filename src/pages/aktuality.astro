@@ -1,5 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import NewsletterCTA from '~/components/widgets/NewsletterCTA.astro';
 
 const metadata = { title: 'Aktuality | RKS' };
 
@@ -26,5 +27,7 @@ const cards = [
         ))
       }
     </div>
+
+    <NewsletterCTA />
   </section>
 </Layout>
