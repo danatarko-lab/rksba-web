@@ -1,0 +1,352 @@
+[
+  {
+    "id": 22,
+    "slug": "flexible-whip",
+    "pojem": "Flexible whip",
+    "kategoria": "Antény",
+    "definicia": "Pružné prútové antény vo vnútri obsahujú oceľové jadro ovinuté vodičom pre dosiahnutie optimálnej vyžarovacej charakteristiky. Poskytujú väčšie pohodlie pri nosení rádiostanice na opasku. Tieto univerzálne anténa (cca 14 –19 cm) poskytujú optimálny výkon a sú vhodná pre väčšinu aplikácií, kde nie je dôležitá dĺžka antény."
+  },
+  {
+    "id": 25,
+    "slug": "helical",
+    "pojem": "Helical",
+    "kategoria": "Antény",
+    "definicia": "Tieto univerzálne antény (cca 14 -15 cm) poskytujú optimálny výkon a sú vhodné pre väčšinu aplikácií, kde dĺžka antény nie je rozhodujúca. Špirálovité antény sú robustné a zabezpečia spoľahlivú komunikáciu. Každá anténa je navrhnutá a zostrojená tak, aby spĺňala štandardy kvality. Lem na spodnej časti konektora pomáha zabrániť jeho poškodeniu. Kovový konektor je potiahnutý mosadzou, čo predlžuje jeho životnosť."
+  },
+  {
+    "id": 21,
+    "slug": "heliflex",
+    "pojem": "Heliflex",
+    "kategoria": "Antény",
+    "definicia": "Heliflex antény sú robustné a spoľahlivé, špeciálne navrhnuté pre maximálny výkon a najväčšie komunikačné pokrytie. Každá anténa je navrhnutá a postavená tak, aby spĺňala štandardy kvality. Lem na spodnej časti konektora pomáha zabrániť jeho poškodeniu. Kovový konektor je potiahnutý mosadzou, čo predlžuje jeho životnosť."
+  },
+  {
+    "id": 49,
+    "slug": "monopol",
+    "pojem": "Monopól",
+    "kategoria": "Antény",
+    "definicia": "Jedná sa o vertikálny dipól, ktorého jedna \"noha\" je nahradená virtuálnym zrkadlovým obrazom podľa ideálnej vodivej uzemnenej roviny pod anténou."
+  },
+  {
+    "id": 50,
+    "slug": "psm",
+    "pojem": "PSM",
+    "kategoria": "Antény",
+    "definicia": "Public Safety Microphone - Mikrofón pre bezpečnostné služby"
+  },
+  {
+    "id": 24,
+    "slug": "stubby",
+    "pojem": "Stubby",
+    "kategoria": "Antény",
+    "definicia": "Tieto štvrťvlnové krátke a hrubé anténa sú ideálne, ak je rádiostanica nosená na opasku, pretože krátka anténa nijako neprekáža pri pohybe. Tieto malé antény (cca 8-10 cm) poskytujú spoľahlivý výkon a sú vhodné pre aplikácie, kde je dôležitá kratšia dĺžka antény pri používaní rádiostanice. Anténa je vzhľadom k svojej charakteristike vhodná tam, kde nie je požadovaný maximálny dosah."
+  },
+  {
+    "id": 23,
+    "slug": "wideband",
+    "pojem": "Wideband",
+    "kategoria": "Antény",
+    "definicia": "Širokopásmové antény sú ideálna, ak je rádiostanica používaná na rôznych frekvenciách, pretože jednou anténou pokryjeme všetky rozsahy. Tieto univerzálne antény (cca 17 cm) poskytujú optimálny výkon a sú vhodná pre väčšinu aplikácií, kde dĺžka antény nie je hlavným kritériom."
+  },
+  {
+    "id": 52,
+    "slug": "5-5-90",
+    "pojem": "5/5/90",
+    "kategoria": "Rádiostanice",
+    "definicia": "5% času : vysielanie 5% času : príjem 90% času: pohotovostný režim"
+  },
+  {
+    "id": 27,
+    "slug": "automatic-multiple-site-selection",
+    "pojem": "AUTOMATIC MULTIPLE SITE SELECTION",
+    "kategoria": "Rádiostanice",
+    "definicia": "Funkcia automatickej voľby oblasti trunkovej siete rozširuje dosah komunikácie za hranicu danej oblasti; pri pohybe medzi jednotlivými oblasťami trunkovej siete rádiostanica sa plynule preladí na frekvenciu nasledujúce dostupnej oblasti."
+  },
+  {
+    "id": 38,
+    "slug": "dpl",
+    "pojem": "DPL",
+    "kategoria": "Rádiostanice",
+    "definicia": "Digital Private Line - Pridaním DPL kódu je možné vytvoriť uzatvorenú skupinu rádiostaníc. Rádiostanica s iným DPL kódom nebude schopná komunikovať s touto skupinou rádiostaníc."
+  },
+  {
+    "id": 29,
+    "slug": "dual-mode",
+    "pojem": "DUAL MODE",
+    "kategoria": "Rádiostanice",
+    "definicia": "Funkcia poskytuje užívateľovi jednoduchý prístup ako do trunkových, tak konvenčných systémov."
+  },
+  {
+    "id": 13,
+    "slug": "emergency",
+    "pojem": "EMERGENCY",
+    "kategoria": "Rádiostanice",
+    "definicia": "Núdzová signalizácia. Stlačením oranžového núdzového tlačidla rádiostanica vyšle volanie o pomoc vopred určenej osobe alebo skupine ľudí. Volanie o pomoc môže obsahovať vopred nahraný odkaz, ktorý príjemcovi umožní ihneď zistiť miesto, kde sa nachádzate, a prípadne Váš stav."
+  },
+  {
+    "id": 8,
+    "slug": "escalert",
+    "pojem": "ESCALERT",
+    "kategoria": "Rádiostanice",
+    "definicia": "Postupné zosilňovanie tónu ohlasovania prichádzajúceho hovoru. Spočiatku veľmi slabý ohlasovací tón sa postupne zosilňuje, kým používateľ na hovor neodpovie."
+  },
+  {
+    "id": 36,
+    "slug": "external-alarm",
+    "pojem": "EXTERNAL ALARM",
+    "kategoria": "Rádiostanice",
+    "definicia": "Externý alarm. Pri zaznamenaní prichádzajúceho hovoru rádiostanica aktivuje maják alebo svetlá vozidla alebo oboje zároveň, takže hovor nezmeškáte ani v prípade, že sa od vozidla vzdialite."
+  },
+  {
+    "id": 34,
+    "slug": "group-call",
+    "pojem": "GROUP CALL",
+    "kategoria": "Rádiostanice",
+    "definicia": "Skupinové volanie. Rádiostanica komunikuje so všetkým rádiostanicami v skupine."
+  },
+  {
+    "id": 37,
+    "slug": "intelligent-audio",
+    "pojem": "INTELLIGENT AUDIO",
+    "kategoria": "Rádiostanice",
+    "definicia": "V digitálnom režime funkcia Intelligent Audio vylepšuje kvalitu zvuku vďaka adaptabilnej regulácii hlasitosti v závislosti na úrovni okolitého hluku, vďaka čomu sa minimalizujú napr. zmeškané hovory v prípade, že je hlasitosť rádiostanice nastavená na minimálnu úroveň."
+  },
+  {
+    "id": 43,
+    "slug": "ip54",
+    "pojem": "IP54",
+    "kategoria": "Rádiostanice",
+    "definicia": "Krytie pred prachom a striekajúcou vodou."
+  },
+  {
+    "id": 44,
+    "slug": "ip55",
+    "pojem": "IP55",
+    "kategoria": "Rádiostanice",
+    "definicia": "Krytie pred prachom a striekajúcou vodou."
+  },
+  {
+    "id": 47,
+    "slug": "ip56",
+    "pojem": "IP56",
+    "kategoria": "Rádiostanice",
+    "definicia": "Krytie pred prachom a silne trýskajúcou vodou."
+  },
+  {
+    "id": 45,
+    "slug": "ip57",
+    "pojem": "IP57",
+    "kategoria": "Rádiostanice",
+    "definicia": "Krytie pred prachom a krytie pred vniknutím vody pri ponorení do hĺbky 1m na dobu 30 minút."
+  },
+  {
+    "id": 46,
+    "slug": "ip67",
+    "pojem": "IP67",
+    "kategoria": "Rádiostanice",
+    "definicia": "Prachuvzdorné krytie a krytie pred vniknutím vody pri ponorení do hĺbky 1m na dobu 30 minút."
+  },
+  {
+    "id": 10,
+    "slug": "lone-worker",
+    "pojem": "LONE WORKER",
+    "kategoria": "Rádiostanice",
+    "definicia": "Funkcia osamotený pracovník zvyšuje bezpečnosť jednotlivcov, ktorí pracujú oddelene od svojej skupiny. Rádiostanica je nastavená tak, aby v pravidelných intervaloch požadovala od užívateľa odozvu. Pokiaľ užívateľ nereaguje správne, spustí sa preddefinovaný postup pre prípad núdze."
+  },
+  {
+    "id": 40,
+    "slug": "mdc1200",
+    "pojem": "MDC1200",
+    "kategoria": "Rádiostanice",
+    "definicia": "MDC1200 je digitálna signalizácia s rýchlosťou prenosu 1200 bit za sekundu, ktorá bola navrhnutá a vyvinutá špeciálne pre spoľahlivé prenosy dátových telegramov v pozemných pohyblivých rádiových sieťach. Digitálna signalizácia dovoľuje preniesť po kanáli oveľa viac informácií než je možné s klasickou tónovou signalizáciou. Tieto informácie môžu byť prenášané oveľa rýchlejšie, a s oveľa väčšou istotou že správa nie je skreslená či chybná."
+  },
+  {
+    "id": 2,
+    "slug": "monitor",
+    "pojem": "MONITOR",
+    "kategoria": "Rádiostanice",
+    "definicia": "Umožňuje skontrolovať, či kanál nie je obsadený a tak sa vyhnúť sa rušeniu ostatných užívateľov."
+  },
+  {
+    "id": 17,
+    "slug": "nastavitelny-vykon",
+    "pojem": "NASTAVITEĽNÝ VÝKON",
+    "kategoria": "Rádiostanice",
+    "definicia": "Výstupný výkon rádiostanice sa dá nastaviť na dve úrovne - nízky výkon predlžuje životnosť batérie a vysoký výkon umožňuje zvýšiť dosah rádiostanice."
+  },
+  {
+    "id": 18,
+    "slug": "presmerovanie-hovoru",
+    "pojem": "PRESMEROVANIE HOVORU",
+    "kategoria": "Rádiostanice",
+    "definicia": "Umožňuje presmerovať hovory na inú rádiostanicu, ak nemôžete odpovedať na hovory osobne."
+  },
+  {
+    "id": 35,
+    "slug": "private-call",
+    "pojem": "PRIVATE CALL",
+    "kategoria": "Rádiostanice",
+    "definicia": "Súkromný hovor. Rádiostanica komunikuje s konkrétnou rádiostanicou."
+  },
+  {
+    "id": 1,
+    "slug": "ptt",
+    "pojem": "PTT",
+    "kategoria": "Rádiostanice",
+    "definicia": "Push To Talk - tlačídlo ovládajúce hlasovú komunikáciu. Pri jeho stlačení je možné hovoriť, jeho uvoľnením sa rádiostanica prepne do režimu príjmu."
+  },
+  {
+    "id": 11,
+    "slug": "quick-text-message",
+    "pojem": "QUICK TEXT MESSAGE",
+    "kategoria": "Rádiostanice",
+    "definicia": "Rádiostanica MOTOTRBO umožňuje odosielanie až 10 vopred definovaných textových správ do 140 znakov (obdoba SMS) na inú stanicu alebo skupinu staníc."
+  },
+  {
+    "id": 33,
+    "slug": "radio-check",
+    "pojem": "RADIO CHECK",
+    "kategoria": "Rádiostanice",
+    "definicia": "Funkcia umožňuje zistiť či je iná rádiostanica aktívna v systéme bez potreby volania jej užívateľa."
+  },
+  {
+    "id": 31,
+    "slug": "remote-monitor",
+    "pojem": "REMOTE_MONITOR",
+    "kategoria": "Rádiostanice",
+    "definicia": "Funkcia umožňuje na diaľku aktivovať mikrofón vybranej rádiostanice. Takto môžete monitorovať na diaľku zvukovú činnosť okolo cieľovej rádiostanice."
+  },
+  {
+    "id": 3,
+    "slug": "scan",
+    "pojem": "SCAN",
+    "kategoria": "Rádiostanice",
+    "definicia": "Zabezpečuje sústavné prehľadávanie kanálov podľa zoznamu ktorý je naprogramovaný. Pri hovore na niektorom komunikačnom kanáli funkcia zabezpečí, aby sa rádiostanica na tento kanál naladila. Užívateľ tak má prehľad o komunikácii na akomkoľvek kanáli ktorý je uvedený v zozname komunikačných kanálov."
+  },
+  {
+    "id": 42,
+    "slug": "select-5",
+    "pojem": "SELECT 5",
+    "kategoria": "Rádiostanice",
+    "definicia": "Selektívna voľba umožňuje volať konkrétnu rádiostanicu stanicu alebo skupinu rádiostaníc (obdoba telefónneho čísla). Select 5 (5-tone) je svetovo najrozšírenejší spôsob analógovej selektívnej voľby v konvenčných rádiových sieťach. Zjednodušene povedané sa jedná o akúsi sekvenciu tónov, ktorej jednotlivé hodnoty v Hz zodpovedajú číslu v danom štandarde. Rádiostanica, ktorá dekóduje túto sekvenciu môže začať vyzváňať (ako telefón), môže volanie automaticky presmerovať na iné číslo, môže sekvenciu vyhodnotiť ako súhlas k počúvaniu prevádzky na danom kmitočte, alebo ako súhlas na vysielanie. Možností je mnoho, a záleží na konfigurácii siete a funkciách používaných rádiostaníc. Systém Select 5 umožňuje nielen adresne volať jednu stanicu, ale tiež identifikovať volajúceho tým, že jeho ID číslo vysiela ako súčasť kódu. Veľmi často sú Select 5 kódy používané ako ovládacie signály pre externé zariadenia (sirény, svetlá, elektrické ovládanie brány a pod.)"
+  },
+  {
+    "id": 28,
+    "slug": "selective-radio-inhibit",
+    "pojem": "SELECTIVE RADIO INHIBIT",
+    "kategoria": "Rádiostanice",
+    "definicia": "Funkcia deaktivácie rádiostanice zabezpečuje ochranu pred neautorizovaným použitím, umožňuje stanicu diaľkovo zablokovať, napríklad v prípade straty alebo krádeže."
+  },
+  {
+    "id": 19,
+    "slug": "status-message",
+    "pojem": "STATUS MESSAGE",
+    "kategoria": "Rádiostanice",
+    "definicia": "Vopred navolené textové správy umožňujú užívateľovi namiesto volania zasielať odkazy."
+  },
+  {
+    "id": 48,
+    "slug": "security",
+    "pojem": "Security",
+    "kategoria": "Rádiostanice",
+    "definicia": "Funkcia umožňuje povoliť/zakázať používanie rádiostanice napr. v prípade jej krádeže."
+  },
+  {
+    "id": 9,
+    "slug": "talkaround",
+    "pojem": "TALKAROUND",
+    "kategoria": "Rádiostanice",
+    "definicia": "V situáciách kde nie je nutné komunikovať cez prevádzač, prepne funkcia “Talkaround” rádiostanicu do simplexnej prevádzky pre priamu komunikáciu. Naviac sa táto funkcia môže osvedčiť v okamžiku, keď vďaka nepredvídateľným okolnostiam prestane pracovať prevádzač. Potom vaša rádiostanica môže pracovať a byť v spojení ďalej v simplexnom režime."
+  },
+  {
+    "id": 30,
+    "slug": "talkgroup-scan",
+    "pojem": "TALKGROUP_SCAN",
+    "kategoria": "Rádiostanice",
+    "definicia": "Funkcia vyhľadáva aktivitu na jednotlivých kanáloch aj hovorových skupinách v oboch režimoch prevádzky (trunkovom i konvenčným)."
+  },
+  {
+    "id": 32,
+    "slug": "text-message",
+    "pojem": "TEXT MESSAGE",
+    "kategoria": "Rádiostanice",
+    "definicia": "Rádiostanica MOTOTRBO umožňuje napísať a odoslať krátku textovú správu do 140 znakov (obdoba SMS) na inú stanicu alebo skupinu staníc."
+  },
+  {
+    "id": 20,
+    "slug": "timer",
+    "pojem": "TIMER",
+    "kategoria": "Rádiostanice",
+    "definicia": "Obmedzuje čas, po ktorý môže užívateľ súvisle vysielať. To umožňuje efektívnejšie využitie kanálu."
+  },
+  {
+    "id": 14,
+    "slug": "transmit-interrupt",
+    "pojem": "TRANSMIT INTERRUPT",
+    "kategoria": "Rádiostanice",
+    "definicia": "Umožňuje užívateľovi prerušiť konverzáciu inej rádiostanice."
+  },
+  {
+    "id": 4,
+    "slug": "uhf",
+    "pojem": "UHF",
+    "kategoria": "Rádiostanice",
+    "definicia": "Ultra High Frequency. Frekvenčné pásmo 436 – 470 MHz. Použitie tohto pásma je vyhradené rádioamatérom a niektorým verejným organizáciám a súkromným firmám, ako sú napr. polícia, taxi služby, bezpečnostné agentúry. Pracujú tu aj ďalšie rádiokomunikačné služby. UHF signál má lepšiu tendenciu prenikať drevom, oceľou, betónom a má tak lepší dosah v husto zastavaných oblastiach (mestách), v budovách a na staveniskách, kde sa nachádza väčší počet rôznych prekážok."
+  },
+  {
+    "id": 5,
+    "slug": "vhf",
+    "pojem": "VHF",
+    "kategoria": "Rádiostanice",
+    "definicia": "Very High Frequency. Frekvenčné pásmo 136 - 174 MHz. VHF signály sa šíria lepšie v oblastiach, ktoré sú relatívne bez prekážok, teda bez hustej zástavby a majú tak lepšiu tendenciu \"objať\" krajinu. Poskytujú lepší výkon vonku alebo v rozľahlom teréne. Toto pásmo využíva napr. hasičský a záchranný zbor."
+  },
+  {
+    "id": 7,
+    "slug": "vox",
+    "pojem": "VOX",
+    "kategoria": "Rádiostanice",
+    "definicia": "Hlasom aktivované vysielanie. Pri použití náhlavnej súpravy s aktiváciou hlasom má užívateľ voľné ruky a môže tak počas komunikácie pokračovať v práci."
+  },
+  {
+    "id": 6,
+    "slug": "whisper",
+    "pojem": "WHISPER",
+    "kategoria": "Rádiostanice",
+    "definicia": "Funkcia šepot umožňuje čistý prenos i veľmi tichého hovoru v prípade ak by bolo nevhodné alebo nebezpečné, aby užívatelia hovorili nahlas."
+  },
+  {
+    "id": 26,
+    "slug": "x-pand",
+    "pojem": "X-PAND",
+    "kategoria": "Rádiostanice",
+    "definicia": "Kompresia hlasu ktorá zabezpečuje jasný, čistý a kvalitný zvuk v hlučnom prostredí. Rozšírenie nízkej úrovne umožňuje ďalšie zlepšenie kvality zvuku redukciou šumu, ktorý zvyčajne počujeme v pauzách medzi rečou."
+  },
+  {
+    "id": 12,
+    "slug": "capacity-plus",
+    "pojem": "CAPACITY PLUS",
+    "kategoria": "Systémy",
+    "definicia": "Digitálny trunkový systém, ktorý maximalizuje kapacitu MOTOTRBO systému, umožňuje prenos veľkého objemu hlasu a dát pre viac ako tisíc užívateľov bez navyšovania počtu nových frekvencií."
+  },
+  {
+    "id": 41,
+    "slug": "enhanced-privacy",
+    "pojem": "ENHANCED PRIVACY",
+    "kategoria": "Systémy",
+    "definicia": "Rozšírené utajenie - na rozdiel o d štandardného utajenia pomocou 16 bitového kľúča, rozšírené utajenie používa 40 bitový kľúč pre zvýšenie bezpečnosti."
+  },
+  {
+    "id": 15,
+    "slug": "ip-site-connect",
+    "pojem": "IP SITE CONNECT",
+    "kategoria": "Systémy",
+    "definicia": "Riešenie využívajúce Internet na prepojenie až 15 prevádzačov v rôznych geografických lokalitách a tým rozšírenie oblasti pokrytia rádiovým signálom alebo zvýšenie pokrytia jednej lokality v prípade fyzických prekážok. (napr. výšková budova)"
+  },
+  {
+    "id": 16,
+    "slug": "linked-capacity-plus",
+    "pojem": "LINKED_CAPACITY PLUS",
+    "kategoria": "Systémy",
+    "definicia": "Linked Capacity Plus je multilokalitný digitálny trunkový systém pre platformu MOTOTRBO. Využíva vysokú kapacitu systému Capacity Plus a schopnosti systému IP Site Connect pokryť veľké územie, pre udržanie spojenia užívateľov na rôznych miestach."
+  }
+]
