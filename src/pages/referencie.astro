@@ -7,44 +7,48 @@ const metadata = {
     'Vybrané referencie RKS: autonómne systémy varovania, rádiové siete a evakuačný rozhlas pre jadrové elektrárne, železnice, plynárenstvo, chemický a potravinársky priemysel.',
 };
 
+const SE = '/images/referencie/slovenske-elektrarne.png';
+const ZSR = '/images/referencie/zsr.svg';
+
 const sections = [
   {
     title: 'Autonómne systémy varovania',
     clients: [
-      'Duslo (o. z. ISTROCHEM, Bratislava)',
-      'Distribučné centrum Tesco Beckov',
-      'Novácke chemické závody (Nováky)',
-      'Slovenské elektrárne (závod Elektrárne Nováky)',
-      'Slovenské elektrárne (OZ EMO Mochovce)',
-      'RAJO (Bratislava)',
-      'Evonik Fermas (Slovenská Ľupča)',
-      'Brenntag (Slovenská Ľupča)',
-      'Flaga (Bánovce nad Bebravou)',
-      'Levmilk (Levice)',
-      'Zimný štadión Levice',
-      'Zimný štadión Nové Mesto nad Váhom',
-      'Swaman (Myjava)',
-      'Zentiva (Hlohovec)',
-      'VINICA GASTRA (Vinica)',
+      { name: 'Duslo (o. z. ISTROCHEM, Bratislava)', logo: '/images/referencie/duslo.svg' },
+      { name: 'Distribučné centrum Tesco Beckov', logo: '/images/referencie/tesco.svg' },
+      { name: 'Fortischem (Nováky)', logo: '/images/referencie/fortischem.png' },
+      { name: 'Slovenské elektrárne (závod Elektrárne Nováky)', logo: SE },
+      { name: 'Slovenské elektrárne (OZ EMO Mochovce)', logo: SE },
+      { name: 'RAJO (Bratislava)' },
+      { name: 'Evonik Fermas (Slovenská Ľupča)', logo: '/images/referencie/evonik-fermas.svg' },
+      { name: 'Brenntag (Slovenská Ľupča)', logo: '/images/referencie/brenntag.svg' },
+      { name: 'Flaga (Bánovce nad Bebravou)', logo: '/images/referencie/flaga.svg' },
+      { name: 'Levmilk (Levice)', logo: '/images/referencie/levmilk.svg' },
+      { name: 'Zimný štadión Levice' },
+      { name: 'Zimný štadión Nové Mesto nad Váhom' },
+      { name: 'SVAMAN (Myjava)', logo: '/images/referencie/swaman.png' },
+      { name: 'Zentiva (Hlohovec)', logo: '/images/referencie/zentiva.svg' },
+      { name: 'VINICA GASTRA (Vinica)' },
     ],
   },
   {
     title: 'Rádiové siete',
     clients: [
-      'Slovenské elektrárne (OZ EMO Mochovce)',
-      'Slovenské elektrárne (OZ EBO Jaslovské Bohunice)',
-      'ŽSR Trnava Kúty',
-      'ŽSR Podunajské Biskupice Komárno',
-      'SPP (Bratislava)',
-      'Slovakiaring (Orechová Potôň)',
-      'NDS (Bratislava)',
-      'VD Turček',
-      'OSCR Oščadnica',
+      { name: 'Slovenské elektrárne (OZ EMO Mochovce)', logo: SE },
+      { name: 'Slovenské elektrárne (OZ EBO Jaslovské Bohunice)', logo: SE },
+      { name: 'ŽSR Trnava Kúty', logo: ZSR },
+      { name: 'ŽSR Podunajské Biskupice Komárno', logo: ZSR },
+      { name: 'SPP (Bratislava)', logo: '/images/referencie/spp.png' },
+      { name: 'Slovakiaring (Orechová Potôň)', logo: '/images/referencie/slovakiaring.svg' },
+      { name: 'NDS (Bratislava)', logo: '/images/referencie/nds.png' },
+      { name: 'Mestská polícia Žilina', logo: '/images/referencie/mestska-policia-zilina.png' },
+      { name: 'VD Turček' },
+      { name: 'OSCR Oščadnica' },
     ],
   },
   {
     title: 'Evakuačný rozhlas',
-    clients: ['Goldback (Bratislava)'],
+    clients: [{ name: 'Goldbeck (Bratislava)', logo: '/images/referencie/goldbeck.png' }],
   },
 ];
 ---
@@ -66,13 +70,22 @@ const sections = [
             <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {section.clients.map((client) => (
                 <li class="flex items-center gap-4 rounded-xl border border-gray-200 p-4">
-                  <span
-                    class="flex h-12 w-16 flex-none items-center justify-center rounded-md border border-dashed border-gray-300 bg-gray-50 text-[10px] uppercase tracking-wider text-muted"
-                    aria-hidden="true"
-                  >
-                    Logo
-                  </span>
-                  <span class="text-sm font-medium">{client}</span>
+                  {client.logo ? (
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      loading="lazy"
+                      class="h-12 w-16 flex-none object-contain"
+                    />
+                  ) : (
+                    <span
+                      class="flex h-12 w-16 flex-none items-center justify-center rounded-md border border-dashed border-gray-300 bg-gray-50 text-[10px] uppercase tracking-wider text-muted"
+                      aria-hidden="true"
+                    >
+                      Logo
+                    </span>
+                  )}
+                  <span class="text-sm font-medium">{client.name}</span>
                 </li>
               ))}
             </ul>

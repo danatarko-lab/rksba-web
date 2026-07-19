@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="500"
+   height="260"
+   viewBox="0 0 132.29166 68.791671"
+   version="1.1"
+   id="svg8">
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1">
+    <circle
+       style="fill:#1d548c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:20.7313;stroke-linecap:round;stroke-linejoin:round"
+       id="path856"
+       cx="98.418182"
+       cy="34.58942"
+       r="15.461367" />
+    <path
+       id="path856-0"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#1d548c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4.60909;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       d="m 98.422287,1.4271008 c -14.914936,0 -27.622696,9.9950522 -31.75432,23.6132912 3.214632,2.601388 6.163232,5.591594 9.031832,8.460194 l 4.506389,4.50401 c -0.202109,-1.106798 -0.31918,-2.245644 -0.31918,-3.415519 0,-10.322523 8.212751,-18.535265 18.535265,-18.535265 10.322527,0 18.525747,8.212742 18.525747,18.535265 0,10.322524 -8.20322,18.535265 -18.525747,18.535265 -7.045738,0 -13.093153,-3.834416 -16.232043,-9.546307 -4.236743,-3.749152 -7.571608,-5.116134 -15.546096,-5.116134 h -1.159937 c 1.937559,16.425242 16.017071,29.291531 32.938076,29.291531 18.231247,0 33.164357,-14.93311 33.164367,-33.164355 0,-18.231244 -14.93312,-33.1619762 -33.164367,-33.1619762 z M 65.986772,27.669909 c -0.479903,2.234058 -0.738362,4.547908 -0.738362,6.919168 0,0.481028 0.01521,0.957631 0.03595,1.433851 h 1.360022 c 3.850386,0 6.754255,0.342686 9.181889,1.050379 L 73.97299,35.220255 c -2.620654,-2.620654 -5.240404,-5.234463 -7.986204,-7.550346 z" />
+    <path
+       id="path878"
+       style="fill:#1d548c;fill-opacity:1;stroke:none;stroke-width:1.21949px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 0.53218139,2.0344635 15.301805,17.675824 h 32.969041 c 5.269271,0 9.777121,1.633079 13.814517,4.099103 l -4.280124,-4.28012 C 50.307754,9.997314 42.584613,2.0344635 31.238512,2.0344635 Z M 17.605013,20.114802 32.624714,36.022928 h 34.019434 c 3.850391,0 6.754259,0.342686 9.181894,1.050379 L 73.972981,35.220255 C 66.466288,27.713562 59.046314,20.114802 48.270846,20.114802 Z M 34.92794,38.461901 48.439949,52.77183 h 17.749272 c 5.244028,-0.186346 7.097199,3.358265 9.582028,6.207004 l 0.133387,-19.337933 c -2.377027,-0.829765 -5.224812,-1.179 -9.260488,-1.179 z" />
+  </g>
+</svg>
