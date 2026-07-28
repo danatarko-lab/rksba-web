@@ -22,7 +22,7 @@ export interface Props {
 const { tagline = '', contact = {}, copyright = '', legal = '', bottomLinks = [] } = Astro.props;
 ---
 
-<footer class="bg-[#0A2342] text-white not-prose">
+<footer class="bg-[#5D6C7B] text-white not-prose">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
     <div class="grid gap-10 md:grid-cols-2 md:gap-8">
       <!-- Vlavo: logo + tagline -->
@@ -31,15 +31,15 @@ const { tagline = '', contact = {}, copyright = '', legal = '', bottomLinks = []
           <span class="text-2xl font-bold italic tracking-tight" style="font-family: 'Times New Roman', Times, serif"
             >R K S</span
           >
-          <span class="ml-1.5 text-sm font-normal text-white/60">spol s r.o.</span>
+          <span class="ml-1.5 text-sm font-normal text-white/90">spol s r.o.</span>
         </a>
-        {tagline && <p class="mt-4 max-w-xs text-sm text-white/70">{tagline}</p>}
+        {tagline && <p class="mt-4 max-w-xs text-sm text-white/90">{tagline}</p>}
       </div>
 
       <!-- V strede: kontakt -->
       <div>
         <p class="mb-4 text-sm font-semibold uppercase tracking-wider text-white">Kontakt</p>
-        <ul class="space-y-2 text-sm text-white/80">
+        <ul class="space-y-2 text-sm text-white/90">
           {
             contact.phone && (
               <li>
@@ -65,9 +65,9 @@ const { tagline = '', contact = {}, copyright = '', legal = '', bottomLinks = []
     </div>
 
     <!-- Spodny pasik -->
-    <div class="mt-10 border-t border-white/15 pt-6">
-      {legal && <p class="text-xs text-white/50">{legal}</p>}
-      <p class="mt-2 text-sm text-white/70">
+    <div class="mt-10 border-t border-white/30 pt-6">
+      {legal && <p class="text-xs text-white/90">{legal}</p>}
+      <p class="mt-2 text-sm text-white/90">
         {copyright}
         {
           bottomLinks.map((link) => (

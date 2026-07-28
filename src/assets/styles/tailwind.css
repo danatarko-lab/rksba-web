@@ -99,8 +99,8 @@
 }
 
 /*
-  Header ostáva SVETLÝ aj na tmavom webe: biele pozadie, tmavé odkazy, modré logo.
-  Preto sa tu nesmie použiť bg-page — ten je už tmavý.
+  Header ostáva SVETLÝ aj na tmavom webe: jemne modrasté pozadie (--aw-color-bg-light),
+  tmavé odkazy, modré logo. Preto sa tu nesmie použiť bg-page — ten je už tmavý.
 */
 #header {
   background-color: var(--aw-color-bg-light);
@@ -122,7 +122,7 @@
 }
 #header.scroll {
   @apply md:backdrop-blur-md;
-  background-color: rgb(255 255 255 / 92%);
+  background-color: rgb(234 242 255 / 92%);
   box-shadow: 0 0.375rem 1.5rem 0 rgb(4 12 30 / 28%);
 }
 

@@ -55,8 +55,13 @@ import '@fontsource-variable/inter';
     --aw-color-border: rgb(229 236 246 / 16%);
     --aw-color-border-strong: rgb(229 236 246 / 28%);
 
-    /* Svetlé ostrovy: header a dlaždice pod logami. */
-    --aw-color-bg-light: rgb(255 255 255);
+    /*
+      Svetlý ostrov: hlavička a rozbaľovacie menu. Jemne modrastá, nie čistá
+      biela — tá pôsobila voči navy telu príliš tvrdo. Dlaždice pod logami
+      klientov a certifikátmi zámerne NEpoužívajú tento token, tie musia ostať
+      čisto biele (bg-white / .logo-tile), inak by loga dostali modrý nádych.
+    */
+    --aw-color-bg-light: rgb(234 242 255);
     --aw-color-text-on-light: rgb(16 16 16);
     --aw-color-text-on-light-muted: rgb(16 16 16 / 66%);
 
