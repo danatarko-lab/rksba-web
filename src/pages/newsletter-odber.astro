@@ -12,12 +12,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Odber noviniek | RKS</title>
     <style>
+      /* RKS Digital Blue - tmava varianta */
       :root {
-        --blue: #2d4fdb;
-        --navy: #16223a;
-        --grey: #5b6470;
-        --bg: #eef2fa;
-        --border: #dce3f0;
+        --blue: #0161ef;
+        --link: #7dadff;
+        --navy: #e5ecf6;
+        --grey: rgba(229, 236, 246, 0.66);
+        --bg: #0a2342;
+        --card: #13234d;
+        --border: rgba(229, 236, 246, 0.16);
       }
       * {
         box-sizing: border-box;
@@ -39,7 +42,7 @@
         padding: 24px;
       }
       .card {
-        background: #fff;
+        background: var(--card);
         border: 1px solid var(--border);
         border-radius: 16px;
         padding: 34px 30px;
@@ -69,6 +72,8 @@
         padding: 13px 14px;
         border: 1px solid var(--border);
         border-radius: 10px;
+        background: rgba(229, 236, 246, 0.06);
+        color: var(--navy);
       }
       .radios {
         display: flex;
@@ -106,7 +111,7 @@
         flex: 0 0 auto;
       }
       .opt a {
-        color: var(--blue);
+        color: var(--link);
       }
       .consent {
         color: var(--grey);
@@ -114,7 +119,7 @@
         margin: 8px 0 0;
       }
       .consent a {
-        color: var(--blue);
+        color: var(--link);
       }
       .btn {
         width: 100%;
@@ -129,7 +134,7 @@
         cursor: pointer;
       }
       .btn:hover {
-        background: #2441bb;
+        background: #0000ff;
       }
       a.btn {
         display: block;
@@ -139,15 +144,15 @@
       }
       .btn.ghost {
         background: transparent;
-        color: var(--blue);
-        border: 1.5px solid var(--border);
+        color: var(--link);
+        border: 1.5px solid var(--link);
       }
       .btn.ghost:hover {
-        background: #eef2fa;
+        background: rgba(1, 97, 239, 0.15);
       }
       .err {
         display: none;
-        color: #b42318;
+        color: #fca5a5;
         font-size: 13.5px;
         margin-top: 10px;
       }

@@ -59,7 +59,7 @@ const faqSchema = {
 ---
 
 <Layout metadata={metadata}>
-  <div class="bg-gradient-to-br from-[#0b1b3a] via-[#13234d] to-primary text-white">
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 py-14 md:py-20">
       <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-5">Energy Memo · Energetika</p>
       <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight">{post.title}</h1>
@@ -69,10 +69,10 @@ const faqSchema = {
 
   <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
     <p class="text-sm text-muted mb-8"><a class="hover:underline" href="/energetika/blog">← Energy Memo</a></p>
-    <p class="text-sm text-muted pb-8 mb-10 border-b border-gray-200">{post.date}</p>
+    <p class="text-sm text-muted pb-8 mb-10 border-b border-hairline">{post.date}</p>
 
     <div class="prose prose-lg max-w-none">
-      <p class="text-xl text-gray-700">
+      <p class="text-xl text-default">
         SAPI konferencia 2026 ukázala, že budúcnosť firemnej energetiky nebude stáť len na výrobe elektriny, ale
         predovšetkým na dátach, inteligentnom riadení spotreby a <a href="/energetika/slovnik#flexibilita"
           >flexibilite</a
@@ -80,7 +80,7 @@ const faqSchema = {
         podniky, komerčné budovy a energeticky náročné prevádzky.
       </p>
 
-      <div class="not-prose my-8 border border-gray-200 rounded-xl p-5">
+      <div class="not-prose my-8 border border-hairline rounded-xl p-5">
         <p class="font-bold mb-3">Z článku sa dozviete</p>
         <ul class="list-disc pl-5 space-y-1 text-muted">
           <li>prečo už samotná fotovoltika nestačí,</li>
@@ -137,7 +137,7 @@ const faqSchema = {
         <img
           src="/images/energy-memo/mapa-kapacity.svg"
           alt="Ilustračná mapa dostupnej kapacity siete"
-          class="w-full rounded-xl border border-gray-200"
+          class="w-full rounded-xl border border-hairline"
         />
         <figcaption class="text-sm text-muted mt-2">
           Ilustračná mapa dostupnej kapacity, kde sa dá pripojiť nový zdroj.
@@ -302,7 +302,7 @@ const faqSchema = {
       </ol>
       <p>Takýto postup výrazne znižuje riziko nesprávnej investície a zvyšuje návratnosť projektu.</p>
 
-      <div class="not-prose my-8 border border-gray-200 rounded-xl p-5">
+      <div class="not-prose my-8 border border-hairline rounded-xl p-5">
         <p class="font-bold mb-3">Zhrnutie v 30 sekundách</p>
         <ul class="space-y-2">
           <li class="flex gap-3">
@@ -398,7 +398,7 @@ const faqSchema = {
     <div class="space-y-4">
       {
         faqs.map((faq) => (
-          <details class="group rounded-xl border border-gray-200 p-5">
+          <details class="group rounded-xl border border-hairline p-5">
             <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
               {faq.q}
               <span class="text-primary transition group-open:rotate-45" aria-hidden="true">

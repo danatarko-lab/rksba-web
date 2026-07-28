@@ -63,7 +63,7 @@ const isExternal = (h) => h.startsWith('http');
             href={c.href}
             target={isExternal(c.href) ? '_blank' : undefined}
             rel={isExternal(c.href) ? 'noopener noreferrer' : undefined}
-            class="group block rounded-xl border border-gray-200 p-6 hover:shadow-md hover:border-primary/40 transition"
+            class="group block rounded-xl border border-hairline p-6 hover:shadow-md hover:border-primary/40 transition"
           >
             <h2 class="font-semibold group-hover:text-primary">{c.title}</h2>
             <p class="text-sm text-muted mt-1">{c.desc}</p>

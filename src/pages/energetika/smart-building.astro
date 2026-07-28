@@ -151,7 +151,7 @@ const faqSchema = {
       <div class="not-prose my-8 overflow-x-auto">
         <table class="w-full text-left border-collapse">
           <thead>
-            <tr class="border-b border-gray-200">
+            <tr class="border-b border-hairline">
               <th class="py-2 pr-4 font-semibold align-top">Systém</th>
               <th class="py-2 font-semibold align-top">Čo rieši</th>
             </tr>
@@ -159,7 +159,7 @@ const faqSchema = {
           <tbody>
             {
               systemy.map((s) => (
-                <tr class="border-b border-gray-100 last:border-0 align-top">
+                <tr class="border-b border-hairline last:border-0 align-top">
                   <td class="py-2 pr-4 font-medium">
                     {s.href ? (
                       <a class="text-primary hover:underline" href={s.href}>
@@ -224,7 +224,7 @@ const faqSchema = {
             ].map((box, i, arr) => (
               <>
                 <div
-                  class={`w-full max-w-xs rounded-xl border p-3 text-center font-medium ${i === arr.length - 1 ? 'border-primary/30 bg-primary/5 text-primary' : 'border-gray-200 bg-white'}`}
+                  class={`w-full max-w-xs rounded-xl border p-3 text-center font-medium ${i === arr.length - 1 ? 'border-primary/30 bg-primary/5 text-primary' : 'border-hairline bg-panel'}`}
                 >
                   {box}
                 </div>
@@ -310,7 +310,7 @@ const faqSchema = {
     <div class="space-y-4">
       {
         faqs.map((faq) => (
-          <details class="group rounded-xl border border-gray-200 p-5">
+          <details class="group rounded-xl border border-hairline p-5">
             <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
               {faq.q}
               <span class="text-primary transition group-open:rotate-45" aria-hidden="true">

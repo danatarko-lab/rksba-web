@@ -67,19 +67,20 @@ const certs = [
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {
         certs.map((cert) => (
-          <article class="flex flex-col rounded-xl border border-gray-200 p-6">
+          <article class="flex flex-col rounded-xl border border-hairline bg-panel p-6">
             {cert.image ? (
+              /* Skeny certifikátov sú na bielom papieri — dlaždica musí ostať biela. */
               <a
                 href={cert.image}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="mb-4 block aspect-[3/2] overflow-hidden rounded-lg border border-gray-200 bg-gray-50"
+                class="logo-tile mb-4 aspect-[3/2] overflow-hidden border border-hairline bg-white p-2"
                 aria-label={`Otvoriť certifikát v plnej veľkosti: ${cert.name}`}
               >
                 <img src={cert.image} alt={cert.alt} loading="lazy" class="h-full w-full object-contain" />
               </a>
             ) : (
-              <div class="mb-4 flex aspect-[3/2] items-center justify-center rounded-lg border border-dashed border-gray-300 bg-gray-50 text-center text-sm text-muted px-3">
+              <div class="mb-4 flex aspect-[3/2] items-center justify-center rounded-lg border border-dashed border-hairline-strong bg-panel-soft text-center text-sm text-muted px-3">
                 Obrázok certifikátu doplníme
               </div>
             )}

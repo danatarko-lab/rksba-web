@@ -31,12 +31,12 @@ const standalone = [
               {top.text}
             </a>
             {top.links && top.links.length > 0 && (
-              <ul class="ml-5 mt-2 space-y-1 border-l border-gray-200 pl-4">
+              <ul class="ml-5 mt-2 space-y-1 border-l border-hairline pl-4">
                 {top.links.map((child) =>
                   child.links && child.links.length > 0 ? (
                     <li>
                       <span class="font-medium text-default">{child.text}</span>
-                      <ul class="ml-5 mt-1 space-y-1 border-l border-gray-200 pl-4">
+                      <ul class="ml-5 mt-1 space-y-1 border-l border-hairline pl-4">
                         {child.links.map((leaf) => (
                           <li>
                             <a class="text-muted hover:text-primary hover:underline" href={leaf.href}>

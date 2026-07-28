@@ -20,43 +20,48 @@ import '@fontsource-variable/inter';
 ---
 
 <style is:inline>
+  /*
+    RKS Digital Blue — tmavá varianta.
+    Web beží v režime light:only (config.yaml), takže trieda .dark sa nikdy nenasadí.
+    Tmavý vzhľad preto nesie priamo :root — svetlé ostrovy (header, dlaždice pod
+    logami, certifikáty) sa robia explicitne cez #header pravidlá a .logo-tile.
+  */
   :root {
     --aw-font-sans: 'Inter Variable';
     --aw-font-serif: 'Inter Variable';
     --aw-font-heading: 'Inter Variable';
 
+    /* Výplne tlačidiel — na nich je vždy biely text. */
     --aw-color-primary: rgb(0 0 255);
     --aw-color-secondary: rgb(1 97 239);
     --aw-color-accent: rgb(1 97 239);
 
-    --aw-color-text-heading: rgb(0 0 0);
-    --aw-color-text-default: rgb(16 16 16);
-    --aw-color-text-muted: rgb(16 16 16 / 66%);
-    --aw-color-bg-page: rgb(255 255 255);
+    /*
+      Modrá na text/okraje na tmavom pozadí. #0000FF má na #0A2342 kontrast 1.8:1
+      a #0161EF 3.0:1 — oboje padá na WCAG AA. Preto samostatný svetlejší odtieň
+      (6.99:1), ktorý sa používa všade, kde je modrá TEXT, nie výplň.
+    */
+    --aw-color-link: rgb(125 173 255);
 
-    --aw-color-bg-page-dark: rgb(10 35 66);
-
-    ::selection {
-      background-color: lavender;
-    }
-  }
-
-  .dark {
-    --aw-font-sans: 'Inter Variable';
-    --aw-font-serif: 'Inter Variable';
-    --aw-font-heading: 'Inter Variable';
-
-    --aw-color-primary: rgb(0 0 255);
-    --aw-color-secondary: rgb(1 97 239);
-    --aw-color-accent: rgb(1 97 239);
-
-    --aw-color-text-heading: rgb(247, 248, 248);
+    --aw-color-text-heading: rgb(247 248 248);
     --aw-color-text-default: rgb(229 236 246);
     --aw-color-text-muted: rgb(229 236 246 / 66%);
     --aw-color-bg-page: rgb(10 35 66);
+    --aw-color-bg-page-dark: rgb(10 35 66);
+
+    /* Panely, karty a callouty na tmavom podklade. */
+    --aw-color-bg-panel: rgb(19 35 77);
+    --aw-color-bg-panel-soft: rgb(229 236 246 / 6%);
+    --aw-color-border: rgb(229 236 246 / 16%);
+    --aw-color-border-strong: rgb(229 236 246 / 28%);
+
+    /* Svetlé ostrovy: header a dlaždice pod logami. */
+    --aw-color-bg-light: rgb(255 255 255);
+    --aw-color-text-on-light: rgb(16 16 16);
+    --aw-color-text-on-light-muted: rgb(16 16 16 / 66%);
 
     ::selection {
-      background-color: black;
+      background-color: rgb(1 97 239);
       color: snow;
     }
   }

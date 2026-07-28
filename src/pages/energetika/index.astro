@@ -161,7 +161,7 @@ const faqs = [
     <ol class="grid gap-4 sm:grid-cols-2 mb-10">
       {
         kroky.map((k, i) => (
-          <li class="flex gap-4 rounded-xl border border-gray-200 bg-white p-5">
+          <li class="flex gap-4 rounded-xl border border-hairline bg-panel p-5">
             <span class="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-primary/10 font-semibold text-primary">
               {i + 1}
             </span>
@@ -181,7 +181,7 @@ const faqs = [
         dodavame.map((s) => (
           <a
             href={s.href}
-            class="group block rounded-xl border border-gray-200 bg-white p-6 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
+            class="group block rounded-xl border border-hairline bg-panel p-6 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
           >
             <p class="text-xs font-medium uppercase tracking-wider text-muted mb-1">{s.kicker}</p>
             <h3 class="text-lg font-medium mb-1">{s.title}</h3>
@@ -267,7 +267,7 @@ const faqs = [
     <div class="space-y-4">
       {
         faqs.map((faq) => (
-          <details class="group rounded-xl border border-gray-200 p-5">
+          <details class="group rounded-xl border border-hairline p-5">
             <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
               {faq.q}
               <span class="text-primary transition group-open:rotate-45" aria-hidden="true">

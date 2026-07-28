@@ -174,7 +174,7 @@ const faqSchema = {
     <div class="space-y-4">
       {
         faqs.map((faq) => (
-          <details class="group rounded-xl border border-gray-200 p-5">
+          <details class="group rounded-xl border border-hairline p-5">
             <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
               {faq.q}
               <span class="text-primary transition group-open:rotate-45" aria-hidden="true">
@@ -184,7 +184,7 @@ const faqSchema = {
             <p class="text-muted mt-3">{faq.a}</p>
             {faq.links && faq.links.length > 0 && (
               <p class="text-sm text-muted mt-3">
-                <span class="font-semibold text-gray-800">Viac:</span>{' '}
+                <span class="font-semibold text-default">Viac:</span>{' '}
                 {faq.links.map((l, i) => (
                   <>
                     {i > 0 && ', '}

@@ -119,8 +119,9 @@ const faqSchema = {
     <div class="grid gap-6 md:grid-cols-2 mt-12">
       {
         modely.map((m) => (
-          <div class="flex flex-col rounded-xl border border-gray-200 p-6">
-            <div class="mb-5 flex h-56 items-center justify-center rounded-lg bg-gray-50">
+          <div class="flex flex-col rounded-xl border border-hairline bg-panel p-6">
+            {/* Fotky produktov sú na bielom pozadí — dlaždica ostáva svetlá. */}
+            <div class="logo-tile mb-5 h-56 bg-white">
               <img src={m.obrazok} alt={m.alt} loading="lazy" class="h-full w-auto object-contain p-3" />
             </div>
             <h2 class="text-xl font-semibold tracking-tight">{m.nazov}</h2>
@@ -145,7 +146,7 @@ const faqSchema = {
     <div class="overflow-x-auto">
       <table class="w-full text-left border-collapse text-base">
         <thead>
-          <tr class="border-b border-gray-200">
+          <tr class="border-b border-hairline">
             <th class="py-3 pr-4 font-semibold align-top"></th>
             <th class="py-3 pr-4 font-semibold align-top">PH600</th>
             <th class="py-3 font-semibold align-top">PH660</th>
@@ -154,7 +155,7 @@ const faqSchema = {
         <tbody>
           {
             tabulka.map((r) => (
-              <tr class="border-b border-gray-100 align-top">
+              <tr class="border-b border-hairline align-top">
                 <td class="py-3 pr-4 font-medium">{r.riadok}</td>
                 <td class="py-3 pr-4 text-muted">{r.ph600}</td>
                 <td class="py-3 text-muted">{r.ph660}</td>
@@ -170,7 +171,7 @@ const faqSchema = {
     <div class="grid gap-6 sm:grid-cols-2">
       {
         funkcie.map((f) => (
-          <div class="rounded-xl border border-gray-200 p-6">
+          <div class="rounded-xl border border-hairline p-6">
             <h3 class="text-lg font-semibold mb-3">{f.nadpis}</h3>
             <ul class="space-y-1.5 text-base text-muted">
               {f.body.map((b) => (
@@ -209,7 +210,7 @@ const faqSchema = {
     <div class="space-y-4">
       {
         faqs.map((faq) => (
-          <details class="group rounded-xl border border-gray-200 p-5">
+          <details class="group rounded-xl border border-hairline p-5">
             <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
               {faq.q}
               <span class="text-primary transition group-open:rotate-45" aria-hidden="true">

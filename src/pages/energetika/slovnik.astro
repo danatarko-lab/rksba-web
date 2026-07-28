@@ -2183,12 +2183,12 @@ const termSchema = {
       postupne dopĺňame.
     </p>
 
-    <nav aria-label="Skočiť na písmeno" class="flex flex-wrap gap-2 pb-8 mb-10 border-b border-gray-200">
+    <nav aria-label="Skočiť na písmeno" class="flex flex-wrap gap-2 pb-8 mb-10 border-b border-hairline">
       {
         letters.map((letter) => (
           <a
             href={`#${letterAnchor[letter]}`}
-            class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 font-medium text-primary hover:bg-primary/5"
+            class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-hairline font-medium text-primary hover:bg-primary/5"
           >
             {letter}
           </a>
@@ -2199,7 +2199,7 @@ const termSchema = {
     <div class="space-y-4">
       {
         sorted.map((t) => (
-          <div id={t.id} class="scroll-mt-24 rounded-xl border border-gray-200 p-5">
+          <div id={t.id} class="scroll-mt-24 rounded-xl border border-hairline p-5">
             <p class="font-bold text-lg">
               {t.term}
               {t.abbr && <span class="font-normal text-muted"> ({t.abbr})</span>}
@@ -2207,12 +2207,12 @@ const termSchema = {
             <p class="text-muted mt-2">{t.def}</p>
             {t.why && (
               <p class="text-muted mt-3">
-                <span class="font-semibold text-gray-800">Prečo je to dôležité:</span> {t.why}
+                <span class="font-semibold text-default">Prečo je to dôležité:</span> {t.why}
               </p>
             )}
             {t.related && t.related.length > 0 && (
               <p class="text-sm text-muted mt-3">
-                <span class="font-semibold text-gray-800">Súvisiace pojmy:</span>{' '}
+                <span class="font-semibold text-default">Súvisiace pojmy:</span>{' '}
                 {t.related
                   .map((rid) => byId[rid])
                   .filter(Boolean)
@@ -2228,7 +2228,7 @@ const termSchema = {
             )}
             {t.services && t.services.length > 0 && (
               <p class="text-sm text-muted mt-3">
-                <span class="font-semibold text-gray-800">Súvisiace riešenia:</span>{' '}
+                <span class="font-semibold text-default">Súvisiace riešenia:</span>{' '}
                 {t.services.map((s, i) => (
                   <>
                     {i > 0 && ', '}
@@ -2241,7 +2241,7 @@ const termSchema = {
             )}
             {t.articles && t.articles.length > 0 && (
               <p class="text-sm text-muted mt-3">
-                <span class="font-semibold text-gray-800">Súvisiace články:</span>{' '}
+                <span class="font-semibold text-default">Súvisiace články:</span>{' '}
                 {t.articles.map((a, i) => (
                   <>
                     {i > 0 && ', '}

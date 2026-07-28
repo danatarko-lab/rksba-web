@@ -13,6 +13,14 @@
   --color-default: var(--aw-color-text-default);
   --color-muted: var(--aw-color-text-muted);
 
+  /* Modrá pre text/okraje na tmavom (WCAG AA) — viď CustomStyles.astro. */
+  --color-link: var(--aw-color-link);
+  --color-heading: var(--aw-color-text-heading);
+  --color-panel: var(--aw-color-bg-panel);
+  --color-panel-soft: var(--aw-color-bg-panel-soft);
+  --color-hairline: var(--aw-color-border);
+  --color-hairline-strong: var(--aw-color-border-strong);
+
   --font-sans:
     'var(--aw-font-sans, ui-sans-serif)', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
@@ -46,19 +54,35 @@
 }
 
 @utility text-page {
-  color: var(--aw-color-text-page);
+  color: var(--aw-color-text-default);
 }
 
 @utility text-muted {
   color: var(--aw-color-text-muted);
 }
 
+/*
+  Biela dlaždica pod logom klienta / obrázkom certifikátu — svetlý ostrov na
+  tmavom webe. Padding sa dáva na mieste použitia, nech si ho každé miesto
+  vie doladiť.
+*/
+@utility logo-tile {
+  @apply flex items-center justify-center rounded-lg bg-white;
+}
+
 @utility btn {
-  @apply inline-flex items-center justify-center rounded-full border-gray-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer;
+  @apply inline-flex items-center justify-center rounded-full border bg-transparent font-medium text-center text-base leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-2 focus:ring-2 cursor-pointer;
+  color: var(--aw-color-link);
+  border-color: var(--aw-color-link);
+}
+.btn:hover {
+  background-color: var(--aw-color-secondary);
+  border-color: var(--aw-color-secondary);
+  color: #fff;
 }
 
 @utility btn-primary {
-  @apply btn font-semibold bg-primary text-white border-primary hover:bg-secondary hover:border-secondary hover:text-white dark:text-white dark:bg-primary dark:border-primary dark:hover:border-secondary dark:hover:bg-secondary;
+  @apply btn font-semibold bg-primary text-white border-primary hover:bg-secondary hover:border-secondary hover:text-white;
 }
 
 @utility btn-secondary {
@@ -66,17 +90,40 @@
 }
 
 @utility btn-tertiary {
-  @apply btn border-none shadow-none text-muted hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
+  @apply btn border-none shadow-none text-muted;
+}
+.btn-tertiary:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--aw-color-text-heading);
 }
 
-#header.scroll > div:first-child {
-  @apply bg-page md:bg-white/90 md:backdrop-blur-md;
-  box-shadow: 0 0.375rem 1.5rem 0 rgb(140 152 164 / 13%);
+/*
+  Header ostáva SVETLÝ aj na tmavom webe: biele pozadie, tmavé odkazy, modré logo.
+  Preto sa tu nesmie použiť bg-page — ten je už tmavý.
+*/
+#header {
+  background-color: var(--aw-color-bg-light);
 }
-.dark #header.scroll > div:first-child,
-#header.scroll.dark > div:first-child {
-  @apply bg-page md:bg-[#030621e6] border-b border-gray-500/20;
-  box-shadow: none;
+#header,
+#header .text-default {
+  color: var(--aw-color-text-on-light);
+}
+#header .text-muted {
+  color: var(--aw-color-text-on-light-muted);
+}
+#header a:not(.btn):not(.btn-primary):hover,
+#header button:hover {
+  color: var(--aw-color-primary);
+}
+#header .dropdown-menu {
+  background-color: var(--aw-color-bg-light);
+  color: var(--aw-color-text-on-light);
+}
+#header.scroll {
+  @apply md:backdrop-blur-md;
+  background-color: rgb(255 255 255 / 92%);
+  box-shadow: 0 0.375rem 1.5rem 0 rgb(4 12 30 / 28%);
 }
 
 #header.expanded nav {
@@ -121,3 +168,76 @@
   border-bottom: 1px dotted;
   cursor: help;
 }
+
+/* ==========================================================================
+   RKS Digital Blue — tmavá varianta, globálne pravidlá
+   ========================================================================== */
+
+/* Nadpisy sú o niečo svetlejšie ako bežný text (#F7F8F8 vs rgb(229 236 246)). */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--aw-color-text-heading);
+}
+
+/*
+  Odkazy v obsahu. Modrá výplň tlačidiel ostáva #0000FF, ale modrý TEXT na navy
+  by nesplnil AA, preto --aw-color-link. Tlačidlá a header sú vyňaté.
+*/
+main a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-tertiary):not([class*='text-']) {
+  color: var(--aw-color-link);
+}
+
+/* Vodorovné čiary a okraje, ktoré nemajú vlastnú triedu. */
+hr {
+  border-color: var(--aw-color-border);
+}
+
+/*
+  Primárna modrá #0000FF je navrhnutá ako VÝPLŇ (biely text na nej má 8.6:1).
+  Ako text alebo okraj na navy #0A2342 má ale len 1.8:1, čo padá na WCAG AA.
+  Web ju takto používa na ~1750 miestach, preto sa tieto utility premapujú
+  centrálne — bg-primary a btn-primary ostávajú nedotknuté.
+*/
+.text-primary,
+.hover\:text-primary:hover,
+.group:hover .group-hover\:text-primary,
+.prose-a\:text-primary :is(a),
+.text-accent,
+.text-secondary {
+  color: var(--aw-color-link);
+}
+.border-primary,
+.hover\:border-primary:hover,
+.focus\:border-primary:focus {
+  border-color: var(--aw-color-secondary);
+}
+
+/* --- Typography plugin (.prose) na tmavom podklade --- */
+.prose {
+  --tw-prose-body: var(--aw-color-text-default);
+  --tw-prose-headings: var(--aw-color-text-heading);
+  --tw-prose-lead: var(--aw-color-text-muted);
+  --tw-prose-links: var(--aw-color-link);
+  --tw-prose-bold: var(--aw-color-text-heading);
+  --tw-prose-counters: var(--aw-color-text-muted);
+  --tw-prose-bullets: var(--aw-color-border-strong);
+  --tw-prose-hr: var(--aw-color-border);
+  --tw-prose-quotes: var(--aw-color-text-heading);
+  --tw-prose-quote-borders: var(--aw-color-secondary);
+  --tw-prose-captions: var(--aw-color-text-muted);
+  --tw-prose-code: var(--aw-color-text-heading);
+  --tw-prose-pre-code: var(--aw-color-text-default);
+  --tw-prose-pre-bg: var(--aw-color-bg-panel);
+  --tw-prose-th-borders: var(--aw-color-border-strong);
+  --tw-prose-td-borders: var(--aw-color-border);
+}
+
+/*
+  Biele dlaždice zámerne neriešia farbu textu — obsahujú len obrázky (logá
+  klientov, skeny certifikátov, fotky produktov). Popisky ležia mimo nich,
+  na tmavom paneli.
+*/
