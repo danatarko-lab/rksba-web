@@ -19,7 +19,7 @@ import { Icon } from 'astro-icon/components';
         type="button"
         data-rks-search-close
         aria-label="Zavrieť vyhľadávanie"
-        class="rounded-lg p-1.5 text-muted hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        class="rounded-lg p-1.5 text-muted hover:bg-panel-soft focus:outline-none focus:ring-2 focus:ring-hairline-strong"
       >
         <Icon name="tabler:x" class="w-5 h-5" />
       </button>
@@ -32,11 +32,23 @@ import { Icon } from 'astro-icon/components';
 
 <style is:global>
   #search {
-    --pagefind-ui-primary: var(--aw-color-primary);
+    /* Modál je tmavý panel — pozadie aj okraje musia ísť s ním, inak by boli
+       svetlé výsledky na bielom pozadí nečitateľné. */
+    --pagefind-ui-primary: var(--aw-color-link);
     --pagefind-ui-text: var(--aw-color-text-default);
-    --pagefind-ui-background: #fff;
+    --pagefind-ui-background: var(--aw-color-bg-panel);
+    --pagefind-ui-border: var(--aw-color-border);
+    --pagefind-ui-tag: var(--aw-color-bg-panel-soft);
     --pagefind-ui-border-radius: 8px;
     --pagefind-ui-font: inherit;
+  }
+  /* Vyhľadávacie pole si farby neberie z premenných, treba ho zladiť ručne. */
+  #search .pagefind-ui__search-input {
+    background-color: var(--aw-color-bg-panel-soft);
+    color: var(--aw-color-text-default);
+  }
+  #search .pagefind-ui__search-input::placeholder {
+    color: var(--aw-color-text-muted);
   }
 </style>
 
