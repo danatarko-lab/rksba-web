@@ -65,10 +65,10 @@ const panely = [
               style={`object-position: ${p.position};`}
             />
             <span class="overlay" />
+            {/* Klikateľný je celý panel — box už nemá vlastné tlačidlo. */}
             <span class="box">
               <span class="box-title">{p.title}</span>
               <span class="box-text">{p.text}</span>
-              <span class="btn">Vstúpiť</span>
             </span>
           </a>
         ))
@@ -153,19 +153,41 @@ const panely = [
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg, rgba(10, 35, 66, 0.22), rgba(10, 35, 66, 0.5));
+    transition: opacity 0.3s ease;
+  }
+  /* Náznak klikateľnosti — panel sa pri prejdení myšou presvetlí. */
+  .panel:hover .overlay,
+  .panel:focus-visible .overlay {
+    opacity: 0.62;
   }
 
+  /*
+    Matné sklo. Pevná šírka aj min-height držia oba boxy rovnako veľké bez
+    ohľadu na dĺžku textu; obsah je vycentrovaný, aby kratší text nesedel hore.
+  */
   .box {
     position: relative;
-    display: block;
-    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 380px;
+    max-width: 100%;
+    /* Nastavené podľa vyššieho z boxov (ľavý má dvojriadkový nadpis). */
+    min-height: 210px;
     padding: 30px 32px;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
+    transition: background-color 0.3s ease;
   }
+  .panel:hover .box,
+  .panel:focus-visible .box {
+    background: rgba(255, 255, 255, 0.66);
+  }
+
   .box-title {
     display: block;
     margin-bottom: 10px;
@@ -175,27 +197,16 @@ const panely = [
     letter-spacing: -0.01em;
     color: #0a2342;
   }
+  /*
+    Tmavší než pôvodná #41556b — cez priesvitnejšie sklo presvitá fotka
+    a svetlejší odtieň by na WCAG AA nedosiahol.
+  */
   .box-text {
     display: block;
-    margin-bottom: 22px;
     font-size: 15px;
     line-height: 1.55;
-    color: #41556b;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 12px 28px;
-    border-radius: 8px;
-    background: #0000ff;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 700;
-    transition: background-color 0.2s ease;
-  }
-  .panel:hover .btn,
-  .panel:focus-visible .btn {
-    background: #0161ef;
+    font-weight: 500;
+    color: #17273d;
   }
 
   .panel:focus-visible {
@@ -217,7 +228,7 @@ const panely = [
     line-height: 1.5;
   }
 
-  @media (max-width: 760px) {
+  @media (max-width: 900px) {
     .panels {
       flex-direction: column;
     }
@@ -250,14 +261,12 @@ const panely = [
     .box {
       padding: 20px 18px;
     }
-    .box-text {
-      margin-bottom: 18px;
-    }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .photo,
-    .btn {
+    .overlay,
+    .box {
       transition: none;
     }
     .panel:hover .photo,
