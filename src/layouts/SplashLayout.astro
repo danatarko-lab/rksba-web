@@ -1,0 +1,59 @@
+---
+/*
+  Minimálny layout pre samostatné vstupné stránky (rozcestník).
+  Zámerne NEobsahuje Header s mega-menu, Footer ani ClientRouter — rozcestník
+  je len brána, nie súčasť webu. Neťahá ani CustomStyles, takže sem nepreniknú
+  tmavé :root tokeny a stránka si farby drží sama.
+*/
+import '@fontsource-variable/inter';
+
+import { I18N } from 'astrowind:config';
+
+import CommonMeta from '~/components/common/CommonMeta.astro';
+import Favicons from '~/components/Favicons.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = '' } = Astro.props;
+const { language, textDirection } = I18N;
+---
+
+<!doctype html>
+<html lang={language} dir={textDirection}>
+  <head>
+    <CommonMeta />
+    <Favicons />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <meta name="robots" content="noindex, nofollow" />
+
+    <style is:global>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        font-family: 'Inter Variable', Inter, ui-sans-serif, system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        color: #182233;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>
