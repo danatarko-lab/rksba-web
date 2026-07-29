@@ -42,6 +42,11 @@ export default defineConfig({
       status: 301,
       destination: 'https://mototrbo.sk/pripadove-studie',
     },
+    // Základné informácie zrušené, obsah je teraz priamo na /radiokomunikacie.
+    '/radiokomunikacie/sluzby/zakladne-informacie': {
+      status: 301,
+      destination: '/radiokomunikacie',
+    },
   },
 
   integrations: [

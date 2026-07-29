@@ -37,7 +37,6 @@ export const headerData = {
             { text: 'Elektroinštalačné práce', href: getPermalink('/radiokomunikacie/sluzby/elektroinstalacne-prace') },
             { text: 'Servis rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/servis-radiostanic') },
             { text: 'Prenájom rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/prenajom-radiostanic') },
-            { text: 'Základné informácie', href: getPermalink('/radiokomunikacie/sluzby/zakladne-informacie') },
           ],
         },
         {
@@ -91,7 +90,8 @@ export const headerData = {
         },
       ],
     },
-    { text: 'Certifikáty', href: getPermalink('/certifikaty') },
+    // Certifikáty už nie sú v hornom menu. Stránka /certifikaty žije ďalej,
+    // odkazuje na ňu homepage („Overená odbornosť“), /o-nas a /radiokomunikacie.
     { text: 'Referencie', href: getPermalink('/referencie') },
     { text: 'Kontakt', href: getPermalink('/kontakt') },
   ],

@@ -2,6 +2,8 @@
 import Layout from '~/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
 import heroRadiostanica from '~/assets/images/rk-hub-radiostanica.webp';
+// Presunuté zo zrušenej stránky /radiokomunikacie/sluzby/zakladne-informacie.
+import radioNabijacka from '~/assets/images/radiokomunikacie/radio-07.webp';
 
 const metadata = {
   title: 'Bezpečnostné systémy a rádiové siete | RKS',
@@ -58,7 +60,6 @@ const sluzby = [
   { title: 'Prenájom rádiostaníc', href: '/radiokomunikacie/sluzby/prenajom-radiostanic' },
   { title: 'Projekty elektrických zariadení', href: '/radiokomunikacie/sluzby/projekty-elektrickych-zariadeni' },
   { title: 'Elektroinštalačné práce', href: '/radiokomunikacie/sluzby/elektroinstalacne-prace' },
-  { title: 'Základné informácie', href: '/radiokomunikacie/sluzby/zakladne-informacie' },
 ];
 
 const produkty = [
@@ -118,6 +119,12 @@ const faqs = [
     a: 'Závisí od výkonu, terénu, frekvencií a infraštruktúry. V otvorenom priestore niekoľko kilometrov; s retranslačnými stanicami alebo digitálnou sieťou možno pokryť celé mestá alebo rozsiahle areály.',
   },
   {
+    // Zo zrušenej stránky Základné informácie. Zvyšné dve otázky odtiaľ sa sem
+    // nepresúvali, tie isté už tu boli (analógová vs. digitálna sieť, kedy sa oplatí).
+    q: 'Zabezpečuje RKS kompletnú realizáciu?',
+    a: 'Áno. Od analýzy požiadaviek cez projektovanie, realizáciu a legislatívu až po servis.',
+  },
+  {
     q: 'Načo slúži evakuačný rozhlas?',
     a: 'Na zaistenie bezpečnej evakuácie pri ohrození, informuje o nutnosti opustiť objekt cez obsluhu ohlasovne požiaru alebo vopred nahovorenými správami. Slúži aj na bežné odovzdávanie informácií.',
   },
@@ -174,6 +181,55 @@ const faqSchema = {
       <a href="/certifikaty" class="text-primary font-medium hover:underline"
         >Pozrieť certifikáty <span aria-hidden="true">→</span></a
       >
+    </p>
+
+    <!--
+      Presunuté zo zrušenej stránky /radiokomunikacie/sluzby/zakladne-informacie.
+      Umiestnenie (hneď za pásom dôveryhodnosti, pred kartami) čaká na odsúhlasenie.
+    -->
+    <div class="grid items-center gap-8 lg:gap-10 lg:grid-cols-5 mb-10">
+      <p class="text-lg text-muted lg:col-span-3">
+        Tam, kde musí komunikácia fungovať okamžite a spoľahlivo, bez závislosti od verejných mobilných sietí, sú
+        profesionálne rádiové systémy najistejšou voľbou. RKS dodáva komplexné rádiokomunikačné riešenia od roku 1991:
+        od návrhu a projektovania cez realizáciu až po dlhodobý servis a modernizáciu.
+      </p>
+      <div class="lg:col-span-2 aspect-[4/3] overflow-hidden rounded-2xl shadow-sm">
+        <Image
+          src={radioNabijacka}
+          alt="Profesionálne rádiostanice Motorola v nabíjacej stanici"
+          widths={[400, 600, 768]}
+          sizes="(max-width: 1023px) 100vw, 40vw"
+          loading="lazy"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mb-2">Čo zabezpečujeme</h2>
+    <p class="text-muted max-w-3xl mb-4">Pod jednou strechou pokrývame celý životný cyklus rádiového systému:</p>
+    <ul class="text-muted max-w-3xl mb-10 space-y-1 list-disc pl-5">
+      <li>návrh a projektovanie rádiových sietí,</li>
+      <li>realizáciu sietí na kľúč,</li>
+      <li>servis rádiostaníc Motorola,</li>
+      <li>prenájom rádiostaníc,</li>
+      <li>digitalizáciu analógových systémov,</li>
+      <li>audit existujúcich sietí,</li>
+      <li>návrh autonómnych systémov varovania,</li>
+      <li>projektovanie elektrických zariadení a elektroinštalačné práce.</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold tracking-tight mb-2">Prečo profesionálna rádiová sieť</h2>
+    <p class="text-muted max-w-3xl mb-10">
+      Profesionálna rádiová sieť umožňuje okamžitú skupinovú komunikáciu jediným stlačením tlačidla, bez vytáčania
+      čísla. Je nezávislá od mobilných operátorov, má nízke prevádzkové náklady bez ohľadu na intenzitu komunikácie a
+      funguje spoľahlivo aj v hlučnom priemyselnom prostredí, podzemných alebo uzavretých priestoroch. Moderné digitálne
+      systémy navyše podporujú GPS lokalizáciu, šifrovanie, dispečerské riadenie a integráciu s ďalšími technológiami.
+    </p>
+
+    <h2 class="text-2xl font-semibold tracking-tight mb-2">Pre koho sú riešenia určené</h2>
+    <p class="text-muted max-w-3xl mb-16">
+      Výrobné podniky, energetika, logistické centrá, letiská, stavebné spoločnosti, mestá a obce, priemyselné areály,
+      bezpečnostné služby a prevádzkovatelia kritickej infraštruktúry.
     </p>
 
     <!-- Bezpecnostne systemy -->
