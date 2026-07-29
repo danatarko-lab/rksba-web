@@ -42,11 +42,11 @@ export default defineConfig({
       status: 301,
       destination: 'https://mototrbo.sk/pripadove-studie',
     },
-    // Základné informácie zrušené, obsah je teraz priamo na /radiokomunikacie.
-    '/radiokomunikacie/sluzby/zakladne-informacie': {
-      status: 301,
-      destination: '/radiokomunikacie',
-    },
+    // Pozn.: Základné informácie (/radiokomunikacie/sluzby/zakladne-informacie)
+    // sa zámerne NEpresmerúvajú tu, ale v public/_redirects. Astro tu totiž
+    // vygeneruje statický HTML stub s meta-refresh, ktorý vracia HTTP 200 a na
+    // Cloudflare Pages má ako statický súbor prednosť pred pravidlom v
+    // _redirects — skutočné 301 by tým prestalo fungovať.
   },
 
   integrations: [

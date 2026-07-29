@@ -596,3 +596,4 @@
 # Rucne pravidla (mimo generovaneho bloku, regeneracia ich nezmaze).
 # Zakladne informacie zrusene, obsah presunuty na /radiokomunikacie.
 /radiokomunikacie/sluzby/zakladne-informacie /radiokomunikacie 301
+/radiokomunikacie/sluzby/zakladne-informacie/ /radiokomunikacie 301
