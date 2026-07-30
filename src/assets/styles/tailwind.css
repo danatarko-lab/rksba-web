@@ -143,10 +143,22 @@
 /* Jemné zvislé oddeľovače medzi stĺpcami mega-menu (len na širokých displejoch,
    na mobile sú stĺpce pod sebou). */
 @media (min-width: 1024px) {
-  #header .mega-col + .mega-col {
-    border-left: 1px solid rgb(10 35 66 / 12%);
-    padding-left: 2.5rem;
-    margin-left: -1.25rem;
+  #header .mega-col {
+    position: relative;
+  }
+  /*
+    Zámerne pseudoelement, nie border s paddingom: absolútne umiestnená čiara
+    nevstupuje do šírky grid stĺpcov. S borderom obsah presahoval kontajner
+    a menu sa vodorovne rolovalo.
+  */
+  #header .mega-col + .mega-col::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -1.25rem; /* stred 40px medzery medzi stĺpcami */
+    width: 1px;
+    background-color: rgb(10 35 66 / 12%);
   }
 }
 #header.scroll {
