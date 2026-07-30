@@ -52,6 +52,19 @@ export const headerData = {
             { text: 'Archív produktov', href: getPermalink('/katalog-produktov/kategoria/radiostanice') },
           ],
         },
+        {
+          // Aktuality rádiokomunikácií. Energetika si svoje aktuality drží vo
+          // vlastnom menu, tieto dve sady sa zámerne nemiešajú.
+          // „Prihlásiť sa na odber“ tu nie je, na odber vedie CTA na stránkach.
+          text: 'Aktuality',
+          links: [
+            { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
+            { text: 'Newsletter „Potvrďte príjem“', href: getPermalink('/radiokomunikacie/newsletter') },
+            { text: 'Slovník pojmov', href: getPermalink('/slovnik') },
+            { text: 'RKS Chatbot', href: 'https://rks-radio-expert.vercel.app/' },
+            { text: 'Q&A Rádiokomunikácie', href: getPermalink('/radiokomunikacie/q-a') },
+          ],
+        },
       ],
     },
     {
@@ -77,19 +90,6 @@ export const headerData = {
             { text: 'Prihlásiť sa na odber', href: getPermalink('/newsletter-odber') },
           ],
         },
-      ],
-    },
-    {
-      // Aktuality rádiokomunikácií. Energetika si svoje aktuality drží vo
-      // vlastnom menu, tieto dve sady sa zámerne nemiešajú.
-      // „Prihlásiť sa na odber“ tu nie je, na odber vedie CTA na stránkach.
-      text: 'Aktuality',
-      links: [
-        { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
-        { text: 'Newsletter „Potvrďte príjem“', href: getPermalink('/radiokomunikacie/newsletter') },
-        { text: 'Slovník pojmov', href: getPermalink('/slovnik') },
-        { text: 'RKS Chatbot', href: 'https://rks-radio-expert.vercel.app/' },
-        { text: 'Q&A Rádiokomunikácie', href: getPermalink('/radiokomunikacie/q-a') },
       ],
     },
     // Certifikáty už nie sú v hornom menu. Stránka /certifikaty žije ďalej,
