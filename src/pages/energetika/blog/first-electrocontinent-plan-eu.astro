@@ -1,0 +1,272 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import NewsletterCTA from '~/components/widgets/NewsletterCTA.astro';
+
+const metadata = {
+  title: 'First Electrocontinent Ever. Čo znamená nový plán EÚ pre naše firmy? | RKS',
+  description:
+    'Európska komisia chce zvýšiť podiel elektriny na konečnej spotrebe z 23 % na 46 % do roku 2040. Čo Akčný plán pre elektrifikáciu znamená pre investície firiem.',
+};
+
+const post = {
+  title: 'First Electrocontinent Ever',
+  date: '30. 7. 2026',
+};
+---
+
+<Layout metadata={metadata}>
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-14 md:py-20">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-5">Energy Memo · Energetika</p>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight">{post.title}</h1>
+      <p class="mt-5 text-lg text-white/80">Čo znamená nový plán EÚ pre naše firmy?</p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+    <p class="text-sm text-muted mb-8"><a class="hover:underline" href="/energetika/blog">← Energy Memo</a></p>
+    <p class="text-sm text-muted pb-8 mb-10 border-b border-hairline">
+      {post.date} · Energy Memo · vydanie 01 · RKS Energetika
+    </p>
+
+    <div class="prose prose-lg max-w-none">
+      <p>
+        Prvý elektrokontinent. Tak nazvala Európska komisia svoju víziu budúcnosti energetiky. Za tým sloganom stojí
+        konkrétny akčný plán, ktorý ovplyvní spôsob, akým budú firmy počas nasledujúcich rokov plánovať energetické
+        investície.
+      </p>
+
+      <p>
+        Komisia predstavila Akčný plán pre <a href="/energetika/slovnik#dekarbonizacia-elektrifikacia">elektrifikáciu</a
+        >
+        17. júla 2026<sup><a href="#zdroj-1">1</a></sup>. Cieľ je odvážny: zvýšiť podiel elektriny na konečnej spotrebe
+        energie z dnešných približne 23 % na 46 % do roku 2040<sup><a href="#zdroj-1">1</a></sup>. Podľa odhadu Komisie
+        by tým EÚ znížila dovoz fosílnych palív približne o 260 miliárd eur ročne<sup><a href="#zdroj-1">1</a></sup>.
+      </p>
+
+      <p>
+        Ak dnes rozhodujete o modernizácii výroby, novej hale, <a href="/energetika/slovnik#fve">fotovoltike</a> alebo batériovom
+        úložisku, tento plán ukazuje, akým smerom sa bude uberať regulačné aj ekonomické prostredie, v ktorom sa tá investícia
+        bude počas nasledujúcich pätnástich rokov splácať.
+      </p>
+
+      <h2>Elektrifikácia zasahuje celý energetický systém</h2>
+
+      <p>
+        Elektrifikácia sa týka vykurovania, priemyselných procesov, dopravy aj digitalizácie distribučných sietí. Aby
+        bolo možné vyšší podiel elektriny bezpečne využívať, bude potrebné rozširovať siete, zavádzať
+        <a href="/energetika/slovnik#ims-inteligentny-elektromer">inteligentné meranie</a>, podporovať
+        <a href="/energetika/slovnik#flexibilita">flexibilitu</a> spotreby a rozvíjať
+        <a href="/energetika/slovnik#bess">batériové úložiská</a>.
+      </p>
+
+      <p class="not-italic text-xl font-medium border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        Elektrina sa tým stáva strategickou výrobnou surovinou, podobne ako bola kedysi ropa alebo zemný plyn.
+      </p>
+
+      <p>
+        S rastúcim podielom elektriny na spotrebe rastie aj váha rozhodnutí o tom, odkiaľ ju firma berie, za akú cenu a
+        s akou mierou vlastnej kontroly.
+      </p>
+
+      <h2>O výsledku rozhoduje ekonomika projektu</h2>
+
+      <p>
+        Pri rozhodovaní o energetickej investícii sa do popredia dostáva otázka, ako ovplyvní ekonomiku firmy počas
+        nasledujúcich pätnástich rokov. Obstarávacia cena tvorí jednu časť ekonomiky projektu. Pri horizonte pätnástich
+        rokov rozhodujú aj prevádzkové náklady, ceny energií, spôsob riadenia,
+        <a href="/energetika/slovnik#degradacia">degradácia</a> zariadení, financovanie a regulačné podmienky.
+      </p>
+
+      <p>
+        Plán mieri aj na cenový signál. Komisia priznáva, že elektrina dnes v Európe často stojí približne trikrát viac
+        než plyn<sup><a href="#zdroj-1">1</a></sup>. Cieľom je stlačiť tento pomer do roku 2030 najviac na 2,5 pre
+        domácnosti a 2,0 pre priemysel<sup><a href="#zdroj-2">2</a></sup>, a to cez dane, poplatky a štruktúru taríf,
+        aby sa elektrifikácia oplatila. Premenné, ktoré dnes tvoria väčšinu neistoty v každom
+        <a href="/energetika/slovnik#business-case">business case</a> — budúce ceny energií,
+        <a href="/energetika/slovnik#distribucne-poplatky">distribučné poplatky</a>, spotrebné dane — sa tým stávajú
+        predmetom cielenej regulácie.
+      </p>
+
+      <p>
+        Business case sa tak stáva jedným z najdôležitejších nástrojov pri rozhodovaní o energetických investíciách.
+        Rozhoduje, ako investícia ovplyvní cash flow, návratnosť a budúcu flexibilitu prevádzky.
+      </p>
+
+      <h2>Flexibilita ako ekonomická vlastnosť projektu</h2>
+
+      <p>
+        Akčný plán zdôrazňuje potrebu flexibilnejšej elektrizačnej sústavy. Rastúci podiel obnoviteľných zdrojov — v
+        roku 2024 pochádzalo 47,5 % hrubej spotreby elektriny v EÚ z obnoviteľných zdrojov<sup
+          ><a href="#zdroj-3">3</a></sup
+        >
+        — vytvára priestor pre technológie, ktoré dokážu spotrebu alebo výrobu aktívne riadiť.
+      </p>
+
+      <p>
+        Pre podniky rastie význam <a href="/energetika/slovnik#bess">batériových úložísk (BESS)</a>, systémov
+        <a href="/energetika/slovnik#ems">energetického manažmentu (EMS)</a>, inteligentného riadenia spotreby a
+        <a href="/energetika/slovnik#ims-inteligentny-elektromer">smart metrov</a>.
+      </p>
+
+      <p class="not-italic text-xl font-medium border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        Flexibilita sa tým stáva ekonomickou vlastnosťou projektu — dáva firme schopnosť premeniť kolísanie trhových
+        cien z rizika na zdroj úspory či výnosu.
+      </p>
+
+      <h2>Na elektrifikáciu pôjdu aj peniaze</h2>
+
+      <p>
+        Elektrifikáciu má podporiť širší európsky rámec financovania. Samotný akčný plán počíta s využitím nástrojov
+        <a href="/energetika/slovnik#ets-1-ets-2">ETS</a>, Sociálneho klimatického fondu a opatrení na zníženie
+        počiatočných nákladov elektrifikácie. Jeho prvou fázou je ETS Investment Booster vo výške 30 miliárd eur na
+        investície do elektrifikácie priemyslu<sup><a href="#zdroj-4">4</a></sup>.
+      </p>
+
+      <p>
+        S elektrifikáciou sa prepájajú aj pripravované nástroje širšieho rámca Clean Industrial Deal, vrátane Banky pre
+        priemyselnú dekarbonizáciu s ambíciou mobilizovať 100 miliárd eur<sup><a href="#zdroj-4">4</a></sup>. K
+        energetickej transformácii prispieva Európska investičná banka prísľubom viac než 75 miliárd eur počas troch
+        rokov a približne 18,6 miliardy eur z programu Horizont Európa, Modernizačného a Inovačného fondu<sup
+          ><a href="#zdroj-4">4</a></sup
+        >.
+      </p>
+
+      <p>
+        Pre firmy je podstatné, kam tieto peniaze smerujú: do elektrifikácie priemyslu, sietí, úložísk a energetického
+        manažmentu. Sú to presne oblasti, v ktorých dnes pripravujú vlastné projekty.
+      </p>
+
+      <h2>Čo to znamená pre naše firmy</h2>
+
+      <p>
+        Akčný plán neurčuje, aké investície má urobiť konkrétna firma. Ukazuje smer, ktorým sa bude európska energetika
+        uberať počas nasledujúcich rokov. Cieľ dosiahnuť 46-percentný podiel elektriny na konečnej spotrebe energie do
+        roku 2040 je zatiaľ indikatívny a Komisia ho ešte posúdi v rámci energetického rámca EÚ po roku 2030<sup
+          ><a href="#zdroj-3">3</a></sup
+        >.
+      </p>
+
+      <p>
+        U nás je štartovacia pozícia náročnejšia, než napovedá európsky priemer. Pripojenie do distribučnej sústavy trvá
+        mesiace až roky a od januára 2025 vzrástla na Slovensku minimálna
+        <a href="/energetika/slovnik#rezervovana-kapacita">rezervovaná kapacita</a> na 50 % maximálnej rezervovanej kapacity,
+        čo mnohým firmám zdvihlo fixné distribučné náklady<sup><a href="#zdroj-5">5</a></sup>. Zároveň sa cez
+        <a href="/energetika/slovnik#edc">Energetické dátové centrum</a> (<a href="/energetika/slovnik#okte">OKTE</a>)
+        rozbieha <a href="/energetika/slovnik#zdielanie-elektriny">zdieľanie elektriny</a>,
+        <a href="/energetika/slovnik#agregacia">agregácia</a> flexibility a
+        <a href="/energetika/slovnik#akumulacia">akumulácia</a><sup><a href="#zdroj-6">6</a></sup>. Čím skôr firma pozná
+        svoje reálne dáta a limity pripojenia, tým lepšiu štartovú pozíciu má.
+      </p>
+
+      <p>Pre naše firmy z toho vyplýva najmä:</p>
+
+      <ul>
+        <li>pripravovať energetické projekty s horizontom 10 až 20 rokov,</li>
+        <li>zohľadňovať budúci rast elektrifikácie pri modernizácii prevádzok,</li>
+        <li>pracovať s flexibilitou a inteligentným riadením spotreby,</li>
+        <li>hodnotiť investície podľa ich dlhodobej ekonomickej návratnosti počas celej životnosti.</li>
+      </ul>
+
+      <p>
+        Rovnako dôležité je, čo plán nerieši sám od seba. Reálnym limitom projektov bývajú kapacita distribučných sietí,
+        čas potrebný na pripojenie a dostupnosť ľudí, ktorí ich postavia a nainštalujú.
+      </p>
+
+      <p class="not-italic text-xl font-medium border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        Firma, ktorá s týmito bariérami počíta vopred, získava náskok pred konkurenciou, ktorá ich objaví až pri
+        realizácii.
+      </p>
+
+      <h2>Pohľad RKS</h2>
+
+      <p>
+        Elektrifikácia je viditeľná zmena. Ešte hlbšia zmena prebieha v spôsobe, akým firmy rozhodujú o kapitáli a
+        dlhodobej ekonomike prevádzky.
+      </p>
+
+      <p>
+        Každá investícia by preto mala vychádzať z konkrétnej spotreby, výrobných procesov a ekonomických cieľov
+        podniku. EMS, fotovoltika, BESS a flexibilita vytvárajú najväčšiu hodnotu ako vzájomne prepojený systém
+        postavený na kvalitnom business case.
+      </p>
+
+      <p>Firma si tento spôsob uvažovania osvojuje postupne, projekt za projektom.</p>
+
+      <h2>Súvisiace články</h2>
+      <ul>
+        <li>
+          <a href="/energetika/blog/sesfg-mnichov-2026"
+            >Budúcnosť firemnej energetiky: 10 trendov z konferencie v Mníchove</a
+          >
+        </li>
+        <li>
+          <a href="/energetika/blog/intersolar-2026-bateria-za-babku"
+            >Batéria za babku, hodnota inde: čo Intersolar 2026 ukázal o budúcnosti energetiky</a
+          >
+        </li>
+        <li>
+          <a href="/energetika/blog/boli-sme-na-sapi-konferencii"
+            >SAPI konferencia 2026: 5 trendov, ktoré menia budúcnosť firemnej energetiky</a
+          >
+        </li>
+      </ul>
+
+      <h2>Súvisiace témy</h2>
+      <ul>
+        <li><a href="/energetika/energy-management">Čo je Energy Management System (EMS)</a></li>
+        <li><a href="/energetika/baterie-bess">Batériové úložiská (BESS)</a></li>
+        <li><a href="/energetika/fotovoltika">Firemná fotovoltika</a></li>
+        <li><a href="/energetika/slovnik">Slovník energetických pojmov</a></li>
+      </ul>
+
+      <h2>Zdroje a poznámky</h2>
+      <ol>
+        <li id="zdroj-1">
+          Európska komisia (2026) A plan to make Europe the first electro-continent [tlačová správa], 17. júla 2026.
+          Dostupné z: <a href="https://commission.europa.eu" rel="noopener">commission.europa.eu</a> (stiahnuté: 30. júla
+          2026). Doplnené o Factsheet on Electrification Action Plan (júl 2026), Európska komisia.
+        </li>
+        <li id="zdroj-2">
+          Cooling Post (2026) EC seeks reduction in electricity-to-gas price ratios. Dostupné z:
+          <a href="https://coolingpost.com" rel="noopener">coolingpost.com</a> (stiahnuté: 30. júla 2026). Akčný plán žiada
+          členské štáty znížiť pomer cien elektrina:plyn do roku 2030 najviac na 2,5 pre domácnosti a 2,0 pre priemysel.
+        </li>
+        <li id="zdroj-3">
+          Európska komisia (2026) Electrification — Energy [webová stránka témy]. Dostupné z:
+          <a href="https://energy.ec.europa.eu" rel="noopener">energy.ec.europa.eu</a> (stiahnuté: 30. júla 2026). Údaj o
+          podiele obnoviteľných zdrojov (47,5 % hrubej spotreby elektriny v EÚ v roku 2024) a informácia o verejnej konzultácii
+          k cieľom pre rok 2040.
+        </li>
+        <li id="zdroj-4">
+          Európska komisia (2026) Factsheet on Electrification Action Plan (júl 2026) — údaj o ETS Investment Booster
+          (30 mld €). Doplnené o právnu analýzu: Linklaters (2026) European Commission publishes Electrification Action
+          Plan…, 17. júla 2026. Dostupné z:
+          <a href="https://sustainablefutures.linklaters.com" rel="noopener">sustainablefutures.linklaters.com</a>
+          (stiahnuté: 30. júla 2026) — údaje o Banke pre priemyselnú dekarbonizáciu (100 mld €), prísľube EIB (75 mld € /
+          3 roky) a financovaní cez Horizont Európa, Modernizačný a Inovačný fond (18,6 mld €).
+        </li>
+        <li id="zdroj-5">
+          ELGAS (2025) Zmena stanovenia rezervovanej kapacity od 1. 1. 2025. Dostupné z:
+          <a href="https://elgas.sk" rel="noopener">elgas.sk</a> (stiahnuté: 30. júla 2026). Minimálna rezervovaná kapacita
+          na Slovensku vzrástla od 1. 1. 2025 z 20 % na 50 % maximálnej rezervovanej kapacity.
+        </li>
+        <li id="zdroj-6">
+          OKTE / SEPS (2026) OKTE spúšťa Energetické dátové centrum — zdieľanie elektriny, agregácia flexibility a
+          akumulácia. Dostupné z: <a href="https://sepsas.sk" rel="noopener">sepsas.sk</a> (stiahnuté: 30. júla 2026).
+        </li>
+      </ol>
+    </div>
+
+    {/* Soft CTA. Cieľ odkazu je zatiaľ /kontakt, čaká na určenie finálnej stránky. */}
+    <div class="not-prose mt-12 border-l-4 border-primary bg-primary/5 rounded-r-lg p-6">
+      <p class="text-lg">
+        Ak chcete vedieť, čo tento vývoj znamená pre vašu konkrétnu prevádzku, pripravujeme bezplatný
+        <strong>Energy Investment Check</strong> — odhad potenciálu fotovoltiky a batérie z vašich reálnych čísel.
+      </p>
+      <a href="/kontakt" class="btn-primary inline-flex mt-5">Mám záujem o Energy Investment Check</a>
+    </div>
+
+    <NewsletterCTA />
+  </article>
+</Layout>

@@ -17,6 +17,14 @@ export type Post = {
 export const energyMemo: Post[] = [
   {
     category: 'Energy Memo',
+    title: 'First Electrocontinent Ever. Čo znamená nový plán EÚ pre naše firmy?',
+    excerpt:
+      'Akčný plán EÚ pre elektrifikáciu chce do roku 2040 zdvihnúť podiel elektriny na konečnej spotrebe z 23 % na 46 %. Čo to znamená pre plánovanie energetických investícií v našich firmách.',
+    date: '30. 7. 2026',
+    href: '/energetika/blog/first-electrocontinent-plan-eu',
+  },
+  {
+    category: 'Energy Memo',
     title: 'Budúcnosť firemnej energetiky: 10 trendov z konferencie v Mníchove',
     excerpt:
       'Grid congestion, revenue stacking, co-location, EMS, agentic AI a ďalšie, 10 trendov, ktoré menia ekonomiku firemnej energetiky.',
