@@ -94,9 +94,12 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
             const megaColsClass =
               { 2: 'lg:grid-cols-2', 3: 'lg:grid-cols-3', 4: 'lg:grid-cols-4', 5: 'lg:grid-cols-5' }[megaCount] ||
               'lg:grid-cols-4';
+            // Šírky sú ladené na súčasné medzery (gap-x-10) aj oddeľovače stĺpcov.
+            // Pri 5 stĺpcoch obsah potrebuje 977 px, v pôvodných 960 px sa menu
+            // zbytočne rolovalo vodorovne.
             const megaMinWClass =
               megaCount >= 5
-                ? 'lg:min-w-[960px]'
+                ? 'lg:min-w-[1000px]'
                 : megaCount === 4
                   ? 'lg:min-w-[820px]'
                   : megaCount === 3
