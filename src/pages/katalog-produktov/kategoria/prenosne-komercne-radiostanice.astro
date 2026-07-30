@@ -25,7 +25,7 @@ const breadcrumb = [
   }
 ];
 const heading = "Komerčné rádiostanice";
-const popisHtml = "Produkty už nie sú v predaji, aktuálnu ponuku nájdete na www.mototrbo.sk <p> Rádiostanice rady CP patria do kategórie Motorola Commercial, ktorá sa vyznačuje jednoduchou a spoľahlivou konštrukciou a základnými funkciami. Vzhľadom sa podobajú na profesionálne rádiostanice, ale vyznačujú sa nižšou mechanickou odolnosťou, majú menšie možnosti konfigurácie. Na druhej strane sú výrazne lacnejšie, nakoľko sú určené pre občasné použitie v nie príliš náročných podmienkach.</p> <p> Taktiež rozsah príslušenstva je menší ako pri profesionálnych rádiostaniciach.</p> <p> Prístroje sa dodávajú v dvoch verziách, jedna verzia je určená pre frekvenčné pásmo VHF a druhá verzia pre UHF.</p> Základné rozdiely medzi jednotlivými modelmi: <p> <strong>Funkcie</strong></p> <p> <strong>CP040</strong></p> <p> <strong>CP140</strong></p> <p> <strong>CP160</strong></p> <p> <strong>CP180</strong></p> <p> Počet kanálov</p> <p> 4</p> <p> 16</p> <p> 32</p> <p> 64</p> <p> Programovateľné tlačidlá</p> <p> 2</p> <p> 2</p> <p> 4</p> <p> 4</p> <p> Funkcia rýchleho prístupu</p> <p> 4</p> <p> 4</p> <p> 8</p> <p> 8</p> <p> Možnosť doplnkovej dosky</p> <p> Nie</p> <p> Áno</p> <p> Áno</p> <p> Áno</p> <p> Klávesnica</p> Nie Nie 2 tl. 14 tl. <p> Displej</p> <p> Nie</p> <p> Nie</p> <p> LCD, 8 zn.</p> <p> LCD, 8 zn..</p>";
+const popisHtml = "<p>Produkty už nie sú v predaji, aktuálnu ponuku nájdete na <a href=\"https://www.mototrbo.sk\" rel=\"noopener\">www.mototrbo.sk</a>.</p><p>Rádiostanice rady CP patria do kategórie Motorola Commercial, ktorá sa vyznačuje jednoduchou a spoľahlivou konštrukciou a základnými funkciami. Vzhľadom sa podobajú na profesionálne rádiostanice, ale vyznačujú sa nižšou mechanickou odolnosťou, majú menšie možnosti konfigurácie. Na druhej strane sú výrazne lacnejšie, nakoľko sú určené pre občasné použitie v nie príliš náročných podmienkach.</p><p>Taktiež rozsah príslušenstva je menší ako pri profesionálnych rádiostaniciach.</p><p>Prístroje sa dodávajú v dvoch verziách, jedna verzia je určená pre frekvenčné pásmo VHF a druhá verzia pre UHF.</p><p>Základné rozdiely medzi jednotlivými modelmi:</p><div class=\"overflow-x-auto\"><table><thead><tr><th>Funkcie</th><th>CP040</th><th>CP140</th><th>CP160</th><th>CP180</th></tr></thead><tbody><tr><td>Počet kanálov</td><td>4</td><td>16</td><td>32</td><td>64</td></tr><tr><td>Programovateľné tlačidlá</td><td>2</td><td>2</td><td>4</td><td>4</td></tr><tr><td>Funkcia rýchleho prístupu</td><td>4</td><td>4</td><td>8</td><td>8</td></tr><tr><td>Možnosť doplnkovej dosky</td><td>Nie</td><td>Áno</td><td>Áno</td><td>Áno</td></tr><tr><td>Klávesnica</td><td>Nie</td><td>Nie</td><td>2 tl.</td><td>14 tl.</td></tr><tr><td>Displej</td><td>Nie</td><td>Nie</td><td>LCD, 8 zn.</td><td>LCD, 8 zn.</td></tr></tbody></table></div>";
 const intro = [];
 const subcats = [
   {
@@ -105,11 +105,13 @@ const products = [
   }
 ];
 const productsHeading = "Produkty";
+const notice = "";
+const noticeDetail = "";
 const ctaHeading = "Servis a príslušenstvo aj pre ukončené modely";
 const ctaText = "Produkty z tejto kategórie už výrobca nedodáva, my ich stále servisujeme. Batérie, príslušenstvo a opravy riešime aj pre ukončené modely.";
 const metadata = {
   "title": "Komerčné rádiostanice, katalóg produktov | RKS",
-  "description": "Produkty už nie sú v predaji, aktuálnu ponuku nájdete na www.mototrbo.sk   Rádiostanice rady CP patria do kategórie Motorola Commercial, ktorá sa vyznačuje jednoduchou a spoľahlivou konštrukciou a základnými funkciami."
+  "description": "Produkty už nie sú v predaji, aktuálnu ponuku nájdete na  www.mototrbo.sk ."
 };
 const jsonld = {
   "@context": "https://schema.org",
@@ -169,6 +171,13 @@ const jsonld = {
           ))}
         </nav>
         <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">{heading}</h1>
+
+        {notice && (
+          <div class="mb-8 rounded-xl border border-l-4 border-hairline border-l-secondary bg-panel p-5">
+            <p class="text-lg font-semibold tracking-tight">{notice}</p>
+            {noticeDetail && <p class="text-base text-muted mt-1">{noticeDetail}</p>}
+          </div>
+        )}
 
         {intro.map((par) => (
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />

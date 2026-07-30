@@ -21,7 +21,7 @@ const breadcrumb = [
   }
 ];
 const heading = "Evakuačný rozhlasový systém SX-2000";
-const popisHtml = "<p> Systém pre rozsiahle inštalácie, riadený a kontrolovaný po sieti, umožňuje prepojenie vzdialených lokalít. SX-2000 predstavuje nový štandard pre vysoko výkonné systémy bez kompromisov.</p>  <p> Nová výbava systému umožňuje znásobiť jeho kapacitu tym, že umožňuje centrálne riadenie všetkých jeho komponentov, ktoré môžu byť rozmiestnené v rôznych lokalitách. Toto riešenie je ideálne ako pre veľké inštalácie združujúcej rad rôznych objektov tak pre lokálne systémy. Systém je preto vhodný napríklad pre letiská, stanice, továrne, obchodné centrá aj veľké administratívne budovy. Všestrannosť systému zabezpečujú jeho ďalšie vlastnosti ako je zdvojenie napájacích zdrojov a redundantné zálohovanie pri poruchách zabezpečenia, čo znižuje náklady na celý systém. Systém tiež obsahuje požiarny mikrofón, ktorý možno uplatniť v núdzových situáciách. Komponenty rady SX-2000 umožňujú realizovať ideálny zvukový systém, ktorý vyhovie prakticky všetkým požiadavkám.</p> <ul> <li> Integrované hlasové evakuačné a informačné hlásenia</li> <li> Digitálna kontrola systému</li> <li> Možnosť realizácie decentralizovaných podsystémov</li> <li> DSP ​​(digitálny procesor) pre vysoko kvalitné hlásenia a prenos hudby</li> <li> Simultánny prenos štyroch rôznych núdzových hlásení</li></ul> <p> <strong>Systém SX-2000 sa skladá z nasledujúcich komponentov:</strong><br> SX-2000SM, SX-2100AI a SX-2100AO/2000AO tvoria minimálny systém s 8-mi audiovstupmi a 8-mi audiovýstupmi. Systém je rozšíriteľný, maximálna kapacita je 64 audiovstupov, 256 audiovýstupov, 1416 riadiacích vstupov a 1416 riadiacích výstupov.</p>  <p> <strong>Ukážka zostavy:</strong></p> <p> {gall}page21{/gall}</p>";
+const popisHtml = "<p> Systém pre rozsiahle inštalácie, riadený a kontrolovaný po sieti, umožňuje prepojenie vzdialených lokalít. SX-2000 predstavuje nový štandard pre vysoko výkonné systémy bez kompromisov.</p> <p> Nová výbava systému umožňuje znásobiť jeho kapacitu tym, že umožňuje centrálne riadenie všetkých jeho komponentov, ktoré môžu byť rozmiestnené v rôznych lokalitách. Toto riešenie je ideálne ako pre veľké inštalácie združujúcej rad rôznych objektov tak pre lokálne systémy. Systém je preto vhodný napríklad pre letiská, stanice, továrne, obchodné centrá aj veľké administratívne budovy. Všestrannosť systému zabezpečujú jeho ďalšie vlastnosti ako je zdvojenie napájacích zdrojov a redundantné zálohovanie pri poruchách zabezpečenia, čo znižuje náklady na celý systém. Systém tiež obsahuje požiarny mikrofón, ktorý možno uplatniť v núdzových situáciách. Komponenty rady SX-2000 umožňujú realizovať ideálny zvukový systém, ktorý vyhovie prakticky všetkým požiadavkám.</p> <ul> <li> Integrované hlasové evakuačné a informačné hlásenia</li> <li> Digitálna kontrola systému</li> <li> Možnosť realizácie decentralizovaných podsystémov</li> <li> DSP ​​(digitálny procesor) pre vysoko kvalitné hlásenia a prenos hudby</li> <li> Simultánny prenos štyroch rôznych núdzových hlásení</li></ul> <p> <strong>Systém SX-2000 sa skladá z nasledujúcich komponentov:</strong><br> SX-2000SM, SX-2100AI a SX-2100AO/2000AO tvoria minimálny systém s 8-mi audiovstupmi a 8-mi audiovýstupmi. Systém je rozšíriteľný, maximálna kapacita je 64 audiovstupov, 256 audiovýstupov, 1416 riadiacích vstupov a 1416 riadiacích výstupov.</p> <p> <strong>Ukážka zostavy:</strong></p>";
 const intro = [];
 const subcats = [
   {
@@ -58,6 +58,8 @@ const subcats = [
 const subcatsHeading = "Podkategórie";
 const products = [];
 const productsHeading = "";
+const notice = "Už sa nedodáva";
+const noticeDetail = "Produkty z tejto kategórie sú v archíve. Servis, náhradné diely a náhradné riešenie vieme zabezpečiť, ozvite sa nám.";
 const ctaHeading = "Dodávka, inštalácia a servis";
 const ctaText = "Evakuačné a varovacie systémy navrhujeme, dodávame, inštalujeme a servisujeme. Radi pripravíme riešenie pre váš objekt.";
 const metadata = {
@@ -116,6 +118,13 @@ const jsonld = {
           ))}
         </nav>
         <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">{heading}</h1>
+
+        {notice && (
+          <div class="mb-8 rounded-xl border border-l-4 border-hairline border-l-secondary bg-panel p-5">
+            <p class="text-lg font-semibold tracking-tight">{notice}</p>
+            {noticeDetail && <p class="text-base text-muted mt-1">{noticeDetail}</p>}
+          </div>
+        )}
 
         {intro.map((par) => (
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />

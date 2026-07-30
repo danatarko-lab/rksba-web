@@ -19,17 +19,43 @@ const breadcrumb = [
 const heading = "Varovacie a vyrozumievacie systémy";
 const popisHtml = "";
 const intro = [];
-const subcats = [
+const subcats = [];
+const subcatsHeading = "";
+const products = [
   {
-    "url": "/katalog-produktov/kategoria/elektronicke-sireny",
+    "url": "/katalog-produktov/evs-1200",
+    "img": "/images/katalog-produktov/661/main.webp",
+    "title": "EVS-1200",
+    "desc": "Siréna EVS-1200"
+  },
+  {
+    "url": "/katalog-produktov/evs-1800",
+    "img": "/images/katalog-produktov/662/main.webp",
+    "title": "EVS-1800",
+    "desc": "Siréna EVS-1800"
+  },
+  {
+    "url": "/katalog-produktov/evs2",
     "img": "/images/katalog-produktov/657/main.webp",
-    "title": "Elektronické sirény",
-    "desc": "Produktov v archíve: 5"
+    "title": "EVS-300",
+    "desc": "Siréna EVS-300"
+  },
+  {
+    "url": "/katalog-produktov/evs-600",
+    "img": "/images/katalog-produktov/659/main.webp",
+    "title": "EVS-600",
+    "desc": "Siréna EVS-600"
+  },
+  {
+    "url": "/katalog-produktov/evs-900",
+    "img": "/images/katalog-produktov/660/main.webp",
+    "title": "EVS-900",
+    "desc": "Siréna EVS-900"
   }
 ];
-const subcatsHeading = "Podkategórie";
-const products = [];
 const productsHeading = "";
+const notice = "";
+const noticeDetail = "";
 const ctaHeading = "Dodávka, inštalácia a servis";
 const ctaText = "Evakuačné a varovacie systémy navrhujeme, dodávame, inštalujeme a servisujeme. Radi pripravíme riešenie pre váš objekt.";
 const metadata = {
@@ -82,6 +108,13 @@ const jsonld = {
           ))}
         </nav>
         <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">{heading}</h1>
+
+        {notice && (
+          <div class="mb-8 rounded-xl border border-l-4 border-hairline border-l-secondary bg-panel p-5">
+            <p class="text-lg font-semibold tracking-tight">{notice}</p>
+            {noticeDetail && <p class="text-base text-muted mt-1">{noticeDetail}</p>}
+          </div>
+        )}
 
         {intro.map((par) => (
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />

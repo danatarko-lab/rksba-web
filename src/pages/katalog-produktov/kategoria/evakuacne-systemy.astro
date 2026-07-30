@@ -54,6 +54,8 @@ const subcats = [
 const subcatsHeading = "Podkategórie";
 const products = [];
 const productsHeading = "";
+const notice = "";
+const noticeDetail = "";
 const ctaHeading = "Dodávka, inštalácia a servis";
 const ctaText = "Evakuačné a varovacie systémy navrhujeme, dodávame, inštalujeme a servisujeme. Radi pripravíme riešenie pre váš objekt.";
 const metadata = {
@@ -106,6 +108,13 @@ const jsonld = {
           ))}
         </nav>
         <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">{heading}</h1>
+
+        {notice && (
+          <div class="mb-8 rounded-xl border border-l-4 border-hairline border-l-secondary bg-panel p-5">
+            <p class="text-lg font-semibold tracking-tight">{notice}</p>
+            {noticeDetail && <p class="text-base text-muted mt-1">{noticeDetail}</p>}
+          </div>
+        )}
 
         {intro.map((par) => (
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
