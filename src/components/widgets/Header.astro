@@ -118,10 +118,11 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                     </button>
                     {isMega ? (
                       <div class="dropdown-menu lg:backdrop-blur-md dark:lg:bg-dark rounded lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:max-w-[calc(100vw-1rem)] lg:overflow-x-auto pl-4 lg:pl-0 lg:hidden font-medium lg:bg-white/90 drop-shadow-xl">
-                        <div class:list={['lg:grid lg:gap-x-6 lg:gap-y-2 lg:p-6', megaColsClass, megaMinWClass]}>
+                        <div class:list={['lg:grid lg:gap-x-10 lg:gap-y-2 lg:p-6', megaColsClass, megaMinWClass]}>
                           {links.map((group) => (
-                            <div class="lg:min-w-[170px]">
-                              <div class="text-xs uppercase tracking-wider text-muted px-5 lg:px-2 pt-3 lg:pt-0 pb-1">
+                            /* mega-col: jemný zvislý oddeľovač medzi stĺpcami, viď tailwind.css */
+                            <div class="mega-col lg:min-w-[170px]">
+                              <div class="mega-col-head text-xs uppercase tracking-wider px-5 lg:px-2 pt-3 lg:pt-0 pb-1">
                                 {group.text}
                               </div>
                               <ul>

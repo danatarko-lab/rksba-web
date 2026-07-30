@@ -120,6 +120,35 @@
   background-color: var(--aw-color-bg-light);
   color: var(--aw-color-text-on-light);
 }
+
+/* Hlavné položky v hlavičke: tmavomodré a bold (14:1 na #EAF2FF). */
+#header nav > ul > li > a,
+#header nav > ul > li > button {
+  color: #0a2342;
+  font-weight: 700;
+}
+
+/*
+  Nadpisy stĺpcov mega-menu. Bold a tmavomodré, aby bola voči položkám
+  pod nimi jasná hierarchia — položky preto ostávajú v normálnej hrúbke.
+*/
+#header .mega-col-head {
+  color: #0a2342;
+  font-weight: 700;
+}
+#header .dropdown-menu li > a {
+  font-weight: 400;
+}
+
+/* Jemné zvislé oddeľovače medzi stĺpcami mega-menu (len na širokých displejoch,
+   na mobile sú stĺpce pod sebou). */
+@media (min-width: 1024px) {
+  #header .mega-col + .mega-col {
+    border-left: 1px solid rgb(10 35 66 / 12%);
+    padding-left: 2.5rem;
+    margin-left: -1.25rem;
+  }
+}
 #header.scroll {
   @apply md:backdrop-blur-md;
   background-color: rgb(234 242 255 / 92%);
