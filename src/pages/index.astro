@@ -1,28 +1,54 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
 import Layout from '~/layouts/PageLayout.astro';
 import { energyMemo, newsletter, newest, firstSentence } from '~/data/aktuality';
+
+import fotoRadiokomunikacie from '~/assets/images/rozcestnik/radiokomunikacie-hala.jpg';
+import fotoEnergetika from '~/assets/images/rozcestnik/energetika-fotovoltika.jpg';
 
 const metadata = {
   title: 'RKS: bezpečnostné systémy, rádiové siete a energetika pre firmy',
   ignoreTitleTemplate: true,
 };
 
-// Dve velke karty, kazda s inym dorazom
-const karty = [
+// Rozcestnik podla problemu zakaznika. Kazda divizia ma fotopanel (fotka + nazov,
+// funguje aj samostatne) a k nemu problemove karty, ktore sa daju odstranit.
+const divizie = [
   {
-    title: 'Bezpečnostné systémy a rádiové siete',
-    description:
-      'Kritická komunikácia, ktorá funguje aj vtedy, keď vypadnú mobilné siete. Rádiové siete, systémy varovania a evakuačný rozhlas.',
-    vyuzitie: 'jadrové elektrárne, železnice, chemický priemysel, výrobné závody, samosprávy',
+    title: 'Bezpečnosť a rádiokomunikácie',
     href: '/radiokomunikacie',
+    image: fotoRadiokomunikacie,
+    alt: 'Robotník s vysielačkou vo výrobnej hale, na stĺpe siréna evakuačného rozhlasu',
+    // Siréna vľavo hore aj robotník ostanú vo výreze.
+    position: '50% 38%',
+    problemy: [
+      {
+        text: 'Nefunguje nám spojenie v časti areálu.',
+        href: '/radiokomunikacie/systemove-riesenia/radiove-siete',
+      },
+      {
+        text: 'Musíme splniť požiadavky na varovanie a evakuáciu.',
+        href: '/radiokomunikacie/systemove-riesenia/autonomne-systemy-varovania',
+      },
+    ],
   },
   {
-    title: 'Energetika',
-    description:
-      'Znižovanie nákladov na energie a prevádzku budov. EMS, fotovoltika, batérie, EV nabíjačky, smart building.',
-    vyuzitie: 'komerčné budovy, výrobné závody, logistické centrá',
+    title: 'Firemná energetika',
     href: '/energetika',
+    image: fotoEnergetika,
+    alt: 'Technik s tabletom kontroluje fotovoltické panely na streche priemyselnej haly',
+    position: '50% 45%',
+    problemy: [
+      {
+        text: 'Náklady na energie nám rastú a nemáme prehľad.',
+        href: '/energetika/energy-management',
+      },
+      {
+        text: 'Uvažujeme o fotovoltike, nepoznáme návratnosť.',
+        href: '/energetika/fotovoltika',
+      },
+    ],
   },
 ];
 
@@ -88,7 +114,7 @@ const nastroje = [
     </video>
     <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/55 via-black/45 to-black/65"></div>
 
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 py-24 md:py-36 text-center">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 py-12 md:py-20 text-center">
       <p class="text-sm font-medium uppercase tracking-wider text-white/90 mb-3">
         Slovenská technologická firma od roku 1991
       </p>
@@ -99,34 +125,54 @@ const nastroje = [
         Od roku 1991 navrhujeme riešenia od prvej analýzy až po servis. Dodávame do jadrových elektrární, na železnice,
         do plynárenstva a priemyslu.
       </p>
-      <div class="mt-8">
-        <a href="/lp/konzultacia.html?utm_source=web&utm_campaign=web" class="btn-primary inline-flex"
-          >Dohodnúť nezáväznú konzultáciu</a
-        >
-      </div>
     </div>
   </section>
 
-  <!-- SEKCIA 2: DVE VELKE KARTY -->
+  <!-- SEKCIA 2: S CIM VAM MOZEME POMOCT -->
   <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-20">
+    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-center mb-2">S čím vám môžeme pomôcť?</h2>
+    <p class="text-lg text-muted text-center mb-10">Vyberte situáciu, nie technickú kategóriu</p>
+
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {
-        karty.map((card) => (
-          <a
-            href={card.href}
-            class="group flex flex-col justify-between rounded-2xl border border-hairline bg-panel p-8 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
-          >
-            <div>
-              <h2 class="text-2xl font-semibold tracking-tight mb-3">{card.title}</h2>
-              <p class="text-lg text-muted">{card.description}</p>
-              <p class="text-base text-muted mt-4">
-                <span class="font-semibold text-default">Typické využitie:</span> {card.vyuzitie}
-              </p>
+        divizie.map((d) => (
+          <div class="flex flex-col overflow-hidden rounded-2xl border border-hairline bg-panel">
+            {/* FOTOPANEL: funguje aj sám o sebe, bez problémových kariet nižšie. */}
+            <a href={d.href} class="group relative block">
+              <Image
+                src={d.image}
+                alt={d.alt}
+                width={900}
+                format="webp"
+                quality={78}
+                loading="lazy"
+                class="h-56 w-full object-cover md:h-64"
+                style={`object-position: ${d.position};`}
+              />
+              <span class="absolute inset-0 bg-gradient-to-t from-[#0A2342]/45 to-transparent" aria-hidden="true" />
+              <span class="absolute inset-x-5 bottom-5">
+                <span class="inline-block rounded-xl bg-white/55 backdrop-blur-sm px-4 py-2.5 text-lg font-semibold text-[#0A2342] group-hover:bg-white/70 transition">
+                  {d.title} <span aria-hidden="true">→</span>
+                </span>
+              </span>
+            </a>
+
+            {/* PROBLÉMOVÉ KARTY — dá sa odstrániť, ostanú len fotopanely */}
+            <div class="flex flex-col gap-3 p-5">
+              {d.problemy.map((p) => (
+                <a
+                  href={p.href}
+                  class="group flex items-center justify-between gap-4 rounded-xl border border-hairline p-4 transition duration-200 hover:border-primary hover:bg-panel-soft"
+                >
+                  <span class="text-base font-medium">{p.text}</span>
+                  <span class="text-primary text-lg shrink-0" aria-hidden="true">
+                    →
+                  </span>
+                </a>
+              ))}
             </div>
-            <span class="mt-6 inline-flex items-center gap-1 font-medium text-primary group-hover:underline">
-              Vstúpiť <span aria-hidden="true">→</span>
-            </span>
-          </a>
+            {/* /PROBLÉMOVÉ KARTY */}
+          </div>
         ))
       }
     </div>
