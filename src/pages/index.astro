@@ -16,7 +16,7 @@ const metadata = {
 // funguje aj samostatne) a k nemu problemove karty, ktore sa daju odstranit.
 const divizie = [
   {
-    title: 'Bezpečnosť a rádiokomunikácie',
+    title: 'Bezpečnostné systémy a rádiové siete',
     href: '/radiokomunikacie',
     image: fotoRadiokomunikacie,
     alt: 'Robotník s vysielačkou vo výrobnej hale, na stĺpe siréna evakuačného rozhlasu',
@@ -45,7 +45,7 @@ const divizie = [
         href: '/energetika/energy-management',
       },
       {
-        text: 'Uvažujeme o fotovoltike, nepoznáme návratnosť.',
+        text: 'Uvažujeme o batérii či fotovoltike — je to pre nás?',
         href: '/energetika/fotovoltika',
       },
     ],
@@ -85,13 +85,8 @@ const aktuality = [
 const nastroje = [
   {
     title: 'RKS Chatbot',
-    text: 'Odborný poradca. Odpovie na 347 otázok.',
+    text: 'Odborný poradca pre rádiové siete a bezpečnosť.',
     href: 'https://rks-radio-expert.vercel.app/',
-  },
-  {
-    title: 'Slovník pojmov',
-    text: '50 odborných hesiel, od PTT po krytie IP67.',
-    href: '/slovnik',
   },
 ];
 ---
@@ -122,17 +117,14 @@ const nastroje = [
         Bezpečnostné systémy, rádiové siete a energetika pre firmy
       </h1>
       <p class="mt-5 text-lg text-white/90 max-w-3xl mx-auto text-balance drop-shadow">
-        Od roku 1991 navrhujeme riešenia od prvej analýzy až po servis. Dodávame do jadrových elektrární, na železnice,
-        do plynárenstva a priemyslu.
+        Od roku 1991 navrhujeme riešenia od prvej analýzy až po servis — pre priemyselné areály, komerčné budovy a
+        kritickú infraštruktúru.
       </p>
     </div>
   </section>
 
-  <!-- SEKCIA 2: S CIM VAM MOZEME POMOCT -->
-  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-20">
-    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-center mb-2">S čím vám môžeme pomôcť?</h2>
-    <p class="text-lg text-muted text-center mb-10">Vyberte situáciu, nie technickú kategóriu</p>
-
+  <!-- SEKCIA 2: ROZCESTNIK PODLA PROBLEMU (bez nadpisu, tesne pod videom) -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 pt-8 pb-12 md:pt-10 md:pb-20">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {
         divizie.map((d) => (
@@ -146,14 +138,16 @@ const nastroje = [
                 format="webp"
                 quality={78}
                 loading="lazy"
-                class="h-56 w-full object-cover md:h-64"
+                class="h-72 w-full object-cover md:h-96"
                 style={`object-position: ${d.position};`}
               />
-              <span class="absolute inset-0 bg-gradient-to-t from-[#0A2342]/45 to-transparent" aria-hidden="true" />
-              <span class="absolute inset-x-5 bottom-5">
-                <span class="inline-block rounded-xl bg-white/55 backdrop-blur-sm px-4 py-2.5 text-lg font-semibold text-[#0A2342] group-hover:bg-white/70 transition">
-                  {d.title} <span aria-hidden="true">→</span>
-                </span>
+              {/* Prechod zdola drží biely názov čitateľný priamo na fotke, bez boxu. */}
+              <span
+                class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/85 via-black/45 to-transparent"
+                aria-hidden="true"
+              />
+              <span class="absolute inset-x-6 bottom-6 text-xl md:text-2xl font-semibold text-white drop-shadow-lg">
+                {d.title} <span aria-hidden="true">→</span>
               </span>
             </a>
 
