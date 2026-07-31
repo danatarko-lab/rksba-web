@@ -60,9 +60,8 @@ export const headerData = {
           links: [
             { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
             { text: 'Newsletter „Potvrďte príjem“', href: getPermalink('/radiokomunikacie/newsletter') },
-            { text: 'Slovník pojmov', href: getPermalink('/slovnik') },
             { text: 'RKS Chatbot', href: 'https://rks-radio-expert.vercel.app/' },
-            { text: 'Q&A Rádiokomunikácie', href: getPermalink('/radiokomunikacie/q-a') },
+            { text: 'Q&A', href: getPermalink('/radiokomunikacie/q-a') },
           ],
         },
       ],
@@ -87,7 +86,6 @@ export const headerData = {
             { text: 'Energy Memo', href: getPermalink('/energetika/blog') },
             { text: 'Q&A (Energetika)', href: getPermalink('/energetika/q-a') },
             { text: 'Slovník pojmov', href: getPermalink('/energetika/slovnik') },
-            { text: 'Prihlásiť sa na odber', href: getPermalink('/newsletter-odber') },
           ],
         },
       ],

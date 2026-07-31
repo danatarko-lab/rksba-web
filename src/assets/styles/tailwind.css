@@ -140,6 +140,17 @@
   font-weight: 400;
 }
 
+/* Menšie písmo v celom rozbaľovacom menu, nech sa dá ľahšie skenovať. */
+@media (min-width: 1024px) {
+  #header .mega-col-head {
+    font-size: 0.6875rem;
+  }
+  #header .dropdown-menu li > a {
+    font-size: 0.8125rem;
+    line-height: 1.35;
+  }
+}
+
 /* Jemné zvislé oddeľovače medzi stĺpcami mega-menu (len na širokých displejoch,
    na mobile sú stĺpce pod sebou). */
 @media (min-width: 1024px) {
