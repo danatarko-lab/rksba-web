@@ -116,6 +116,23 @@
 #header button:hover {
   color: var(--aw-color-primary);
 }
+
+/*
+  Vyhľadávací modál je v DOM vnútri <header>, ale je to tmavý panel, nie svetlý
+  ostrov. Bez tohto by ho pravidlá vyššie prefarbili na tmavý text a nadpis aj
+  krížik by na tmavom pozadí zanikli. Dvojité id prebíja #header pravidlá.
+*/
+#header #rks-search-modal,
+#header #rks-search-modal .text-default {
+  color: var(--aw-color-text-default);
+}
+#header #rks-search-modal .text-muted {
+  color: var(--aw-color-text-muted);
+}
+#header #rks-search-modal a:hover,
+#header #rks-search-modal button:hover {
+  color: var(--aw-color-text-heading);
+}
 #header .dropdown-menu {
   background-color: var(--aw-color-bg-light);
   color: var(--aw-color-text-on-light);
