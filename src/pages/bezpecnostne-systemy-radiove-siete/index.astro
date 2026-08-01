@@ -2,7 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
 import heroRadiostanica from '~/assets/images/rk-hub-radiostanica.webp';
-// Presunuté zo zrušenej stránky /radiokomunikacie/sluzby/zakladne-informacie.
+// Presunuté zo zrušenej stránky /bezpecnostne-systemy-radiove-siete/sluzby/zakladne-informacie.
 import radioNabijacka from '~/assets/images/radiokomunikacie/radio-07.webp';
 
 const metadata = {
@@ -23,12 +23,12 @@ const bezpecnostne = [
   {
     title: 'Autonómne systémy varovania (VAR-VYR)',
     desc: 'Pre ohrozovateľov podľa vyhlášky MV SR č. 388/2006 Z. z. Sirény, ovládanie, prepojenie na krízové riadenie.',
-    href: '/radiokomunikacie/systemove-riesenia/autonomne-systemy-varovania',
+    href: '/bezpecnostne-systemy-radiove-siete/autonomne-systemy-varovania',
   },
   {
     title: 'Evakuačný rozhlas a ozvučenie',
     desc: 'Certifikované systémy podľa STN EN 60849 a EN 54. Nie je to bežné ozvučenie, je to bezpečnostný systém.',
-    href: '/radiokomunikacie/systemove-riesenia/evakuacny-rozhlas',
+    href: '/bezpecnostne-systemy-radiove-siete/evakuacny-rozhlas',
   },
 ];
 
@@ -36,30 +36,33 @@ const radioveSiete = [
   {
     title: 'Rádiové siete',
     desc: 'Od voľných frekvencií po vlastné a trunkové siete.',
-    href: '/radiokomunikacie/systemove-riesenia/radiove-siete',
+    href: '/bezpecnostne-systemy-radiove-siete/radiove-siete',
   },
   {
     title: 'Návrh rádiových sietí',
     desc: 'Meranie pokrytia, návrh, výpočet a projekt.',
-    href: '/radiokomunikacie/sluzby/navrh-radiovych-sieti',
+    href: '/bezpecnostne-systemy-radiove-siete/sluzby/navrh-radiovych-sieti',
   },
   {
     title: 'Audit rádiových sietí',
     desc: 'Máte sieť a nefunguje, ako má? Zmeriame, kde je problém.',
-    href: '/radiokomunikacie/sluzby/audit-sieti',
+    href: '/bezpecnostne-systemy-radiove-siete/sluzby/audit-sieti',
   },
   {
     title: 'Digitalizácia sietí',
     desc: 'Prechod z analógovej siete na digitálnu bez prerušenia prevádzky.',
-    href: '/radiokomunikacie/sluzby/digitalizacia-sieti',
+    href: '/bezpecnostne-systemy-radiove-siete/sluzby/digitalizacia-sieti',
   },
 ];
 
 const sluzby = [
-  { title: 'Servis rádiostaníc', href: '/radiokomunikacie/sluzby/servis-radiostanic' },
-  { title: 'Prenájom rádiostaníc', href: '/radiokomunikacie/sluzby/prenajom-radiostanic' },
-  { title: 'Projekty elektrických zariadení', href: '/radiokomunikacie/sluzby/projekty-elektrickych-zariadeni' },
-  { title: 'Elektroinštalačné práce', href: '/radiokomunikacie/sluzby/elektroinstalacne-prace' },
+  { title: 'Servis rádiostaníc', href: '/bezpecnostne-systemy-radiove-siete/sluzby/servis-radiostanic' },
+  { title: 'Prenájom rádiostaníc', href: '/bezpecnostne-systemy-radiove-siete/sluzby/prenajom-radiostanic' },
+  {
+    title: 'Projekty elektrických zariadení',
+    href: '/bezpecnostne-systemy-radiove-siete/sluzby/projekty-elektrickych-zariadeni',
+  },
+  { title: 'Elektroinštalačné práce', href: '/bezpecnostne-systemy-radiove-siete/sluzby/elektroinstalacne-prace' },
 ];
 
 const produkty = [
@@ -80,9 +83,9 @@ const nastroje = [
     href: 'https://rks-radio-expert.vercel.app/',
   },
   { title: 'Slovník pojmov', desc: '50 odborných hesiel, od PTT po krytie IP67.', href: '/slovnik' },
-  { title: 'Q&A Rádiokomunikácie', href: '/radiokomunikacie/q-a' },
+  { title: 'Q&A Rádiokomunikácie', href: '/bezpecnostne-systemy-radiove-siete/q-a' },
   { title: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
-  { title: 'Newsletter „Potvrďte príjem“', href: '/radiokomunikacie/newsletter' },
+  { title: 'Newsletter „Potvrďte príjem“', href: '/bezpecnostne-systemy-radiove-siete/newsletter' },
 ];
 
 // Referencie (mena potvrdene na /referencie, loga doplnime neskor)
@@ -98,8 +101,8 @@ const referencie = [
   'Slovakiaring',
 ];
 
-// Caste otazky. Odpovede su prevzate z existujucich stranok (/radiokomunikacie/q-a
-// a /radiokomunikacie/systemove-riesenia/evakuacny-rozhlas); typograficke pomlcky
+// Caste otazky. Odpovede su prevzate z existujucich stranok (/bezpecnostne-systemy-radiove-siete/q-a
+// a /bezpecnostne-systemy-radiove-siete/evakuacny-rozhlas); typograficke pomlcky
 // su nahradene obycajnou interpunkciou, slova su nezmenene.
 const faqs = [
   {
@@ -184,7 +187,7 @@ const faqSchema = {
     </p>
 
     <!--
-      Presunuté zo zrušenej stránky /radiokomunikacie/sluzby/zakladne-informacie.
+      Presunuté zo zrušenej stránky /bezpecnostne-systemy-radiove-siete/sluzby/zakladne-informacie.
       Umiestnenie (hneď za pásom dôveryhodnosti, pred kartami) čaká na odsúhlasenie.
     -->
     <div class="grid items-center gap-8 lg:gap-10 lg:grid-cols-5 mb-10">
@@ -374,7 +377,7 @@ const faqSchema = {
       }
     </div>
     <p class="mb-16 text-sm">
-      <a href="/radiokomunikacie/q-a" class="text-primary font-medium hover:underline"
+      <a href="/bezpecnostne-systemy-radiove-siete/q-a" class="text-primary font-medium hover:underline"
         >Všetkých 15 otázok <span aria-hidden="true">→</span></a
       >
     </p>

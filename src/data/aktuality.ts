@@ -60,7 +60,7 @@ export const newsletter: Post[] = [
       'Dokument, ktorý väčšina firiem otvorí až vtedy, keď ho potrebuje. Čo prezrádza rádiové povolenie a kde požiadať o obnovu.',
     date: '3. 8. 2026',
     author: 'Vladimír Svatý',
-    href: '/radiokomunikacie/newsletter/co-vsetko-prezradza-radiove-povolenie',
+    href: '/bezpecnostne-systemy-radiove-siete/newsletter/co-vsetko-prezradza-radiove-povolenie',
   },
   {
     number: '#002',
@@ -71,7 +71,7 @@ export const newsletter: Post[] = [
       'Od Marconiho a Morseovej abecedy cez vojnové prenosné rádiá a analógovú éru až po digitálny štandard DMR. Prečo vysielačky nezmizli ani v ére smartfónov.',
     date: '16. 7. 2026',
     author: 'Vladimír Svatý',
-    href: '/radiokomunikacie/newsletter/historia-vysielaciek',
+    href: '/bezpecnostne-systemy-radiove-siete/newsletter/historia-vysielaciek',
   },
   {
     number: '#001',
@@ -82,7 +82,7 @@ export const newsletter: Post[] = [
       'To, že komunikačný systém funguje dnes, ešte neznamená, že poznáte jeho skutočný stav. Pozdrav od riaditeľa.',
     date: '2. 7. 2026',
     author: 'Vladimír Svatý',
-    href: '/radiokomunikacie/newsletter/radiova-siet-funguje-v-akom-je-stave',
+    href: '/bezpecnostne-systemy-radiove-siete/newsletter/radiova-siet-funguje-v-akom-je-stave',
   },
 ];
 

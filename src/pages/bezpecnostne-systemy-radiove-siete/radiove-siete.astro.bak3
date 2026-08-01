@@ -35,22 +35,22 @@ const faqs = [
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
-    <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/radiokomunikacie">← Rádiokomunikácie</a></p>
+    <p class="text-sm text-muted mb-2"><a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">← Bezpečnostné systémy a rádiové siete</a></p>
     <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Rádiové siete</h1>
+    <p class="text-lg text-muted mb-8">
+      Rádiová sieť je nevyhnutná všade tam, kde potrebuje komunikovať viacero osôb na malú alebo veľkú vzdialenosť. Pre
+      mnoho firiem je komunikácia cez rádiostanice neoddeliteľnou súčasťou prevádzky. Navrhneme, naprojektujeme a
+      zrealizujeme sieť presne podľa vašich potrieb a možností regulačného úradu.
+    </p>
 
-    <div class="grid items-center gap-8 lg:gap-10 lg:grid-cols-5 mb-12">
-      <p class="text-lg text-muted lg:col-span-3">
-        Rádiová sieť je nevyhnutná všade tam, kde potrebuje komunikovať viacero osôb na malú alebo veľkú vzdialenosť. Pre
-        mnoho firiem je komunikácia cez rádiostanice neoddeliteľnou súčasťou prevádzky. Navrhneme, naprojektujeme a
-        zrealizujeme sieť presne podľa vašich potrieb a možností regulačného úradu.
-      </p>
+    <div class="relative aspect-[16/9] max-h-[360px] w-full overflow-hidden rounded-2xl shadow-sm mb-12">
       <Image
         src={heroDigitalizacia}
         alt="Digitalizácia rádiovej siete — prechod z analógovej na digitálnu komunikáciu"
-        widths={[400, 600, 768]}
-        sizes="(max-width: 1023px) 100vw, 40vw"
+        widths={[400, 768, 1200, 1600]}
+        sizes="(max-width: 896px) 100vw, 896px"
         loading="eager"
-        class="w-full rounded-2xl object-cover shadow-sm lg:col-span-2"
+        class="absolute inset-0 h-full w-full object-cover"
       />
     </div>
 

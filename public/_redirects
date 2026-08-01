@@ -594,6 +594,18 @@
 # === END redirects-generuj.mjs ===
 
 # Rucne pravidla (mimo generovaneho bloku, regeneracia ich nezmaze).
-# Zakladne informacie zrusene, obsah presunuty na /radiokomunikacie.
-/radiokomunikacie/sluzby/zakladne-informacie /radiokomunikacie 301
-/radiokomunikacie/sluzby/zakladne-informacie/ /radiokomunikacie 301
+# Zakladne informacie zrusene, obsah presunuty na /bezpecnostne-systemy-radiove-siete.
+# POZOR: tieto dve pravidla musia zostat NAD blokom /radiokomunikacie/sluzby/*,
+# inak ich splat pohlti a poslal by ich na neexistujucu /sluzby/zakladne-informacie.
+/radiokomunikacie/sluzby/zakladne-informacie /bezpecnostne-systemy-radiove-siete 301
+/radiokomunikacie/sluzby/zakladne-informacie/ /bezpecnostne-systemy-radiove-siete 301
+
+# Premenovanie sekcie /radiokomunikacie -> /bezpecnostne-systemy-radiove-siete
+# a zrusenie medzicanku systemove-riesenia. Poradie je zavazne: konkretne pravidla
+# musia byt nad zaverecnym catch-all splatom.
+/radiokomunikacie/systemove-riesenia/* /bezpecnostne-systemy-radiove-siete/:splat 301
+/radiokomunikacie/sluzby/* /bezpecnostne-systemy-radiove-siete/sluzby/:splat 301
+/radiokomunikacie/newsletter/* /bezpecnostne-systemy-radiove-siete/newsletter/:splat 301
+/radiokomunikacie/q-a /bezpecnostne-systemy-radiove-siete/q-a 301
+/radiokomunikacie /bezpecnostne-systemy-radiove-siete 301
+/radiokomunikacie/* /bezpecnostne-systemy-radiove-siete/:splat 301

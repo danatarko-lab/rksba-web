@@ -35,10 +35,12 @@ export default defineConfig({
     // Pozdravy riaditeľa presunuté z Energetiky do Rádiokomunikácií.
     '/energetika/blog/radiova-siet-funguje-v-akom-je-stave': {
       status: 301,
-      destination: '/radiokomunikacie/newsletter/radiova-siet-funguje-v-akom-je-stave',
+      destination: '/bezpecnostne-systemy-radiove-siete/newsletter/radiova-siet-funguje-v-akom-je-stave',
     },
     // Prípadové štúdie rádiokomunikácií žijú na vlastnej RKS stránke mototrbo.sk.
-    '/radiokomunikacie/pripadove-studie': {
+    // Zdroj je na NOVEJ ceste: stará /radiokomunikacie/pripadove-studie sa sem
+    // dostane cez catch-all v _redirects, takže v dist/ nezostáva starý priečinok.
+    '/bezpecnostne-systemy-radiove-siete/pripadove-studie': {
       status: 301,
       destination: 'https://mototrbo.sk/pripadove-studie',
     },

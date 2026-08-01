@@ -10,21 +10,30 @@ export const headerData = {
           links: [
             {
               text: 'Autonómne systémy varovania',
-              href: getPermalink('/radiokomunikacie/systemove-riesenia/autonomne-systemy-varovania'),
+              href: getPermalink('/bezpecnostne-systemy-radiove-siete/autonomne-systemy-varovania'),
             },
             {
               text: 'Evakuačný rozhlas a ozvučenie',
-              href: getPermalink('/radiokomunikacie/systemove-riesenia/evakuacny-rozhlas'),
+              href: getPermalink('/bezpecnostne-systemy-radiove-siete/evakuacny-rozhlas'),
             },
           ],
         },
         {
           text: 'Rádiové siete',
           links: [
-            { text: 'Rádiové siete', href: getPermalink('/radiokomunikacie/systemove-riesenia/radiove-siete') },
-            { text: 'Návrh rádiových sietí', href: getPermalink('/radiokomunikacie/sluzby/navrh-radiovych-sieti') },
-            { text: 'Audit rádiových sietí', href: getPermalink('/radiokomunikacie/sluzby/audit-sieti') },
-            { text: 'Digitalizácia sietí', href: getPermalink('/radiokomunikacie/sluzby/digitalizacia-sieti') },
+            { text: 'Rádiové siete', href: getPermalink('/bezpecnostne-systemy-radiove-siete/radiove-siete') },
+            {
+              text: 'Návrh rádiových sietí',
+              href: getPermalink('/bezpecnostne-systemy-radiove-siete/sluzby/navrh-radiovych-sieti'),
+            },
+            {
+              text: 'Audit rádiových sietí',
+              href: getPermalink('/bezpecnostne-systemy-radiove-siete/sluzby/audit-sieti'),
+            },
+            {
+              text: 'Digitalizácia sietí',
+              href: getPermalink('/bezpecnostne-systemy-radiove-siete/sluzby/digitalizacia-sieti'),
+            },
           ],
         },
         {
@@ -32,11 +41,20 @@ export const headerData = {
           links: [
             {
               text: 'Projekty elektrických zariadení',
-              href: getPermalink('/radiokomunikacie/sluzby/projekty-elektrickych-zariadeni'),
+              href: getPermalink('/bezpecnostne-systemy-radiove-siete/sluzby/projekty-elektrickych-zariadeni'),
             },
-            { text: 'Elektroinštalačné práce', href: getPermalink('/radiokomunikacie/sluzby/elektroinstalacne-prace') },
-            { text: 'Servis rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/servis-radiostanic') },
-            { text: 'Prenájom rádiostaníc', href: getPermalink('/radiokomunikacie/sluzby/prenajom-radiostanic') },
+            {
+              text: 'Elektroinštalačné práce',
+              href: getPermalink('/bezpecnostne-systemy-radiove-siete/sluzby/elektroinstalacne-prace'),
+            },
+            {
+              text: 'Servis rádiostaníc',
+              href: getPermalink('/bezpecnostne-systemy-radiove-siete/sluzby/servis-radiostanic'),
+            },
+            {
+              text: 'Prenájom rádiostaníc',
+              href: getPermalink('/bezpecnostne-systemy-radiove-siete/sluzby/prenajom-radiostanic'),
+            },
           ],
         },
         {
@@ -59,9 +77,12 @@ export const headerData = {
           text: 'Aktuality',
           links: [
             { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
-            { text: 'Newsletter „Potvrďte príjem“', href: getPermalink('/radiokomunikacie/newsletter') },
+            {
+              text: 'Newsletter „Potvrďte príjem“',
+              href: getPermalink('/bezpecnostne-systemy-radiove-siete/newsletter'),
+            },
             { text: 'RKS Chatbot', href: 'https://rks-radio-expert.vercel.app/' },
-            { text: 'Q&A', href: getPermalink('/radiokomunikacie/q-a') },
+            { text: 'Q&A', href: getPermalink('/bezpecnostne-systemy-radiove-siete/q-a') },
           ],
         },
       ],
@@ -91,7 +112,7 @@ export const headerData = {
       ],
     },
     // Certifikáty už nie sú v hornom menu. Stránka /certifikaty žije ďalej,
-    // odkazuje na ňu homepage („Overená odbornosť“), /o-nas a /radiokomunikacie.
+    // odkazuje na ňu homepage („Overená odbornosť“), /o-nas a /bezpecnostne-systemy-radiove-siete.
     { text: 'Referencie', href: getPermalink('/referencie') },
     { text: 'Kontakt', href: getPermalink('/kontakt') },
   ],
