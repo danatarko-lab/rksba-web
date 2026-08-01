@@ -97,6 +97,10 @@ Post frontmatter: `title` (required), `publishDate`, `updateDate`, `draft`, `exc
 
 Hero images use `loading="eager"` and `fetchpriority="high"`.
 
+## Deployment
+
+Produkcia (test, noindex): Cloudflare Pages → https://rksba-web.pages.dev — TAM over každú zmenu. rksba.sk je STARÝ web až do prepnutia DNS; nie je to Vercel.
+
 ## Verification Checklist
 
 After changes, always verify:
@@ -104,3 +108,4 @@ After changes, always verify:
 1. `npm run build` succeeds
 2. `npm run check` passes (astro check + ESLint + Prettier)
 3. Visual check in browser: homepage, blog, dark mode, mobile menu
+4. Po nasadení over zmenu na https://rksba-web.pages.dev (nie na rksba.sk)
