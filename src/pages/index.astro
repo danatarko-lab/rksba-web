@@ -203,7 +203,11 @@ const nastroje = [
         elektrárne, železnice, plynárenstvo a priemysel.
       </p>
       <div class="mt-8 flex flex-wrap justify-center gap-4">
-        <a href="/certifikaty" class="btn-primary inline-flex">Certifikáty</a>
+        <a
+          href="/certifikaty"
+          class="inline-flex items-center rounded-full border border-primary px-5 py-2.5 font-semibold text-primary transition hover:bg-primary/5"
+          >Certifikáty</a
+        >
         <a
           href="/referencie"
           class="inline-flex items-center rounded-full border border-primary px-5 py-2.5 font-semibold text-primary transition hover:bg-primary/5"
@@ -225,21 +229,22 @@ const nastroje = [
               href={item.post.href}
               class="group flex flex-col rounded-xl border border-hairline bg-panel p-6 transition duration-200 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
             >
-              <p class="text-xs font-semibold uppercase tracking-wider text-primary mb-2">{item.vetva}</p>
+              <p class="text-xs font-semibold uppercase tracking-wider text-primary mb-1">{item.vetva}</p>
+              {/* Séria/newsletter medzi oblasťou a titulkom: oblasť -> séria -> titulok. */}
+              <p class="text-sm text-muted mb-2">
+                {item.post.series ? `${item.post.series} ${item.post.number ?? ''}`.trim() : item.post.category}
+              </p>
               <h3 class="text-xl font-semibold tracking-tight">{item.post.title}</h3>
               <p class="text-base text-muted mt-1">{item.post.date}</p>
               <p class="text-base text-muted mt-3">{firstSentence(item.post.excerpt)}</p>
             </a>
           ))
         }
-        <p class="sm:col-span-2 text-sm">
-          <a href="/newsletter-odber" class="text-primary font-medium hover:underline"
-            >Prihlásiť sa na odber <span aria-hidden="true">→</span></a
-          >
-        </p>
       </div>
 
-      <!-- Vpravo: nastroje -->
+      <!-- Vpravo: nastroje. Odkaz na odber je pod celou mriežkou, nie v ľavom stĺpci,
+           takže sa oba stĺpce naťahujú len na výšku kariet a karta nástroja je
+           rovnako vysoká ako karty článkov vedľa. -->
       <div class="grid grid-cols-1 gap-6">
         {
           nastroje.map((item) => (
@@ -259,5 +264,11 @@ const nastroje = [
         }
       </div>
     </div>
+
+    <p class="mt-6 text-sm">
+      <a href="/newsletter-odber" class="text-primary font-medium hover:underline"
+        >Prihlásiť sa na odber <span aria-hidden="true">→</span></a
+      >
+    </p>
   </section>
 </Layout>
