@@ -1,0 +1,297 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+import ceoPortret from '~/assets/images/rks-ceo-portret.webp';
+import NewsletterCTA from '~/components/widgets/NewsletterCTA.astro';
+
+const metadata = {
+  title: 'História vysielačiek: od prvých rádiových vĺn po digitálne siete | RKS',
+  description:
+    'Odborný pohľad, Newsletter č. 2. História vysielačiek od Marconiho a Morseovej abecedy cez vojnové prenosné rádiá a analógovú éru až po digitálny štandard DMR.',
+};
+
+const post = {
+  category: 'Newsletter',
+  number: '#002',
+  title: 'História vysielačiek: od prvých rádiových vĺn po digitálne siete',
+  dek: 'Za dnešnou profesionálnou komunikáciou stojí viac než sto rokov technických objavov a praktických skúseností.',
+  date: '16. 7. 2026',
+  author: 'Vladimír Svatý',
+  authorRole: 'CEO, RKS · v profesionálnej komunikácii od roku 1991',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero - jemný navy banner (mockup, bez reálnej fotky) -->
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-14 md:py-20">
+      <p class="text-xs font-semibold tracking-widest text-white/60 uppercase mb-3">Odborný pohľad</p>
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-5">
+        Potvrďte príjem · {post.number}
+      </p>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight">{post.title}</h1>
+      <p class="mt-4 text-lg md:text-xl text-white/80 italic">{post.dek}</p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+    <p class="text-sm text-muted mb-8">
+      <a class="hover:underline" href="/radiokomunikacie/newsletter">← Newsletter</a>
+    </p>
+
+    <!-- Autor + dátum -->
+    <div class="flex items-center justify-between flex-wrap gap-4 pb-8 mb-10 border-b border-hairline">
+      <div class="flex items-center gap-3">
+        <Image
+          src={ceoPortret}
+          alt="Vladimír Svatý, CEO RKS"
+          width={48}
+          height={48}
+          class="h-12 w-12 rounded-full object-cover"
+        />
+        <div>
+          <p class="font-semibold">{post.author}</p>
+          <p class="text-sm text-muted">{post.authorRole}</p>
+        </div>
+      </div>
+      <p class="text-sm text-muted">{post.date}</p>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+      <p>
+        Vysielačky dnes používajú výrobné podniky, energetika, doprava, bezpečnostné služby, stavebné firmy aj záchranné
+        zložky. Moderné zariadenia dokážu prenášať hlas, polohu, textové správy a núdzové upozornenia.
+      </p>
+      <p>Za týmto vývojom stojí viac než sto rokov technických objavov a praktických skúseností.</p>
+
+      <h2>Začiatky rádiovej komunikácie</h2>
+      <p>
+        História rádiovej komunikácie sa začala koncom 19. storočia. Experimenty s elektromagnetickými vlnami ukázali,
+        že informácie možno prenášať bez fyzického vedenia.
+      </p>
+      <p>
+        Guglielmo Marconi v roku 1895 uskutočnil úspešné pokusy s bezdrôtovým prenosom a neskôr technológiu ďalej
+        rozvíjal.<sup><a href="#z1" id="ref1">[1]</a></sup> Prvé systémy neprenášali bežný rozhovor. Používali telegrafné
+        impulzy a Morseovu abecedu.
+      </p>
+      <p>
+        Bezdrôtová komunikácia mala veľký význam najmä pre námornú dopravu. Lode mohli komunikovať aj mimo dosahu
+        pevných telegrafných liniek.
+      </p>
+
+      <h2>Od telegrafu k hlasu</h2>
+      <p>Na začiatku 20. storočia sa vývoj posunul od telegrafných značiek k prenosu ľudského hlasu a hudby.</p>
+      <p>
+        Rádio sa postupne stalo nástrojom na hromadné vysielanie aj obojsmernú komunikáciu. Súčasne vznikala potreba
+        medzinárodných pravidiel pre používanie frekvencií a núdzovú komunikáciu.
+      </p>
+
+      <h2>Vojny urýchlili vývoj prenosných rádií</h2>
+      <p>Prvá a najmä druhá svetová vojna výrazne urýchlili vývoj rádiovej techniky.</p>
+      <p>
+        Armády potrebovali koordinovať jednotky, letectvo aj námorníctvo v prostredí bez pevnej komunikačnej
+        infraštruktúry. Zariadenia sa preto zmenšovali, získavali lepšie napájanie a odolnejšiu konštrukciu.
+      </p>
+      <p>
+        V tomto období sa rozšírili prvé prenosné vojenské rádiá, z ktorých vznikol aj výraz „walkie-talkie“.<sup
+          ><a href="#z2" id="ref2">[2]</a></sup
+        > V porovnaní s dnešnými vysielačkami boli ťažké a mali obmedzenú výdrž, no priniesli základný princíp, ktorý zostáva
+        dôležitý dodnes: okamžitú komunikáciu priamo v teréne.
+      </p>
+
+      <h2>Po vojne prišla civilná éra</h2>
+      <p>Po roku 1945 sa rádiostanice rýchlo rozšírili do civilnej prevádzky. Používali ich najmä:</p>
+      <ul>
+        <li>polícia a hasiči,</li>
+        <li>záchranné služby,</li>
+        <li>doprava a taxislužby,</li>
+        <li>stavebné a ťažobné firmy,</li>
+        <li>energetika a priemysel,</li>
+        <li>letiská a prístavy,</li>
+        <li>bezpečnostné služby.</li>
+      </ul>
+      <p>
+        Postupne vznikali ručné, vozidlové aj základňové stanice. Opakovače rozširovali pokrytie a dispečerské
+        pracoviská umožňovali koordinovať väčší počet tímov.
+      </p>
+
+      <h2>Analógová éra</h2>
+      <p>Analógová rádiová komunikácia sa stala na niekoľko desaťročí štandardom profesionálnych sietí.</p>
+      <p>
+        Jej silou bola jednoduchosť. Používateľ stlačil tlačidlo a okamžite komunikoval s celou skupinou. Firmy si
+        budovali vlastné lokálne siete pre výrobu, dopravu, údržbu alebo bezpečnosť.
+      </p>
+      <p>
+        S rastúcim počtom používateľov sa však začali prejavovať limity analógových systémov. Mali menšiu kapacitu a
+        obmedzené možnosti práce s dátami, ochranou komunikácie či automatizáciou dispečingu.
+      </p>
+
+      <h2>Digitálna éra a DMR</h2>
+      <p>Digitálne štandardy priniesli vyššiu kapacitu, čistejší zvuk a nové funkcie.</p>
+      <p>
+        DMR, teda Digital Mobile Radio, je štandard pre profesionálnu digitálnu rádiovú komunikáciu vyvinutý inštitútom
+        ETSI.<sup><a href="#z3" id="ref3">[3]</a></sup> Umožňuje prenášať hlas aj dáta a podľa konfigurácie podporuje:
+      </p>
+      <ul>
+        <li>individuálne a skupinové hovory,</li>
+        <li>identifikáciu volajúceho,</li>
+        <li>textové správy,</li>
+        <li>GPS lokalizáciu,</li>
+        <li>núdzové alarmy,</li>
+        <li>ochranu komunikácie,</li>
+        <li>záznam hovorov,</li>
+        <li>prepojenie s dispečingom.</li>
+      </ul>
+      <p>
+        Mnohé zariadenia podporujú analógový aj digitálny režim, takže firmy môžu prechádzať na novú technológiu
+        postupne.
+      </p>
+
+      <h2>Prečo vysielačky nezmizli po nástupe mobilov?</h2>
+      <p>Mobilný telefón a profesionálna rádiostanica riešia odlišné situácie.</p>
+      <p>
+        Rádiostanica umožňuje jedným stlačením osloviť celú skupinu. Funguje bez vytáčania čísla a čakania na spojenie.
+        Zariadenia môžu byť navrhnuté pre prácu v rukaviciach, hlučnom prostredí alebo náročných podmienkach.
+      </p>
+      <p>
+        Vo výrobe, energetike, doprave, logistike či bezpečnostných službách často rozhodujú sekundy. Rovnakú informáciu
+        zároveň potrebuje viac ľudí. Práve preto zostáva profesionálna rádiová komunikácia dôležitá aj v ére smartfónov.
+      </p>
+
+      <h2>Kam smeruje ďalší vývoj?</h2>
+      <p>Budúcnosť profesionálnej komunikácie smeruje k prepájaniu viacerých technológií.</p>
+      <p>
+        Rádiové siete sa kombinujú s LTE a 5G, širokopásmovým Push-to-Talk, cloudovým dispečingom, lokalizáciou a
+        automatizovanými bezpečnostnými funkciami.
+      </p>
+    </div>
+
+    <!-- Callout: Podstata veci -->
+    <div class="my-10 rounded-2xl border border-primary/20 bg-primary/5 p-8">
+      <p class="text-xs font-semibold tracking-widest text-primary uppercase mb-3">Podstata veci</p>
+      <p class="text-xl md:text-2xl font-semibold leading-snug mb-3">
+        Technológia sa mení. Základná potreba zostáva rovnaká.
+      </p>
+      <p class="text-muted mb-4">
+        Samotná vysielačka zostáva pracovným nástrojom. Mení sa celý systém okolo nej — organizácie získavajú prehľad o
+        používateľoch, alarmoch, zariadeniach aj stave komunikačnej infraštruktúry.
+      </p>
+      <p class="text-muted">
+        RKS pôsobí v oblasti profesionálnych komunikačných systémov od roku 1991. Za toto obdobie prešli firemné rádiové
+        siete od klasických analógových riešení k digitálnym systémom s lokalizáciou, núdzovými funkciami, dispečingom a
+        dátovou integráciou. Dostať správnu informáciu k správnym ľuďom v správnom čase — to je cieľ, ktorý zostáva
+        rovnaký bez ohľadu na generáciu techniky.
+      </p>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+      <h2>Najčastejšie otázky</h2>
+    </div>
+
+    <div class="mt-6 space-y-5">
+      <div class="rounded-xl border-l-4 border-primary bg-panel-soft p-5">
+        <p class="font-semibold mb-2">Kto vynašiel rádio?</p>
+        <p class="text-muted">
+          Na vývoji rádiovej komunikácie sa podieľalo viacero vedcov a vynálezcov. Marconi zohral zásadnú úlohu pri
+          praktickom využití a rozšírení bezdrôtovej telegrafie.
+        </p>
+      </div>
+      <div class="rounded-xl border-l-4 border-primary bg-panel-soft p-5">
+        <p class="font-semibold mb-2">Kedy vznikli prenosné vysielačky?</p>
+        <p class="text-muted">Výraznejšie sa rozvíjali pred druhou svetovou vojnou a počas nej.</p>
+      </div>
+      <div class="rounded-xl border-l-4 border-primary bg-panel-soft p-5">
+        <p class="font-semibold mb-2">Čo znamená DMR?</p>
+        <p class="text-muted">Digital Mobile Radio — štandard profesionálnej digitálnej rádiovej komunikácie.</p>
+      </div>
+      <div class="rounded-xl border-l-4 border-primary bg-panel-soft p-5">
+        <p class="font-semibold mb-2">Používajú sa analógové vysielačky aj dnes?</p>
+        <p class="text-muted">
+          Áno. Mnohé existujúce analógové siete zostávajú v prevádzke. Pri nových systémoch sa častejšie volia digitálne
+          riešenia.
+        </p>
+      </div>
+    </div>
+
+    <!-- Zdroje -->
+    <div class="prose prose-lg max-w-none mt-12">
+      <h2>Zdroje</h2>
+      <ol>
+        <li id="z1">
+          Encyclopædia Britannica — Guglielmo Marconi (úspešné pokusy s bezdrôtovou telegrafiou v roku 1895; prvé
+          systémy používali Morseovu abecedu, nie hlas). Dostupné z:
+          <a href="https://www.britannica.com/biography/Guglielmo-Marconi"
+            >https://www.britannica.com/biography/Guglielmo-Marconi</a
+          > (stiahnuté: 30. júla 2026).
+        </li>
+        <li id="z2">
+          Wikipedia — Walkie-talkie (výraz vznikol pri prvých prenosných vojenských rádiách za 2. svetovej vojny;
+          Motorola SCR-300 „walkie-talkie“ z roku 1940 a SCR-536 „Handie-Talkie“ z roku 1941). Dostupné z:
+          <a href="https://en.wikipedia.org/wiki/Walkie-talkie">https://en.wikipedia.org/wiki/Walkie-talkie</a> (stiahnuté:
+          30. júla 2026).
+        </li>
+        <li id="z3">
+          DMR Association — DMR Standards (DMR, Digital Mobile Radio, je otvorený štandard vyvinutý inštitútom ETSI,
+          prvýkrát ratifikovaný v roku 2005). Dostupné z:
+          <a href="https://www.dmrassociation.org/dmr-standards.html"
+            >https://www.dmrassociation.org/dmr-standards.html</a
+          > (stiahnuté: 30. júla 2026).
+        </li>
+      </ol>
+      <p class="text-sm text-muted">
+        Historické a technické fakty sú overené proti uvedeným zdrojom. Rok 1895 pri Marconim je ustálený historický
+        údaj.
+      </p>
+    </div>
+
+    <!-- Autor - podpis -->
+    <div class="mt-12 pt-8 border-t border-hairline flex flex-col sm:flex-row sm:items-start gap-5">
+      <Image
+        src={ceoPortret}
+        alt="Vladimír Svatý, CEO RKS"
+        width={112}
+        height={112}
+        class="h-24 w-24 sm:h-28 sm:w-28 rounded-2xl object-cover shrink-0"
+      />
+      <div>
+        <p class="font-semibold">{post.author}</p>
+        <p class="text-sm text-muted mb-4">CEO, RKS</p>
+        <p class="italic text-muted">
+          Už viac ako 30 rokov pomáham organizáciám navrhovať, budovať a rozvíjať profesionálne komunikačné systémy.
+        </p>
+      </div>
+    </div>
+
+    <p class="mt-8 text-sm text-muted">
+      RKS: návrh, modernizácia a servis profesionálnych komunikačných systémov od roku 1991.
+    </p>
+
+    <!-- CTA -->
+    <div class="mt-12 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Zvažujete modernizáciu rádiovej siete?</h2>
+      <p class="text-muted mb-6 max-w-xl mx-auto">
+        Ozvite sa nám, pomôžeme vám posúdiť, čo dnešná prevádzka naozaj potrebuje.
+      </p>
+      <a href="/lp/konzultacia.html?utm_source=web&utm_campaign=web" class="btn-primary inline-flex"
+        >Dohodnúť nezáväznú konzultáciu</a
+      >
+    </div>
+
+    <!-- Súvisiace články - placeholdery -->
+    <div class="mt-16">
+      <h2 class="text-xl font-semibold tracking-tight mb-6">Súvisiace články</h2>
+      <div class="grid gap-6 sm:grid-cols-2">
+        <div class="rounded-xl border border-dashed border-hairline-strong p-6 text-muted">
+          <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-2">Newsletter · pripravujeme</p>
+          <p class="font-medium text-default/70">Ďalší článok pribudne čoskoro.</p>
+        </div>
+        <div class="rounded-xl border border-dashed border-hairline-strong p-6 text-muted">
+          <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-2">Newsletter · pripravujeme</p>
+          <p class="font-medium text-default/70">Ďalší článok pribudne čoskoro.</p>
+        </div>
+      </div>
+    </div>
+
+    <NewsletterCTA />
+  </article>
+</Layout>

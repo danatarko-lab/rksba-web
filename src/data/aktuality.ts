@@ -52,15 +52,26 @@ export const energyMemo: Post[] = [
 // Vetva Bezpecnostne systemy a radiove siete (Newsletter)
 export const newsletter: Post[] = [
   {
-    number: '#002',
+    number: '#003',
     category: 'Newsletter',
     series: 'Potvrďte príjem',
     title: 'Viete, čo všetko o vašej firme prezrádza rádiové povolenie?',
     excerpt:
       'Dokument, ktorý väčšina firiem otvorí až vtedy, keď ho potrebuje. Čo prezrádza rádiové povolenie a kde požiadať o obnovu.',
-    date: '16. 7. 2026',
+    date: '3. 8. 2026',
     author: 'Vladimír Svatý',
     href: '/radiokomunikacie/newsletter/co-vsetko-prezradza-radiove-povolenie',
+  },
+  {
+    number: '#002',
+    category: 'Newsletter',
+    series: 'Potvrďte príjem',
+    title: 'História vysielačiek: od prvých rádiových vĺn po digitálne siete',
+    excerpt:
+      'Od Marconiho a Morseovej abecedy cez vojnové prenosné rádiá a analógovú éru až po digitálny štandard DMR. Prečo vysielačky nezmizli ani v ére smartfónov.',
+    date: '16. 7. 2026',
+    author: 'Vladimír Svatý',
+    href: '/radiokomunikacie/newsletter/historia-vysielaciek',
   },
   {
     number: '#001',
