@@ -29,7 +29,15 @@ const post = {
   </div>
 
   <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
-    <p class="text-sm text-muted mb-8"><a class="hover:underline" href="/energetika/blog">← Energy Memo</a></p>
+    <nav class="text-sm text-muted mb-8" aria-label="Omrvinky">
+      <a class="hover:underline" href="/">Domov</a>
+      <span class="px-1">/</span>
+      <a class="hover:underline" href="/energetika">Energetika</a>
+      <span class="px-1">/</span>
+      <a class="hover:underline" href="/energetika/blog">Energy Memo</a>
+      <span class="px-1">/</span>
+      <span class="text-default">{post.title}</span>
+    </nav>
     <p class="text-sm text-muted pb-8 mb-10 border-b border-hairline">
       {post.date} · Analýza z miesta · Mníchov, 23. až 25. jún 2026 · RKS Energetika
     </p>
