@@ -1,0 +1,38 @@
+stara_url,nova_url,typ,poznamka
+/systemove-riesenia,/bezpecnostne-systemy-radiove-siete,sekcia,rksba
+/systemove-riesenia/radiove-siete,/bezpecnostne-systemy-radiove-siete/radiove-siete,sluzba,rksba
+/systemove-riesenia/radiove-siete/radiove-siete-legislativa,/bezpecnostne-systemy-radiove-siete/radiove-siete,sluzba,rksba legislativa
+/systemove-riesenia/radiove-siete/radiove-siete-servis,/bezpecnostne-systemy-radiove-siete/radiove-siete,sluzba,rksba
+/systemove-riesenia/radiove-siete/prenajom-radiovej-siete-flexibilne-riesenie-pre-vase-komunikacne-potreby,/bezpecnostne-systemy-radiove-siete/radiove-siete,sluzba,rksba
+/systemove-riesenia/evakuacny-rozhlas-a-ozvucenie,/bezpecnostne-systemy-radiove-siete/evakuacny-rozhlas,sluzba,rksba
+/systemove-riesenia/autonomne-systemy-varovania,/bezpecnostne-systemy-radiove-siete/autonomne-systemy-varovania,sluzba,rksba
+/systemove-riesenia/autonomne-systemy-varovania/autonomne-systemy-realizacia,/bezpecnostne-systemy-radiove-siete/autonomne-systemy-varovania,sluzba,rksba realizacia
+/systemove-riesenia/autonomne-systemy-varovania/autonomne-systemy-varovania-a-vyrozumenia-osob-servis,/bezpecnostne-systemy-radiove-siete/autonomne-systemy-varovania,sluzba,rksba servis
+/sluzby,/bezpecnostne-systemy-radiove-siete,sekcia,rksba
+/sluzby/prenajom-radiostanic,/bezpecnostne-systemy-radiove-siete/prenajom-radiostanic,sluzba,rksba
+/sluzby/servis-a-oprava-radiostanic-vysielaciek,/bezpecnostne-systemy-radiove-siete/servis-radiostanic,sluzba,rksba
+/sluzby/navrh-a-projektovanie-radiosieti,/bezpecnostne-systemy-radiove-siete/navrh-radiovych-sieti,sluzba,rksba
+/sluzby/elektroinstalacne-prace,/bezpecnostne-systemy-radiove-siete/elektroinstalacne-prace,sluzba,rksba
+/sluzby/projektovanie-elektrickych-zariadeni,/bezpecnostne-systemy-radiove-siete/projekty-elektrickych-zariadeni,sluzba,rksba
+/sluzby/autonom-systemy,/bezpecnostne-systemy-radiove-siete/navrh-autonomnych-systemov,sluzba,rksba navrh
+/uvod/profil/o-nas,/o-nas,stranka,rksba
+/uvod/profil/referencie,/referencie,stranka,rksba
+/uvod/profil/certifikaty,/certifikaty,stranka,rksba
+/uvod/gdpr,/ochrana-osobnych-udajov,stranka,rksba
+/uvod/gdpr/ochrana-osobnych-udajov,/ochrana-osobnych-udajov,stranka,rksba
+/uvod/gdpr/pouzivanie-suborov-cookies,/ochrana-osobnych-udajov,stranka,rksba cookies
+/uvod/mapa-stranky,/mapa-stranky,stranka,rksba
+/uvod/volne-pracovne-miesta,/o-nas,stranka,rksba kariera
+/aktuality-a-blog,/bezpecnostne-systemy-radiove-siete/newsletter,blog,rksba
+/aktuality-a-blog/historia-vysielaciek-od-pociatkov-az-po-dnesok,/bezpecnostne-systemy-radiove-siete/newsletter/historia-vysielaciek,blog,rksba
+/aktuality-a-blog/analogove-vs-digitalne-vysielacky-ktory-system-je-pre-vas-lepsi,/bezpecnostne-systemy-radiove-siete/newsletter,blog,rksba docasne-004
+/aktuality-a-blog/spustili-sme-novu-web-stranku,/bezpecnostne-systemy-radiove-siete/newsletter,blog,rksba
+/produkty-katalog,/katalog-produktov,katalog,rksba
+/plugins/content/pdf_embed/assets/viewer/pdfjs/web/viewer.html,/certifikaty,odpad,rksba pdf-viewer
+/systemove-riesenia/*,/bezpecnostne-systemy-radiove-siete,fallback,rksba zvysok sekcie
+/sluzby/*,/bezpecnostne-systemy-radiove-siete,fallback,rksba zvysok sekcie
+/uvod/*,/,fallback,rksba zvysok sekcie
+/aktuality-a-blog/*,/bezpecnostne-systemy-radiove-siete/newsletter,fallback,rksba zvysok sekcie
+/produkty-katalog/*,/katalog-produktov,fallback,rksba zvysok sekcie
+/component/*,/,odpad,rksba joomla search
+/plugins/*,/,odpad,rksba joomla plugins

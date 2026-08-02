@@ -36,6 +36,7 @@ const root = join(__dirname, '..');
 const MAPS = [
   join(root, '_materials/redirect/mapa-slovnik.csv'),
   join(root, '_materials/redirect/mapa-rks-katalog.csv'),
+  join(root, '_materials/redirect/mapa-rksba.csv'),
 ];
 const OUT = join(root, 'public/_redirects');
 const DIST = join(root, 'dist');
