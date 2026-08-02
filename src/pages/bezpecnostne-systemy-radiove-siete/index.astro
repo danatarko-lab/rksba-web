@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
-import heroRadiostanica from '~/assets/images/rk-hub-radiostanica.webp';
 // Presunuté zo zrušenej stránky Základné informácie.
 import radioNabijacka from '~/assets/images/radiokomunikacie/radio-07.webp';
 
@@ -159,8 +158,8 @@ const faqSchema = {
         </p>
       </div>
       <Image
-        src={heroRadiostanica}
-        alt="Profesionálna rádiostanica RKS v priemyselnom prostredí"
+        src={radioNabijacka}
+        alt="Profesionálne rádiostanice Motorola v nabíjacej stanici"
         widths={[400, 768, 1200, 1600]}
         sizes="(max-width: 1023px) 100vw, 50vw"
         loading="eager"
@@ -190,23 +189,11 @@ const faqSchema = {
       Presunuté zo zrušenej stránky Základné informácie.
       Umiestnenie (hneď za pásom dôveryhodnosti, pred kartami) čaká na odsúhlasenie.
     -->
-    <div class="grid items-center gap-8 lg:gap-10 lg:grid-cols-5 mb-10">
-      <p class="text-lg text-muted lg:col-span-3">
-        Tam, kde musí komunikácia fungovať okamžite a spoľahlivo, bez závislosti od verejných mobilných sietí, sú
-        profesionálne rádiové systémy najistejšou voľbou. RKS dodáva komplexné rádiokomunikačné riešenia od roku 1991:
-        od návrhu a projektovania cez realizáciu až po dlhodobý servis a modernizáciu.
-      </p>
-      <div class="lg:col-span-2 aspect-[4/3] overflow-hidden rounded-2xl shadow-sm">
-        <Image
-          src={radioNabijacka}
-          alt="Profesionálne rádiostanice Motorola v nabíjacej stanici"
-          widths={[400, 600, 768]}
-          sizes="(max-width: 1023px) 100vw, 40vw"
-          loading="lazy"
-          class="w-full h-full object-cover"
-        />
-      </div>
-    </div>
+    <p class="text-lg text-muted max-w-3xl mb-10">
+      Tam, kde musí komunikácia fungovať okamžite a spoľahlivo, bez závislosti od verejných mobilných sietí, sú
+      profesionálne rádiové systémy najistejšou voľbou. RKS dodáva komplexné rádiokomunikačné riešenia od roku 1991: od
+      návrhu a projektovania cez realizáciu až po dlhodobý servis a modernizáciu.
+    </p>
 
     <h2 class="text-2xl font-semibold tracking-tight mb-2">Čo zabezpečujeme</h2>
     <p class="text-muted max-w-3xl mb-4">Pod jednou strechou pokrývame celý životný cyklus rádiového systému:</p>
