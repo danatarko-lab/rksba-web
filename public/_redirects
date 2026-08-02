@@ -604,8 +604,14 @@
 # a zrusenie medzicanku systemove-riesenia. Poradie je zavazne: konkretne pravidla
 # musia byt nad zaverecnym catch-all splatom.
 /radiokomunikacie/systemove-riesenia/* /bezpecnostne-systemy-radiove-siete/:splat 301
-/radiokomunikacie/sluzby/* /bezpecnostne-systemy-radiove-siete/sluzby/:splat 301
+/radiokomunikacie/sluzby/* /bezpecnostne-systemy-radiove-siete/:splat 301
+/radiokomunikacie/produkty/* /bezpecnostne-systemy-radiove-siete/:splat 301
 /radiokomunikacie/newsletter/* /bezpecnostne-systemy-radiove-siete/newsletter/:splat 301
 /radiokomunikacie/q-a /bezpecnostne-systemy-radiove-siete/q-a 301
 /radiokomunikacie /bezpecnostne-systemy-radiove-siete 301
 /radiokomunikacie/* /bezpecnostne-systemy-radiove-siete/:splat 301
+
+# Sploslenie sekcie: zrusene medzicanky /sluzby/ a /produkty/.
+# Konkretne pravidlo pred splatom.
+/bezpecnostne-systemy-radiove-siete/produkty/mototrbo /bezpecnostne-systemy-radiove-siete/mototrbo 301
+/bezpecnostne-systemy-radiove-siete/sluzby/* /bezpecnostne-systemy-radiove-siete/:splat 301

@@ -24,15 +24,15 @@ export const headerData = {
             { text: 'Rádiové siete', href: getPermalink('/bezpecnostne-systemy-radiove-siete/radiove-siete') },
             {
               text: 'Návrh rádiových sietí',
-              href: getPermalink('/bezpecnostne-systemy-radiove-siete/sluzby/navrh-radiovych-sieti'),
+              href: getPermalink('/bezpecnostne-systemy-radiove-siete/navrh-radiovych-sieti'),
             },
             {
               text: 'Audit rádiových sietí',
-              href: getPermalink('/bezpecnostne-systemy-radiove-siete/sluzby/audit-sieti'),
+              href: getPermalink('/bezpecnostne-systemy-radiove-siete/audit-sieti'),
             },
             {
               text: 'Digitalizácia sietí',
-              href: getPermalink('/bezpecnostne-systemy-radiove-siete/sluzby/digitalizacia-sieti'),
+              href: getPermalink('/bezpecnostne-systemy-radiove-siete/digitalizacia-sieti'),
             },
           ],
         },
@@ -41,19 +41,19 @@ export const headerData = {
           links: [
             {
               text: 'Projekty elektrických zariadení',
-              href: getPermalink('/bezpecnostne-systemy-radiove-siete/sluzby/projekty-elektrickych-zariadeni'),
+              href: getPermalink('/bezpecnostne-systemy-radiove-siete/projekty-elektrickych-zariadeni'),
             },
             {
               text: 'Elektroinštalačné práce',
-              href: getPermalink('/bezpecnostne-systemy-radiove-siete/sluzby/elektroinstalacne-prace'),
+              href: getPermalink('/bezpecnostne-systemy-radiove-siete/elektroinstalacne-prace'),
             },
             {
               text: 'Servis rádiostaníc',
-              href: getPermalink('/bezpecnostne-systemy-radiove-siete/sluzby/servis-radiostanic'),
+              href: getPermalink('/bezpecnostne-systemy-radiove-siete/servis-radiostanic'),
             },
             {
               text: 'Prenájom rádiostaníc',
-              href: getPermalink('/bezpecnostne-systemy-radiove-siete/sluzby/prenajom-radiostanic'),
+              href: getPermalink('/bezpecnostne-systemy-radiove-siete/prenajom-radiostanic'),
             },
           ],
         },
