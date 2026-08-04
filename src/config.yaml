@@ -16,8 +16,8 @@ metadata:
   robots:
     # Faza pripomienkovania na new.rksba.sk: cely web je noindex, nofollow.
     # Vypnutie pri prechode na rksba.sk: prepni index a follow spat na true.
-    index: false
-    follow: false
+    index: true
+    follow: true
   openGraph:
     site_name: RKS
     images:
