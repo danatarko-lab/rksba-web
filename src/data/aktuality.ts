@@ -58,7 +58,7 @@ export const newsletter: Post[] = [
     title: 'Viete, čo všetko o vašej firme prezrádza rádiové povolenie?',
     excerpt:
       'Dokument, ktorý väčšina firiem otvorí až vtedy, keď ho potrebuje. Čo prezrádza rádiové povolenie a kde požiadať o obnovu.',
-    date: '3. 8. 2026',
+    date: '4. 8. 2026',
     author: 'Vladimír Svatý',
     href: '/bezpecnostne-systemy-radiove-siete/newsletter/co-vsetko-prezradza-radiove-povolenie',
   },
