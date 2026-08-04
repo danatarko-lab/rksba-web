@@ -99,7 +99,7 @@ Hero images use `loading="eager"` and `fetchpriority="high"`.
 
 ## Deployment
 
-Produkcia (test, noindex): Cloudflare Pages → https://rksba-web.pages.dev — TAM over každú zmenu. rksba.sk je STARÝ web až do prepnutia DNS; nie je to Vercel.
+Produkcia: Cloudflare Pages → https://rksba-web-6ht.pages.dev — TAM over každú zmenu. rksba.sk aj www.rksba.sk už servírujú NAOSTRO tento nový web (DNS je prepnuté, starý Joomla je nahradený); nie je to Vercel. Pozor: starý host https://rksba-web.pages.dev ešte odpovedá, ale je zastaraný — nové commity naň nejdú, takže sa podľa neho nedá overovať.
 
 ## Verification Checklist
 
@@ -108,4 +108,4 @@ After changes, always verify:
 1. `npm run build` succeeds
 2. `npm run check` passes (astro check + ESLint + Prettier)
 3. Visual check in browser: homepage, blog, dark mode, mobile menu
-4. Po nasadení over zmenu na https://rksba-web.pages.dev (nie na rksba.sk)
+4. Po nasadení over zmenu na https://rksba-web-6ht.pages.dev (alebo priamo na rksba.sk, ktorá už beží na tomto webe)
