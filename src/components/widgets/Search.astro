@@ -144,6 +144,10 @@ import { Icon } from 'astro-icon/components';
         openSearch();
       } else if (t.closest('[data-rks-search-close]') || t.closest('[data-rks-search-backdrop]')) {
         closeSearch();
+      } else if (t.closest('#search a[href]')) {
+        // Modál má transition:persist, takže by cez view transitions ostal otvorený
+        // aj na novej stránke. Tlačidlo "Načítať ďalšie" je <button>, to sa nezavrie.
+        closeSearch();
       }
     });
 
