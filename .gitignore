@@ -25,3 +25,8 @@ pnpm-lock.yaml
 
 # interne pracovne podklady
 _materials/
+
+# Interna prevadzkova dokumentacia — DRZAT MIMO GITU.
+# Repo je verejne a HANDOVER.md obsahuje detaily WAF pravidiel, IP stareho
+# servera, Cloudflare account ID, maticu pristupov a udaje o konkretnych osobach.
+HANDOVER.md
