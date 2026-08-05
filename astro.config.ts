@@ -37,12 +37,13 @@ export default defineConfig({
       status: 301,
       destination: '/bezpecnostne-systemy-radiove-siete/newsletter/radiova-siet-funguje-v-akom-je-stave',
     },
-    // Prípadové štúdie rádiokomunikácií žijú na vlastnej RKS stránke mototrbo.sk.
-    // Zdroj je na NOVEJ ceste: stará /radiokomunikacie/pripadove-studie sa sem
-    // dostane cez catch-all v _redirects, takže v dist/ nezostáva starý priečinok.
+    // Prípadové štúdie sú už prenesené z mototrbo.sk na vlastnú stránku
+    // /pripadove-studie (PDF sú self-hostované v public/pripadove-studie/).
+    // Sekčná cesta sa preto presmeruje sem, nie von na mototrbo.sk. Stará
+    // /radiokomunikacie/pripadove-studie sa sem dostane cez catch-all v _redirects.
     '/bezpecnostne-systemy-radiove-siete/pripadove-studie': {
       status: 301,
-      destination: 'https://mototrbo.sk/pripadove-studie',
+      destination: '/pripadove-studie',
     },
     // Pozn.: Základné informácie (/radiokomunikacie/sluzby/zakladne-informacie)
     // sa zámerne NEpresmerúvajú tu, ale v public/_redirects. Astro tu totiž
