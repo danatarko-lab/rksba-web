@@ -548,3 +548,8 @@ stara_url,nova_url,typ,poznamka
 /lodne-radiostanice-1/repromikrofony.html,/katalog-produktov/kategoria/repromikrofony-marine,kategoria,rucne
 /lodne-radiostanice-1/sluchadla.html,/katalog-produktov/kategoria/sluchadla-marine,kategoria,rucne
 /lodne-radiostanice-1/*,/katalog-produktov/kategoria/lodne-radiostanice,fallback,rucne zvysok vetvy
+/profil-spolocnosti/o-nas.html,/o-nas,stranka,rucne
+/profil-spolocnosti/certifikaty.html,/certifikaty,stranka,rucne
+/profil-spolocnosti/gdpr-ochrana-osobnych-udajov.html,/ochrana-osobnych-udajov,stranka,rucne
+/profil-spolocnosti/mapa-stranok.html,/mapa-stranky,stranka,rucne
+/profil-spolocnosti/*,/o-nas,fallback,rucne zvysok vetvy

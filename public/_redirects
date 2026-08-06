@@ -596,6 +596,10 @@
 /lodne-radiostanice-1/nosenie.html /katalog-produktov/kategoria/nosenie-marine 301
 /lodne-radiostanice-1/repromikrofony.html /katalog-produktov/kategoria/repromikrofony-marine 301
 /lodne-radiostanice-1/sluchadla.html /katalog-produktov/kategoria/sluchadla-marine 301
+/profil-spolocnosti/o-nas.html /o-nas 301
+/profil-spolocnosti/certifikaty.html /certifikaty 301
+/profil-spolocnosti/gdpr-ochrana-osobnych-udajov.html /ochrana-osobnych-udajov 301
+/profil-spolocnosti/mapa-stranok.html /mapa-stranky 301
 /systemove-riesenia /bezpecnostne-systemy-radiove-siete 301
 /systemove-riesenia/radiove-siete /bezpecnostne-systemy-radiove-siete/radiove-siete 301
 /systemove-riesenia/radiove-siete/radiove-siete-legislativa /bezpecnostne-systemy-radiove-siete/radiove-siete 301
@@ -630,6 +634,7 @@
 /component/search/* / 301
 /component/finder/* / 301
 /lodne-radiostanice-1/* /katalog-produktov/kategoria/lodne-radiostanice 301
+/profil-spolocnosti/* /o-nas 301
 /systemove-riesenia/* /bezpecnostne-systemy-radiove-siete 301
 /sluzby/* /bezpecnostne-systemy-radiove-siete 301
 /uvod/* / 301
