@@ -76,7 +76,7 @@ export const headerData = {
           // „Prihlásiť sa na odber“ tu nie je, na odber vedie CTA na stránkach.
           text: 'Aktuality',
           links: [
-            { text: 'Prípadové štúdie', href: 'https://mototrbo.sk/pripadove-studie' },
+            { text: 'Prípadové štúdie', href: '/pripadove-studie' },
             {
               text: 'Newsletter „Potvrďte príjem“',
               href: getPermalink('/bezpecnostne-systemy-radiove-siete/newsletter'),
