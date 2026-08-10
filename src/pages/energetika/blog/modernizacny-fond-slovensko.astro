@@ -1,0 +1,379 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import NewsletterCTA from '~/components/widgets/NewsletterCTA.astro';
+
+const metadata = {
+  title: 'Prečo Slovensko nedostalo peniaze z Modernizačného fondu | RKS',
+  description:
+    'EÚ rozdelila 2,5 mld. eur z Modernizačného fondu, Slovensko v kole nebolo. Vysvetľujeme prečo, ako čerpáme oproti Česku a čo to znamená pre firmy.',
+};
+
+const post = {
+  title: 'Modernizačný fond: prečo Slovensko nedostalo nič',
+  date: '10. 8. 2026',
+};
+---
+
+<Layout metadata={metadata}>
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-14 md:py-20">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-5">Energy Memo · Energetika</p>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight">
+        Európa rozdelila ďalších 2,5 miliardy na energetiku. Slovensko nedostalo nič. Prečo?
+      </h1>
+      <p class="mt-5 text-lg text-white/80">
+        Dôvod nie je v tom, že by Slovensko na tieto peniaze nemalo nárok. Zaujímavejšia otázka znie: ako rýchlo dokážeme
+        premeniť miliardy z emisných povoleniek na reálne energetické projekty?
+      </p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+    <nav class="text-sm text-muted mb-8" aria-label="Omrvinky">
+      <a class="hover:underline" href="/">Domov</a>
+      <span class="px-1">/</span>
+      <a class="hover:underline" href="/energetika">Energetika</a>
+      <span class="px-1">/</span>
+      <a class="hover:underline" href="/energetika/blog">Energy Memo</a>
+      <span class="px-1">/</span>
+      <span class="text-default">{post.title}</span>
+    </nav>
+    <p class="text-sm text-muted pb-8 mb-10 border-b border-hairline">
+      {post.date} · Energy Memo · RKS Energetika
+    </p>
+
+    <div class="prose prose-lg max-w-none">
+      <p>
+        Začiatkom júla oznámili Európska komisia a Európska investičná banka novú tranžu z Modernizačného fondu: 51
+        investičných návrhov v jedenástich krajinách, spolu približne 2,5 miliardy eur.<sup><a href="#zdroj-1">1</a></sup>
+      </p>
+
+      <div class="not-prose my-6 rounded-xl border border-hairline bg-panel px-6 py-5 text-lg leading-relaxed">
+        <p class="mb-1">Rumunsko: <strong>637 miliónov eur</strong>.</p>
+        <p class="mb-1">Maďarsko: <strong>552 miliónov eur</strong>.</p>
+        <p class="mb-1">Česko: <strong>516,8 milióna eur</strong>.</p>
+        <p class="mb-0 font-bold text-primary">Slovensko: nula.</p>
+      </div>
+
+      <p>
+        Toto ale nie je príbeh „Brusel dal Čechom a nám nie". Dôvod je konkrétny: v tomto kole sme nepredložili
+        investičný návrh. Nárok na Modernizačný fond máme a už sme z neho čerpali. Oveľa zaujímavejšia otázka teda znie:
+        prečo sa peniaze, ktoré máme k dispozícii, dostávajú do reálnych projektov tak pomaly?
+      </p>
+
+      <div class="not-prose my-8 border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        <p class="text-xs font-bold tracking-widest uppercase text-primary mb-3">V skratke</p>
+        <ul class="list-disc pl-5 space-y-1.5 text-muted">
+          <li>Slovensko v tomto kole Modernizačného fondu nepredložilo investičný návrh.</li>
+          <li>Nárok na fond tým nestráca — patrí medzi trinásť oprávnených krajín.</li>
+          <li>Problémom je pomalá implementácia peňazí, ktoré už boli prevedené.</li>
+        </ul>
+      </div>
+
+      <h2>Prečo Slovensko v poslednom kole nedostalo peniaze?</h2>
+      <p>
+        Slovensko v prvom kole 2026 nepredložilo investičný návrh do Modernizačného fondu. Nárok na fond si pritom
+        zachováva a v minulosti z neho čerpalo. Úzkym miestom je rýchlosť, s akou sa už pridelené peniaze menia na
+        postavené projekty.
+      </p>
+
+      <h2>Odkiaľ tie peniaze pochádzajú</h2>
+      <p>
+        Európsky systém emisných povoleniek (EU ETS) dáva vybraným sektorom limit emisií. Firmy za svoje emisie
+        odovzdávajú povolenky, časť z nich sa draží a v aukciách vznikajú verejné peniaze. V roku 2025 to bolo viac než
+        43 miliárd eur, z toho približne 24 miliárd išlo priamo štátom.<sup><a href="#zdroj-2">2</a></sup>
+      </p>
+      <p>
+        Presne vymedzené množstvo povoleniek financuje Modernizačný fond — nástroj na modernizáciu energetiky v
+        trinástich členských štátoch vrátane Slovenska a Česka. Od svojho spustenia v roku 2021 podporil investície
+        približne za 23,2 miliardy eur.<sup><a href="#zdroj-1">1</a></sup> Peniaze z povoleniek sa teda nevracajú firmám
+        ako refundácia. Časť hodnoty, ktorá pri cene uhlíka vzniká, sa premieňa na kapitál pre transformáciu energetiky.
+      </p>
+
+      <figure class="not-prose my-10 rounded-xl border border-hairline overflow-hidden bg-white">
+        <div class="px-6 pt-5 pb-1">
+          <p class="text-xs font-bold tracking-widest uppercase text-primary mb-1.5">Ako to tečie</p>
+          <p class="font-bold text-[#0B1F3A] leading-snug">Od ceny uhlíka ku kapitálu pre energetiku</p>
+        </div>
+        <svg
+          class="block w-full h-auto px-4 pb-3"
+          viewBox="0 0 720 300"
+          role="img"
+          aria-label="Tok peňazí: EU ETS aukcie sa delia medzi členské štáty, Innovation Fund a Modernizačný fond; ten financuje efektívnosť, OZE, siete a úložiská a teplo a dopravu."
+        >
+          <rect x="8" y="118" width="150" height="64" rx="6" fill="#0B1F3A"></rect>
+          <text x="83" y="143" text-anchor="middle" font-family="Arial" font-size="13" font-weight="700" fill="#ffffff"
+            >EU ETS aukcie</text
+          >
+          <text x="83" y="162" text-anchor="middle" font-family="Arial" font-size="11" fill="#c7d0e6"
+            >&gt;258 mld € (2013–25)</text
+          >
+          <path d="M158 150 C 195 150, 195 60, 232 60" fill="none" stroke="#c3cbd8" stroke-width="2"></path>
+          <path d="M158 150 C 195 150, 195 150, 232 150" fill="none" stroke="#c3cbd8" stroke-width="2"></path>
+          <path d="M158 150 C 195 150, 195 240, 232 240" fill="none" stroke="#1A1ADB" stroke-width="2.5"></path>
+          <rect x="232" y="34" width="170" height="52" rx="6" fill="#eef1f8" stroke="#d7deec"></rect>
+          <text x="317" y="56" text-anchor="middle" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A"
+            >Členské štáty</text
+          >
+          <text x="317" y="73" text-anchor="middle" font-family="Arial" font-size="11" fill="#5b6677"
+            >~24 mld € (2025)</text
+          >
+          <rect x="232" y="124" width="170" height="52" rx="6" fill="#eef1f8" stroke="#d7deec"></rect>
+          <text x="317" y="146" text-anchor="middle" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A"
+            >Innovation Fund</text
+          >
+          <text x="317" y="163" text-anchor="middle" font-family="Arial" font-size="11" fill="#5b6677">inovácie</text>
+          <rect x="232" y="214" width="170" height="52" rx="6" fill="#1A1ADB"></rect>
+          <text x="317" y="236" text-anchor="middle" font-family="Arial" font-size="12.5" font-weight="700" fill="#ffffff"
+            >Modernizačný fond</text
+          >
+          <text x="317" y="253" text-anchor="middle" font-family="Arial" font-size="11" fill="#d5daf6"
+            >23,2 mld € podpory od 2021</text
+          >
+          <path d="M402 240 C 440 240, 440 150, 478 150" fill="none" stroke="#1A1ADB" stroke-width="2.5"></path>
+          <rect x="478" y="96" width="234" height="30" rx="5" fill="#EAF2FF" stroke="#d7e2f5"></rect>
+          <text x="489" y="115" font-family="Arial" font-size="12" font-weight="700" fill="#0B1F3A">Efektívnosť · 37 %</text>
+          <rect x="478" y="132" width="234" height="30" rx="5" fill="#EAF2FF" stroke="#d7e2f5"></rect>
+          <text x="489" y="151" font-family="Arial" font-size="12" font-weight="700" fill="#0B1F3A"
+            >OZE / lokálna výroba · 32 %</text
+          >
+          <rect x="478" y="168" width="234" height="30" rx="5" fill="#EAF2FF" stroke="#d7e2f5"></rect>
+          <text x="489" y="187" font-family="Arial" font-size="12" font-weight="700" fill="#0B1F3A"
+            >Siete + úložiská · 27 %</text
+          >
+          <rect x="478" y="204" width="234" height="30" rx="5" fill="#EAF2FF" stroke="#d7e2f5"></rect>
+          <text x="489" y="223" font-family="Arial" font-size="12" font-weight="700" fill="#0B1F3A">Teplo + doprava</text>
+        </svg>
+        <figcaption class="text-sm text-muted px-6 pb-5 italic">
+          Nie všetky výnosy EU ETS idú do Modernizačného fondu — ten je jednou presne vymedzenou vetvou. Percentá
+          vyjadrujú podiel prioritnej podpory fondu do polovice 2025.<sup><a href="#zdroj-2">2</a></sup><sup
+            ><a href="#zdroj-3">3</a></sup
+          >
+        </figcaption>
+      </figure>
+
+      <h2>Nárok Slovensko má</h2>
+      <p>
+        Slovensko je plnohodnotným príjemcom Modernizačného fondu. Fond nefunguje ako automatická obálka, z ktorej každý
+        rok príde stanovená suma bez ohľadu na aktivitu. Nárok na fond ešte neznamená postavený projekt. Medzi tým je
+        celý reťazec: národný investičný návrh → schválenie → prevod peňazí → výzva alebo schéma → projekt prijímateľa →
+        zazmluvnenie → realizácia. Na každom kroku môže vzniknúť sklz.
+      </p>
+      <p>
+        Slovensko túto cestu prešlo viackrát. Získalo podporu na modernizáciu teplárenstva, kogenerácie a distribučných
+        sietí, v roku 2022 potvrdilo veľkú schému na priemyselnú dekarbonizáciu (rádovo 350 miliónov eur) a v roku 2026
+        otvorilo výzvu na energetickú efektívnosť podnikov s alokáciou 150 miliónov eur, z čoho 120 miliónov smeruje do
+        priemyselnej výroby.<sup><a href="#zdroj-4">4</a></sup>
+      </p>
+
+      <h2>Najväčší rozdiel vidno medzi pridelením a realizáciou</h2>
+      <p>
+        Slovenský problém nie je v tom, koľko peňazí nám Európa pridelí. Dôležitejšie je, ako rýchlo ich dokážeme
+        premeniť na postavené energetické projekty. A práve tu je jedno číslo, ktoré stojí za pozornosť.
+      </p>
+      <p>
+        Podľa hodnotenia Európskej komisie bolo ku koncu roka 2024 konečným prijímateľom na Slovensku vyplatených
+        približne <strong>4 %</strong> prostriedkov, ktoré už EIB previedla krajine. V Česku to bolo približne
+        <strong>26 %</strong>.<sup><a href="#zdroj-3">3</a></sup>
+      </p>
+      <p>
+        Toto číslo vyjadruje podiel už prevedených peňazí, ktoré sa dostali ku konečným prijímateľom. Celkový nárok
+        krajiny na fond je iná veličina.
+      </p>
+
+      <figure class="not-prose my-10 rounded-xl border border-hairline overflow-hidden bg-white">
+        <div class="px-6 pt-5 pb-1">
+          <p class="text-xs font-bold tracking-widest uppercase text-primary mb-1.5">Rýchlosť čerpania</p>
+          <p class="font-bold text-[#0B1F3A] leading-snug">
+            Koľko z peňazí prevedených EIB sa reálne dostalo ku konečným prijímateľom (koniec 2024)
+          </p>
+        </div>
+        <svg
+          class="block w-full h-auto px-4 pb-3"
+          viewBox="0 0 720 190"
+          role="img"
+          aria-label="Česko vyplatilo konečným prijímateľom 26 percent prostriedkov prevedených EIB, Slovensko 4 percentá. Priemer fondu je 11 percent."
+        >
+          <line x1="150" y1="40" x2="150" y2="150" stroke="#e4e8ef" stroke-width="1"></line>
+          <text x="138" y="66" text-anchor="end" font-family="Arial" font-size="14" font-weight="700" fill="#0B1F3A"
+            >Česko</text
+          >
+          <rect x="150" y="48" width="486" height="30" rx="4" fill="#1A1ADB"></rect>
+          <text x="646" y="68" font-family="Arial" font-size="15" font-weight="700" fill="#1A1ADB">26 %</text>
+          <text x="138" y="120" text-anchor="end" font-family="Arial" font-size="14" font-weight="700" fill="#0B1F3A"
+            >Slovensko</text
+          >
+          <rect x="150" y="102" width="75" height="30" rx="4" fill="#0B1F3A"></rect>
+          <text x="235" y="122" font-family="Arial" font-size="15" font-weight="700" fill="#0B1F3A">4 %</text>
+          <line x1="355" y1="40" x2="355" y2="150" stroke="#8a97a8" stroke-width="1.5" stroke-dasharray="4 4"></line>
+          <text x="360" y="168" font-family="Arial" font-size="11.5" fill="#5b6677">priemer fondu 11 %</text>
+        </svg>
+        <figcaption class="text-sm text-muted px-6 pb-5 italic">
+          Priemer fondu je 11 %. Ukazovateľ vyjadruje podiel už prevedených peňazí, ktoré sa dostali ku konečným
+          prijímateľom.<sup><a href="#zdroj-3">3</a></sup>
+        </figcaption>
+      </figure>
+
+      <p>
+        Medzera nie je len slovenská. Ku koncu 2024 bolo v celom fonde konečným prijímateľom vyplatených približne 11 %
+        prostriedkov prevedených EIB a dokončené bolo približne jedno percento investícií.<sup><a href="#zdroj-3">3</a
+          ></sup
+        > Pri miliardových tlačových správach preto treba rozlišovať tri veci: schválené peniaze, zazmluvnené peniaze a
+        postavenú infraštruktúru. Sú to tri rôzne veci.
+      </p>
+
+      <h2>Čo robí Česko inak</h2>
+      <p>
+        Vyššia česká suma sama o sebe nie je dôkazom lepšieho čerpania — Česko má už zo samotného nastavenia fondu
+        približne 3,5-krát väčší balík povoleniek. Zaujímavejší je spôsob práce.
+      </p>
+      <p>
+        Česko postavilo veľké, tematicky zamerané a opakujúce sa národné programy: samostatný program pre dekarbonizáciu
+        teplárenstva, program pre strešné fotovoltiky v obciach a program pre energetickú efektívnosť priemyslu. Podľa
+        hodnotenia Komisie malo Česko k polovici 2025 indikatívne rozdelený celý svoj objem fondu.<sup
+          ><a href="#zdroj-3">3</a></sup
+        > Má teda zásobník projektov a jasnú predstavu, kam budú ďalšie výnosy smerovať.
+      </p>
+      <p>
+        V porovnaní s českým modelom pôsobí slovenská podpora menej koncentrovane do veľkých opakujúcich sa programov;
+        ide skôr cez menšie výzvy Environmentálneho fondu pod Ministerstvom životného prostredia a v poslednom cykle
+        Slovensko nemalo nové schválené projekty. Dáta však samy osebe nedokazujú, že práve toto je dôvod rozdielu 26 %
+        oproti 4 % — rozdiel môže ovplyvňovať aj vek a typ projektov. Presnú príčinu, prečo Slovensko v júlovom kole
+        nepredložilo návrh, verejné zdroje detailne nerozpisujú. Komisia ako typické brzdy pomalšej implementácie uvádza
+        slabšiu administratívnu kapacitu, zložité procedúry, neskoré výzvy, prieťahy v povoľovaní a obstarávaní a nezrelý
+        zásobník projektov.<sup><a href="#zdroj-3">3</a></sup>
+      </p>
+
+      <h2>Čo by Slovensko mohlo zmeniť</h2>
+      <p>
+        Riešením nie je „firmy nech si lepšie podajú žiadosť". Veľká časť problému vzniká skôr, než sa firma vôbec môže o
+        podporu uchádzať. Z dát a z problémov, ktoré identifikovala Komisia, vyplývajú štyri praktické oblasti:
+      </p>
+      <ul>
+        <li>
+          <strong>Predvídateľnejší pipeline výziev.</strong> Príprava väčšieho projektu (BESS, rekonštrukcia energetiky
+          závodu, kombinácia FVE + úložisko + riadenie) trvá mesiace. Keď sa podmienky objavia až tesne pred výzvou,
+          kvalitné projekty jednoducho nie sú pripravené.
+        </li>
+        <li>
+          <strong>Menej technologicky izolovaných schém.</strong> Ekonomicky dobrý projekt býva kombináciou úspor, FVE,
+          batérie, riadenia spotreby a flexibility. Podpora má umožniť optimalizovať celý energetický systém prevádzky,
+          nie tlačiť firmu kúpiť technológiu preto, že práve na ňu existuje dotácia.
+        </li>
+        <li>
+          <strong>Širší zásobník pripravených projektov.</strong> Štát potrebuje projekty, ktoré sú technicky aj
+          ekonomicky pripravené na rýchle predloženie. Tu majú úlohu aj firmy: audit, dáta o spotrebe, štúdia
+          uskutočniteľnosti a ekonomický model majú byť hotové pred otvorením výzvy.
+        </li>
+        <li>
+          <strong>Merať výsledok, nie pridelené milióny.</strong> Úspechom nie je tlačová správa o schválených 150
+          miliónoch. Výsledkom je fungujúca batéria, zmodernizovaná sieť, nižšia spotreba závodu alebo dekarbonizované
+          teplárenstvo. Užitočné je sledovať čas od pridelenia po spustenie a potom reálne energetické a emisné výsledky.
+        </li>
+      </ul>
+
+      <aside class="not-prose my-10 rounded-xl bg-[#0A2342] text-white p-8">
+        <p class="text-xs font-bold tracking-widest uppercase text-accent mb-3">Podstata veci</p>
+        <p class="text-xl leading-snug">
+          Peniaze na energetickú transformáciu Slovensko z ceny uhlíka má. <strong
+            >Úzkym miestom je schopnosť premeniť ich na postavené projekty — a to isté úzke miesto rieši aj každá firma
+            vo vlastnej réžii.</strong
+          >
+        </p>
+      </aside>
+
+      <h2>Pohľad RKS</h2>
+      <p>
+        Firma, ktorá až po vyhlásení dotácie začne zisťovať svoju štvrťhodinovú spotrebu, kapacitu pripojenia, potenciál
+        fotovoltiky, vhodnú veľkosť batérie a návratnosť projektu, stráca čas. Príprava dobrého projektu trvá mesiace a
+        výzvy majú krátke okná.
+      </p>
+      <p>
+        Firma, ktorá má tieto veci pripravené, môže urobiť dve veci: projekt realizovať, keď dáva ekonomický zmysel aj
+        bez podpory, alebo využiť podporu na výrazné zlepšenie jeho ekonomiky, keď sa vhodná výzva objaví.
+      </p>
+      <p class="not-italic text-xl font-medium border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        Dotácia môže výrazne zlepšiť ekonomiku dobrého energetického projektu. Nemala by byť dôvodom na vznik zlého.
+      </p>
+
+      <h2>Súvisiace články</h2>
+      <ul>
+        <li>
+          <a href="/energetika/blog/first-electrocontinent-plan-eu"
+            >First Electrocontinent Ever. Čo znamená nový plán EÚ pre naše firmy?</a
+          >
+        </li>
+        <li>
+          <a href="/energetika/blog/sesfg-mnichov-2026"
+            >Budúcnosť firemnej energetiky: 10 trendov z konferencie v Mníchove</a
+          >
+        </li>
+      </ul>
+
+      <h2>Súvisiace témy</h2>
+      <ul>
+        <li><a href="/energetika/energy-management">Čo je Energy Management System (EMS)</a></li>
+        <li><a href="/energetika/baterie-bess">Batériové úložiská (BESS)</a></li>
+        <li><a href="/energetika/fotovoltika">Firemná fotovoltika</a></li>
+        <li><a href="/energetika/slovnik">Slovník energetických pojmov</a></li>
+      </ul>
+
+      <h2>Zdroje a poznámky</h2>
+      <ol>
+        <li id="zdroj-1">
+          Európska komisia / Európska investičná banka / Modernisation Fund (2026) Joint press release: €2.5 billion of
+          EU ETS revenues invested in cleaner energy systems in 11 EU countries, júl 2026. Dostupné z:
+          <a
+            href="https://www.modernisationfund.eu/joint-press-release-e2-5-billion-of-eu-ets-revenues-invested-in-cleaner-energy-systems-in-11-eu-countries/"
+            rel="noopener">modernisationfund.eu</a
+          > (stiahnuté: 10. augusta 2026). Údaje: 51 investícií, 11 krajín, ~2,5 mld €, 23,2 mld € od 2021, sumy pre
+          ČR/RO/HU.
+        </li>
+        <li id="zdroj-2">
+          Európska komisia — Climate Action (2026) What are the ETS revenues used for?. Dostupné z:
+          <a
+            href="https://climate.ec.europa.eu/eu-action/carbon-markets/eu-emissions-trading-system-eu-ets/how-do-member-states-use-ets-revenues_en"
+            rel="noopener">climate.ec.europa.eu</a
+          > (stiahnuté: 10. augusta 2026). Údaje: &gt;43 mld € výnosov v 2025, ~24 mld € priamo štátom, &gt;258 mld € od
+          2013.
+        </li>
+        <li id="zdroj-3">
+          Európska komisia (2026) Commission Staff Working Document SWD(2026) 197 — Evaluation on the operating rules of
+          the Modernisation Fund. Dostupné z:
+          <a href="https://data.consilium.europa.eu/doc/document/ST-12085-2026-INIT/en/pdf" rel="noopener"
+            >data.consilium.europa.eu</a
+          > (stiahnuté: 10. augusta 2026). Údaje: ku koncu 2024 vyplatených konečným prijímateľom 11 % prostriedkov
+          prevedených EIB (ČR 26 %, SK 4 %), ~1 % investícií dokončených; ČR mala celý objem indikatívne rozdelený;
+          typické príčiny pomalej implementácie; podiely prioritnej podpory 37 % / 32 % / 27 %.
+        </li>
+        <li id="zdroj-4">
+          Environmentálny fond (2026) Výzva MoF – 8/2026: Energetická efektívnosť v podnikoch, 13. júla 2026. Dostupné z:
+          <a href="https://envirofond.sk/2026/07/13/vyzva-mof-8-2026-energeticka-efektivnost-v-podnikoch/" rel="noopener"
+            >envirofond.sk</a
+          > (stiahnuté: 10. augusta 2026). Alokácia 150 mil. € (z toho 120 mil. € pre priemyselnú výrobu); prvé kolo do
+          16. 10. 2026.
+        </li>
+      </ol>
+
+      <p class="text-sm text-muted italic">
+        Čísla sú overené proti primárnym zdrojom (Európska komisia, EIB, Modernisation Fund, Environmentálny fond).
+        Symptóm (4 % vs 26 %, nepredloženie návrhu) je doložený; príčina je pomenovaná ako súbeh dokumentovaných
+        faktorov, nie ako jedna dokázaná príčina.
+      </p>
+    </div>
+
+    {/* Soft CTA. Vedie na bezplatnú konzultáciu ako ostatné CTA, s vlastnou utm kampaňou. */}
+    <div class="not-prose mt-12 border-l-4 border-primary bg-primary/5 rounded-r-lg p-6">
+      <p class="text-lg">
+        Nečakajte s energetickou stratégiou na výzvu. Pripravujeme bezplatný <strong>Energy Investment Check</strong> —
+        odhad potenciálu fotovoltiky a batérie z vašich reálnych čísel, pripravený ešte skôr, než sa výzva otvorí.
+      </p>
+      <a
+        href="/lp/konzultacia.html?utm_source=web&utm_medium=cta&utm_campaign=energy-investment-check"
+        class="btn-primary inline-flex mt-5">Mám záujem o Energy Investment Check</a
+      >
+    </div>
+
+    <NewsletterCTA />
+  </article>
+</Layout>

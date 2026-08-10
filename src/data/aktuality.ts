@@ -17,6 +17,14 @@ export type Post = {
 export const energyMemo: Post[] = [
   {
     category: 'Energy Memo',
+    title: 'Európa rozdelila 2,5 miliardy na energetiku. Slovensko nedostalo nič. Prečo?',
+    excerpt:
+      'EÚ rozdelila 2,5 mld. eur z Modernizačného fondu, Slovensko v kole nebolo. Prečo, ako čerpáme oproti Česku (4 % vs 26 %) a čo si z toho má odniesť firma.',
+    date: '10. 8. 2026',
+    href: '/energetika/blog/modernizacny-fond-slovensko',
+  },
+  {
+    category: 'Energy Memo',
     title: 'First Electrocontinent Ever. Čo znamená nový plán EÚ pre naše firmy?',
     excerpt:
       'Akčný plán EÚ pre elektrifikáciu chce do roku 2040 zdvihnúť podiel elektriny na konečnej spotrebe z 23 % na 46 %. Čo to znamená pre plánovanie energetických investícií v našich firmách.',
