@@ -1,0 +1,203 @@
+---
+// Standalone stranka /ponuka: suhlas so zasielanim noviniek pri posielani ponuky.
+// Predvyplni e-mail z ?e a firmu z ?f, POST na existujuce API /api/lead (kind: presuhlas).
+// Rovnaky mechanizmus ako /presuhlas, lisi sa len kontextom (nadpis) a source: web-ponuka,
+// aby sa to v evidencii dalo rozlisit.
+// Cela stranka je noindex.
+---
+
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ďakujeme za záujem o spoluprácu | RKS</title>
+    <meta name="robots" content="noindex" />
+    <style>
+      /* RKS Digital Blue - tmava varianta */
+      :root {
+        --blue: #0161ef;
+        --link: #7dadff;
+        --navy: #e5ecf6;
+        --grey: rgba(229, 236, 246, 0.66);
+        --bg: #0a2342;
+        --card: #13234d;
+        --border: rgba(229, 236, 246, 0.16);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      body {
+        font-family:
+          Inter,
+          -apple-system,
+          'Segoe UI',
+          Arial,
+          sans-serif;
+        background: var(--bg);
+        color: var(--navy);
+        line-height: 1.55;
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        padding: 24px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 34px 30px;
+        max-width: 520px;
+        width: 100%;
+        box-shadow: 0 8px 30px rgba(4, 6, 30, 0.06);
+      }
+      h1 {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+      .sub {
+        color: var(--grey);
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        font-weight: 600;
+        font-size: 14px;
+        margin: 14px 0 6px;
+      }
+      input[type='email'] {
+        width: 100%;
+        font-size: 16px;
+        padding: 13px 14px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: rgba(229, 236, 246, 0.06);
+        color: var(--navy);
+      }
+      .consent {
+        color: var(--grey);
+        font-size: 13.5px;
+        margin: 18px 0 4px;
+      }
+      .consent a {
+        color: var(--link);
+      }
+      .btn {
+        width: 100%;
+        margin-top: 18px;
+        background: var(--blue);
+        color: #fff;
+        font-size: 16.5px;
+        font-weight: 600;
+        padding: 15px;
+        border: 0;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background: #0000ff;
+      }
+      a.btn {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        box-sizing: border-box;
+      }
+      .btn.ghost {
+        background: transparent;
+        color: var(--link);
+        border: 1.5px solid var(--link);
+      }
+      .btn.ghost:hover {
+        background: rgba(1, 97, 239, 0.15);
+      }
+      .err {
+        display: none;
+        color: #fca5a5;
+        font-size: 13.5px;
+        margin-top: 10px;
+      }
+      .honeypot {
+        position: absolute;
+        left: -9999px;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card" id="step1">
+      <h1>Ďakujeme za záujem o spoluprácu</h1>
+      <p class="sub">Potvrďte, prosím, že vám môžeme zasielať novinky a odborné informácie o rádiokomunikáciách.</p>
+      <form id="ponukaForm" novalidate>
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" required placeholder="jan.novak@firma.sk" />
+        <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off" />
+        <p class="consent">
+          Súhlasím, aby mi R K S, spol s r.o. zasielala novinky a odborné informácie o rádiokomunikáciách. Súhlas je
+          dobrovoľný a môžem ho kedykoľvek odvolať odhlásením v každom e-maile alebo na
+          <a href="mailto:rksba@rksba.sk">rksba@rksba.sk</a>. Viac v
+          <a href="/ochrana-osobnych-udajov">Zásadách ochrany osobných údajov</a>.
+        </p>
+        <button class="btn" type="submit">Potvrdzujem súhlas</button>
+        <p class="err" id="errMsg">Uveďte prosím platný e-mail.</p>
+      </form>
+    </div>
+
+    <div class="card hidden" id="done">
+      <h1>Ďakujeme!</h1>
+      <p class="sub">Ozveme sa len občas, a len keď budeme mať čo povedať.</p>
+      <a class="btn ghost" href="https://www.rksba.sk">Späť na web</a>
+    </div>
+
+    <script is:inline>
+      const CONSENT_TEXT =
+        'Súhlasím, aby mi R K S, spol s r.o. zasielala novinky a odborné informácie o rádiokomunikáciách. Súhlas je dobrovoľný a môžem ho kedykoľvek odvolať odhlásením v každom e-maile alebo na rksba@rksba.sk. Viac v Zásadách ochrany osobných údajov.';
+      const LEAD_ENDPOINT = 'https://rks-radio-expert.vercel.app/api/lead';
+
+      const params = new URLSearchParams(location.search);
+      const emailInput = document.getElementById('email');
+      if (params.get('e')) emailInput.value = params.get('e');
+      const firma = params.get('f') || '';
+
+      const form = document.getElementById('ponukaForm');
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        if (form.website.value) return; // honeypot
+        const email = emailInput.value.trim();
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+          document.getElementById('errMsg').style.display = 'block';
+          return;
+        }
+        const payload = {
+          kind: 'presuhlas',
+          source: 'web-ponuka',
+          email: email,
+          company: firma,
+          newsletter_optin: true,
+          consent_newsletter_text: CONSENT_TEXT,
+          page: location.href,
+          submitted_at: new Date().toISOString(),
+        };
+        try {
+          await fetch(LEAD_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+        } catch (err) {
+          console.error('Suhlas sa nepodarilo odoslat:', err);
+        }
+        // Podakovanie ukazeme aj pri chybe odoslania (kontakt je dolezitejsi ako UX blokacia).
+        document.getElementById('step1').classList.add('hidden');
+        document.getElementById('done').classList.remove('hidden');
+      });
+    </script>
+  </body>
+</html>
