@@ -21,7 +21,18 @@ const post = {
 ---
 
 <Layout metadata={metadata}>
+  <nav class="mx-auto max-w-3xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/newsletter">Newsletter</a>
+    <span class="px-1">/</span>
+    <span class="text-default">{post.title}</span>
+  </nav>
+
   <!-- Hero - jemný navy banner (mockup, bez reálnej fotky) -->
+
   <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 py-14 md:py-20">
       <p class="text-xs font-semibold tracking-widest text-white/60 uppercase mb-3">Pozdrav od riaditeľa</p>
@@ -33,16 +44,6 @@ const post = {
   </div>
 
   <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
-    <nav class="text-sm text-muted mb-8" aria-label="Omrvinky">
-      <a class="hover:underline" href="/">Domov</a>
-      <span class="px-1">/</span>
-      <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
-      <span class="px-1">/</span>
-      <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/newsletter">Newsletter</a>
-      <span class="px-1">/</span>
-      <span class="text-default">{post.title}</span>
-    </nav>
-
     <!-- Autor + dátum -->
     <div class="flex items-center justify-between flex-wrap gap-4 pb-8 mb-10 border-b border-hairline">
       <div class="flex items-center gap-3">

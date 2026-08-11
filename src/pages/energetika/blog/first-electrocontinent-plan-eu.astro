@@ -15,28 +15,26 @@ const post = {
 ---
 
 <Layout metadata={metadata}>
+  <nav class="mx-auto max-w-3xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/energetika">Energetika</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/energetika/blog">Energy Memo</a>
+    <span class="px-1">/</span>
+    <span class="text-default">{post.title}</span>
+  </nav>
+
   <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 py-14 md:py-20">
-      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-5">
-        <a class="hover:underline" href="/energetika/blog">Energy Memo</a> · Energetika
-      </p>
       <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight">{post.title}</h1>
       <p class="mt-5 text-lg text-white/80">Čo znamená nový plán EÚ pre naše firmy?</p>
     </div>
   </div>
 
   <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
-    <nav class="text-sm text-muted mb-8" aria-label="Omrvinky">
-      <a class="hover:underline" href="/">Domov</a>
-      <span class="px-1">/</span>
-      <a class="hover:underline" href="/energetika">Energetika</a>
-      <span class="px-1">/</span>
-      <a class="hover:underline" href="/energetika/blog">Energy Memo</a>
-      <span class="px-1">/</span>
-      <span class="text-default">{post.title}</span>
-    </nav>
     <p class="text-sm text-muted pb-8 mb-10 border-b border-hairline">
-      {post.date} · Energy Memo · RKS Energetika
+      {post.date}
     </p>
 
     <div class="prose prose-lg max-w-none">
