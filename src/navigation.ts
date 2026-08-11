@@ -116,7 +116,6 @@ export const headerData = {
     { text: 'Referencie', href: getPermalink('/referencie') },
     { text: 'Kontakt', href: getPermalink('/kontakt') },
   ],
-  // TODO: po dodaní Calendly URL nahradiť href Calendly odkazom
   actions: [
     {
       text: 'Dohodnúť nezáväznú konzultáciu',
