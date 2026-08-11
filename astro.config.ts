@@ -53,7 +53,15 @@ export default defineConfig({
   },
 
   integrations: [
-    sitemap(),
+    // Neindexovane standalone stranky (maju v HTML meta robots noindex) do sitemap.xml
+    // nepatria — Search Console ich inak hlasi ako "Submitted URL marked noindex".
+    // Porovnava sa cesta bez koncoveho lomitka, aby sedeli oba tvary URL.
+    sitemap({
+      filter: (page) => {
+        const path = new URL(page).pathname.replace(/\/+$/, '');
+        return !['/presuhlas', '/ponuka', '/pripadove-studie'].includes(path);
+      },
+    }),
     mdx(),
     icon({
       include: {
