@@ -17,7 +17,9 @@ const post = {
 <Layout metadata={metadata}>
   <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 py-14 md:py-20">
-      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-5">Energy Memo · Energetika</p>
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-5">
+        <a class="hover:underline" href="/energetika/blog">Energy Memo</a> · Energetika
+      </p>
       <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight">{post.title}</h1>
       <p class="mt-5 text-lg text-white/80">Čo znamená nový plán EÚ pre naše firmy?</p>
     </div>
@@ -34,7 +36,7 @@ const post = {
       <span class="text-default">{post.title}</span>
     </nav>
     <p class="text-sm text-muted pb-8 mb-10 border-b border-hairline">
-      {post.date} · Energy Memo · vydanie 01 · RKS Energetika
+      {post.date} · Energy Memo · RKS Energetika
     </p>
 
     <div class="prose prose-lg max-w-none">
