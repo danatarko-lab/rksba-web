@@ -1,0 +1,1117 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const sidebar = "<nav class=\"rks-tree text-sm\" aria-label=\"Kategórie produktov\"><ul class=\"space-y-1\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/radiostanice-2002\" class=\"rks-link text-default hover:text-link\">Rádiostanice<span class=\"text-muted text-xs ml-2\">773</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2\" class=\"rks-link text-default hover:text-link\">Prenosné rádiostanice<span class=\"text-muted text-xs ml-2\">632</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory\" class=\"rks-link text-default hover:text-link\">Akumulátory<span class=\"text-muted text-xs ml-2\">53</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Antény (DP)<span class=\"text-muted text-xs ml-2\">58</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DP)<span class=\"text-muted text-xs ml-2\">17</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dp\" class=\"rks-link text-primary font-semibold\">Iné (DP)<span class=\"text-muted text-xs ml-2\">138</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky-mototrbo\" class=\"rks-link text-default hover:text-link\">Nabíjačky<span class=\"text-muted text-xs ml-2\">37</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie\" class=\"rks-link text-default hover:text-link\">Nosenie<span class=\"text-muted text-xs ml-2\">97</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy\" class=\"rks-link text-default hover:text-link\">Náhlavné súpravy<span class=\"text-muted text-xs ml-2\">43</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony\" class=\"rks-link text-default hover:text-link\">Repromikrofóny<span class=\"text-muted text-xs ml-2\">39</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla\" class=\"rks-link text-default hover:text-link\">Slúchadlá<span class=\"text-muted text-xs ml-2\">72</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Softvér (DP)<span class=\"text-muted text-xs ml-2\">35</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prevadzace-mototrbo\" class=\"rks-link text-default hover:text-link\">Prevádzače<span class=\"text-muted text-xs ml-2\">22</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dr\" class=\"rks-link text-default hover:text-link\">Iné (DR)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dr\" class=\"rks-link text-default hover:text-link\">Softvér (DR)<span class=\"text-muted text-xs ml-2\">13</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/vozidlove-radiostanice-mototrbo\" class=\"rks-link text-default hover:text-link\">Vozidlové rádiostanice<span class=\"text-muted text-xs ml-2\">119</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny\" class=\"rks-link text-default hover:text-link\">Antény (DM)<span class=\"text-muted text-xs ml-2\">23</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dm-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DM)<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dm\" class=\"rks-link text-default hover:text-link\">Iné (DM)<span class=\"text-muted text-xs ml-2\">22</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/instalacia\" class=\"rks-link text-default hover:text-link\">Inštalácia<span class=\"text-muted text-xs ml-2\">29</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofony\" class=\"rks-link text-default hover:text-link\">Mikrofóny<span class=\"text-muted text-xs ml-2\">13</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/napajanie\" class=\"rks-link text-default hover:text-link\">Napájanie<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/reproduktory\" class=\"rks-link text-default hover:text-link\">Reproduktory<span class=\"text-muted text-xs ml-2\">5</span></a></li></ul></li></ul></li></ul></nav>";
+const breadcrumb = [
+  {
+    "name": "Produkty",
+    "url": "/produkty"
+  },
+  {
+    "name": "Katalóg produktov",
+    "url": "/katalog-produktov"
+  },
+  {
+    "name": "Rádiostanice",
+    "url": "/katalog-produktov/kategoria/radiostanice-2002"
+  },
+  {
+    "name": "Prenosné rádiostanice",
+    "url": "/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+  },
+  {
+    "name": "Iné (DP)",
+    "url": null
+  }
+];
+const heading = "Iné (DP)";
+const popisHtml = "<h1>Iné príslušenstvo pre prenosné profesionálne digitálne rádiostanice rady Mototrbo</h1> <p>Existuje celý rad užívateľov prenosných rádiostaníc. Každý má svoje špecifické potreby, požiadavky a pracuje v rôznych podmienkach. Spoločnosť Motorola dodáva kompletné riešenie a ponúka široký výber mikrofónov, slúchadiel a reproduktorov. Profesionálni užívateľa si môžu svoje rádiostanice prispôsobiť tak, aby zabezpečovali individuálne potreby komunikácie aj nad rámec funkcií, ktoré obsahuje štandardná dodávka. </p>";
+const intro = [];
+const subcats = [];
+const subcatsHeading = "";
+const products = [
+  {
+    "url": "/katalog-produktov/0104058j40",
+    "img": "/images/katalog-produktov/20455/main.webp",
+    "title": "0104058J40",
+    "desc": "Kryt konektora pre príslušenstvo Kryt konektora pre príslušenstvo Chráni konektor, ak nie je používané Motorola príslušenstvo."
+  },
+  {
+    "url": "/katalog-produktov/0104068j78",
+    "img": "/images/katalog-produktov/21045/main.webp",
+    "title": "0104068J78",
+    "desc": "Klipsa pre repromikrofón Klipsa pre repromikrofón Určené pre repromikrofóny PMMN4150 a PMMN4151 ."
+  },
+  {
+    "url": "/katalog-produktov/15012094001",
+    "img": "/images/katalog-produktov/20253/main.webp",
+    "title": "15012094001",
+    "desc": "Plátenný kryt Plátenný kryt Plátenný kryt na náušníky zvyšuje komfort pri nosení slúchadiel v teplom i v studenom počasí."
+  },
+  {
+    "url": "/katalog-produktov/15012157001",
+    "img": "/images/katalog-produktov/20070/main.webp",
+    "title": "15012157001",
+    "desc": "Kryt konektora pre príslušenstvo Kryt konektora pre príslušenstvo Chráni systémový konektor, ak nie je používané Motorola príslušenstvo."
+  },
+  {
+    "url": "/katalog-produktov/1505596z02",
+    "img": "/images/katalog-produktov/20568/main.webp",
+    "title": "1505596Z02",
+    "desc": "Náhradný popruh Náhradný popruh Náhradný popruh pre Univerzálne nylonové náprsné puzdro ( HLN6602 ) a Odopínacie náprsné puzdro ( RLN4570 )."
+  },
+  {
+    "url": "/katalog-produktov/1571477l01",
+    "img": "/images/katalog-produktov/20227/main.webp",
+    "title": "1571477L01",
+    "desc": "Kryt konektora pre príslušenstvo Kryt konektora pre príslušenstvo Chráni konektor rádiostanice, ak nie je používané audio príslušenstvo."
+  },
+  {
+    "url": "/katalog-produktov/32012144001",
+    "img": "/images/katalog-produktov/20862/main.webp",
+    "title": "32012144001",
+    "desc": "Anténne ID krúžky Anténne ID krúžky Farebné krúžky sa ľahko nasunú na antény a umožňujú vám rýchlo vizuálne identifikovať do ktorej skupiny užívateľov patrí rádiostanica."
+  },
+  {
+    "url": "/katalog-produktov/32012144002",
+    "img": "/images/katalog-produktov/20863/main.webp",
+    "title": "32012144002",
+    "desc": "Anténne ID krúžky Anténne ID krúžky Farebné krúžky sa ľahko nasunú na antény a umožňujú vám rýchlo vizuálne identifikovať do ktorej skupiny užívateľov patrí rádiostanica."
+  },
+  {
+    "url": "/katalog-produktov/32012144003",
+    "img": "/images/katalog-produktov/20864/main.webp",
+    "title": "32012144003",
+    "desc": "Anténne ID krúžky Anténne ID krúžky Farebné krúžky sa ľahko nasunú na antény a umožňujú vám rýchlo vizuálne identifikovať do ktorej skupiny užívateľov patrí rádiostanica."
+  },
+  {
+    "url": "/katalog-produktov/32012144004",
+    "img": "/images/katalog-produktov/20865/main.webp",
+    "title": "32012144004",
+    "desc": "Anténne ID krúžky Anténne ID krúžky Farebné krúžky sa ľahko nasunú na antény a umožňujú vám rýchlo vizuálne identifikovať do ktorej skupiny užívateľov patrí rádiostanica."
+  },
+  {
+    "url": "/katalog-produktov/32012144005",
+    "img": "/images/katalog-produktov/20866/main.webp",
+    "title": "32012144005",
+    "desc": "Anténne ID krúžky Anténne ID krúžky Farebné krúžky sa ľahko nasunú na antény a umožňujú vám rýchlo vizuálne identifikovať do ktorej skupiny užívateľov patrí rádiostanica."
+  },
+  {
+    "url": "/katalog-produktov/3578010a01",
+    "img": "/images/katalog-produktov/20252/main.webp",
+    "title": "3578010A01",
+    "desc": "Molitanový protihlukový kryt na mikrofón Molitanový protihlukový kryt na mikrofón Zabraňuje rušeniu zvuku vetrom."
+  },
+  {
+    "url": "/katalog-produktov/4200865599",
+    "img": "/images/katalog-produktov/20291/main.webp",
+    "title": "4200865599",
+    "desc": "Kožený opasok Kožený opasok Čierny opasok z pevnej kože o šírke 4,3 cm."
+  },
+  {
+    "url": "/katalog-produktov/4204004k01",
+    "img": "/images/katalog-produktov/20251/main.webp",
+    "title": "4204004K01",
+    "desc": "Náhradný hlavový popruh pre náhlavnú súpravu Náhradný nastaviteľný hlavový popruh Určené pre náhlavnú súpravu PMLN6540 ."
+  },
+  {
+    "url": "/katalog-produktov/4280384f89",
+    "img": "/images/katalog-produktov/20162/main.webp",
+    "title": "4280384F89",
+    "desc": "Predĺženie opasku Predĺženie opasku Predlžuje opasok univerzálneho púzdra Radio Pack&nbsp; RLN4815 pre obvod pásu nad 100 cm."
+  },
+  {
+    "url": "/katalog-produktov/5080384f72",
+    "img": "/images/katalog-produktov/20250/main.webp",
+    "title": "5080384F72",
+    "desc": "Náhradné penové koncovky do uší Náhradné penové koncovky do uší Určené napr."
+  },
+  {
+    "url": "/katalog-produktov/75012068001",
+    "img": "/images/katalog-produktov/20443/main.webp",
+    "title": "75012068001",
+    "desc": "Náhradné náušníky pre pre slúchadlá Náhradné náušníky pre pre slúchadlá V balení sú dva kusy."
+  },
+  {
+    "url": "/katalog-produktov/7575999m01",
+    "img": "/images/katalog-produktov/20249/main.webp",
+    "title": "7575999M01",
+    "desc": "Eyeglass Pad Eyeglass Pad Určené pre masívnu náhlavnú súpravu PMLN5275 ."
+  },
+  {
+    "url": "/katalog-produktov/7580372e11-mototrbo",
+    "img": "/images/katalog-produktov/20192/main.webp",
+    "title": "7580372E11",
+    "desc": "Náhradné molitanové vankúšiky na slúchadlá Náhradné molitanové vankúšiky na slúchadlá Určené pre slúchadlá BDN6720 ."
+  },
+  {
+    "url": "/katalog-produktov/as000129a01",
+    "img": "/images/katalog-produktov/20952/main.webp",
+    "title": "AS000129A01",
+    "desc": "Nabíjací adaptér Nabíjací adaptér Adaptér umožňuje nabíjanie troch rádiostaníc R7, R5 alebo akumulátorov v 6-miestnej nabíjačke PMPN4289 ."
+  },
+  {
+    "url": "/katalog-produktov/ay000306a01",
+    "img": "/images/katalog-produktov/21024/main.webp",
+    "title": "AY000306A01",
+    "desc": "Náhradná audio šnúra Náhradná audio šnúra Náhradný audio kábel s konektorom určený pre náhlavnú súpravu&nbsp; PMLN6852 a PMLN6853 ."
+  },
+  {
+    "url": "/katalog-produktov/ay000307a01",
+    "img": "/images/katalog-produktov/21025/main.webp",
+    "title": "AY000307A01",
+    "desc": "Náhradná audio šnúra Náhradná audio šnúra Náhradný audio kábel s konektorom určený pre náhlavnú súpravu&nbsp; PMLN6760 a PMLN6763 ."
+  },
+  {
+    "url": "/katalog-produktov/ay000308a01",
+    "img": "/images/katalog-produktov/21023/main.webp",
+    "title": "AY000308A01",
+    "desc": "Náhradná audio šnúra Náhradná audio šnúra Náhradný audio kábel s konektorom určený pre náhlavnú súpravu PMLN6854 ."
+  },
+  {
+    "url": "/katalog-produktov/ay000308a02",
+    "img": "/images/katalog-produktov/21031/main.webp",
+    "title": "AY000308A02",
+    "desc": "Náhradná audio šnúra Náhradná audio šnúra Náhradný audio kábel s konektorom určený pre náhlavnú súpravu PMLN6854 ."
+  },
+  {
+    "url": "/katalog-produktov/ay000309a01",
+    "img": "/images/katalog-produktov/21026/main.webp",
+    "title": "AY000309A01",
+    "desc": "Náhradný hlavový most Náhradný hlavový most Náhradný hlavový most určený pre náhlavné súpravy PMLN6852 , PMLN6853 , PMLN6854 ."
+  },
+  {
+    "url": "/katalog-produktov/ay000310a01",
+    "img": "/images/katalog-produktov/21027/main.webp",
+    "title": "AY000310A01",
+    "desc": "Náhradný kryt mikrofónu Náhradný kryt mikrofónu Náhradný kryt mikrofónu určený pre náhlavné súpravy&nbsp; PMLN6852 , PMLN6853 , PMLN6854 ."
+  },
+  {
+    "url": "/katalog-produktov/ay000311a01",
+    "img": "/images/katalog-produktov/21028/main.webp",
+    "title": "AY000311A01",
+    "desc": "Náhradné náušníky Náhradné náušníky Náhradné gélové náušníky určené pre náhlavnú súpravu PMLN6854 ."
+  },
+  {
+    "url": "/katalog-produktov/ay000312a01",
+    "img": "/images/katalog-produktov/21029/main.webp",
+    "title": "AY000312A01",
+    "desc": "Náhradný mikrofón, ľavý Náhradný mikrofón Náhradný ľavý mikrofón určený pre náhlavné súpravy PMLN6852 , PMLN6853 , PMLN6854 ."
+  },
+  {
+    "url": "/katalog-produktov/ay000313a01",
+    "img": "/images/katalog-produktov/21030/main.webp",
+    "title": "AY000313A01",
+    "desc": "Náhradný mikrofón, pravý Náhradný mikrofón Náhradný pravý mikrofón určený pre náhlavné súpravy&nbsp; PMLN6852 , PMLN6853 , PMLN6854 ."
+  },
+  {
+    "url": "/katalog-produktov/br000272a01",
+    "img": "/images/katalog-produktov/20916/main.webp",
+    "title": "BR000272A01",
+    "desc": "Nástenný držiak pre montáž 6-miestnej ATEX nabíjačky akumulátorov."
+  },
+  {
+    "url": "/katalog-produktov/epnn9286-mototrbo",
+    "img": "/images/katalog-produktov/20119/main.webp",
+    "title": "EPNN9286",
+    "desc": "Napájací zdroj s Euro koncovkou Napájací zdroj s Euro koncovkou Napájací zdroj je určený ku všetkým jednomiestným nabíjačkám."
+  },
+  {
+    "url": "/katalog-produktov/mdhtn9000-mototrbo",
+    "img": "/images/katalog-produktov/20161/main.webp",
+    "title": "MDHTN9000",
+    "desc": "Podstavec nabíjačky Podstavec&nbsp;nabíjačky Náhradný podstavec k nabíjačke&nbsp; PMLN5196 ."
+  },
+  {
+    "url": "/katalog-produktov/nln7967",
+    "img": "/images/katalog-produktov/20164/main.webp",
+    "title": "NLN7967",
+    "desc": "Nástenný držiak pre montáž 6-miestnej IMPRES nabíjačky akumulátorov."
+  },
+  {
+    "url": "/katalog-produktov/nntn6844",
+    "img": "/images/katalog-produktov/21001/main.webp",
+    "title": "NNTN6844",
+    "desc": "Nástenný držiak pre montáž 6-miestnej IMPRES nabíjačky akumulátorov."
+  },
+  {
+    "url": "/katalog-produktov/nntn8117",
+    "img": "/images/katalog-produktov/20123/main.webp",
+    "title": "NNTN8117",
+    "desc": "Podstavec nabíjačky Podstavec nabíjačky Náhradný podstavec k nabíjačke&nbsp; NNTN8273 ."
+  },
+  {
+    "url": "/katalog-produktov/nntn8299",
+    "img": "/images/katalog-produktov/20248/main.webp",
+    "title": "NNTN8299",
+    "desc": "Vymeniteľné ušné koncovky Vymeniteľné ušné koncovky Balenie obsahuje 3 páry koncoviek s veľkosťami S / M / L a jednu klipsu."
+  },
+  {
+    "url": "/katalog-produktov/nntn8361",
+    "img": "/images/katalog-produktov/21063/main.webp",
+    "title": "NNTN8361",
+    "desc": "Vymeniteľné ušné koncovky Vymeniteľné ušné koncovky Balenie obsahuje 60 koncoviek s veľkosťami S / M / L (po 20 ks) a 10 klipsov."
+  },
+  {
+    "url": "/katalog-produktov/nntn8385",
+    "img": "/images/katalog-produktov/20445/main.webp",
+    "title": "NNTN8385",
+    "desc": "Y adaptér pre&nbsp;diskrétnu bezdrôtovú súpravu Y adaptér pre&nbsp;diskrétnu bezdrôtovú súpravu Adaptér s mikrofónom na pripojenie indukčnej slučky k Bluetooth PTT modulu&nbsp; NNTN8191 &nbsp;vrátane háčika na zachytenie."
+  },
+  {
+    "url": "/katalog-produktov/nntn8457",
+    "img": "/images/katalog-produktov/20446/main.webp",
+    "title": "NNTN8457",
+    "desc": "Upevňovací háčik Upevňovací háčik Náhradný háčik pre upevnenie indukčnej slučky NNTN8385 &nbsp;ktorá je súčasťou diskrétnej bezdrôtovej súpravy&nbsp; NNTN8433 ."
+  },
+  {
+    "url": "/katalog-produktov/nntn8737",
+    "img": "/images/katalog-produktov/20509/main.webp",
+    "title": "NNTN8737",
+    "desc": "Audio adaptér Audio adaptér Adaptér umožňuje k Bluetooth PTT modulu&nbsp;pripojiť bežné komerčné slúchadlá s 3,5 mm jackom."
+  },
+  {
+    "url": "/katalog-produktov/ntn8986",
+    "img": "/images/katalog-produktov/20246/main.webp",
+    "title": "NTN8986",
+    "desc": "Lepiace podložky Lepiace podložky Slúžia pre bezpečné upevnenie audio súpravy na ucho."
+  },
+  {
+    "url": "/katalog-produktov/ntn8988",
+    "img": "/images/katalog-produktov/20245/main.webp",
+    "title": "NTN8988",
+    "desc": "Upevňovacie pásky Upevňovacie pásky Slúžia pre bezpečné pripevnenie audio súpravy k uchu."
+  },
+  {
+    "url": "/katalog-produktov/pmhn4429",
+    "img": "/images/katalog-produktov/20953/main.webp",
+    "title": "PMHN4429",
+    "desc": "Kryt konektora pre príslušenstvo Kryt konektora pre príslušenstvo Chráni konektor rádiostanice, ak nie je používané audio príslušenstvo."
+  },
+  {
+    "url": "/katalog-produktov/pmkn4155",
+    "img": "/images/katalog-produktov/20998/main.webp",
+    "title": "PMKN4155",
+    "desc": "Náhradná krútená šnúra Náhradná krútená šnúra Určené pre repromikrofóny PMMN4013 a PMMN4029 ."
+  },
+  {
+    "url": "/katalog-produktov/pmkn4232",
+    "img": "/images/katalog-produktov/20945/main.webp",
+    "title": "PMKN4232",
+    "desc": "Náhradná krútená šnúra Náhradná krútená šnúra Určené pre repromikrofóny PMMN4128 (RM780), PMMN4140 (RM760), PMMN4131 (RM730)."
+  },
+  {
+    "url": "/katalog-produktov/pmln4605-mototrbo",
+    "img": "/images/katalog-produktov/20193/main.webp",
+    "title": "PMLN4605",
+    "desc": "Priehľadný zvukovod do prostredia s nízkou hlučnosťou Priehľadný zvukovod do prostredia s nízkou hlučnosťou Sada priehľadného zvukovodu pre rozšírenie audio súprav pre skryté nosenie."
+  },
+  {
+    "url": "/katalog-produktov/pmln5010-mototrbo",
+    "img": "/images/katalog-produktov/20911/main.webp",
+    "title": "PMLN5010",
+    "desc": "Nabíjací adaptér Nabíjací adaptér Adaptér umožňuje nabíjanie rádiostaníc DP3441/DP3441e/DP3661e v 6-miestnej nabíjačke WPLN4189 &nbsp;alebo WPLN4194 ."
+  },
+  {
+    "url": "/katalog-produktov/pmln6000",
+    "img": "/images/katalog-produktov/20097/main.webp",
+    "title": "PMLN6000",
+    "desc": "Náhradný kryt akumulátora Náhradný kryt akumulátora."
+  },
+  {
+    "url": "/katalog-produktov/pmln6001",
+    "img": "/images/katalog-produktov/20096/main.webp",
+    "title": "PMLN6001",
+    "desc": "Náhradný kryt akumulátora Náhradný kryt akumulátora Určené pre vysokokapacitný akumulátor HKNN4013 ."
+  },
+  {
+    "url": "/katalog-produktov/pmln6047",
+    "img": "/images/katalog-produktov/20342/main.webp",
+    "title": "PMLN6047",
+    "desc": "ATEX Audio adaptér s konektorom Molex ATEX Audio adaptér s konektorom Molex Ľahko inštalovateľný audio adaptér s ATEX certifikátom.&nbsp;Príslušenstvo vybavené Molex konektorom tiež vyžaduje ATEX certifikát."
+  },
+  {
+    "url": "/katalog-produktov/pmln6066",
+    "img": "/images/katalog-produktov/20507/main.webp",
+    "title": "PMLN6066",
+    "desc": "Kryt konektora pre príslušenstvo Kryt konektora pre príslušenstvo Zabezpečuje prídavnú ochranu konektora pre príslušenstvo pripojeného k rádiostanici."
+  },
+  {
+    "url": "/katalog-produktov/pmln6175",
+    "img": "/images/katalog-produktov/20474/main.webp",
+    "title": "PMLN6175",
+    "desc": "Náhradný priehľadný zvukovod Náhradný priehľadný zvukovod určený pre jednošnúrové slúchadlo do ucha PMLN5957 ."
+  },
+  {
+    "url": "/katalog-produktov/pmln6246",
+    "img": "/images/katalog-produktov/20447/main.webp",
+    "title": "PMLN6246",
+    "desc": "Otočná spona Otočná spona Spona z plastového materiálu s otočným kĺbom je určená pre Bluetooth PTT modul NNTN8191 ."
+  },
+  {
+    "url": "/katalog-produktov/pmln6669",
+    "img": "/images/katalog-produktov/20454/main.webp",
+    "title": "PMLN6669",
+    "desc": "Nabíjací adaptér Nabíjací adaptér Adaptér umožňuje nabíjanie rádiostaníc DP3441/DP3441e v 6-miestnej nabíjačke WPLN4213 alebo WPLN4220 ."
+  },
+  {
+    "url": "/katalog-produktov/pmln6696",
+    "img": "/images/katalog-produktov/20452/main.webp",
+    "title": "PMLN6696",
+    "desc": "MPT1237 modul MPT1237 modul Tento prídavný modul rozšíri možnosti komunikácie digitálnych rádiostaníc o analógový trunkový systém MPT1237."
+  },
+  {
+    "url": "/katalog-produktov/pmln6745",
+    "img": "/images/katalog-produktov/20265/main.webp",
+    "title": "PMLN6745",
+    "desc": "Náhradný kryt akumulátora Náhradný kryt akumulátora Určené pre vysokokapacitný akumulátor PMNN4459 &nbsp;alebo PMNN4468 Materiál: Plast Určené pre rádiostanice rady SL4000."
+  },
+  {
+    "url": "/katalog-produktov/pmln6765",
+    "img": "/images/katalog-produktov/20523/main.webp",
+    "title": "PMLN6765",
+    "desc": "Taktický PTT/VOX modul Taktický PTT/VOX modul Tento taktický modul umožňuje prepínať medzi hlasom aktivovanou komunikáciou (VOX)&nbsp; a režimom PTT."
+  },
+  {
+    "url": "/katalog-produktov/pmln6767",
+    "img": "/images/katalog-produktov/20526/main.webp",
+    "title": "PMLN6767",
+    "desc": "PTT taktický adaptér PTT taktický adaptér Veľké taktické PTT tlačidlo bolo navrhnuté tak, aby sa ľahko ovládalo aj v hrubých rukaviciach."
+  },
+  {
+    "url": "/katalog-produktov/pmln6803",
+    "img": "/images/katalog-produktov/20877/main.webp",
+    "title": "PMLN6803",
+    "desc": "Malý PTT adaptér&nbsp;Peltor Malý PTT adaptér&nbsp;Peltor Ku náhlavným súpravám Peltor je nutné objednať adaptér s PTT vysielacím tlačidlom,&nbsp;ktorý spojí náhlavnú súpravu a rádiostanicu."
+  },
+  {
+    "url": "/katalog-produktov/pmln6827",
+    "img": "/images/katalog-produktov/20524/main.webp",
+    "title": "PMLN6827",
+    "desc": "Taktický PTT modul Taktický PTT modul Tento taktický modul umožňuje k rádiostanici pripojiť náhlavnú súpravu PMLN6833 ."
+  },
+  {
+    "url": "/katalog-produktov/pmln6830",
+    "img": "/images/katalog-produktov/20525/main.webp",
+    "title": "PMLN6830",
+    "desc": "Taktické prstencové PTT tlačidlo Taktické prstencové PTT tlačidlo Toto PTT riešenie sa nosí na prste čím je zabezpečené, že PTT tlačidlo je vždy po ruke pripravené na použitie."
+  },
+  {
+    "url": "/katalog-produktov/pmln7074",
+    "img": "/images/katalog-produktov/20493/main.webp",
+    "title": "PMLN7074",
+    "desc": "Náhradný kryt akumulátora Náhradný kryt akumulátora Určené pre vysokokapacitný akumulátor PMNN4468 ."
+  },
+  {
+    "url": "/katalog-produktov/pmln7203",
+    "img": "/images/katalog-produktov/20587/main.webp",
+    "title": "PMLN7203",
+    "desc": "Sada slúchadiel s mikrofónom Sada slúchadiel s mikrofónom Sada 3 ks náhradných slúchadiel pre bezdrôtovú súpravu PMLN7181 ."
+  },
+  {
+    "url": "/katalog-produktov/pmln7353",
+    "img": "/images/katalog-produktov/20592/main.webp",
+    "title": "PMLN7353",
+    "desc": "RFID regulátor hlasitosti RFID regulátor hlasitosti Sada 20 ks regulátorov hlasitosti s RFID čipom ktoré uľahčuje správu rádiostaníc."
+  },
+  {
+    "url": "/katalog-produktov/pmln7354",
+    "img": "/images/katalog-produktov/20886/main.webp",
+    "title": "PMLN7354",
+    "desc": "RFID regulátor hlasitosti RFID regulátor hlasitosti Sada 20 ks regulátorov hlasitosti s RFID čipom ktoré uľahčuje správu rádiostaníc."
+  },
+  {
+    "url": "/katalog-produktov/pmln7355",
+    "img": "/images/katalog-produktov/20876/main.webp",
+    "title": "PMLN7355",
+    "desc": "Gombík regulátora hlasitosti RFID Gombík regulátora hlasitosti RFID Sada 20 ks gombíkov s RFID čipom ktoré uľahčuje správu rádiostaníc."
+  },
+  {
+    "url": "/katalog-produktov/pmln7369",
+    "img": "/images/katalog-produktov/20586/main.webp",
+    "title": "PMLN7369",
+    "desc": "Sada bezdrôtových Bluetooth modulov Sada 3 ks náhradných Bluetooth modulov Určené pre bezdrôtovú súpravu PMLN7181 ."
+  },
+  {
+    "url": "/katalog-produktov/pmln7394",
+    "img": "/images/katalog-produktov/20590/main.webp",
+    "title": "PMLN7394",
+    "desc": "MPT1237 modul MPT1237 modul Tento prídavný modul rozšíri možnosti komunikácie digitálnych rádiostaníc o analógový trunkový systém MPT1237."
+  },
+  {
+    "url": "/katalog-produktov/pmln7395",
+    "img": "/images/katalog-produktov/20591/main.webp",
+    "title": "PMLN7395",
+    "desc": "Connect Plus modul Connect Plus modul Tento prídavný modul zaistí podporu trunkového sytému Connect Plus."
+  },
+  {
+    "url": "/katalog-produktov/pmln7940",
+    "img": "/images/katalog-produktov/20844/main.webp",
+    "title": "PMLN7940",
+    "desc": "Náhradné ušné koncovky - malé oválne Náhradné&nbsp;ušné koncovky - malé oválne Balenie obsahuje 5 koncoviek.&nbsp;Určené pre Bluetooth slúchadlá&nbsp; PMLN7851 ."
+  },
+  {
+    "url": "/katalog-produktov/pmln7941",
+    "img": "/images/katalog-produktov/20874/main.webp",
+    "title": "PMLN7941",
+    "desc": "Náhradné ušné koncovky - veľké&nbsp;oválne Náhradné&nbsp;ušné koncovky - veľké&nbsp;oválne Balenie obsahuje 5 koncoviek.&nbsp;Určené pre Bluetooth slúchadlá&nbsp; PMLN7851 ."
+  },
+  {
+    "url": "/katalog-produktov/pmln8036",
+    "img": "/images/katalog-produktov/21065/main.webp",
+    "title": "PMLN8036",
+    "desc": "Náhradné ušné koncovky - malé okrúhle Náhradné&nbsp;ušné koncovky - malé okrúhle Balenie obsahuje 5 okrúhlych koncoviek.&nbsp;Určené pre Bluetooth slúchadlá&nbsp; PMLN7851 ."
+  },
+  {
+    "url": "/katalog-produktov/pmln8037",
+    "img": "/images/katalog-produktov/21064/main.webp",
+    "title": "PMLN8037",
+    "desc": "Náhradné ušné koncovky - stredné okrúhle Náhradné&nbsp;ušné koncovky - stredné okrúhle Balenie obsahuje 5 okrúhlych koncoviek.&nbsp;Určené pre Bluetooth slúchadlá&nbsp; PMLN7851 ."
+  },
+  {
+    "url": "/katalog-produktov/pmln8038",
+    "img": "/images/katalog-produktov/21066/main.webp",
+    "title": "PMLN8038",
+    "desc": "Náhradné ušné koncovky - veľké okrúhle Náhradné&nbsp;ušné koncovky - veľké okrúhle Balenie obsahuje 5 okrúhlych koncoviek.&nbsp;Určené pre Bluetooth slúchadlá&nbsp; PMLN7851 ."
+  },
+  {
+    "url": "/katalog-produktov/pmln8068",
+    "img": "/images/katalog-produktov/20954/main.webp",
+    "title": "PMLN8068",
+    "desc": "Náhradné ušné koncovky - malé Náhradné&nbsp;ušné koncovky - malé Tieto náhradné koncovky slúchadiel sa môžu použiť ako náhrada stratených koncoviek, na poskytnutie samostatných koncoviek každému používateľovi z hygienických dôvodov alebo na poskytnutie koncovky, ktorej veľkosť lepšie vyhovuje používateľovi."
+  },
+  {
+    "url": "/katalog-produktov/pmln8069",
+    "img": "/images/katalog-produktov/20956/main.webp",
+    "title": "PMLN8069",
+    "desc": "Náhradné ušné koncovky - stredné Náhradné&nbsp;ušné koncovky - stredné Tieto náhradné koncovky slúchadiel sa môžu použiť ako náhrada stratených koncoviek, na poskytnutie samostatných koncoviek každému používateľovi z hygienických dôvodov alebo na poskytnutie koncovky, ktorej veľkosť lepšie vyhovuje používateľovi."
+  },
+  {
+    "url": "/katalog-produktov/pmln8070",
+    "img": "/images/katalog-produktov/20957/main.webp",
+    "title": "PMLN8070",
+    "desc": "Náhradné ušné koncovky - veľké Náhradné&nbsp;ušné koncovky - veľké Tieto náhradné koncovky slúchadiel sa môžu použiť ako náhrada stratených koncoviek, na poskytnutie samostatných koncoviek každému používateľovi z hygienických dôvodov alebo na poskytnutie koncovky, ktorej veľkosť lepšie vyhovuje používateľovi."
+  },
+  {
+    "url": "/katalog-produktov/pmln8079",
+    "img": "/images/katalog-produktov/21058/main.webp",
+    "title": "PMLN8079",
+    "desc": "Klipsa pre slúchadlo Klipsa pre slúchadlo Udržujte kábel od slúchadla Motorola bezpečne na svojom mieste."
+  },
+  {
+    "url": "/katalog-produktov/pmln8092",
+    "img": "/images/katalog-produktov/20958/main.webp",
+    "title": "PMLN8092",
+    "desc": "Náhradný priehľadný zvukovod Náhradný priehľadný zvukovod určený pre slúchadlá do ucha PMLN8341 , PMLN8120 , PMLN8342 , PMLN8343 ."
+  },
+  {
+    "url": "/katalog-produktov/pmln8122",
+    "img": "/images/katalog-produktov/20944/main.webp",
+    "title": "PMLN8122",
+    "desc": "Protiprachový kryt Protiprachový kryt Kryt chráni konektor pre pripojenie audio príslušenstva pred prachom."
+  },
+  {
+    "url": "/katalog-produktov/pmln8253",
+    "img": "/images/katalog-produktov/20959/main.webp",
+    "title": "PMLN8253",
+    "desc": "Protiprachový kryt Protiprachový kryt Kryt chráni konektor pre pripojenie audio príslušenstva pred prachom."
+  },
+  {
+    "url": "/katalog-produktov/pmln8297",
+    "img": "/images/katalog-produktov/20963/main.webp",
+    "title": "PMLN8297",
+    "desc": "PTT adaptér NEXUS PTT adaptér NEXUS Ku slúchadlám Peltor je nutné objednať NEXUS adaptér s PTT vysielacím tlačidlom,&nbsp;ktorý spojí náhlavnú súpravu a rádiostanicu."
+  },
+  {
+    "url": "/katalog-produktov/pmln8363",
+    "img": "/images/katalog-produktov/20974/main.webp",
+    "title": "PMLN8363",
+    "desc": "Gumený návlek - malý Gumený návlek - malý Určené pre jednošnúrové závesné slúchadlo IMPRES PMLN8337 ."
+  },
+  {
+    "url": "/katalog-produktov/pmln8364",
+    "img": "/images/katalog-produktov/20980/main.webp",
+    "title": "PMLN8364",
+    "desc": "Gumenný návlek - stredný Gumenný&nbsp;návlek - stredný Určené pre jednošnúrové závesné slúchadlo IMPRES PMLN8337 ."
+  },
+  {
+    "url": "/katalog-produktov/pmln8365",
+    "img": "/images/katalog-produktov/20981/main.webp",
+    "title": "PMLN8365",
+    "desc": "Gumenný návlek - veľký Gumenný&nbsp;návlek - veľký Určené pre jednošnúrové závesné slúchadlo IMPRES PMLN8337 ."
+  },
+  {
+    "url": "/katalog-produktov/pmln8502",
+    "img": "/images/katalog-produktov/20997/main.webp",
+    "title": "PMLN8502",
+    "desc": "Sada ochranných krytov Sada ochranných krytov Kryt poskytuje dodatočnú ochranu pri pripájaní audio príslušenstva ku kompatibilnej rádiostanici bez potreby použitia náradia."
+  },
+  {
+    "url": "/katalog-produktov/pmln8671",
+    "img": "/images/katalog-produktov/21043/main.webp",
+    "title": "PMLN8671",
+    "desc": "NFC tag NFC tag NFC a RFID tagy poskytujú používateľsky prívetivé riešenie pre hliadkovanie a kontrolu prístupu."
+  },
+  {
+    "url": "/katalog-produktov/pmln8672",
+    "img": "/images/katalog-produktov/21044/main.webp",
+    "title": "PMLN8672",
+    "desc": "RFID tag RFID tag NFC a RFID tagy poskytujú používateľsky prívetivé riešenie pre hliadkovanie a kontrolu prístupu."
+  },
+  {
+    "url": "/katalog-produktov/pmpn4527",
+    "img": "/images/katalog-produktov/20939/main.webp",
+    "title": "PMPN4527",
+    "desc": "Podstavec IMPRES nabíjačky Podstavec IMPRES nabíjačky Náhradný podstavec k nabíjačke PMPN4577"
+  },
+  {
+    "url": "/katalog-produktov/ps000037a01",
+    "img": "/images/katalog-produktov/20978/main.webp",
+    "title": "PS000037A01",
+    "desc": "Napájací zdroj s Euro koncovkou Napájací zdroj s Euro koncovkou Napájací zdroj je určený pre IMPRES nabíjačku PMPN4577 ."
+  },
+  {
+    "url": "/katalog-produktov/ps000242a01",
+    "img": "/images/katalog-produktov/20979/main.webp",
+    "title": "PS000242A01",
+    "desc": "Napájací zdroj s Euro koncovkou Napájací zdroj s Euro koncovkou Napájací zdroj je určený pre 6-miestnu nabíjačku PMPN4289 ."
+  },
+  {
+    "url": "/katalog-produktov/ps000576a02",
+    "img": "/images/katalog-produktov/21016/main.webp",
+    "title": "PS000576A02",
+    "desc": "Napájací zdroj s Euro koncovkou Napájací zdroj s Euro koncovkou Napájací zdroj je určený pre IMPRES nabíjačku PMPN4577 ."
+  },
+  {
+    "url": "/katalog-produktov/rex4648",
+    "img": "/images/katalog-produktov/20131/main.webp",
+    "title": "REX4648",
+    "desc": "Náhradný molitanový kryt na slúchadlo a mikrofón Náhradný molitanový kryt na slúchadlo a mikrofón Určené pre PMLN6538 ."
+  },
+  {
+    "url": "/katalog-produktov/rln4760",
+    "img": "/images/katalog-produktov/20244/main.webp",
+    "title": "RLN4760",
+    "desc": "Vymeniteľné ušné koncovky Vymeniteľné ušné koncovky Koncovky sú vyrobené z ľahko čistiteľného, chemicky inertného, hypo-alergénneho materiálu."
+  },
+  {
+    "url": "/katalog-produktov/rln4761",
+    "img": "/images/katalog-produktov/20243/main.webp",
+    "title": "RLN4761",
+    "desc": "Vymeniteľné ušné koncovky Vymeniteľné ušné koncovky Koncovky sú vyrobené z ľahko čistiteľného, chemicky inertného, hypo-alergénneho materiálu."
+  },
+  {
+    "url": "/katalog-produktov/rln4762",
+    "img": "/images/katalog-produktov/20242/main.webp",
+    "title": "RLN4762",
+    "desc": "Vymeniteľné ušné koncovky Vymeniteľné ušné koncovky Koncovky sú vyrobené z ľahko čistiteľného, chemicky inertného, hypo-alergénneho materiálu."
+  },
+  {
+    "url": "/katalog-produktov/rln4763",
+    "img": "/images/katalog-produktov/20241/main.webp",
+    "title": "RLN4763",
+    "desc": "Vymeniteľné ušné koncovky Vymeniteľné ušné koncovky Koncovky sú vyrobené z ľahko čistiteľného, chemicky inertného, hypo-alergénneho materiálu."
+  },
+  {
+    "url": "/katalog-produktov/rln4764",
+    "img": "/images/katalog-produktov/20240/main.webp",
+    "title": "RLN4764",
+    "desc": "Vymeniteľné ušné koncovky Vymeniteľné ušné koncovky Koncovky sú vyrobené z ľahko čistiteľného, chemicky inertného, hypo-alergénneho materiálu."
+  },
+  {
+    "url": "/katalog-produktov/rln4765",
+    "img": "/images/katalog-produktov/20239/main.webp",
+    "title": "RLN4765",
+    "desc": "Vymeniteľné ušné koncovky Vymeniteľné ušné koncovky Koncovky sú vyrobené z ľahko čistiteľného, chemicky inertného, hypo-alergénneho materiálu."
+  },
+  {
+    "url": "/katalog-produktov/rln4921",
+    "img": "/images/katalog-produktov/20448/main.webp",
+    "title": "RLN4921",
+    "desc": "Bezdrôtový prijímač do ucha Bezdrôtový prijímač do ucha Náhradné slúchadlo&nbsp;Phonak Phonito Intra pre diskrétnu bezdrôtovú súpravu RLN4922 ."
+  },
+  {
+    "url": "/katalog-produktov/rln5500",
+    "img": "/images/katalog-produktov/20225/main.webp",
+    "title": "RLN5500",
+    "desc": "Kryt konektora pre príslušenstvo Kryt konektora pre príslušenstvo Zabezpečuje prídavnú ochranu konektora pre príslušenstvo pripojeného k rádiostanici."
+  },
+  {
+    "url": "/katalog-produktov/rln5886",
+    "img": "/images/katalog-produktov/20237/main.webp",
+    "title": "RLN5886",
+    "desc": "Priehľadný zvukovod do prostredia s nízkou hlučnosťou Priehľadný zvukovod do prostredia s nízkou hlučnosťou Sada je určená pre rozšírenie audio súprav pre skryté nosenie (napr."
+  },
+  {
+    "url": "/katalog-produktov/rln5887",
+    "img": "/images/katalog-produktov/20236/main.webp",
+    "title": "RLN5887",
+    "desc": "Priehľadný zvukovod do prostredia s vysokou hlučnosťou Priehľadný zvukovod do prostredia s vysokou hlučnosťou Zvukovod do hlučného prostredia&nbsp;je určený pre rozšírenie audio súprav pre skryté nosenie (napr."
+  },
+  {
+    "url": "/katalog-produktov/rln6074",
+    "img": "/images/katalog-produktov/20169/main.webp",
+    "title": "RLN6074",
+    "desc": "Náhradná krútená šnúra Náhradná krútená šnúra Určené pre repromikrofóny PMMN4024 a PMMN4040 ."
+  },
+  {
+    "url": "/katalog-produktov/rln6075",
+    "img": "/images/katalog-produktov/20168/main.webp",
+    "title": "RLN6075",
+    "desc": "Náhradná krútená šnúra Náhradná krútená šnúra Určené pre IMPRES repromikrofóny PMMN4025 , PMMN4050 a PMMN4046 ."
+  },
+  {
+    "url": "/katalog-produktov/rln6230",
+    "img": "/images/katalog-produktov/20069/main.webp",
+    "title": "RLN6230",
+    "desc": "Priehľadný zvukovod do extrémne hlučného prostredia Priehľadný zvukovod do extrémne hlučného prostredia Sada je určená pre rozšírenie audio súprav pre skryté nosenie."
+  },
+  {
+    "url": "/katalog-produktov/rln6231",
+    "img": "/images/katalog-produktov/20224/main.webp",
+    "title": "RLN6231",
+    "desc": "Priehľadný zvukovod do extrémne hlučného prostredia Priehľadný zvukovod do extrémne hlučného prostredia Sada je určená pre rozšírenie audio súprav pre skryté nosenie."
+  },
+  {
+    "url": "/katalog-produktov/rln6232",
+    "img": "/images/katalog-produktov/20223/main.webp",
+    "title": "RLN6232",
+    "desc": "Priehľadný zvukovod do prostredia s nízkou hlučnosťou Priehľadný zvukovod do prostredia s nízkou hlučnosťou Sada je určená pre rozšírenie audiosúprav pre skryté nosenie."
+  },
+  {
+    "url": "/katalog-produktov/rln6241",
+    "img": "/images/katalog-produktov/20222/main.webp",
+    "title": "RLN6241",
+    "desc": "Priehľadný zvukovod do prostredia s nízkou hlučnosťou Priehľadný zvukovod do prostredia s nízkou hlučnosťou Sada je určená pre rozšírenie audio súprav pre skryté nosenie."
+  },
+  {
+    "url": "/katalog-produktov/rln6242",
+    "img": "/images/katalog-produktov/20576/main.webp",
+    "title": "RLN6242",
+    "desc": "Transparentný zvukovod Transparentný zvukovod Náhradný zvukovod s priesvitnou ušnou koncovkou je určený pre dvoj a troj šnúrové slúchadlá&nbsp; PMLN6123 , PMLN6124 , PMLN6129 , PMLN6130 , NNTN8459 ,&nbsp; PMLN7269 , PMLN7270 , PMLN6754 , PMLN6755 , MDRLN4941 ."
+  },
+  {
+    "url": "/katalog-produktov/rln6282",
+    "img": "/images/katalog-produktov/20231/main.webp",
+    "title": "RLN6282",
+    "desc": "Náhradné ušné koncovky Náhradné ušné koncovky Priehľadné silikónové ušné koncovky univerzálnej strednej veľkosti pre slúchadlá externých audio sád pre skryté nosenie alebo pre slúchadlá priehľadných zvukovodov."
+  },
+  {
+    "url": "/katalog-produktov/rln6283",
+    "img": "/images/katalog-produktov/20230/main.webp",
+    "title": "RLN6283",
+    "desc": "Náhradné molitanové vankúšiky Náhradné molitanové vankúšiky Náhradné vankúšiky na slúchadlá a mikrofón."
+  },
+  {
+    "url": "/katalog-produktov/rln6284",
+    "img": "/images/katalog-produktov/20229/main.webp",
+    "title": "RLN6284",
+    "desc": "Priehľadný zvukovod do prostredia s nízkou hlučnosťou Priehľadný zvukovod do prostredia s nízkou hlučnosťou Sada je určená pre rozšírenie audio súprav pre skryté nosenie (napr."
+  },
+  {
+    "url": "/katalog-produktov/rln6289",
+    "img": "/images/katalog-produktov/20197/main.webp",
+    "title": "RLN6289",
+    "desc": "Priehľadný zvukovod do prostredia s vysokou hlučnosťou Priehľadný zvukovod do prostredia s vysokou hlučnosťou Sada je určená pre rozšírenie audio súprav pre skryté nosenie (napr."
+  },
+  {
+    "url": "/katalog-produktov/rln6486",
+    "img": "/images/katalog-produktov/21035/main.webp",
+    "title": "RLN6486",
+    "desc": "Kožený popruh pre hasičov Kožený popruh nie len pre hasičov Výrobok americkej značky Bostonleather vyrobený z pevnej kože na nosenie puzdra vysielačky cez rameno."
+  },
+  {
+    "url": "/katalog-produktov/rln6487",
+    "img": "/images/katalog-produktov/21036/main.webp",
+    "title": "RLN6487",
+    "desc": "Kožený popruh pre hasičov Kožený popruh nie len pre hasičov Výrobok americkej značky Bostonleather vyrobený z pevnej kože na nosenie puzdra vysielačky cez rameno."
+  },
+  {
+    "url": "/katalog-produktov/rln6488",
+    "img": "/images/katalog-produktov/21037/main.webp",
+    "title": "RLN6488",
+    "desc": "Popruh proti hojdaniu Popruh proti hojdaniu Popruh zabezpečuje aby sa púzdro rádiostanice nehojdalo ak je zavesené cez rameno."
+  },
+  {
+    "url": "/katalog-produktov/rln6511",
+    "img": "/images/katalog-produktov/21039/main.webp",
+    "title": "RLN6511",
+    "desc": "Vymeniteľné ušné koncovky Vymeniteľné ušné koncovky Ušné koncovky EP7 Sonic Defenders Ultra sa dodávajú v troch veľkostiach: malá (RLN6511), stredná ( RLN6512 ) a veľká ( RLN6513 ).&nbsp; Chránia váš sluch bez toho, aby blokovali vašu schopnosť počuť bežné zvuky alebo rozhovory."
+  },
+  {
+    "url": "/katalog-produktov/rln6512",
+    "img": "/images/katalog-produktov/21040/main.webp",
+    "title": "RLN6512",
+    "desc": "Vymeniteľné ušné koncovky Vymeniteľné ušné koncovky Ušné koncovky EP7 Sonic Defenders Ultra sa dodávajú v troch veľkostiach: malá ( RLN6511 ), stredná (RLN6512) a veľká ( RLN6513 ).&nbsp; Chránia váš sluch bez toho, aby blokovali vašu schopnosť počuť bežné zvuky alebo rozhovory."
+  },
+  {
+    "url": "/katalog-produktov/rln6513",
+    "img": "/images/katalog-produktov/21041/main.webp",
+    "title": "RLN6513",
+    "desc": "Vymeniteľné ušné koncovky Vymeniteľné ušné koncovky Ušné koncovky EP7 Sonic Defenders Ultra sa dodávajú v troch veľkostiach: malá ( RLN6511 ), stredná ( RLN6512 ) a veľká (RLN6513).&nbsp; Chránia váš sluch bez toho, aby blokovali vašu schopnosť počuť bežné zvuky alebo rozhovory."
+  },
+  {
+    "url": "/katalog-produktov/rln6550",
+    "img": "/images/katalog-produktov/20461/main.webp",
+    "title": "RLN6550",
+    "desc": "Otočné slúchadlo na ucho Otočné slúchadlo na ucho Náhradné otočné slúchadlo pre komerčnú bezdrôtovú súpravu PMLN6463 ."
+  },
+  {
+    "url": "/katalog-produktov/pmln6368",
+    "img": "/images/katalog-produktov/20340/main.webp",
+    "title": "Ukončený predaj PMLN6368",
+    "desc": "PTT adaptér&nbsp;Peltor PTT adaptér&nbsp;Peltor Ku slúchadlám Peltor je nutné objednať adaptér s PTT vysielacím tlačidlom,&nbsp;ktorý spojí náhlavnú súpravu a rádiostanicu.",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/wpln4226",
+    "img": "/images/katalog-produktov/20129/main.webp",
+    "title": "Ukončený predaj WPLN4226",
+    "desc": "Podstavec IMPRES nabíjačky Podstavec IMPRES nabíjačky Náhradný podstavec k nabíjačke WPLN4255 .",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/br000271a01",
+    "img": "/images/katalog-produktov/20836/main.webp",
+    "title": "Ukončený predaj: BR000271A01",
+    "desc": "Nástenný držiak pre montáž 6-miestnej ATEX nabíjačky akumulátorov.",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/hkln4478",
+    "img": "/images/katalog-produktov/20575/main.webp",
+    "title": "Ukončený predaj: HKLN4478",
+    "desc": "Transparentný zvukovod Transparentný zvukovod Náhradný zvukovod s priesvitnou ušnou koncovkou je určený pre slúchadlá PMLN5726 .",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/nntn7392",
+    "img": "/images/katalog-produktov/20120/main.webp",
+    "title": "Ukončený predaj: NNTN7392",
+    "desc": "IMPRES čítačka údajov IMPRES čítačka údajov IMPRES čítačka údajov z akumulátorov umožňuje získať kľúčové informácie o nabíjaní, rekondícii ale aj ďalšie podrobné údaje o akumulátoroch.",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/nntn7677",
+    "img": "/images/katalog-produktov/20121/main.webp",
+    "title": "Ukončený predaj: NNTN7677",
+    "desc": "IMPRES interfejs pre nabíjačku akumulátorov IMPRES interfejs pre nabíjačku&nbsp;akumulátorov Interfejs po pripojení k 6-miestnej nabíjačke umožní komunikáciu so softvérom na správu IMPRES akumulátorov - IMPRES Battery Fleet Management .",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/nntn8045",
+    "img": "/images/katalog-produktov/20426/main.webp",
+    "title": "Ukončený predaj: NNTN8045",
+    "desc": "Manažment IMPRES akumulátorov - Interfejs Manažment IMPRES akumulátorov - Interfejs Interfejs po pripojení k 1-miestnej nabíjačke umožní komunikáciu so softvérom na manažovanie IMPRES akumulátorov - IMPRES Battery Fleet Management.",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/ntn8821",
+    "img": "/images/katalog-produktov/20247/main.webp",
+    "title": "Ukončený predaj: NTN8821",
+    "desc": "Sada pre údržbu Sada pre údržbu Obsahuje vymeniteľné silikónové zvukovody (10 ks), protiveterný molitanový kryt na mikrofón (2 ks) a mikrofónne tesniace prúžky (10 ks).",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmpn4006",
+    "img": "/images/katalog-produktov/20125/main.webp",
+    "title": "Ukončený predaj: PMPN4006",
+    "desc": "Napájací zdroj MicroUSB Napájací zdroj MicroUSB Napájací zdroj je určený pre nabíjanie Bluetooth bezdrôtových zariadení.",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/rln5037",
+    "img": "/images/katalog-produktov/20238/main.webp",
+    "title": "Ukončený predaj: RLN5037",
+    "desc": "Náhradné silikónové zvukovody Náhradné silikónové zvukovody 10ks náhradných zvukovodov pre audio súpravu GMTN6356 .",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/rln5382",
+    "img": "/images/katalog-produktov/20163/main.webp",
+    "title": "Ukončený predaj: RLN5382",
+    "desc": "Modul displeja pre 6-miestnu stolovú nabíjačku IMPRES Modul displeja pre 6-miestnu stolovú nabíjačku IMPRES Umožňuje upgrade nabíjačky bez displeja na verziu s displejom.",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/rln6279",
+    "img": "/images/katalog-produktov/20233/main.webp",
+    "title": "Ukončený predaj: RLN6279",
+    "desc": "Náhradné závesné slúchadlo Náhradné závesné slúchadlo Farba: čierna Určené pre slúchadlá PMLN5097 , RLN5878 , RLN5880 .",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/rln6280",
+    "img": "/images/katalog-produktov/20232/main.webp",
+    "title": "Ukončený predaj: RLN6280",
+    "desc": "Náhradné závesné slúchadlo Náhradné závesné slúchadlo Farba: béžová (telová) Určené pre slúchadlá&nbsp; PMLN5106 , RLN5879 , RLN5881 .",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/rln6285",
+    "img": "/images/katalog-produktov/20228/main.webp",
+    "title": "Ukončený predaj: RLN6285",
+    "desc": "Priehľadný zvukovod do prostredia s nízkou hlučnosťou Priehľadný zvukovod do prostredia s nízkou hlučnosťou Sada je určená pre rozšírenie audio súprav pre skryté nosenie (napr.",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/rln6288",
+    "img": "/images/katalog-produktov/20054/main.webp",
+    "title": "Ukončený predaj: RLN6288",
+    "desc": "Priehľadný zvukovod do prostredia s vysokou hlučnosťou Priehľadný zvukovod do prostredia s vysokou hlučnosťou Sada je určená pre rozšírenie audio súprav pre skryté nosenie (napr.&nbsp; RLN5878 ,&nbsp; RLN5881 ,&nbsp; RLN5882 ).&nbsp;Zvukovod sa nasadí na slúchadlo audio súpravy.",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/wpln4137-mototrbo",
+    "img": "/images/katalog-produktov/20415/main.webp",
+    "title": "WPLN4137",
+    "desc": "Podstavec nabíjačky Podstavec nabíjačky Náhradný podstavec k nabíjačke PMLN5192 ."
+  },
+  {
+    "url": "/katalog-produktov/wpln4199-mototrbo",
+    "img": "/images/katalog-produktov/20040/main.webp",
+    "title": "WPLN4199",
+    "desc": "Podstavec IMPRES nabíjačky Podstavec IMPRES nabíjačky Náhradný podstavec k nabíjačke PMLN5188 &nbsp;pre&nbsp;rádiostanice Motorola DP3441/3661."
+  }
+];
+const productsHeading = "";
+const notice = "";
+const noticeDetail = "";
+const ctaHeading = "Dodávka, inštalácia a servis";
+const ctaText = "Evakuačné a varovacie systémy navrhujeme, dodávame, inštalujeme a servisujeme. Radi pripravíme riešenie pre váš objekt.";
+const metadata = {
+  "title": "Iné (DP), katalóg produktov | RKS",
+  "description": "Iné príslušenstvo pre prenosné profesionálne digitálne rádiostanice rady Mototrbo   Existuje celý rad užívateľov prenosných rádiostaníc.",
+  "robots": {
+    "index": false,
+    "follow": false
+  }
+};
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Produkty",
+      "item": "https://rksba.sk/produkty"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Katalóg produktov",
+      "item": "https://rksba.sk/katalog-produktov"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/radiostanice-2002"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Prenosné rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Iné (DP)",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/ine-dp"
+    }
+  ]
+};
+const filters = [];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
+      <aside class="mb-8 lg:mb-0 lg:sticky lg:top-24 lg:self-start">
+        <details class="rks-cats rounded-xl border border-hairline p-4 lg:border-0 lg:p-0">
+          <summary class="rks-cats-toggle cursor-pointer font-semibold lg:hidden flex items-center justify-between gap-2 rounded-lg bg-panel-soft px-4 py-3"><span>Kategórie produktov</span><span class="rks-cats-arrow" aria-hidden="true"></span></summary>
+          <div class="rks-tree-wrap mt-3 lg:mt-0" set:html={sidebar} />
+        </details>
+      </aside>
+
+      <div class="min-w-0">
+        <nav class="text-sm text-muted mb-2" aria-label="Omrvinky">
+          {breadcrumb.map((b, i) => (
+            <>
+              {i > 0 && <span class="px-1">/</span>}
+              {b.url ? <a class="hover:underline" href={b.url}>{b.name}</a> : <span>{b.name}</span>}
+            </>
+          ))}
+        </nav>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">{heading}</h1>
+
+        {notice && (
+          <div class="mb-8 rounded-xl border border-l-4 border-hairline border-l-secondary bg-panel p-5">
+            <p class="text-lg font-semibold tracking-tight">{notice}</p>
+            {noticeDetail && <p class="text-base text-muted mt-1">{noticeDetail}</p>}
+          </div>
+        )}
+
+        {intro.map((par) => (
+          <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
+        ))}
+
+        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+
+        {subcats.length > 0 && (
+          <>
+            {subcatsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-4 mb-4">{subcatsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {subcats.map((c) => (
+                <a href={c.url} class="group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        {filters.length > 0 && (
+          <div class="rks-filter mt-8 rounded-xl border border-hairline bg-panel-soft p-5" data-rks-filter>
+            <div class="flex items-center justify-between gap-4 mb-3">
+              <h2 class="text-base font-semibold">Filtrovať podľa parametrov</h2>
+              <button type="button" class="text-sm text-link hover:underline" data-rks-reset>Zrušiť filtre</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+              {filters.map((f) => (
+                <details class="rks-facet border-t border-hairline pt-2">
+                  <summary class="cursor-pointer text-sm font-medium py-1 select-none">{f.nazov}</summary>
+                  <div class="mt-1 mb-2 space-y-1">
+                    {f.hodnoty.map((v) => (
+                      <label class="flex items-center gap-2 text-sm" data-rks-opt={f.key + '|~|' + v.hodnota}>
+                        <input type="checkbox" class="accent-primary" data-rks-f={f.key} value={v.hodnota} />
+                        <span class="flex-1">{v.hodnota}</span>
+                        <span class="text-muted text-xs tabular-nums" data-rks-cnt>{v.pocet}</span>
+                      </label>
+                    ))}
+                  </div>
+                </details>
+              ))}
+            </div>
+            <p class="text-sm text-muted mt-3" data-rks-summary></p>
+          </div>
+        )}
+
+        {products.length > 0 && (
+          <>
+            {productsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">{productsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4" data-rks-grid>
+              {products.map((c) => (
+                <a href={c.url} data-facets={c.facets} class="rks-card group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+          <h2 class="text-xl md:text-2xl font-semibold mb-3">{ctaHeading}</h2>
+          <p class="text-muted mb-6 max-w-xl mx-auto">{ctaText}</p>
+          <a href="/lp/konzultacia.html?utm_source=web&amp;utm_campaign=web" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+
+  {filters.length > 0 && (
+    <script is:inline>
+      (function () {
+        var root = document.querySelector('[data-rks-filter]');
+        var grid = document.querySelector('[data-rks-grid]');
+        if (!root || !grid) return;
+        var cards = Array.prototype.slice.call(grid.querySelectorAll('.rks-card'));
+        var boxes = Array.prototype.slice.call(root.querySelectorAll('input[data-rks-f]'));
+        var summary = root.querySelector('[data-rks-summary]');
+        var parsed = cards.map(function (c) {
+          try { return JSON.parse(c.getAttribute('data-facets') || '{}'); } catch (e) { return {}; }
+        });
+        function selection() {
+          var m = {};
+          boxes.forEach(function (b) {
+            if (b.checked) { (m[b.getAttribute('data-rks-f')] = m[b.getAttribute('data-rks-f')] || []).push(b.value); }
+          });
+          return m;
+        }
+        function matches(f, m) {
+          for (var k in m) {
+            var have = f[k] || [];
+            var ok = m[k].some(function (v) { return have.indexOf(v) !== -1; });
+            if (!ok) return false;
+          }
+          return true;
+        }
+        function apply() {
+          var m = selection(), shown = 0;
+          cards.forEach(function (c, i) {
+            var ok = matches(parsed[i], m);
+            c.style.display = ok ? '' : 'none';
+            if (ok) shown++;
+          });
+          // prepocitaj pocty: kolko by ostalo, keby sa pridala prave tato hodnota
+          root.querySelectorAll('label[data-rks-opt]').forEach(function (lab) {
+            var parts = lab.getAttribute('data-rks-opt').split('|~|');
+            var k = parts[0], v = parts[1];
+            var m2 = {}; for (var kk in m) m2[kk] = m[kk].slice();
+            m2[k] = [v];
+            var n = 0;
+            for (var i = 0; i < cards.length; i++) { if (matches(parsed[i], m2)) n++; }
+            lab.querySelector('[data-rks-cnt]').textContent = n;
+            var box = lab.querySelector('input');
+            lab.style.display = (n === 0 && !box.checked) ? 'none' : '';
+          });
+          summary.textContent = shown === cards.length
+            ? cards.length + ' produktov'
+            : shown + ' z ' + cards.length + ' produktov';
+        }
+        boxes.forEach(function (b) { b.addEventListener('change', apply); });
+        var reset = root.querySelector('[data-rks-reset]');
+        if (reset) reset.addEventListener('click', function () {
+          boxes.forEach(function (b) { b.checked = false; });
+          apply();
+        });
+        apply();
+      })();
+    </script>
+  )}
+
+  <style is:global>
+    @media (min-width: 1024px) {
+      .rks-cats > summary { display: none; }
+      .rks-cats > .rks-tree-wrap { display: block !important; }
+    }
+    .rks-tree .rks-li { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 0.5rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-leaf { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-li > .rks-link { min-width: 0; }
+    .rks-tree .rks-children { grid-column: 1 / -1; display: none; }
+    .rks-tree .rks-disc[open] ~ .rks-children { display: block; }
+    .rks-tree .rks-disc { display: inline-flex; }
+    .rks-tree summary.rks-arrow { list-style: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; color: rgba(229, 236, 246, 0.66); }
+    .rks-tree summary.rks-arrow::-webkit-details-marker { display: none; }
+    .rks-tree summary.rks-arrow::before { content: ""; border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-tree .rks-disc[open] > summary.rks-arrow::before { transform: rotate(90deg); }
+    .rks-cats-arrow::before { content: ""; display: inline-block; color: rgba(229, 236, 246, 0.66); border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-cats[open] > .rks-cats-toggle .rks-cats-arrow::before { transform: rotate(90deg); }
+  </style>
+</Layout>

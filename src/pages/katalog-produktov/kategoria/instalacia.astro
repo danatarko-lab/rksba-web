@@ -1,0 +1,549 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const sidebar = "<nav class=\"rks-tree text-sm\" aria-label=\"Kategórie produktov\"><ul class=\"space-y-1\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/radiostanice-2002\" class=\"rks-link text-default hover:text-link\">Rádiostanice<span class=\"text-muted text-xs ml-2\">773</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2\" class=\"rks-link text-default hover:text-link\">Prenosné rádiostanice<span class=\"text-muted text-xs ml-2\">632</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory\" class=\"rks-link text-default hover:text-link\">Akumulátory<span class=\"text-muted text-xs ml-2\">53</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Antény (DP)<span class=\"text-muted text-xs ml-2\">58</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DP)<span class=\"text-muted text-xs ml-2\">17</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dp\" class=\"rks-link text-default hover:text-link\">Iné (DP)<span class=\"text-muted text-xs ml-2\">138</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky-mototrbo\" class=\"rks-link text-default hover:text-link\">Nabíjačky<span class=\"text-muted text-xs ml-2\">37</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie\" class=\"rks-link text-default hover:text-link\">Nosenie<span class=\"text-muted text-xs ml-2\">97</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy\" class=\"rks-link text-default hover:text-link\">Náhlavné súpravy<span class=\"text-muted text-xs ml-2\">43</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony\" class=\"rks-link text-default hover:text-link\">Repromikrofóny<span class=\"text-muted text-xs ml-2\">39</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla\" class=\"rks-link text-default hover:text-link\">Slúchadlá<span class=\"text-muted text-xs ml-2\">72</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Softvér (DP)<span class=\"text-muted text-xs ml-2\">35</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prevadzace-mototrbo\" class=\"rks-link text-default hover:text-link\">Prevádzače<span class=\"text-muted text-xs ml-2\">22</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dr\" class=\"rks-link text-default hover:text-link\">Iné (DR)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dr\" class=\"rks-link text-default hover:text-link\">Softvér (DR)<span class=\"text-muted text-xs ml-2\">13</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/vozidlove-radiostanice-mototrbo\" class=\"rks-link text-default hover:text-link\">Vozidlové rádiostanice<span class=\"text-muted text-xs ml-2\">119</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny\" class=\"rks-link text-default hover:text-link\">Antény (DM)<span class=\"text-muted text-xs ml-2\">23</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dm-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DM)<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dm\" class=\"rks-link text-default hover:text-link\">Iné (DM)<span class=\"text-muted text-xs ml-2\">22</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/instalacia\" class=\"rks-link text-primary font-semibold\">Inštalácia<span class=\"text-muted text-xs ml-2\">29</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofony\" class=\"rks-link text-default hover:text-link\">Mikrofóny<span class=\"text-muted text-xs ml-2\">13</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/napajanie\" class=\"rks-link text-default hover:text-link\">Napájanie<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/reproduktory\" class=\"rks-link text-default hover:text-link\">Reproduktory<span class=\"text-muted text-xs ml-2\">5</span></a></li></ul></li></ul></li></ul></nav>";
+const breadcrumb = [
+  {
+    "name": "Produkty",
+    "url": "/produkty"
+  },
+  {
+    "name": "Katalóg produktov",
+    "url": "/katalog-produktov"
+  },
+  {
+    "name": "Rádiostanice",
+    "url": "/katalog-produktov/kategoria/radiostanice-2002"
+  },
+  {
+    "name": "Vozidlové rádiostanice",
+    "url": "/katalog-produktov/kategoria/vozidlove-radiostanice-mototrbo"
+  },
+  {
+    "name": "Inštalácia",
+    "url": null
+  }
+];
+const heading = "Inštalácia";
+const popisHtml = "<h1>Príslušenstvo pre inštaláciu vozidlových digitálnych rádiostaníc rady DM</h1> <p>Existuje celý rad užívateľov vozidlových rádiostaníc. Každý má svoje špecifické potreby, požiadavky a pracuje v rôznych podmienkach. Spoločnosť Motorola dodáva kompletné riešenie a ponúka široký výber mikrofónov, slúchadiel a reproduktorov. Profesionálni užívateľa si môžu svoje rádiostanice prispôsobiť tak, aby zabezpečovali individuálne potreby komunikácie aj nad rámec funkcií, ktoré obsahuje štandardná dodávka.</p>";
+const intro = [];
+const subcats = [];
+const subcatsHeading = "";
+const products = [
+  {
+    "url": "/katalog-produktov/ftn6083",
+    "img": "/images/katalog-produktov/20371/main.webp",
+    "title": "FTN6083",
+    "desc": "Montážna sada do palubnej dosky Montážna sada do palubnej dosky Sada pre montáž rádiostanice do DIN otvoru v palubnej doske vozidla.",
+    "facets": "{\"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2400\"]}"
+  },
+  {
+    "url": "/katalog-produktov/gln7318-mototrbo",
+    "img": "/images/katalog-produktov/20157/main.webp",
+    "title": "GLN7318",
+    "desc": "Podstavec bez reproduktora Podstavec bez reproduktora.",
+    "facets": "{\"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2400\"]}"
+  },
+  {
+    "url": "/katalog-produktov/gln7326-mototrbo",
+    "img": "/images/katalog-produktov/20468/main.webp",
+    "title": "GLN7326",
+    "desc": "Podstavec s reproduktorom Podstavec s reproduktorom Podstavec pre základňovú rádiostanicu je vďaka zabudovanému rerproduktoru vhodný do hlučnejšieho prostredia.",
+    "facets": "{\"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2400\"]}"
+  },
+  {
+    "url": "/katalog-produktov/gmkn4084",
+    "img": "/images/katalog-produktov/20373/main.webp",
+    "title": "GMKN4084",
+    "desc": "Predlžovací kábel pre reproduktor Predlžovací kábel pre reproduktor Dĺžka kábla je 5 m.",
+    "facets": "{\"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2400\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkn9327",
+    "img": "/images/katalog-produktov/20374/main.webp",
+    "title": "HKN9327",
+    "desc": "Kábel do spínacej skrinky Kábel do spínacej skrinky Šesťmetrový kábel umožňuje zapnúť a vypnúť vozidlovú rádiostanicu kľúčom od zapaľovania.",
+    "facets": "{\"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2400\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hln9073-mototrbo",
+    "img": "/images/katalog-produktov/20160/main.webp",
+    "title": "HLN9073",
+    "desc": "Držiak externého mikrofónu Držiak externého mikrofónu Kompatibilný so všetkými externými mikrofónmi do vozidla.",
+    "facets": "{\"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2400\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmkn4143",
+    "img": "/images/katalog-produktov/20898/main.webp",
+    "title": "PMKN4143",
+    "desc": "Prepojovací kábel-3m Prepojovací kábel-3m Kábel pre delenú montáž umožňuje spolu so sadou pre oddelenú montáž ( PMLN6404 ) oddeliť predný panel rádiostanice a schovať telo rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmkn4144",
+    "img": "/images/katalog-produktov/20899/main.webp",
+    "title": "PMKN4144",
+    "desc": "Prepojovací kábel-5m Prepojovací kábel-5m Kábel pre delenú montáž umožňuje spolu so sadou pre oddelenú montáž ( PMLN6404 ) oddeliť predný panel rádiostanice a schovať telo rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6404",
+    "img": "/images/katalog-produktov/20900/main.webp",
+    "title": "PMLN6404",
+    "desc": "Sada pre oddelenú montáž Sada pre oddelenú montáž Sada pre oddelenú montáž umožňuje oddeliť predný panel rádiostanice a schovať telo rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rkn4136",
+    "img": "/images/katalog-produktov/20378/main.webp",
+    "title": "RKN4136",
+    "desc": "Kábel do spínacej skrinky Kábel do spínacej skrinky Kábel umožňuje zapnúť a vypnúť vozidlovú rádiostanicu kľúčom od zapaľovania.",
+    "facets": "{\"kompatibilita\": [\"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln4836-mototrbo",
+    "img": "/images/katalog-produktov/20087/main.webp",
+    "title": "RLN4836",
+    "desc": "Núdzový nožný spínač Núdzový nožný spínač V prípade mimoriadnych situácií užívateľ vozidlovej rádiostanice môže tajne komunikovať s dispečingom.",
+    "facets": "{\"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2400\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln4857-mototrbo",
+    "img": "/images/katalog-produktov/20089/main.webp",
+    "title": "RLN4857",
+    "desc": "Externé PTT tlačidlo Externé PTT tlačidlo PTT tlačidlo slúži k vzdialenému ovládaniu vysielania základňovej rádiostanice Motorola.",
+    "facets": "{\"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2400\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln4858",
+    "img": "/images/katalog-produktov/20088/main.webp",
+    "title": "RLN4858",
+    "desc": "Externé PTT tlačidlo na ohybnom ramienku Externé PTT tlačidlo na ohybnom ramienku PTT tlačidlo slúži k vzdialenému ovládaniu vysielania základňovej rádiostanice Motorola a využíva sa spravidla v kombinácii s externým mikrofónom rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2400\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln5926",
+    "img": "/images/katalog-produktov/20404/main.webp",
+    "title": "RLN5926",
+    "desc": "Externé PTT tlačidlo Externé PTT tlačidlo Tlačidlo je možné pripevniť na ruku alebo upevneniť vo vozidle pomocou suchého zipsu.",
+    "facets": "{\"kompatibilita\": [\"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln5929",
+    "img": "/images/katalog-produktov/20405/main.webp",
+    "title": "RLN5929",
+    "desc": "Núdzový nožný spínač Núdzový nožný spínač Umožňuje používateľom rýchlo a diskrétne informovať dispečing.",
+    "facets": "{\"kompatibilita\": [\"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln6076",
+    "img": "/images/katalog-produktov/20380/main.webp",
+    "title": "RLN6076",
+    "desc": "Štandadný držiak pre montáž rádiostanice Štandadný držiak pre montáž rádiostanice Umožňuje umiestniť rádiostanicu pod palubnú dosku.",
+    "facets": "{\"kompatibilita\": [\"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln6077",
+    "img": "/images/katalog-produktov/20154/main.webp",
+    "title": "RLN6077",
+    "desc": "Štandadný držiak pre montáž rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln6078",
+    "img": "/images/katalog-produktov/20381/main.webp",
+    "title": "RLN6078",
+    "desc": "Držiak s vyšším profilom pre montáž rádiostanice Držiak s vyšším profilom pre montáž rádiostanice Držiak má vyšší montážny profil ako štandardný držiak a dovoľuje vďaka svojej univerzálnosti ideálne umiestnenie mobilnej rádiostanice vo vozidle.",
+    "facets": "{\"kompatibilita\": [\"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln6465",
+    "img": "/images/katalog-produktov/20383/main.webp",
+    "title": "RLN6465",
+    "desc": "Montážna sada do palubnej dosky Montážna sada do palubnej dosky Sada pre montáž rádiostanice do DIN otvoru v palubnej doske vozidla.",
+    "facets": "{\"kompatibilita\": [\"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln6466",
+    "img": "/images/katalog-produktov/20155/main.webp",
+    "title": "RLN6466",
+    "desc": "Štandadný držiak pre montáž rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2400\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln6467",
+    "img": "/images/katalog-produktov/20384/main.webp",
+    "title": "RLN6467",
+    "desc": "Držiak s vyšším profilom pre montáž rádiostanice Držiak s vyšším profilom pre montáž rádiostanice Držiak má vyšší montážny profil ako štandardný držiak a dovoľuje vďaka svojej univerzálnosti ideálne umiestnenie vozidlovej rádiostanice vo vozidle.",
+    "facets": "{\"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2400\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln6468",
+    "img": "/images/katalog-produktov/20385/main.webp",
+    "title": "RLN6468",
+    "desc": "Uzamykateľný držiak pre montáž rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2400\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln6469",
+    "img": "/images/katalog-produktov/20151/main.webp",
+    "title": "RLN6469",
+    "desc": "Nízkoprofilový držiak pre montáž rádiostanice Nízkoprofilový držiak pre montáž rádiostanice Umožňuje umiestniť rádiostanicu pod palubnú dosku.",
+    "facets": "{\"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2400\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rsn4005",
+    "img": "/images/katalog-produktov/20386/main.webp",
+    "title": "RSN4005",
+    "desc": "Podstavec s reproduktorom Podstavec s reproduktorom Podstavec pre základňovú rádiostanicu dovoľuje jednoduchšie umiestnenie rádiostanice na stole bez nutnosti akejkoľvek montáže.",
+    "facets": "{\"kompatibilita\": [\"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmkn4074",
+    "img": "/images/katalog-produktov/20376/main.webp",
+    "title": "Ukončený predaj PMKN4074",
+    "desc": "Prepojovací kábel pre oddelenú montáž, 3 m Prepojovací kábel pre oddelenú montáž, 3 m Prepojovací kábel pre možnosť pripojenia ovládacieho panelu k rádiostanici v prípade použitia sady oddelenej montáže.",
+    "facets": "{\"kompatibilita\": [\"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmkn4073",
+    "img": "/images/katalog-produktov/20375/main.webp",
+    "title": "Ukončený predaj: PMKN4073",
+    "desc": "Prepojovací kábel pre oddelenú montáž, 5 m Prepojovací kábel pre oddelenú montáž, 5 m Prepojovací kábel pre možnosť pripojenia ovládacieho panelu k rádiostanici v prípade použitia sady oddelenej montáže.",
+    "facets": "{\"kompatibilita\": [\"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmln5404",
+    "img": "/images/katalog-produktov/20377/main.webp",
+    "title": "Ukončený predaj: PMLN5404",
+    "desc": "Sada pre oddelenú montáž Sada pre oddelenú montáž Sada pre samostatnú montáž rádiostanice a ovládacieho panela.",
+    "facets": "{\"kompatibilita\": [\"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/rln5933",
+    "img": "/images/katalog-produktov/20379/main.webp",
+    "title": "Ukončený predaj: RLN5933",
+    "desc": "Montážna sada do palubnej dosky Montážna sada do palubnej dosky Sada pre montáž rádiostanice do DIN otvoru v palubnej doske vozidla.",
+    "facets": "{\"kompatibilita\": [\"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/rln6079",
+    "img": "/images/katalog-produktov/20382/main.webp",
+    "title": "Ukončený predaj: RLN6079",
+    "desc": "Uzamykateľný držiak pre montáž rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}",
+    "nedodavane": true
+  }
+];
+const productsHeading = "";
+const notice = "";
+const noticeDetail = "";
+const ctaHeading = "Dodávka, inštalácia a servis";
+const ctaText = "Evakuačné a varovacie systémy navrhujeme, dodávame, inštalujeme a servisujeme. Radi pripravíme riešenie pre váš objekt.";
+const metadata = {
+  "title": "Inštalácia, katalóg produktov | RKS",
+  "description": "Príslušenstvo pre inštaláciu vozidlových digitálnych rádiostaníc rady DM   Existuje celý rad užívateľov vozidlových rádiostaníc.",
+  "robots": {
+    "index": false,
+    "follow": false
+  }
+};
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Produkty",
+      "item": "https://rksba.sk/produkty"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Katalóg produktov",
+      "item": "https://rksba.sk/katalog-produktov"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/radiostanice-2002"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Vozidlové rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/vozidlove-radiostanice-mototrbo"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Inštalácia",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/instalacia"
+    }
+  ]
+};
+const filters = [
+  {
+    "key": "kompatibilita",
+    "nazov": "Kompatibilita",
+    "hodnoty": [
+      {
+        "hodnota": "DM1400",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DM1600",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DM2400",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DM3400",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DM3401",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DM3600",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DM3601",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DM4400",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DM4400e",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DM4401",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DM4401e",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DM4600",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DM4600e",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DM4601",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DM4601e",
+        "pocet": 13
+      }
+    ]
+  }
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
+      <aside class="mb-8 lg:mb-0 lg:sticky lg:top-24 lg:self-start">
+        <details class="rks-cats rounded-xl border border-hairline p-4 lg:border-0 lg:p-0">
+          <summary class="rks-cats-toggle cursor-pointer font-semibold lg:hidden flex items-center justify-between gap-2 rounded-lg bg-panel-soft px-4 py-3"><span>Kategórie produktov</span><span class="rks-cats-arrow" aria-hidden="true"></span></summary>
+          <div class="rks-tree-wrap mt-3 lg:mt-0" set:html={sidebar} />
+        </details>
+      </aside>
+
+      <div class="min-w-0">
+        <nav class="text-sm text-muted mb-2" aria-label="Omrvinky">
+          {breadcrumb.map((b, i) => (
+            <>
+              {i > 0 && <span class="px-1">/</span>}
+              {b.url ? <a class="hover:underline" href={b.url}>{b.name}</a> : <span>{b.name}</span>}
+            </>
+          ))}
+        </nav>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">{heading}</h1>
+
+        {notice && (
+          <div class="mb-8 rounded-xl border border-l-4 border-hairline border-l-secondary bg-panel p-5">
+            <p class="text-lg font-semibold tracking-tight">{notice}</p>
+            {noticeDetail && <p class="text-base text-muted mt-1">{noticeDetail}</p>}
+          </div>
+        )}
+
+        {intro.map((par) => (
+          <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
+        ))}
+
+        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+
+        {subcats.length > 0 && (
+          <>
+            {subcatsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-4 mb-4">{subcatsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {subcats.map((c) => (
+                <a href={c.url} class="group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        {filters.length > 0 && (
+          <div class="rks-filter mt-8 rounded-xl border border-hairline bg-panel-soft p-5" data-rks-filter>
+            <div class="flex items-center justify-between gap-4 mb-3">
+              <h2 class="text-base font-semibold">Filtrovať podľa parametrov</h2>
+              <button type="button" class="text-sm text-link hover:underline" data-rks-reset>Zrušiť filtre</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+              {filters.map((f) => (
+                <details class="rks-facet border-t border-hairline pt-2">
+                  <summary class="cursor-pointer text-sm font-medium py-1 select-none">{f.nazov}</summary>
+                  <div class="mt-1 mb-2 space-y-1">
+                    {f.hodnoty.map((v) => (
+                      <label class="flex items-center gap-2 text-sm" data-rks-opt={f.key + '|~|' + v.hodnota}>
+                        <input type="checkbox" class="accent-primary" data-rks-f={f.key} value={v.hodnota} />
+                        <span class="flex-1">{v.hodnota}</span>
+                        <span class="text-muted text-xs tabular-nums" data-rks-cnt>{v.pocet}</span>
+                      </label>
+                    ))}
+                  </div>
+                </details>
+              ))}
+            </div>
+            <p class="text-sm text-muted mt-3" data-rks-summary></p>
+          </div>
+        )}
+
+        {products.length > 0 && (
+          <>
+            {productsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">{productsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4" data-rks-grid>
+              {products.map((c) => (
+                <a href={c.url} data-facets={c.facets} class="rks-card group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+          <h2 class="text-xl md:text-2xl font-semibold mb-3">{ctaHeading}</h2>
+          <p class="text-muted mb-6 max-w-xl mx-auto">{ctaText}</p>
+          <a href="/lp/konzultacia.html?utm_source=web&amp;utm_campaign=web" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+
+  {filters.length > 0 && (
+    <script is:inline>
+      (function () {
+        var root = document.querySelector('[data-rks-filter]');
+        var grid = document.querySelector('[data-rks-grid]');
+        if (!root || !grid) return;
+        var cards = Array.prototype.slice.call(grid.querySelectorAll('.rks-card'));
+        var boxes = Array.prototype.slice.call(root.querySelectorAll('input[data-rks-f]'));
+        var summary = root.querySelector('[data-rks-summary]');
+        var parsed = cards.map(function (c) {
+          try { return JSON.parse(c.getAttribute('data-facets') || '{}'); } catch (e) { return {}; }
+        });
+        function selection() {
+          var m = {};
+          boxes.forEach(function (b) {
+            if (b.checked) { (m[b.getAttribute('data-rks-f')] = m[b.getAttribute('data-rks-f')] || []).push(b.value); }
+          });
+          return m;
+        }
+        function matches(f, m) {
+          for (var k in m) {
+            var have = f[k] || [];
+            var ok = m[k].some(function (v) { return have.indexOf(v) !== -1; });
+            if (!ok) return false;
+          }
+          return true;
+        }
+        function apply() {
+          var m = selection(), shown = 0;
+          cards.forEach(function (c, i) {
+            var ok = matches(parsed[i], m);
+            c.style.display = ok ? '' : 'none';
+            if (ok) shown++;
+          });
+          // prepocitaj pocty: kolko by ostalo, keby sa pridala prave tato hodnota
+          root.querySelectorAll('label[data-rks-opt]').forEach(function (lab) {
+            var parts = lab.getAttribute('data-rks-opt').split('|~|');
+            var k = parts[0], v = parts[1];
+            var m2 = {}; for (var kk in m) m2[kk] = m[kk].slice();
+            m2[k] = [v];
+            var n = 0;
+            for (var i = 0; i < cards.length; i++) { if (matches(parsed[i], m2)) n++; }
+            lab.querySelector('[data-rks-cnt]').textContent = n;
+            var box = lab.querySelector('input');
+            lab.style.display = (n === 0 && !box.checked) ? 'none' : '';
+          });
+          summary.textContent = shown === cards.length
+            ? cards.length + ' produktov'
+            : shown + ' z ' + cards.length + ' produktov';
+        }
+        boxes.forEach(function (b) { b.addEventListener('change', apply); });
+        var reset = root.querySelector('[data-rks-reset]');
+        if (reset) reset.addEventListener('click', function () {
+          boxes.forEach(function (b) { b.checked = false; });
+          apply();
+        });
+        apply();
+      })();
+    </script>
+  )}
+
+  <style is:global>
+    @media (min-width: 1024px) {
+      .rks-cats > summary { display: none; }
+      .rks-cats > .rks-tree-wrap { display: block !important; }
+    }
+    .rks-tree .rks-li { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 0.5rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-leaf { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-li > .rks-link { min-width: 0; }
+    .rks-tree .rks-children { grid-column: 1 / -1; display: none; }
+    .rks-tree .rks-disc[open] ~ .rks-children { display: block; }
+    .rks-tree .rks-disc { display: inline-flex; }
+    .rks-tree summary.rks-arrow { list-style: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; color: rgba(229, 236, 246, 0.66); }
+    .rks-tree summary.rks-arrow::-webkit-details-marker { display: none; }
+    .rks-tree summary.rks-arrow::before { content: ""; border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-tree .rks-disc[open] > summary.rks-arrow::before { transform: rotate(90deg); }
+    .rks-cats-arrow::before { content: ""; display: inline-block; color: rgba(229, 236, 246, 0.66); border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-cats[open] > .rks-cats-toggle .rks-cats-arrow::before { transform: rotate(90deg); }
+  </style>
+</Layout>

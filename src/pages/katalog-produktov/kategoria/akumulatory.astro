@@ -1,0 +1,1095 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const sidebar = "<nav class=\"rks-tree text-sm\" aria-label=\"Kategórie produktov\"><ul class=\"space-y-1\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/radiostanice-2002\" class=\"rks-link text-default hover:text-link\">Rádiostanice<span class=\"text-muted text-xs ml-2\">773</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2\" class=\"rks-link text-default hover:text-link\">Prenosné rádiostanice<span class=\"text-muted text-xs ml-2\">632</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory\" class=\"rks-link text-primary font-semibold\">Akumulátory<span class=\"text-muted text-xs ml-2\">53</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Antény (DP)<span class=\"text-muted text-xs ml-2\">58</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DP)<span class=\"text-muted text-xs ml-2\">17</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dp\" class=\"rks-link text-default hover:text-link\">Iné (DP)<span class=\"text-muted text-xs ml-2\">138</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky-mototrbo\" class=\"rks-link text-default hover:text-link\">Nabíjačky<span class=\"text-muted text-xs ml-2\">37</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie\" class=\"rks-link text-default hover:text-link\">Nosenie<span class=\"text-muted text-xs ml-2\">97</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy\" class=\"rks-link text-default hover:text-link\">Náhlavné súpravy<span class=\"text-muted text-xs ml-2\">43</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony\" class=\"rks-link text-default hover:text-link\">Repromikrofóny<span class=\"text-muted text-xs ml-2\">39</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla\" class=\"rks-link text-default hover:text-link\">Slúchadlá<span class=\"text-muted text-xs ml-2\">72</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Softvér (DP)<span class=\"text-muted text-xs ml-2\">35</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prevadzace-mototrbo\" class=\"rks-link text-default hover:text-link\">Prevádzače<span class=\"text-muted text-xs ml-2\">22</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dr\" class=\"rks-link text-default hover:text-link\">Iné (DR)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dr\" class=\"rks-link text-default hover:text-link\">Softvér (DR)<span class=\"text-muted text-xs ml-2\">13</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/vozidlove-radiostanice-mototrbo\" class=\"rks-link text-default hover:text-link\">Vozidlové rádiostanice<span class=\"text-muted text-xs ml-2\">119</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny\" class=\"rks-link text-default hover:text-link\">Antény (DM)<span class=\"text-muted text-xs ml-2\">23</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dm-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DM)<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dm\" class=\"rks-link text-default hover:text-link\">Iné (DM)<span class=\"text-muted text-xs ml-2\">22</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/instalacia\" class=\"rks-link text-default hover:text-link\">Inštalácia<span class=\"text-muted text-xs ml-2\">29</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofony\" class=\"rks-link text-default hover:text-link\">Mikrofóny<span class=\"text-muted text-xs ml-2\">13</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/napajanie\" class=\"rks-link text-default hover:text-link\">Napájanie<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/reproduktory\" class=\"rks-link text-default hover:text-link\">Reproduktory<span class=\"text-muted text-xs ml-2\">5</span></a></li></ul></li></ul></li></ul></nav>";
+const breadcrumb = [
+  {
+    "name": "Produkty",
+    "url": "/produkty"
+  },
+  {
+    "name": "Katalóg produktov",
+    "url": "/katalog-produktov"
+  },
+  {
+    "name": "Rádiostanice",
+    "url": "/katalog-produktov/kategoria/radiostanice-2002"
+  },
+  {
+    "name": "Prenosné rádiostanice",
+    "url": "/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+  },
+  {
+    "name": "Akumulátory",
+    "url": null
+  }
+];
+const heading = "Akumulátory";
+const popisHtml = "<h1>Katalóg akumulátorov pre rádiostanice Motorola</h1> <p>Pre splnenie širokej škály požiadaviek užívateľov spoločnosť Motorola ponúka rôzne veľkosti, kapacity a typy akumulátorov. Akumulátory nevyberajte vždy podľa kapacity, ale taktiež podľa chemického zloženia a prostredia, v ktorom rádiostanicu používate. Akumulátory pre rádiostanice sa podľa zloženia delia na:</p> <ul> <li>Ni-Cd (Niklo-kadmiové), ich dovoz do EÚ bol ukončený</li> <li>Ni-MH (Nikel-metalhydridové)</li> <li>Li-Ion (Líthium-Ionové)</li> </ul> <p>Všeobecne možno povedať, že Ni-Cd a Ni-MH batérie trpia tzv. pamäťovým efektom, na rozdiel od Li-Ion, ktoré sú vybavené obvodmi zaisťujúcimi nízke samovybíjanie. Väčšina Li-Ion akumulátorov však nie je vhodná pre použitie pri nízkych teplotách (menej ako -10 °C). Viac o výhodách originálnych akumulátorov a ich konštrukcii nájdete v tomto <a href=\"index.php?option=com_content&amp;view=article&amp;id=342:vyhody-akumulatorov-a-nabijaciek-motorola&amp;catid=116:prislusenstvo&amp;lang=sk-SK\" target=\"_blank\"><strong>článku</strong>.</a></p> <p>V daľšom <a href=\"index.php?option=com_content&amp;view=article&amp;id=335:starostlivost-o-akumulatory&amp;catid=110:novinky&amp;lang=sk-SK\" target=\"_blank\" rel=\"noreferrer\"><strong>článku</strong> </a>nájdete tipy ktoré vám pomôžu udržať vysoký výkon a dlhú životnosť akumulátorov Motorola.</p> <p>Spoločnosť Motorola venuje kvalite svojich akumulátorov veľkú pozornosť a podrobuje ich náročným testom.</p>";
+const intro = [];
+const subcats = [];
+const subcatsHeading = "";
+const products = [
+  {
+    "url": "/katalog-produktov/hknn4013",
+    "img": "/images/katalog-produktov/20111/main.webp",
+    "title": "HKNN4013",
+    "desc": "Li-Ion 1800 mAh akumulátor Li-Ion 1800 mAh akumulátor.",
+    "facets": "{\"kompatibilita\": [\"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"1800 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"400\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"IP54\"], \"vyzaduje-udrzbu\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/nntn8129",
+    "img": "/images/katalog-produktov/20110/main.webp",
+    "title": "NNTN8129",
+    "desc": "Li-Ion 2350 mAh&nbsp;IMPRES akumulátor Li-Ion 2350 mAh&nbsp;IMPRES akumulátor Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2350 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"Neuvedené\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/nntn8359",
+    "img": "/images/katalog-produktov/20150/main.webp",
+    "title": "NNTN8359",
+    "desc": "Li-Ion 2075 mAh IMPRES&nbsp;ATEX akumulátor Li-Ion 2075 mAh IMPRES&nbsp;ATEX akumulátor Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2075 mAh\"], \"prevedenie\": [\"IMPRES ATEX\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"500\"], \"prevadzkova-teplota\": [\"–10 °C až +50 °C\"], \"krytie\": [\"IP67 (pre ATEX prostredie:IP64)\"], \"vyzaduje-udrzbu\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/nntn8840",
+    "img": "/images/katalog-produktov/20564/main.webp",
+    "title": "NNTN8840",
+    "desc": "Li-Ion 2000 mAh IMPRES&nbsp;ATEX Ma akumulátor Li-Ion 2000 mAh IMPRES&nbsp;ATEX Ma akumulátor Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2000 mAh\"], \"prevedenie\": [\"IMPRES ATEX\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"500\"], \"prevadzkova-teplota\": [\"–10 °C až +50 °C\"], \"krytie\": [\"IP67 (pre ATEX prostredie:IP64)\"], \"vyzaduje-udrzbu\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4251-mototrbo",
+    "img": "/images/katalog-produktov/20035/main.webp",
+    "title": "PMNN4251",
+    "desc": "Ni-Mh 1400 mAh akumulátor Ni-Mh 1400 mAh akumulátor Štandardný Ni-MH akumulátor, ktorý je súčasťou základnej dodávky rádiostaníc Motorola rady CP1x0 a DP1400.",
+    "facets": "{\"kompatibilita\": [\"DP1400\"], \"zlozenie\": [\"Ni–Mh\"], \"kapacita\": [\"1400 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"400\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"Neuvedené\"], \"vyzaduje-udrzbu\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4253-mototrbo",
+    "img": "/images/katalog-produktov/20034/main.webp",
+    "title": "PMNN4253",
+    "desc": "Li-Ion 1600 mAh akumulátor Li-Ion 1600 mAh akumulátor Tenký akumulátor je súčasťou základnej dodávky rádiostaníc Motorola DP1400.",
+    "facets": "{\"kompatibilita\": [\"DP1400\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"1600 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"400\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"Neuvedené\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4254-mototrbo",
+    "img": "/images/katalog-produktov/20033/main.webp",
+    "title": "PMNN4254",
+    "desc": "Li-Ion 2300 mAh akumulátor Li-Ion 2300 mAh akumulátor Vysokokapacitný Li-Ion akumulátor dovoľuje priebežné nabíjanie bez rizika pamäťového efektu.",
+    "facets": "{\"kompatibilita\": [\"DP1400\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2300 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"Neuvedené\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4258-mototrbo",
+    "img": "/images/katalog-produktov/20497/main.webp",
+    "title": "PMNN4258",
+    "desc": "Li-Ion 2900 mAh akumulátor Li-Ion 2900 mAh akumulátor Vysokokapacitný Li-Ion akumulátor dovoľuje priebežné nabíjanie bez rizika pamäťového efektu.",
+    "facets": "{\"kompatibilita\": [\"DP1400\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2900 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"Neuvedené\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4259-mototrbo",
+    "img": "/images/katalog-produktov/20465/main.webp",
+    "title": "PMNN4259",
+    "desc": "Li-Ion 2050 mAh Mag One akumulátor Li-Ion 2050 mAh Mag One akumulátor Vysokokapacitný Li-Ion akumulátor dovoľuje priebežné nabíjanie bez rizika pamäťového efektu.",
+    "facets": "{\"kompatibilita\": [\"DP1400\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2050 mAh\"], \"prevedenie\": [\"MAG ONE\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"Neuvedené\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4440",
+    "img": "/images/katalog-produktov/20032/main.webp",
+    "title": "PMNN4440",
+    "desc": "Li-Ion 1700 mAh akumulátor Li-Ion 1700 mAh akumulátor Li-Ion akumulátor dovoľuje priebežné nabíjanie bez rizika pamäťového efektu.",
+    "facets": "{\"kompatibilita\": [\"DP3441\", \"DP3441e\", \"DP3661e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"1700 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"500\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4461",
+    "img": "/images/katalog-produktov/20505/main.webp",
+    "title": "PMNN4461",
+    "desc": "Li-Ion 1750 mAh akumulátor Li-Ion 1750 mAh akumulátor Náhradný 3,6V akumulátor pre bezdrôtový repromikrofón RLN6544 .",
+    "facets": "{\"kompatibilita\": [\"Príslušenstvo\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"1800 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"IP54\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4468-mototrbo",
+    "img": "/images/katalog-produktov/20494/main.webp",
+    "title": "PMNN4468",
+    "desc": "Li-Ion 2300 mAh akumulátor Li-Ion 2300 mAh akumulátor Vysokokapacitný Li-Ion akumulátor (BT100x) dovoľuje priebežné nabíjanie bez rizika pamäťového efektu.",
+    "facets": "{\"kompatibilita\": [\"SL1600\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2300 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"500\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"IP54\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4488",
+    "img": "/images/katalog-produktov/20562/main.webp",
+    "title": "PMNN4488",
+    "desc": "Li-Ion 3000 mAh IMPRES akumulátor s vibračným klipom Li-Ion 3000 mAh IMPRES akumulátor s vibračným klipom Akumulátor pre použitie vibračnej spony na opasok ( PMLN7296 ) Akumulátor je možné dobíjať len v originálnej nabíjačke pre rádiostanice Motorola rady DP.",
+    "facets": "{\"kompatibilita\": [\"DP2400e\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"3000 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4489",
+    "img": "/images/katalog-produktov/20593/main.webp",
+    "title": "PMNN4489",
+    "desc": "Li-Ion 2900 mAh IMPRES TIA-4950 akumulátor Li-Ion 2900 mAh IMPRES TIA-4950 akumulátor Li-Ion akumulátor vyhovuje bezpečnostnému štandardu TIA-4950 a je určený do prostredia s nebezpečenstvom výbuchu v dôsledku horľavých plynov alebo pár, horľavých kvapalín, horľavého prachu.",
+    "facets": "{\"kompatibilita\": [\"DP4400e\", \"DP4401e\", \"DP4600e\", \"DP4601e\", \"DP4800e\", \"DP4801e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2900 mAh\"], \"prevedenie\": [\"IMPRES TIA-4950\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4490",
+    "img": "/images/katalog-produktov/20572/main.webp",
+    "title": "PMNN4490",
+    "desc": "Li-Ion 2900 mAh IMPRES TIA-4950 akumulátor Li-Ion 2900 mAh IMPRES TIA-4950 akumulátor Li-Ion akumulátor vyhovuje bezpečnostnému štandardu TIA-4950 a je určený do prostredia s nebezpečenstvom výbuchu v dôsledku horľavých plynov alebo pár, horľavých kvapalín, horľavého prachu.",
+    "facets": "{\"kompatibilita\": [\"DP2400e\", \"DP2600e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2900 mAh\"], \"prevedenie\": [\"IMPRES TIA-4950\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4491",
+    "img": "/images/katalog-produktov/20573/main.webp",
+    "title": "PMNN4491",
+    "desc": "Li-Ion 2100 mAh IMPRES akumulátor Li-Ion 2100 mAh IMPRES akumulátor Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2100 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"500\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4502",
+    "img": "/images/katalog-produktov/20578/main.webp",
+    "title": "PMNN4502",
+    "desc": "Li-Ion 3000 mAh IMPRES akumulátor Li-Ion 3000 mAh IMPRES akumulátor Li-Ion akumulátor dovoľuje priebežné nabíjanie bez rizika pamäťového efektu.",
+    "facets": "{\"kompatibilita\": [\"DP3441\", \"DP3441e\", \"DP3661e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"3000 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4511",
+    "img": "/images/katalog-produktov/20600/main.webp",
+    "title": "PMNN4511",
+    "desc": "Li-Ion 2900 mAh IMPRES TIA-4950 akumulátor Li-Ion 2900 mAh IMPRES TIA-4950 akumulátor Li-Ion akumulátor dovoľuje priebežné nabíjanie bez rizika pamäťového efektu.",
+    "facets": "{\"kompatibilita\": [\"DP3441e\", \"DP3661e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2900 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4543",
+    "img": "/images/katalog-produktov/21071/main.webp",
+    "title": "PMNN4543",
+    "desc": "Li-Ion 2450 mAh akumulátor Li-Ion 2450 mAh akumulátor Li-Ion akumulátor dovoľuje priebežné nabíjanie bez rizika pamäťového efektu.",
+    "facets": "{\"kompatibilita\": [\"DP2400e\", \"DP2600e\", \"DP4400e\", \"DP4601e\", \"DP4801e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2450 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"400\"], \"prevadzkova-teplota\": [\"Neuvedené\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4544",
+    "img": "/images/katalog-produktov/20822/main.webp",
+    "title": "PMNN4544",
+    "desc": "Li-Ion 2450 mAh IMPRES akumulátor Li-Ion 2450 mAh IMPRES akumulátor Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2450 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4598",
+    "img": "/images/katalog-produktov/20990/main.webp",
+    "title": "PMNN4598",
+    "desc": "Li-Ion 2300 mAh akumulátor Li-Ion 2300 mAh akumulátor Vysokokapacitný akumulátor je súčasťou základnej dodávky rádiostaníc Motorola R2.",
+    "facets": "{\"kompatibilita\": [\"R2\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2300 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"400\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"IP55\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4600",
+    "img": "/images/katalog-produktov/20989/main.webp",
+    "title": "PMNN4600",
+    "desc": "Li-Ion 2100 mAh tenký akumulátor Li-Ion 2100 mAh tenký akumulátor Tenký Li-Ion akumulátor dovoľuje priebežné nabíjanie bez rizika pamäťového efektu.",
+    "facets": "{\"kompatibilita\": [\"R2\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2100 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"400\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"IP55\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4803",
+    "img": "/images/katalog-produktov/20924/main.webp",
+    "title": "PMNN4803",
+    "desc": "Li-Ion 2800 mAh IMPRES2 akumulátor Li-Ion 2800 mAh IMPRES2 akumulátor Motorola prináša pre nový rad rádiostaníc ION taktiež nové príslušenstvo.",
+    "facets": "{\"kompatibilita\": [\"ION\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2800 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"500\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4804",
+    "img": "/images/katalog-produktov/20925/main.webp",
+    "title": "PMNN4804",
+    "desc": "Li-Ion 2900 mAh IMPRES2 akumulátor Li-Ion 2900 mAh IMPRES2 akumulátor Motorola prináša pre nový rad rádiostaníc ION taktiež nové príslušenstvo.",
+    "facets": "{\"kompatibilita\": [\"ION\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2900 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"500\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4805",
+    "img": "/images/katalog-produktov/20926/main.webp",
+    "title": "PMNN4805",
+    "desc": "Li-Ion 4000 mAh IMPRES2 akumulátor Li-Ion 4000 mAh IMPRES2 akumulátor Motorola prináša pre nový rad rádiostaníc ION taktiež nové príslušenstvo.",
+    "facets": "{\"kompatibilita\": [\"ION\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"4000 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"500\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4807",
+    "img": "/images/katalog-produktov/20975/main.webp",
+    "title": "PMNN4807",
+    "desc": "Li-Ion 2200 mAh IMPRES akumulátor Li-Ion 2200 mAh IMPRES akumulátor Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"R7\", \"R7a\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2200 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4808",
+    "img": "/images/katalog-produktov/20943/main.webp",
+    "title": "PMNN4808",
+    "desc": "Li-Ion 2450 mAh akumulátor Li-Ion 2450 mAh akumulátor Štandardný Li-Ion akumulátor, ktorý je súčasťou základnej dodávky rádiostaníc Motorola rady R7.",
+    "facets": "{\"kompatibilita\": [\"R7\", \"R7a\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2450 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"400\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4809",
+    "img": "/images/katalog-produktov/20976/main.webp",
+    "title": "PMNN4809",
+    "desc": "Li-Ion 2850 mAh IMPRES akumulátor Li-Ion 2850 mAh IMPRES akumulátor Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"R7\", \"R7a\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2850 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4810",
+    "img": "/images/katalog-produktov/20977/main.webp",
+    "title": "PMNN4810",
+    "desc": "Li-Ion 3200 mAh IMPRES akumulátor TIA4950 Li-Ion 3200 mAh IMPRES akumulátor TIA4950 Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"R7\", \"R7a\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"3200 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4848",
+    "img": "/images/katalog-produktov/21021/main.webp",
+    "title": "PMNN4848",
+    "desc": "Li-Ion 2150 mAh IMPRES&nbsp;ATEX akumulátor Li-Ion 2150 mAh IMPRES&nbsp;ATEX akumulátor Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"R7Ex\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2075 mAh\"], \"prevedenie\": [\"IMPRES ATEX\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"500\"], \"prevadzkova-teplota\": [\"–10 °C až +50 °C\"], \"krytie\": [\"IP67 (pre ATEX prostredie:IP64)\"], \"vyzaduje-udrzbu\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4878",
+    "img": "/images/katalog-produktov/21004/main.webp",
+    "title": "PMNN4878",
+    "desc": "Li-Ion 2400 mAh akumulátor Li-Ion 2400 mAh akumulátor Štandardný Li-Ion akumulátor, ktorý je súčasťou základnej dodávky rádiostaníc Motorola rady R5.",
+    "facets": "{\"kompatibilita\": [\"R5\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2400 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"500\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"IP67\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4888",
+    "img": "/images/katalog-produktov/21005/main.webp",
+    "title": "PMNN4888",
+    "desc": "Li-Ion 2100 mAh tenký IMPRES akumulátor Li-Ion 2100 mAh tenký IMPRES akumulátor Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"R5\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2200 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"400\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"IP67\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4889",
+    "img": "/images/katalog-produktov/21007/main.webp",
+    "title": "PMNN4889",
+    "desc": "Li-Ion 3200 mAh IMPRES akumulátor Li-Ion 3200 mAh IMPRES akumulátor Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"R5\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"3200 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"400\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"IP67\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4890",
+    "img": "/images/katalog-produktov/21008/main.webp",
+    "title": "PMNN4890",
+    "desc": "Li-Ion 3200 mAh IMPRES TIA-4950 akumulátor Li-Ion 3200 mAh IMPRES TIA-4950 akumulátor Li-Ion akumulátor vyhovuje bezpečnostnému štandardu TIA-4950 a je určený do prostredia s nebezpečenstvom výbuchu v dôsledku horľavých plynov alebo pár, horľavých kvapalín, horľavého prachu.",
+    "facets": "{\"kompatibilita\": [\"R5\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"3200 mAh\"], \"prevedenie\": [\"IMPRES TIA-4950\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"400\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"IP67\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmnn4102",
+    "img": "/images/katalog-produktov/20108/main.webp",
+    "title": "Ukončený predaj - PMNN4102",
+    "desc": "Li-Ion 1500 mAh IMPRES akumulátor Li-Ion 1500 mAh IMPRES akumulátor Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"1500 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"400\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"Neuvedené\"], \"vyzaduje-udrzbu\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/nntn8560",
+    "img": "/images/katalog-produktov/20516/main.webp",
+    "title": "Ukončený predaj: NNTN8560",
+    "desc": "Li-Ion 2500 mAh IMPRES TIA-4950 akumulátor Li-Ion 2500 mAh IMPRES TIA-4950 akumulátor Li-Ion akumulátor s certifikáciou TIA-4950.",
+    "facets": "{\"kompatibilita\": [\"DP4400e\", \"DP4401e\", \"DP4600e\", \"DP4601e\", \"DP4800e\", \"DP4801e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2500 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"IP67\"], \"vyzaduje-udrzbu\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmnn4101",
+    "img": "/images/katalog-produktov/20109/main.webp",
+    "title": "Ukončený predaj: PMNN4101",
+    "desc": "Li-Ion 1550 mAh IMPRES akumulátor Li-Ion 1550 mAh IMPRES akumulátor Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"1500 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"400\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"Neuvedené\"], \"vyzaduje-udrzbu\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmnn4103",
+    "img": "/images/katalog-produktov/20107/main.webp",
+    "title": "Ukončený predaj: PMNN4103",
+    "desc": "Li-Ion 2200 mAh IMPRES akumulátor Li-Ion 2200mAh IMPRES akumulátor Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2200 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"Neuvedené\"], \"vyzaduje-udrzbu\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmnn4104",
+    "img": "/images/katalog-produktov/20106/main.webp",
+    "title": "Ukončený predaj: PMNN4104",
+    "desc": "Ni-MH 1300 mAh akumulátor Ni-MH 1300 mAh akumulátor Štandardný Ni-MH akumulátor, ktorý je súčasťou základnej dodávky rádiostaníc Motorola rady DP3000.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"zlozenie\": [\"Ni–Mh\"], \"kapacita\": [\"1450 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"500\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"Neuvedené\"], \"vyzaduje-udrzbu\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmnn4406",
+    "img": "/images/katalog-produktov/20570/main.webp",
+    "title": "Ukončený predaj: PMNN4406",
+    "desc": "Li-Ion 1650 mAh akumulátor Li-Ion 1650 mAh akumulátor Štandardný Li-Ion akumulátor, ktorý je súčasťou základnej dodávky rádiostaníc Motorola rady DP2000e a DP4000e.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"1650 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"500\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmnn4407",
+    "img": "/images/katalog-produktov/20105/main.webp",
+    "title": "Ukončený predaj: PMNN4407",
+    "desc": "Li-Ion 1650 mAh IMPRES akumulátor Li-Ion 1650 mAh IMPRES akumulátor Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"1650 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"500\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmnn4409",
+    "img": "/images/katalog-produktov/20104/main.webp",
+    "title": "Ukončený predaj: PMNN4409",
+    "desc": "Li-Ion 2250 mAh IMPRES akumulátor Li-Ion 2250 mAh IMPRES akumulátor Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2250 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmnn4412",
+    "img": "/images/katalog-produktov/20103/main.webp",
+    "title": "Ukončený predaj: PMNN4412",
+    "desc": "Ni-MH 1400 mAh akumulátor Ni-MH 1400 mAh akumulátor Akumulátor je možné dobíjať len v originálnej nabíjačke pre rádiostanice Motorola rady DP.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"zlozenie\": [\"Ni–Mh\"], \"kapacita\": [\"1400 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"400\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Áno\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmnn4415",
+    "img": "/images/katalog-produktov/20102/main.webp",
+    "title": "Ukončený predaj: PMNN4415",
+    "desc": "Ni-MH 1400 mAh akumulátor Ni-MH 1400 mAh akumulátor Akumulátor je možné dobíjať len v originálnej nabíjačke pre rádiostanice Motorola rady DP.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2600\"], \"zlozenie\": [\"Ni–Mh\"], \"kapacita\": [\"1400 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"400\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"IP56\"], \"vyzaduje-udrzbu\": [\"Áno\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmnn4416",
+    "img": "/images/katalog-produktov/20101/main.webp",
+    "title": "Ukončený predaj: PMNN4416",
+    "desc": "Li-Ion 1600 mAh akumulátor Li-Ion 1600 mAh akumulátor Štandardný Li-Ion akumulátor, ktorý je súčasťou základnej dodávky rádiostaníc Motorola rady DP2000.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"1600 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"500\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"IP56\"], \"vyzaduje-udrzbu\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmnn4417",
+    "img": "/images/katalog-produktov/20100/main.webp",
+    "title": "Ukončený predaj: PMNN4417",
+    "desc": "Li-Ion 1600 mAh IMPRES akumulátor Li-Ion 1600 mAh IMPRES akumulátor Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"1600 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"500\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"IP56\"], \"vyzaduje-udrzbu\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmnn4418",
+    "img": "/images/katalog-produktov/20099/main.webp",
+    "title": "Ukončený predaj: PMNN4418",
+    "desc": "Li-Ion 2250 mAh IMPRES vysokokapacitný akumulátor Li-Ion 2250 mAh IMPRES vysokokapacitný akumulátor Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2250 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"IP56\"], \"vyzaduje-udrzbu\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmnn4425",
+    "img": "/images/katalog-produktov/20098/main.webp",
+    "title": "Ukončený predaj: PMNN4425",
+    "desc": "Li-Ion 1400 mAh akumulátor Li-Ion 1400 mAh akumulátor Akumulátor (BT7X) je možné dobíjať len v originálnej nabíjačke určenej pre rádiostanice Motorola.&nbsp;Li-Ion akumulátor dovoľuje priebežné nabíjanie bez rizika pamäťového efektu.",
+    "facets": "{\"kompatibilita\": [\"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"1400 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"400\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"IP54\"], \"vyzaduje-udrzbu\": [\"Áno\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmnn4435",
+    "img": "/images/katalog-produktov/20424/main.webp",
+    "title": "Ukončený predaj: PMNN4435",
+    "desc": "Li-Mn 1400 mAh akumulátor do -30&nbsp;ºC Li-Mn 1400 mAh akumulátor&nbsp;do -30&nbsp;ºC Nový lítiovo-mangánový akumulátor na rozdiel od bežných Li-Ion akumulátorov umožňuje prevádzku aj pri nízkych teplotách (až do -30 °C).",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"zlozenie\": [\"Li–Mn\"], \"kapacita\": [\"1400 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"1000\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmnn4448",
+    "img": "/images/katalog-produktov/20256/main.webp",
+    "title": "Ukončený predaj: PMNN4448",
+    "desc": "Li-Ion 2800 mAh IMPRES akumulátor Li-Ion 2800 mAh IMPRES akumulátor Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2800 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"IP67\"], \"vyzaduje-udrzbu\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmnn4459",
+    "img": "/images/katalog-produktov/20266/main.webp",
+    "title": "Ukončený predaj: PMNN4459",
+    "desc": "Li-Ion 2200 mAh vysokokapacitný akumulátor Li-Ion 2200 mAh vysokokapacitný akumulátor Vysokokapacitný Li-Ion akumulátor (BT100) dovoľuje priebežné nabíjanie bez rizika pamäťového efektu.",
+    "facets": "{\"kompatibilita\": [\"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"1400 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +50 °C\"], \"krytie\": [\"IP54\"], \"vyzaduje-udrzbu\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmnn4493",
+    "img": "/images/katalog-produktov/20574/main.webp",
+    "title": "Ukončený predaj: PMNN4493",
+    "desc": "Li-Ion 3000 mAh IMPRES akumulátor Li-Ion 3000 mAh IMPRES akumulátor Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"3000 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmnn4525",
+    "img": "/images/katalog-produktov/20605/main.webp",
+    "title": "Ukončený predaj: PMNN4525",
+    "desc": "Li-Ion 1950mAh IMPRES akumulátor do&nbsp;-30 ºC Li-Ion 1950mAh IMPRES akumulátor do&nbsp;-30 ºC Systém Motorola IMPRES dovoľuje vykonávať inicializáciu akumulátora pred nabíjaním, umožňuje vybíjanie batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, atď.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"1950 mAh\"], \"prevedenie\": [\"IMPRES\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"1000\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"krytie\": [\"IP68\"], \"vyzaduje-udrzbu\": [\"Nie\"]}",
+    "nedodavane": true
+  }
+];
+const productsHeading = "";
+const notice = "";
+const noticeDetail = "";
+const ctaHeading = "Dodávka, inštalácia a servis";
+const ctaText = "Evakuačné a varovacie systémy navrhujeme, dodávame, inštalujeme a servisujeme. Radi pripravíme riešenie pre váš objekt.";
+const metadata = {
+  "title": "Akumulátory, katalóg produktov | RKS",
+  "description": "Katalóg akumulátorov pre rádiostanice Motorola   Pre splnenie širokej škály požiadaviek užívateľov spoločnosť Motorola ponúka rôzne veľkosti, kapacity a typy akumulátorov.",
+  "robots": {
+    "index": false,
+    "follow": false
+  }
+};
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Produkty",
+      "item": "https://rksba.sk/produkty"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Katalóg produktov",
+      "item": "https://rksba.sk/katalog-produktov"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/radiostanice-2002"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Prenosné rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Akumulátory",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/akumulatory"
+    }
+  ]
+};
+const filters = [
+  {
+    "key": "kompatibilita",
+    "nazov": "Kompatibilita",
+    "hodnoty": [
+      {
+        "hodnota": "DP2400e",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP2600e",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP4400e",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP4601e",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP4801e",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP4401e",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DP4600e",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DP4800e",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DP2400",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DP2600",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DP4400",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DP4401",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DP4600",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DP4601",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DP4800",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DP4801",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DP1400",
+        "pocet": 5
+      },
+      {
+        "hodnota": "DP3400",
+        "pocet": 4
+      },
+      {
+        "hodnota": "DP3401",
+        "pocet": 4
+      },
+      {
+        "hodnota": "DP3600",
+        "pocet": 4
+      },
+      {
+        "hodnota": "DP3601",
+        "pocet": 4
+      },
+      {
+        "hodnota": "R5",
+        "pocet": 4
+      },
+      {
+        "hodnota": "R7",
+        "pocet": 4
+      },
+      {
+        "hodnota": "R7a",
+        "pocet": 4
+      },
+      {
+        "hodnota": "SL4000",
+        "pocet": 4
+      },
+      {
+        "hodnota": "SL4000e",
+        "pocet": 4
+      },
+      {
+        "hodnota": "SL4010",
+        "pocet": 4
+      },
+      {
+        "hodnota": "SL4010e",
+        "pocet": 4
+      },
+      {
+        "hodnota": "DP3441e",
+        "pocet": 3
+      },
+      {
+        "hodnota": "DP3661e",
+        "pocet": 3
+      },
+      {
+        "hodnota": "ION",
+        "pocet": 3
+      },
+      {
+        "hodnota": "DP3441",
+        "pocet": 2
+      },
+      {
+        "hodnota": "DP4401 Ex Ma",
+        "pocet": 2
+      },
+      {
+        "hodnota": "DP4801 Ex Ma",
+        "pocet": 2
+      },
+      {
+        "hodnota": "R2",
+        "pocet": 2
+      },
+      {
+        "hodnota": "DP4401 Ex",
+        "pocet": 1
+      },
+      {
+        "hodnota": "DP4801 Ex",
+        "pocet": 1
+      },
+      {
+        "hodnota": "Príslušenstvo",
+        "pocet": 1
+      },
+      {
+        "hodnota": "R7Ex",
+        "pocet": 1
+      },
+      {
+        "hodnota": "SL1600",
+        "pocet": 1
+      },
+      {
+        "hodnota": "SL2600",
+        "pocet": 1
+      }
+    ]
+  },
+  {
+    "key": "inteligentne-nabijanie",
+    "nazov": "Inteligentné nabíjanie",
+    "hodnoty": [
+      {
+        "hodnota": "Áno",
+        "pocet": 33
+      },
+      {
+        "hodnota": "Nie",
+        "pocet": 20
+      }
+    ]
+  },
+  {
+    "key": "kapacita",
+    "nazov": "Kapacita",
+    "hodnoty": [
+      {
+        "hodnota": "1400 mAh",
+        "pocet": 6
+      },
+      {
+        "hodnota": "2900 mAh",
+        "pocet": 5
+      },
+      {
+        "hodnota": "1600 mAh",
+        "pocet": 3
+      },
+      {
+        "hodnota": "2200 mAh",
+        "pocet": 3
+      },
+      {
+        "hodnota": "2300 mAh",
+        "pocet": 3
+      },
+      {
+        "hodnota": "2450 mAh",
+        "pocet": 3
+      },
+      {
+        "hodnota": "3000 mAh",
+        "pocet": 3
+      },
+      {
+        "hodnota": "3200 mAh",
+        "pocet": 3
+      },
+      {
+        "hodnota": "1500 mAh",
+        "pocet": 2
+      },
+      {
+        "hodnota": "1650 mAh",
+        "pocet": 2
+      },
+      {
+        "hodnota": "1800 mAh",
+        "pocet": 2
+      },
+      {
+        "hodnota": "2075 mAh",
+        "pocet": 2
+      },
+      {
+        "hodnota": "2100 mAh",
+        "pocet": 2
+      },
+      {
+        "hodnota": "2250 mAh",
+        "pocet": 2
+      },
+      {
+        "hodnota": "2800 mAh",
+        "pocet": 2
+      },
+      {
+        "hodnota": "1450 mAh",
+        "pocet": 1
+      },
+      {
+        "hodnota": "1700 mAh",
+        "pocet": 1
+      },
+      {
+        "hodnota": "1950 mAh",
+        "pocet": 1
+      },
+      {
+        "hodnota": "2000 mAh",
+        "pocet": 1
+      },
+      {
+        "hodnota": "2050 mAh",
+        "pocet": 1
+      },
+      {
+        "hodnota": "2350 mAh",
+        "pocet": 1
+      },
+      {
+        "hodnota": "2400 mAh",
+        "pocet": 1
+      },
+      {
+        "hodnota": "2500 mAh",
+        "pocet": 1
+      },
+      {
+        "hodnota": "2850 mAh",
+        "pocet": 1
+      },
+      {
+        "hodnota": "4000 mAh",
+        "pocet": 1
+      }
+    ]
+  },
+  {
+    "key": "krytie",
+    "nazov": "Krytie",
+    "hodnoty": [
+      {
+        "hodnota": "IP68",
+        "pocet": 23
+      },
+      {
+        "hodnota": "Neuvedené",
+        "pocet": 10
+      },
+      {
+        "hodnota": "IP67",
+        "pocet": 6
+      },
+      {
+        "hodnota": "IP54",
+        "pocet": 5
+      },
+      {
+        "hodnota": "IP56",
+        "pocet": 4
+      },
+      {
+        "hodnota": "IP67 (pre ATEX prostredie:IP64)",
+        "pocet": 3
+      },
+      {
+        "hodnota": "IP55",
+        "pocet": 2
+      }
+    ]
+  },
+  {
+    "key": "pocet-nabijacich-cyklov",
+    "nazov": "Počet nabíjacích cyklov",
+    "hodnoty": [
+      {
+        "hodnota": "300",
+        "pocet": 21
+      },
+      {
+        "hodnota": "400",
+        "pocet": 15
+      },
+      {
+        "hodnota": "500",
+        "pocet": 15
+      },
+      {
+        "hodnota": "1000",
+        "pocet": 2
+      }
+    ]
+  },
+  {
+    "key": "prevedenie",
+    "nazov": "Prevedenie",
+    "hodnoty": [
+      {
+        "hodnota": "IMPRES",
+        "pocet": 24
+      },
+      {
+        "hodnota": "STD",
+        "pocet": 22
+      },
+      {
+        "hodnota": "IMPRES ATEX",
+        "pocet": 3
+      },
+      {
+        "hodnota": "IMPRES TIA-4950",
+        "pocet": 3
+      },
+      {
+        "hodnota": "MAG ONE",
+        "pocet": 1
+      }
+    ]
+  },
+  {
+    "key": "prevadzkova-teplota",
+    "nazov": "Prevádzková teplota",
+    "hodnoty": [
+      {
+        "hodnota": "–10 °C až +60 °C",
+        "pocet": 26
+      },
+      {
+        "hodnota": "–20 °C až +60 °C",
+        "pocet": 20
+      },
+      {
+        "hodnota": "–10 °C až +50 °C",
+        "pocet": 4
+      },
+      {
+        "hodnota": "–30 °C až +60 °C",
+        "pocet": 2
+      },
+      {
+        "hodnota": "Neuvedené",
+        "pocet": 1
+      }
+    ]
+  },
+  {
+    "key": "vyzaduje-udrzbu",
+    "nazov": "Vyžaduje údržbu",
+    "hodnoty": [
+      {
+        "hodnota": "Nie",
+        "pocet": 45
+      },
+      {
+        "hodnota": "Áno",
+        "pocet": 8
+      }
+    ]
+  },
+  {
+    "key": "zlozenie",
+    "nazov": "Zloženie",
+    "hodnoty": [
+      {
+        "hodnota": "Li–Ion",
+        "pocet": 48
+      },
+      {
+        "hodnota": "Ni–Mh",
+        "pocet": 4
+      },
+      {
+        "hodnota": "Li–Mn",
+        "pocet": 1
+      }
+    ]
+  }
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
+      <aside class="mb-8 lg:mb-0 lg:sticky lg:top-24 lg:self-start">
+        <details class="rks-cats rounded-xl border border-hairline p-4 lg:border-0 lg:p-0">
+          <summary class="rks-cats-toggle cursor-pointer font-semibold lg:hidden flex items-center justify-between gap-2 rounded-lg bg-panel-soft px-4 py-3"><span>Kategórie produktov</span><span class="rks-cats-arrow" aria-hidden="true"></span></summary>
+          <div class="rks-tree-wrap mt-3 lg:mt-0" set:html={sidebar} />
+        </details>
+      </aside>
+
+      <div class="min-w-0">
+        <nav class="text-sm text-muted mb-2" aria-label="Omrvinky">
+          {breadcrumb.map((b, i) => (
+            <>
+              {i > 0 && <span class="px-1">/</span>}
+              {b.url ? <a class="hover:underline" href={b.url}>{b.name}</a> : <span>{b.name}</span>}
+            </>
+          ))}
+        </nav>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">{heading}</h1>
+
+        {notice && (
+          <div class="mb-8 rounded-xl border border-l-4 border-hairline border-l-secondary bg-panel p-5">
+            <p class="text-lg font-semibold tracking-tight">{notice}</p>
+            {noticeDetail && <p class="text-base text-muted mt-1">{noticeDetail}</p>}
+          </div>
+        )}
+
+        {intro.map((par) => (
+          <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
+        ))}
+
+        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+
+        {subcats.length > 0 && (
+          <>
+            {subcatsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-4 mb-4">{subcatsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {subcats.map((c) => (
+                <a href={c.url} class="group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        {filters.length > 0 && (
+          <div class="rks-filter mt-8 rounded-xl border border-hairline bg-panel-soft p-5" data-rks-filter>
+            <div class="flex items-center justify-between gap-4 mb-3">
+              <h2 class="text-base font-semibold">Filtrovať podľa parametrov</h2>
+              <button type="button" class="text-sm text-link hover:underline" data-rks-reset>Zrušiť filtre</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+              {filters.map((f) => (
+                <details class="rks-facet border-t border-hairline pt-2">
+                  <summary class="cursor-pointer text-sm font-medium py-1 select-none">{f.nazov}</summary>
+                  <div class="mt-1 mb-2 space-y-1">
+                    {f.hodnoty.map((v) => (
+                      <label class="flex items-center gap-2 text-sm" data-rks-opt={f.key + '|~|' + v.hodnota}>
+                        <input type="checkbox" class="accent-primary" data-rks-f={f.key} value={v.hodnota} />
+                        <span class="flex-1">{v.hodnota}</span>
+                        <span class="text-muted text-xs tabular-nums" data-rks-cnt>{v.pocet}</span>
+                      </label>
+                    ))}
+                  </div>
+                </details>
+              ))}
+            </div>
+            <p class="text-sm text-muted mt-3" data-rks-summary></p>
+          </div>
+        )}
+
+        {products.length > 0 && (
+          <>
+            {productsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">{productsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4" data-rks-grid>
+              {products.map((c) => (
+                <a href={c.url} data-facets={c.facets} class="rks-card group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+          <h2 class="text-xl md:text-2xl font-semibold mb-3">{ctaHeading}</h2>
+          <p class="text-muted mb-6 max-w-xl mx-auto">{ctaText}</p>
+          <a href="/lp/konzultacia.html?utm_source=web&amp;utm_campaign=web" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+
+  {filters.length > 0 && (
+    <script is:inline>
+      (function () {
+        var root = document.querySelector('[data-rks-filter]');
+        var grid = document.querySelector('[data-rks-grid]');
+        if (!root || !grid) return;
+        var cards = Array.prototype.slice.call(grid.querySelectorAll('.rks-card'));
+        var boxes = Array.prototype.slice.call(root.querySelectorAll('input[data-rks-f]'));
+        var summary = root.querySelector('[data-rks-summary]');
+        var parsed = cards.map(function (c) {
+          try { return JSON.parse(c.getAttribute('data-facets') || '{}'); } catch (e) { return {}; }
+        });
+        function selection() {
+          var m = {};
+          boxes.forEach(function (b) {
+            if (b.checked) { (m[b.getAttribute('data-rks-f')] = m[b.getAttribute('data-rks-f')] || []).push(b.value); }
+          });
+          return m;
+        }
+        function matches(f, m) {
+          for (var k in m) {
+            var have = f[k] || [];
+            var ok = m[k].some(function (v) { return have.indexOf(v) !== -1; });
+            if (!ok) return false;
+          }
+          return true;
+        }
+        function apply() {
+          var m = selection(), shown = 0;
+          cards.forEach(function (c, i) {
+            var ok = matches(parsed[i], m);
+            c.style.display = ok ? '' : 'none';
+            if (ok) shown++;
+          });
+          // prepocitaj pocty: kolko by ostalo, keby sa pridala prave tato hodnota
+          root.querySelectorAll('label[data-rks-opt]').forEach(function (lab) {
+            var parts = lab.getAttribute('data-rks-opt').split('|~|');
+            var k = parts[0], v = parts[1];
+            var m2 = {}; for (var kk in m) m2[kk] = m[kk].slice();
+            m2[k] = [v];
+            var n = 0;
+            for (var i = 0; i < cards.length; i++) { if (matches(parsed[i], m2)) n++; }
+            lab.querySelector('[data-rks-cnt]').textContent = n;
+            var box = lab.querySelector('input');
+            lab.style.display = (n === 0 && !box.checked) ? 'none' : '';
+          });
+          summary.textContent = shown === cards.length
+            ? cards.length + ' produktov'
+            : shown + ' z ' + cards.length + ' produktov';
+        }
+        boxes.forEach(function (b) { b.addEventListener('change', apply); });
+        var reset = root.querySelector('[data-rks-reset]');
+        if (reset) reset.addEventListener('click', function () {
+          boxes.forEach(function (b) { b.checked = false; });
+          apply();
+        });
+        apply();
+      })();
+    </script>
+  )}
+
+  <style is:global>
+    @media (min-width: 1024px) {
+      .rks-cats > summary { display: none; }
+      .rks-cats > .rks-tree-wrap { display: block !important; }
+    }
+    .rks-tree .rks-li { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 0.5rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-leaf { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-li > .rks-link { min-width: 0; }
+    .rks-tree .rks-children { grid-column: 1 / -1; display: none; }
+    .rks-tree .rks-disc[open] ~ .rks-children { display: block; }
+    .rks-tree .rks-disc { display: inline-flex; }
+    .rks-tree summary.rks-arrow { list-style: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; color: rgba(229, 236, 246, 0.66); }
+    .rks-tree summary.rks-arrow::-webkit-details-marker { display: none; }
+    .rks-tree summary.rks-arrow::before { content: ""; border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-tree .rks-disc[open] > summary.rks-arrow::before { transform: rotate(90deg); }
+    .rks-cats-arrow::before { content: ""; display: inline-block; color: rgba(229, 236, 246, 0.66); border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-cats[open] > .rks-cats-toggle .rks-cats-arrow::before { transform: rotate(90deg); }
+  </style>
+</Layout>

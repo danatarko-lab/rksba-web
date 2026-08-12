@@ -1,0 +1,863 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const sidebar = "<nav class=\"rks-tree text-sm\" aria-label=\"Kategórie produktov\"><ul class=\"space-y-1\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/radiostanice-2002\" class=\"rks-link text-default hover:text-link\">Rádiostanice<span class=\"text-muted text-xs ml-2\">773</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2\" class=\"rks-link text-default hover:text-link\">Prenosné rádiostanice<span class=\"text-muted text-xs ml-2\">632</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory\" class=\"rks-link text-default hover:text-link\">Akumulátory<span class=\"text-muted text-xs ml-2\">53</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Antény (DP)<span class=\"text-muted text-xs ml-2\">58</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DP)<span class=\"text-muted text-xs ml-2\">17</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dp\" class=\"rks-link text-default hover:text-link\">Iné (DP)<span class=\"text-muted text-xs ml-2\">138</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky-mototrbo\" class=\"rks-link text-default hover:text-link\">Nabíjačky<span class=\"text-muted text-xs ml-2\">37</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie\" class=\"rks-link text-default hover:text-link\">Nosenie<span class=\"text-muted text-xs ml-2\">97</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy\" class=\"rks-link text-primary font-semibold\">Náhlavné súpravy<span class=\"text-muted text-xs ml-2\">43</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony\" class=\"rks-link text-default hover:text-link\">Repromikrofóny<span class=\"text-muted text-xs ml-2\">39</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla\" class=\"rks-link text-default hover:text-link\">Slúchadlá<span class=\"text-muted text-xs ml-2\">72</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Softvér (DP)<span class=\"text-muted text-xs ml-2\">35</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prevadzace-mototrbo\" class=\"rks-link text-default hover:text-link\">Prevádzače<span class=\"text-muted text-xs ml-2\">22</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dr\" class=\"rks-link text-default hover:text-link\">Iné (DR)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dr\" class=\"rks-link text-default hover:text-link\">Softvér (DR)<span class=\"text-muted text-xs ml-2\">13</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/vozidlove-radiostanice-mototrbo\" class=\"rks-link text-default hover:text-link\">Vozidlové rádiostanice<span class=\"text-muted text-xs ml-2\">119</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny\" class=\"rks-link text-default hover:text-link\">Antény (DM)<span class=\"text-muted text-xs ml-2\">23</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dm-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DM)<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dm\" class=\"rks-link text-default hover:text-link\">Iné (DM)<span class=\"text-muted text-xs ml-2\">22</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/instalacia\" class=\"rks-link text-default hover:text-link\">Inštalácia<span class=\"text-muted text-xs ml-2\">29</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofony\" class=\"rks-link text-default hover:text-link\">Mikrofóny<span class=\"text-muted text-xs ml-2\">13</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/napajanie\" class=\"rks-link text-default hover:text-link\">Napájanie<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/reproduktory\" class=\"rks-link text-default hover:text-link\">Reproduktory<span class=\"text-muted text-xs ml-2\">5</span></a></li></ul></li></ul></li></ul></nav>";
+const breadcrumb = [
+  {
+    "name": "Produkty",
+    "url": "/produkty"
+  },
+  {
+    "name": "Katalóg produktov",
+    "url": "/katalog-produktov"
+  },
+  {
+    "name": "Rádiostanice",
+    "url": "/katalog-produktov/kategoria/radiostanice-2002"
+  },
+  {
+    "name": "Prenosné rádiostanice",
+    "url": "/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+  },
+  {
+    "name": "Náhlavné súpravy",
+    "url": null
+  }
+];
+const heading = "Náhlavné súpravy";
+const popisHtml = "<h1>Katalóg náhlavných súprav pre rádiostanice Motorola</h1> <p>Existuje celý rad užívateľov prenosných rádiostaníc. Každý má svoje špecifické potreby, požiadavky a pracuje v rôznych podmienkach. Spoločnosť Motorola dodáva kompletné riešenie a ponúka široký výber mikrofónov, slúchadiel a reproduktorov. Profesionálni užívateľa si môžu svoje rádiostanice prispôsobiť tak, aby zabezpečovali ich individuálne potreby komunikácie aj nad rámec funkcií, ktoré obsahuje štandardná dodávka.</p> <p>Náhlavné súpravy poskytujú diskrétnosť slúchadiel, spolu s väčším pohodlím alebo ochranou sluchu. Špeciálne náhlavné súpravy s označením Temple Transducer využívajú na prenos zvuku kostné vedenie, čo umožňuje čistú komunikáciu aj v extrémne hlučnom prostredí.</p> <p>Príslušenstvo podobne ako rádiostanice prechádza zrýchleným testom životnosti (Motorola Accelerated Life Test), ktorý simuluje 5 rokov náročného užívania v praxi.</p> <p>sm7BjeCzYl8</p>";
+const intro = [];
+const subcats = [];
+const subcatsHeading = "";
+const products = [
+  {
+    "url": "/katalog-produktov/gmmn4580",
+    "img": "/images/katalog-produktov/20878/main.webp",
+    "title": "GMMN4580",
+    "desc": "SAVOX HC-2 ATEX HELMET COM HEADSET SAVOX HC-2 ATEX HELMET COM HEADSET Prilbový komunikačný systém HC-2 ATEX (Helmet-Com) je ideálny pre požiarny a záchranný tím pracujúci v hlučnom prostredí s nebezpečenstvom výbuchu.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"NEXUS\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/gmmn4584",
+    "img": "/images/katalog-produktov/20854/main.webp",
+    "title": "GMMN4584",
+    "desc": "SAVOX HC-2 HELMET COM HEADSET SAVOX HC-2 HELMET COM HEADSET Prilbový komunikačný systém HC-2 (Helmet-Com) je ideálny pre požiarny a záchranný tím pracujúci vo vysoko hlučných oblastiach.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"R7\", \"R7a\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"NEXUS\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/gmmn4585",
+    "img": "/images/katalog-produktov/20853/main.webp",
+    "title": "GMMN4585",
+    "desc": "Náhlavná súprava SAVOX HC-1 Náhlavná súprava SAVOX HC-1 Originálny systém Savox HC-1 je kompaktný prilbový komunikačný systém (Helmet-Com) pre profesionálov pracujúcich v nebezpečných podmienkach.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"R7\", \"R7a\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"NEXUS\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5101",
+    "img": "/images/katalog-produktov/20138/main.webp",
+    "title": "PMLN5101",
+    "desc": "Náhlavná súprava s kostným vedením zvuku, IMPRES Náhlavná súprava s kostným vedením zvuku, IMPRES Ľahká súprava využívajúca kostné vedenie zvuku (Temple transducer).",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5102",
+    "img": "/images/katalog-produktov/20137/main.webp",
+    "title": "PMLN5102",
+    "desc": "Ultra ľahká náhlavná súprava Ultra ľahká náhlavná súprava Súprava pre každodenné profesionálne použitie.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5275",
+    "img": "/images/katalog-produktov/20136/main.webp",
+    "title": "PMLN5275",
+    "desc": "Masívna náhlavná súprava Masívna náhlavná súprava Táto náhlavná súprava je ideálna pre použitie v hlučnom prostredí napr.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na slúchadle\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5974",
+    "img": "/images/katalog-produktov/20429/main.webp",
+    "title": "PMLN5974",
+    "desc": "Ľahká náhlavná súprava Mag One Ľahká náhlavná súprava Mag One Súprava s integrovaným PTT tlačidlom umiestneným na kábli.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5979",
+    "img": "/images/katalog-produktov/20432/main.webp",
+    "title": "PMLN5979",
+    "desc": "Ľahká náhlavná súprava Mag One Ľahká náhlavná súprava Mag One Súprava s integrovaným PTT tlačidlom umiestneným na kábli optimalizovaná pre prostredie náročné na komunikáciu, v ktorom pracovníci potrebujú komunikovať so zákazníkmi pri zachovaní rádiovej komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6087",
+    "img": "/images/katalog-produktov/20335/main.webp",
+    "title": "PMLN6087",
+    "desc": "Masívna náhlavná súprava Peltor ATEX do výbušného prostredia Masívna náhlavná súprava Peltor ATEX do výbušného prostredia Vysoko odolné slúchadlá pre nosenie na hlave majú certifikáciu ATEX a sú pohodlné aj pri dlhom nosení vďaka dvojbodovému systému upnutia ktoré umožňuje flexibilné a plynulé nastavenie výšky.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Modrá\"], \"konektor\": [\"J11\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na adaptéri PMLN6368\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6092",
+    "img": "/images/katalog-produktov/20338/main.webp",
+    "title": "PMLN6092",
+    "desc": "Masívna náhlavná súprava Peltor ATEX do výbušného prostredia Masívna náhlavná súprava Peltor ATEX do výbušného prostredia Masívne odolné slúchadlá pre upevnenie na prilbu &nbsp;majú certifikáciu ATEX a sú pohodlné aj pri dlhom nosení vďaka dvojbodovému systému upnutia ktoré umožňuje flexibilné a plynulé nastavenie výšky.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Modrá\"], \"konektor\": [\"J11\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na adaptéri PMLN6368\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6333",
+    "img": "/images/katalog-produktov/20339/main.webp",
+    "title": "PMLN6333",
+    "desc": "Masívna náhlavná súprava Peltor ATEX do výbušného prostredia Masívna náhlavná súprava Peltor ATEX do výbušného prostredia Masívne odolné slúchadlá Twin cup&nbsp; pre upevnenie na prilbu&nbsp; majú certifikáciu ATEX a sú pohodlné aj pri dlhom nosení vďaka dvojbodovému systému upnutia ktoré umožňuje flexibilné a plynulé nastavenie výšky.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Modrá\"], \"konektor\": [\"NEXUS\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na adaptéri PMLN6368\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6538",
+    "img": "/images/katalog-produktov/20132/main.webp",
+    "title": "PMLN6538",
+    "desc": "Ľahká náhlavná súprava Ľahká náhlavná súprava Súprava je určená pre nosenie na hlave (obdoba walkmanových slúchadiel), mikrofón je umiestnený na tenkom ramienku a pomerne veľké slúchadlo opatrené molitanovým mäkkým poťahom je variabilne prispôsobiteľné rovnako tak ako každá pohyblivá časť audio súpravy.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"R2\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"Dvojitý jack\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6541",
+    "img": "/images/katalog-produktov/20044/main.webp",
+    "title": "PMLN6541",
+    "desc": "Náhlavná súprava s kostným vedením zvuku Náhlavná súprava s kostným vedením zvuku Ľahká súprava využívajúca kostné vedenie zvuku (Temple transducer).",
+    "facets": "{\"kompatibilita\": [\"DP1400\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"Dvojitý jack\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6542",
+    "img": "/images/katalog-produktov/20043/main.webp",
+    "title": "PMLN6542",
+    "desc": "Ultra ľahká náhlavná súprava Mag One Ultra ľahká náhlavná súprava Mag One Náhlavná súprava s integrovaným PTT tlačidlom umiestneným na kábli.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"R2\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"Dvojitý jack\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na kábliku\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6635",
+    "img": "/images/katalog-produktov/20456/main.webp",
+    "title": "PMLN6635",
+    "desc": "Ľahká náhlavná súprava Ľahká náhlavná súprava Súprava je určená pre nosenie na hlave (obdoba walkmanových slúchadiel), mikrofón je umiestnený na tenkom ramienku a pomerne veľké slúchadlo opatrené molitanovým mäkkým poťahom je variabilne prispôsobiteľné rovnako tak ako každá pohyblivá časť audio súpravy.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"8 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6759",
+    "img": "/images/katalog-produktov/20513/main.webp",
+    "title": "PMLN6759",
+    "desc": "Náhlavná súprava IMPRES s kostným vedením zvuku Náhlavná súprava IMPRES s kostným vedením zvuku Ľahká súprava využívajúca kostné vedenie zvuku (Temple transducer).",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"13 pinový mini systémový\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6760",
+    "img": "/images/katalog-produktov/20553/main.webp",
+    "title": "PMLN6760",
+    "desc": "Masívna náhlavná súprava Masívna náhlavná súprava Tieto masívne slúchadlá predstavujú novú produktovú líniu príslušenstva MOTOTRBO a ponúkajú uzavreté robustné mušle takticko-vojenského typu a nový dizajn hlavového mostu pre nosenie za hlavou.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"8 pinový systémový\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na slúchadle\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6761",
+    "img": "/images/katalog-produktov/20514/main.webp",
+    "title": "PMLN6761",
+    "desc": "Ľahká náhlavná súprava Mag One Ľahká náhlavná súprava Mag One Súprava s integrovaným PTT tlačidlom umiestneným na kábli optimalizovaná pre prostredie náročné na komunikáciu, v ktorom pracovníci potrebujú komunikovať so zákazníkmin pri zachovaní rádiovej komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"8 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6763",
+    "img": "/images/katalog-produktov/20554/main.webp",
+    "title": "PMLN6763",
+    "desc": "Masívna náhlavná súprava (TIA-4950) Masívna náhlavná súprava (TIA-4950) Masívne slúchadlá s certifikáciou TIA-4950 predstavujú novú produktovú líniu príslušenstva MOTOTRBO a ponúkajú uzavreté robustné mušle takticko-vojenského typu a nový dizajn hlavového mostu pre nosenie za hlavou.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"8 pinový systémový\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na slúchadle\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6833",
+    "img": "/images/katalog-produktov/20522/main.webp",
+    "title": "PMLN6833",
+    "desc": "Taktická náhlavná súprava s kostným vedením zvuku Taktická náhlavná súprava s kostným vedením zvuku Taktická súprava využívajúca kostné vedenie zvuku (Temple transducer).",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"Iný\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6852",
+    "img": "/images/katalog-produktov/20551/main.webp",
+    "title": "PMLN6852",
+    "desc": "Masívna náhlavná súprava Masívna náhlavná súprava Tieto masívne slúchadlá predstavujú novú produktovú líniu príslušenstva MOTOTRBO a ponúkajú uzavreté robustné mušle takticko-vojenského typu a nový dizajn hlavového mostu pre nosenie za hlavou.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na slúchadle\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6852-mototrbo",
+    "img": "/images/katalog-produktov/20552/main.webp",
+    "title": "PMLN6853",
+    "desc": "Masívna náhlavná súprava (TIA-4950) Masívna náhlavná súprava (TIA-4950) Masívne slúchadlá s certifikáciou TIA-4950 predstavujú novú produktovú líniu príslušenstva MOTOTRBO a ponúkajú uzavreté robustné mušle takticko-vojenského typu a nový dizajn hlavového mostu pre nosenie za hlavou.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na slúchadle\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6854",
+    "img": "/images/katalog-produktov/20555/main.webp",
+    "title": "PMLN6854",
+    "desc": "Masívna náhlavná súprava Masívna náhlavná súprava Tieto masívne slúchadlá predstavujú novú produktovú líniu príslušenstva MOTOTRBO a ponúkajú uzavreté robustné mušle takticko-vojenského typu a nový dizajn hlavového mostu pre nosenie za hlavou.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"R2\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"Dvojitý jack\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na slúchadle\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7464",
+    "img": "/images/katalog-produktov/20884/main.webp",
+    "title": "PMLN7464",
+    "desc": "Masívna náhlavná súprava Masívna náhlavná súprava Tieto masívne slúchadlá predstavujú novú produktovú líniu príslušenstva MOTOTRBO a ponúkajú uzavreté robustné mušle takticko-vojenského typu..&nbsp;Masívne slúchadlá majú ušnice s prídavnou vypchávkou na dosiahnutie lepšieho zvukového výkonu a ktoré zároveň znižujú únavu obsluhy.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"8 pinový systémový\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na slúchadle\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7465",
+    "img": "/images/katalog-produktov/20885/main.webp",
+    "title": "PMLN7465",
+    "desc": "Masívna náhlavná súprava (TIA-4950) Masívna náhlavná súprava (TIA-4950) Tieto masívne slúchadlá predstavujú novú produktovú líniu príslušenstva MOTOTRBO a ponúkajú uzavreté robustné mušle takticko-vojenského typu..&nbsp;Masívne slúchadlá majú ušnice s prídavnou vypchávkou na dosiahnutie lepšieho zvukového výkonu a ktoré zároveň znižujú únavu obsluhy.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"8 pinový systémový\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na slúchadle\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7466",
+    "img": "/images/katalog-produktov/20851/main.webp",
+    "title": "PMLN7466",
+    "desc": "Masívna náhlavná súprava Masívna náhlavná súprava Tieto masívne slúchadlá predstavujú novú produktovú líniu príslušenstva MOTOTRBO a ponúkajú uzavreté robustné mušle takticko-vojenského typu.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na slúchadle\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7467",
+    "img": "/images/katalog-produktov/20852/main.webp",
+    "title": "PMLN7467",
+    "desc": "Masívna náhlavná súprava (TIA-4950) Masívna náhlavná súprava (TIA-4950) Masívne slúchadlá s certifikáciou TIA-4950 predstavujú novú produktovú líniu príslušenstva MOTOTRBO a ponúkajú uzavreté robustné mušle takticko-vojenského typu.&nbsp;Masívne slúchadlá majú ušnice s prídavnou vypchávkou na dosiahnutie lepšieho zvukového výkonu a ktoré zároveň znižujú únavu obsluhy.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na slúchadle\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7531",
+    "img": "/images/katalog-produktov/20879/main.webp",
+    "title": "PMLN7531",
+    "desc": "Masívna náhlavná súprava Peltor ATEX do výbušného prostredia Masívna náhlavná súprava Peltor ATEX do výbušného prostredia Náhlavná súprava Motorola PMLN7531 (MT7H79B-50) s&nbsp;hlavovým mostom pre nosenie za hlavou je vynikajúce&nbsp; komunikačné riešenie pre prostredia s vysokým hlukom.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Modrá\"], \"konektor\": [\"NEXUS\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7535",
+    "img": "/images/katalog-produktov/20880/main.webp",
+    "title": "PMLN7535",
+    "desc": "Masívna taktická náhlavná súprava Peltor ATEX do výbušného prostredia Masívna taktická náhlavná súprava Peltor ATEX do výbušného prostredia Náhlavná súprava Motorola PMLN7535 (MT1H7B2-07-51) s hlavovým mostom pre nosenie za hlavou je vynikajúce komunikačné riešenie pre prostredia s vysokým hlukom.&nbsp;Mikrofón na ramienku poskytuje poskytuje jasný prenos hlasu v hlučných prostrediach vďaka účinnej kompenzácii okolitého hluku.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Modrá\"], \"konektor\": [\"J11\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8085",
+    "img": "/images/katalog-produktov/20931/main.webp",
+    "title": "PMLN8085",
+    "desc": "Masívna náhlavná súprava Masívna náhlavná súprava Motorola prináša pre nový rad rádiostaníc ION a R7 taktiež nové príslušenstvo.",
+    "facets": "{\"kompatibilita\": [\"ION\", \"R7\", \"R7a\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"GCAI Mini\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na slúchadle\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8086",
+    "img": "/images/katalog-produktov/20930/main.webp",
+    "title": "PMLN8086",
+    "desc": "Masívna náhlavná súprava Masívna náhlavná súprava Motorola prináša pre nový rad rádiostaníc ION a R7 taktiež nové príslušenstvo.",
+    "facets": "{\"kompatibilita\": [\"ION\", \"R7\", \"R7a\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"GCAI Mini\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na slúchadle\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8265",
+    "img": "/images/katalog-produktov/20960/main.webp",
+    "title": "PMLN8265",
+    "desc": "Masívna náhlavná súprava Peltor Masívna náhlavná súprava Peltor Vysoko odolné slúchadlá pre nosenie na hlave sú určené pre pracovníkov pracujúcich vo veľmi hlučnom prostredí.",
+    "facets": "{\"kompatibilita\": [\"R7\", \"R7a\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Žltá\"], \"konektor\": [\"NEXUS\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na adaptéri PMLN8297\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8266",
+    "img": "/images/katalog-produktov/20961/main.webp",
+    "title": "PMLN8266",
+    "desc": "Masívna náhlavná súprava Peltor Masívna náhlavná súprava Peltor Masívne odolné slúchadlá pre nosenie za hlavou sú určené pre pracovníkov pracujúcich vo veľmi hlučnom prostredí.",
+    "facets": "{\"kompatibilita\": [\"R7\", \"R7a\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Žltá\"], \"konektor\": [\"NEXUS\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na adaptéri PMLN8297\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8267",
+    "img": "/images/katalog-produktov/20962/main.webp",
+    "title": "PMLN8267",
+    "desc": "Masívna náhlavná súprava Peltor Masívna náhlavná súprava Peltor Masívne odolné slúchadlá Twin cup&nbsp; pre upevnenie na prilbu (Prilba nie je súčasťou dodávky) sú určené pre pracovníkov pracujúcich vo veľmi hlučnom prostredí.",
+    "facets": "{\"kompatibilita\": [\"R7\", \"R7a\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Žltá\"], \"konektor\": [\"NEXUS\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na adaptéri PMLN8297\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln6490",
+    "img": "/images/katalog-produktov/20470/main.webp",
+    "title": "RLN6490",
+    "desc": "Masívna bezdrôtová náhlavná súprava Masívna bezdrôtová náhlavná súprava Táto bezdrôtová náhlavná súprava je ideálna pre použitie v hlučnom prostredí napr.",
+    "facets": "{\"kompatibilita\": [\"DP4401\", \"DP4401e\", \"DP4601\", \"DP4601e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"SL2600\", \"ION\", \"R7\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na slúchadle\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln6491",
+    "img": "/images/katalog-produktov/20478/main.webp",
+    "title": "RLN6491",
+    "desc": "Masívna bezdrôtová náhlavná súprava Masívna bezdrôtová náhlavná súprava Táto bezdrôtová náhlavná súprava je ideálna pre použitie v hlučnom prostredí napr.",
+    "facets": "{\"kompatibilita\": [\"DP4401\", \"DP4401e\", \"DP4601\", \"DP4601e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"ION\", \"R7\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na slúchadle\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rmn5058",
+    "img": "/images/katalog-produktov/20134/main.webp",
+    "title": "RMN5058",
+    "desc": "Ľahká náhlavná súprava Ľahká náhlavná súprava Súprava s integrovaným PTT tlačidlom umiestneným na kábli pre profesionálne použitie spolu s digitálnymi rádiostanicami MOTOTRBO.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rmn5123",
+    "img": "/images/katalog-produktov/20881/main.webp",
+    "title": "RMN5123",
+    "desc": "Náhlavná súprava SAVOX HC-1 ATEX Náhlavná súprava SAVOX HC-1 ATEX Originálny systém Savox HC-1 ATEX je kompaktný prilbový komunikačný systém (Helmet-Com) pre profesionálov pracujúcich v nebezpečných podmienkach.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"NEXUS\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5731",
+    "img": "/images/katalog-produktov/20135/main.webp",
+    "title": "Ukončený predaj PMLN5731",
+    "desc": "Masívna náhlavná súprava Masívna náhlavná súprava Táto náhlavná súprava je ideálna pre použitie v hlučnom prostredí napr.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"8 pinový systémový\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmln6539",
+    "img": "/images/katalog-produktov/20045/main.webp",
+    "title": "Ukončený predaj PMLN6539",
+    "desc": "Stredne ťažká náhlavná súprava Stredne ťažká náhlavná súprava Súprava je vhodná pre použitie v hlučných prevádzkach.",
+    "facets": "{\"kompatibilita\": [\"DP1400\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"Dvojitý jack\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Nie\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmln6540",
+    "img": "/images/katalog-produktov/20133/main.webp",
+    "title": "Ukončený predaj PMLN6540",
+    "desc": "Masívna náhlavná súprava Masívna náhlavná súprava Táto náhlavná súprava je ideálna pre použitie v hlučnom prostredí napr.",
+    "facets": "{\"kompatibilita\": [\"DP1400\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"Dvojitý jack\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na slúchadle\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmln6089",
+    "img": "/images/katalog-produktov/20336/main.webp",
+    "title": "Ukončený predaj: PMLN6089",
+    "desc": "Masívna náhlavná súprava Peltor ATEX do výbušného prostredia Masívna náhlavná súprava Peltor ATEX do výbušného prostredia Masívne slúchadlá pre&nbsp; upevnenie na prilbu &nbsp;majú certifikáciu ATEX a sú pohodlné aj pri dlhom nosení vďaka dvojbodovému systému upnutia ktoré umožňuje flexibilné a plynulé nastavenie výšky.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Modrá\"], \"konektor\": [\"J11\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na adaptéri PMLN6368\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmln6090",
+    "img": "/images/katalog-produktov/20337/main.webp",
+    "title": "Ukončený predaj: PMLN6090",
+    "desc": "Masívna náhlavná súprava Peltor ATEX do výbušného prostredia Masívna náhlavná súprava Peltor ATEX do výbušného prostredia Masívne odolné slúchadlá pre nosenie na hlave &nbsp;majú certifikáciu ATEX a sú pohodlné aj pri dlhom nosení vďaka dvojbodovému systému upnutia ktoré umožňuje flexibilné a plynulé nastavenie výšky.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Modrá\"], \"konektor\": [\"J11\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na adaptéri PMLN6368\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}",
+    "nedodavane": true
+  }
+];
+const productsHeading = "";
+const notice = "";
+const noticeDetail = "";
+const ctaHeading = "Dodávka, inštalácia a servis";
+const ctaText = "Evakuačné a varovacie systémy navrhujeme, dodávame, inštalujeme a servisujeme. Radi pripravíme riešenie pre váš objekt.";
+const metadata = {
+  "title": "Náhlavné súpravy, katalóg produktov | RKS",
+  "description": "Katalóg náhlavných súprav pre rádiostanice Motorola   Existuje celý rad užívateľov prenosných rádiostaníc.",
+  "robots": {
+    "index": false,
+    "follow": false
+  }
+};
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Produkty",
+      "item": "https://rksba.sk/produkty"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Katalóg produktov",
+      "item": "https://rksba.sk/katalog-produktov"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/radiostanice-2002"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Prenosné rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Náhlavné súpravy",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/nahlavne-supravy"
+    }
+  ]
+};
+const filters = [
+  {
+    "key": "kompatibilita",
+    "nazov": "Kompatibilita",
+    "hodnoty": [
+      {
+        "hodnota": "DP4401",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP4401e",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP4601",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP4601e",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP4801",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP4400",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DP4400e",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DP4600",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DP4600e",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DP4800",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DP4800e",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DP4801e",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DP3441",
+        "pocet": 10
+      },
+      {
+        "hodnota": "DP3441e",
+        "pocet": 10
+      },
+      {
+        "hodnota": "DP3661e",
+        "pocet": 10
+      },
+      {
+        "hodnota": "DP3400",
+        "pocet": 9
+      },
+      {
+        "hodnota": "DP3401",
+        "pocet": 9
+      },
+      {
+        "hodnota": "DP3600",
+        "pocet": 9
+      },
+      {
+        "hodnota": "DP3601",
+        "pocet": 9
+      },
+      {
+        "hodnota": "DP4401 Ex",
+        "pocet": 9
+      },
+      {
+        "hodnota": "DP4401 Ex Ma",
+        "pocet": 9
+      },
+      {
+        "hodnota": "DP4801 Ex",
+        "pocet": 9
+      },
+      {
+        "hodnota": "DP4801 Ex Ma",
+        "pocet": 9
+      },
+      {
+        "hodnota": "R7",
+        "pocet": 9
+      },
+      {
+        "hodnota": "DP2400",
+        "pocet": 8
+      },
+      {
+        "hodnota": "DP2400e",
+        "pocet": 8
+      },
+      {
+        "hodnota": "DP2600",
+        "pocet": 8
+      },
+      {
+        "hodnota": "DP2600e",
+        "pocet": 8
+      },
+      {
+        "hodnota": "R5",
+        "pocet": 7
+      },
+      {
+        "hodnota": "R7a",
+        "pocet": 7
+      },
+      {
+        "hodnota": "DP1400",
+        "pocet": 6
+      },
+      {
+        "hodnota": "ION",
+        "pocet": 4
+      },
+      {
+        "hodnota": "R2",
+        "pocet": 3
+      },
+      {
+        "hodnota": "SL2600",
+        "pocet": 2
+      },
+      {
+        "hodnota": "SL4000",
+        "pocet": 1
+      },
+      {
+        "hodnota": "SL4000e",
+        "pocet": 1
+      },
+      {
+        "hodnota": "SL4010",
+        "pocet": 1
+      },
+      {
+        "hodnota": "SL4010e",
+        "pocet": 1
+      }
+    ]
+  },
+  {
+    "key": "farba",
+    "nazov": "Farba",
+    "hodnoty": [
+      {
+        "hodnota": "Čierna",
+        "pocet": 33
+      },
+      {
+        "hodnota": "Modrá",
+        "pocet": 7
+      },
+      {
+        "hodnota": "Žltá",
+        "pocet": 3
+      }
+    ]
+  },
+  {
+    "key": "konektor",
+    "nazov": "Konektor",
+    "hodnoty": [
+      {
+        "hodnota": "12 pinový systémový",
+        "pocet": 12
+      },
+      {
+        "hodnota": "NEXUS",
+        "pocet": 9
+      },
+      {
+        "hodnota": "8 pinový systémový",
+        "pocet": 7
+      },
+      {
+        "hodnota": "Dvojitý jack",
+        "pocet": 6
+      },
+      {
+        "hodnota": "J11",
+        "pocet": 5
+      },
+      {
+        "hodnota": "GCAI Mini",
+        "pocet": 2
+      },
+      {
+        "hodnota": "13 pinový mini systémový",
+        "pocet": 1
+      },
+      {
+        "hodnota": "Iný",
+        "pocet": 1
+      }
+    ]
+  },
+  {
+    "key": "mikrofon",
+    "nazov": "Mikrofón",
+    "hodnoty": [
+      {
+        "hodnota": "Na ramienku",
+        "pocet": 41
+      },
+      {
+        "hodnota": "Na kábli",
+        "pocet": 2
+      }
+    ]
+  },
+  {
+    "key": "ptt",
+    "nazov": "PTT",
+    "hodnoty": [
+      {
+        "hodnota": "Na slúchadle",
+        "pocet": 15
+      },
+      {
+        "hodnota": "Na kábliku",
+        "pocet": 12
+      },
+      {
+        "hodnota": "Nie",
+        "pocet": 8
+      },
+      {
+        "hodnota": "Na adaptéri PMLN6368",
+        "pocet": 5
+      },
+      {
+        "hodnota": "Na adaptéri PMLN8297",
+        "pocet": 3
+      }
+    ]
+  },
+  {
+    "key": "rezim",
+    "nazov": "Režim",
+    "hodnoty": [
+      {
+        "hodnota": "Príjem cez obe slúchadlá / Vysielanie",
+        "pocet": 33
+      },
+      {
+        "hodnota": "Príjem cez jedno slúchadlo / Vysielanie",
+        "pocet": 10
+      }
+    ]
+  },
+  {
+    "key": "vox",
+    "nazov": "VOX",
+    "hodnoty": [
+      {
+        "hodnota": "Áno",
+        "pocet": 23
+      },
+      {
+        "hodnota": "Nie",
+        "pocet": 20
+      }
+    ]
+  }
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
+      <aside class="mb-8 lg:mb-0 lg:sticky lg:top-24 lg:self-start">
+        <details class="rks-cats rounded-xl border border-hairline p-4 lg:border-0 lg:p-0">
+          <summary class="rks-cats-toggle cursor-pointer font-semibold lg:hidden flex items-center justify-between gap-2 rounded-lg bg-panel-soft px-4 py-3"><span>Kategórie produktov</span><span class="rks-cats-arrow" aria-hidden="true"></span></summary>
+          <div class="rks-tree-wrap mt-3 lg:mt-0" set:html={sidebar} />
+        </details>
+      </aside>
+
+      <div class="min-w-0">
+        <nav class="text-sm text-muted mb-2" aria-label="Omrvinky">
+          {breadcrumb.map((b, i) => (
+            <>
+              {i > 0 && <span class="px-1">/</span>}
+              {b.url ? <a class="hover:underline" href={b.url}>{b.name}</a> : <span>{b.name}</span>}
+            </>
+          ))}
+        </nav>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">{heading}</h1>
+
+        {notice && (
+          <div class="mb-8 rounded-xl border border-l-4 border-hairline border-l-secondary bg-panel p-5">
+            <p class="text-lg font-semibold tracking-tight">{notice}</p>
+            {noticeDetail && <p class="text-base text-muted mt-1">{noticeDetail}</p>}
+          </div>
+        )}
+
+        {intro.map((par) => (
+          <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
+        ))}
+
+        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+
+        {subcats.length > 0 && (
+          <>
+            {subcatsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-4 mb-4">{subcatsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {subcats.map((c) => (
+                <a href={c.url} class="group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        {filters.length > 0 && (
+          <div class="rks-filter mt-8 rounded-xl border border-hairline bg-panel-soft p-5" data-rks-filter>
+            <div class="flex items-center justify-between gap-4 mb-3">
+              <h2 class="text-base font-semibold">Filtrovať podľa parametrov</h2>
+              <button type="button" class="text-sm text-link hover:underline" data-rks-reset>Zrušiť filtre</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+              {filters.map((f) => (
+                <details class="rks-facet border-t border-hairline pt-2">
+                  <summary class="cursor-pointer text-sm font-medium py-1 select-none">{f.nazov}</summary>
+                  <div class="mt-1 mb-2 space-y-1">
+                    {f.hodnoty.map((v) => (
+                      <label class="flex items-center gap-2 text-sm" data-rks-opt={f.key + '|~|' + v.hodnota}>
+                        <input type="checkbox" class="accent-primary" data-rks-f={f.key} value={v.hodnota} />
+                        <span class="flex-1">{v.hodnota}</span>
+                        <span class="text-muted text-xs tabular-nums" data-rks-cnt>{v.pocet}</span>
+                      </label>
+                    ))}
+                  </div>
+                </details>
+              ))}
+            </div>
+            <p class="text-sm text-muted mt-3" data-rks-summary></p>
+          </div>
+        )}
+
+        {products.length > 0 && (
+          <>
+            {productsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">{productsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4" data-rks-grid>
+              {products.map((c) => (
+                <a href={c.url} data-facets={c.facets} class="rks-card group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+          <h2 class="text-xl md:text-2xl font-semibold mb-3">{ctaHeading}</h2>
+          <p class="text-muted mb-6 max-w-xl mx-auto">{ctaText}</p>
+          <a href="/lp/konzultacia.html?utm_source=web&amp;utm_campaign=web" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+
+  {filters.length > 0 && (
+    <script is:inline>
+      (function () {
+        var root = document.querySelector('[data-rks-filter]');
+        var grid = document.querySelector('[data-rks-grid]');
+        if (!root || !grid) return;
+        var cards = Array.prototype.slice.call(grid.querySelectorAll('.rks-card'));
+        var boxes = Array.prototype.slice.call(root.querySelectorAll('input[data-rks-f]'));
+        var summary = root.querySelector('[data-rks-summary]');
+        var parsed = cards.map(function (c) {
+          try { return JSON.parse(c.getAttribute('data-facets') || '{}'); } catch (e) { return {}; }
+        });
+        function selection() {
+          var m = {};
+          boxes.forEach(function (b) {
+            if (b.checked) { (m[b.getAttribute('data-rks-f')] = m[b.getAttribute('data-rks-f')] || []).push(b.value); }
+          });
+          return m;
+        }
+        function matches(f, m) {
+          for (var k in m) {
+            var have = f[k] || [];
+            var ok = m[k].some(function (v) { return have.indexOf(v) !== -1; });
+            if (!ok) return false;
+          }
+          return true;
+        }
+        function apply() {
+          var m = selection(), shown = 0;
+          cards.forEach(function (c, i) {
+            var ok = matches(parsed[i], m);
+            c.style.display = ok ? '' : 'none';
+            if (ok) shown++;
+          });
+          // prepocitaj pocty: kolko by ostalo, keby sa pridala prave tato hodnota
+          root.querySelectorAll('label[data-rks-opt]').forEach(function (lab) {
+            var parts = lab.getAttribute('data-rks-opt').split('|~|');
+            var k = parts[0], v = parts[1];
+            var m2 = {}; for (var kk in m) m2[kk] = m[kk].slice();
+            m2[k] = [v];
+            var n = 0;
+            for (var i = 0; i < cards.length; i++) { if (matches(parsed[i], m2)) n++; }
+            lab.querySelector('[data-rks-cnt]').textContent = n;
+            var box = lab.querySelector('input');
+            lab.style.display = (n === 0 && !box.checked) ? 'none' : '';
+          });
+          summary.textContent = shown === cards.length
+            ? cards.length + ' produktov'
+            : shown + ' z ' + cards.length + ' produktov';
+        }
+        boxes.forEach(function (b) { b.addEventListener('change', apply); });
+        var reset = root.querySelector('[data-rks-reset]');
+        if (reset) reset.addEventListener('click', function () {
+          boxes.forEach(function (b) { b.checked = false; });
+          apply();
+        });
+        apply();
+      })();
+    </script>
+  )}
+
+  <style is:global>
+    @media (min-width: 1024px) {
+      .rks-cats > summary { display: none; }
+      .rks-cats > .rks-tree-wrap { display: block !important; }
+    }
+    .rks-tree .rks-li { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 0.5rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-leaf { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-li > .rks-link { min-width: 0; }
+    .rks-tree .rks-children { grid-column: 1 / -1; display: none; }
+    .rks-tree .rks-disc[open] ~ .rks-children { display: block; }
+    .rks-tree .rks-disc { display: inline-flex; }
+    .rks-tree summary.rks-arrow { list-style: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; color: rgba(229, 236, 246, 0.66); }
+    .rks-tree summary.rks-arrow::-webkit-details-marker { display: none; }
+    .rks-tree summary.rks-arrow::before { content: ""; border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-tree .rks-disc[open] > summary.rks-arrow::before { transform: rotate(90deg); }
+    .rks-cats-arrow::before { content: ""; display: inline-block; color: rgba(229, 236, 246, 0.66); border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-cats[open] > .rks-cats-toggle .rks-cats-arrow::before { transform: rotate(90deg); }
+  </style>
+</Layout>

@@ -1,0 +1,840 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const sidebar = "<nav class=\"rks-tree text-sm\" aria-label=\"Kategórie produktov\"><ul class=\"space-y-1\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/radiostanice-2002\" class=\"rks-link text-default hover:text-link\">Rádiostanice<span class=\"text-muted text-xs ml-2\">773</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2\" class=\"rks-link text-default hover:text-link\">Prenosné rádiostanice<span class=\"text-muted text-xs ml-2\">632</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory\" class=\"rks-link text-default hover:text-link\">Akumulátory<span class=\"text-muted text-xs ml-2\">53</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Antény (DP)<span class=\"text-muted text-xs ml-2\">58</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DP)<span class=\"text-muted text-xs ml-2\">17</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dp\" class=\"rks-link text-default hover:text-link\">Iné (DP)<span class=\"text-muted text-xs ml-2\">138</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky-mototrbo\" class=\"rks-link text-default hover:text-link\">Nabíjačky<span class=\"text-muted text-xs ml-2\">37</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie\" class=\"rks-link text-default hover:text-link\">Nosenie<span class=\"text-muted text-xs ml-2\">97</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy\" class=\"rks-link text-default hover:text-link\">Náhlavné súpravy<span class=\"text-muted text-xs ml-2\">43</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony\" class=\"rks-link text-primary font-semibold\">Repromikrofóny<span class=\"text-muted text-xs ml-2\">39</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla\" class=\"rks-link text-default hover:text-link\">Slúchadlá<span class=\"text-muted text-xs ml-2\">72</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Softvér (DP)<span class=\"text-muted text-xs ml-2\">35</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prevadzace-mototrbo\" class=\"rks-link text-default hover:text-link\">Prevádzače<span class=\"text-muted text-xs ml-2\">22</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dr\" class=\"rks-link text-default hover:text-link\">Iné (DR)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dr\" class=\"rks-link text-default hover:text-link\">Softvér (DR)<span class=\"text-muted text-xs ml-2\">13</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/vozidlove-radiostanice-mototrbo\" class=\"rks-link text-default hover:text-link\">Vozidlové rádiostanice<span class=\"text-muted text-xs ml-2\">119</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny\" class=\"rks-link text-default hover:text-link\">Antény (DM)<span class=\"text-muted text-xs ml-2\">23</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dm-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DM)<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dm\" class=\"rks-link text-default hover:text-link\">Iné (DM)<span class=\"text-muted text-xs ml-2\">22</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/instalacia\" class=\"rks-link text-default hover:text-link\">Inštalácia<span class=\"text-muted text-xs ml-2\">29</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofony\" class=\"rks-link text-default hover:text-link\">Mikrofóny<span class=\"text-muted text-xs ml-2\">13</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/napajanie\" class=\"rks-link text-default hover:text-link\">Napájanie<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/reproduktory\" class=\"rks-link text-default hover:text-link\">Reproduktory<span class=\"text-muted text-xs ml-2\">5</span></a></li></ul></li></ul></li></ul></nav>";
+const breadcrumb = [
+  {
+    "name": "Produkty",
+    "url": "/produkty"
+  },
+  {
+    "name": "Katalóg produktov",
+    "url": "/katalog-produktov"
+  },
+  {
+    "name": "Rádiostanice",
+    "url": "/katalog-produktov/kategoria/radiostanice-2002"
+  },
+  {
+    "name": "Prenosné rádiostanice",
+    "url": "/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+  },
+  {
+    "name": "Repromikrofóny",
+    "url": null
+  }
+];
+const heading = "Repromikrofóny";
+const popisHtml = "<h1>Katalóg audio príslušenstva pre rádiostanice Motorola</h1> <p>Existuje celý rad užívateľov prenosných rádiostaníc. Každý má svoje špecifické potreby, požiadavky a pracuje v rôznych podmienkach. Spoločnosť Motorola dodáva kompletné riešenie a ponúka široký výber mikrofónov, slúchadiel a reproduktorov. Profesionálni užívateľa si môžu svoje rádiostanice prispôsobiť tak, aby zabezpečovali ich individuálne potreby komunikácie aj nad rámec funkcií, ktoré obsahuje štandardná dodávka.</p> <p>Repromikrofóny (RSM) poskytujú lepší zvukový výkon a pohodlnejší prístup ku kľúčovým funkciám rádiostanice, bez nutnosti jej vybratia z opasku alebo puzdra. Motorola na uspokojenie rôznych potrieb a podmienok užívateľov ponúka široký výber repromikrofónov.</p>";
+const intro = [];
+const subcats = [];
+const subcatsHeading = "";
+const products = [
+  {
+    "url": "/katalog-produktov/nntn8382",
+    "img": "/images/katalog-produktov/20051/main.webp",
+    "title": "NNTN8382",
+    "desc": "Repromikrofón IMPRES do extrémne hlučných prevádzok Repromikrofón IMPRES do extrémne hlučných prevádzok Motorola prináša novú kategóriu repromikrofónov určených pre ťažký priemysel (INC&nbsp;RSM – Industrial Noise Cancelling Remote Speaker Microphone).",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Nie\"], \"nudzove-tlacidlo\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Áno\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Nie\"], \"krytie\": [\"IP57\"]}"
+  },
+  {
+    "url": "/katalog-produktov/nntn8383",
+    "img": "/images/katalog-produktov/20167/main.webp",
+    "title": "NNTN8383",
+    "desc": "Repromikrofón IMPRES do extrémne hlučných prevádzok s audio konektorom Repromikrofón IMPRES do extrémne hlučných prevádzok s audio konektorom Motorola prináša novú kategóriu repromikrofónov určených pre ťažký priemysel (INC&nbsp;RSM – Industrial Noise Cancelling Remote Speaker Microphone).",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Áno\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP54\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4013",
+    "img": "/images/katalog-produktov/20166/main.webp",
+    "title": "PMMN4013",
+    "desc": "Repromikrofón s audio konektorom Repromikrofón s audio konektorom Repromikrofón určený pre každodenné profesionálne použitie spolu s rádiostanicami Motorola je vybavený aj 3,5 mm konektorom pre pripojenie externého slúchadla.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"R2\"], \"konektor\": [\"Dvojitý jack\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Nie\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP54\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4024",
+    "img": "/images/katalog-produktov/20183/main.webp",
+    "title": "PMMN4024",
+    "desc": "Repromikrofón s audio konektorom Repromikrofón s audio konektorom Malý repromikrofón pre každodenné profesionálne použitie spolu s digitálnymi rádiostanicami Motorola radu DP systému MOTOTRBO je vybavený aj 3,5 mm konektorom pre pripojenie externého slúchadla.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Nie\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP54\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4025",
+    "img": "/images/katalog-produktov/20182/main.webp",
+    "title": "PMMN4025",
+    "desc": "Repromikrofón IMPRES&nbsp;s audio konektorom a núdzovým tlačidlom Repromikrofón IMPRES&nbsp;s audio konektorom a núdzovým tlačidlom Malý repromikrofón slúži pre jednoduché ovládanie rádiostanice, ktorá môže byť trvalo v puzdre a užívateľ ju ovláda PTT tlačidlom.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Nie\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP54\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4029",
+    "img": "/images/katalog-produktov/20049/main.webp",
+    "title": "PMMN4029",
+    "desc": "Repromikrofón vo vodeodolnom prevedení Repromikrofón vo vodeodolnom prevedení Repromikrofón pre každodenné profesionálne použitie.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"R2\"], \"konektor\": [\"Dvojitý jack\"], \"audio-konektor\": [\"Nie\"], \"nudzove-tlacidlo\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP57\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4040",
+    "img": "/images/katalog-produktov/20181/main.webp",
+    "title": "PMMN4040",
+    "desc": "Repromikrofón vo vodeodolnom prevedení.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Nie\"], \"nudzove-tlacidlo\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Nie\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP57\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4041",
+    "img": "/images/katalog-produktov/20180/main.webp",
+    "title": "PMMN4041",
+    "desc": "Repromikrofón IMPRES pre bezpečnostné služby Repromikrofón IMPRES pre bezpečnostné služby Veľký repromikrofón je vybavený všesmerovým mikrofónom potláčajúcim hluk vetra.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Áno\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP54\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4042",
+    "img": "/images/katalog-produktov/20179/main.webp",
+    "title": "PMMN4042",
+    "desc": "Repromikrofón IMPRES pre bezpečnostné služby Repromikrofón IMPRES pre bezpečnostné služby Veľký repromikrofón je vybavený všesmerovým mikrofónom potláčajúcim hluk vetra.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Áno\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP54\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4043",
+    "img": "/images/katalog-produktov/20178/main.webp",
+    "title": "PMMN4043",
+    "desc": "Repromikrofon IMPRES pre bezpečnostné služby Repromikrofon IMPRES pre bezpečnostné služby Veľký repromikrofón je vybavený všesmerovým mikrofónom potláčajúcim hluk vetra.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Áno\"], \"regulator-hlasitosti\": [\"Áno\"], \"redukcia-okoliteho-hluku\": [\"Nie\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP54\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4046",
+    "img": "/images/katalog-produktov/20177/main.webp",
+    "title": "PMMN4046",
+    "desc": "Repromikrofón IMPRES vo vodeodolnom prevedení s núdzovým tlačidlom Repromikrofón IMPRES vo vodeodolnom prevedení s núdzovým tlačidlom Veľký repromikrofón je určený pre jednoduché ovládanie rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Nie\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Áno\"], \"regulator-hlasitosti\": [\"Áno\"], \"redukcia-okoliteho-hluku\": [\"Nie\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP57\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4049",
+    "img": "/images/katalog-produktov/20174/main.webp",
+    "title": "PMMN4049",
+    "desc": "Repromikrofón IMPRES&nbsp;vo vodeodolnom prevedení pre bezpečnostné služby Repromikrofón IMPRES&nbsp;vo vodeodolnom prevedení pre bezpečnostné služby Veľký repromikrofón je vybavený všesmerovým mikrofónom potláčajúcim hluk vetra.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Nie\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Áno\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP57\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4050",
+    "img": "/images/katalog-produktov/20172/main.webp",
+    "title": "PMMN4050",
+    "desc": "Repromikrofón IMPRES s audiokonektorom Repromikrofón IMPRES s audiokonektorom Veľký repromikrofón určený pre jednoduché ovládanie rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Nie\"], \"krytie\": [\"IP54\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4058-mototrbo",
+    "img": "/images/katalog-produktov/20883/main.webp",
+    "title": "PMMN4058",
+    "desc": "Repromikrofón ATEX Repromikrofón ATEX Tento malý IMPRES repromikrofón určený do prostredia s nebezpečenstvom výbuchu zaisťuje bezproblémovú komunikáciu.&nbsp;Má tiež ovládanie hlasitosti a núdzové tlačidlo , čo umožňuje rýchly a jednoduchý prístup k dôležitým funkciám aj pri nosení hrubých rukavíc.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Nie\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Áno\"], \"redukcia-okoliteho-hluku\": [\"Nie\"], \"windporting\": [\"Nie\"], \"krytie\": [\"IP64\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4067",
+    "img": "/images/katalog-produktov/20341/main.webp",
+    "title": "PMMN4067",
+    "desc": "Repromikrofón ATEX Repromikrofón ATEX Tento IMPRES repromikrofón zaisťuje bezproblémovú komunikáciu - dôležitú pri prevádzke žeriavu alebo oprave potrubia.&nbsp; Repromikrofón je vybavený novou Windporting &nbsp;technológiu, ktorá veľmi kvalitne potláča hluk spôsobený vetrom, ktorý sa inak dostáva do prenášaného hovoru pri použití štandardných mikrofónov.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Nie\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Áno\"], \"regulator-hlasitosti\": [\"Áno\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP64\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4071",
+    "img": "/images/katalog-produktov/20173/main.webp",
+    "title": "PMMN4071",
+    "desc": "Repromikrofón IMPRES&nbsp;s audio konektorom Repromikrofón IMPRES &nbsp;s audio konektorom Veľký repromikrofón pre každodenné profesionálne použitie spolu s digitálnymi rádiostanicami Motorola je vybavený aj 3,5 mm konektorom pre pripojenie externého slúchadla.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"konektor\": [\"8 pinový systémový\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP54\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4073",
+    "img": "/images/katalog-produktov/20171/main.webp",
+    "title": "PMMN4073",
+    "desc": "Repromikrofón IMPRES s audio konektorom Repromikrofón IMPRES s audio konektorom Malý repromikrofón pre každodenné profesionálne použitie spolu s digitálnymi rádiostanicami Motorola je vybavený aj 3,5 mm konektorom pre pripojenie externého slúchadla.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"konektor\": [\"8 pinový systémový\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Nie\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP55\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4075",
+    "img": "/images/katalog-produktov/20170/main.webp",
+    "title": "PMMN4075",
+    "desc": "Repromikrofón vo vodeodolnom prevedení.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"konektor\": [\"8 pinový systémový\"], \"audio-konektor\": [\"Nie\"], \"nudzove-tlacidlo\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Nie\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP57\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4076",
+    "img": "/images/katalog-produktov/20050/main.webp",
+    "title": "PMMN4076",
+    "desc": "Repromikrofón s audio konektorom Repromikrofón s audio konektorom Malý repromikrofón pre každodenné profesionálne použitie s digitálnymi rádiostanicami Motorola Mototrbo.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"konektor\": [\"8 pinový systémový\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Nie\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP54\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4092",
+    "img": "/images/katalog-produktov/20165/main.webp",
+    "title": "PMMN4092",
+    "desc": "Repromikrofón Mag One Repromikrofón Mag One Repromikrofón umožňuje jednoduché ovládanie rádiostanice, ktorá môže byť trvalo v puzdre a užívateľ ju ovláda z odeleného repromikrofónu PTT tlačidlom.&nbsp;Po pripojení repromikrofónu je vstavaný reproduktor v rádiostanici automaticky odpojený a prijímaný audio signál je počuť z repromikrofónu.",
+    "facets": "{\"kompatibilita\": [\"DP1400\"], \"konektor\": [\"Dvojitý jack\"], \"audio-konektor\": [\"Nie\"], \"nudzove-tlacidlo\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Nie\"], \"windporting\": [\"Nie\"], \"krytie\": [\"neuvedené\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4094",
+    "img": "/images/katalog-produktov/20517/main.webp",
+    "title": "PMMN4094",
+    "desc": "Repromikrofón do výbušného prostredia Repromikrofón do výbušného prostredia Tento ATEX repromikrofón zaisťuje bezproblémovú komunikáciu ktorá je dôležitá napr.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Áno\"], \"regulator-hlasitosti\": [\"Áno\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP67\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4099",
+    "img": "/images/katalog-produktov/20608/main.webp",
+    "title": "PMMN4099",
+    "desc": "Repromikrofón vo vodeodolnom prevedení.",
+    "facets": "{\"kompatibilita\": [\"DP4400e\", \"DP4401e\", \"DP4600e\", \"DP4601e\", \"DP4800e\", \"DP4801e\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Áno\"], \"regulator-hlasitosti\": [\"Áno\"], \"redukcia-okoliteho-hluku\": [\"Nie\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP68\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4102",
+    "img": "/images/katalog-produktov/20856/main.webp",
+    "title": "PMMN4102",
+    "desc": "Repromikrofón IMPRES s audio konektorom a núdzovým tlačidlom vo vodeodolnom prevedení &nbsp;Repromikrofón IMPRES s audio konektorom a núdzovým tlačidlom vo vodeodolnom prevedení Tento robustný repromikrofón zaisťuje bezproblémovú komunikáciu ktorá je dôležitá napr.",
+    "facets": "{\"kompatibilita\": [\"DP4400e\", \"DP4401e\", \"DP4600e\", \"DP4601e\", \"DP4800e\", \"DP4801e\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Áno\"], \"regulator-hlasitosti\": [\"Áno\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP67\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4108",
+    "img": "/images/katalog-produktov/20530/main.webp",
+    "title": "PMMN4108",
+    "desc": "Repromikrofón IMPRES&nbsp;s krytím IP67 Repromikrofón IMPRES &nbsp;s krytím IP67 Veľký robustný repromikrofón ponúka vodotesné krytie IP67 a je navrhnutý tak, aby vydržal nepriaznivé a extrémne podmienky , čím umožňuje užívateľom zostať v spojení v náročných pracovných prostrediach .",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"konektor\": [\"8 pinový systémový\"], \"audio-konektor\": [\"Nie\"], \"nudzove-tlacidlo\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Nie\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP67\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4110",
+    "img": "/images/katalog-produktov/20860/main.webp",
+    "title": "PMMN4110",
+    "desc": "Repromikrofón do výbušného prostredia Repromikrofón&nbsp;do výbušného prostredia Tento ATEX robustný repromikrofón zaisťuje bezproblémovú komunikáciu ktorá je dôležitá v prostredí s prítomnosťou horľavých alebo výbušných plynov.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Áno\"], \"regulator-hlasitosti\": [\"Áno\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP67\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4113",
+    "img": "/images/katalog-produktov/20861/main.webp",
+    "title": "PMMN4113",
+    "desc": "Repromikrofón IMPRES s audio konektorom a núdzovým tlačidlom vo vodeodolnom prevedení Repromikrofón IMPRES s audio konektorom a núdzovým tlačidlom vo vodeodolnom prevedení Tento robustný repromikrofón zaisťuje bezproblémovú komunikáciu ktorá je dôležitá napr.",
+    "facets": "{\"kompatibilita\": [\"DP4400e\", \"DP4401e\", \"DP4600e\", \"DP4601e\", \"DP4800e\", \"DP4801e\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Áno\"], \"regulator-hlasitosti\": [\"Áno\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP67\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4125",
+    "img": "/images/katalog-produktov/21068/main.webp",
+    "title": "PMMN4125",
+    "desc": "RSM RM250 RSM RM250 Repromikrofón určený pre každodenné profesionálne použitie spolu s rádiostanicami Motorola je vybavený aj 3,5 mm konektorom pre pripojenie externého slúchadla.",
+    "facets": "{\"kompatibilita\": [\"SL1600\", \"SL2600\"], \"konektor\": [\"Trojitý jack\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Nie\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP67\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4128",
+    "img": "/images/katalog-produktov/20918/main.webp",
+    "title": "PMMN4128",
+    "desc": "RSM RM780 RSM RM780 Motorola prináša pre nový rad rádiostaníc ION a R7 taktiež nové príslušenstvo.",
+    "facets": "{\"kompatibilita\": [\"ION\", \"R7\", \"R7a\"], \"konektor\": [\"GCAI Mini\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Áno\"], \"regulator-hlasitosti\": [\"Áno\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP68\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4131",
+    "img": "/images/katalog-produktov/20947/main.webp",
+    "title": "PMMN4131",
+    "desc": "RSM RM730 RSM RM730 Motorola prináša pre nový rad rádiostaníc ION a R7 taktiež nové príslušenstvo.",
+    "facets": "{\"kompatibilita\": [\"ION\", \"R7\", \"R7a\"], \"konektor\": [\"GCAI Mini\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP68\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4140",
+    "img": "/images/katalog-produktov/20948/main.webp",
+    "title": "PMMN4140",
+    "desc": "RSM RM760 RSM RM760 Motorola prináša pre nový rad rádiostaníc ION a R7 taktiež nové príslušenstvo.",
+    "facets": "{\"kompatibilita\": [\"ION\", \"R7\", \"R7a\"], \"konektor\": [\"GCAI Mini\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP68\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4148",
+    "img": "/images/katalog-produktov/20991/main.webp",
+    "title": "PMMN4148",
+    "desc": "RSM RM110 RSM RM110 Repromikrofón určený pre každodenné profesionálne použitie spolu s rádiostanicami Motorola je vybavený aj 3,5 mm konektorom pre pripojenie externého slúchadla.",
+    "facets": "{\"kompatibilita\": [\"R2\"], \"konektor\": [\"Dvojitý jack\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Nie\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP55\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4150bg",
+    "img": "/images/katalog-produktov/21046/main.webp",
+    "title": "PMMN4150 BG",
+    "desc": "RSM NS750 (zeleno-čierny) RSM NS750 (zeleno-čierny, dlhá šnúra) Motorola prináša pre nový rad rádiostaníc R7 taktiež nové príslušenstvo.",
+    "facets": "{\"kompatibilita\": [\"ION\", \"R7\"], \"konektor\": [\"GCAI Mini\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Áno\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP68\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4150bk",
+    "img": "/images/katalog-produktov/21047/main.webp",
+    "title": "PMMN4150 BK",
+    "desc": "RSM NS750 (čierny) RSM NS750 (čierny, dlhá šnúra) Motorola prináša pre nový rad rádiostaníc R7 taktiež nové príslušenstvo.",
+    "facets": "{\"kompatibilita\": [\"ION\", \"R7\"], \"konektor\": [\"GCAI Mini\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Áno\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP68\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4151bg",
+    "img": "/images/katalog-produktov/21048/main.webp",
+    "title": "PMMN4151 BG",
+    "desc": "RSM NS750 (zeleno-čierny) RSM NS750 (zeleno-čierny, krátka šnúra) Motorola prináša pre nový rad rádiostaníc R7 taktiež nové príslušenstvo.",
+    "facets": "{\"kompatibilita\": [\"ION\", \"R7\"], \"konektor\": [\"GCAI Mini\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Áno\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP68\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4151-bk",
+    "img": "/images/katalog-produktov/21049/main.webp",
+    "title": "PMMN4151 BK",
+    "desc": "RSM NS750 (čierny) RSM NS750 (čierny, krátka šnúra) Motorola prináša pre nový rad rádiostaníc R7 taktiež nové príslušenstvo.",
+    "facets": "{\"kompatibilita\": [\"ION\", \"R7\"], \"konektor\": [\"GCAI Mini\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Áno\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Áno\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP68\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4170",
+    "img": "/images/katalog-produktov/21010/main.webp",
+    "title": "PMMN4170",
+    "desc": "RSM RM560 RSM RM560 Veľký repromikrofón určený pre každodenné profesionálne použitie spolu s rádiostanicami Motorola je vybavený aj 3,5 mm konektorom pre pripojenie externého slúchadla.",
+    "facets": "{\"kompatibilita\": [\"R5\"], \"konektor\": [\"8 pinový systémový\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Nie\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP67\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4171",
+    "img": "/images/katalog-produktov/21009/main.webp",
+    "title": "PMMN4171",
+    "desc": "RSM RM530 RSM RM530 Malý repromikrofón určený pre každodenné profesionálne použitie spolu s rádiostanicami Motorola je vybavený aj 3,5 mm konektorom pre pripojenie externého slúchadla.",
+    "facets": "{\"kompatibilita\": [\"R5\"], \"konektor\": [\"8 pinový systémový\"], \"audio-konektor\": [\"Áno\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Nie\"], \"redukcia-okoliteho-hluku\": [\"Nie\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP67\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmmn4047",
+    "img": "/images/katalog-produktov/20176/main.webp",
+    "title": "Ukončený predaj PMMN4047",
+    "desc": "Repromikrofón IMPRES vo vodeodolnom prevedení pre bezpečnostné služby Repromikrofón IMPRES vo vodeodolnom prevedení pre bezpečnostné služby Veľký repromikrofón je vybavený všesmerovým mikrofónom potláčajúcim hluk vetra.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Nie\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Áno\"], \"redukcia-okoliteho-hluku\": [\"Nie\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP57\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmmn4048",
+    "img": "/images/katalog-produktov/20175/main.webp",
+    "title": "Ukončený predaj PMMN4048",
+    "desc": "Repromikrofón IMPRES&nbsp;vo vodeodolnom prevedení pre bezpečnostné služby Repromikrofón IMPRES&nbsp;vo vodeodolnom prevedení pre bezpečnostné služby Veľký repromikrofón je vybavený všesmerovým mikrofónom potláčajúcim hluk vetra.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"konektor\": [\"12 pinový systémový\"], \"audio-konektor\": [\"Nie\"], \"nudzove-tlacidlo\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Nie\"], \"regulator-hlasitosti\": [\"Áno\"], \"redukcia-okoliteho-hluku\": [\"Nie\"], \"windporting\": [\"Áno\"], \"krytie\": [\"IP57\"]}",
+    "nedodavane": true
+  }
+];
+const productsHeading = "";
+const notice = "";
+const noticeDetail = "";
+const ctaHeading = "Dodávka, inštalácia a servis";
+const ctaText = "Evakuačné a varovacie systémy navrhujeme, dodávame, inštalujeme a servisujeme. Radi pripravíme riešenie pre váš objekt.";
+const metadata = {
+  "title": "Repromikrofóny, katalóg produktov | RKS",
+  "description": "Katalóg audio príslušenstva pre rádiostanice Motorola   Existuje celý rad užívateľov prenosných rádiostaníc.",
+  "robots": {
+    "index": false,
+    "follow": false
+  }
+};
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Produkty",
+      "item": "https://rksba.sk/produkty"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Katalóg produktov",
+      "item": "https://rksba.sk/katalog-produktov"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/radiostanice-2002"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Prenosné rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Repromikrofóny",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/repromikrofony"
+    }
+  ]
+};
+const filters = [
+  {
+    "key": "kompatibilita",
+    "nazov": "Kompatibilita",
+    "hodnoty": [
+      {
+        "hodnota": "DP3400",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DP3401",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DP3600",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DP3601",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DP4400e",
+        "pocet": 10
+      },
+      {
+        "hodnota": "DP4401e",
+        "pocet": 10
+      },
+      {
+        "hodnota": "DP4600e",
+        "pocet": 10
+      },
+      {
+        "hodnota": "DP4601e",
+        "pocet": 10
+      },
+      {
+        "hodnota": "DP4800e",
+        "pocet": 10
+      },
+      {
+        "hodnota": "DP4801e",
+        "pocet": 10
+      },
+      {
+        "hodnota": "DP4400",
+        "pocet": 7
+      },
+      {
+        "hodnota": "DP4401",
+        "pocet": 7
+      },
+      {
+        "hodnota": "DP4600",
+        "pocet": 7
+      },
+      {
+        "hodnota": "DP4601",
+        "pocet": 7
+      },
+      {
+        "hodnota": "DP4800",
+        "pocet": 7
+      },
+      {
+        "hodnota": "DP4801",
+        "pocet": 7
+      },
+      {
+        "hodnota": "ION",
+        "pocet": 7
+      },
+      {
+        "hodnota": "R5",
+        "pocet": 7
+      },
+      {
+        "hodnota": "R7",
+        "pocet": 7
+      },
+      {
+        "hodnota": "DP3441",
+        "pocet": 6
+      },
+      {
+        "hodnota": "DP3441e",
+        "pocet": 6
+      },
+      {
+        "hodnota": "DP3661e",
+        "pocet": 6
+      },
+      {
+        "hodnota": "DP2400",
+        "pocet": 5
+      },
+      {
+        "hodnota": "DP2400e",
+        "pocet": 5
+      },
+      {
+        "hodnota": "DP2600",
+        "pocet": 5
+      },
+      {
+        "hodnota": "DP2600e",
+        "pocet": 5
+      },
+      {
+        "hodnota": "DP4401 Ex",
+        "pocet": 5
+      },
+      {
+        "hodnota": "DP4401 Ex Ma",
+        "pocet": 5
+      },
+      {
+        "hodnota": "DP4801 Ex",
+        "pocet": 5
+      },
+      {
+        "hodnota": "DP4801 Ex Ma",
+        "pocet": 5
+      },
+      {
+        "hodnota": "DP1400",
+        "pocet": 3
+      },
+      {
+        "hodnota": "R2",
+        "pocet": 3
+      },
+      {
+        "hodnota": "R7a",
+        "pocet": 3
+      },
+      {
+        "hodnota": "SL1600",
+        "pocet": 1
+      },
+      {
+        "hodnota": "SL2600",
+        "pocet": 1
+      }
+    ]
+  },
+  {
+    "key": "audio-konektor",
+    "nazov": "Audio konektor",
+    "hodnoty": [
+      {
+        "hodnota": "Áno",
+        "pocet": 27
+      },
+      {
+        "hodnota": "Nie",
+        "pocet": 12
+      }
+    ]
+  },
+  {
+    "key": "konektor",
+    "nazov": "Konektor",
+    "hodnoty": [
+      {
+        "hodnota": "12 pinový systémový",
+        "pocet": 20
+      },
+      {
+        "hodnota": "8 pinový systémový",
+        "pocet": 7
+      },
+      {
+        "hodnota": "GCAI Mini",
+        "pocet": 7
+      },
+      {
+        "hodnota": "Dvojitý jack",
+        "pocet": 4
+      },
+      {
+        "hodnota": "Trojitý jack",
+        "pocet": 1
+      }
+    ]
+  },
+  {
+    "key": "krytie",
+    "nazov": "Krytie",
+    "hodnoty": [
+      {
+        "hodnota": "IP54",
+        "pocet": 10
+      },
+      {
+        "hodnota": "IP57",
+        "pocet": 8
+      },
+      {
+        "hodnota": "IP67",
+        "pocet": 8
+      },
+      {
+        "hodnota": "IP68",
+        "pocet": 8
+      },
+      {
+        "hodnota": "IP55",
+        "pocet": 2
+      },
+      {
+        "hodnota": "IP64",
+        "pocet": 2
+      },
+      {
+        "hodnota": "neuvedené",
+        "pocet": 1
+      }
+    ]
+  },
+  {
+    "key": "nudzove-tlacidlo",
+    "nazov": "Núdzové tlačidlo",
+    "hodnoty": [
+      {
+        "hodnota": "Áno",
+        "pocet": 23
+      },
+      {
+        "hodnota": "Nie",
+        "pocet": 16
+      }
+    ]
+  },
+  {
+    "key": "programovatelne-tlacidlo",
+    "nazov": "Programovateľné tlačidlo",
+    "hodnoty": [
+      {
+        "hodnota": "Nie",
+        "pocet": 26
+      },
+      {
+        "hodnota": "Áno",
+        "pocet": 13
+      }
+    ]
+  },
+  {
+    "key": "redukcia-okoliteho-hluku",
+    "nazov": "Redukcia okolitého hluku",
+    "hodnoty": [
+      {
+        "hodnota": "Áno",
+        "pocet": 20
+      },
+      {
+        "hodnota": "Nie",
+        "pocet": 19
+      }
+    ]
+  },
+  {
+    "key": "regulator-hlasitosti",
+    "nazov": "Regulátor hlasitosti",
+    "hodnoty": [
+      {
+        "hodnota": "Nie",
+        "pocet": 22
+      },
+      {
+        "hodnota": "Áno",
+        "pocet": 17
+      }
+    ]
+  },
+  {
+    "key": "windporting",
+    "nazov": "Windporting",
+    "hodnoty": [
+      {
+        "hodnota": "Áno",
+        "pocet": 35
+      },
+      {
+        "hodnota": "Nie",
+        "pocet": 4
+      }
+    ]
+  }
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
+      <aside class="mb-8 lg:mb-0 lg:sticky lg:top-24 lg:self-start">
+        <details class="rks-cats rounded-xl border border-hairline p-4 lg:border-0 lg:p-0">
+          <summary class="rks-cats-toggle cursor-pointer font-semibold lg:hidden flex items-center justify-between gap-2 rounded-lg bg-panel-soft px-4 py-3"><span>Kategórie produktov</span><span class="rks-cats-arrow" aria-hidden="true"></span></summary>
+          <div class="rks-tree-wrap mt-3 lg:mt-0" set:html={sidebar} />
+        </details>
+      </aside>
+
+      <div class="min-w-0">
+        <nav class="text-sm text-muted mb-2" aria-label="Omrvinky">
+          {breadcrumb.map((b, i) => (
+            <>
+              {i > 0 && <span class="px-1">/</span>}
+              {b.url ? <a class="hover:underline" href={b.url}>{b.name}</a> : <span>{b.name}</span>}
+            </>
+          ))}
+        </nav>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">{heading}</h1>
+
+        {notice && (
+          <div class="mb-8 rounded-xl border border-l-4 border-hairline border-l-secondary bg-panel p-5">
+            <p class="text-lg font-semibold tracking-tight">{notice}</p>
+            {noticeDetail && <p class="text-base text-muted mt-1">{noticeDetail}</p>}
+          </div>
+        )}
+
+        {intro.map((par) => (
+          <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
+        ))}
+
+        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+
+        {subcats.length > 0 && (
+          <>
+            {subcatsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-4 mb-4">{subcatsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {subcats.map((c) => (
+                <a href={c.url} class="group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        {filters.length > 0 && (
+          <div class="rks-filter mt-8 rounded-xl border border-hairline bg-panel-soft p-5" data-rks-filter>
+            <div class="flex items-center justify-between gap-4 mb-3">
+              <h2 class="text-base font-semibold">Filtrovať podľa parametrov</h2>
+              <button type="button" class="text-sm text-link hover:underline" data-rks-reset>Zrušiť filtre</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+              {filters.map((f) => (
+                <details class="rks-facet border-t border-hairline pt-2">
+                  <summary class="cursor-pointer text-sm font-medium py-1 select-none">{f.nazov}</summary>
+                  <div class="mt-1 mb-2 space-y-1">
+                    {f.hodnoty.map((v) => (
+                      <label class="flex items-center gap-2 text-sm" data-rks-opt={f.key + '|~|' + v.hodnota}>
+                        <input type="checkbox" class="accent-primary" data-rks-f={f.key} value={v.hodnota} />
+                        <span class="flex-1">{v.hodnota}</span>
+                        <span class="text-muted text-xs tabular-nums" data-rks-cnt>{v.pocet}</span>
+                      </label>
+                    ))}
+                  </div>
+                </details>
+              ))}
+            </div>
+            <p class="text-sm text-muted mt-3" data-rks-summary></p>
+          </div>
+        )}
+
+        {products.length > 0 && (
+          <>
+            {productsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">{productsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4" data-rks-grid>
+              {products.map((c) => (
+                <a href={c.url} data-facets={c.facets} class="rks-card group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+          <h2 class="text-xl md:text-2xl font-semibold mb-3">{ctaHeading}</h2>
+          <p class="text-muted mb-6 max-w-xl mx-auto">{ctaText}</p>
+          <a href="/lp/konzultacia.html?utm_source=web&amp;utm_campaign=web" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+
+  {filters.length > 0 && (
+    <script is:inline>
+      (function () {
+        var root = document.querySelector('[data-rks-filter]');
+        var grid = document.querySelector('[data-rks-grid]');
+        if (!root || !grid) return;
+        var cards = Array.prototype.slice.call(grid.querySelectorAll('.rks-card'));
+        var boxes = Array.prototype.slice.call(root.querySelectorAll('input[data-rks-f]'));
+        var summary = root.querySelector('[data-rks-summary]');
+        var parsed = cards.map(function (c) {
+          try { return JSON.parse(c.getAttribute('data-facets') || '{}'); } catch (e) { return {}; }
+        });
+        function selection() {
+          var m = {};
+          boxes.forEach(function (b) {
+            if (b.checked) { (m[b.getAttribute('data-rks-f')] = m[b.getAttribute('data-rks-f')] || []).push(b.value); }
+          });
+          return m;
+        }
+        function matches(f, m) {
+          for (var k in m) {
+            var have = f[k] || [];
+            var ok = m[k].some(function (v) { return have.indexOf(v) !== -1; });
+            if (!ok) return false;
+          }
+          return true;
+        }
+        function apply() {
+          var m = selection(), shown = 0;
+          cards.forEach(function (c, i) {
+            var ok = matches(parsed[i], m);
+            c.style.display = ok ? '' : 'none';
+            if (ok) shown++;
+          });
+          // prepocitaj pocty: kolko by ostalo, keby sa pridala prave tato hodnota
+          root.querySelectorAll('label[data-rks-opt]').forEach(function (lab) {
+            var parts = lab.getAttribute('data-rks-opt').split('|~|');
+            var k = parts[0], v = parts[1];
+            var m2 = {}; for (var kk in m) m2[kk] = m[kk].slice();
+            m2[k] = [v];
+            var n = 0;
+            for (var i = 0; i < cards.length; i++) { if (matches(parsed[i], m2)) n++; }
+            lab.querySelector('[data-rks-cnt]').textContent = n;
+            var box = lab.querySelector('input');
+            lab.style.display = (n === 0 && !box.checked) ? 'none' : '';
+          });
+          summary.textContent = shown === cards.length
+            ? cards.length + ' produktov'
+            : shown + ' z ' + cards.length + ' produktov';
+        }
+        boxes.forEach(function (b) { b.addEventListener('change', apply); });
+        var reset = root.querySelector('[data-rks-reset]');
+        if (reset) reset.addEventListener('click', function () {
+          boxes.forEach(function (b) { b.checked = false; });
+          apply();
+        });
+        apply();
+      })();
+    </script>
+  )}
+
+  <style is:global>
+    @media (min-width: 1024px) {
+      .rks-cats > summary { display: none; }
+      .rks-cats > .rks-tree-wrap { display: block !important; }
+    }
+    .rks-tree .rks-li { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 0.5rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-leaf { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-li > .rks-link { min-width: 0; }
+    .rks-tree .rks-children { grid-column: 1 / -1; display: none; }
+    .rks-tree .rks-disc[open] ~ .rks-children { display: block; }
+    .rks-tree .rks-disc { display: inline-flex; }
+    .rks-tree summary.rks-arrow { list-style: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; color: rgba(229, 236, 246, 0.66); }
+    .rks-tree summary.rks-arrow::-webkit-details-marker { display: none; }
+    .rks-tree summary.rks-arrow::before { content: ""; border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-tree .rks-disc[open] > summary.rks-arrow::before { transform: rotate(90deg); }
+    .rks-cats-arrow::before { content: ""; display: inline-block; color: rgba(229, 236, 246, 0.66); border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-cats[open] > .rks-cats-toggle .rks-cats-arrow::before { transform: rotate(90deg); }
+  </style>
+</Layout>

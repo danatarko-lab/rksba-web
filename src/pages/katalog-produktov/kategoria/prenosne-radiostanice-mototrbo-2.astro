@@ -1,0 +1,923 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const sidebar = "<nav class=\"rks-tree text-sm\" aria-label=\"Kategórie produktov\"><ul class=\"space-y-1\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/radiostanice-2002\" class=\"rks-link text-default hover:text-link\">Rádiostanice<span class=\"text-muted text-xs ml-2\">773</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2\" class=\"rks-link text-primary font-semibold\">Prenosné rádiostanice<span class=\"text-muted text-xs ml-2\">632</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory\" class=\"rks-link text-default hover:text-link\">Akumulátory<span class=\"text-muted text-xs ml-2\">53</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Antény (DP)<span class=\"text-muted text-xs ml-2\">58</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DP)<span class=\"text-muted text-xs ml-2\">17</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dp\" class=\"rks-link text-default hover:text-link\">Iné (DP)<span class=\"text-muted text-xs ml-2\">138</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky-mototrbo\" class=\"rks-link text-default hover:text-link\">Nabíjačky<span class=\"text-muted text-xs ml-2\">37</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie\" class=\"rks-link text-default hover:text-link\">Nosenie<span class=\"text-muted text-xs ml-2\">97</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy\" class=\"rks-link text-default hover:text-link\">Náhlavné súpravy<span class=\"text-muted text-xs ml-2\">43</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony\" class=\"rks-link text-default hover:text-link\">Repromikrofóny<span class=\"text-muted text-xs ml-2\">39</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla\" class=\"rks-link text-default hover:text-link\">Slúchadlá<span class=\"text-muted text-xs ml-2\">72</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Softvér (DP)<span class=\"text-muted text-xs ml-2\">35</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prevadzace-mototrbo\" class=\"rks-link text-default hover:text-link\">Prevádzače<span class=\"text-muted text-xs ml-2\">22</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dr\" class=\"rks-link text-default hover:text-link\">Iné (DR)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dr\" class=\"rks-link text-default hover:text-link\">Softvér (DR)<span class=\"text-muted text-xs ml-2\">13</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/vozidlove-radiostanice-mototrbo\" class=\"rks-link text-default hover:text-link\">Vozidlové rádiostanice<span class=\"text-muted text-xs ml-2\">119</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny\" class=\"rks-link text-default hover:text-link\">Antény (DM)<span class=\"text-muted text-xs ml-2\">23</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dm-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DM)<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dm\" class=\"rks-link text-default hover:text-link\">Iné (DM)<span class=\"text-muted text-xs ml-2\">22</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/instalacia\" class=\"rks-link text-default hover:text-link\">Inštalácia<span class=\"text-muted text-xs ml-2\">29</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofony\" class=\"rks-link text-default hover:text-link\">Mikrofóny<span class=\"text-muted text-xs ml-2\">13</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/napajanie\" class=\"rks-link text-default hover:text-link\">Napájanie<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/reproduktory\" class=\"rks-link text-default hover:text-link\">Reproduktory<span class=\"text-muted text-xs ml-2\">5</span></a></li></ul></li></ul></li></ul></nav>";
+const breadcrumb = [
+  {
+    "name": "Produkty",
+    "url": "/produkty"
+  },
+  {
+    "name": "Katalóg produktov",
+    "url": "/katalog-produktov"
+  },
+  {
+    "name": "Rádiostanice",
+    "url": "/katalog-produktov/kategoria/radiostanice-2002"
+  },
+  {
+    "name": "Prenosné rádiostanice",
+    "url": null
+  }
+];
+const heading = "Prenosné rádiostanice";
+const popisHtml = "<h1>Prenosné rádiostanice</h1> <p>Najvyššia digitálna modelová rada profesionálnych rádiostaníc Motorola DP - MOTOTRBO je dnes štandardom pre najvýkonnejšiu bezdrôtovú komunikáciu. Rádiostanice umožňujú okrem digitálnej prevádzky aj prevádzku analógovú. Okrem základných funkcií umožňujú rádiostanice rady Motorola DP a SL prenášať aj krátke textové správy (podobné SMS) a dáta. Najčastejšie sú využívané veľkými firmami a organizáciami a zložkami integrovaného záchranného systému. Modely so vstavaným GPS modulom môžu byť využité aj pre sledovanie pozície rádiostanice.</p> <p><span>Porovnanie parametrov jednotlivých modelov nájdete v nasledujúcej&nbsp;</span><a href=\"images/files/Compare_table.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">tabuľke</a><span>.</span></p> <p>&nbsp;Porovnanie veľkostí jednotlivých modelov je na nasledujúcom obrázku (kliknutím sa obrázok zväčší)</p> <p>page17</p>";
+const intro = [];
+const subcats = [
+  {
+    "url": "/katalog-produktov/kategoria/akumulatory",
+    "img": "/images/katalog-produktov/20032/main.webp",
+    "title": "Akumulátory",
+    "desc": "Produktov v archíve: 53"
+  },
+  {
+    "url": "/katalog-produktov/kategoria/anteny-dp-mototrbo",
+    "img": "/images/katalog-produktov/20036/main.webp",
+    "title": "Antény (DP)",
+    "desc": "Produktov v archíve: 58"
+  },
+  {
+    "url": "/katalog-produktov/kategoria/bluetooth-dp-mototrbo",
+    "img": "/images/katalog-produktov/20055/main.webp",
+    "title": "Bluetooth (DP)",
+    "desc": "Produktov v archíve: 17"
+  },
+  {
+    "url": "/katalog-produktov/kategoria/ine-dp",
+    "img": "/images/katalog-produktov/20040/main.webp",
+    "title": "Iné (DP)",
+    "desc": "Produktov v archíve: 138"
+  },
+  {
+    "url": "/katalog-produktov/kategoria/nabijacky-mototrbo",
+    "img": "/images/katalog-produktov/20039/main.webp",
+    "title": "Nabíjačky",
+    "desc": "Produktov v archíve: 37"
+  },
+  {
+    "url": "/katalog-produktov/kategoria/nosenie",
+    "img": "/images/katalog-produktov/20046/main.webp",
+    "title": "Nosenie",
+    "desc": "Produktov v archíve: 97"
+  },
+  {
+    "url": "/katalog-produktov/kategoria/nahlavne-supravy",
+    "img": "/images/katalog-produktov/20043/main.webp",
+    "title": "Náhlavné súpravy",
+    "desc": "Produktov v archíve: 43"
+  },
+  {
+    "url": "/katalog-produktov/kategoria/repromikrofony",
+    "img": "/images/katalog-produktov/20049/main.webp",
+    "title": "Repromikrofóny",
+    "desc": "Produktov v archíve: 39"
+  },
+  {
+    "url": "/katalog-produktov/kategoria/sluchadla",
+    "img": "/images/katalog-produktov/20052/main.webp",
+    "title": "Slúchadlá",
+    "desc": "Produktov v archíve: 72"
+  },
+  {
+    "url": "/katalog-produktov/kategoria/softver-dp-mototrbo",
+    "img": "/images/katalog-produktov/20058/main.webp",
+    "title": "Softvér (DP)",
+    "desc": "Produktov v archíve: 35"
+  }
+];
+const subcatsHeading = "Podkategórie";
+const products = [
+  {
+    "url": "/katalog-produktov/motorola-dp3441e",
+    "img": "/images/katalog-produktov/20545/main.webp",
+    "title": "Motorola DP3441e",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 32 kanálov, 2 programovateľné tlačidlá, bez displeja, GPS prijímač, Bluetooth, krytie IP68 Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 32 kanálov, 2 programovateľné tlačidlá, bez displeja, signalizácia ETSI-TS102&nbsp;361, MDC1200,&nbsp;GPS prijímač, Bluetooth, krytie IP68 Nová generácia rádiostaníc DP3441e nahrádza model DP3441 pričom ponúka nové funkcie: Integrovaná Wi-Fi, Man down, sledovanie pohybu rádiostanice vo vnútri objektov, rozšírenú pamäť (128MB RAM a 256 MB Flash), zvýšené krytie z IP67 na IP68, vylepšené audio vlastnosti, zlepšený dosah, zlepšená výdrž akumulátorov, podpora IMPRES akumulátorov.",
+    "facets": "{\"pocet-kanalov\": [\"32\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Nie\"], \"displej\": [\"bez displeja\"], \"programovatelne-tlacidla\": [\"2\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Áno\"], \"navigacny-system\": [\"GPS/GLONASS\"], \"krytie\": [\"IP68\"]}"
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp3661e",
+    "img": "/images/katalog-produktov/20599/main.webp",
+    "title": "Motorola DP3661e",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 4 programovateľné tlačidlá, 5 riadkový displej, GPS prijímač, Bluetooth, krytie IP68 Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 4 programovateľné tlačidlá, 5 riadkový farebný LCD displej, signalizácia ETSI-TS102&nbsp;361-1,-2,-3, GPS prijímač, Bluetooth, krytie IP68 Nová model rozširuje rad kompaktných a odolných rádiostaníc o verziu s displejom.",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Menu\"], \"displej\": [\"5 riadkový LCD farebný\"], \"programovatelne-tlacidla\": [\"4\"], \"signalizacia\": [\"ETSI-TS102 361\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Áno\"], \"navigacny-system\": [\"GPS/GLONASS\"], \"krytie\": [\"IP68\"]}"
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp4401-ex",
+    "img": "/images/katalog-produktov/20014/main.webp",
+    "title": "Motorola DP4401Ex",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 32 kanálov, 3 programovateľné tlačidlá, GPS Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 32 kanálov, 3 programovateľné tlačidlá, signalizácia Select 5, ETSI-DMR, určená do výbušného prostredia, GPS Motorola DP4401 Ex kombinuje to najlepšie z funkcií rádiostaníc s najnovšími digitálnymi technológiami.",
+    "facets": "{\"pocet-kanalov\": [\"32\"], \"vysielaci-vykon\": [\"1 W\"], \"klavesnica\": [\"Nie\"], \"displej\": [\"bez displeja\"], \"programovatelne-tlacidla\": [\"3\"], \"signalizacia\": [\"ETSI-TS102 361\", \"Select 5\"], \"prevadzkova-teplota\": [\"–20 °C až +55 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"GPS\"], \"krytie\": [\"IP67\"]}"
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp4801-ex",
+    "img": "/images/katalog-produktov/20013/main.webp",
+    "title": "Motorola DP4801Ex",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 6 programovateľných tlačidiel, numerická klávesnica, 5 riadkový displej,GPS Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 6 programovateľných tlačidiel, numerická klávesnica, 5 riadkový displej, signalizácia ETSI-DMR, Select 5, určená do výbušného prostredia, GPS Motorola DP4801 Ex kombinuje to najlepšie z funkcií rádiostaníc s najnovšími digitálnymi technológiami.",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"1 W\"], \"klavesnica\": [\"Numerická\"], \"displej\": [\"5 riadkový LCD farebný\"], \"programovatelne-tlacidla\": [\"6\"], \"signalizacia\": [\"ETSI-TS102 361\", \"Select 5\"], \"prevadzkova-teplota\": [\"–20 °C až +55 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"GPS\"], \"krytie\": [\"IP67\"]}"
+  },
+  {
+    "url": "/katalog-produktov/motorola-ion",
+    "img": "/images/katalog-produktov/20938/main.webp",
+    "title": "Motorola ION",
+    "desc": "Prenosná digitálna rádiostanica MOTOTRBO, Android, 4G, 2 displeje.",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"1 – 4 W\"], \"klavesnica\": [\"Dotykový displej\"], \"displej\": [\"480×800 px farebný\"], \"programovatelne-tlacidla\": [\"3\"], \"signalizacia\": [\"ETSI-TS102 361\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"bluetooth\": [\"Áno\"], \"navigacny-system\": [\"GPS/GLONASS/BEIDOU/GALILEO\"], \"krytie\": [\"IP68\"]}"
+  },
+  {
+    "url": "/katalog-produktov/motorola-r2",
+    "img": "/images/katalog-produktov/20988/main.webp",
+    "title": "Motorola R2",
+    "desc": "Prenosná digitálna rádiostanica MOTOTRBO, 64 kanálov, 2 programovateľné tlačidlá, bez displeja Prenosná digitálna rádiostanica MOTOTRBO, 64 kanálov, 2 programovateľné tlačidlá, bez displeja&nbsp;signalizácia ETSI-TS102 361, PL/DPL, MDC1200 MOTOTRBO R2 JE PRACOVNÝ STROJ NOVEJ ÚROVNE, KTORÝ SPÁJA ODOLNOSŤ A ERGONÓMIU, KTORÉ ZARUČUJÚ ISTOTU, ĽAHKÉ OVLÁDANIE.",
+    "facets": "{\"pocet-kanalov\": [\"64\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Nie\"], \"displej\": [\"bez displeja\"], \"programovatelne-tlacidla\": [\"4\"], \"signalizacia\": [\"ETSI-TS102 361\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP55\"]}"
+  },
+  {
+    "url": "/katalog-produktov/motorola-r5-lkp",
+    "img": "/images/katalog-produktov/21003/main.webp",
+    "title": "Motorola R5 LKP",
+    "desc": "Prenosná digitálna rádiostanica MOTOTRBO, 256 kanálov, 5 programovateľných tlačidiel, s displejom a limitovanou klávesnicou.",
+    "facets": "{\"pocet-kanalov\": [\"256\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Menu\"], \"displej\": [\"2/3 riadkový LCD čb\"], \"programovatelne-tlacidla\": [\"5\"], \"signalizacia\": [\"ETSI-TS102 361\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"GPS/GLONASS/BEIDOU/GALILEO\"], \"krytie\": [\"IP67\"]}"
+  },
+  {
+    "url": "/katalog-produktov/motorola-r5-nkp",
+    "img": "/images/katalog-produktov/21002/main.webp",
+    "title": "Motorola R5 NKP",
+    "desc": "Prenosná digitálna rádiostanica MOTOTRBO, 64 kanálov, 3 programovateľné tlačidlá, bez klávesnice a displeja Prenosná digitálna rádiostanica MOTOTRBO, 64 kanálov, 3 programovateľné tlačidlá, bez klávesnice a displeja, signalizácia ETSI-TS102 361.",
+    "facets": "{\"pocet-kanalov\": [\"64\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Nie\"], \"displej\": [\"bez displeja\"], \"programovatelne-tlacidla\": [\"3\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"GPS/GLONASS/BEIDOU/GALILEO\"], \"krytie\": [\"IP67\"]}"
+  },
+  {
+    "url": "/katalog-produktov/motorola-r7-fkp",
+    "img": "/images/katalog-produktov/20950/main.webp",
+    "title": "Motorola R7 FKP",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 4 programovateľné tlačidlá Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 4 programovateľné tlačidlá.",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Dotykový displej\"], \"displej\": [\"480×800 px farebný\"], \"programovatelne-tlacidla\": [\"4\"], \"signalizacia\": [\"ETSI-TS102 361\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"bluetooth\": [\"Áno\"], \"navigacny-system\": [\"GPS/GLONASS/BEIDOU/GALILEO\"], \"krytie\": [\"IP68\"]}"
+  },
+  {
+    "url": "/katalog-produktov/motorola-r7-nkp",
+    "img": "/images/katalog-produktov/20949/main.webp",
+    "title": "Motorola R7 NKP",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 64 kanálov, 4 programovateľné tlačidlá Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 64 kanálov, 4 programovateľné tlačidlá.",
+    "facets": "{\"pocet-kanalov\": [\"64\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Nie\"], \"displej\": [\"bez displeja\"], \"programovatelne-tlacidla\": [\"4\"], \"signalizacia\": [\"ETSI-TS102 361\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP68\"]}"
+  },
+  {
+    "url": "/katalog-produktov/motorola-r7a",
+    "img": "/images/katalog-produktov/20942/main.webp",
+    "title": "Motorola R7a",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 32 kanálov, 4 programovateľné tlačidlá Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 64 kanálov, 4 programovateľné tlačidlá.",
+    "facets": "{\"pocet-kanalov\": [\"64\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Nie\"], \"displej\": [\"bez displeja\"], \"programovatelne-tlacidla\": [\"4\"], \"signalizacia\": [\"ETSI-TS102 361\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP68\"]}"
+  },
+  {
+    "url": "/katalog-produktov/motorola-r7ex-fkp",
+    "img": "/images/katalog-produktov/21022/main.webp",
+    "title": "Motorola R7Ex FKP",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 6 programovateľných tlačidiel, GPS, Bluetooth, Wi-Fi Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 6 programovateľných tlačidiel, GPS, Bluetooth, Wi-Fi, s klávesnicou a displejom Motorola R7Ex s certifikátom ATEX a IECEx je prenosná rádiostanica poskytujúca vysokú kvalitu komunikáciu, takže pracovné tímy môžu pracovať v prostredí s nebezpečenstvom výbuchu bezpečnejšie.",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"1 – 4 W\"], \"klavesnica\": [\"Numerická\"], \"displej\": [\"5 riadkový LCD farebný\"], \"programovatelne-tlacidla\": [\"6\"], \"signalizacia\": [\"ETSI-TS102 361\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Áno\"], \"navigacny-system\": [\"GPS/GLONASS/BEIDOU/GALILEO\"], \"krytie\": [\"IP68\"]}"
+  },
+  {
+    "url": "/katalog-produktov/motorola-r7ex-nkp",
+    "img": "/images/katalog-produktov/21020/main.webp",
+    "title": "Motorola R7Ex NKP",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 64 kanálov, 4 programovateľné tlačidlá, GPS, Bluetooth, Wi-Fi Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 64 kanálov, 4 programovateľné tlačidlá, GPS, Bluetooth, Wi-Fi, určená do výbušného prostredia Motorola R7Ex s certifikátom ATEX a IECEx je prenosná rádiostanica poskytujúca vysokú kvalitu komunikáciu, takže pracovné tímy môžu pracovať v prostredí s nebezpečenstvom výbuchu bezpečnejšie.",
+    "facets": "{\"pocet-kanalov\": [\"64\"], \"vysielaci-vykon\": [\"1 – 4 W\"], \"klavesnica\": [\"Nie\"], \"displej\": [\"bez displeja\"], \"programovatelne-tlacidla\": [\"4\"], \"signalizacia\": [\"ETSI-TS102 361\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Áno\"], \"navigacny-system\": [\"GPS/GLONASS/BEIDOU/GALILEO\"], \"krytie\": [\"IP68\"]}"
+  },
+  {
+    "url": "/katalog-produktov/motorola-sl1600",
+    "img": "/images/katalog-produktov/20436/main.webp",
+    "title": "Motorola SL1600",
+    "desc": "Prenosná digitálna rádiostanica MOTOTRBO, 99 kanálov, aktívny maticový displej, signalizácia ETSI-TS102 361-1,2,3 Prenosná digitálna rádiostanica MOTOTRBO, 99 kanálov, aktívny maticový displej, signalizácia ETSI-TS102 361-1,2,3 MOTOTRBO SL1600 poskytuje spoľahlivú komunikáciu pre každodenné použitie v ultra tenkom a robustnom prevedení.",
+    "facets": "{\"pocet-kanalov\": [\"99\"], \"vysielaci-vykon\": [\"1 alebo 2 W (analog)\", \"1 alebo 3 W (digital)\"], \"klavesnica\": [\"Nie\"], \"displej\": [\"1 riadkový maticový\"], \"programovatelne-tlacidla\": [\"1\"], \"signalizacia\": [\"ETSI-TS102 361\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP54\"]}"
+  },
+  {
+    "url": "/katalog-produktov/motorola-sl2600",
+    "img": "/images/katalog-produktov/20604/main.webp",
+    "title": "Motorola SL2600",
+    "desc": "Prenosná digitálna rádiostanica MOTOTRBO, 256 kanálov, aktívny dvojriadkový maticový displej, signalizácia ETSI-TS102 361-1,2,3 Prenosná digitálna rádiostanica MOTOTRBO, 256 kanálov, aktívny dvojriadkový maticový displej, signalizácia ETSI-TS102 361-1,2,3 MOTOTRBO SL2600 je ďalším produktom série ľahkých a štíhlych rádiostaníc &nbsp;rady SL (SL1600,0SL4000) ktorý poskytuje spoľahlivú komunikáciu pre každodenné použitie v ultra tenkom a robustnom prevedení.",
+    "facets": "{\"pocet-kanalov\": [\"256\"], \"vysielaci-vykon\": [\"1 alebo 2 W (analog)\", \"1 alebo 3 W (digital)\"], \"klavesnica\": [\"Menu\"], \"displej\": [\"2 riadkový maticový\"], \"programovatelne-tlacidla\": [\"1\"], \"signalizacia\": [\"ETSI-TS102 361\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Áno\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP54\"]}"
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp1400",
+    "img": "/images/katalog-produktov/20003/main.webp",
+    "title": "Ukončený predaj: Motorola DP1400",
+    "desc": "Prenosná digitálna rádiostanica MOTOTRBO, 16 kanálov, 2 programovateľné tlačidlá, bez displeja Prenosná digitálna rádiostanica MOTOTRBO, 16 kanálov, 2 programovateľné tlačidlá, bez displeja&nbsp;signalizácia ETSI-TS102 361, PL/DPL Motorola DP 1400 ponúka základné, ale najpoužívanejšie funkcie a hlavne možnosť digitálnej prevádzky za cenu porovnateľnú s&nbsp;analógovou rádiostanicou.",
+    "facets": "{\"pocet-kanalov\": [\"16\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Nie\"], \"displej\": [\"bez displeja\"], \"programovatelne-tlacidla\": [\"2\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP54\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp2400",
+    "img": "/images/katalog-produktov/20004/main.webp",
+    "title": "Ukončený predaj: Motorola DP2400",
+    "desc": "Prenosná digitálna rádiostanica MOTOTRBO, 16 kanálov, 2 programovateľné tlačidlá, bez displeja Prenosná digitálna rádiostanica MOTOTRBO, 16 kanálov, 2 programovateľné tlačidlá, bez displeja, signalizácia ETSI-TS102 361,&nbsp;Select 5, MDC1200, Quick-Call II Náhrada je model DP2400e .",
+    "facets": "{\"pocet-kanalov\": [\"16\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Nie\"], \"displej\": [\"bez displeja\"], \"programovatelne-tlacidla\": [\"2\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP55\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp2400e",
+    "img": "/images/katalog-produktov/20535/main.webp",
+    "title": "Ukončený predaj: Motorola DP2400e",
+    "desc": "Prenosná digitálna rádiostanica MOTOTRBO, 32 kanálov, 2 programovateľné tlačidlá, bez displeja Prenosná digitálna rádiostanica MOTOTRBO, 32 kanálov, 2 programovateľné tlačidlá, bez displeja, signalizácia ETSI-TS102 361,&nbsp;Select 5, MDC1200, Quick-Call II Náhrada je model&nbsp; R5 NKP Nová generácia rádiostaníc DP2400e nahrádza model DP2400 pričom ponúka nové funkcie: zvýšené krytie z IP55 na IP67, vylepšené audio vlastnosti, zlepšený dosah, zlepšená výdrž akumulátorov, podpora vibračného opaskového klipu, príslušenstvo s certifikáciou TIA-4950.",
+    "facets": "{\"pocet-kanalov\": [\"32\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Nie\"], \"displej\": [\"bez displeja\"], \"programovatelne-tlacidla\": [\"2\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP67\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp2600",
+    "img": "/images/katalog-produktov/20005/main.webp",
+    "title": "Ukončený predaj: Motorola DP2600",
+    "desc": "Prenosná digitálna rádiostanica MOTOTRBO, 128 kanálov, 4 programovateľné tlačidlá, 1 riadkový čb LCD displej Prenosná digitálna rádiostanica MOTOTRBO, 128 kanálov, 4 programovateľné tlačidlá, 1 riadkový čb LCD displej, signalizácia ETSI-TS102 361, Select 5, MDC1200, Quick-Call II Náhrada je model DP2600e .",
+    "facets": "{\"pocet-kanalov\": [\"128\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Menu\"], \"displej\": [\"2 riadkový LCD čb\"], \"programovatelne-tlacidla\": [\"4\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP55\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp2600e",
+    "img": "/images/katalog-produktov/20536/main.webp",
+    "title": "Ukončený predaj: Motorola DP2600e",
+    "desc": "Prenosná digitálna rádiostanica MOTOTRBO, 128 kanálov, 4 programovateľné tlačidlá, 1 riadkový čb LCD displej Prenosná digitálna rádiostanica MOTOTRBO, 128 kanálov, 4 programovateľné tlačidlá, 1 riadkový čb LCD displej, signalizácia ETSI-TS102 361, Select 5, MDC1200, Quick-Call II Náhrada je model&nbsp; R5 LKP Nová generácia rádiostaníc DP2600e nahrádza model DP2600 pričom ponúka nové funkcie: zvýšené krytie z IP55 na IP67, vylepšené audio vlastnosti, zlepšený dosah, zlepšená výdrž akumulátorov, podpora vibračného opaskového klipu, príslušenstvo s certifikáciou TIA-4950.",
+    "facets": "{\"pocet-kanalov\": [\"128\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Menu\"], \"displej\": [\"2 riadkový LCD čb\"], \"programovatelne-tlacidla\": [\"4\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP67\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp3400",
+    "img": "/images/katalog-produktov/20016/main.webp",
+    "title": "Ukončený predaj: Motorola DP3400",
+    "desc": "Prenosná profesionálna digitálna rádiostanica, 32 kanálov, 3 programovateľné tlačidlá, bez displeja Prenosná profesionálna digitálna rádiostanica, 32 kanálov, 3 programovateľné tlačidlá, bez displeja, signalizácia ETSI-TS102 361,&nbsp;MDC1200.",
+    "facets": "{\"pocet-kanalov\": [\"32\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Nie\"], \"displej\": [\"bez displeja\"], \"programovatelne-tlacidla\": [\"3\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP57\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp3401",
+    "img": "/images/katalog-produktov/20015/main.webp",
+    "title": "Ukončený predaj: Motorola DP3401",
+    "desc": "Prenosná profesionálna digitálna rádiostanica, 32 kanálov, 3 programovateľné tlačidlá, bez displeja,&nbsp;GPS prijímač Prenosná profesionálna digitálna rádiostanica, 32 kanálov, 3 programovateľné tlačidlá, bez displeja, signalizácia ETSI-TS102 361,&nbsp;MDC1200,&nbsp;GPS prijímač.",
+    "facets": "{\"pocet-kanalov\": [\"32\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Nie\"], \"displej\": [\"bez displeja\"], \"programovatelne-tlacidla\": [\"3\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"GPS\"], \"krytie\": [\"IP57\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp3441",
+    "img": "/images/katalog-produktov/20008/main.webp",
+    "title": "Ukončený predaj: Motorola DP3441",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 32 kanálov, 2 programovateľné tlačidlá, bez displeja, GPS prijímač, Bluetooth, krytie IP67 Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 32 kanálov, 2 programovateľné tlačidlá, bez displeja, signalizácia ETSI-TS102&nbsp;361, MDC1200,&nbsp;GPS prijímač, Bluetooth, krytie IP67 Náhrada je model DP3441e .",
+    "facets": "{\"pocet-kanalov\": [\"32\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Nie\"], \"displej\": [\"bez displeja\"], \"programovatelne-tlacidla\": [\"2\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Áno\"], \"navigacny-system\": [\"GPS\"], \"krytie\": [\"IP68\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp3600",
+    "img": "/images/katalog-produktov/20018/main.webp",
+    "title": "Ukončený predaj: Motorola DP3600",
+    "desc": "Prenosná profesionálna digitálna rádiostanica, 1000 kanálov, 6 programovateľných tlačidiel, 2 riadkový LCD displej, numerická klávesnica Prenosná profesionálna digitálna rádiostanica, 1000 kanálov, 6 programovateľných tlačidiel, 2 riadkový LCD displej, numerická klávesnica, signalizácia ETSI-TS102 361,MDC1200.",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Numerická\"], \"displej\": [\"2 riadkový LCD čb\"], \"programovatelne-tlacidla\": [\"6\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP57\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp3601",
+    "img": "/images/katalog-produktov/20017/main.webp",
+    "title": "Ukončený predaj: Motorola DP3601",
+    "desc": "Prenosná profesionálna digitálna rádiostanica, 1000 kanálov, 6 programovateľ ných tlačidiel, LCD displej, numerická klávesnica, GPS prijímač Prenosná profesionálna digitálna rádiostanica, 1000 kanálov, 6 programovateľ ných tlačidiel, LCD displej, numerická klávesnica, signalizácia ETSI-TS102 361, MDC1200, GPS prijímač.",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Numerická\"], \"displej\": [\"2 riadkový LCD čb\"], \"programovatelne-tlacidla\": [\"6\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"GPS\"], \"krytie\": [\"IP57\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp4400",
+    "img": "/images/katalog-produktov/20006/main.webp",
+    "title": "Ukončený predaj: Motorola DP4400",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 32 kanálov, 4 programovateľné tlačidlá Nahradená modelom R7a resp.",
+    "facets": "{\"pocet-kanalov\": [\"32\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Nie\"], \"displej\": [\"bez displeja\"], \"programovatelne-tlacidla\": [\"4\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP57\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp4400e",
+    "img": "/images/katalog-produktov/20542/main.webp",
+    "title": "Ukončený predaj: Motorola DP4400e",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 32 kanálov, 4 programovateľné tlačidlá Nahradená modelom R7a resp R7 NKP Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 32 kanálov, 4 programovateľné tlačidlá, signalizácia ETSI TS 102 361-1,2,3, Select 5, MDC1200, Quick-Call II Nová generácia rádiostaníc DP4400e nahrádza model DP4400 pričom ponúka nové funkcie: rozšírenú pamäť (128MB RAM a 256 MB Flash), zvýšené krytie z IP57 na IP68, vylepšené audio vlastnosti, zlepšený dosah, zlepšená výdrž akumulátorov, podpora vibračného opaskového klipu, príslušenstvo s certifikáciou TIA4950.",
+    "facets": "{\"pocet-kanalov\": [\"32\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Nie\"], \"displej\": [\"bez displeja\"], \"programovatelne-tlacidla\": [\"4\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP68\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp4401",
+    "img": "/images/katalog-produktov/20007/main.webp",
+    "title": "Ukončený predaj: Motorola DP4401",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 32 kanálov, 4 programovateľné tlačidlá, GPS, Bluetooth Nahradená modelom R7 NKP Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 32 kanálov, 4 programovateľné tlačidlá, signalizácia ETSI TS 102 361-1,2,3, MDC1200, Select 5, Quick-Call II, GPS, Bluetooth Náhrada je model DP4401e .",
+    "facets": "{\"pocet-kanalov\": [\"32\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Nie\"], \"displej\": [\"bez displeja\"], \"programovatelne-tlacidla\": [\"4\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Áno\"], \"navigacny-system\": [\"GPS\"], \"krytie\": [\"IP57\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp4401e",
+    "img": "/images/katalog-produktov/20541/main.webp",
+    "title": "Ukončený predaj: Motorola DP4401e",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 32 kanálov, 4 programovateľné tlačidlá, GPS, Bluetooth Nahradená modelom R7 NKP Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 32 kanálov, 4 programovateľné tlačidlá, signalizácia ETSI TS 102 361-1,2,3, MDC1200, Select 5, Quick-Call II, GPS, Bluetooth Nová generácia rádiostaníc DP4401e nahrádza model DP4401 pričom ponúka nové funkcie: Integrovaná Wi-Fi, Man down, sledovanie pohybu rádiostanice vo vnútri objektov, rozšírenú pamäť (128MB RAM a 256 MB Flash), zvýšené krytie z IP57 na IP68, vylepšené audio vlastnosti, zlepšený dosah, zlepšená výdrž akumulátorov, podpora IMPRES akumulátorov, podpora vibračného opaskového klipu, príslušenstvo s certifikáciou TIA4950.",
+    "facets": "{\"pocet-kanalov\": [\"32\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Nie\"], \"displej\": [\"bez displeja\"], \"programovatelne-tlacidla\": [\"4\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Áno\"], \"navigacny-system\": [\"GPS/GLONASS\"], \"krytie\": [\"IP68\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp4401-ex-ma",
+    "img": "/images/katalog-produktov/20563/main.webp",
+    "title": "Ukončený predaj: Motorola DP4401ExMa",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 32 kanálov, 3 programovateľné tlačidlá, signalizácia Select 5, ETSI-DMR, určená na používanie v baniach Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 32 kanálov, 3 programovateľné tlačidlá, signalizácia Select 5, ETSI-DMR, určená na používanie v baniach Motorola DP4401 Ex Ma kombinuje to najlepšie z funkcií rádiostaníc s najnovšími digitálnymi technológiami.",
+    "facets": "{\"pocet-kanalov\": [\"32\"], \"vysielaci-vykon\": [\"1 W\"], \"klavesnica\": [\"Nie\"], \"displej\": [\"bez displeja\"], \"programovatelne-tlacidla\": [\"3\"], \"signalizacia\": [\"ETSI-TS102 361\", \"Select 5\"], \"prevadzkova-teplota\": [\"–20 °C až +55 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"GPS\"], \"krytie\": [\"IP67\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp4600",
+    "img": "/images/katalog-produktov/20012/main.webp",
+    "title": "Ukončený predaj: Motorola DP4600",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 6 programovateľných tlačidiel, 4 riadkový čiernobiely LCD displej, Menu klávesnica Nahradená modelom R7 FKP Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 6 programovateľných tlačidiel, 4 riadkový čiernobiely LCD displej, Menu klávesnica, signalizácia ETSI TS 102 361-1,2,3, MDC1200, Select 5, Quick-Call II Náhrada je model DP4600e .",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Menu\"], \"displej\": [\"4 riadkový LCD čb\"], \"programovatelne-tlacidla\": [\"6\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP57\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp4600e",
+    "img": "/images/katalog-produktov/20537/main.webp",
+    "title": "Ukončený predaj: Motorola DP4600e",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 6 programovateľných tlačidiel, 4 riadkový čiernobiely LCD displej, Menu klávesnica Nahradená modelom R7 FKP Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 6 programovateľných tlačidiel, 4 riadkový čiernobiely LCD displej, Menu klávesnica, signalizácia ETSI TS 102 361-1,2,3, MDC1200, Select 5, Quick-Call II Nová generácia rádiostaníc DP4600e nahrádza model DP4600 pričom ponúka nové funkcie: rozšírenú pamäť (128MB RAM a 256 MB Flash), zvýšené krytie z IP57 na IP68, vylepšené audio vlastnosti, zlepšený dosah, zlepšená výdrž akumulátorov, podpora vibračného opaskového klipu, príslušenstvo s certifikáciou TIA4950.",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Menu\"], \"displej\": [\"4 riadkový LCD čb\"], \"programovatelne-tlacidla\": [\"6\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP68\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp4601",
+    "img": "/images/katalog-produktov/20011/main.webp",
+    "title": "Ukončený predaj: Motorola DP4601",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 6 programovateľných tlačidiel, 4 riadkový čiernobiely LCD displej, Menu klávesnica, GPS, Bluetooth Nahradená modelom R7 FKP Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 6 programovateľných tlačidiel, 4 riadkový čiernobiely LCD displej, Menu klávesnica, signalizácia ETSI TS 102 361-1,2,3, MDC1200, Select 5, Quick-Call II, GPS, Bluetooth Náhrada je model DP4601e .",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Menu\"], \"displej\": [\"4 riadkový LCD čb\"], \"programovatelne-tlacidla\": [\"6\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Áno\"], \"navigacny-system\": [\"GPS\"], \"krytie\": [\"IP57\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp4601e",
+    "img": "/images/katalog-produktov/20538/main.webp",
+    "title": "Ukončený predaj: Motorola DP4601e",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 6 programovateľných tlačidiel, 4 riadkový čiernobiely LCD displej, Menu klávesnica, GPS, Bluetooth Nahradená modelom R7 FKP Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 6 programovateľných tlačidiel, 4 riadkový čiernobiely LCD displej, Menu klávesnica, signalizácia ETSI TS 102 361-1,2,3, MDC1200, Select 5, Quick-Call II, GPS, Bluetooth Nová generácia rádiostaníc DP4601e nahrádza model DP4601 pričom ponúka nové funkcie: Integrovaná Wi-Fi, Man down, sledovanie pohybu rádiostanice vo vnútri objektov, rozšírenú pamäť (128MB RAM a 256 MB Flash), zvýšené krytie z IP57 na IP68, vylepšené audio vlastnosti, zlepšený dosah, zlepšená výdrž akumulátorov, podpora IMPRES akumulátorov, podpora vibračného opaskového klipu, príslušenstvo s certifikáciou TIA4950.",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Menu\"], \"displej\": [\"4 riadkový LCD čb\"], \"programovatelne-tlacidla\": [\"6\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Áno\"], \"navigacny-system\": [\"GPS/GLONASS\"], \"krytie\": [\"IP68\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp4800",
+    "img": "/images/katalog-produktov/20010/main.webp",
+    "title": "Ukončený predaj: Motorola DP4800",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 5 programovateľných tlačidiel, 5 riadkový farebný LCD displej, numerická klávesnica Nahradená modelom R7 FKP Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 5 programovateľných tlačidiel, 5 riadkový farebný LCD displej, numerická klávesnica, signalizácia ETSI TS 102 361-1,2,3, Select 5, MDC1200, Quick-Call II Náhrada je model DP4800e .",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Numerická\"], \"displej\": [\"5 riadkový LCD farebný\"], \"programovatelne-tlacidla\": [\"5\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP57\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp4800e",
+    "img": "/images/katalog-produktov/20539/main.webp",
+    "title": "Ukončený predaj: Motorola DP4800e",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 5 programovateľných tlačidiel, 5 riadkový farebný LCD displej, numerická klávesnica Nahradená modelom R7 FKP Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 5 programovateľných tlačidiel, 5 riadkový farebný LCD displej, numerická klávesnica, signalizácia ETSI TS 102 361-1,2,3, Select 5, MDC1200, Quick-Call II Nová generácia rádiostaníc DP4800e nahrádza model DP4800 pričom ponúka nové funkcie: rozšírenú pamäť (128MB RAM a 256 MB Flash), zvýšené krytie z IP57 na IP68, vylepšené audio vlastnosti, zlepšený dosah, zlepšená výdrž akumulátorov, podpora vibračného opaskového klipu, príslušenstvo s certifikáciou TIA4950.",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Numerická\"], \"displej\": [\"5 riadkový LCD farebný\"], \"programovatelne-tlacidla\": [\"5\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP68\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp4801",
+    "img": "/images/katalog-produktov/20009/main.webp",
+    "title": "Ukončený predaj: Motorola DP4801",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 5 programovateľných tlačidiel, 5 riadkový farebný LCD displej, numerická klávesnica, GPS, Bluetooth Nahradená modelom R7 FKP Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 5 programovateľných tlačidiel, 5 riadkový farebný LCD displej, numerická klávesnica, signalizácia ETSI TS 102 361-1,2,3, Select 5, MDC1200, Quick-Call II, GPS, Bluetooth.",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Numerická\"], \"displej\": [\"5 riadkový LCD farebný\"], \"programovatelne-tlacidla\": [\"5\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Áno\"], \"navigacny-system\": [\"GPS\"], \"krytie\": [\"IP57\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp4801e",
+    "img": "/images/katalog-produktov/20540/main.webp",
+    "title": "Ukončený predaj: Motorola DP4801e",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 5 programovateľných tlačidiel, 5 riadkový farebný LCD displej, numerická klávesnica, GPS, Bluetooth Nahradená modelom R7 FKP Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 5 programovateľných tlačidiel, 5 riadkový farebný LCD displej, numerická klávesnica, signalizácia ETSI TS 102 361-1,2,3, Select 5, MDC1200, Quick-Call II, GPS, Bluetooth.",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"1 – 4 W (UHF)\", \"1 – 5 W (VHF)\"], \"klavesnica\": [\"Numerická\"], \"displej\": [\"5 riadkový LCD farebný\"], \"programovatelne-tlacidla\": [\"5\"], \"signalizacia\": [\"ETSI-TS102 361\", \"MDC1200\"], \"prevadzkova-teplota\": [\"–30 °C až +60 °C\"], \"bluetooth\": [\"Áno\"], \"navigacny-system\": [\"GPS/GLONASS\"], \"krytie\": [\"IP68\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-dp4801-ex-ma",
+    "img": "/images/katalog-produktov/20565/main.webp",
+    "title": "Ukončený predaj: Motorola DP4801ExMa",
+    "desc": "Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 6 programovateľných tlačidiel, numerická klávesnica, 5 riadkový displej, určená na používanie v baniach Prenosná profesionálna digitálna rádiostanica MOTOTRBO, 1000 kanálov, 6 programovateľných tlačidiel, numerická klávesnica, 5 riadkový displej, signalizácia ETSI-DMR, Select 5, určená na používanie v baniach Motorola DP4801 Ex Ma kombinuje to najlepšie z funkcií rádiostaníc s najnovšími digitálnymi technológiami.",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"1 W\"], \"klavesnica\": [\"Numerická\"], \"displej\": [\"5 riadkový LCD farebný\"], \"programovatelne-tlacidla\": [\"6\"], \"signalizacia\": [\"ETSI-TS102 361\", \"Select 5\"], \"prevadzkova-teplota\": [\"–20 °C až +55 °C\"], \"bluetooth\": [\"Nie\"], \"navigacny-system\": [\"GPS\"], \"krytie\": [\"IP67\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-sl4000",
+    "img": "/images/katalog-produktov/20001/main.webp",
+    "title": "Ukončený predaj: Motorola SL4000",
+    "desc": "Prenosná digitálna rádiostanica MOTOTRBO, 1000 kanálov, 2 programovateľné tlačidlá, 5 riadkový LCD displej, numerická klávesnica, signalizácia ETSI-TS102 361-1,2,3 Prenosná digitálna rádiostanica MOTOTRBO, 1000 kanálov, 2 programovateľné tlačidlá, 5 riadkový LCD displej, numerická klávesnica, signalizácia ETSI-TS102 361-1,2,3 Náhrada je model SL4000e .",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"0\", \"5 – 2 W\"], \"klavesnica\": [\"Numerická\"], \"displej\": [\"5 riadkový LCD farebný\"], \"programovatelne-tlacidla\": [\"2\"], \"signalizacia\": [\"ETSI-TS102 361\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"bluetooth\": [\"Áno\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP54\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-sl4000e",
+    "img": "/images/katalog-produktov/20544/main.webp",
+    "title": "Ukončený predaj: Motorola SL4000e",
+    "desc": "Prenosná digitálna rádiostanica MOTOTRBO, 1000 kanálov, 2 programovateľné tlačidlá, 5 riadkový LCD displej, numerická klávesnica, signalizácia ETSI-TS102 361-1,2,3 Prenosná digitálna rádiostanica MOTOTRBO, 1000 kanálov, 2 programovateľné tlačidlá, 5 riadkový LCD displej, numerická klávesnica,&nbsp;signalizácia ETSI-TS102 361-1,2,3 Náhrada je SL4010e.",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"1 – 3 W\"], \"klavesnica\": [\"Numerická\"], \"displej\": [\"5 riadkový LCD farebný\"], \"programovatelne-tlacidla\": [\"2\"], \"signalizacia\": [\"ETSI-TS102 361\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"bluetooth\": [\"Áno\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP54\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-sl4010",
+    "img": "/images/katalog-produktov/20002/main.webp",
+    "title": "Ukončený predaj: Motorola SL4010",
+    "desc": "&nbsp;Prenosná digitálna rádiostanica MOTOTRBO, 1000 kanálov, 2 programovateľné tlačidlá, 5 riadkový LCD displej, numerická klávesnica ETSI-TS102 361-1,2,3 Prenosná digitálna rádiostanica MOTOTRBO, 1000 kanálov, 2 programovateľné tlačidlá, 5 riadkový LCD displej, numerická klávesnica ETSI-TS102 361-1,2,3.",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"0\", \"5 – 2 W\"], \"klavesnica\": [\"Numerická\"], \"displej\": [\"5 riadkový LCD farebný\"], \"programovatelne-tlacidla\": [\"2\"], \"signalizacia\": [\"ETSI-TS102 361\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"bluetooth\": [\"Áno\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP54\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/motorola-sl4010e",
+    "img": "/images/katalog-produktov/20543/main.webp",
+    "title": "Ukončený predaj: Motorola SL4010e",
+    "desc": "Prenosná digitálna rádiostanica MOTOTRBO, 1000 kanálov, 2 programovateľné tlačidlá, 5 riadkový LCD displej, numerická klávesnica ETSI-TS102 361-1,2,3 Prenosná digitálna rádiostanica MOTOTRBO, 1000 kanálov, 2 programovateľné tlačidlá, 5 riadkový LCD displej, numerická klávesnica ETSI-TS102 361-1,2,3.",
+    "facets": "{\"pocet-kanalov\": [\"1000\"], \"vysielaci-vykon\": [\"1 – 3 W\"], \"klavesnica\": [\"Numerická\"], \"displej\": [\"5 riadkový LCD farebný\"], \"programovatelne-tlacidla\": [\"2\"], \"signalizacia\": [\"ETSI-TS102 361\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"bluetooth\": [\"Áno\"], \"navigacny-system\": [\"Nie\"], \"krytie\": [\"IP54\"]}",
+    "nedodavane": true
+  }
+];
+const productsHeading = "Produkty";
+const notice = "";
+const noticeDetail = "";
+const ctaHeading = "Dodávka, inštalácia a servis";
+const ctaText = "Evakuačné a varovacie systémy navrhujeme, dodávame, inštalujeme a servisujeme. Radi pripravíme riešenie pre váš objekt.";
+const metadata = {
+  "title": "Prenosné rádiostanice, katalóg produktov | RKS",
+  "description": "Prenosné rádiostanice   Najvyššia digitálna modelová rada profesionálnych rádiostaníc Motorola DP - MOTOTRBO je dnes štandardom pre najvýkonnejšiu bezdrôtovú komunikáciu.",
+  "robots": {
+    "index": false,
+    "follow": false
+  }
+};
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Produkty",
+      "item": "https://rksba.sk/produkty"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Katalóg produktov",
+      "item": "https://rksba.sk/katalog-produktov"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/radiostanice-2002"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Prenosné rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+    }
+  ]
+};
+const filters = [
+  {
+    "key": "vysielaci-vykon",
+    "nazov": "Vysielací výkon",
+    "hodnoty": [
+      {
+        "hodnota": "1 – 4 W (UHF)",
+        "pocet": 30
+      },
+      {
+        "hodnota": "1 – 5 W (VHF)",
+        "pocet": 30
+      },
+      {
+        "hodnota": "1 W",
+        "pocet": 4
+      },
+      {
+        "hodnota": "1 – 4 W",
+        "pocet": 3
+      },
+      {
+        "hodnota": "0",
+        "pocet": 2
+      },
+      {
+        "hodnota": "1 alebo 2 W (analog)",
+        "pocet": 2
+      },
+      {
+        "hodnota": "1 alebo 3 W (digital)",
+        "pocet": 2
+      },
+      {
+        "hodnota": "1 – 3 W",
+        "pocet": 2
+      },
+      {
+        "hodnota": "5 – 2 W",
+        "pocet": 2
+      }
+    ]
+  },
+  {
+    "key": "signalizacia",
+    "nazov": "Signalizácia",
+    "hodnoty": [
+      {
+        "hodnota": "ETSI-TS102 361",
+        "pocet": 43
+      },
+      {
+        "hodnota": "MDC1200",
+        "pocet": 24
+      },
+      {
+        "hodnota": "Select 5",
+        "pocet": 4
+      }
+    ]
+  },
+  {
+    "key": "bluetooth",
+    "nazov": "Bluetooth",
+    "hodnoty": [
+      {
+        "hodnota": "Nie",
+        "pocet": 25
+      },
+      {
+        "hodnota": "Áno",
+        "pocet": 18
+      }
+    ]
+  },
+  {
+    "key": "displej",
+    "nazov": "Displej",
+    "hodnoty": [
+      {
+        "hodnota": "bez displeja",
+        "pocet": 18
+      },
+      {
+        "hodnota": "5 riadkový LCD farebný",
+        "pocet": 12
+      },
+      {
+        "hodnota": "2 riadkový LCD čb",
+        "pocet": 4
+      },
+      {
+        "hodnota": "4 riadkový LCD čb",
+        "pocet": 4
+      },
+      {
+        "hodnota": "480×800 px farebný",
+        "pocet": 2
+      },
+      {
+        "hodnota": "1 riadkový maticový",
+        "pocet": 1
+      },
+      {
+        "hodnota": "2 riadkový maticový",
+        "pocet": 1
+      },
+      {
+        "hodnota": "2/3 riadkový LCD čb",
+        "pocet": 1
+      }
+    ]
+  },
+  {
+    "key": "klavesnica",
+    "nazov": "Klávesnica",
+    "hodnoty": [
+      {
+        "hodnota": "Nie",
+        "pocet": 19
+      },
+      {
+        "hodnota": "Numerická",
+        "pocet": 13
+      },
+      {
+        "hodnota": "Menu",
+        "pocet": 9
+      },
+      {
+        "hodnota": "Dotykový displej",
+        "pocet": 2
+      }
+    ]
+  },
+  {
+    "key": "krytie",
+    "nazov": "Krytie",
+    "hodnoty": [
+      {
+        "hodnota": "IP68",
+        "pocet": 15
+      },
+      {
+        "hodnota": "IP57",
+        "pocet": 10
+      },
+      {
+        "hodnota": "IP67",
+        "pocet": 8
+      },
+      {
+        "hodnota": "IP54",
+        "pocet": 7
+      },
+      {
+        "hodnota": "IP55",
+        "pocet": 3
+      }
+    ]
+  },
+  {
+    "key": "navigacny-system",
+    "nazov": "Navigačný systém",
+    "hodnoty": [
+      {
+        "hodnota": "Nie",
+        "pocet": 22
+      },
+      {
+        "hodnota": "GPS",
+        "pocet": 10
+      },
+      {
+        "hodnota": "GPS/GLONASS/BEIDOU/GALILEO",
+        "pocet": 6
+      },
+      {
+        "hodnota": "GPS/GLONASS",
+        "pocet": 5
+      }
+    ]
+  },
+  {
+    "key": "pocet-kanalov",
+    "nazov": "Počet kanálov",
+    "hodnoty": [
+      {
+        "hodnota": "1000",
+        "pocet": 20
+      },
+      {
+        "hodnota": "32",
+        "pocet": 11
+      },
+      {
+        "hodnota": "64",
+        "pocet": 5
+      },
+      {
+        "hodnota": "128",
+        "pocet": 2
+      },
+      {
+        "hodnota": "16",
+        "pocet": 2
+      },
+      {
+        "hodnota": "256",
+        "pocet": 2
+      },
+      {
+        "hodnota": "99",
+        "pocet": 1
+      }
+    ]
+  },
+  {
+    "key": "prevadzkova-teplota",
+    "nazov": "Prevádzková teplota",
+    "hodnoty": [
+      {
+        "hodnota": "–30 °C až +60 °C",
+        "pocet": 29
+      },
+      {
+        "hodnota": "–10 °C až +60 °C",
+        "pocet": 5
+      },
+      {
+        "hodnota": "–20 °C až +60 °C",
+        "pocet": 5
+      },
+      {
+        "hodnota": "–20 °C až +55 °C",
+        "pocet": 4
+      }
+    ]
+  },
+  {
+    "key": "programovatelne-tlacidla",
+    "nazov": "Programovateľné tlačidla",
+    "hodnoty": [
+      {
+        "hodnota": "4",
+        "pocet": 12
+      },
+      {
+        "hodnota": "2",
+        "pocet": 9
+      },
+      {
+        "hodnota": "6",
+        "pocet": 9
+      },
+      {
+        "hodnota": "3",
+        "pocet": 6
+      },
+      {
+        "hodnota": "5",
+        "pocet": 5
+      },
+      {
+        "hodnota": "1",
+        "pocet": 2
+      }
+    ]
+  }
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
+      <aside class="mb-8 lg:mb-0 lg:sticky lg:top-24 lg:self-start">
+        <details class="rks-cats rounded-xl border border-hairline p-4 lg:border-0 lg:p-0">
+          <summary class="rks-cats-toggle cursor-pointer font-semibold lg:hidden flex items-center justify-between gap-2 rounded-lg bg-panel-soft px-4 py-3"><span>Kategórie produktov</span><span class="rks-cats-arrow" aria-hidden="true"></span></summary>
+          <div class="rks-tree-wrap mt-3 lg:mt-0" set:html={sidebar} />
+        </details>
+      </aside>
+
+      <div class="min-w-0">
+        <nav class="text-sm text-muted mb-2" aria-label="Omrvinky">
+          {breadcrumb.map((b, i) => (
+            <>
+              {i > 0 && <span class="px-1">/</span>}
+              {b.url ? <a class="hover:underline" href={b.url}>{b.name}</a> : <span>{b.name}</span>}
+            </>
+          ))}
+        </nav>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">{heading}</h1>
+
+        {notice && (
+          <div class="mb-8 rounded-xl border border-l-4 border-hairline border-l-secondary bg-panel p-5">
+            <p class="text-lg font-semibold tracking-tight">{notice}</p>
+            {noticeDetail && <p class="text-base text-muted mt-1">{noticeDetail}</p>}
+          </div>
+        )}
+
+        {intro.map((par) => (
+          <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
+        ))}
+
+        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+
+        {subcats.length > 0 && (
+          <>
+            {subcatsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-4 mb-4">{subcatsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {subcats.map((c) => (
+                <a href={c.url} class="group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        {filters.length > 0 && (
+          <div class="rks-filter mt-8 rounded-xl border border-hairline bg-panel-soft p-5" data-rks-filter>
+            <div class="flex items-center justify-between gap-4 mb-3">
+              <h2 class="text-base font-semibold">Filtrovať podľa parametrov</h2>
+              <button type="button" class="text-sm text-link hover:underline" data-rks-reset>Zrušiť filtre</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+              {filters.map((f) => (
+                <details class="rks-facet border-t border-hairline pt-2">
+                  <summary class="cursor-pointer text-sm font-medium py-1 select-none">{f.nazov}</summary>
+                  <div class="mt-1 mb-2 space-y-1">
+                    {f.hodnoty.map((v) => (
+                      <label class="flex items-center gap-2 text-sm" data-rks-opt={f.key + '|~|' + v.hodnota}>
+                        <input type="checkbox" class="accent-primary" data-rks-f={f.key} value={v.hodnota} />
+                        <span class="flex-1">{v.hodnota}</span>
+                        <span class="text-muted text-xs tabular-nums" data-rks-cnt>{v.pocet}</span>
+                      </label>
+                    ))}
+                  </div>
+                </details>
+              ))}
+            </div>
+            <p class="text-sm text-muted mt-3" data-rks-summary></p>
+          </div>
+        )}
+
+        {products.length > 0 && (
+          <>
+            {productsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">{productsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4" data-rks-grid>
+              {products.map((c) => (
+                <a href={c.url} data-facets={c.facets} class="rks-card group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+          <h2 class="text-xl md:text-2xl font-semibold mb-3">{ctaHeading}</h2>
+          <p class="text-muted mb-6 max-w-xl mx-auto">{ctaText}</p>
+          <a href="/lp/konzultacia.html?utm_source=web&amp;utm_campaign=web" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+
+  {filters.length > 0 && (
+    <script is:inline>
+      (function () {
+        var root = document.querySelector('[data-rks-filter]');
+        var grid = document.querySelector('[data-rks-grid]');
+        if (!root || !grid) return;
+        var cards = Array.prototype.slice.call(grid.querySelectorAll('.rks-card'));
+        var boxes = Array.prototype.slice.call(root.querySelectorAll('input[data-rks-f]'));
+        var summary = root.querySelector('[data-rks-summary]');
+        var parsed = cards.map(function (c) {
+          try { return JSON.parse(c.getAttribute('data-facets') || '{}'); } catch (e) { return {}; }
+        });
+        function selection() {
+          var m = {};
+          boxes.forEach(function (b) {
+            if (b.checked) { (m[b.getAttribute('data-rks-f')] = m[b.getAttribute('data-rks-f')] || []).push(b.value); }
+          });
+          return m;
+        }
+        function matches(f, m) {
+          for (var k in m) {
+            var have = f[k] || [];
+            var ok = m[k].some(function (v) { return have.indexOf(v) !== -1; });
+            if (!ok) return false;
+          }
+          return true;
+        }
+        function apply() {
+          var m = selection(), shown = 0;
+          cards.forEach(function (c, i) {
+            var ok = matches(parsed[i], m);
+            c.style.display = ok ? '' : 'none';
+            if (ok) shown++;
+          });
+          // prepocitaj pocty: kolko by ostalo, keby sa pridala prave tato hodnota
+          root.querySelectorAll('label[data-rks-opt]').forEach(function (lab) {
+            var parts = lab.getAttribute('data-rks-opt').split('|~|');
+            var k = parts[0], v = parts[1];
+            var m2 = {}; for (var kk in m) m2[kk] = m[kk].slice();
+            m2[k] = [v];
+            var n = 0;
+            for (var i = 0; i < cards.length; i++) { if (matches(parsed[i], m2)) n++; }
+            lab.querySelector('[data-rks-cnt]').textContent = n;
+            var box = lab.querySelector('input');
+            lab.style.display = (n === 0 && !box.checked) ? 'none' : '';
+          });
+          summary.textContent = shown === cards.length
+            ? cards.length + ' produktov'
+            : shown + ' z ' + cards.length + ' produktov';
+        }
+        boxes.forEach(function (b) { b.addEventListener('change', apply); });
+        var reset = root.querySelector('[data-rks-reset]');
+        if (reset) reset.addEventListener('click', function () {
+          boxes.forEach(function (b) { b.checked = false; });
+          apply();
+        });
+        apply();
+      })();
+    </script>
+  )}
+
+  <style is:global>
+    @media (min-width: 1024px) {
+      .rks-cats > summary { display: none; }
+      .rks-cats > .rks-tree-wrap { display: block !important; }
+    }
+    .rks-tree .rks-li { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 0.5rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-leaf { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-li > .rks-link { min-width: 0; }
+    .rks-tree .rks-children { grid-column: 1 / -1; display: none; }
+    .rks-tree .rks-disc[open] ~ .rks-children { display: block; }
+    .rks-tree .rks-disc { display: inline-flex; }
+    .rks-tree summary.rks-arrow { list-style: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; color: rgba(229, 236, 246, 0.66); }
+    .rks-tree summary.rks-arrow::-webkit-details-marker { display: none; }
+    .rks-tree summary.rks-arrow::before { content: ""; border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-tree .rks-disc[open] > summary.rks-arrow::before { transform: rotate(90deg); }
+    .rks-cats-arrow::before { content: ""; display: inline-block; color: rgba(229, 236, 246, 0.66); border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-cats[open] > .rks-cats-toggle .rks-cats-arrow::before { transform: rotate(90deg); }
+  </style>
+</Layout>

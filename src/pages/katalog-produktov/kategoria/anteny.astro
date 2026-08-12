@@ -1,0 +1,572 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const sidebar = "<nav class=\"rks-tree text-sm\" aria-label=\"Kategórie produktov\"><ul class=\"space-y-1\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/radiostanice-2002\" class=\"rks-link text-default hover:text-link\">Rádiostanice<span class=\"text-muted text-xs ml-2\">773</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2\" class=\"rks-link text-default hover:text-link\">Prenosné rádiostanice<span class=\"text-muted text-xs ml-2\">632</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory\" class=\"rks-link text-default hover:text-link\">Akumulátory<span class=\"text-muted text-xs ml-2\">53</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Antény (DP)<span class=\"text-muted text-xs ml-2\">58</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DP)<span class=\"text-muted text-xs ml-2\">17</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dp\" class=\"rks-link text-default hover:text-link\">Iné (DP)<span class=\"text-muted text-xs ml-2\">138</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky-mototrbo\" class=\"rks-link text-default hover:text-link\">Nabíjačky<span class=\"text-muted text-xs ml-2\">37</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie\" class=\"rks-link text-default hover:text-link\">Nosenie<span class=\"text-muted text-xs ml-2\">97</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy\" class=\"rks-link text-default hover:text-link\">Náhlavné súpravy<span class=\"text-muted text-xs ml-2\">43</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony\" class=\"rks-link text-default hover:text-link\">Repromikrofóny<span class=\"text-muted text-xs ml-2\">39</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla\" class=\"rks-link text-default hover:text-link\">Slúchadlá<span class=\"text-muted text-xs ml-2\">72</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Softvér (DP)<span class=\"text-muted text-xs ml-2\">35</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prevadzace-mototrbo\" class=\"rks-link text-default hover:text-link\">Prevádzače<span class=\"text-muted text-xs ml-2\">22</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dr\" class=\"rks-link text-default hover:text-link\">Iné (DR)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dr\" class=\"rks-link text-default hover:text-link\">Softvér (DR)<span class=\"text-muted text-xs ml-2\">13</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/vozidlove-radiostanice-mototrbo\" class=\"rks-link text-default hover:text-link\">Vozidlové rádiostanice<span class=\"text-muted text-xs ml-2\">119</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny\" class=\"rks-link text-primary font-semibold\">Antény (DM)<span class=\"text-muted text-xs ml-2\">23</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dm-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DM)<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dm\" class=\"rks-link text-default hover:text-link\">Iné (DM)<span class=\"text-muted text-xs ml-2\">22</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/instalacia\" class=\"rks-link text-default hover:text-link\">Inštalácia<span class=\"text-muted text-xs ml-2\">29</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofony\" class=\"rks-link text-default hover:text-link\">Mikrofóny<span class=\"text-muted text-xs ml-2\">13</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/napajanie\" class=\"rks-link text-default hover:text-link\">Napájanie<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/reproduktory\" class=\"rks-link text-default hover:text-link\">Reproduktory<span class=\"text-muted text-xs ml-2\">5</span></a></li></ul></li></ul></li></ul></nav>";
+const breadcrumb = [
+  {
+    "name": "Produkty",
+    "url": "/produkty"
+  },
+  {
+    "name": "Katalóg produktov",
+    "url": "/katalog-produktov"
+  },
+  {
+    "name": "Rádiostanice",
+    "url": "/katalog-produktov/kategoria/radiostanice-2002"
+  },
+  {
+    "name": "Vozidlové rádiostanice",
+    "url": "/katalog-produktov/kategoria/vozidlove-radiostanice-mototrbo"
+  },
+  {
+    "name": "Antény (DM)",
+    "url": null
+  }
+];
+const heading = "Antény (DM)";
+const popisHtml = "<h1>Katalóg antén pre rádiostanice Motorola</h1> <p>Anténa je zariadenie na príjem a vysielanie elektromagnetických vĺn vzduchom. Je tvorená vodičom, resp. sústavou vodičov, pomocou ktorých sa mení energia elektomagnetického žiarenia na vysokofrekvenčný prúd (prijímacia anténa) alebo naopak (vysielacia anténa).</p> <p>Antény rozdeľujeme:</p> <ul> <li> <ul> <li> <ul> <li> <ul> <li> <ul> <li> <ul> <li> <ul> <li>Základňové antény všesmerové</li> <li>Základňové všesmerové antény s zvýhodneným smerom vyžarovania</li> <li>Smerové antény</li> <li>Vozidlové antény</li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul>";
+const intro = [];
+const subcats = [];
+const subcatsHeading = "";
+const products = [
+  {
+    "url": "/katalog-produktov/antena-pre-hdv-mototrbo",
+    "img": "/images/katalog-produktov/20074/main.webp",
+    "title": "Anténa pre HDV",
+    "desc": "Anténa pre HDV Anténa pre HDV Anténa je určená pre rádiostanice pracujúce v sieťach traťového spojenia železníc.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"150\"], \"v-s-w-r\": [\"1\", \"5\"], \"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2600\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hae6017",
+    "img": "/images/katalog-produktov/20354/main.webp",
+    "title": "HAE6017",
+    "desc": "UHF/GPS anténa UHF/GPS anténa Vozidlová anténa pracujúca v pásme UHF/GPS/GALILEO/GLONASS je určená pre rádiostanice s vstupnou impedanciou 50 Ohm.",
+    "facets": "{\"navigacny-system\": [\"GPS/GALILEO/GLONASS/QZSS\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM4401e\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hae6021",
+    "img": "/images/katalog-produktov/20890/main.webp",
+    "title": "HAE6021",
+    "desc": "UHF anténa UHF anténa Vozidlová anténa pracujúca v pásme UHF je určená pre rádiostanice s vstupnou impedanciou 50 Ohm.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2600\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pman4000",
+    "img": "/images/katalog-produktov/20892/main.webp",
+    "title": "PMAN4000",
+    "desc": "Pevná GPS anténa Pevná GPS anténa Aktívna anténa umožňuje rádiostanici prijímať GPS signál.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM4401\", \"DM4401e\", \"DM4601\", \"DM4601e\", \"DM3401\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pman4001",
+    "img": "/images/katalog-produktov/20357/main.webp",
+    "title": "PMAN4001",
+    "desc": "GPS anténa GPS anténa Aktívna anténa pre doplnenie existujúcej vozidlovej rádiostanice o schopnosť prijímať signál GPS.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM4401\", \"DM4401e\", \"DM4601\", \"DM4601e\", \"DM3401\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pman4008",
+    "img": "/images/katalog-produktov/20893/main.webp",
+    "title": "PMAN4008",
+    "desc": "Pevná GPS/GLONASS anténa Pevná GPS/GLONASS anténa Aktívna anténa umožňuje rádiostanici prijímať GPS/GLONASS signál.",
+    "facets": "{\"navigacny-system\": [\"GPS/GLONASS\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM4401\", \"DM4401e\", \"DM4601\", \"DM4601e\", \"DM3401\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pman4009",
+    "img": "/images/katalog-produktov/20894/main.webp",
+    "title": "PMAN4009",
+    "desc": "GPS/GLONASS anténa GPS/GLONASS anténa Aktívna anténa pre doplnenie existujúcej vozidlovej rádiostanice o schopnosť prijímať signál GPS alebo GLONASS.",
+    "facets": "{\"navigacny-system\": [\"GPS/GLONASS\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM4401e\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pman4010",
+    "img": "/images/katalog-produktov/20895/main.webp",
+    "title": "PMAN4010",
+    "desc": "GPS/GLONASS magnetická anténa GPS/GLONASS magnetická anténa Anténa pre doplnenie existujúcej vozidlovej rádiostanice o schopnosť prijímať signál GPS alebo GLONASS.",
+    "facets": "{\"navigacny-system\": [\"GPS/GLONASS\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM4401\", \"DM4401e\", \"DM4601\", \"DM4601e\", \"DM3401\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rad4198",
+    "img": "/images/katalog-produktov/20901/main.webp",
+    "title": "RAD4198",
+    "desc": "Vozidlová VHF anténa s&nbsp;magnetickým držiakom Vozidlová VHF anténa s&nbsp;magnetickým držiakom Vozidlová zisková anténa pracujúca v pásme VHF je určená pre rádiostanice s vstupnou impedanciou 50 Ohm.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2600\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rad4199",
+    "img": "/images/katalog-produktov/20903/main.webp",
+    "title": "RAD4199",
+    "desc": "VHF anténa VHF anténa ¼ vlnová vozidlová anténa pracujúca v pásme VHF je určená pre rádiostanice s vstupnou impedanciou 50 Ohm.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2600\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rad4200",
+    "img": "/images/katalog-produktov/20904/main.webp",
+    "title": "RAD4200",
+    "desc": "VHF anténa Vozidlová VHF anténa pre pevnú montáž ¼ vlnová vozidlová anténa pracujúca v pásme VHF je určená pre rádiostanice s vstupnou impedanciou 50 Ohm.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2600\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rad4201",
+    "img": "/images/katalog-produktov/20905/main.webp",
+    "title": "RAD4201",
+    "desc": "VHF anténa VHF anténa ¼ vlnová vozidlová anténa pracujúca v pásme VHF je určená pre rádiostanice s vstupnou impedanciou 50 Ohm.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2600\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rad4219",
+    "img": "/images/katalog-produktov/20360/main.webp",
+    "title": "RAD4219",
+    "desc": "VHF/GLONASS anténa VHF/GLONASS anténa ¼ vlnová vozidlová anténa pracujúca v pásme VHF/GLONASS je určená pre rádiostanice s vstupnou impedanciou 50 Ohm.",
+    "facets": "{\"navigacny-system\": [\"GLONASS\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM4401e\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rad4220",
+    "img": "/images/katalog-produktov/20361/main.webp",
+    "title": "RAD4220",
+    "desc": "VHF/GLONASS anténa VHF/GLONASS anténa ¼ vlnová vozidlová anténa pracujúca v pásme VHF/GLONASS je určená pre rádiostanice s vstupnou impedanciou 50 Ohm.",
+    "facets": "{\"navigacny-system\": [\"GLONASS\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM4401e\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rad4222",
+    "img": "/images/katalog-produktov/20363/main.webp",
+    "title": "RAD4222",
+    "desc": "VHF/GPS anténa VHF/GPS anténa ¼ vlnová vozidlová anténa pracujúca v pásme VHF/GPS je určená pre rádiostanice s vstupnou impedanciou 50 Ohm.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM4401\", \"DM4401e\", \"DM4601\", \"DM4601e\", \"DM3401\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rae4152",
+    "img": "/images/katalog-produktov/20906/main.webp",
+    "title": "RAE4152",
+    "desc": "UHF anténa UHF anténa ¼ vlnová vozidlová anténa pracujúca v pásme UHF je určená pre rádiostanice s vstupnou impedanciou 50 Ohm.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2600\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rae4154",
+    "img": "/images/katalog-produktov/20907/main.webp",
+    "title": "RAE4154",
+    "desc": "UHF anténa UHF anténa Vozidlová anténa pracujúca v pásme UHF je určená pre rádiostanice s vstupnou impedanciou 50 Ohm.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2600\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmae4037",
+    "img": "/images/katalog-produktov/20355/main.webp",
+    "title": "Ukončený predaj PMAE4037",
+    "desc": "UHF/GLONASS anténa UHF/GLONASS anténa ¼ vlnová vozidlová anténa pracujúca v pásme UHF/GLONASS je určená pre rádiostanice s vstupnou impedanciou 50 Ohm.",
+    "facets": "{\"navigacny-system\": [\"GLONASS\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"1\", \"5\"], \"kompatibilita\": [\"DM4401e\", \"DM4601e\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/ukonceny-predaj-zakladnova-antena-1",
+    "img": "/images/katalog-produktov/20073/main.webp",
+    "title": "Ukončený predaj Základňová anténa 1",
+    "desc": "Základňová anténa 1 Základňová anténa 1 Základňová všesmerová anténa určená pre pevnú montáž pracujúca v pásme VHF.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"60\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2600\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/ukonceny-predaj-zakladnova-antena-2",
+    "img": "/images/katalog-produktov/20072/main.webp",
+    "title": "Ukončený predaj Základňová anténa 2",
+    "desc": "Základňová anténa 2 Základňová anténa 2 Základňová všesmerová anténa so zvýhodneným smerom vyžarovania pracujúca v pásme VHF.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"150\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2600\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmae4038",
+    "img": "/images/katalog-produktov/20356/main.webp",
+    "title": "Ukončený predaj: PMAE4038",
+    "desc": "UHF/GLONASS anténa UHF/GLONASS anténa Vozidlová anténa pracujúca v pásme UHF/GLONASS je určená pre rádiostanice s vstupnou impedanciou 50 Ohm.",
+    "facets": "{\"navigacny-system\": [\"GLONASS\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM4401e\", \"DM4601e\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/vozidlova-antena-mototrbo",
+    "img": "/images/katalog-produktov/20075/main.webp",
+    "title": "Vozidlová anténa",
+    "desc": "Vozidlová anténa Vozidlová anténa Anténa určená do vozidla pracujúca v pásme 66 - 480 MHz, skrátením prútu sa anténa ladí pre používanú frekvenciu.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2600\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/zakladnova-antena-3",
+    "img": "/images/katalog-produktov/20071/main.webp",
+    "title": "Základňová anténa 3",
+    "desc": "Základňová anténa 3 Základňová anténa 3 Základňová smerová anténa so zvýhodneným smerom vyžarovania pracujúca v pásme VHF.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"200\"], \"v-s-w-r\": [\"neuvedené\"], \"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2600\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}"
+  }
+];
+const productsHeading = "";
+const notice = "";
+const noticeDetail = "";
+const ctaHeading = "Dodávka, inštalácia a servis";
+const ctaText = "Evakuačné a varovacie systémy navrhujeme, dodávame, inštalujeme a servisujeme. Radi pripravíme riešenie pre váš objekt.";
+const metadata = {
+  "title": "Antény (DM), katalóg produktov | RKS",
+  "description": "Katalóg antén pre rádiostanice Motorola   Anténa je zariadenie na príjem a vysielanie elektromagnetických vĺn vzduchom.",
+  "robots": {
+    "index": false,
+    "follow": false
+  }
+};
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Produkty",
+      "item": "https://rksba.sk/produkty"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Katalóg produktov",
+      "item": "https://rksba.sk/katalog-produktov"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/radiostanice-2002"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Vozidlové rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/vozidlove-radiostanice-mototrbo"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Antény (DM)",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/anteny"
+    }
+  ]
+};
+const filters = [
+  {
+    "key": "kompatibilita",
+    "nazov": "Kompatibilita",
+    "hodnoty": [
+      {
+        "hodnota": "DM4401e",
+        "pocet": 23
+      },
+      {
+        "hodnota": "DM4601e",
+        "pocet": 23
+      },
+      {
+        "hodnota": "DM3401",
+        "pocet": 17
+      },
+      {
+        "hodnota": "DM3601",
+        "pocet": 17
+      },
+      {
+        "hodnota": "DM4401",
+        "pocet": 17
+      },
+      {
+        "hodnota": "DM4601",
+        "pocet": 17
+      },
+      {
+        "hodnota": "DM1400",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DM1600",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DM2600",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DM3400",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DM3600",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DM4400",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DM4400e",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DM4600",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DM4600e",
+        "pocet": 12
+      }
+    ]
+  },
+  {
+    "key": "v-s-w-r",
+    "nazov": "V.S.W.R.",
+    "hodnoty": [
+      {
+        "hodnota": "neuvedené",
+        "pocet": 21
+      },
+      {
+        "hodnota": "1",
+        "pocet": 2
+      },
+      {
+        "hodnota": "5",
+        "pocet": 2
+      }
+    ]
+  },
+  {
+    "key": "maximalny-vykon-w",
+    "nazov": "Maximálny výkon [W]",
+    "hodnoty": [
+      {
+        "hodnota": "neuvedený",
+        "pocet": 19
+      },
+      {
+        "hodnota": "150",
+        "pocet": 2
+      },
+      {
+        "hodnota": "200",
+        "pocet": 1
+      },
+      {
+        "hodnota": "60",
+        "pocet": 1
+      }
+    ]
+  },
+  {
+    "key": "navigacny-system",
+    "nazov": "Navigačný systém",
+    "hodnoty": [
+      {
+        "hodnota": "Nie",
+        "pocet": 12
+      },
+      {
+        "hodnota": "GLONASS",
+        "pocet": 4
+      },
+      {
+        "hodnota": "GPS",
+        "pocet": 3
+      },
+      {
+        "hodnota": "GPS/GLONASS",
+        "pocet": 3
+      },
+      {
+        "hodnota": "GPS/GALILEO/GLONASS/QZSS",
+        "pocet": 1
+      }
+    ]
+  }
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
+      <aside class="mb-8 lg:mb-0 lg:sticky lg:top-24 lg:self-start">
+        <details class="rks-cats rounded-xl border border-hairline p-4 lg:border-0 lg:p-0">
+          <summary class="rks-cats-toggle cursor-pointer font-semibold lg:hidden flex items-center justify-between gap-2 rounded-lg bg-panel-soft px-4 py-3"><span>Kategórie produktov</span><span class="rks-cats-arrow" aria-hidden="true"></span></summary>
+          <div class="rks-tree-wrap mt-3 lg:mt-0" set:html={sidebar} />
+        </details>
+      </aside>
+
+      <div class="min-w-0">
+        <nav class="text-sm text-muted mb-2" aria-label="Omrvinky">
+          {breadcrumb.map((b, i) => (
+            <>
+              {i > 0 && <span class="px-1">/</span>}
+              {b.url ? <a class="hover:underline" href={b.url}>{b.name}</a> : <span>{b.name}</span>}
+            </>
+          ))}
+        </nav>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">{heading}</h1>
+
+        {notice && (
+          <div class="mb-8 rounded-xl border border-l-4 border-hairline border-l-secondary bg-panel p-5">
+            <p class="text-lg font-semibold tracking-tight">{notice}</p>
+            {noticeDetail && <p class="text-base text-muted mt-1">{noticeDetail}</p>}
+          </div>
+        )}
+
+        {intro.map((par) => (
+          <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
+        ))}
+
+        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+
+        {subcats.length > 0 && (
+          <>
+            {subcatsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-4 mb-4">{subcatsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {subcats.map((c) => (
+                <a href={c.url} class="group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        {filters.length > 0 && (
+          <div class="rks-filter mt-8 rounded-xl border border-hairline bg-panel-soft p-5" data-rks-filter>
+            <div class="flex items-center justify-between gap-4 mb-3">
+              <h2 class="text-base font-semibold">Filtrovať podľa parametrov</h2>
+              <button type="button" class="text-sm text-link hover:underline" data-rks-reset>Zrušiť filtre</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+              {filters.map((f) => (
+                <details class="rks-facet border-t border-hairline pt-2">
+                  <summary class="cursor-pointer text-sm font-medium py-1 select-none">{f.nazov}</summary>
+                  <div class="mt-1 mb-2 space-y-1">
+                    {f.hodnoty.map((v) => (
+                      <label class="flex items-center gap-2 text-sm" data-rks-opt={f.key + '|~|' + v.hodnota}>
+                        <input type="checkbox" class="accent-primary" data-rks-f={f.key} value={v.hodnota} />
+                        <span class="flex-1">{v.hodnota}</span>
+                        <span class="text-muted text-xs tabular-nums" data-rks-cnt>{v.pocet}</span>
+                      </label>
+                    ))}
+                  </div>
+                </details>
+              ))}
+            </div>
+            <p class="text-sm text-muted mt-3" data-rks-summary></p>
+          </div>
+        )}
+
+        {products.length > 0 && (
+          <>
+            {productsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">{productsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4" data-rks-grid>
+              {products.map((c) => (
+                <a href={c.url} data-facets={c.facets} class="rks-card group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+          <h2 class="text-xl md:text-2xl font-semibold mb-3">{ctaHeading}</h2>
+          <p class="text-muted mb-6 max-w-xl mx-auto">{ctaText}</p>
+          <a href="/lp/konzultacia.html?utm_source=web&amp;utm_campaign=web" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+
+  {filters.length > 0 && (
+    <script is:inline>
+      (function () {
+        var root = document.querySelector('[data-rks-filter]');
+        var grid = document.querySelector('[data-rks-grid]');
+        if (!root || !grid) return;
+        var cards = Array.prototype.slice.call(grid.querySelectorAll('.rks-card'));
+        var boxes = Array.prototype.slice.call(root.querySelectorAll('input[data-rks-f]'));
+        var summary = root.querySelector('[data-rks-summary]');
+        var parsed = cards.map(function (c) {
+          try { return JSON.parse(c.getAttribute('data-facets') || '{}'); } catch (e) { return {}; }
+        });
+        function selection() {
+          var m = {};
+          boxes.forEach(function (b) {
+            if (b.checked) { (m[b.getAttribute('data-rks-f')] = m[b.getAttribute('data-rks-f')] || []).push(b.value); }
+          });
+          return m;
+        }
+        function matches(f, m) {
+          for (var k in m) {
+            var have = f[k] || [];
+            var ok = m[k].some(function (v) { return have.indexOf(v) !== -1; });
+            if (!ok) return false;
+          }
+          return true;
+        }
+        function apply() {
+          var m = selection(), shown = 0;
+          cards.forEach(function (c, i) {
+            var ok = matches(parsed[i], m);
+            c.style.display = ok ? '' : 'none';
+            if (ok) shown++;
+          });
+          // prepocitaj pocty: kolko by ostalo, keby sa pridala prave tato hodnota
+          root.querySelectorAll('label[data-rks-opt]').forEach(function (lab) {
+            var parts = lab.getAttribute('data-rks-opt').split('|~|');
+            var k = parts[0], v = parts[1];
+            var m2 = {}; for (var kk in m) m2[kk] = m[kk].slice();
+            m2[k] = [v];
+            var n = 0;
+            for (var i = 0; i < cards.length; i++) { if (matches(parsed[i], m2)) n++; }
+            lab.querySelector('[data-rks-cnt]').textContent = n;
+            var box = lab.querySelector('input');
+            lab.style.display = (n === 0 && !box.checked) ? 'none' : '';
+          });
+          summary.textContent = shown === cards.length
+            ? cards.length + ' produktov'
+            : shown + ' z ' + cards.length + ' produktov';
+        }
+        boxes.forEach(function (b) { b.addEventListener('change', apply); });
+        var reset = root.querySelector('[data-rks-reset]');
+        if (reset) reset.addEventListener('click', function () {
+          boxes.forEach(function (b) { b.checked = false; });
+          apply();
+        });
+        apply();
+      })();
+    </script>
+  )}
+
+  <style is:global>
+    @media (min-width: 1024px) {
+      .rks-cats > summary { display: none; }
+      .rks-cats > .rks-tree-wrap { display: block !important; }
+    }
+    .rks-tree .rks-li { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 0.5rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-leaf { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-li > .rks-link { min-width: 0; }
+    .rks-tree .rks-children { grid-column: 1 / -1; display: none; }
+    .rks-tree .rks-disc[open] ~ .rks-children { display: block; }
+    .rks-tree .rks-disc { display: inline-flex; }
+    .rks-tree summary.rks-arrow { list-style: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; color: rgba(229, 236, 246, 0.66); }
+    .rks-tree summary.rks-arrow::-webkit-details-marker { display: none; }
+    .rks-tree summary.rks-arrow::before { content: ""; border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-tree .rks-disc[open] > summary.rks-arrow::before { transform: rotate(90deg); }
+    .rks-cats-arrow::before { content: ""; display: inline-block; color: rgba(229, 236, 246, 0.66); border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-cats[open] > .rks-cats-toggle .rks-cats-arrow::before { transform: rotate(90deg); }
+  </style>
+</Layout>

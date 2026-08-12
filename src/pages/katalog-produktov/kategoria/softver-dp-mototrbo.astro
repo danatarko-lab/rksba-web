@@ -1,0 +1,735 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const sidebar = "<nav class=\"rks-tree text-sm\" aria-label=\"Kategórie produktov\"><ul class=\"space-y-1\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/radiostanice-2002\" class=\"rks-link text-default hover:text-link\">Rádiostanice<span class=\"text-muted text-xs ml-2\">773</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2\" class=\"rks-link text-default hover:text-link\">Prenosné rádiostanice<span class=\"text-muted text-xs ml-2\">632</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory\" class=\"rks-link text-default hover:text-link\">Akumulátory<span class=\"text-muted text-xs ml-2\">53</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Antény (DP)<span class=\"text-muted text-xs ml-2\">58</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DP)<span class=\"text-muted text-xs ml-2\">17</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dp\" class=\"rks-link text-default hover:text-link\">Iné (DP)<span class=\"text-muted text-xs ml-2\">138</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky-mototrbo\" class=\"rks-link text-default hover:text-link\">Nabíjačky<span class=\"text-muted text-xs ml-2\">37</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie\" class=\"rks-link text-default hover:text-link\">Nosenie<span class=\"text-muted text-xs ml-2\">97</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy\" class=\"rks-link text-default hover:text-link\">Náhlavné súpravy<span class=\"text-muted text-xs ml-2\">43</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony\" class=\"rks-link text-default hover:text-link\">Repromikrofóny<span class=\"text-muted text-xs ml-2\">39</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla\" class=\"rks-link text-default hover:text-link\">Slúchadlá<span class=\"text-muted text-xs ml-2\">72</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dp-mototrbo\" class=\"rks-link text-primary font-semibold\">Softvér (DP)<span class=\"text-muted text-xs ml-2\">35</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prevadzace-mototrbo\" class=\"rks-link text-default hover:text-link\">Prevádzače<span class=\"text-muted text-xs ml-2\">22</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dr\" class=\"rks-link text-default hover:text-link\">Iné (DR)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dr\" class=\"rks-link text-default hover:text-link\">Softvér (DR)<span class=\"text-muted text-xs ml-2\">13</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/vozidlove-radiostanice-mototrbo\" class=\"rks-link text-default hover:text-link\">Vozidlové rádiostanice<span class=\"text-muted text-xs ml-2\">119</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny\" class=\"rks-link text-default hover:text-link\">Antény (DM)<span class=\"text-muted text-xs ml-2\">23</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dm-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DM)<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dm\" class=\"rks-link text-default hover:text-link\">Iné (DM)<span class=\"text-muted text-xs ml-2\">22</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/instalacia\" class=\"rks-link text-default hover:text-link\">Inštalácia<span class=\"text-muted text-xs ml-2\">29</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofony\" class=\"rks-link text-default hover:text-link\">Mikrofóny<span class=\"text-muted text-xs ml-2\">13</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/napajanie\" class=\"rks-link text-default hover:text-link\">Napájanie<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/reproduktory\" class=\"rks-link text-default hover:text-link\">Reproduktory<span class=\"text-muted text-xs ml-2\">5</span></a></li></ul></li></ul></li></ul></nav>";
+const breadcrumb = [
+  {
+    "name": "Produkty",
+    "url": "/produkty"
+  },
+  {
+    "name": "Katalóg produktov",
+    "url": "/katalog-produktov"
+  },
+  {
+    "name": "Rádiostanice",
+    "url": "/katalog-produktov/kategoria/radiostanice-2002"
+  },
+  {
+    "name": "Prenosné rádiostanice",
+    "url": "/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+  },
+  {
+    "name": "Softvér (DP)",
+    "url": null
+  }
+];
+const heading = "Softvér (DP)";
+const popisHtml = "<h1>Softvér a licenčné kľúče pre rozšírenie funkcií digitálnych rádiostaníc Mototrbo</h1>";
+const intro = [];
+const subcats = [];
+const subcatsHeading = "";
+const products = [
+  {
+    "url": "/katalog-produktov/gmvn5141",
+    "img": "/images/katalog-produktov/20841/main.webp",
+    "title": "GMVN5141",
+    "desc": "Mototrbo CPS/RM - SW DVD Mototrbo CPS/RM - SW DVD DVD obsahuje nasledovný softvér: Customer Programming Software Radio Management Tuner Air Tracer Určené pre rádiostanice rady DP/DM/SL/R",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"DP2400\", \"DP2600\", \"DP2400e\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\", \"SL1600\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"DM1400\", \"DM1600\", \"DM2600\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4037",
+    "img": "/images/katalog-produktov/20065/main.webp",
+    "title": "HKVN4037",
+    "desc": "Manažment IMPRES akumulátorov&nbsp;- Licenčný kľúč Manažment IMPRES akumulátorov - Licenčný kľúč Licenčný kľúč pre softvér na manažovanie IMPRES akumulátorov (Battery Fleet Management - NNTN7980 ) Tento softvér prostredníctvom IMPRES nabíjačiek stiahne údaje uložené v IMPRES akumulátoroch&nbsp; pre efektívnejšiu správu IMPRES akumulátorov.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2600\", \"DP2400e\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\", \"R7\", \"R5\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4058",
+    "img": "/images/katalog-produktov/20067/main.webp",
+    "title": "HKVN4058",
+    "desc": "5-Tone signalizing - Licenčný kľúč 5-Tone signalizing - Licenčný kľúč Licenčný klúč slúži na aktiváciu 5- tónovej analógovej signalizácie.&nbsp; Určené pre rádiostanice rady SL1600",
+    "facets": "{\"kompatibilita\": [\"SL1600\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4059",
+    "img": "/images/katalog-produktov/20064/main.webp",
+    "title": "HKVN4059",
+    "desc": "Enhanced Privacy - Licenčný kľúč Enhanced Privacy - Licenčný kľúč Licenčný kľúč slúži na aktiváciu rozšíreného šifrovania.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2600\", \"DP2400e\", \"DP2600e\", \"SL2600\", \"DM2600\", \"R7\", \"R2\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4060",
+    "img": "/images/katalog-produktov/20063/main.webp",
+    "title": "HKVN4060",
+    "desc": "Transmit Interrupt Encode - Licenčný kľúč Transmit Interrupt Encode - Licenčný kľúč Licenčný kľúč slúži na aktiváciu funkcie prerušenia hovoru.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2600\", \"DP2400e\", \"DP2600e\", \"SL2600\", \"DM2600\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4061",
+    "img": "/images/katalog-produktov/20062/main.webp",
+    "title": "HKVN4061",
+    "desc": "Capacity Plus - Licenčný klúč Capacity Plus - Licenčný klúč Licenčný kľúč slúži na aktiváciu funkcie Capacity Plus pre jednu lokalitu.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2600\", \"DP2400e\", \"DP2600e\", \"SL2600\", \"DM2600\", \"R5\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4062",
+    "img": "/images/katalog-produktov/20059/main.webp",
+    "title": "HKVN4062",
+    "desc": "Linked_Capacity Plus - Rozširujúci licenčný klúč Linked_Capacity Plus - Rozširujúci licenčný klúč Licenčný kľúč slúži na aktiváciu funkcie Linked Capacity Plus, ak už bola aktivovaná licencia Capacity Plus pre jednu lokalitu HKVN4061 .",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2600\", \"DP2400e\", \"DP2600e\", \"SL2600\", \"DM2600\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4069",
+    "img": "/images/katalog-produktov/20842/main.webp",
+    "title": "HKVN4069",
+    "desc": "MOTOTRBO Connect Plus Radio EID - Licenčný kľúč MOTOTRBO Connect Plus Radio EID - Licenčný kľúč Táto funkcia umožňuje užívateľovi aktivovať rádiostanicu v systéme Connect Plus.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"SL1600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4073",
+    "img": "/images/katalog-produktov/20557/main.webp",
+    "title": "HKVN4073",
+    "desc": "Mandown pre Connect Plus - Licenčný kľúč Mandown pre Connect Plus - Licenčný kľúč Licencia sprístupní funkciu Mandown v systéme Connect Plus.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4100",
+    "img": "/images/katalog-produktov/20061/main.webp",
+    "title": "HKVN4100",
+    "desc": "Linked_Capacity Plus – Llicenčný kľúč Linked_Capacity Plus – Licenčný kľúč Licenčný kľúč slúži na aktiváciu funkcie Linked&nbsp;Capacity&amp;nbsp;Plus na ktorých ešte nebola aktivovaná funkcia Capacity Plus.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2600\", \"DP2400e\", \"DP2600e\", \"SL2600\", \"DM2600\", \"R5\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4203",
+    "img": "/images/katalog-produktov/20471/main.webp",
+    "title": "HKVN4203",
+    "desc": "Prepojenie do telefónnej siete - Licenčný kľúč Prepojenie do telefónnej siete - Licenčný kľúč Funkcia Digital Telephone Patch umožňuje používateľom rádiostanice Mototrbo uskutočňovať a prijímať telefónne hovory prepájané s pomocou brány (gateway) medzi pevnou telefónnou sieťou a rádiovým systémom Mototrbo.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2600\", \"DP2400e\", \"DP2600e\", \"SL2600\", \"DM2600\", \"R5\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4204",
+    "img": "/images/katalog-produktov/20058/main.webp",
+    "title": "HKVN4204",
+    "desc": "Upgrade Analog - Digital Upgrade Analog - Digital Po zakúpení tohto licenčného kľúča je možne aktivivať digitálne funkcie rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"DM1400\", \"DM1600\", \"R2\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4239",
+    "img": "/images/katalog-produktov/20450/main.webp",
+    "title": "HKVN4239",
+    "desc": "Trvalo zistiteľný Bluetooh - Licenčný kľúč Trvalo zistiteľný Bluetooh - Licenčný kľúč Po aktivácií je v rádiostanici trvale zapnutý režim Bluetooth a užívateľ ho nemôže vypnúť.",
+    "facets": "{\"kompatibilita\": [\"DP4401\", \"DP4401e\", \"DP4601\", \"DP4601e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4241",
+    "img": "/images/katalog-produktov/20451/main.webp",
+    "title": "HKVN4241",
+    "desc": "AES šifrovanie - Licenčný kľúč AES šifrovanie - Licenčný kľúč Táto funkcia ponúka najvyššiu úroveň utajenia digitálnej komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"DP3400\", \"DP3401\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"R7\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4279",
+    "img": "/images/katalog-produktov/20506/main.webp",
+    "title": "HKVN4279",
+    "desc": "IP Site Connect - Licenčný klúč IP Site Connect - Licenčný klúč Licenčný kľúč slúži na aktiváciu funkcie IP Site Connect pre rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"SL1600\", \"DM1400\", \"DM1600\", \"R2\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4284",
+    "img": "/images/katalog-produktov/20510/main.webp",
+    "title": "HKVN4284",
+    "desc": "Multi Button PTT - licenčný kľúč Multi Button PTT - licenčný kľúč Licencia na aktiváciu funkcie Multi button PTT na pripojenom príslušenstve.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4285",
+    "img": "/images/katalog-produktov/20598/main.webp",
+    "title": "HKVN4285",
+    "desc": "Prevod textu na hlas - Licenčný kľúč Prevod textu na hlas - Licenčný kľúč Funkcia prevodu textu na hlas (Text to speech) využíva hlasový algoritmus na hlasovú indikáciu zvoleného kanála alebo funkcie, umožňuje užívateľom počúvať prijaté textové správy a pracovné príkazy.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4371",
+    "img": "/images/katalog-produktov/20556/main.webp",
+    "title": "HKVN4371",
+    "desc": "Single Input Noise Cancellation (SINC+) - Licenčný kľúč Single Input Noise Cancellation (SINC+) - Licenčný kľúč Táto funkcia poskytuje výhody zvýšeného potlačenia šumu pri používaní štandardného mikrofónu, čím sa za normálnych okolností dosiahne efekt porovnateľný s drahším príslušenstvo m ktoré je vybavené&nbsp; duálnymi mikrofónmi.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2600\", \"DP2400e\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"DM2600\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"R2\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4379",
+    "img": "/images/katalog-produktov/20558/main.webp",
+    "title": "HKVN4379",
+    "desc": "Wi-Fi - Licenčný kľúč Wi-Fi - Licenčný kľúč Licencia na aktiváciu Wi-Fi funkcie, ktorá umožňuje pripojiť rádiostanicu do Wi-Fi siete za účelom rýchleho prenosu veľkého objemu dát.",
+    "facets": "{\"kompatibilita\": [\"DP4401e\", \"DP4601e\", \"DP4801e\", \"DP3441e\", \"DP3661e\", \"SL2600\", \"SL4000e\", \"SL4010e\", \"DM4401e\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4382",
+    "img": "/images/katalog-produktov/20595/main.webp",
+    "title": "HKVN4382",
+    "desc": "Authenticated Radio Disable - Licenčný kľúč Authenticated Radio Disable - Licenčný kľúč Táto funkcia zavádza overovaciu procedúru pre deaktiváciu rádiostanice len autorizovaným užívateľom.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4383",
+    "img": "/images/katalog-produktov/20596/main.webp",
+    "title": "HKVN4383",
+    "desc": "Transmit Inhibit - Licenčný kľúč Transmit Inhibit - Licenčný kľúč Táto funkcia umožňuje užívateľovi prepnúť rádiostanicu do režimu, v ktorom rádiostanica nevysiela žiadnu RF energiu (Bluetooth zostáva aktívny) Určené pre rádiostanice DP3441, DP3441e, DP4000, DP4000e, SL4000, SL4000e, DM4000, DM4000e, DP4000Ex, DP4000Ex Ma.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"SL1600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4405",
+    "img": "/images/katalog-produktov/20559/main.webp",
+    "title": "HKVN4405",
+    "desc": "Mandown - Licenčný kľúč Mandown - Licenčný kľúč Aktiváciou kľúča sa sprístupní funkcia Mandown ktorá využíva integrovaný akcelerometer.",
+    "facets": "{\"kompatibilita\": [\"DP4401e\", \"DP4601e\", \"DP4801e\", \"DP3441e\", \"DP3661e\", \"SL4000e\", \"SL4010e\", \"R7\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4405-mototrbo",
+    "img": "/images/katalog-produktov/20560/main.webp",
+    "title": "HKVN4407",
+    "desc": "Balík licenčných kľúčov 1 Balík licenčných kľúčov 1 Cenovo zvýhodnený balík dvoch licenčných kľúčov: Single Input Noise Cancellation (SINC+) Táto funkcia poskytuje výhody zvyšeného potlačenia šumu pri používaní štandardného mikrofónu, čím sa za normálnych okolností dosiahne efket porovnateľný s drahším príslušenstvom ktoré je vybavené duálnymi mikrofónmi.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4431",
+    "img": "/images/katalog-produktov/20566/main.webp",
+    "title": "HKVN4431",
+    "desc": "Indoor Location Tracking - Licenčný kľúč Indoor Location Tracking- Licenčný kľúč Sledovanie polohy rádiostanice vo interiéri budov ktoré využíva Bluetooth 4.0 a sieť Bluetooth majákov (Beacon's) ktoré sú nainštalované na známych, pevných bodoch vo vnútri budovy.",
+    "facets": "{\"kompatibilita\": [\"DP4401\", \"DP4401e\", \"DP4601\", \"DP4601e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"R7\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4465",
+    "img": "/images/katalog-produktov/20868/main.webp",
+    "title": "HKVN4465",
+    "desc": "Bluetooth PTT AT Command - Licenčný kľúč Bluetooth PTT AT Command - Licenčný kľúč Táto funkcia umožňuje užívateľovi Bluetooth PTT konektivitu pre schválené bluetooth príslušenstvo&nbsp; tretích výrobcov.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"SL1600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"R7\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4497",
+    "img": "/images/katalog-produktov/20869/main.webp",
+    "title": "HKVN4497",
+    "desc": "Normalizácia prijímaného zvuku - Licenčný kľúč Normalizácia prijímaného zvuku - Licenčný kľúč Táto funkcia umožňuje užívateľovi aktivovať rádiostanicu do režimu,&nbsp;ktorý poskytuje&nbsp;zlepšený posluch&nbsp;zavedením konzistentnejších úrovní zvuku&nbsp;a tým kompenzuje rozdiely medzi&nbsp;rôznymi prenosnými rádiostanicami.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"DP2400\", \"DP2600\", \"DP2400e\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"SL1600\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"DM1400\", \"DM1600\", \"DM2600\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4498",
+    "img": "/images/katalog-produktov/20870/main.webp",
+    "title": "HKVN4498",
+    "desc": "Mute režim&nbsp; - Licenčný kľúč Mute režim - Licenčný kľúč Táto funkcia umožňuje užívateľovi rýchlo stíšiť rádiostanicu napr.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2600\", \"DP2400e\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"SL1600\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"DM2600\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4499",
+    "img": "/images/katalog-produktov/20871/main.webp",
+    "title": "HKVN4499",
+    "desc": "Blokovanie vysielania - Licenčný kľúč Blokovanie vysielania - Licenčný kľúč Táto funkcia umožňuje užívateľovi prepnúť rádiostanicu do režimu, v ktorom nebude reagovať vysielaním na požiadavky z iných neautorizovaných rádiostaníc.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2600\", \"DP2400e\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"SL1600\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"DM2600\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4522",
+    "img": "/images/katalog-produktov/20982/main.webp",
+    "title": "HKVN4522",
+    "desc": "Bluetooth Voice, Pan Profile and Data Value Pack - Licenčný kľúč &nbsp;Bluetooth Voice, Pan Profile and Data Value Pack - Licenčný kľúč Licenčný kľúč na aktiváciu BT Audio a Data.",
+    "facets": "{\"kompatibilita\": [\"R7\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4876",
+    "img": "/images/katalog-produktov/20983/main.webp",
+    "title": "HKVN4876",
+    "desc": "MOTOTRBO Enable GNSS - Licenčný kľúč &nbsp;MOTOTRBO Enable GNSS - Licenčný kľúč Licenčný kľúč na povolenie funkcie Glonass pre satelitnú lokalizáciu.",
+    "facets": "{\"kompatibilita\": [\"R7\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4881",
+    "img": "/images/katalog-produktov/20985/main.webp",
+    "title": "HKVN4881",
+    "desc": "MOTOTRBO R7 Audio Recording &nbsp;MOTOTRBO R7 Audio Recording Licenčný kľúč na zapnutie funkcie nahrávania zvuku.",
+    "facets": "{\"kompatibilita\": [\"R7\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4885",
+    "img": "/images/katalog-produktov/20986/main.webp",
+    "title": "HKVN4885",
+    "desc": "MOTOTRBO R7 Bluetooth Generic Sensor &nbsp;MOTOTRBO R7 Bluetooth Generic Sensor Licenčný kľúč na povolenie na pripojenie rádiostanice / vysielačky k IoT a environmentálnym senzorom prostredníctvom Bluetooth rozhrania.",
+    "facets": "{\"kompatibilita\": [\"R7\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4889",
+    "img": "/images/katalog-produktov/20987/main.webp",
+    "title": "HKVN4889",
+    "desc": "MOTOTRBO R7 Collaboration app MOTOTRBO R7 Collaboration app Licenčný kľúč na zapnutie ovládania rádiostanice/vysielačky pomocou mobilnej aplikácie M-Radio Control.",
+    "facets": "{\"kompatibilita\": [\"R7\"]}"
+  },
+  {
+    "url": "/katalog-produktov/nntn7980",
+    "img": "/images/katalog-produktov/20066/main.webp",
+    "title": "NNTN7980",
+    "desc": "Manažment IMPRES akumulátorov - CD so softvérom Manažment IMPRES akumulátorov - CD so softvérom Softvér IMPRES FLEET MANAGEMENT prostredníctvom IMPRES nabíjačky s interfejsom dokáže stiahnuť údaje uložené v IMPRES akumulátoroch.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2600\", \"DP2400e\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hkvn4065",
+    "img": "/images/katalog-produktov/20060/main.webp",
+    "title": "Ukončený predaj: HKVN4065",
+    "desc": "MOTOTRBO Radio Management - Licenčný kľúč MOTOTRBO Radio Management - Licenčný kľúč Aplikácia Radio Management pre správu rádiostaníc MOTOTRBO vám pomôže zorganizovať väčšie množstvo rádiostaníc, zjednodušiť pracovné postupy, znížiť prestoje a šetriť vaše peniaze.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2600\", \"DP2400e\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}",
+    "nedodavane": true
+  }
+];
+const productsHeading = "";
+const notice = "";
+const noticeDetail = "";
+const ctaHeading = "Dodávka, inštalácia a servis";
+const ctaText = "Evakuačné a varovacie systémy navrhujeme, dodávame, inštalujeme a servisujeme. Radi pripravíme riešenie pre váš objekt.";
+const metadata = {
+  "title": "Softvér (DP), katalóg produktov | RKS",
+  "description": "Softvér a licenčné kľúče pre rozšírenie funkcií digitálnych rádiostaníc Mototrbo",
+  "robots": {
+    "index": false,
+    "follow": false
+  }
+};
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Produkty",
+      "item": "https://rksba.sk/produkty"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Katalóg produktov",
+      "item": "https://rksba.sk/katalog-produktov"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/radiostanice-2002"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Prenosné rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Softvér (DP)",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/softver-dp-mototrbo"
+    }
+  ]
+};
+const filters = [
+  {
+    "key": "kompatibilita",
+    "nazov": "Kompatibilita",
+    "hodnoty": [
+      {
+        "hodnota": "DP4401e",
+        "pocet": 21
+      },
+      {
+        "hodnota": "DP4601e",
+        "pocet": 21
+      },
+      {
+        "hodnota": "DP4801e",
+        "pocet": 21
+      },
+      {
+        "hodnota": "DP4401",
+        "pocet": 19
+      },
+      {
+        "hodnota": "DP4601",
+        "pocet": 19
+      },
+      {
+        "hodnota": "DP4801",
+        "pocet": 19
+      },
+      {
+        "hodnota": "DP3441e",
+        "pocet": 18
+      },
+      {
+        "hodnota": "DP3661e",
+        "pocet": 18
+      },
+      {
+        "hodnota": "DP4400",
+        "pocet": 17
+      },
+      {
+        "hodnota": "DP4400e",
+        "pocet": 17
+      },
+      {
+        "hodnota": "DP4600",
+        "pocet": 17
+      },
+      {
+        "hodnota": "DP4600e",
+        "pocet": 17
+      },
+      {
+        "hodnota": "DP4800",
+        "pocet": 17
+      },
+      {
+        "hodnota": "DP4800e",
+        "pocet": 17
+      },
+      {
+        "hodnota": "SL4000e",
+        "pocet": 17
+      },
+      {
+        "hodnota": "SL4010e",
+        "pocet": 17
+      },
+      {
+        "hodnota": "DP3441",
+        "pocet": 16
+      },
+      {
+        "hodnota": "DP4401 Ex",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP4401 Ex Ma",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP4801 Ex",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP4801 Ex Ma",
+        "pocet": 15
+      },
+      {
+        "hodnota": "SL2600",
+        "pocet": 15
+      },
+      {
+        "hodnota": "SL4000",
+        "pocet": 15
+      },
+      {
+        "hodnota": "SL4010",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DM4401e",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DM4601e",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DP2400",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DP2400e",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DP2600",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DP2600e",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DM4401",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DM4600",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DM4600e",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DM4601",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DM4400",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DM4400e",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DM2600",
+        "pocet": 11
+      },
+      {
+        "hodnota": "R7",
+        "pocet": 11
+      },
+      {
+        "hodnota": "SL1600",
+        "pocet": 9
+      },
+      {
+        "hodnota": "DM1400",
+        "pocet": 4
+      },
+      {
+        "hodnota": "DM1600",
+        "pocet": 4
+      },
+      {
+        "hodnota": "DP1400",
+        "pocet": 4
+      },
+      {
+        "hodnota": "DP3400",
+        "pocet": 4
+      },
+      {
+        "hodnota": "DP3401",
+        "pocet": 4
+      },
+      {
+        "hodnota": "R2",
+        "pocet": 4
+      },
+      {
+        "hodnota": "R5",
+        "pocet": 4
+      },
+      {
+        "hodnota": "DP3600",
+        "pocet": 3
+      },
+      {
+        "hodnota": "DP3601",
+        "pocet": 3
+      },
+      {
+        "hodnota": "DM3400",
+        "pocet": 2
+      },
+      {
+        "hodnota": "DM3401",
+        "pocet": 2
+      },
+      {
+        "hodnota": "DM3600",
+        "pocet": 2
+      },
+      {
+        "hodnota": "DM3601",
+        "pocet": 2
+      }
+    ]
+  }
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
+      <aside class="mb-8 lg:mb-0 lg:sticky lg:top-24 lg:self-start">
+        <details class="rks-cats rounded-xl border border-hairline p-4 lg:border-0 lg:p-0">
+          <summary class="rks-cats-toggle cursor-pointer font-semibold lg:hidden flex items-center justify-between gap-2 rounded-lg bg-panel-soft px-4 py-3"><span>Kategórie produktov</span><span class="rks-cats-arrow" aria-hidden="true"></span></summary>
+          <div class="rks-tree-wrap mt-3 lg:mt-0" set:html={sidebar} />
+        </details>
+      </aside>
+
+      <div class="min-w-0">
+        <nav class="text-sm text-muted mb-2" aria-label="Omrvinky">
+          {breadcrumb.map((b, i) => (
+            <>
+              {i > 0 && <span class="px-1">/</span>}
+              {b.url ? <a class="hover:underline" href={b.url}>{b.name}</a> : <span>{b.name}</span>}
+            </>
+          ))}
+        </nav>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">{heading}</h1>
+
+        {notice && (
+          <div class="mb-8 rounded-xl border border-l-4 border-hairline border-l-secondary bg-panel p-5">
+            <p class="text-lg font-semibold tracking-tight">{notice}</p>
+            {noticeDetail && <p class="text-base text-muted mt-1">{noticeDetail}</p>}
+          </div>
+        )}
+
+        {intro.map((par) => (
+          <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
+        ))}
+
+        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+
+        {subcats.length > 0 && (
+          <>
+            {subcatsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-4 mb-4">{subcatsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {subcats.map((c) => (
+                <a href={c.url} class="group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        {filters.length > 0 && (
+          <div class="rks-filter mt-8 rounded-xl border border-hairline bg-panel-soft p-5" data-rks-filter>
+            <div class="flex items-center justify-between gap-4 mb-3">
+              <h2 class="text-base font-semibold">Filtrovať podľa parametrov</h2>
+              <button type="button" class="text-sm text-link hover:underline" data-rks-reset>Zrušiť filtre</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+              {filters.map((f) => (
+                <details class="rks-facet border-t border-hairline pt-2">
+                  <summary class="cursor-pointer text-sm font-medium py-1 select-none">{f.nazov}</summary>
+                  <div class="mt-1 mb-2 space-y-1">
+                    {f.hodnoty.map((v) => (
+                      <label class="flex items-center gap-2 text-sm" data-rks-opt={f.key + '|~|' + v.hodnota}>
+                        <input type="checkbox" class="accent-primary" data-rks-f={f.key} value={v.hodnota} />
+                        <span class="flex-1">{v.hodnota}</span>
+                        <span class="text-muted text-xs tabular-nums" data-rks-cnt>{v.pocet}</span>
+                      </label>
+                    ))}
+                  </div>
+                </details>
+              ))}
+            </div>
+            <p class="text-sm text-muted mt-3" data-rks-summary></p>
+          </div>
+        )}
+
+        {products.length > 0 && (
+          <>
+            {productsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">{productsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4" data-rks-grid>
+              {products.map((c) => (
+                <a href={c.url} data-facets={c.facets} class="rks-card group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+          <h2 class="text-xl md:text-2xl font-semibold mb-3">{ctaHeading}</h2>
+          <p class="text-muted mb-6 max-w-xl mx-auto">{ctaText}</p>
+          <a href="/lp/konzultacia.html?utm_source=web&amp;utm_campaign=web" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+
+  {filters.length > 0 && (
+    <script is:inline>
+      (function () {
+        var root = document.querySelector('[data-rks-filter]');
+        var grid = document.querySelector('[data-rks-grid]');
+        if (!root || !grid) return;
+        var cards = Array.prototype.slice.call(grid.querySelectorAll('.rks-card'));
+        var boxes = Array.prototype.slice.call(root.querySelectorAll('input[data-rks-f]'));
+        var summary = root.querySelector('[data-rks-summary]');
+        var parsed = cards.map(function (c) {
+          try { return JSON.parse(c.getAttribute('data-facets') || '{}'); } catch (e) { return {}; }
+        });
+        function selection() {
+          var m = {};
+          boxes.forEach(function (b) {
+            if (b.checked) { (m[b.getAttribute('data-rks-f')] = m[b.getAttribute('data-rks-f')] || []).push(b.value); }
+          });
+          return m;
+        }
+        function matches(f, m) {
+          for (var k in m) {
+            var have = f[k] || [];
+            var ok = m[k].some(function (v) { return have.indexOf(v) !== -1; });
+            if (!ok) return false;
+          }
+          return true;
+        }
+        function apply() {
+          var m = selection(), shown = 0;
+          cards.forEach(function (c, i) {
+            var ok = matches(parsed[i], m);
+            c.style.display = ok ? '' : 'none';
+            if (ok) shown++;
+          });
+          // prepocitaj pocty: kolko by ostalo, keby sa pridala prave tato hodnota
+          root.querySelectorAll('label[data-rks-opt]').forEach(function (lab) {
+            var parts = lab.getAttribute('data-rks-opt').split('|~|');
+            var k = parts[0], v = parts[1];
+            var m2 = {}; for (var kk in m) m2[kk] = m[kk].slice();
+            m2[k] = [v];
+            var n = 0;
+            for (var i = 0; i < cards.length; i++) { if (matches(parsed[i], m2)) n++; }
+            lab.querySelector('[data-rks-cnt]').textContent = n;
+            var box = lab.querySelector('input');
+            lab.style.display = (n === 0 && !box.checked) ? 'none' : '';
+          });
+          summary.textContent = shown === cards.length
+            ? cards.length + ' produktov'
+            : shown + ' z ' + cards.length + ' produktov';
+        }
+        boxes.forEach(function (b) { b.addEventListener('change', apply); });
+        var reset = root.querySelector('[data-rks-reset]');
+        if (reset) reset.addEventListener('click', function () {
+          boxes.forEach(function (b) { b.checked = false; });
+          apply();
+        });
+        apply();
+      })();
+    </script>
+  )}
+
+  <style is:global>
+    @media (min-width: 1024px) {
+      .rks-cats > summary { display: none; }
+      .rks-cats > .rks-tree-wrap { display: block !important; }
+    }
+    .rks-tree .rks-li { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 0.5rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-leaf { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-li > .rks-link { min-width: 0; }
+    .rks-tree .rks-children { grid-column: 1 / -1; display: none; }
+    .rks-tree .rks-disc[open] ~ .rks-children { display: block; }
+    .rks-tree .rks-disc { display: inline-flex; }
+    .rks-tree summary.rks-arrow { list-style: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; color: rgba(229, 236, 246, 0.66); }
+    .rks-tree summary.rks-arrow::-webkit-details-marker { display: none; }
+    .rks-tree summary.rks-arrow::before { content: ""; border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-tree .rks-disc[open] > summary.rks-arrow::before { transform: rotate(90deg); }
+    .rks-cats-arrow::before { content: ""; display: inline-block; color: rgba(229, 236, 246, 0.66); border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-cats[open] > .rks-cats-toggle .rks-cats-arrow::before { transform: rotate(90deg); }
+  </style>
+</Layout>

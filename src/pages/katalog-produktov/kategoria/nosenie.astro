@@ -1,0 +1,1200 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const sidebar = "<nav class=\"rks-tree text-sm\" aria-label=\"Kategórie produktov\"><ul class=\"space-y-1\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/radiostanice-2002\" class=\"rks-link text-default hover:text-link\">Rádiostanice<span class=\"text-muted text-xs ml-2\">773</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2\" class=\"rks-link text-default hover:text-link\">Prenosné rádiostanice<span class=\"text-muted text-xs ml-2\">632</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory\" class=\"rks-link text-default hover:text-link\">Akumulátory<span class=\"text-muted text-xs ml-2\">53</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Antény (DP)<span class=\"text-muted text-xs ml-2\">58</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DP)<span class=\"text-muted text-xs ml-2\">17</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dp\" class=\"rks-link text-default hover:text-link\">Iné (DP)<span class=\"text-muted text-xs ml-2\">138</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky-mototrbo\" class=\"rks-link text-default hover:text-link\">Nabíjačky<span class=\"text-muted text-xs ml-2\">37</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie\" class=\"rks-link text-primary font-semibold\">Nosenie<span class=\"text-muted text-xs ml-2\">97</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy\" class=\"rks-link text-default hover:text-link\">Náhlavné súpravy<span class=\"text-muted text-xs ml-2\">43</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony\" class=\"rks-link text-default hover:text-link\">Repromikrofóny<span class=\"text-muted text-xs ml-2\">39</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla\" class=\"rks-link text-default hover:text-link\">Slúchadlá<span class=\"text-muted text-xs ml-2\">72</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Softvér (DP)<span class=\"text-muted text-xs ml-2\">35</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prevadzace-mototrbo\" class=\"rks-link text-default hover:text-link\">Prevádzače<span class=\"text-muted text-xs ml-2\">22</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dr\" class=\"rks-link text-default hover:text-link\">Iné (DR)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dr\" class=\"rks-link text-default hover:text-link\">Softvér (DR)<span class=\"text-muted text-xs ml-2\">13</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/vozidlove-radiostanice-mototrbo\" class=\"rks-link text-default hover:text-link\">Vozidlové rádiostanice<span class=\"text-muted text-xs ml-2\">119</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny\" class=\"rks-link text-default hover:text-link\">Antény (DM)<span class=\"text-muted text-xs ml-2\">23</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dm-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DM)<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dm\" class=\"rks-link text-default hover:text-link\">Iné (DM)<span class=\"text-muted text-xs ml-2\">22</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/instalacia\" class=\"rks-link text-default hover:text-link\">Inštalácia<span class=\"text-muted text-xs ml-2\">29</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofony\" class=\"rks-link text-default hover:text-link\">Mikrofóny<span class=\"text-muted text-xs ml-2\">13</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/napajanie\" class=\"rks-link text-default hover:text-link\">Napájanie<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/reproduktory\" class=\"rks-link text-default hover:text-link\">Reproduktory<span class=\"text-muted text-xs ml-2\">5</span></a></li></ul></li></ul></li></ul></nav>";
+const breadcrumb = [
+  {
+    "name": "Produkty",
+    "url": "/produkty"
+  },
+  {
+    "name": "Katalóg produktov",
+    "url": "/katalog-produktov"
+  },
+  {
+    "name": "Rádiostanice",
+    "url": "/katalog-produktov/kategoria/radiostanice-2002"
+  },
+  {
+    "name": "Prenosné rádiostanice",
+    "url": "/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+  },
+  {
+    "name": "Nosenie",
+    "url": null
+  }
+];
+const heading = "Nosenie";
+const popisHtml = "<h1>Katalóg puzdier a iného príslušenstva na nosenie rádiostaníc Motorola</h1> <p>Od klipu na opasok až po opaskové alebo náprsné puzdra, Motorola doplnky pomáhajú chrániť rádiostanicu . Pri výrobe sú použité prevažne materiály ako koža, koženka a umelé materiály (napr. Nylon). Spravidla sa puzdrá líšia podľa typu rádiostanice (s displejom, klávesnicou, typom a teda hrúbkou&nbsp; použitých akumulátorov). Iba univerzálne puzdrá je možné použiť pre akýkoľvek typ rádiostanice Motorola (okrem ATEX). Väčšina puzdier chráni pred mechanickým poškodením, menej už pred prachom a inými nečistotami&nbsp;a pred vniknutím vody.</p>";
+const intro = [];
+const subcats = [];
+const subcatsHeading = "";
+const products = [
+  {
+    "url": "/katalog-produktov/3-bodove-puzdro-mototrbo",
+    "img": "/images/katalog-produktov/20561/main.webp",
+    "title": "3 bodové puzdro",
+    "desc": "3 bodové puzdro 3 bodové puzdro Puzdro ušité z nylonovej tkaniny čiernej farby je určené pre nosenie prenosnej rádiostanice Motorola na hrudi.&nbsp;Popruhy sú nastaviteľné.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Na hrudi\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/42009311001",
+    "img": "/images/katalog-produktov/21056/main.webp",
+    "title": "42009311001",
+    "desc": "Plastový háčik na popruh Plastový háčik na popruh &nbsp;",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na hrudi\", \"Na pleci\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/4205823v07",
+    "img": "/images/katalog-produktov/20882/main.webp",
+    "title": "4205823V07",
+    "desc": "ATEX klip na opasok pre repromikrofón ATEX klip na opasok pre repromikrofón Klip na opasok určený pre ATEX repromikrofóny&nbsp; PMMN4058 a PMMN4067 .",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/gmdn0386",
+    "img": "/images/katalog-produktov/21051/main.webp",
+    "title": "GMDN0386",
+    "desc": "&nbsp;Našívací držiak pre rýchloupínací adaptér Peter Jones Našívací držiak pre rýchloupínací adaptér Peter Jones GMDN0386 Peter Jones Sew-On Dock je súčasťou systému Klick Fast , ktorý slúži na bezpečné a flexibilné uchytenie repromikrofónov na odev používateľa.",
+    "facets": "{\"kompatibilita\": [\"ION\", \"R7\", \"R7a\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na hrudi\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/gmdn0445",
+    "img": "/images/katalog-produktov/21052/main.webp",
+    "title": "GMDN0445AA",
+    "desc": "Držiak pre rýchloupínací adaptér Peter Jones Držiak pre rýchloupínací adaptér Peter Jones Držiak Klick Fast Mounting Dock for RSM garment tag , slúži na bezpečné a rýchle uchytenie repromikrofónu (RSM) na uniformu alebo odev.",
+    "facets": "{\"kompatibilita\": [\"ION\", \"R7\", \"R7a\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na hrudi\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/gmdn0547",
+    "img": "/images/katalog-produktov/21053/main.webp",
+    "title": "GMDN0547",
+    "desc": "Držiak pre rýchloupínací adaptér Peter Jones Držiak pre rýchloupínací adaptér Peter Jones Držiak Klick Fast double tongue tag dock , je súčasťou systému Klick Fast od spoločnosti Peter Jones.",
+    "facets": "{\"kompatibilita\": [\"ION\", \"R7\", \"R7a\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na hrudi\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hln6602",
+    "img": "/images/katalog-produktov/20292/main.webp",
+    "title": "HLN6602",
+    "desc": "Univerzálne nylonové náprsné puzdro Univerzálne nylonové náprsné puzdro Nylonové náprsné puzdro je určené pre použitie prakticky s akoukoľvek prenosnou profesionálnou rádiostanicu Motorola.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\", \"SL1600\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"R7\", \"R7a\", \"R2\", \"R5\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Na hrudi\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hln8255",
+    "img": "/images/katalog-produktov/20148/main.webp",
+    "title": "HLN8255",
+    "desc": "Spona na opasok (7,5 cm) Spona na opasok (7,5 cm) Plastová spona s pružinou pre umiestnenie na akumulátor a pre možnosť nosenia rádiostanice na opasok.",
+    "facets": "{\"kompatibilita\": [\"DP1400\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hln9701-mototrbo",
+    "img": "/images/katalog-produktov/20419/main.webp",
+    "title": "HLN9701",
+    "desc": "Univerzálne nylonové púzdro Univerzálne nylonové púzdro&nbsp; Opaskové oko nylonového puzdra je možné navliecť na opasok, alebo je na opasok pripnúť.",
+    "facets": "{\"kompatibilita\": [\"DP1400\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hln9714-mototrbo",
+    "img": "/images/katalog-produktov/20999/main.webp",
+    "title": "HLN9714",
+    "desc": "Spona na opasok (6 cm) Spona na opasok (6 cm) Plastová spona s pružinou pre umiestnenie na akumulátor a pre možnosť nosenia rádiostanice na opasok.",
+    "facets": "{\"kompatibilita\": [\"R2\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hln9844-mototrbo",
+    "img": "/images/katalog-produktov/21000/main.webp",
+    "title": "HLN9844",
+    "desc": "Spona na opasok (5 cm) Spona na opasok (5 cm) Plastová spona s pružinou pre umiestnenie na akumulátor a pre možnosť nosenia rádiostanice na opasok.",
+    "facets": "{\"kompatibilita\": [\"R2\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/hln9985",
+    "img": "/images/katalog-produktov/20293/main.webp",
+    "title": "HLN9985",
+    "desc": "Vodotesné puzdro na rádiostanice Motorola Vodotesné puzdro na rádiostanice Motorola S úspechom možno použiť aj vo veľmi prašnom prostredí.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\", \"SL1600\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"R7\", \"R2\", \"R5\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na pleci\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/ntn5243",
+    "img": "/images/katalog-produktov/20294/main.webp",
+    "title": "NTN5243",
+    "desc": "Nastaviteľný popruh na rameno Nastaviteľný popruh na rameno Nastaviteľný nylonový popruh sa pripevňuje na púzdro.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\", \"SL1600\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Na pleci\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln4651",
+    "img": "/images/katalog-produktov/20295/main.webp",
+    "title": "PMLN4651",
+    "desc": "Spona na opasok (5 cm) Spona na opasok (5 cm) Plastová spona s pružinou umožňuje nosiť rádiostanicu na opasku.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\", \"R7\", \"R2\", \"R5\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln4652",
+    "img": "/images/katalog-produktov/20297/main.webp",
+    "title": "PMLN4652",
+    "desc": "Spona na opasok (6,3&nbsp;cm) Spona na opasok (6,3&nbsp;cm) Plastová spona s pružinou umožňuje nosiť rádiostanicu na opasku.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5004",
+    "img": "/images/katalog-produktov/21057/main.webp",
+    "title": "PMLN5004",
+    "desc": "Peter Jones Klick Fast adaptér Peter Jones Klick Fast adaptér Adaptér je určený na bezpečné a flexibilné uchytenie&nbsp; repromikrofónov na odev používateľa.",
+    "facets": "{\"kompatibilita\": [\"ION\", \"R7\", \"R7a\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na hrudi\", \"Na pleci\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5015",
+    "img": "/images/katalog-produktov/20298/main.webp",
+    "title": "PMLN5015",
+    "desc": "Nylonové puzdro s pevným pútkom (7,5 cm) Nylonové puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP3600\", \"DP3601\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5016",
+    "img": "/images/katalog-produktov/20299/main.webp",
+    "title": "PMLN5016",
+    "desc": "Kožené puzdro s otočným pútkom (6 cm) Kožené puzdro s otočným pútkom (6 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP3600\", \"DP3601\"], \"material\": [\"Jemná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5017",
+    "img": "/images/katalog-produktov/20300/main.webp",
+    "title": "PMLN5017",
+    "desc": "Kožené puzdro s otočným pútkom (7,5 cm) Kožené puzdro s otočným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP3600\", \"DP3601\"], \"material\": [\"Jemná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5018",
+    "img": "/images/katalog-produktov/20348/main.webp",
+    "title": "PMLN5018",
+    "desc": "Kožené puzdro s pevným pútkom (7,5 cm) Kožené puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP3600\", \"DP3601\"], \"material\": [\"Jemná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5019",
+    "img": "/images/katalog-produktov/20349/main.webp",
+    "title": "PMLN5019",
+    "desc": "Kožené puzdro s otočným pútkom (6 cm) Kožené puzdro s otočným pútkom (6 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP3600\", \"DP3601\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5020",
+    "img": "/images/katalog-produktov/20301/main.webp",
+    "title": "PMLN5020",
+    "desc": "Kožené puzdro s otočným pútkom (7,5 cm) Kožené puzdro s otočným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP3600\", \"DP3601\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5021",
+    "img": "/images/katalog-produktov/20302/main.webp",
+    "title": "PMLN5021",
+    "desc": "Kožené puzdro s pevným pútkom (7,5 cm) Kožené puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP3600\", \"DP3601\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5022",
+    "img": "/images/katalog-produktov/20139/main.webp",
+    "title": "PMLN5022",
+    "desc": "Náhradné otočné pútko (6 cm) Náhradné otočné pútko (6 cm) Určené pre rádiostanice Motorola rady DP3000.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5023",
+    "img": "/images/katalog-produktov/20046/main.webp",
+    "title": "PMLN5023",
+    "desc": "Náhradné otočné pútko (7,5 cm) Náhradné otočné pútko (7,5 cm) Určené pre rádiostanice Motorola rady DP3000.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5024",
+    "img": "/images/katalog-produktov/20303/main.webp",
+    "title": "PMLN5024",
+    "desc": "Nylonové puzdro s pevným pútkom (7,5 cm) Nylonové puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5025",
+    "img": "/images/katalog-produktov/20304/main.webp",
+    "title": "PMLN5025",
+    "desc": "Nylonové puzdro s otočným pútkom (6 cm) Nylonové puzdro s otočným pútkom (6 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5026",
+    "img": "/images/katalog-produktov/20305/main.webp",
+    "title": "PMLN5026",
+    "desc": "Kožené puzdro s otočným pútkom (7,5 cm) Kožené puzdro s otočným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\"], \"material\": [\"Jemná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5027",
+    "img": "/images/katalog-produktov/20306/main.webp",
+    "title": "PMLN5027",
+    "desc": "Kožené puzdro s pevným pútkom (7,5 cm) Kožené puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\"], \"material\": [\"Jemná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5028",
+    "img": "/images/katalog-produktov/20307/main.webp",
+    "title": "PMLN5028",
+    "desc": "Kožené puzdro s otočným pútkom (6 cm) Kožené puzdro s otočným pútkom (6 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5029",
+    "img": "/images/katalog-produktov/20308/main.webp",
+    "title": "PMLN5029",
+    "desc": "Kožené puzdro s otočným pútkom (7,5 cm) Kožené puzdro s otočným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5030",
+    "img": "/images/katalog-produktov/20309/main.webp",
+    "title": "PMLN5030",
+    "desc": "Kožené puzdro s pevným pútkom (7,5 cm) Kožené puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5610",
+    "img": "/images/katalog-produktov/20310/main.webp",
+    "title": "PMLN5610",
+    "desc": "Náhradné pútko s otočným závesom (6 cm) Náhradné pútko s otočným závesom (6 cm) Určené pre rádiostanice rady DP2000, DP4000, DP4000Ex, R7, R5, R2",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\", \"R7\", \"R2\", \"R5\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5611",
+    "img": "/images/katalog-produktov/20311/main.webp",
+    "title": "PMLN5611",
+    "desc": "Náhradné pútko s otočným závesom (7,5 cm) Náhradné pútko s otočným závesom (7,5 cm).",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"R7\", \"R2\", \"R5\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5838",
+    "img": "/images/katalog-produktov/20312/main.webp",
+    "title": "PMLN5838",
+    "desc": "Kožené puzdro s pevným pútkom (7,5 cm) Kožené puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5839",
+    "img": "/images/katalog-produktov/20313/main.webp",
+    "title": "PMLN5839",
+    "desc": "Kožené puzdro s pevným pútkom (7,5 cm) Kožené puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5840",
+    "img": "/images/katalog-produktov/20314/main.webp",
+    "title": "PMLN5840",
+    "desc": "Kožené puzdro s otočným pútkom (7,5 cm) Kožené puzdro s otočným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5842",
+    "img": "/images/katalog-produktov/20315/main.webp",
+    "title": "PMLN5842",
+    "desc": "Kožené puzdro s otočným pútkom (6 cm) Kožené puzdro s otočným pútkom (6 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5843",
+    "img": "/images/katalog-produktov/20316/main.webp",
+    "title": "PMLN5843",
+    "desc": "Kožené puzdro s otočným pútkom (6 cm) Kožené puzdro s otočným pútkom (6 cm)&nbsp; Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5844",
+    "img": "/images/katalog-produktov/20317/main.webp",
+    "title": "PMLN5844",
+    "desc": "Nylonové puzdro s pevným pútkom (7,5 cm) Nylonové puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5845",
+    "img": "/images/katalog-produktov/20318/main.webp",
+    "title": "PMLN5845",
+    "desc": "Nylonové puzdro s pevným pútkom (7,5 cm) Nylonové puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5846",
+    "img": "/images/katalog-produktov/20319/main.webp",
+    "title": "PMLN5846",
+    "desc": "Kožené puzdro s otočným pútkom (7,5 cm) Kožené puzdro s otočným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5863",
+    "img": "/images/katalog-produktov/20320/main.webp",
+    "title": "PMLN5863",
+    "desc": "Kožené puzdro s pevným pútkom (7,5 cm) Kožené puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP2600\", \"DP2600e\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5864",
+    "img": "/images/katalog-produktov/20322/main.webp",
+    "title": "PMLN5864",
+    "desc": "Kožené puzdro s pevným pútkom (7,5 cm) Kožené puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5865",
+    "img": "/images/katalog-produktov/20324/main.webp",
+    "title": "PMLN5865",
+    "desc": "Kožené puzdro s otočným pútkom (7,5 cm) Kožené puzdro s otočným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP2600\", \"DP2600e\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5866",
+    "img": "/images/katalog-produktov/20344/main.webp",
+    "title": "PMLN5866",
+    "desc": "Kožené puzdro s otočným pútkom (7,5 cm) Kožené puzdro s otočným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5867",
+    "img": "/images/katalog-produktov/20345/main.webp",
+    "title": "PMLN5867",
+    "desc": "Kožené puzdro s otočným pútkom (6 cm) Kožené puzdro s otočným pútkom (6 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP2600\", \"DP2600e\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5868",
+    "img": "/images/katalog-produktov/20346/main.webp",
+    "title": "PMLN5868",
+    "desc": "Kožené puzdro s otočným pútkom (6 cm) Kožené puzdro s otočným pútkom (6 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5869",
+    "img": "/images/katalog-produktov/20347/main.webp",
+    "title": "PMLN5869",
+    "desc": "Nylonové puzdro s pevným pútkom (7,5 cm) Nylonové puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP2600\", \"DP2600e\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5870",
+    "img": "/images/katalog-produktov/20147/main.webp",
+    "title": "PMLN5870",
+    "desc": "Nylonové puzdro s pevným pútkom (7,5 cm) Nylonové puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5956",
+    "img": "/images/katalog-produktov/20146/main.webp",
+    "title": "PMLN5956",
+    "desc": "Plastový držiak na opasok Plastový držiak na opasok Umožňuje nosenie rádiostanice na opasku.&nbsp; Rádiostanica sa \"zacvakne\" do držiaka a otočná spona umožňuje jej pohodlné nosenie.",
+    "facets": "{\"kompatibilita\": [\"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6074",
+    "img": "/images/katalog-produktov/20145/main.webp",
+    "title": "PMLN6074",
+    "desc": "Pútko na zápästie Pútko na zápästie Pútko dĺžky 33 cm umožňuje nosiť rádiostanicu na zápästí a zaisťuje ochranu rádiostanice pred vypadnutím z ruky.",
+    "facets": "{\"kompatibilita\": [\"SL1600\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"R7\", \"R7a\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Na ruke\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6086",
+    "img": "/images/katalog-produktov/20144/main.webp",
+    "title": "PMLN6086",
+    "desc": "ATEX spona na opasok (5 cm) ATEX spona na opasok (5 cm) Spona umožňuje nosenie rádiostanice na opasku.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6096",
+    "img": "/images/katalog-produktov/20350/main.webp",
+    "title": "PMLN6096",
+    "desc": "Kožené puzdro s otočným pútkom (6 cm) Kožené puzdro s otočným pútkom (6 cm) Toto odolné kožené puzdro s otočným pútkom určené pre použitie s rádiostanicami ATEX je schopné odolať drsným podmienkam v prostredí s nebezpečenstvom výbuchu.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4401 Ex Ma\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6097",
+    "img": "/images/katalog-produktov/20351/main.webp",
+    "title": "PMLN6097",
+    "desc": "Kožené puzdro s otočným pútkom (6 cm) Kožené puzdro s otočným pútkom (6 cm) Toto odolné kožené puzdro s otočným pútkom určené pre použitie s rádiostanicami ATEX je schopné odolať drsným podmienkam v prostredí s nebezpečenstvom výbuchu.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6098",
+    "img": "/images/katalog-produktov/20352/main.webp",
+    "title": "PMLN6098",
+    "desc": "Kožené puzdro s otočným pútkom (6 cm) Kožené puzdro s otočným pútkom (6 cm) Toto odolné kožené puzdro s otočným pútkom určené pre použitie s rádiostanicami ATEX je schopné odolať drsným podmienkam v prostredí s nebezpečenstvom výbuchu.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"material\": [\"Jemná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6099",
+    "img": "/images/katalog-produktov/20353/main.webp",
+    "title": "PMLN6099",
+    "desc": "Kožené puzdro s otočným pútkom (6 cm) Kožené puzdro s otočným pútkom (6 cm) Toto odolné kožené puzdro s otočným pútkom určené pre použitie s rádiostanicami ATEX je schopné odolať drsným podmienkam v prostredí s nebezpečenstvom výbuchu.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"material\": [\"Jemná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7008",
+    "img": "/images/katalog-produktov/20425/main.webp",
+    "title": "PMLN7008",
+    "desc": "Spona na opasok (6,3 cm) Spona na opasok (6,3 cm) Plastová spona s pružinou umožňuje bezpečne nosiť rádiostanicu na opasku širokom max.6,3 cm.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\", \"R7\", \"R2\", \"R5\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7040",
+    "img": "/images/katalog-produktov/20496/main.webp",
+    "title": "PMLN7040",
+    "desc": "Kožené púzdro s otočným pútkom Kožené púzdro s otočným pútkom Toto mäkké kožené puzdro je navrhnuté na komfortné a pohodlné nosenie, umožňuje užívateľovi pomocou priloženej otočnej spony zavesiť rádiostanicu na opasok alebo pás nohavíc.",
+    "facets": "{\"kompatibilita\": [\"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"], \"material\": [\"Jemná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7042",
+    "img": "/images/katalog-produktov/20579/main.webp",
+    "title": "PMLN7042",
+    "desc": "Nylonové puzdro s pevným pútkom Odolné nylonové puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP3441\", \"DP3441e\", \"DP3661e\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7076",
+    "img": "/images/katalog-produktov/20479/main.webp",
+    "title": "PMLN7076",
+    "desc": "Pružný remienok na ruku Pružný remienok na ruku Tento pružný remienok umožňuje bezpečnejšie držanie rádiostanice v ruke.",
+    "facets": "{\"kompatibilita\": [\"SL1600\", \"SL2600\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Na ruke\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7128",
+    "img": "/images/katalog-produktov/20485/main.webp",
+    "title": "PMLN7128",
+    "desc": "Robustná otočná spona na opasok Robustná otočná spona na opasok Spona z plastového materiálu s otočným kĺbom je určená pre bezpečné nosenie rádiostanice na opasku.",
+    "facets": "{\"kompatibilita\": [\"SL1600\", \"SL2600\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7190",
+    "img": "/images/katalog-produktov/20486/main.webp",
+    "title": "PMLN7190",
+    "desc": "Plastový držiak Plastový držiak Držiak slúži pre zasunutie a nosenie rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"SL1600\", \"SL2600\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7296",
+    "img": "/images/katalog-produktov/20571/main.webp",
+    "title": "PMLN7296",
+    "desc": "Vibračná spona na opasok (5cm) Vibračná spona na opasok (5 cm) Vibračná plastová spona s pružinou pre umiestnenie na akumulátor umožňuje nosiť rádiostanicu na opasku.",
+    "facets": "{\"kompatibilita\": [\"DP2400e\", \"DP2600e\", \"DP4400e\", \"DP4401e\", \"DP4600e\", \"DP4601e\", \"DP4800e\", \"DP4801e\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7536",
+    "img": "/images/katalog-produktov/20582/main.webp",
+    "title": "PMLN7536",
+    "desc": "Puzdro Puzdro Odolné puzdro z jemnej kože chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP3441\", \"DP3441e\", \"DP3661e\"], \"material\": [\"Jemná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7537",
+    "img": "/images/katalog-produktov/20581/main.webp",
+    "title": "PMLN7537",
+    "desc": "Kožené puzdro s pevným pútkom Kožené puzdro s pevným pútkom Odolné puzdro z mäkkej kože chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP3441\", \"DP3441e\", \"DP3661e\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7559",
+    "img": "/images/katalog-produktov/20580/main.webp",
+    "title": "PMLN7559",
+    "desc": "Plastový držiak na opasok Plastový držiak na opasok Plastový držiak z Lexanu slúži pre zasunutie a nosenie rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DP3441\", \"DP3441e\", \"DP3661e\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7961",
+    "img": "/images/katalog-produktov/21055/main.webp",
+    "title": "PMLN7961",
+    "desc": "Držiak pre rýchloupínací adaptér Peter Jones Držiak pre rýchloupínací adaptér Peter Jones Držiak Extended Klick Fast Mounting Dock for RSM Garment Tag , je súčasťou systému Klick Fast od spoločnosti Peter Jones.",
+    "facets": "{\"kompatibilita\": [\"ION\", \"R7\", \"R7a\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na hrudi\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8121",
+    "img": "/images/katalog-produktov/20946/main.webp",
+    "title": "PMLN8121",
+    "desc": "Kklipsa na opasok pre repromikrofón Klipsa na opasok pre repromikrofón Klipsa na opasok určený pre repromikrofóny PMMN4128 (RM780), PMMN4140 (RM760), PMMN4131 (RM730), PMMN4148 (RM110), PMMN4170 (RM560), PMMN4171 (RM530)",
+    "facets": "{\"kompatibilita\": [\"R2\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8126",
+    "img": "/images/katalog-produktov/20934/main.webp",
+    "title": "PMLN8126",
+    "desc": "Plastový držiak Plastový držiak Držiak slúži pre zasunutie a nosenie rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"ION\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8127",
+    "img": "/images/katalog-produktov/20933/main.webp",
+    "title": "PMLN8127",
+    "desc": "Plastový držiak Plastový držiak Držiak slúži pre zasunutie a nosenie rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"ION\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8299",
+    "img": "/images/katalog-produktov/20964/main.webp",
+    "title": "PMLN8299",
+    "desc": "Kožené puzdro s otočným pútkom (7,5 cm) Kožené puzdro s otočným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"R7\", \"R7a\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8300",
+    "img": "/images/katalog-produktov/20967/main.webp",
+    "title": "PMLN8300",
+    "desc": "Kožené puzdro s otočným pútkom (6,3 cm) Kožené puzdro s otočným pútkom (6,3 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"R7\", \"R7a\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8301",
+    "img": "/images/katalog-produktov/20965/main.webp",
+    "title": "PMLN8301",
+    "desc": "Kožené puzdro s pevným pútkom (7,5 cm) Kožené puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"R7\", \"R7a\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8302",
+    "img": "/images/katalog-produktov/20969/main.webp",
+    "title": "PMLN8302",
+    "desc": "Kožené puzdro s otočným pútkom (7,5 cm) Kožené puzdro s otočným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"R7\", \"R7a\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8303",
+    "img": "/images/katalog-produktov/20968/main.webp",
+    "title": "PMLN8303",
+    "desc": "Kožené puzdro s otočným pútkom (6 cm) Kožené puzdro s otočným pútkom (6 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"R7\", \"R7a\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8304",
+    "img": "/images/katalog-produktov/20966/main.webp",
+    "title": "PMLN8304",
+    "desc": "Kožené puzdro s pevným pútkom (7,5 cm) Kožené puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"R7\", \"R7a\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8427",
+    "img": "/images/katalog-produktov/20993/main.webp",
+    "title": "PMLN8427",
+    "desc": "Nylonové púzdro Nylonové púzdro&nbsp; Puzdro je vyrobené z odolného nylonového materiálu, ktorý zaručuje, že vysielačky vydržia každodenné používanie.",
+    "facets": "{\"kompatibilita\": [\"R2\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8433",
+    "img": "/images/katalog-produktov/20994/main.webp",
+    "title": "PMLN8433",
+    "desc": "Kožené púzdro s pevným pútkom Kožené púzdro s pevným pútkom Odolné puzdro chráni rádiostanicu a súčasne umožňuje nosenie rádiostanice na opasku.",
+    "facets": "{\"kompatibilita\": [\"R2\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8434",
+    "img": "/images/katalog-produktov/20995/main.webp",
+    "title": "PMLN8434",
+    "desc": "Kožené puzdro s otočným pútkom (6 cm) Kožené puzdro s otočným pútkom (6 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"R2\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8435",
+    "img": "/images/katalog-produktov/20996/main.webp",
+    "title": "PMLN8435",
+    "desc": "Kožené puzdro s otočným pútkom (7,5 cm) Kožené puzdro s otočným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"R2\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8475",
+    "img": "/images/katalog-produktov/21050/main.webp",
+    "title": "PMLN8475",
+    "desc": "Rýchloupínací adaptér Peter Jones pre repromikrofón Rýchloupínací adaptér Peter Jones pre repromikrofón Adaptér známy aj ako Peter Jones Klick Fast Stud , slúži ako alternatíva k štandardnému otočnému klipu na repromikrofónoch RM730 ( PMMN4131 ), RM760 ( PMMN4140 ), a RM780 ( PMMN4128 ).",
+    "facets": "{\"kompatibilita\": [\"ION\", \"R7\", \"R7a\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na hrudi\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8662",
+    "img": "/images/katalog-produktov/21017/main.webp",
+    "title": "PMLN8662",
+    "desc": "Kožené puzdro s otočným pútkom (7,5 cm) Kožené puzdro s otočným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"R5\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8663",
+    "img": "/images/katalog-produktov/21018/main.webp",
+    "title": "PMLN8663",
+    "desc": "Kožené puzdro s pevným pútkom (7,5 cm) Kožené puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"R5\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8664",
+    "img": "/images/katalog-produktov/21019/main.webp",
+    "title": "PMLN8664",
+    "desc": "Nylonové puzdro s pevným pútkom (7,5 cm) Nylonové puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"R5\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8665",
+    "img": "/images/katalog-produktov/21032/main.webp",
+    "title": "PMLN8665",
+    "desc": "Kožené puzdro s otočným pútkom (7,5 cm) Kožené puzdro s otočným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"R5\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8666",
+    "img": "/images/katalog-produktov/21033/main.webp",
+    "title": "PMLN8666",
+    "desc": "Kožené puzdro s pevným pútkom (7,5 cm) Kožené puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"R5\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8667",
+    "img": "/images/katalog-produktov/21034/main.webp",
+    "title": "PMLN8667",
+    "desc": "Nylonové puzdro s pevným pútkom (7,5 cm) Nylonové puzdro s pevným pútkom (7,5 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"R5\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln4570",
+    "img": "/images/katalog-produktov/20048/main.webp",
+    "title": "RLN4570",
+    "desc": "Odopínacie náprsné puzdro Odopínacie náprsné puzdro Toto púzdro ponúka všetky funkcie originálneho univerzálneho náprsného púzdra HLN6602 a má naviac sponu pre odopnutie celého puzdra.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\", \"SL1600\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Na hrudi\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln4815",
+    "img": "/images/katalog-produktov/20143/main.webp",
+    "title": "RLN4815",
+    "desc": "Univerzálne puzdro Radiopak Univerzálne puzdro Radiopak Puzdro určené pre nosenie prenosnej rádiostanice je vybavené dvoma univerzálnymi vreckami, kapsičkou (15 x 20 cm) zo zipsom pre nevyhnutné drobnosti a širokým popruhom pre upnutie puzdra v páse.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\", \"SL1600\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Okolo pása\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln5383-mototrbo",
+    "img": "/images/katalog-produktov/20416/main.webp",
+    "title": "RLN5383",
+    "desc": "Koženné púzdro s pevným pútkom Koženné púzdro s pevným pútkom Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP1400\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln5384-mototrbo",
+    "img": "/images/katalog-produktov/20417/main.webp",
+    "title": "RLN5384",
+    "desc": "Kožené puzdro s otočným pútkom (6 cm) Kožené puzdro s otočným pútkom (6 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP1400\"], \"material\": [\"Jemná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln5385-mototrbo",
+    "img": "/images/katalog-produktov/20418/main.webp",
+    "title": "RLN5385",
+    "desc": "Kožené puzdro s otočným pútkom (7,6 cm) Kožené puzdro s otočným pútkom (7,6 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
+    "facets": "{\"kompatibilita\": [\"DP1400\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln5644",
+    "img": "/images/katalog-produktov/20142/main.webp",
+    "title": "RLN5644",
+    "desc": "Spona na opasok (5cm) Spona na opasok (5 cm) Plastová spona s pružinou pre umiestnenie na akumulátor a pre možnosť nosenia rádiostanice na opasok.",
+    "facets": "{\"kompatibilita\": [\"DP1400\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/tdn9327",
+    "img": "/images/katalog-produktov/20047/main.webp",
+    "title": "TDN9327",
+    "desc": "Držiak rádiostanice na dvere do auta Držiak&nbsp;rádiostanice na dvere do auta Kovový čierny držiak slúži na pohodlné&nbsp; a ľahké upevnenie rádiostanice na dvere v aute.",
+    "facets": "{\"kompatibilita\": [\"DP1400\"], \"material\": [\"Kov\"], \"sposob-nosenia\": [\"Do auta\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/tdn9373",
+    "img": "/images/katalog-produktov/20141/main.webp",
+    "title": "TDN9373",
+    "desc": "Držiak rádiostanice na dvere do auta Držiak rádiostanice na dvere do auta Kovový čierny držiak slúži na pohodlné&nbsp; a ľahké upevnenie rádiostanice na dvere v aute.",
+    "facets": "{\"kompatibilita\": [\"DP1400\"], \"material\": [\"Kov\"], \"sposob-nosenia\": [\"Do auta\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/waln4307",
+    "img": "/images/katalog-produktov/21054/main.webp",
+    "title": "WALN4307",
+    "desc": "Držiak pre rýchloupínací adaptér Peter Jones Držiak pre rýchloupínací adaptér Peter Jones Držiak Peter Jones Klick Fast Screw-to-Fit Dock slúži na bezpečné a pevné uchytenie repromikrofónov priamo na odev používateľa.",
+    "facets": "{\"kompatibilita\": [\"ION\", \"R7\", \"R7a\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na hrudi\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
+  }
+];
+const productsHeading = "";
+const notice = "";
+const noticeDetail = "";
+const ctaHeading = "Dodávka, inštalácia a servis";
+const ctaText = "Evakuačné a varovacie systémy navrhujeme, dodávame, inštalujeme a servisujeme. Radi pripravíme riešenie pre váš objekt.";
+const metadata = {
+  "title": "Nosenie, katalóg produktov | RKS",
+  "description": "Katalóg puzdier a iného príslušenstva na nosenie rádiostaníc Motorola   Od klipu na opasok až po opaskové alebo náprsné puzdra, Motorola doplnky pomáhajú chrániť rádiostanicu .",
+  "robots": {
+    "index": false,
+    "follow": false
+  }
+};
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Produkty",
+      "item": "https://rksba.sk/produkty"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Katalóg produktov",
+      "item": "https://rksba.sk/katalog-produktov"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/radiostanice-2002"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Prenosné rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Nosenie",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/nosenie"
+    }
+  ]
+};
+const filters = [
+  {
+    "key": "kompatibilita",
+    "nazov": "Kompatibilita",
+    "hodnoty": [
+      {
+        "hodnota": "R7",
+        "pocet": 20
+      },
+      {
+        "hodnota": "DP3400",
+        "pocet": 18
+      },
+      {
+        "hodnota": "DP3401",
+        "pocet": 18
+      },
+      {
+        "hodnota": "DP3600",
+        "pocet": 18
+      },
+      {
+        "hodnota": "DP3601",
+        "pocet": 18
+      },
+      {
+        "hodnota": "DP2400e",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP2600e",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP4400e",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP4401e",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP4600e",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP4601e",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP4800e",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP4801e",
+        "pocet": 15
+      },
+      {
+        "hodnota": "R7a",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP1400",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DP2400",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DP2600",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DP4400",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DP4401",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DP4600",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DP4601",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DP4800",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DP4801",
+        "pocet": 14
+      },
+      {
+        "hodnota": "R2",
+        "pocet": 13
+      },
+      {
+        "hodnota": "R5",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DP3441",
+        "pocet": 9
+      },
+      {
+        "hodnota": "DP3441e",
+        "pocet": 9
+      },
+      {
+        "hodnota": "DP3661e",
+        "pocet": 9
+      },
+      {
+        "hodnota": "ION",
+        "pocet": 9
+      },
+      {
+        "hodnota": "SL1600",
+        "pocet": 9
+      },
+      {
+        "hodnota": "SL2600",
+        "pocet": 9
+      },
+      {
+        "hodnota": "DP4401 Ex",
+        "pocet": 8
+      },
+      {
+        "hodnota": "SL4000",
+        "pocet": 8
+      },
+      {
+        "hodnota": "SL4000e",
+        "pocet": 8
+      },
+      {
+        "hodnota": "SL4010",
+        "pocet": 8
+      },
+      {
+        "hodnota": "SL4010e",
+        "pocet": 8
+      },
+      {
+        "hodnota": "DP4401 Ex Ma",
+        "pocet": 7
+      },
+      {
+        "hodnota": "DP4801 Ex",
+        "pocet": 7
+      },
+      {
+        "hodnota": "DP4801 Ex Ma",
+        "pocet": 6
+      }
+    ]
+  },
+  {
+    "key": "sposob-nosenia",
+    "nazov": "Spôsob nosenia",
+    "hodnoty": [
+      {
+        "hodnota": "Na opasku",
+        "pocet": 79
+      },
+      {
+        "hodnota": "Na hrudi",
+        "pocet": 11
+      },
+      {
+        "hodnota": "Na pleci",
+        "pocet": 4
+      },
+      {
+        "hodnota": "Do auta",
+        "pocet": 2
+      },
+      {
+        "hodnota": "Na ruke",
+        "pocet": 2
+      },
+      {
+        "hodnota": "Okolo pása",
+        "pocet": 1
+      }
+    ]
+  },
+  {
+    "key": "material",
+    "nazov": "Materiál",
+    "hodnoty": [
+      {
+        "hodnota": "Pevná koža",
+        "pocet": 42
+      },
+      {
+        "hodnota": "Plast",
+        "pocet": 24
+      },
+      {
+        "hodnota": "Nylonová tkanina",
+        "pocet": 19
+      },
+      {
+        "hodnota": "Jemná koža",
+        "pocet": 10
+      },
+      {
+        "hodnota": "Kov",
+        "pocet": 2
+      }
+    ]
+  },
+  {
+    "key": "otocny-zaves",
+    "nazov": "Otočný záves",
+    "hodnoty": [
+      {
+        "hodnota": "Nie",
+        "pocet": 53
+      },
+      {
+        "hodnota": "Áno",
+        "pocet": 44
+      }
+    ]
+  },
+  {
+    "key": "rychle-odopnutie",
+    "nazov": "Rýchle odopnutie",
+    "hodnoty": [
+      {
+        "hodnota": "Nie",
+        "pocet": 59
+      },
+      {
+        "hodnota": "Áno",
+        "pocet": 38
+      }
+    ]
+  }
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
+      <aside class="mb-8 lg:mb-0 lg:sticky lg:top-24 lg:self-start">
+        <details class="rks-cats rounded-xl border border-hairline p-4 lg:border-0 lg:p-0">
+          <summary class="rks-cats-toggle cursor-pointer font-semibold lg:hidden flex items-center justify-between gap-2 rounded-lg bg-panel-soft px-4 py-3"><span>Kategórie produktov</span><span class="rks-cats-arrow" aria-hidden="true"></span></summary>
+          <div class="rks-tree-wrap mt-3 lg:mt-0" set:html={sidebar} />
+        </details>
+      </aside>
+
+      <div class="min-w-0">
+        <nav class="text-sm text-muted mb-2" aria-label="Omrvinky">
+          {breadcrumb.map((b, i) => (
+            <>
+              {i > 0 && <span class="px-1">/</span>}
+              {b.url ? <a class="hover:underline" href={b.url}>{b.name}</a> : <span>{b.name}</span>}
+            </>
+          ))}
+        </nav>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">{heading}</h1>
+
+        {notice && (
+          <div class="mb-8 rounded-xl border border-l-4 border-hairline border-l-secondary bg-panel p-5">
+            <p class="text-lg font-semibold tracking-tight">{notice}</p>
+            {noticeDetail && <p class="text-base text-muted mt-1">{noticeDetail}</p>}
+          </div>
+        )}
+
+        {intro.map((par) => (
+          <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
+        ))}
+
+        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+
+        {subcats.length > 0 && (
+          <>
+            {subcatsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-4 mb-4">{subcatsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {subcats.map((c) => (
+                <a href={c.url} class="group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        {filters.length > 0 && (
+          <div class="rks-filter mt-8 rounded-xl border border-hairline bg-panel-soft p-5" data-rks-filter>
+            <div class="flex items-center justify-between gap-4 mb-3">
+              <h2 class="text-base font-semibold">Filtrovať podľa parametrov</h2>
+              <button type="button" class="text-sm text-link hover:underline" data-rks-reset>Zrušiť filtre</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+              {filters.map((f) => (
+                <details class="rks-facet border-t border-hairline pt-2">
+                  <summary class="cursor-pointer text-sm font-medium py-1 select-none">{f.nazov}</summary>
+                  <div class="mt-1 mb-2 space-y-1">
+                    {f.hodnoty.map((v) => (
+                      <label class="flex items-center gap-2 text-sm" data-rks-opt={f.key + '|~|' + v.hodnota}>
+                        <input type="checkbox" class="accent-primary" data-rks-f={f.key} value={v.hodnota} />
+                        <span class="flex-1">{v.hodnota}</span>
+                        <span class="text-muted text-xs tabular-nums" data-rks-cnt>{v.pocet}</span>
+                      </label>
+                    ))}
+                  </div>
+                </details>
+              ))}
+            </div>
+            <p class="text-sm text-muted mt-3" data-rks-summary></p>
+          </div>
+        )}
+
+        {products.length > 0 && (
+          <>
+            {productsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">{productsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4" data-rks-grid>
+              {products.map((c) => (
+                <a href={c.url} data-facets={c.facets} class="rks-card group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+          <h2 class="text-xl md:text-2xl font-semibold mb-3">{ctaHeading}</h2>
+          <p class="text-muted mb-6 max-w-xl mx-auto">{ctaText}</p>
+          <a href="/lp/konzultacia.html?utm_source=web&amp;utm_campaign=web" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+
+  {filters.length > 0 && (
+    <script is:inline>
+      (function () {
+        var root = document.querySelector('[data-rks-filter]');
+        var grid = document.querySelector('[data-rks-grid]');
+        if (!root || !grid) return;
+        var cards = Array.prototype.slice.call(grid.querySelectorAll('.rks-card'));
+        var boxes = Array.prototype.slice.call(root.querySelectorAll('input[data-rks-f]'));
+        var summary = root.querySelector('[data-rks-summary]');
+        var parsed = cards.map(function (c) {
+          try { return JSON.parse(c.getAttribute('data-facets') || '{}'); } catch (e) { return {}; }
+        });
+        function selection() {
+          var m = {};
+          boxes.forEach(function (b) {
+            if (b.checked) { (m[b.getAttribute('data-rks-f')] = m[b.getAttribute('data-rks-f')] || []).push(b.value); }
+          });
+          return m;
+        }
+        function matches(f, m) {
+          for (var k in m) {
+            var have = f[k] || [];
+            var ok = m[k].some(function (v) { return have.indexOf(v) !== -1; });
+            if (!ok) return false;
+          }
+          return true;
+        }
+        function apply() {
+          var m = selection(), shown = 0;
+          cards.forEach(function (c, i) {
+            var ok = matches(parsed[i], m);
+            c.style.display = ok ? '' : 'none';
+            if (ok) shown++;
+          });
+          // prepocitaj pocty: kolko by ostalo, keby sa pridala prave tato hodnota
+          root.querySelectorAll('label[data-rks-opt]').forEach(function (lab) {
+            var parts = lab.getAttribute('data-rks-opt').split('|~|');
+            var k = parts[0], v = parts[1];
+            var m2 = {}; for (var kk in m) m2[kk] = m[kk].slice();
+            m2[k] = [v];
+            var n = 0;
+            for (var i = 0; i < cards.length; i++) { if (matches(parsed[i], m2)) n++; }
+            lab.querySelector('[data-rks-cnt]').textContent = n;
+            var box = lab.querySelector('input');
+            lab.style.display = (n === 0 && !box.checked) ? 'none' : '';
+          });
+          summary.textContent = shown === cards.length
+            ? cards.length + ' produktov'
+            : shown + ' z ' + cards.length + ' produktov';
+        }
+        boxes.forEach(function (b) { b.addEventListener('change', apply); });
+        var reset = root.querySelector('[data-rks-reset]');
+        if (reset) reset.addEventListener('click', function () {
+          boxes.forEach(function (b) { b.checked = false; });
+          apply();
+        });
+        apply();
+      })();
+    </script>
+  )}
+
+  <style is:global>
+    @media (min-width: 1024px) {
+      .rks-cats > summary { display: none; }
+      .rks-cats > .rks-tree-wrap { display: block !important; }
+    }
+    .rks-tree .rks-li { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 0.5rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-leaf { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-li > .rks-link { min-width: 0; }
+    .rks-tree .rks-children { grid-column: 1 / -1; display: none; }
+    .rks-tree .rks-disc[open] ~ .rks-children { display: block; }
+    .rks-tree .rks-disc { display: inline-flex; }
+    .rks-tree summary.rks-arrow { list-style: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; color: rgba(229, 236, 246, 0.66); }
+    .rks-tree summary.rks-arrow::-webkit-details-marker { display: none; }
+    .rks-tree summary.rks-arrow::before { content: ""; border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-tree .rks-disc[open] > summary.rks-arrow::before { transform: rotate(90deg); }
+    .rks-cats-arrow::before { content: ""; display: inline-block; color: rgba(229, 236, 246, 0.66); border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-cats[open] > .rks-cats-toggle .rks-cats-arrow::before { transform: rotate(90deg); }
+  </style>
+</Layout>

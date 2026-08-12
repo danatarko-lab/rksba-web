@@ -1,0 +1,1131 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const sidebar = "<nav class=\"rks-tree text-sm\" aria-label=\"Kategórie produktov\"><ul class=\"space-y-1\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/radiostanice-2002\" class=\"rks-link text-default hover:text-link\">Rádiostanice<span class=\"text-muted text-xs ml-2\">773</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2\" class=\"rks-link text-default hover:text-link\">Prenosné rádiostanice<span class=\"text-muted text-xs ml-2\">632</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory\" class=\"rks-link text-default hover:text-link\">Akumulátory<span class=\"text-muted text-xs ml-2\">53</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Antény (DP)<span class=\"text-muted text-xs ml-2\">58</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DP)<span class=\"text-muted text-xs ml-2\">17</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dp\" class=\"rks-link text-default hover:text-link\">Iné (DP)<span class=\"text-muted text-xs ml-2\">138</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky-mototrbo\" class=\"rks-link text-default hover:text-link\">Nabíjačky<span class=\"text-muted text-xs ml-2\">37</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie\" class=\"rks-link text-default hover:text-link\">Nosenie<span class=\"text-muted text-xs ml-2\">97</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy\" class=\"rks-link text-default hover:text-link\">Náhlavné súpravy<span class=\"text-muted text-xs ml-2\">43</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony\" class=\"rks-link text-default hover:text-link\">Repromikrofóny<span class=\"text-muted text-xs ml-2\">39</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla\" class=\"rks-link text-primary font-semibold\">Slúchadlá<span class=\"text-muted text-xs ml-2\">72</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Softvér (DP)<span class=\"text-muted text-xs ml-2\">35</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prevadzace-mototrbo\" class=\"rks-link text-default hover:text-link\">Prevádzače<span class=\"text-muted text-xs ml-2\">22</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dr\" class=\"rks-link text-default hover:text-link\">Iné (DR)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dr\" class=\"rks-link text-default hover:text-link\">Softvér (DR)<span class=\"text-muted text-xs ml-2\">13</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/vozidlove-radiostanice-mototrbo\" class=\"rks-link text-default hover:text-link\">Vozidlové rádiostanice<span class=\"text-muted text-xs ml-2\">119</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny\" class=\"rks-link text-default hover:text-link\">Antény (DM)<span class=\"text-muted text-xs ml-2\">23</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dm-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DM)<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dm\" class=\"rks-link text-default hover:text-link\">Iné (DM)<span class=\"text-muted text-xs ml-2\">22</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/instalacia\" class=\"rks-link text-default hover:text-link\">Inštalácia<span class=\"text-muted text-xs ml-2\">29</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofony\" class=\"rks-link text-default hover:text-link\">Mikrofóny<span class=\"text-muted text-xs ml-2\">13</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/napajanie\" class=\"rks-link text-default hover:text-link\">Napájanie<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/reproduktory\" class=\"rks-link text-default hover:text-link\">Reproduktory<span class=\"text-muted text-xs ml-2\">5</span></a></li></ul></li></ul></li></ul></nav>";
+const breadcrumb = [
+  {
+    "name": "Produkty",
+    "url": "/produkty"
+  },
+  {
+    "name": "Katalóg produktov",
+    "url": "/katalog-produktov"
+  },
+  {
+    "name": "Rádiostanice",
+    "url": "/katalog-produktov/kategoria/radiostanice-2002"
+  },
+  {
+    "name": "Prenosné rádiostanice",
+    "url": "/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+  },
+  {
+    "name": "Slúchadlá",
+    "url": null
+  }
+];
+const heading = "Slúchadlá";
+const popisHtml = "<h1>Katalóg slúchadiel pre rádiostanice Motorola</h1> <p>Existuje celý rad užívateľov prenosných rádiostaníc. Každý má svoje špecifické potreby, požiadavky a pracuje v rôznych podmienkach. Spoločnosť Motorola dodáva kompletné riešenie a ponúka široký výber mikrofónov, slúchadiel a reproduktorov. Profesionálni užívateľa si môžu svoje rádiostanice prispôsobiť tak, aby zabezpečovali ich individuálne potreby komunikácie aj nad rámec funkcií, ktoré obsahuje štandardná dodávka.</p> <p>1-šnúrové, 2- šnúrové, 3- šnúrové, do ucha, na ucho... Motorola má obrovskú škálu slúchadiel, ktorých cieľom je umožniť užívateľovi diskrétne komunikovať bez toho, aby správy rušili okolie - alebo bol okolím odpočúvaný.</p>";
+const intro = [];
+const subcats = [];
+const subcatsHeading = "";
+const products = [
+  {
+    "url": "/katalog-produktov/mdrln4885-mototrbo",
+    "img": "/images/katalog-produktov/20217/main.webp",
+    "title": "MDRLN4885",
+    "desc": "Slúchadlo do ucha pre repromikrofón Slúchadlo do ucha pre repromikrofón.&nbsp; Slúchadlo do ucha typ je určené pre pripojenie k repromikrofónu pomocou mono 3,5 mm jack konektora (napr.",
+    "facets": "{\"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\", \"R2\", \"R5\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"3\", \"5 mm jack\"], \"rezim\": [\"Len príjem\"], \"mikrofon\": [\"Nie\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/mdrln4941-mototrbo",
+    "img": "/images/katalog-produktov/20216/main.webp",
+    "title": "MDRLN4941",
+    "desc": "Slúchadlo do ucha pre repromikrofón Slúchadlo do ucha pre repromikrofón Slúchadlo s priehľadným zvukovodom je určené pre pripojenie k repromikrofónu.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\", \"R2\", \"R5\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"3\", \"5 mm jack\"], \"rezim\": [\"Len príjem\"], \"mikrofon\": [\"Nie\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/nntn8298",
+    "img": "/images/katalog-produktov/20462/main.webp",
+    "title": "NNTN8298",
+    "desc": "Dvojšnúrové slúchadlá do uší Dvojšnúrové slúchadlá do uší Dvojšnúrové slúchadlá čiernej farby do oboch uši s mikrofónom umiestneným na kábli sú určené pre bezdrôtový Bluetooth PTT modul NNTN8191 .",
+    "facets": "{\"kompatibilita\": [\"DP2600\", \"DP2600e\", \"DP4401\", \"DP4401e\", \"DP4601\", \"DP4601e\", \"DP4801\", \"DP4801e\", \"DP3441e\", \"DP3661e\", \"DP3401\", \"DP3601\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"ION\", \"R7\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"3\", \"5 mm jack\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/nntn8459",
+    "img": "/images/katalog-produktov/20427/main.webp",
+    "title": "NNTN8459",
+    "desc": "Jednošnúrové slúchadlo do ucha Jednošnúrové slúchadlo do ucha Slúchadlo do ucha pre skryté nosenie s priehľadným zvukovodom a mikrofón integrovaný s PTT tlačidlom.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/nntn8747",
+    "img": "/images/katalog-produktov/20463/main.webp",
+    "title": "NNTN8747",
+    "desc": "Dvojšnúrové slúchadlá do uší Dvojšnúrové slúchadlá do uší Čierne dvojšnúrové slúchadlá do oboch uši s mikrofónom umiestneným na kábli sú určené pre bezdrôtový Bluetooth PTT modul NNTN8191 .",
+    "facets": "{\"kompatibilita\": [\"DP4401\", \"DP4401e\", \"DP4601\", \"DP4601e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"ION\", \"R7\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"13 pinový systémový\"], \"rezim\": [\"Príjem cez obe slúchadlá / Vysielanie\"], \"mikrofon\": [\"Nie\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/nntn8748",
+    "img": "/images/katalog-produktov/20464/main.webp",
+    "title": "NNTN8748",
+    "desc": "Dvojšnúrové slúchadlá do uší Dvojšnúrové slúchadlá do uší Biele dvojšnúrové slúchadlá do oboch uši s mikrofónom umiestneným na kábli sú určené pre bezdrôtový Bluetooth PTT modul NNTN8191 .",
+    "facets": "{\"kompatibilita\": [\"DP4401\", \"DP4401e\", \"DP4601\", \"DP4601e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"ION\", \"R7\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Biela\"], \"konektor\": [\"3\", \"5 mm jack\"], \"rezim\": [\"Len príjem\"], \"mikrofon\": [\"Nie\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln4620",
+    "img": "/images/katalog-produktov/20053/main.webp",
+    "title": "PMLN4620",
+    "desc": "Závesné slúchadlo pre repromikrofón Závesné slúchadlo pre repromikrofón Slúchadlo v tvare D určené pre zavesenie na ucho sa pripája k repromikrofónu pomocou mono 3,5 mm jack konektora.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\", \"R2\", \"R5\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"3\", \"5 mm jack\"], \"rezim\": [\"Len príjem\"], \"mikrofon\": [\"Nie\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5096",
+    "img": "/images/katalog-produktov/20215/main.webp",
+    "title": "PMLN5096",
+    "desc": "Jednošnúrové závesné slúchadlo Jednošnúrové závesné slúchadlo Súprava so slúchadlom v tvare D má integrované PTT tlačidlo umiestnené&nbsp;na kábli.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5097",
+    "img": "/images/katalog-produktov/20214/main.webp",
+    "title": "PMLN5097",
+    "desc": "Trojšnúrové závesné slúchadlo Trojšnúrové závesné slúchadlo Slúchadlo do ucha, samostatný smerový mikrofón a oddelené PTT tlačidlo na samostatnom kábli.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"3-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na samostatnom kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5106",
+    "img": "/images/katalog-produktov/20213/main.webp",
+    "title": "PMLN5106",
+    "desc": "Trojšnúrové slúchadlo do ucha IMPRES Trojšnúrové slúchadlo do ucha IMPRES Súprava ponúka flexibilnú a skrytú komunikáciu - slúchadlo do ucha, samostatný mikrofón a oddelené vysielacie (PTT) tlačidlo na samostatnom kábli.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"3-šnúrové\"], \"farba\": [\"Béžová\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na samostatnom kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5726",
+    "img": "/images/katalog-produktov/20209/main.webp",
+    "title": "PMLN5726",
+    "desc": "Dvojšnúrové slúchadlo do ucha Dvojšnúrové slúchadlo do ucha Táto sada pre skryté nosenie je určená hlavne pre bezpečnostný personál.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Béžová\"], \"konektor\": [\"8 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5727",
+    "img": "/images/katalog-produktov/20208/main.webp",
+    "title": "PMLN5727",
+    "desc": "Jednošnúrové závesné slúchadlo Mag One Jednošnúrové závesné slúchadlo Mag One Slúchadlo pre zavesenie na ucho, mikrofón je integrovaný s PTT tlačidlom a VOX / PTT prepínačom pričom je všetko umiestnené na jednom kábli.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"8 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5732",
+    "img": "/images/katalog-produktov/20207/main.webp",
+    "title": "PMLN5732",
+    "desc": "Jednošnúrové závesné slúchadlo Mag One.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"8 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5733",
+    "img": "/images/katalog-produktov/20206/main.webp",
+    "title": "PMLN5733",
+    "desc": "Jednošnúrové slúchadlo do ucha Mag One Jednošnúrové slúchadlo do ucha Mag One Slúchadlo do ucha, mikrofón integrovaný s PTT tlačidlom a VOX prepínačom pričom je všetko umiestnené na jednom kábli.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"8 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5958",
+    "img": "/images/katalog-produktov/20204/main.webp",
+    "title": "PMLN5958",
+    "desc": "Jednošnúrové závesné slúchadlo Jednošnúrové závesné slúchadlo Slúchadlo pre zavesenie na ucho, mikrofón integrovaný s PTT tlačidlom.",
+    "facets": "{\"kompatibilita\": [\"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"3\", \"5 mm jack\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5973",
+    "img": "/images/katalog-produktov/20428/main.webp",
+    "title": "PMLN5973",
+    "desc": "Jednošnúrové závesné slúchadlo Mag One Jednošnúrové závesné slúchadlo Mag One Jednošnúrové slúchadlo s mikrofónom pre diskrétny odposluch prevádzky z rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5975",
+    "img": "/images/katalog-produktov/20430/main.webp",
+    "title": "PMLN5975",
+    "desc": "Jednošnúrové otočné slúchadlo Mag One Jednošnúrové otočné slúchadlo Mag One Otočné slúchadlo pre zavesenie na ucho, mikrofón integrovaný s PTT tlačidlom.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln5976",
+    "img": "/images/katalog-produktov/20431/main.webp",
+    "title": "PMLN5976",
+    "desc": "Jednošnúrové závesné slúchadlo Mag One.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6069",
+    "img": "/images/katalog-produktov/20433/main.webp",
+    "title": "PMLN6069",
+    "desc": "Jednošnúrové slúchadlo do ucha Mag One Jednošnúrové slúchadlo do ucha Mag One Slúchadlo do ucha, mikrofón integrovaný s PTT tlačidlom.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6123",
+    "img": "/images/katalog-produktov/20434/main.webp",
+    "title": "PMLN6123",
+    "desc": "Trojšnúrové slúchadlo do ucha IMPRES Trojšnúrové slúchadlo do ucha IMPRES Súprava ponúka flexibilnú a skrytú komunikáciu - slúchadlo do ucha, samostatný mikrofón a oddelené vysielacie (PTT) tlačidlo na samostatnom kábli.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"3-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na samostatnom kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6124",
+    "img": "/images/katalog-produktov/20435/main.webp",
+    "title": "PMLN6124",
+    "desc": "Trojšnúrové slúchadlo do ucha IMPRES Trojšnúrové slúchadlo do ucha IMPRES Súprava ponúka flexibilnú a skrytú komunikáciu - slúchadlo do ucha, samostatný mikrofón a oddelené vysielacie (PTT) tlačidlo na samostatnom kábli.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"3-šnúrové\"], \"farba\": [\"Béžová\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na samostatnom kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6125",
+    "img": "/images/katalog-produktov/20439/main.webp",
+    "title": "PMLN6125",
+    "desc": "Jednošnúrové závesné slúchadlo do ucha Jednošnúrové závesné slúchadlo do ucha Jednošnúrové slúchadlo pre diskrétny odposluch prevádzky z rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"13 pinový systémový\"], \"rezim\": [\"Len príjem\"], \"mikrofon\": [\"Nie\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6126",
+    "img": "/images/katalog-produktov/20440/main.webp",
+    "title": "PMLN6126",
+    "desc": "Jednošnúrové závesné slúchadlo do ucha Jednošnúrové závesné slúchadlo do ucha Jednošnúrové slúchadlo pre diskrétny odposluch prevádzky z rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Béžová\"], \"konektor\": [\"13 pinový systémový\"], \"rezim\": [\"Len príjem\"], \"mikrofon\": [\"Nie\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6127",
+    "img": "/images/katalog-produktov/20437/main.webp",
+    "title": "PMLN6127",
+    "desc": "Dvojšnúrové závesné slúchadlo do ucha IMPRES Dvojšnúrové závesné slúchadlo do ucha IMPRES Slúchadlo do ucha, smerový mikrofón kombinovaný s PTT tlačidlom.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6128",
+    "img": "/images/katalog-produktov/20438/main.webp",
+    "title": "PMLN6128",
+    "desc": "Dvojšnúrové závesné slúchadlo do ucha&nbsp; IMPRES Dvojšnúrové závesné slúchadlo do ucha&nbsp; IMPRES Slúchadlo do ucha, smerový mikrofón kombinovaný s PTT tlačidlom.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Béžová\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6129",
+    "img": "/images/katalog-produktov/20441/main.webp",
+    "title": "PMLN6129",
+    "desc": "Dvojšnúrové závesné slúchadlo do ucha&nbsp; IMPRES Dvojšnúrové závesné slúchadlo do ucha&nbsp; IMPRES Slúchadlo do ucha s priehľadným zvukovodom, smerový mikrofón kombinovaný s PTT tlačidlom.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6130",
+    "img": "/images/katalog-produktov/20442/main.webp",
+    "title": "PMLN6130",
+    "desc": "Dvojšnúrové závesné slúchadlo do ucha&nbsp; IMPRES Dvojšnúrové závesné slúchadlo do ucha&nbsp; IMPRES Slúchadlo do ucha s priehľadným zvukovodom, smerový mikrofón kombinovaný s PTT tlačidlom.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Béžová\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6445",
+    "img": "/images/katalog-produktov/20187/main.webp",
+    "title": "PMLN6445",
+    "desc": "Dvojšnúrové slúchadlo do ucha Dvojšnúrové slúchadlo do ucha Slúchadlo do ucha s priehľadným zvukovodom a mikrofón kombinovaný s vysielacím (PTT) tlačidlom na samostatnom kábli.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"R2\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Béžová\"], \"konektor\": [\"Dvojitý jack\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6530",
+    "img": "/images/katalog-produktov/20191/main.webp",
+    "title": "PMLN6530",
+    "desc": "Dvojšnúrové slúchadlo do ucha Dvojšnúrové slúchadlo do ucha Slúchadlo do ucha s priehľadným zvukovodom a mikrofón kombinovaný s vysielacím (PTT) tlačidlom na samostatnom kábli.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"R2\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"Dvojitý jack\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6531",
+    "img": "/images/katalog-produktov/20190/main.webp",
+    "title": "PMLN6531",
+    "desc": "Jednošnúrové závesné slúchadlo&nbsp;Mag One Jednošnúrové závesné slúchadlo&nbsp;Mag One Jednošnúrové slúchadlo pre diskrétny odposluch prevádzky z rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"R2\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"Dvojitý jack\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6532",
+    "img": "/images/katalog-produktov/20189/main.webp",
+    "title": "PMLN6532",
+    "desc": "Jednošnúrové závesné slúchadlo&nbsp;Mag One Jednošnúrové závesné slúchadlo&nbsp;Mag One Jednošnúrové slúchadlo pre diskrétny odposluch prevádzky z rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"R2\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"Dvojitý jack\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6533",
+    "img": "/images/katalog-produktov/20186/main.webp",
+    "title": "PMLN6533",
+    "desc": "Dvojšnúrové slúchadlo do ucha Dvojšnúrové slúchadlo do ucha Slúchadlo do ucha a na samostanom kábli mikrofón integrovaný s PTT tlačidlom.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"R2\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"Dvojitý jack\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6534",
+    "img": "/images/katalog-produktov/20185/main.webp",
+    "title": "PMLN6534",
+    "desc": "Jednošnúrové slúchadlo do ucha Mag One Jednošnúrové slúchadlo do ucha Mag One Slúchadlo do ucha, mikrofón integrovaný s PTT tlačidlom a VOX prepínačom.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"R2\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"Dvojitý jack\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6535",
+    "img": "/images/katalog-produktov/20052/main.webp",
+    "title": "PMLN6535",
+    "desc": "Dvojšnúrové závesné slúchadlo Dvojšnúrové závesné slúchadlo Slúchadlo v tvare D určené pre zavesenie na ucho, PTT&nbsp; tlačidlo kombinované s mikrofónom na samostatnom kábli pre externé ovládanie rádiostanice Motorola.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"R2\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"Dvojitý jack\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6537",
+    "img": "/images/katalog-produktov/20188/main.webp",
+    "title": "PMLN6537",
+    "desc": "Jednošnúrové závesné slúchadlo Mag One Jednošnúrové závesné slúchadlo Mag One Slúchadlo s integrovaným PTT tlačidlom a VOX / PTT prepínačom umiestneným na kábli.",
+    "facets": "{\"kompatibilita\": [\"DP1400\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"Dvojitý jack\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na ramienku\"], \"ptt\": [\"Na kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6754",
+    "img": "/images/katalog-produktov/20528/main.webp",
+    "title": "PMLN6754",
+    "desc": "Trojšnúrové slúchadlo do ucha IMPRES Trojšnúrové slúchadlo do ucha IMPRES Slúchadlo optimalizované pre spoluprácu s funkciou Intelligent Audio ponúka flexibilnú a skrytú komunikáciu - zvukovody do ucha, samostatný mikrofón a vysielacie (PTT) tlačidlo na samostatnom kábli.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"prevedenie\": [\"3-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"8 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na samostatnom kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6755",
+    "img": "/images/katalog-produktov/20529/main.webp",
+    "title": "PMLN6755",
+    "desc": "Trojšnúrové slúchadlo do ucha IMPRES Trojšnúrové slúchadlo do ucha IMPRES Slúchadlo optimalizované pre spoluprácu s funkciou Intelligent Audio ponúka flexibilnú a skrytú komunikáciu - zvukovody do ucha, samostatný mikrofón a vysielacie (PTT) tlačidlo na samostatnom kábli.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"prevedenie\": [\"3-šnúrové\"], \"farba\": [\"Béžová\"], \"konektor\": [\"8 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na samostatnom kábliku\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6757",
+    "img": "/images/katalog-produktov/20577/main.webp",
+    "title": "PMLN6757",
+    "desc": "Jednošnúrové závesné slúchadlo Jednošnúrové závesné slúchadlo Slúchadlo v tvare D má integrované PTT tlačidlo spolu s mikrofónom umiestnené na kábli.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"8 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln6828",
+    "img": "/images/katalog-produktov/20850/main.webp",
+    "title": "PMLN6828",
+    "desc": "Taktický hrdelný mikrofón Taktický hrdelný mikrofón Taktické príslušenstvo od spoločnosti Motorola ponúka vysoko výkonné rozhranie s vysokorýchlostným procesorom DSP (Digital Signal Processor), ktorý deteguje len ľudský hlas.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"13 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na samostatnom kábliku\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7052",
+    "img": "/images/katalog-produktov/20515/main.webp",
+    "title": "PMLN7052",
+    "desc": "Jednošnúrové slúchadlo do ucha Jednošnúrové slúchadlo do ucha Slúchadlo do ucha s priehľadným zvukovodom a mikrofón integrovaný s PTT tlačidlom je určené pre Bluetooth PTT modul NNTN8191 .",
+    "facets": "{\"kompatibilita\": [\"DP4401\", \"DP4401e\", \"DP4601\", \"DP4601e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"13 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7156",
+    "img": "/images/katalog-produktov/20480/main.webp",
+    "title": "PMLN7156",
+    "desc": "Jednošnúrové slúchadlo do ucha Mag One Jednošnúrové slúchadlo do ucha Mag One Slúchadlo do ucha, mikrofón integrovaný s PTT tlačidlom a VOX.",
+    "facets": "{\"kompatibilita\": [\"SL1600\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"13 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7157",
+    "img": "/images/katalog-produktov/20484/main.webp",
+    "title": "PMLN7157",
+    "desc": "Dvojšnúrové slúchadlo do ucha Dvojšnúrové slúchadlo do ucha Slúchadlo do ucha s priehľadným zvukovodom a mikrofón integrovaný s PTT tlačidlom.",
+    "facets": "{\"kompatibilita\": [\"SL1600\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"3\", \"5 mm jack\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7158",
+    "img": "/images/katalog-produktov/20483/main.webp",
+    "title": "PMLN7158",
+    "desc": "Jednošnúrové slúchadlo do ucha Jednošnúrové slúchadlo do ucha Slúchadlo do ucha s priehľadným zvukovodom a mikrofón integrovaný s PTT tlačidlom.",
+    "facets": "{\"kompatibilita\": [\"SL1600\", \"SL2600\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"13 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7159",
+    "img": "/images/katalog-produktov/20481/main.webp",
+    "title": "PMLN7159",
+    "desc": "Jednošnúrové závesné slúchadlo Jednošnúrové závesné slúchadlo Súprava so slúchadlom v tvare D má integrované PTT tlačidlo umiestnené na kábli.",
+    "facets": "{\"kompatibilita\": [\"SL1600\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"3\", \"5 mm jack\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7188",
+    "img": "/images/katalog-produktov/20855/main.webp",
+    "title": "PMLN7188",
+    "desc": "Slúchadlo do ucha pre repromikrofón Slúchadlo do ucha pre repromikrofón Slúchadlo s priehľadným zvukovodom je určené pre pripojenie k ATEX repromikrofónu.",
+    "facets": "{\"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\", \"R7\", \"R7a\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"3\", \"5 mm jack\"], \"rezim\": [\"Len príjem\"], \"mikrofon\": [\"Nie\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7189",
+    "img": "/images/katalog-produktov/20482/main.webp",
+    "title": "PMLN7189",
+    "desc": "Jednošnúrové závesné slúchadlo Jednošnúrové závesné slúchadlo Jednošnúrové slúchadlo pre diskrétny odposluch prevádzky z rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"SL1600\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"3\", \"5 mm jack\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7269",
+    "img": "/images/katalog-produktov/20609/main.webp",
+    "title": "PMLN7269",
+    "desc": "Dvojšnúrové slúchadlo do ucha Dvojšnúrové slúchadlo do ucha Táto sada pre skryté nosenie je určená hlavne pre bezpečnostný personál.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"8 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7270",
+    "img": "/images/katalog-produktov/20858/main.webp",
+    "title": "PMLN7270",
+    "desc": "Dvojšnúrové slúchadlo do ucha Dvojšnúrové slúchadlo do ucha Táto sada pre skryté nosenie je určená hlavne pre bezpečnostný personál.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R5\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Béžová\"], \"konektor\": [\"8 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7396",
+    "img": "/images/katalog-produktov/20550/main.webp",
+    "title": "PMLN7396",
+    "desc": "Nastaviteľné závesné slúchadlo pre repromikrofón Nastaviteľné závesné slúchadlo pre repromikrofón Nastaviteľné slúchadlo v tvare D určené pre zavesenie na ucho sa pripája k repromikrofónu pomocou mono 3,5 mm jack konektora.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R2\", \"R5\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"3\", \"5 mm jack\"], \"rezim\": [\"Len príjem\"], \"mikrofon\": [\"Nie\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln7560",
+    "img": "/images/katalog-produktov/20603/main.webp",
+    "title": "PMLN7560",
+    "desc": "Slúchadlo do ucha pre repromikrofón Slúchadlo do ucha pre repromikrofón Slúchadlo s priehľadným zvukovodom je určené pre pripojenie k repromikrofónu.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\", \"ION\", \"R7\", \"R2\", \"R5\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"3\", \"5 mm jack\"], \"rezim\": [\"Len príjem\"], \"mikrofon\": [\"Nie\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8082",
+    "img": "/images/katalog-produktov/20923/main.webp",
+    "title": "PMLN8082",
+    "desc": "Jednošnúrové slúchadlo do ucha IMPRES Jednošnúrové slúchadlo do ucha IMPRES Motorola prináša pre nový rad rádiostaníc ION taktiež nové príslušenstvo.",
+    "facets": "{\"kompatibilita\": [\"ION\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"Iný\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8083",
+    "img": "/images/katalog-produktov/20927/main.webp",
+    "title": "PMLN8083",
+    "desc": "Dvojšnúrové slúchadlo do ucha IMPRES Dvojšnúrové slúchadlo do ucha IMPRES Motorola prináša pre nový rad rádiostaníc ION taktiež nové príslušenstvo.",
+    "facets": "{\"kompatibilita\": [\"ION\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"Iný\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8084",
+    "img": "/images/katalog-produktov/20928/main.webp",
+    "title": "PMLN8084",
+    "desc": "Trojšnúrové slúchadlo do ucha IMPRES Trojšnúrové slúchadlo do ucha IMPRES Motorola prináša pre nový rad rádiostaníc ION taktiež nové príslušenstvo.",
+    "facets": "{\"kompatibilita\": [\"ION\"], \"prevedenie\": [\"3-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"Iný\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na kábliku\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8120",
+    "img": "/images/katalog-produktov/20922/main.webp",
+    "title": "PMLN8120",
+    "desc": "Slúchadlo do ucha pre repromikrofón Slúchadlo do ucha pre repromikrofón Motorola prináša pre nový rad rádiostaníc taktiež nové príslušenstvo.",
+    "facets": "{\"kompatibilita\": [\"ION\", \"R7\", \"R5\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"3\", \"5 mm jack\"], \"rezim\": [\"Len príjem\"], \"mikrofon\": [\"Nie\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8295",
+    "img": "/images/katalog-produktov/20955/main.webp",
+    "title": "PMLN8295",
+    "desc": "Dvojšnúrové slúchadlo do ucha IMPRES Dvojšnúrové slúchadlo do ucha IMPRES Profesionálna audio súprava pre skryté nosenie a teda aj nepozorované používanie rádiostanice MOTOTRBO.",
+    "facets": "{\"kompatibilita\": [\"R7\", \"R7a\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"GCAI Mini\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8337",
+    "img": "/images/katalog-produktov/20970/main.webp",
+    "title": "PMLN8337",
+    "desc": "Jednošnúrové závesné slúchadlo IMPRES Jednošnúrové závesné slúchadlo IMPRES Slúchadlo pre zavesenie na ucho, mikrofón je integrovaný s PTT tlačidlom a umiestnený na jednom kábli.",
+    "facets": "{\"kompatibilita\": [\"R7\", \"R7a\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"GCAI Mini\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8341",
+    "img": "/images/katalog-produktov/20971/main.webp",
+    "title": "PMLN8341",
+    "desc": "Jednošnúrové slúchadlo do ucha IMPRES Jednošnúrové slúchadlo do ucha IMPRES Motorola prináša pre nový rad rádiostaníc R7 taktiež nové príslušenstvo.",
+    "facets": "{\"kompatibilita\": [\"R7\", \"R7a\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"GCAI Mini\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8342",
+    "img": "/images/katalog-produktov/20972/main.webp",
+    "title": "PMLN8342",
+    "desc": "Dvojšnúrové slúchadlo do ucha IMPRES Dvojšnúrové slúchadlo do ucha IMPRES Motorola prináša pre nový rad rádiostaníc R7 taktiež nové príslušenstvo.",
+    "facets": "{\"kompatibilita\": [\"R7\", \"R7a\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"GCAI Mini\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8343",
+    "img": "/images/katalog-produktov/20973/main.webp",
+    "title": "PMLN8343",
+    "desc": "Trojšnúrové slúchadlo do ucha IMPRES Trojšnúrové slúchadlo do ucha IMPRES Motorola prináša pre nový rad rádiostaníc R7 taktiež nové príslušenstvo.",
+    "facets": "{\"kompatibilita\": [\"R7\", \"R7a\"], \"prevedenie\": [\"3-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"GCAI Mini\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na samostatnom kábliku\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/pmln8652",
+    "img": "/images/katalog-produktov/21042/main.webp",
+    "title": "PMLN8652",
+    "desc": "Slúchadlo do ucha pre repromikrofón Slúchadlo do ucha pre repromikrofón Slúchadlo s priehľadným zvukovodom je určené pre pripojenie k repromikrofónu.",
+    "facets": "{\"kompatibilita\": [\"R5\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"3\", \"5 mm jack\"], \"rezim\": [\"Len príjem\"], \"mikrofon\": [\"Nie\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln5878",
+    "img": "/images/katalog-produktov/20203/main.webp",
+    "title": "RLN5878",
+    "desc": "Jednošnúrové závesné slúchadlo do ucha Jednošnúrové závesné slúchadlo do ucha Slúchadlo do ucha pre komfortný príposluch.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Len príjem\"], \"mikrofon\": [\"Nie\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln5879",
+    "img": "/images/katalog-produktov/20202/main.webp",
+    "title": "RLN5879",
+    "desc": "Jednošnúrové závesné slúchadlo do ucha Jednošnúrové závesné slúchadlo do ucha Slúchadlo do ucha pre komfortný príposluch.&nbsp; Profesionálna audio súprava pre skryté nosenie a teda aj nepozorované počúvanie rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Béžová\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Len príjem\"], \"mikrofon\": [\"Nie\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  },
+  {
+    "url": "/katalog-produktov/rln5880",
+    "img": "/images/katalog-produktov/20201/main.webp",
+    "title": "RLN5880",
+    "desc": "Dvojšnúrové závesné slúchadlo do ucha&nbsp;IMPRES&nbsp; Dvojšnúrové závesné slúchadlo do ucha&nbsp;IMPRES Slúchadlo do ucha, smerový mikrofón kombinovaný s PTT tlačidlom.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Áno\"]}"
+  },
+  {
+    "url": "/katalog-produktov/bdn6720-mototrbo",
+    "img": "/images/katalog-produktov/20196/main.webp",
+    "title": "Ukončený predaj BDN6720",
+    "desc": "Jednošnúrové závesné slúchadlo Jednošnúrové závesné slúchadlo Jednošnúrové slúchadlo pre diskrétny odposluch prevádzky z rádiostanice.",
+    "facets": "{\"kompatibilita\": [\"DP1400\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"Dvojitý jack\"], \"rezim\": [\"Len príjem\"], \"mikrofon\": [\"Nie\"], \"ptt\": [\"Na adaptéri PMLN6368\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmln5111",
+    "img": "/images/katalog-produktov/20212/main.webp",
+    "title": "Ukončený predaj: PMLN5111",
+    "desc": "Trojšnúrové slúchadlo do ucha&nbsp;IMPRES Trojšnúrové slúchadlo do ucha&nbsp;IMPRES Súprava ponúka flexibilnú a skrytú komunikáciu - Slúchadlo do ucha, samostatný mikrofón a oddelené vysielacie (PTT) tlačidlo na samostatnom kábli.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"3-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na samostatnom kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Áno\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmln5112",
+    "img": "/images/katalog-produktov/20211/main.webp",
+    "title": "Ukončený predaj: PMLN5112",
+    "desc": "Trojšnúrové slúchadlo do ucha IMPRES Trojšnúrové slúchadlo do ucha IMPRES Súprava ponúka flexibilnú a skrytú komunikáciu - slúchadlo do ucha, samostatný mikrofón a oddelené vysielacie (PTT) tlačidlo na samostatnom kábli.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"3-šnúrové\"], \"farba\": [\"Béžová\"], \"konektor\": [\"13 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na samostatnom kábliku\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Áno\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmln5957",
+    "img": "/images/katalog-produktov/20205/main.webp",
+    "title": "Ukončený predaj: PMLN5957",
+    "desc": "Jednošnúrové slúchadlo do ucha Jednošnúrové slúchadlo do ucha Slúchadlo do ucha s priehľadným zvukovodom a mikrofón integrovaný s PTT tlačidlom.",
+    "facets": "{\"kompatibilita\": [\"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"13 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na kábli\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/rln5881",
+    "img": "/images/katalog-produktov/20200/main.webp",
+    "title": "Ukončený predaj: RLN5881",
+    "desc": "Dvojšnúrové závesné slúchadlo do ucha&nbsp;IMPRES Dvojšnúrové závesné slúchadlo do ucha&nbsp;IMPRES Slúchadlo do ucha, smerový mikrofón kombinovaný s PTT tlačidlom.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Béžová\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Áno\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/rln5882",
+    "img": "/images/katalog-produktov/20199/main.webp",
+    "title": "Ukončený predaj: RLN5882",
+    "desc": "Dvojšnúrové slúchadlo do ucha&nbsp;IMPRES Dvojšnúrové slúchadlo do ucha&nbsp;IMPRES Slúchadlo do ucha a mikrofón kombinovaný s vysielacím (PTT) tlačidlom na samostatnom kábli.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Áno\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/rln5883",
+    "img": "/images/katalog-produktov/20198/main.webp",
+    "title": "Ukončený predaj: RLN5883",
+    "desc": "Dvojšnúrové slúchadlo do ucha&nbsp;IMPRES Dvojšnúrové slúchadlo do ucha IMPRES Slúchadlo do ucha a mikrofón kombinovaný s vysielacím (PTT) tlačidlom na samostatnom kábli.",
+    "facets": "{\"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Béžová\"], \"konektor\": [\"12 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Áno\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmln5724",
+    "img": "/images/katalog-produktov/20210/main.webp",
+    "title": "Ukončený predaj: PMLN5724",
+    "desc": "Dvojšnúrové slúchadlo do ucha Dvojšnúrové slúchadlo do ucha Táto sada pre skryté nosenie je určená hlavne pre bezpečnostný personál.",
+    "facets": "{\"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP3441\", \"DP3441e\", \"DP3661e\"], \"prevedenie\": [\"2-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"8 pinový systémový\"], \"rezim\": [\"Príjem cez jedno slúchadlo / Vysielanie\"], \"mikrofon\": [\"Na samostatnom kábliku\"], \"ptt\": [\"Na mikrofóne\"], \"vox\": [\"Áno\"], \"extra-vox-prepinac-na-ptt\": [\"Áno\"], \"programovatelne-tlacidlo\": [\"Nie\"]}",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/wadn4190-mototrbo",
+    "img": "/images/katalog-produktov/20194/main.webp",
+    "title": "WADN4190",
+    "desc": "Závesné slúchadlo pre repromikrofón Závesné slúchadlo pre repromikrofón Slúchadlo je určené pre zavesenie na ucho a pripája k repromikrofónom ktoré sú vybavené 3,5 mm konektorom pre pripojenie externého slúchadla (napr.",
+    "facets": "{\"kompatibilita\": [\"DP1400\", \"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R2\", \"R5\"], \"prevedenie\": [\"1-šnúrové\"], \"farba\": [\"Čierna\"], \"konektor\": [\"3\", \"5 mm jack\"], \"rezim\": [\"Len príjem\"], \"mikrofon\": [\"Nie\"], \"ptt\": [\"Nie\"], \"vox\": [\"Nie\"], \"extra-vox-prepinac-na-ptt\": [\"Nie\"], \"programovatelne-tlacidlo\": [\"Nie\"]}"
+  }
+];
+const productsHeading = "";
+const notice = "";
+const noticeDetail = "";
+const ctaHeading = "Dodávka, inštalácia a servis";
+const ctaText = "Evakuačné a varovacie systémy navrhujeme, dodávame, inštalujeme a servisujeme. Radi pripravíme riešenie pre váš objekt.";
+const metadata = {
+  "title": "Slúchadlá, katalóg produktov | RKS",
+  "description": "Katalóg slúchadiel pre rádiostanice Motorola   Existuje celý rad užívateľov prenosných rádiostaníc.",
+  "robots": {
+    "index": false,
+    "follow": false
+  }
+};
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Produkty",
+      "item": "https://rksba.sk/produkty"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Katalóg produktov",
+      "item": "https://rksba.sk/katalog-produktov"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/radiostanice-2002"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Prenosné rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Slúchadlá",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/sluchadla"
+    }
+  ]
+};
+const filters = [
+  {
+    "key": "kompatibilita",
+    "nazov": "Kompatibilita",
+    "hodnoty": [
+      {
+        "hodnota": "DP4401",
+        "pocet": 34
+      },
+      {
+        "hodnota": "DP4401e",
+        "pocet": 34
+      },
+      {
+        "hodnota": "DP4601",
+        "pocet": 34
+      },
+      {
+        "hodnota": "DP4601e",
+        "pocet": 34
+      },
+      {
+        "hodnota": "DP4801",
+        "pocet": 33
+      },
+      {
+        "hodnota": "DP4801e",
+        "pocet": 32
+      },
+      {
+        "hodnota": "DP4400",
+        "pocet": 30
+      },
+      {
+        "hodnota": "DP4400e",
+        "pocet": 30
+      },
+      {
+        "hodnota": "DP4600",
+        "pocet": 30
+      },
+      {
+        "hodnota": "DP4600e",
+        "pocet": 30
+      },
+      {
+        "hodnota": "DP4800",
+        "pocet": 30
+      },
+      {
+        "hodnota": "DP4800e",
+        "pocet": 30
+      },
+      {
+        "hodnota": "DP3401",
+        "pocet": 28
+      },
+      {
+        "hodnota": "DP3601",
+        "pocet": 28
+      },
+      {
+        "hodnota": "DP3400",
+        "pocet": 27
+      },
+      {
+        "hodnota": "DP3600",
+        "pocet": 27
+      },
+      {
+        "hodnota": "DP3441e",
+        "pocet": 19
+      },
+      {
+        "hodnota": "DP3661e",
+        "pocet": 19
+      },
+      {
+        "hodnota": "DP3441",
+        "pocet": 18
+      },
+      {
+        "hodnota": "R5",
+        "pocet": 16
+      },
+      {
+        "hodnota": "DP2600",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DP2600e",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DP2400",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DP2400e",
+        "pocet": 13
+      },
+      {
+        "hodnota": "R2",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DP1400",
+        "pocet": 12
+      },
+      {
+        "hodnota": "R7",
+        "pocet": 11
+      },
+      {
+        "hodnota": "SL4000",
+        "pocet": 11
+      },
+      {
+        "hodnota": "SL4000e",
+        "pocet": 11
+      },
+      {
+        "hodnota": "SL4010",
+        "pocet": 11
+      },
+      {
+        "hodnota": "SL4010e",
+        "pocet": 11
+      },
+      {
+        "hodnota": "SL2600",
+        "pocet": 9
+      },
+      {
+        "hodnota": "ION",
+        "pocet": 8
+      },
+      {
+        "hodnota": "R7a",
+        "pocet": 6
+      },
+      {
+        "hodnota": "SL1600",
+        "pocet": 5
+      },
+      {
+        "hodnota": "DP4401 Ex",
+        "pocet": 1
+      },
+      {
+        "hodnota": "DP4401 Ex Ma",
+        "pocet": 1
+      },
+      {
+        "hodnota": "DP4801 Ex",
+        "pocet": 1
+      },
+      {
+        "hodnota": "DP4801 Ex Ma",
+        "pocet": 1
+      }
+    ]
+  },
+  {
+    "key": "konektor",
+    "nazov": "Konektor",
+    "hodnoty": [
+      {
+        "hodnota": "12 pinový systémový",
+        "pocet": 21
+      },
+      {
+        "hodnota": "3",
+        "pocet": 15
+      },
+      {
+        "hodnota": "5 mm jack",
+        "pocet": 15
+      },
+      {
+        "hodnota": "8 pinový systémový",
+        "pocet": 10
+      },
+      {
+        "hodnota": "13 pinový systémový",
+        "pocet": 9
+      },
+      {
+        "hodnota": "Dvojitý jack",
+        "pocet": 9
+      },
+      {
+        "hodnota": "GCAI Mini",
+        "pocet": 5
+      },
+      {
+        "hodnota": "Iný",
+        "pocet": 3
+      }
+    ]
+  },
+  {
+    "key": "extra-vox-prepinac-na-ptt",
+    "nazov": "Extra VOX prepínač na PTT",
+    "hodnoty": [
+      {
+        "hodnota": "Nie",
+        "pocet": 63
+      },
+      {
+        "hodnota": "Áno",
+        "pocet": 9
+      }
+    ]
+  },
+  {
+    "key": "farba",
+    "nazov": "Farba",
+    "hodnoty": [
+      {
+        "hodnota": "Čierna",
+        "pocet": 58
+      },
+      {
+        "hodnota": "Béžová",
+        "pocet": 13
+      },
+      {
+        "hodnota": "Biela",
+        "pocet": 1
+      }
+    ]
+  },
+  {
+    "key": "mikrofon",
+    "nazov": "Mikrofón",
+    "hodnoty": [
+      {
+        "hodnota": "Na samostatnom kábliku",
+        "pocet": 31
+      },
+      {
+        "hodnota": "Na kábli",
+        "pocet": 21
+      },
+      {
+        "hodnota": "Nie",
+        "pocet": 16
+      },
+      {
+        "hodnota": "Na ramienku",
+        "pocet": 4
+      }
+    ]
+  },
+  {
+    "key": "ptt",
+    "nazov": "PTT",
+    "hodnoty": [
+      {
+        "hodnota": "Na mikrofóne",
+        "pocet": 40
+      },
+      {
+        "hodnota": "Nie",
+        "pocet": 16
+      },
+      {
+        "hodnota": "Na samostatnom kábliku",
+        "pocet": 10
+      },
+      {
+        "hodnota": "Na kábliku",
+        "pocet": 5
+      },
+      {
+        "hodnota": "Na adaptéri PMLN6368",
+        "pocet": 1
+      }
+    ]
+  },
+  {
+    "key": "prevedenie",
+    "nazov": "Prevedenie",
+    "hodnoty": [
+      {
+        "hodnota": "1-šnúrové",
+        "pocet": 39
+      },
+      {
+        "hodnota": "2-šnúrové",
+        "pocet": 23
+      },
+      {
+        "hodnota": "3-šnúrové",
+        "pocet": 10
+      }
+    ]
+  },
+  {
+    "key": "programovatelne-tlacidlo",
+    "nazov": "Programovateľné tlačidlo",
+    "hodnoty": [
+      {
+        "hodnota": "Nie",
+        "pocet": 53
+      },
+      {
+        "hodnota": "Áno",
+        "pocet": 19
+      }
+    ]
+  },
+  {
+    "key": "rezim",
+    "nazov": "Režim",
+    "hodnoty": [
+      {
+        "hodnota": "Príjem cez jedno slúchadlo / Vysielanie",
+        "pocet": 55
+      },
+      {
+        "hodnota": "Len príjem",
+        "pocet": 15
+      },
+      {
+        "hodnota": "Príjem cez obe slúchadlá / Vysielanie",
+        "pocet": 2
+      }
+    ]
+  },
+  {
+    "key": "vox",
+    "nazov": "VOX",
+    "hodnoty": [
+      {
+        "hodnota": "Áno",
+        "pocet": 37
+      },
+      {
+        "hodnota": "Nie",
+        "pocet": 35
+      }
+    ]
+  }
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
+      <aside class="mb-8 lg:mb-0 lg:sticky lg:top-24 lg:self-start">
+        <details class="rks-cats rounded-xl border border-hairline p-4 lg:border-0 lg:p-0">
+          <summary class="rks-cats-toggle cursor-pointer font-semibold lg:hidden flex items-center justify-between gap-2 rounded-lg bg-panel-soft px-4 py-3"><span>Kategórie produktov</span><span class="rks-cats-arrow" aria-hidden="true"></span></summary>
+          <div class="rks-tree-wrap mt-3 lg:mt-0" set:html={sidebar} />
+        </details>
+      </aside>
+
+      <div class="min-w-0">
+        <nav class="text-sm text-muted mb-2" aria-label="Omrvinky">
+          {breadcrumb.map((b, i) => (
+            <>
+              {i > 0 && <span class="px-1">/</span>}
+              {b.url ? <a class="hover:underline" href={b.url}>{b.name}</a> : <span>{b.name}</span>}
+            </>
+          ))}
+        </nav>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">{heading}</h1>
+
+        {notice && (
+          <div class="mb-8 rounded-xl border border-l-4 border-hairline border-l-secondary bg-panel p-5">
+            <p class="text-lg font-semibold tracking-tight">{notice}</p>
+            {noticeDetail && <p class="text-base text-muted mt-1">{noticeDetail}</p>}
+          </div>
+        )}
+
+        {intro.map((par) => (
+          <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
+        ))}
+
+        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+
+        {subcats.length > 0 && (
+          <>
+            {subcatsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-4 mb-4">{subcatsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {subcats.map((c) => (
+                <a href={c.url} class="group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        {filters.length > 0 && (
+          <div class="rks-filter mt-8 rounded-xl border border-hairline bg-panel-soft p-5" data-rks-filter>
+            <div class="flex items-center justify-between gap-4 mb-3">
+              <h2 class="text-base font-semibold">Filtrovať podľa parametrov</h2>
+              <button type="button" class="text-sm text-link hover:underline" data-rks-reset>Zrušiť filtre</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+              {filters.map((f) => (
+                <details class="rks-facet border-t border-hairline pt-2">
+                  <summary class="cursor-pointer text-sm font-medium py-1 select-none">{f.nazov}</summary>
+                  <div class="mt-1 mb-2 space-y-1">
+                    {f.hodnoty.map((v) => (
+                      <label class="flex items-center gap-2 text-sm" data-rks-opt={f.key + '|~|' + v.hodnota}>
+                        <input type="checkbox" class="accent-primary" data-rks-f={f.key} value={v.hodnota} />
+                        <span class="flex-1">{v.hodnota}</span>
+                        <span class="text-muted text-xs tabular-nums" data-rks-cnt>{v.pocet}</span>
+                      </label>
+                    ))}
+                  </div>
+                </details>
+              ))}
+            </div>
+            <p class="text-sm text-muted mt-3" data-rks-summary></p>
+          </div>
+        )}
+
+        {products.length > 0 && (
+          <>
+            {productsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">{productsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4" data-rks-grid>
+              {products.map((c) => (
+                <a href={c.url} data-facets={c.facets} class="rks-card group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+          <h2 class="text-xl md:text-2xl font-semibold mb-3">{ctaHeading}</h2>
+          <p class="text-muted mb-6 max-w-xl mx-auto">{ctaText}</p>
+          <a href="/lp/konzultacia.html?utm_source=web&amp;utm_campaign=web" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+
+  {filters.length > 0 && (
+    <script is:inline>
+      (function () {
+        var root = document.querySelector('[data-rks-filter]');
+        var grid = document.querySelector('[data-rks-grid]');
+        if (!root || !grid) return;
+        var cards = Array.prototype.slice.call(grid.querySelectorAll('.rks-card'));
+        var boxes = Array.prototype.slice.call(root.querySelectorAll('input[data-rks-f]'));
+        var summary = root.querySelector('[data-rks-summary]');
+        var parsed = cards.map(function (c) {
+          try { return JSON.parse(c.getAttribute('data-facets') || '{}'); } catch (e) { return {}; }
+        });
+        function selection() {
+          var m = {};
+          boxes.forEach(function (b) {
+            if (b.checked) { (m[b.getAttribute('data-rks-f')] = m[b.getAttribute('data-rks-f')] || []).push(b.value); }
+          });
+          return m;
+        }
+        function matches(f, m) {
+          for (var k in m) {
+            var have = f[k] || [];
+            var ok = m[k].some(function (v) { return have.indexOf(v) !== -1; });
+            if (!ok) return false;
+          }
+          return true;
+        }
+        function apply() {
+          var m = selection(), shown = 0;
+          cards.forEach(function (c, i) {
+            var ok = matches(parsed[i], m);
+            c.style.display = ok ? '' : 'none';
+            if (ok) shown++;
+          });
+          // prepocitaj pocty: kolko by ostalo, keby sa pridala prave tato hodnota
+          root.querySelectorAll('label[data-rks-opt]').forEach(function (lab) {
+            var parts = lab.getAttribute('data-rks-opt').split('|~|');
+            var k = parts[0], v = parts[1];
+            var m2 = {}; for (var kk in m) m2[kk] = m[kk].slice();
+            m2[k] = [v];
+            var n = 0;
+            for (var i = 0; i < cards.length; i++) { if (matches(parsed[i], m2)) n++; }
+            lab.querySelector('[data-rks-cnt]').textContent = n;
+            var box = lab.querySelector('input');
+            lab.style.display = (n === 0 && !box.checked) ? 'none' : '';
+          });
+          summary.textContent = shown === cards.length
+            ? cards.length + ' produktov'
+            : shown + ' z ' + cards.length + ' produktov';
+        }
+        boxes.forEach(function (b) { b.addEventListener('change', apply); });
+        var reset = root.querySelector('[data-rks-reset]');
+        if (reset) reset.addEventListener('click', function () {
+          boxes.forEach(function (b) { b.checked = false; });
+          apply();
+        });
+        apply();
+      })();
+    </script>
+  )}
+
+  <style is:global>
+    @media (min-width: 1024px) {
+      .rks-cats > summary { display: none; }
+      .rks-cats > .rks-tree-wrap { display: block !important; }
+    }
+    .rks-tree .rks-li { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 0.5rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-leaf { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-li > .rks-link { min-width: 0; }
+    .rks-tree .rks-children { grid-column: 1 / -1; display: none; }
+    .rks-tree .rks-disc[open] ~ .rks-children { display: block; }
+    .rks-tree .rks-disc { display: inline-flex; }
+    .rks-tree summary.rks-arrow { list-style: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; color: rgba(229, 236, 246, 0.66); }
+    .rks-tree summary.rks-arrow::-webkit-details-marker { display: none; }
+    .rks-tree summary.rks-arrow::before { content: ""; border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-tree .rks-disc[open] > summary.rks-arrow::before { transform: rotate(90deg); }
+    .rks-cats-arrow::before { content: ""; display: inline-block; color: rgba(229, 236, 246, 0.66); border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-cats[open] > .rks-cats-toggle .rks-cats-arrow::before { transform: rotate(90deg); }
+  </style>
+</Layout>

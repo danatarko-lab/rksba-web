@@ -1,0 +1,236 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const p = {
+  "title": "PMLN4605",
+  "slides": [
+    "/images/katalog-produktov/20193/main.webp",
+    "/images/katalog-produktov/20193/g1.webp",
+    "/images/katalog-produktov/20193/g2.webp",
+    "/images/katalog-produktov/20193/g3.webp",
+    "/images/katalog-produktov/20193/g4.webp",
+    "/images/katalog-produktov/20193/g5.webp",
+    "/images/katalog-produktov/20193/g6.webp",
+    "/images/katalog-produktov/20193/g7.webp"
+  ],
+  "popis_html": "<p>Priehľadný zvukovod do prostredia s nízkou hlučnosťou</p> <h2>Priehľadný zvukovod do prostredia s nízkou hlučnosťou</h2> <p>Sada priehľadného zvukovodu pre rozšírenie audio súprav pre skryté nosenie. Zvukovod môže byť tiež náhradným dielom pre audio súpravy. Zvukovod&nbsp;sa nasadí na slúchadlo audio súpravy. Táto sada poskytuje mimoriadne pohodlie pre užívateľa, ľahká, priesvitná trubica poskytuje flexibilitu a pohodlie nosenia. Spona pre uchytenie na odev zabraňuje aby sa slúchadlo vytiahlo z ucha v dôsledku pohybu tela alebo rotácie hlavy. Táto sada je určená do menej hlučného prostredia a neposkytuje ochranu sluchu. Ako náhradný diel pod označením <a href=\"index.php?option=com_k2&amp;view=item&amp;id=231:rln6282&amp;Itemid=2155&amp;lang=sk\" target=\"_blank\">RLN6282</a> je možné dodať aj priehľadnú silikónovú koncovku.</p>",
+  "parametre": [],
+  "dokumenty": []
+};
+const sidebar = "<nav class=\"rks-tree text-sm\" aria-label=\"Kategórie produktov\"><ul class=\"space-y-1\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/radiostanice-2002\" class=\"rks-link text-default hover:text-link\">Rádiostanice<span class=\"text-muted text-xs ml-2\">773</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2\" class=\"rks-link text-default hover:text-link\">Prenosné rádiostanice<span class=\"text-muted text-xs ml-2\">632</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory\" class=\"rks-link text-default hover:text-link\">Akumulátory<span class=\"text-muted text-xs ml-2\">53</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Antény (DP)<span class=\"text-muted text-xs ml-2\">58</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DP)<span class=\"text-muted text-xs ml-2\">17</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dp\" class=\"rks-link text-primary font-semibold\">Iné (DP)<span class=\"text-muted text-xs ml-2\">138</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky-mototrbo\" class=\"rks-link text-default hover:text-link\">Nabíjačky<span class=\"text-muted text-xs ml-2\">37</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie\" class=\"rks-link text-default hover:text-link\">Nosenie<span class=\"text-muted text-xs ml-2\">97</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy\" class=\"rks-link text-default hover:text-link\">Náhlavné súpravy<span class=\"text-muted text-xs ml-2\">43</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony\" class=\"rks-link text-default hover:text-link\">Repromikrofóny<span class=\"text-muted text-xs ml-2\">39</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla\" class=\"rks-link text-default hover:text-link\">Slúchadlá<span class=\"text-muted text-xs ml-2\">72</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Softvér (DP)<span class=\"text-muted text-xs ml-2\">35</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prevadzace-mototrbo\" class=\"rks-link text-default hover:text-link\">Prevádzače<span class=\"text-muted text-xs ml-2\">22</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dr\" class=\"rks-link text-default hover:text-link\">Iné (DR)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dr\" class=\"rks-link text-default hover:text-link\">Softvér (DR)<span class=\"text-muted text-xs ml-2\">13</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/vozidlove-radiostanice-mototrbo\" class=\"rks-link text-default hover:text-link\">Vozidlové rádiostanice<span class=\"text-muted text-xs ml-2\">119</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny\" class=\"rks-link text-default hover:text-link\">Antény (DM)<span class=\"text-muted text-xs ml-2\">23</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dm-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DM)<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dm\" class=\"rks-link text-default hover:text-link\">Iné (DM)<span class=\"text-muted text-xs ml-2\">22</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/instalacia\" class=\"rks-link text-default hover:text-link\">Inštalácia<span class=\"text-muted text-xs ml-2\">29</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofony\" class=\"rks-link text-default hover:text-link\">Mikrofóny<span class=\"text-muted text-xs ml-2\">13</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/napajanie\" class=\"rks-link text-default hover:text-link\">Napájanie<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/reproduktory\" class=\"rks-link text-default hover:text-link\">Reproduktory<span class=\"text-muted text-xs ml-2\">5</span></a></li></ul></li></ul></li></ul></nav>";
+const breadcrumb = [
+  {
+    "name": "Produkty",
+    "url": "/produkty"
+  },
+  {
+    "name": "Katalóg produktov",
+    "url": "/katalog-produktov"
+  },
+  {
+    "name": "Rádiostanice",
+    "url": "/katalog-produktov/kategoria/radiostanice-2002"
+  },
+  {
+    "name": "Prenosné rádiostanice",
+    "url": "/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+  },
+  {
+    "name": "Iné (DP)",
+    "url": "/katalog-produktov/kategoria/ine-dp"
+  },
+  {
+    "name": "PMLN4605",
+    "url": null
+  }
+];
+const ctaHeading = "Dodávka, inštalácia a servis";
+const ctaText = "Evakuačné a varovacie systémy navrhujeme, dodávame, inštalujeme a servisujeme. Radi pripravíme riešenie pre váš objekt.";
+const metadata = {
+  "title": "PMLN4605, katalóg produktov | RKS",
+  "description": "Priehľadný zvukovod do prostredia s nízkou hlučnosťou Priehľadný zvukovod do prostredia s nízkou hlučnosťou Sada priehľadného zvukovodu pre rozšírenie audio súprav pre skryté nosenie.",
+  "robots": {
+    "index": false,
+    "follow": false
+  }
+};
+const jsonld = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Produkty",
+        "item": "https://rksba.sk/produkty"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Katalóg produktov",
+        "item": "https://rksba.sk/katalog-produktov"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Rádiostanice",
+        "item": "https://rksba.sk/katalog-produktov/kategoria/radiostanice-2002"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Prenosné rádiostanice",
+        "item": "https://rksba.sk/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Iné (DP)",
+        "item": "https://rksba.sk/katalog-produktov/kategoria/ine-dp"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "PMLN4605"
+      }
+    ]
+  }
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
+      <aside class="mb-8 lg:mb-0 lg:sticky lg:top-24 lg:self-start">
+        <details class="rks-cats rounded-xl border border-hairline p-4 lg:border-0 lg:p-0">
+          <summary class="rks-cats-toggle cursor-pointer font-semibold lg:hidden flex items-center justify-between gap-2 rounded-lg bg-panel-soft px-4 py-3"><span>Kategórie produktov</span><span class="rks-cats-arrow" aria-hidden="true"></span></summary>
+          <div class="rks-tree-wrap mt-3 lg:mt-0" set:html={sidebar} />
+        </details>
+      </aside>
+
+      <div class="min-w-0">
+        <nav class="text-sm text-muted mb-2" aria-label="Omrvinky">
+          {breadcrumb.map((b, i) => (
+            <>
+              {i > 0 && <span class="px-1">/</span>}
+              {b.url ? <a class="hover:underline" href={b.url}>{b.name}</a> : <span>{b.name}</span>}
+            </>
+          ))}
+        </nav>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">{p.title}</h1>
+
+        <div class="rks-gallery relative max-w-md mb-8" data-rks-gallery>
+          <div class="rks-track flex overflow-x-auto snap-x snap-mandatory scroll-smooth rounded-xl border border-hairline bg-white" data-track>
+            {p.slides.map((src, i) => (
+              <div class="rks-slide shrink-0 basis-full snap-center p-4">
+                <img src={src} alt={`${p.title}, obrázok ${i + 1}`} class="w-full h-auto mx-auto" loading={i === 0 ? 'eager' : 'lazy'} />
+              </div>
+            ))}
+          </div>
+          {p.slides.length > 1 && (
+            <>
+              <button type="button" data-prev aria-label="Predchádzajúci obrázok" class="absolute left-2 top-1/2 -translate-y-1/2 h-9 w-9 inline-flex items-center justify-center rounded-full text-[#101010] bg-white/90 border border-hairline shadow-sm hover:bg-white">‹</button>
+              <button type="button" data-next aria-label="Ďalší obrázok" class="absolute right-2 top-1/2 -translate-y-1/2 h-9 w-9 inline-flex items-center justify-center rounded-full text-[#101010] bg-white/90 border border-hairline shadow-sm hover:bg-white">›</button>
+              <div class="mt-2 text-center text-sm text-muted" data-counter>1 / {p.slides.length}</div>
+            </>
+          )}
+        </div>
+
+        <div class="prose prose-lg max-w-none" set:html={p.popis_html} />
+
+        {p.parametre.length > 0 && (
+          <>
+            <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">Parametre</h2>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse text-sm">
+                <tbody>
+                  {p.parametre.map((r) => (
+                    <tr class="border-b border-hairline align-top">
+                      <th class="py-2 pr-4 font-medium whitespace-nowrap">{r.nazov}</th>
+                      <td class="py-2 text-muted">{r.hodnota}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
+        )}
+
+        {p.dokumenty.length > 0 && (
+          <>
+            <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">Dokumenty</h2>
+            <ul class="space-y-1">
+              {p.dokumenty.map((d) => (
+                <li>
+                  <a
+                    href={`/dokumenty/katalog/${encodeURIComponent(d.subor)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-primary hover:underline"
+                  >
+                    {d.titul}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+
+        <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+          <h2 class="text-xl md:text-2xl font-semibold mb-3">{ctaHeading}</h2>
+          <p class="text-muted mb-6 max-w-xl mx-auto">{ctaText}</p>
+          <a href="/lp/konzultacia.html?utm_source=web&amp;utm_campaign=web" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+
+  <style is:global>
+    @media (min-width: 1024px) {
+      .rks-cats > summary { display: none; }
+      .rks-cats > .rks-tree-wrap { display: block !important; }
+    }
+    .rks-track::-webkit-scrollbar { display: none; }
+    .rks-track { scrollbar-width: none; }
+    .rks-tree .rks-li { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 0.5rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-leaf { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-li > .rks-link { min-width: 0; }
+    .rks-tree .rks-children { grid-column: 1 / -1; display: none; }
+    .rks-tree .rks-disc[open] ~ .rks-children { display: block; }
+    .rks-tree .rks-disc { display: inline-flex; }
+    .rks-tree summary.rks-arrow { list-style: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; color: rgba(229, 236, 246, 0.66); }
+    .rks-tree summary.rks-arrow::-webkit-details-marker { display: none; }
+    .rks-tree summary.rks-arrow::before { content: ""; border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-tree .rks-disc[open] > summary.rks-arrow::before { transform: rotate(90deg); }
+    .rks-cats-arrow::before { content: ""; display: inline-block; color: rgba(229, 236, 246, 0.66); border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-cats[open] > .rks-cats-toggle .rks-cats-arrow::before { transform: rotate(90deg); }
+  </style>
+
+  <script is:inline>
+    function rksInitGalleries() {
+      document.querySelectorAll('[data-rks-gallery]').forEach(function (g) {
+        if (g.dataset.rksInit) return;
+        g.dataset.rksInit = '1';
+        var track = g.querySelector('[data-track]');
+        var counter = g.querySelector('[data-counter]');
+        var prev = g.querySelector('[data-prev]');
+        var next = g.querySelector('[data-next]');
+        var total = track ? track.children.length : 0;
+        if (!track || total <= 1) return;
+        function upd() {
+          var i = Math.round(track.scrollLeft / track.clientWidth) + 1;
+          if (counter) counter.textContent = i + ' / ' + total;
+        }
+        if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' }); });
+        if (next) next.addEventListener('click', function () { track.scrollBy({ left: track.clientWidth, behavior: 'smooth' }); });
+        track.addEventListener('scroll', upd, { passive: true });
+        upd();
+      });
+    }
+    document.addEventListener('astro:page-load', rksInitGalleries);
+    rksInitGalleries();
+  </script>
+</Layout>

@@ -24,6 +24,17 @@ products = json.load(open(os.path.join(BASE, 'products.json'), encoding='utf-8')
 cats = json.load(open(os.path.join(BASE, 'categories.json'), encoding='utf-8'))
 P = {p['id']: p for p in products}
 
+# ---------------------------------------------------------------- MOTOTRBO (migracia z mototrbo.sk)
+# Nove vetvy zijú v tych istych JSONoch, ale:
+#  - nesmu sa objavit v bocnom paneli ani na uvodnej stranke archivu (Step 3),
+#  - vsetky ich stranky su noindex a mimo sitemap.
+MOTO_CAT_IDS  = {c['id'] for c in cats if c.get('zdroj') == 'mototrbo'}
+MOTO_ROOT_IDS = {c['id'] for c in cats if c.get('zdroj') == 'mototrbo' and c['parent'] == 0}
+MOTO_PROD_IDS = {p['id'] for p in products if p.get('zdroj') == 'mototrbo'}
+def is_moto_cat(cid):  return cid in MOTO_CAT_IDS
+def is_moto_prod(pid): return pid in MOTO_PROD_IDS
+NOINDEX = {'index': False, 'follow': False}
+
 # Kanonicka domena. Schema.org BreadcrumbList vyzaduje v itemListElement.item
 # ABSOLUTNU URL — s relativnou cestou Search Console hlasi "Neplatna webova
 # adresa v poli id".
@@ -65,7 +76,8 @@ for c in cats:
     calc(c['id'])
 
 # umbrella root (Produkty) = koren s najvacsim podstromom; jeho deti su top kategorie
-_roots = [c for c in cats if c['parent'] == 0 and subtree.get(c['id'], 0) > 0]
+_roots = [c for c in cats if c['parent'] == 0 and subtree.get(c['id'], 0) > 0
+          and c['id'] not in MOTO_ROOT_IDS]
 UMBRELLA = max(_roots, key=lambda c: subtree[c['id']]) if _roots else None
 
 def esc(s):
@@ -203,7 +215,11 @@ def render_node(c, current_id, open_ids):
 
 def build_sidebar(current_id):
     open_ids = ancestors(current_id)
-    roots = [c for c in cats if c['parent'] == 0 and subtree.get(c['id'], 0) > 0]
+    # MOTOTRBO strom je oddeleny: na mototrbo strankach sa zobrazi len on,
+    # na povodnom archive sa nezobrazi vobec (do hlavneho stromu ide az v Step 3).
+    moto = is_moto_cat(current_id)
+    roots = [c for c in cats if c['parent'] == 0 and subtree.get(c['id'], 0) > 0
+             and (c['id'] in MOTO_ROOT_IDS) == moto]
     top = []
     for c in roots:
         if UMBRELLA is not None and c['id'] == UMBRELLA['id']:
@@ -486,6 +502,7 @@ const ctaHeading = %(CTA_HEADING)s;
 const ctaText = %(CTA_TEXT)s;
 const metadata = %(META)s;
 const jsonld = %(JSONLD)s;
+const filters = %(FILTERS)s;
 ---
 
 <Layout metadata={metadata}>
@@ -541,12 +558,38 @@ const jsonld = %(JSONLD)s;
           </>
         )}
 
+        {filters.length > 0 && (
+          <div class="rks-filter mt-8 rounded-xl border border-hairline bg-panel-soft p-5" data-rks-filter>
+            <div class="flex items-center justify-between gap-4 mb-3">
+              <h2 class="text-base font-semibold">Filtrovať podľa parametrov</h2>
+              <button type="button" class="text-sm text-link hover:underline" data-rks-reset>Zrušiť filtre</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+              {filters.map((f) => (
+                <details class="rks-facet border-t border-hairline pt-2">
+                  <summary class="cursor-pointer text-sm font-medium py-1 select-none">{f.nazov}</summary>
+                  <div class="mt-1 mb-2 space-y-1">
+                    {f.hodnoty.map((v) => (
+                      <label class="flex items-center gap-2 text-sm" data-rks-opt={f.key + '|~|' + v.hodnota}>
+                        <input type="checkbox" class="accent-primary" data-rks-f={f.key} value={v.hodnota} />
+                        <span class="flex-1">{v.hodnota}</span>
+                        <span class="text-muted text-xs tabular-nums" data-rks-cnt>{v.pocet}</span>
+                      </label>
+                    ))}
+                  </div>
+                </details>
+              ))}
+            </div>
+            <p class="text-sm text-muted mt-3" data-rks-summary></p>
+          </div>
+        )}
+
         {products.length > 0 && (
           <>
             {productsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">{productsHeading}</h2>}
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4" data-rks-grid>
               {products.map((c) => (
-                <a href={c.url} class="group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                <a href={c.url} data-facets={c.facets} class="rks-card group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
                   <div class="aspect-square bg-white p-4 flex items-center justify-center">
                     <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
                   </div>
@@ -570,6 +613,67 @@ const jsonld = %(JSONLD)s;
   </section>
 
   <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+
+  {filters.length > 0 && (
+    <script is:inline>
+      (function () {
+        var root = document.querySelector('[data-rks-filter]');
+        var grid = document.querySelector('[data-rks-grid]');
+        if (!root || !grid) return;
+        var cards = Array.prototype.slice.call(grid.querySelectorAll('.rks-card'));
+        var boxes = Array.prototype.slice.call(root.querySelectorAll('input[data-rks-f]'));
+        var summary = root.querySelector('[data-rks-summary]');
+        var parsed = cards.map(function (c) {
+          try { return JSON.parse(c.getAttribute('data-facets') || '{}'); } catch (e) { return {}; }
+        });
+        function selection() {
+          var m = {};
+          boxes.forEach(function (b) {
+            if (b.checked) { (m[b.getAttribute('data-rks-f')] = m[b.getAttribute('data-rks-f')] || []).push(b.value); }
+          });
+          return m;
+        }
+        function matches(f, m) {
+          for (var k in m) {
+            var have = f[k] || [];
+            var ok = m[k].some(function (v) { return have.indexOf(v) !== -1; });
+            if (!ok) return false;
+          }
+          return true;
+        }
+        function apply() {
+          var m = selection(), shown = 0;
+          cards.forEach(function (c, i) {
+            var ok = matches(parsed[i], m);
+            c.style.display = ok ? '' : 'none';
+            if (ok) shown++;
+          });
+          // prepocitaj pocty: kolko by ostalo, keby sa pridala prave tato hodnota
+          root.querySelectorAll('label[data-rks-opt]').forEach(function (lab) {
+            var parts = lab.getAttribute('data-rks-opt').split('|~|');
+            var k = parts[0], v = parts[1];
+            var m2 = {}; for (var kk in m) m2[kk] = m[kk].slice();
+            m2[k] = [v];
+            var n = 0;
+            for (var i = 0; i < cards.length; i++) { if (matches(parsed[i], m2)) n++; }
+            lab.querySelector('[data-rks-cnt]').textContent = n;
+            var box = lab.querySelector('input');
+            lab.style.display = (n === 0 && !box.checked) ? 'none' : '';
+          });
+          summary.textContent = shown === cards.length
+            ? cards.length + ' produktov'
+            : shown + ' z ' + cards.length + ' produktov';
+        }
+        boxes.forEach(function (b) { b.addEventListener('change', apply); });
+        var reset = root.querySelector('[data-rks-reset]');
+        if (reset) reset.addEventListener('click', function () {
+          boxes.forEach(function (b) { b.checked = false; });
+          apply();
+        });
+        apply();
+      })();
+    </script>
+  )}
 
   <style is:global>
     @media (min-width: 1024px) {
@@ -601,6 +705,8 @@ for src in ([] if INDEX_ONLY else sorted(products, key=lambda p: p['id'])):
     # takze schema nemohla nikdy vyprodukovat rich result a Search Console ju
     # hlasil ako zavaznu chybu. Ked sa ceny zverejnia, vrat ju sem spolu s offers.
     jsonld = [breadcrumb_jsonld(bc)]
+    if is_moto_prod(src['id']):
+        meta['robots'] = NOINDEX
     sidebar = build_sidebar(cid)
     content = PRODUCT_TEMPLATE % {
         'P': js(pobj), 'SIDEBAR': js(sidebar), 'BREADCRUMB': js(bc),
@@ -612,14 +718,59 @@ for src in ([] if INDEX_ONLY else sorted(products, key=lambda p: p['id'])):
     n_prod += 1
 
 # ---------------------------------------------------------------- karty
+def facet_key(nazov):
+    return slugify(nazov) or 'f'
+
+def card_facets(p):
+    """Mapa {kluc_fasety: [hodnoty]} pre klientsky filter."""
+    out = {}
+    for f in p.get('parametre_fasety', []):
+        vals = [v.strip() for v in str(f.get('hodnota', '')).split(',') if v.strip()]
+        if vals:
+            out.setdefault(facet_key(f['nazov']), []).extend(vals)
+    return out
+
 def product_cards(prods):
     prods = sorted(prods, key=lambda p: p['title'].lower())
-    return [{
-        'url': prod_url(p['id']),
-        'img': '/images/katalog-produktov/%d/main.webp' % p['id'],
-        'title': p['title'],
-        'desc': first_sentence(p['popis_text']),
-    } for p in prods]
+    out = []
+    for p in prods:
+        card = {
+            'url': prod_url(p['id']),
+            'img': '/images/katalog-produktov/%d/main.webp' % p['id'],
+            'title': p['title'],
+            'desc': first_sentence(p['popis_text']),
+        }
+        f = card_facets(p)
+        if f:
+            card['facets'] = json.dumps(f, ensure_ascii=False)
+        if p.get('nedodavane'):
+            card['nedodavane'] = True
+        out.append(card)
+    return out
+
+def facets_for(prods):
+    """Fasety pre kategoriu: len tie, ktore ma aspon 1 zobrazeny produkt.
+       Hodnoty s nulovym poctom sa nezobrazuju (poziadavka)."""
+    agg = {}
+    order = []
+    for p in prods:
+        for f in p.get('parametre_fasety', []):
+            k = facet_key(f['nazov'])
+            if k not in agg:
+                agg[k] = {'key': k, 'nazov': f['nazov'], 'vals': {}}
+                order.append(k)
+            for v in [x.strip() for x in str(f.get('hodnota', '')).split(',') if x.strip()]:
+                agg[k]['vals'][v] = agg[k]['vals'].get(v, 0) + 1
+    out = []
+    for k in order:
+        a = agg[k]
+        vals = [{'hodnota': v, 'pocet': n} for v, n in a['vals'].items() if n > 0]
+        if len(vals) < 2:      # jedna hodnota nefiltruje nic
+            continue
+        vals.sort(key=lambda x: (-x['pocet'], x['hodnota']))
+        out.append({'key': k, 'nazov': a['nazov'], 'hodnoty': vals})
+    out.sort(key=lambda f: (-sum(v['pocet'] for v in f['hodnoty']), f['nazov']))
+    return out
 
 def subcat_cards(cid):
     kids = [ch for ch in children.get(cid, []) if subtree.get(ch['id'], 0) > 0]
@@ -649,12 +800,14 @@ for c in ([] if INDEX_ONLY else sorted(cats, key=lambda c: c['id'])):
     if UMBRELLA is not None and c['id'] == UMBRELLA['id']:
         continue  # umbrella (Produkty) reprezentuje uvodna stranka archivu
     subcats = subcat_cards(c['id'])
-    prod_cards = product_cards(direct_products(c['id']))
+    shown_products = direct_products(c['id'])
+    prod_cards = product_cards(shown_products)
     # Jedina podkategoria je len zbytocny medzikrok: preskocime ju a ukazeme
     # rovno produkty z celeho podstromu.
     if len(subcats) == 1 and not prod_cards:
         subcats = []
-        prod_cards = product_cards(subtree_products(c['id']))
+        shown_products = subtree_products(c['id'])
+        prod_cards = product_cards(shown_products)
     if subcats:
         # ma podkategorie: hore podkategorie, potom LEN priame produkty (s nadpisom)
         prod_head = 'Produkty' if prod_cards else ''
@@ -670,6 +823,12 @@ for c in ([] if INDEX_ONLY else sorted(cats, key=lambda c: c['id'])):
     }
     cta = CTA_RADIO_CATEGORY if is_radio_branch(c['id']) else CTA_SYSTEMS
     jsonld = breadcrumb_jsonld(breadcrumb_items(c['id']))
+    # MOTOTRBO: noindex + fasetovy filter nad zobrazenymi produktmi
+    if is_moto_cat(c['id']):
+        meta['robots'] = NOINDEX
+        cat_filters = facets_for(shown_products)
+    else:
+        cat_filters = []
     content = GRID_TEMPLATE % {
         'SIDEBAR': js(build_sidebar(c['id'])),
         'BREADCRUMB': js(bc),
@@ -686,6 +845,7 @@ for c in ([] if INDEX_ONLY else sorted(cats, key=lambda c: c['id'])):
         'CTA_TEXT': js(cta[1]),
         'META': js(meta),
         'JSONLD': js(jsonld),
+        'FILTERS': js(cat_filters),
         'MOBILE_SUMMARY': MOBILE_SUMMARY,
         'SIDEBAR_CSS': SIDEBAR_CSS,
     }
@@ -733,6 +893,7 @@ index_ld = {
     'description': index_meta['description'],
 }
 index_content = GRID_TEMPLATE % {
+    'FILTERS': js([]),
     'SIDEBAR': js(build_sidebar(0)),
     'BREADCRUMB': js([
         {'name': 'Produkty', 'url': '/produkty'},
@@ -755,6 +916,22 @@ index_content = GRID_TEMPLATE % {
     'SIDEBAR_CSS': SIDEBAR_CSS,
 }
 open(os.path.join(OUTDIR, 'index.astro'), 'w', encoding='utf-8').write(index_content)
+
+# ---------------------------------------------------------------- mototrbo: noindex zoznam
+# Cesty vsetkych MOTOTRBO stranok -> astro.config.ts ich vyhodi zo sitemap.xml.
+# (Stranky samotne maju robots noindex; do sitemap nepatria, inak to Search Console
+#  hlasi ako "Submitted URL marked noindex".)
+_moto_paths = sorted(
+    [prod_url(p['id']) for p in products if p.get('zdroj') == 'mototrbo'] +
+    [cat_url(c['id'])  for c in cats     if c.get('zdroj') == 'mototrbo' and subtree.get(c['id'], 0) > 0]
+)
+_noidx = os.path.join(ROOT, 'src', 'data', 'mototrbo-noindex.json')
+os.makedirs(os.path.dirname(_noidx), exist_ok=True)
+# format ladeny s prettierom (2 medzery + koncovy newline), nech `npm run check` prejde
+with open(_noidx, 'w', encoding='utf-8') as _f:
+    json.dump(_moto_paths, _f, ensure_ascii=False, indent=2)
+    _f.write('\n')
+print('MOTOTRBO noindex ciest:', len(_moto_paths), '->', os.path.relpath(_noidx, ROOT))
 
 # ---------------------------------------------------------------- report
 print('Produktovych stranok:', n_prod)

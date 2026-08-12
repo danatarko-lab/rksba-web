@@ -17,7 +17,13 @@ import astrowind from './vendor/integration';
 
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin } from './src/utils/frontmatter';
 
+// MOTOTRBO migracia: vsetky nove stranky su noindex a nesmu ist do sitemap.xml.
+// Zoznam ciest generuje _materials/katalog-podklady/gen_all_pages.py.
+import mototrboNoindex from './src/data/mototrbo-noindex.json';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+const NOINDEX_PATHS = new Set<string>(['/presuhlas', '/ponuka', '/pripadove-studie', ...(mototrboNoindex as string[])]);
 
 const hasExternalScripts = false;
 const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroIntegration)[] = []) =>
@@ -59,7 +65,7 @@ export default defineConfig({
     sitemap({
       filter: (page) => {
         const path = new URL(page).pathname.replace(/\/+$/, '');
-        return !['/presuhlas', '/ponuka', '/pripadove-studie'].includes(path);
+        return !NOINDEX_PATHS.has(path);
       },
     }),
     mdx(),
