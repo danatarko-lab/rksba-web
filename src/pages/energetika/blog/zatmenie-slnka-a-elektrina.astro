@@ -1,0 +1,278 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import NewsletterCTA from '~/components/widgets/NewsletterCTA.astro';
+
+const metadata = {
+  title: 'Zatmenie Slnka a výroba elektriny: čo sa naozaj stane so sieťou? | RKS',
+  description:
+    'Dnešné zatmenie Slnka (12. 8. 2026) zníži výrobu solárov až o 9,7 GW v Európe. Prečo to sieť zvládne a čo z toho vyplýva — overené fakty od ENTSO-E a ČEPS.',
+};
+
+const post = {
+  title: 'Zatmenie Slnka a elektrina: prečo sieť nespadne',
+  date: '12. 8. 2026',
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-3xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/energetika">Energetika</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/energetika/blog">Energy Memo</a>
+    <span class="px-1">/</span>
+    <span class="text-default">{post.title}</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-14 md:py-20">
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight">
+        Zatmenie Slnka a elektrina: koľko výkonu ubudne a prečo sieť nespadne
+      </h1>
+      <p class="mt-5 text-lg text-white/80">
+        Na sieti dnes lietajú dva extrémy — „výpadok ako desať Temelínov" aj „nič sa nedeje". Pravda je konkrétna,
+        spočítateľná a dobre pripravená.
+      </p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+    <p class="text-sm text-muted pb-8 mb-10 border-b border-hairline">
+      {post.date}
+    </p>
+
+    <div class="prose prose-lg max-w-none">
+      <p>
+        Dnes, v stredu 12. augusta 2026, zažije Európa výrazné zatmenie Slnka. V strednej Európe je čiastočné a nastáva
+        podvečer. Časť výroby fotovoltiky na pár desiatok minút ubudne — a potom sa rovnako rýchlo vráti.
+      </p>
+
+      <div class="not-prose my-8 border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        <p class="text-xs font-bold tracking-widest uppercase text-primary mb-3">V skratke</p>
+        <ul class="list-disc pl-5 space-y-1.5 text-muted">
+          <li>
+            Výroba solárov v Európe klesne počas špičky zatmenia až o <strong>9,7 GW</strong> (za jasnej oblohy), medzi 19:15
+            a 21:30 SELČ.
+          </li>
+          <li>Prevádzkovatelia sústav sú pripravení; podľa ENTSO-E aj ČEPS nehrozí blackout ani riziko pre dodávky.</li>
+          <li>Kľúčová je rýchlosť zmeny výkonu — a tú siete zvládajú rezervami a presnou predpoveďou.</li>
+        </ul>
+      </div>
+
+      <h2>Spadne kvôli zatmeniu elektrická sieť?</h2>
+      <p>
+        Nie. Zatmenie je vopred známy a presne predpovedateľný jav. Európski prevádzkovatelia prenosových sústav
+        (ENTSO-E) ho pripravovali týždne dopredu a deklarujú, že sústava zostane počas celého úkazu stabilná.<sup
+          ><a href="#zdroj-1">1</a></sup
+        > Pre nás v strednej Európe je navyše zatmenie len čiastočné a nastáva podvečer, keď už výroba solárov prirodzene
+        klesá.
+      </p>
+
+      <h2>Koľko výkonu ubudne a kedy</h2>
+      <p>
+        Podľa ENTSO-E môže výroba fotovoltiky v Európe počas špičky zatmenia klesnúť <strong>až o 9,7 GW</strong>, a to
+        v okne <strong>19:15 – 21:30 SELČ</strong>. Solárna elektrina dnes tvorí približne <strong
+          >13 % výroby elektriny v EÚ</strong
+        >, takže ide o citeľný, no zvládnuteľný výkyv.<sup><a href="#zdroj-1">1</a></sup> Najviac zasiahne juh a západ Európy.
+      </p>
+
+      <figure class="not-prose my-10 rounded-xl border border-hairline overflow-hidden bg-white">
+        <div class="px-6 pt-5 pb-1">
+          <p class="text-xs font-bold tracking-widest uppercase text-primary mb-1.5">Očakávaný pokles · 12. 8. 2026</p>
+          <p class="font-bold text-[#0B1F3A] leading-snug">
+            Koľko výroby solárov ubudne počas špičky zatmenia (podľa národných prevádzkovateľov sústav)
+          </p>
+        </div>
+        <svg
+          class="block w-full h-auto px-4 pb-3"
+          viewBox="0 0 720 250"
+          role="img"
+          aria-label="Očakávaný pokles výroby solárov: Španielsko približne 5 GW, Nemecko 2 GW, Francúzsko 1,8 GW, Portugalsko 0,45 GW. V celej EÚ spolu až 9,7 GW."
+        >
+          <text x="12" y="30" font-family="Arial" font-size="12" font-weight="700" fill="#0B1F3A">Španielsko</text>
+          <rect x="130" y="16" width="467" height="22" rx="3" fill="#1A1ADB"></rect>
+          <text x="605" y="33" font-family="Arial" font-size="13" font-weight="700" fill="#1A1ADB">~5 GW</text>
+          <text x="12" y="76" font-family="Arial" font-size="12" font-weight="700" fill="#0B1F3A">Nemecko</text>
+          <rect x="130" y="62" width="187" height="22" rx="3" fill="#1A1ADB"></rect>
+          <text x="325" y="79" font-family="Arial" font-size="13" font-weight="700" fill="#1A1ADB">~2 GW</text>
+          <text x="12" y="122" font-family="Arial" font-size="12" font-weight="700" fill="#0B1F3A">Francúzsko</text>
+          <rect x="130" y="108" width="168" height="22" rx="3" fill="#1A1ADB"></rect>
+          <text x="306" y="125" font-family="Arial" font-size="13" font-weight="700" fill="#1A1ADB">~1,8 GW</text>
+          <text x="12" y="168" font-family="Arial" font-size="12" font-weight="700" fill="#0B1F3A">Portugalsko</text>
+          <rect x="130" y="154" width="42" height="22" rx="3" fill="#1A1ADB"></rect>
+          <text x="180" y="171" font-family="Arial" font-size="13" font-weight="700" fill="#1A1ADB">~0,45 GW</text>
+          <line x1="130" y1="200" x2="700" y2="200" stroke="#e4e8ef" stroke-width="1"></line>
+          <text x="130" y="224" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A"
+            >V celej EÚ spolu: až ~9,7 GW</text
+          >
+          <text x="130" y="242" font-family="Arial" font-size="11" fill="#5b6677"
+            >(za jasnej oblohy, v špičke medzi 19:15 a 21:30 SELČ)</text
+          >
+        </svg>
+        <figcaption class="text-sm text-muted px-6 pb-5 italic">
+          Národné hodnoty od prevádzkovateľov sústav (REE, nemeckí TSO, RTE, REN); celoeurópsky súhrn od ENTSO-E.<sup
+            ><a href="#zdroj-1">1</a></sup
+          ><sup><a href="#zdroj-2">2</a></sup><sup><a href="#zdroj-3">3</a></sup>
+        </figcaption>
+      </figure>
+
+      <h2>A čo Slovensko a Česko?</h2>
+      <p>
+        U nás je zatmenie len čiastočné a nastáva tesne pred západom Slnka. V Bratislave zakryje Mesiac približne
+        <strong>83 % Slnka</strong> (začiatok okolo 19:22 SELČ), v Banskej Bystrici približne 67 % a v Košiciach približne
+        61 %. Zvláštnosť pre nás: najhlbšia fáza nastáva až po západe Slnka, takže najväčšie zakrytie ani neuvidíme — a výroba
+        solárov je v tom čase už blízko nuly.<sup><a href="#zdroj-5">5</a></sup>
+      </p>
+      <p>
+        Dopad na našu sústavu je preto malý. Riaditeľ Slovenskej asociácie fotovoltického priemyslu a OZE (SAPI) Ján
+        Karaba uvádza, že Slovensko pocíti zatmenie iba okrajovo a v samotnom úkaze nevidí vážnejšie riziko; je to podľa
+        neho dobrý príklad toho, ako energetika zvláda veľké výkyvy, keď sa k nim pristupuje systémovo.<sup
+          ><a href="#zdroj-4">4</a></sup
+        > Český prevádzkovateľ ČEPS rovnako očakáva minimálny dopad a blackout nepredpokladá.<sup
+          ><a href="#zdroj-2">2</a></sup
+        >
+      </p>
+
+      <h2>„Desať Temelínov" — čo je na tom pravda?</h2>
+      <p>
+        Pri jednom bloku Temelína rádovo 1 000 MW zodpovedá 9,7 GW približne desiatim jadrovým blokom. Toto číslo je
+        reálne. Zavádza však jeho výklad. Ide o <strong>celoeurópsky súčet</strong>, ktorý sa rozloží postupne počas
+        viac než hodiny a nastáva podvečer, keď je výroba solárov aj tak nízka. Pokles sa rozprestrie cez celý kontinent
+        a pokryjú ho rezervy, ktoré prevádzkovatelia bežne držia.
+      </p>
+
+      <h2>Prečo sieť nespadne</h2>
+      <p>
+        Podobnú skúšku už Európa zažila. Pri zatmení v marci 2015 klesla výroba solárov v Európe približne o
+        <strong>35 GW</strong> — teda výrazne viac než dnes — a sústava to zvládla bez problémov a bez blackoutu.<sup
+          ><a href="#zdroj-3">3</a></sup
+        > Odvtedy solárov pribudlo, no zlepšili sa aj predpovede, trhy a rezervy.
+      </p>
+      <p>
+        Pri zatmení rozhoduje <strong>rýchlosť zmeny</strong>. Keď Mesiac odkrýva Slnko, výkon solárov rýchlo rastie
+        späť, a to práve v čase, keď podvečer stúpa spotreba. Prevádzkovatelia to riešia štandardne — presnou
+        predpoveďou, pohotovými rezervami, vyhýbaním sa plánovaným odstávkam počas úkazu a vnútrodenným obchodovaním.
+        Český ČEPS aj preto očakáva minimálny dopad a blackout nepredpokladá.<sup><a href="#zdroj-2">2</a></sup>
+      </p>
+
+      <aside class="not-prose my-10 rounded-xl bg-[#0A2342] text-white p-8">
+        <p class="text-xs font-bold tracking-widest uppercase text-accent mb-3">Podstata veci</p>
+        <p class="text-xl leading-snug">
+          Zatmenie je ukážka, že plánovanie, predpoveď a flexibilita fungujú. <strong
+            >Práve tie robia z veľkého výkyvu bežnú prevádzku — dnes na úrovni kontinentu, každý deň na úrovni firmy.</strong
+          >
+        </p>
+      </aside>
+
+      <h2>Pohľad RKS</h2>
+      <p>To, čo dnes drží európsku sieť, je tá istá schopnosť, ktorá sa oplatí aj vo vašej prevádzke.</p>
+      <p>
+        Zatmenie je viditeľný test schopností, ktoré v energetike rozhodujú každý deň: poznať svoj profil výroby a
+        spotreby, vedieť ho predpovedať a mať čím reagovať na výkyvy — rezervou, úložiskom alebo riadením spotreby.
+      </p>
+      <p>
+        S rastúcim podielom solárov a veternej energie budú takéto rýchle výkyvy bežnejšie. Firma, ktorá pozná svoje
+        dáta a má flexibilitu, ich zvláda rovnako pokojne ako sústava dnešné zatmenie.
+      </p>
+      <p class="not-italic text-xl font-medium border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        Veľký výkyv nie je hrozba pre toho, kto ho vie zmerať, predvídať a vykryť.
+      </p>
+
+      <h2>Súvisiace články</h2>
+      <ul>
+        <li>
+          <a href="/energetika/blog/modernizacny-fond-slovensko"
+            >Európa rozdelila 2,5 miliardy na energetiku. Slovensko nedostalo nič. Prečo?</a
+          >
+        </li>
+        <li>
+          <a href="/energetika/blog/first-electrocontinent-plan-eu"
+            >First Electrocontinent Ever. Čo znamená nový plán EÚ pre naše firmy?</a
+          >
+        </li>
+      </ul>
+
+      <h2>Súvisiace témy</h2>
+      <ul>
+        <li><a href="/energetika/energy-management">Čo je Energy Management System (EMS)</a></li>
+        <li><a href="/energetika/baterie-bess">Batériové úložiská (BESS)</a></li>
+        <li><a href="/energetika/fotovoltika">Firemná fotovoltika</a></li>
+        <li><a href="/energetika/slovnik">Slovník energetických pojmov</a></li>
+      </ul>
+
+      <h2>Zdroje a poznámky</h2>
+      <ol>
+        <li id="zdroj-1">
+          ENTSO-E (2026) Transmission System Operators prepare for solar eclipse to ensure secure system operation, 7.
+          augusta 2026. Dostupné z:
+          <a
+            href="https://www.entsoe.eu/news/2026/08/07/transmission-system-operators-prepare-for-solar-eclipse-to-ensure-secure-system-operation/"
+            rel="noopener">entsoe.eu</a
+          > (stiahnuté: 12. augusta 2026). Pokles PV až 9,7 GW medzi 19:15–21:30 SELČ; solár ~13 % elektriny EÚ (2025); pripravenosť
+          TSO.
+        </li>
+        <li id="zdroj-2">
+          oEnergetice / ČEPS (2026) Rising solar capacity makes eclipses a greater challenge; Czech grid operator ČEPS
+          is monitoring the situation. Dostupné z:
+          <a
+            href="https://oenergetice.cz/en/elektrina/rising-solar-capacity-makes-eclipses-a-greater-challenge-czech-grid-operator-ceps-is-monitoring-the-situation"
+            rel="noopener">oenergetice.cz</a
+          > (stiahnuté: 12. augusta 2026). Hovorkyňa ČEPS Hana Klímová: dopad minimálny, blackout nehrozí; v 2015 takmer zanedbateľný
+          dopad.
+        </li>
+        <li id="zdroj-3">
+          pv magazine (2026) European transmission system operators prepare for solar eclipse, 10. augusta 2026.
+          Dostupné z:
+          <a
+            href="https://www.pv-magazine.com/2026/08/10/european-transmission-system-operators-prepare-for-solar-eclipse/"
+            rel="noopener">pv-magazine.com</a
+          > (stiahnuté: 12. augusta 2026). Nemecko ~2 GW (zo 125 GW inštalovaných), Francúzsko ~1,8 GW; zatmenie 2015 ~35
+          GW pokles v EÚ, sústava zvládla bez problémov. Doplnené o údaje pre Španielsko (~5 GW, REE) a Portugalsko (~450
+          MW, REN): Euronews (2026),
+          <a
+            href="https://www.euronews.com/2026/08/11/one-european-country-is-offering-free-energy-to-households-that-power-down-during-the-ecli"
+            rel="noopener">euronews.com</a
+          >.
+        </li>
+        <li id="zdroj-4">
+          SITA Energetika (2026) Zatmenie Slnka ukáže význam flexibility, Slovensko potrebuje pestrejší energetický mix.
+          Dostupné z:
+          <a
+            href="https://sita.sk/venergetike/zatmenie-slnka-ukaze-vyznam-flexibility-slovensko-potrebuje-pestrejsi-energeticky-mix/"
+            rel="noopener">sita.sk</a
+          > (stiahnuté: 12. augusta 2026). Ján Karaba (SAPI): Slovensko pocíti zatmenie okrajovo, bez vážnejšieho rizika;
+          dôraz na flexibilitu, akumuláciu a pestrý mix.
+        </li>
+        <li id="zdroj-5">
+          LIFE ZONE (2026) Zatmenie Slnka 12. augusta 2026 — presné časy pre slovenské mestá (astronomický výpočet).
+          Dostupné z:
+          <a
+            href="https://www.lifezone.sk/zatmenie-slnka-12-augusta-2026-bude-na-slovensku-mimoriadne-vyrazne-pozrite-si-presne-casy-pre-jednotlive-mesta/"
+            rel="noopener">lifezone.sk</a
+          > (stiahnuté: 12. augusta 2026). Približné zakrytie Slnka: Bratislava ~83 %, Banská Bystrica ~67 %, Košice ~61 %;
+          začiatok ~19:20–19:22 SELČ, maximum až po západe Slnka.
+        </li>
+      </ol>
+
+      <p class="text-sm text-muted italic">
+        Všetky čísla sú overené proti uvedeným zdrojom (ENTSO-E, národní prevádzkovatelia sústav, ČEPS). Hodnoty poklesu
+        platia za jasnej oblohy; reálny dopad býva menší podľa počasia.
+      </p>
+    </div>
+
+    {/* Soft CTA. Vedie na bezplatnú konzultáciu ako ostatné CTA, s vlastnou utm kampaňou. */}
+    <div class="not-prose mt-12 border-l-4 border-primary bg-primary/5 rounded-r-lg p-6">
+      <p class="text-lg">
+        Zaujíma vás, ako výkyvy výroby a spotreby ovplyvňujú práve vašu prevádzku? Pripravujeme bezplatný
+        <strong>Energy Investment Check</strong> — odhad potenciálu fotovoltiky a batérie z vašich reálnych čísel.
+      </p>
+      <a
+        href="/lp/konzultacia.html?utm_source=web&utm_medium=cta&utm_campaign=energy-investment-check"
+        class="btn-primary inline-flex mt-5">Mám záujem o Energy Investment Check</a
+      >
+    </div>
+
+    <NewsletterCTA />
+  </article>
+</Layout>

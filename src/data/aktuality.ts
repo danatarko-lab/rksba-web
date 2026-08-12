@@ -17,6 +17,14 @@ export type Post = {
 export const energyMemo: Post[] = [
   {
     category: 'Energy Memo',
+    title: 'Zatmenie Slnka a elektrina: prečo sieť nespadne',
+    excerpt:
+      'Dnešné zatmenie zníži výrobu solárov v Európe až o 9,7 GW. Prečo sieť nespadne, čo to znamená pre Slovensko a Česko a čo si z toho má odniesť firma.',
+    date: '12. 8. 2026',
+    href: '/energetika/blog/zatmenie-slnka-a-elektrina',
+  },
+  {
+    category: 'Energy Memo',
     title: 'Európa rozdelila 2,5 miliardy na energetiku. Slovensko nedostalo nič. Prečo?',
     excerpt:
       'EÚ rozdelila 2,5 mld. eur z Modernizačného fondu, Slovensko v kole nebolo. Prečo, ako čerpáme oproti Česku (4 % vs 26 %) a čo si z toho má odniesť firma.',
