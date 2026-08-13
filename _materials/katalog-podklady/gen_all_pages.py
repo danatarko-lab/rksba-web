@@ -10,6 +10,7 @@
 Cita products.json + categories.json, zapisuje .astro subory.
 """
 import os, re, json, html as htmlmod, unicodedata, sys
+from urllib.parse import unquote
 
 INDEX_ONLY = '--index-only' in sys.argv
 
@@ -31,6 +32,9 @@ P = {p['id']: p for p in products}
 MOTO_CAT_IDS  = {c['id'] for c in cats if c.get('zdroj') == 'mototrbo'}
 MOTO_ROOT_IDS = {c['id'] for c in cats if c.get('zdroj') == 'mototrbo' and c['parent'] == 0}
 MOTO_PROD_IDS = {p['id'] for p in products if p.get('zdroj') == 'mototrbo'}
+# korene mototrbo stromu, ktore su radiove (dnes jediny: "Rádiostanice")
+MOTO_RADIO_ROOT_IDS = {c['id'] for c in cats
+                       if c['id'] in MOTO_ROOT_IDS and c['name'] == 'Rádiostanice'}
 def is_moto_cat(cid):  return cid in MOTO_CAT_IDS
 def is_moto_prod(pid): return pid in MOTO_PROD_IDS
 NOINDEX = {'index': False, 'follow': False}
@@ -83,19 +87,111 @@ UMBRELLA = max(_roots, key=lambda c: subtree[c['id']]) if _roots else None
 def esc(s):
     return htmlmod.escape(str(s), quote=True)
 
-# ---------------------------------------------------------------- cistenie po Joomle
+# ---------------------------------------------------------------- cistenie po Joomle / K2
 # Joomla content plugins ostali v popisoch ako text, napr. {gall}page21{/gall}.
 # Odstranime parove {tag}...{/tag} aj osamotene {tag} / {/tag} a potom prazdne
 # odstavce, ktore po nich zostanu.
 _JOOMLA_PAIR = re.compile(r'\{([a-zA-Z][\w-]*)\b[^{}]*\}.*?\{/\1\}', re.S)
 _JOOMLA_SOLO = re.compile(r'\{/?[a-zA-Z][\w-]*\b[^{}]*\}')
 _EMPTY_P = re.compile(r'<p>(?:\s|&nbsp;|<br\s*/?>)*</p>', re.I)
+# Extractor z mototrbo.sk uz {gall}...{/gall} odstranil, ale nazov galerie ostal
+# v texte ako holy token ("page17"). Mazeme len samostatne stojace tokeny.
+_K2_PAGE = re.compile(r'(?<![\w-])page\d+(?![\w-])', re.I)
+_SAFE_HREF = re.compile(r'^(https?:|mailto:|tel:|ftp:|#)', re.I)
+_TAG_SPLIT = re.compile(r'(<[^>]*>)')
+
+def _map_text(h, fn):
+    """Aplikuje fn len na textove uzly, obsah znaciek (href, src, ...) nechava tak."""
+    parts = _TAG_SPLIT.split(h)
+    return ''.join(p if i % 2 else fn(p) for i, p in enumerate(parts))
 
 def strip_joomla(h):
-    if not h:
-        return h
     out = _JOOMLA_PAIR.sub('', h)
     out = _JOOMLA_SOLO.sub('', out)
+    out = _map_text(out, lambda t: _K2_PAGE.sub('', t))
+    return out
+
+# ---------------------------------------------------------------- rozbite odkazy z K2
+# V popisoch ostali odkazy stareho webu: relativne ("index.php?option=com_k2...",
+# "images/files/Compare_table.pdf") aj root-relativne na sekcie, ktore na rksba.sk
+# neexistuju ("/prenosne-radiostanice/..."). Relativna cesta sa navyse rozvinie voci
+# URL kategorie/produktu, takze z nej vznikne uplne nahodna mrtva adresa.
+# Odkaz nechavame len ak je absolutny, alebo ak root-relativna cesta naozaj existuje
+# (nasa stranka v src/pages, subor v public/ alebo stranka katalogu).
+def _static_routes():
+    out, dynamic = set(), set()
+    base = os.path.join(ROOT, 'src', 'pages')
+    for dirpath, _dirs, files in os.walk(base):
+        for f in files:
+            if not f.endswith(('.astro', '.md', '.mdx', '.html')):
+                continue
+            rel = os.path.relpath(os.path.join(dirpath, f), base)
+            route = '/' + re.sub(r'\.(astro|md|mdx|html)$', '', rel)
+            if '[' in route:
+                # dynamicka routa: povolime cely jej podstrom (/blog/... a pod.)
+                dynamic.add(route.split('[')[0].rstrip('/') or '/')
+            else:
+                out.add(re.sub(r'/index$', '', route) or '/')
+    return out, dynamic
+
+STATIC_ROUTES, DYNAMIC_PREFIXES = _static_routes()
+PUBLIC_DIR = os.path.join(ROOT, 'public')
+dead_links = []   # [(kde, href)] do zaverecneho reportu
+
+def _href_alive(u):
+    if _SAFE_HREF.match(u):
+        return True
+    if not u.startswith('/'):
+        return False
+    path = htmlmod.unescape(u).split('?')[0].split('#')[0].rstrip('/') or '/'
+    if path in STATIC_ROUTES or path.startswith(ARCHIVE_BASE + '/') or path == ARCHIVE_BASE:
+        return True
+    if any(path == d or path.startswith(d + '/') for d in DYNAMIC_PREFIXES if d != '/'):
+        return True
+    return os.path.isfile(os.path.join(PUBLIC_DIR, unquote(path.lstrip('/'))))
+
+def kill_dead_links(h, kde=''):
+    """Mrtvy <a> nahradi jeho vlastnym textom, mrtvy <img> zahodi cely."""
+    def _a(m):
+        if _href_alive(m.group(1)):
+            return m.group(0)
+        dead_links.append((kde, m.group(1)))
+        return m.group(2)
+    out = re.sub(r'<a\b[^>]*\bhref="([^"]*)"[^>]*>(.*?)</a>', _a, h, flags=re.S | re.I)
+    # <a> bez href (kotvy po K2) uz nic nerobi, rozbalime ho tiez
+    out = re.sub(r'<a\b(?![^>]*\bhref=)[^>]*>(.*?)</a>', r'\1', out, flags=re.S | re.I)
+
+    def _img(m):
+        if _href_alive(m.group(1)):
+            return m.group(0)
+        dead_links.append((kde, m.group(1)))
+        return ''
+    return re.sub(r'<img\b[^>]*\bsrc="([^"]*)"[^>]*/?>', _img, out, flags=re.I)
+
+# ---------------------------------------------------------------- nadpisy v popisoch
+# K2 popisy zacinaju vlastnym <h1>, takze na stranke boli dva H1 (nas nazov kategorie
+# + nadpis z popisu). Ak nadpis len opakuje nazov stranky, zahodime ho cely; inak ho
+# degradujeme na <h2>. Kazdy dalsi <h1> v tele degradujeme tiez.
+_LEAD_HEADING = re.compile(r'^\s*<(h[12])\b[^>]*>(.*?)</\1>\s*', re.S | re.I)
+
+def _plain(h):
+    return re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', htmlmod.unescape(h))).strip().lower()
+
+def fix_headings(h, title):
+    m = _LEAD_HEADING.match(h)
+    if m and _plain(m.group(2)) == _plain(title):
+        h = h[m.end():]
+    return re.sub(r'<(/?)h1\b', r'<\1h2', h, flags=re.I)
+
+def clean(h, kde='', title=None):
+    """Kompletne vycistenie popisu po migracii (Joomla tagy, K2 galerie, mrtve odkazy)."""
+    if not h:
+        return h
+    out = strip_joomla(h)
+    out = kill_dead_links(out, kde)
+    if title is not None:
+        out = fix_headings(out, title)
+    # az na konci: chyta aj odstavce, ktore ostali prazdne po vyhodenom obrazku/odkaze
     out = _EMPTY_P.sub('', out)
     return re.sub(r'[ \t]{2,}', ' ', out).strip()
 
@@ -144,7 +240,8 @@ CAT_POPIS_FIX = {
 }
 
 def cat_popis(c):
-    return strip_joomla(CAT_POPIS_FIX.get(c['id'], c.get('popis_html', '') or ''))
+    return clean(CAT_POPIS_FIX.get(c['id'], c.get('popis_html', '') or ''),
+                 kde='kategoria %d %s' % (c['id'], c['name']), title=c['name'])
 
 # ---------------------------------------------------------------- slugify + kolizie
 def slugify(s):
@@ -302,6 +399,10 @@ def is_radio_branch(cid):
     while cur in cat_by_id and cur not in seen:
         seen.add(cur)
         parent = cat_by_id[cur]['parent']
+        # MOTOTRBO strom visi na vlastnom koreni (parent 0), nie pod umbrellou —
+        # bez tejto vetvy padal cely mototrbo katalog do systemoveho CTA.
+        if parent == 0:
+            return cur in MOTO_RADIO_ROOT_IDS
         if UMBRELLA is not None and parent == UMBRELLA['id']:
             return cur == RADIO_ROOT
         cur = parent
@@ -320,6 +421,14 @@ CTA_SYSTEMS = ('Dodávka, inštalácia a servis',
 CTA_GENERAL = ('Poradíme s výberom aj servisom',
     'Potrebujete poradiť s výberom, náhradou alebo servisom rádiostaníc a systémov? Ozvite sa a '
     'pripravíme riešenie na mieru.')
+# MOTOTRBO je ziva ponuka (661 z 773 produktov sa stale predava), takze tu sa neda
+# pouzit archivne CTA "uz sa nedodava" — to ostava len pre polozky "Ukončený predaj".
+CTA_MOTO_CATEGORY = ('Poradíme s výberom aj servisom',
+    'Vyberáte rádiostanice Motorola MOTOTRBO alebo príslušenstvo k nim? Poradíme s výberom, '
+    'dodávkou, programovaním aj servisom.')
+CTA_MOTO_PRODUCT = ('Poradíme s výberom aj servisom',
+    'Potrebujete poradiť s týmto produktom, kompatibilným príslušenstvom alebo servisom? '
+    'Ozvite sa a pripravíme riešenie na mieru.')
 
 # spolocny mobilny prepinac sidebar (vyraznejsi: podfarbenie + viditelna sipka)
 MOBILE_SUMMARY = (
@@ -792,14 +901,21 @@ for src in ([] if INDEX_ONLY else sorted(products, key=lambda p: p['id'])):
     pobj = {
         'title': src['title'],
         'slides': slides,
-        'popis_html': strip_joomla(src['popis_html']),
+        'popis_html': clean(src['popis_html'],
+                            kde='produkt %d %s' % (src['id'], src['title']), title=src['title']),
         'parametre': src['parametre'],
         'dokumenty': [{'subor': d['subor'], 'titul': d['titul']} for d in src.get('attachments', []) if doc_exists(d['subor'])],
     }
     desc = first_sentence(src['popis_text']) or src['title']
     meta = {'title': '%s, katalóg produktov | RKS' % src['title'], 'description': desc}
     cid = src['category']['id']
-    cta = CTA_RADIO_PRODUCT if is_radio_branch(cid) else CTA_SYSTEMS
+    if is_moto_prod(src['id']):
+        # ukoncene modely aj v mototrbo vetve dostanu servisne CTA, zvysok neutralne
+        cta = CTA_RADIO_PRODUCT if src['title'].lower().startswith('ukončený') else CTA_MOTO_PRODUCT
+    elif is_radio_branch(cid):
+        cta = CTA_RADIO_PRODUCT
+    else:
+        cta = CTA_SYSTEMS
     bc = breadcrumb_items(cid, leaf=(src['title'], None))
     # Product JSON-LD sa uz negeneruje. Google vyzaduje pri type Product jedno
     # z offers / review / aggregateRating; ceny ani hodnotenia nezverejnujeme,
@@ -822,11 +938,19 @@ for src in ([] if INDEX_ONLY else sorted(products, key=lambda p: p['id'])):
 def facet_key(nazov):
     return slugify(nazov) or 'f'
 
+# Viac hodnot v jednom parametri je oddelenych ciarkou a medzerou ("DP4400, DP4400e").
+# Delit na holej ciarke sa neda: rozbilo by to desatinne cisla ("1,5", "3,5 mm jack",
+# "0,5 – 2 W"), z ktorych potom vznikali fasetove hodnoty "1" a "5".
+_FACET_SPLIT = re.compile(r',\s+')
+
+def split_facet(hodnota):
+    return [v.strip() for v in _FACET_SPLIT.split(str(hodnota or '')) if v.strip()]
+
 def card_facets(p):
     """Mapa {kluc_fasety: [hodnoty]} pre klientsky filter."""
     out = {}
     for f in p.get('parametre_fasety', []):
-        vals = [v.strip() for v in str(f.get('hodnota', '')).split(',') if v.strip()]
+        vals = split_facet(f.get('hodnota'))
         if vals:
             out.setdefault(facet_key(f['nazov']), []).extend(vals)
     return out
@@ -912,7 +1036,7 @@ def facets_for(prods):
             if k not in agg:
                 agg[k] = {'key': k, 'nazov': f['nazov'], 'vals': {}}
                 order.append(k)
-            for v in [x.strip() for x in str(f.get('hodnota', '')).split(',') if x.strip()]:
+            for v in split_facet(f.get('hodnota')):
                 agg[k]['vals'][v] = agg[k]['vals'].get(v, 0) + 1
     out = []
     for k in order:
@@ -925,6 +1049,11 @@ def facets_for(prods):
     out.sort(key=lambda f: (-sum(v['pocet'] for v in f['hodnoty']), f['nazov']))
     return out
 
+def count_label(cid):
+    """MOTOTRBO vetva je ziva ponuka, nie archiv — tam sa o archive nehovori."""
+    fmt = 'Produktov: %d' if is_moto_cat(cid) else 'Produktov v archíve: %d'
+    return fmt % subtree.get(cid, 0)
+
 def subcat_cards(cid):
     kids = [ch for ch in children.get(cid, []) if subtree.get(ch['id'], 0) > 0]
     kids.sort(key=lambda c: c['name'].lower())
@@ -932,7 +1061,7 @@ def subcat_cards(cid):
         'url': cat_url(ch['id']),
         'img': rep_img(ch['id']),
         'title': ch['name'],
-        'desc': 'Produktov v archíve: %d' % subtree.get(ch['id'], 0),
+        'desc': count_label(ch['id']),
     } for ch in kids]
 
 def direct_products(cid):
@@ -974,7 +1103,12 @@ for c in ([] if INDEX_ONLY else sorted(cats, key=lambda c: c['id'])):
         'description': first_sentence(re.sub('<[^>]+>', ' ', cat_popis(c))) or
                        ('Katalóg produktov v kategórii %s. Parametre, dokumentácia a servisné informácie.' % c['name']),
     }
-    cta = CTA_RADIO_CATEGORY if is_radio_branch(c['id']) else CTA_SYSTEMS
+    if is_moto_cat(c['id']):
+        cta = CTA_MOTO_CATEGORY
+    elif is_radio_branch(c['id']):
+        cta = CTA_RADIO_CATEGORY
+    else:
+        cta = CTA_SYSTEMS
     jsonld = breadcrumb_jsonld(breadcrumb_items(c['id']))
     # MOTOTRBO: noindex + fasetovy a frekvencny filter nad zobrazenymi produktmi
     if is_moto_cat(c['id']):
@@ -1098,6 +1232,12 @@ print('MOTOTRBO noindex ciest:', len(_moto_paths), '->', os.path.relpath(_noidx,
 print('Produktovych stranok:', n_prod)
 print('Kategoriovych stranok:', n_cat)
 print('Index: 1')
+_dl = {}
+for kde, u in dead_links:
+    _dl.setdefault(re.sub(r'\?.*', '?…', u.split('/')[0] or '/' + (u.split('/')[1:2] or [''])[0]), []).append(kde)
+print('Odstranenych mrtvych odkazov/obrazkov z K2:', len(dead_links))
+for k, v in sorted(_dl.items(), key=lambda kv: -len(kv[1])):
+    print('  %-42s %dx (napr. %s)' % (k[:42], len(v), v[0][:44]))
 print('Kolizie produktovych aliasov:', len(prod_collisions))
 for pid, title, base, slug in prod_collisions:
     print('  id %d "%s": %s -> %s' % (pid, title, base, slug))

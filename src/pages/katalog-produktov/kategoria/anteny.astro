@@ -25,7 +25,7 @@ const breadcrumb = [
   }
 ];
 const heading = "Antény (DM)";
-const popisHtml = "<h1>Katalóg antén pre rádiostanice Motorola</h1> <p>Anténa je zariadenie na príjem a vysielanie elektromagnetických vĺn vzduchom. Je tvorená vodičom, resp. sústavou vodičov, pomocou ktorých sa mení energia elektomagnetického žiarenia na vysokofrekvenčný prúd (prijímacia anténa) alebo naopak (vysielacia anténa).</p> <p>Antény rozdeľujeme:</p> <ul> <li> <ul> <li> <ul> <li> <ul> <li> <ul> <li> <ul> <li> <ul> <li>Základňové antény všesmerové</li> <li>Základňové všesmerové antény s zvýhodneným smerom vyžarovania</li> <li>Smerové antény</li> <li>Vozidlové antény</li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul>";
+const popisHtml = "<h2>Katalóg antén pre rádiostanice Motorola</h2> <p>Anténa je zariadenie na príjem a vysielanie elektromagnetických vĺn vzduchom. Je tvorená vodičom, resp. sústavou vodičov, pomocou ktorých sa mení energia elektomagnetického žiarenia na vysokofrekvenčný prúd (prijímacia anténa) alebo naopak (vysielacia anténa).</p> <p>Antény rozdeľujeme:</p> <ul> <li> <ul> <li> <ul> <li> <ul> <li> <ul> <li> <ul> <li> <ul> <li>Základňové antény všesmerové</li> <li>Základňové všesmerové antény s zvýhodneným smerom vyžarovania</li> <li>Smerové antény</li> <li>Vozidlové antény</li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul>";
 const intro = [];
 const subcats = [];
 const subcatsHeading = "";
@@ -35,7 +35,7 @@ const products = [
     "img": "/images/katalog-produktov/20074/main.webp",
     "title": "Anténa pre HDV",
     "desc": "Anténa pre HDV Anténa pre HDV Anténa je určená pre rádiostanice pracujúce v sieťach traťového spojenia železníc.",
-    "facets": "{\"navigacny-system\": [\"Nie\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"150\"], \"v-s-w-r\": [\"1\", \"5\"], \"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2600\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"150\"], \"v-s-w-r\": [\"1,5\"], \"kompatibilita\": [\"DM1400\", \"DM1600\", \"DM2600\", \"DM4400\", \"DM4400e\", \"DM4401\", \"DM4401e\", \"DM4600\", \"DM4600e\", \"DM4601\", \"DM4601e\", \"DM3400\", \"DM3401\", \"DM3600\", \"DM3601\"]}",
     "freq": "[[150.0, 159.0]]"
   },
   {
@@ -166,7 +166,7 @@ const products = [
     "img": "/images/katalog-produktov/20355/main.webp",
     "title": "Ukončený predaj PMAE4037",
     "desc": "UHF/GLONASS anténa UHF/GLONASS anténa ¼ vlnová vozidlová anténa pracujúca v pásme UHF/GLONASS je určená pre rádiostanice s vstupnou impedanciou 50 Ohm.",
-    "facets": "{\"navigacny-system\": [\"GLONASS\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"1\", \"5\"], \"kompatibilita\": [\"DM4401e\", \"DM4601e\"]}",
+    "facets": "{\"navigacny-system\": [\"GLONASS\"], \"impedancia\": [\"50 Ω\"], \"maximalny-vykon-w\": [\"neuvedený\"], \"v-s-w-r\": [\"1,5\"], \"kompatibilita\": [\"DM4401e\", \"DM4601e\"]}",
     "freq": "[[450.0, 470.0]]",
     "nedodavane": true
   },
@@ -217,8 +217,8 @@ const products = [
 const productsHeading = "";
 const notice = "";
 const noticeDetail = "";
-const ctaHeading = "Dodávka, inštalácia a servis";
-const ctaText = "Evakuačné a varovacie systémy navrhujeme, dodávame, inštalujeme a servisujeme. Radi pripravíme riešenie pre váš objekt.";
+const ctaHeading = "Poradíme s výberom aj servisom";
+const ctaText = "Vyberáte rádiostanice Motorola MOTOTRBO alebo príslušenstvo k nim? Poradíme s výberom, dodávkou, programovaním aj servisom.";
 const metadata = {
   "title": "Antény (DM), katalóg produktov | RKS",
   "description": "Katalóg antén pre rádiostanice Motorola   Anténa je zariadenie na príjem a vysielanie elektromagnetických vĺn vzduchom.",
@@ -331,24 +331,6 @@ const filters = [
     ]
   },
   {
-    "key": "v-s-w-r",
-    "nazov": "V.S.W.R.",
-    "hodnoty": [
-      {
-        "hodnota": "neuvedené",
-        "pocet": 21
-      },
-      {
-        "hodnota": "1",
-        "pocet": 2
-      },
-      {
-        "hodnota": "5",
-        "pocet": 2
-      }
-    ]
-  },
-  {
     "key": "maximalny-vykon-w",
     "nazov": "Maximálny výkon [W]",
     "hodnoty": [
@@ -393,6 +375,20 @@ const filters = [
       {
         "hodnota": "GPS/GALILEO/GLONASS/QZSS",
         "pocet": 1
+      }
+    ]
+  },
+  {
+    "key": "v-s-w-r",
+    "nazov": "V.S.W.R.",
+    "hodnoty": [
+      {
+        "hodnota": "neuvedené",
+        "pocet": 21
+      },
+      {
+        "hodnota": "1,5",
+        "pocet": 2
       }
     ]
   }
