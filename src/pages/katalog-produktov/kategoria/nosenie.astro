@@ -1007,16 +1007,77 @@ const filters = [
     ]
   }
 ];
+const freq = null;
+const hasFilter = filters.length > 0 || freq !== null;
 ---
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
     <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
-      <aside class="mb-8 lg:mb-0 lg:sticky lg:top-24 lg:self-start">
+      <aside class="mb-8 lg:mb-0 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:pr-1">
         <details class="rks-cats rounded-xl border border-hairline p-4 lg:border-0 lg:p-0">
           <summary class="rks-cats-toggle cursor-pointer font-semibold lg:hidden flex items-center justify-between gap-2 rounded-lg bg-panel-soft px-4 py-3"><span>Kategórie produktov</span><span class="rks-cats-arrow" aria-hidden="true"></span></summary>
           <div class="rks-tree-wrap mt-3 lg:mt-0" set:html={sidebar} />
         </details>
+
+        {hasFilter && (
+          <details class="rks-cats rks-filter mt-4 lg:mt-8 rounded-xl border border-hairline p-4 lg:border-0 lg:p-0" data-rks-filter>
+            <summary class="rks-cats-toggle cursor-pointer font-semibold lg:hidden flex items-center justify-between gap-2 rounded-lg bg-panel-soft px-4 py-3"><span>Filtrovať produkty</span><span class="rks-cats-arrow" aria-hidden="true"></span></summary>
+            <div class="rks-panel-body mt-3 lg:mt-0 lg:border-t lg:border-hairline lg:pt-4">
+              <div class="flex items-baseline justify-between gap-3">
+                <h2 class="text-sm font-semibold tracking-tight">Filtrovať</h2>
+                <button type="button" class="text-xs text-link hover:underline" data-rks-reset>Zrušiť filtre</button>
+              </div>
+              <p class="text-xs text-muted mt-1" data-rks-summary></p>
+
+              {freq && (
+                <div class="mt-4 pt-3 border-t border-hairline">
+                  <label class="block text-sm font-medium mb-2" for="rks-freq">Zadaj frekvenciu (MHz)</label>
+                  <div class="flex items-center gap-2">
+                    <input
+                      id="rks-freq"
+                      type="number"
+                      step="any"
+                      inputmode="decimal"
+                      placeholder={freq.placeholder}
+                      class="w-full min-w-0 rounded-lg border border-hairline bg-page px-3 py-2 text-sm"
+                      data-rks-freq
+                    />
+                    <button
+                      type="button"
+                      class="shrink-0 rounded-lg border border-hairline px-3 py-2 text-xs text-muted hover:text-link"
+                      aria-label="Zrušiť frekvenciu"
+                      data-rks-freq-clear
+                    >
+                      ✕
+                    </button>
+                  </div>
+                  <p class="text-xs text-muted mt-1">
+                    Rozsah v katalógu: {freq.label}. Zobrazia sa len produkty, ktorých rozsah zadanú frekvenciu obsahuje.
+                  </p>
+                </div>
+              )}
+
+              {filters.map((f, i) => (
+                <details class="rks-facet border-t border-hairline" open={i === 0}>
+                  <summary class="cursor-pointer select-none flex items-center justify-between gap-2 py-2 text-sm font-medium">
+                    <span>{f.nazov}</span>
+                    <span class="rks-facet-arrow" aria-hidden="true"></span>
+                  </summary>
+                  <div class="rks-facet-vals pb-3 pr-1 space-y-1">
+                    {f.hodnoty.map((v) => (
+                      <label class="flex items-center gap-2 text-sm cursor-pointer" data-rks-opt={f.key + '|~|' + v.hodnota}>
+                        <input type="checkbox" class="accent-primary" data-rks-f={f.key} value={v.hodnota} />
+                        <span class="flex-1">{v.hodnota}</span>
+                        <span class="text-muted text-xs tabular-nums" data-rks-cnt>{v.pocet}</span>
+                      </label>
+                    ))}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </details>
+        )}
       </aside>
 
       <div class="min-w-0">
@@ -1062,38 +1123,12 @@ const filters = [
           </>
         )}
 
-        {filters.length > 0 && (
-          <div class="rks-filter mt-8 rounded-xl border border-hairline bg-panel-soft p-5" data-rks-filter>
-            <div class="flex items-center justify-between gap-4 mb-3">
-              <h2 class="text-base font-semibold">Filtrovať podľa parametrov</h2>
-              <button type="button" class="text-sm text-link hover:underline" data-rks-reset>Zrušiť filtre</button>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
-              {filters.map((f) => (
-                <details class="rks-facet border-t border-hairline pt-2">
-                  <summary class="cursor-pointer text-sm font-medium py-1 select-none">{f.nazov}</summary>
-                  <div class="mt-1 mb-2 space-y-1">
-                    {f.hodnoty.map((v) => (
-                      <label class="flex items-center gap-2 text-sm" data-rks-opt={f.key + '|~|' + v.hodnota}>
-                        <input type="checkbox" class="accent-primary" data-rks-f={f.key} value={v.hodnota} />
-                        <span class="flex-1">{v.hodnota}</span>
-                        <span class="text-muted text-xs tabular-nums" data-rks-cnt>{v.pocet}</span>
-                      </label>
-                    ))}
-                  </div>
-                </details>
-              ))}
-            </div>
-            <p class="text-sm text-muted mt-3" data-rks-summary></p>
-          </div>
-        )}
-
         {products.length > 0 && (
           <>
             {productsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">{productsHeading}</h2>}
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4" data-rks-grid>
               {products.map((c) => (
-                <a href={c.url} data-facets={c.facets} class="rks-card group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                <a href={c.url} data-facets={c.facets} data-freq={c.freq} class="rks-card group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
                   <div class="aspect-square bg-white p-4 flex items-center justify-center">
                     <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
                   </div>
@@ -1104,6 +1139,9 @@ const filters = [
                 </a>
               ))}
             </div>
+            {hasFilter && (
+              <p class="hidden text-muted mt-6" data-rks-empty>Zvolenému filtru nezodpovedá žiadny produkt.</p>
+            )}
           </>
         )}
 
@@ -1118,7 +1156,7 @@ const filters = [
 
   <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
 
-  {filters.length > 0 && (
+  {hasFilter && (
     <script is:inline>
       (function () {
         var root = document.querySelector('[data-rks-filter]');
@@ -1127,8 +1165,14 @@ const filters = [
         var cards = Array.prototype.slice.call(grid.querySelectorAll('.rks-card'));
         var boxes = Array.prototype.slice.call(root.querySelectorAll('input[data-rks-f]'));
         var summary = root.querySelector('[data-rks-summary]');
+        var empty = document.querySelector('[data-rks-empty]');
+        var freqInput = root.querySelector('[data-rks-freq]');
         var parsed = cards.map(function (c) {
           try { return JSON.parse(c.getAttribute('data-facets') || '{}'); } catch (e) { return {}; }
+        });
+        // [[min, max], ...] v MHz; prazdne pole = produkt nema frekvencny rozsah
+        var ranges = cards.map(function (c) {
+          try { return JSON.parse(c.getAttribute('data-freq') || '[]'); } catch (e) { return []; }
         });
         function selection() {
           var m = {};
@@ -1137,7 +1181,23 @@ const filters = [
           });
           return m;
         }
-        function matches(f, m) {
+        function freqValue() {
+          if (!freqInput) return null;
+          var raw = (freqInput.value || '').trim().replace(',', '.');
+          if (!raw) return null;
+          var n = parseFloat(raw);
+          return isNaN(n) ? null : n;
+        }
+        function matches(i, m, mhz) {
+          if (mhz !== null) {
+            // produkt bez rozsahu sa pri aktivnom frekvencnom filtri skryva
+            var rr = ranges[i], hit = false;
+            for (var j = 0; j < rr.length; j++) {
+              if (mhz >= rr[j][0] && mhz <= rr[j][1]) { hit = true; break; }
+            }
+            if (!hit) return false;
+          }
+          var f = parsed[i];
           for (var k in m) {
             var have = f[k] || [];
             var ok = m[k].some(function (v) { return have.indexOf(v) !== -1; });
@@ -1145,10 +1205,13 @@ const filters = [
           }
           return true;
         }
+        function plural(n) {
+          return n === 1 ? 'produkt' : (n >= 2 && n <= 4 ? 'produkty' : 'produktov');
+        }
         function apply() {
-          var m = selection(), shown = 0;
+          var m = selection(), mhz = freqValue(), shown = 0;
           cards.forEach(function (c, i) {
-            var ok = matches(parsed[i], m);
+            var ok = matches(i, m, mhz);
             c.style.display = ok ? '' : 'none';
             if (ok) shown++;
           });
@@ -1159,19 +1222,36 @@ const filters = [
             var m2 = {}; for (var kk in m) m2[kk] = m[kk].slice();
             m2[k] = [v];
             var n = 0;
-            for (var i = 0; i < cards.length; i++) { if (matches(parsed[i], m2)) n++; }
+            for (var i = 0; i < cards.length; i++) { if (matches(i, m2, mhz)) n++; }
             lab.querySelector('[data-rks-cnt]').textContent = n;
             var box = lab.querySelector('input');
             lab.style.display = (n === 0 && !box.checked) ? 'none' : '';
           });
-          summary.textContent = shown === cards.length
-            ? cards.length + ' produktov'
-            : shown + ' z ' + cards.length + ' produktov';
+          // skupinu bez pouzitelnej hodnoty netreba zobrazovat
+          root.querySelectorAll('.rks-facet').forEach(function (d) {
+            var vis = Array.prototype.slice.call(d.querySelectorAll('label[data-rks-opt]')).some(function (l) {
+              return l.style.display !== 'none';
+            });
+            d.style.display = vis ? '' : 'none';
+          });
+          if (summary) {
+            summary.textContent = shown === cards.length
+              ? cards.length + ' ' + plural(cards.length)
+              : shown + ' z ' + cards.length + ' ' + plural(cards.length);
+          }
+          if (empty) empty.classList.toggle('hidden', shown !== 0);
         }
         boxes.forEach(function (b) { b.addEventListener('change', apply); });
+        if (freqInput) freqInput.addEventListener('input', apply);
+        var freqClear = root.querySelector('[data-rks-freq-clear]');
+        if (freqClear) freqClear.addEventListener('click', function () {
+          if (freqInput) freqInput.value = '';
+          apply();
+        });
         var reset = root.querySelector('[data-rks-reset]');
         if (reset) reset.addEventListener('click', function () {
           boxes.forEach(function (b) { b.checked = false; });
+          if (freqInput) freqInput.value = '';
           apply();
         });
         apply();
@@ -1182,7 +1262,8 @@ const filters = [
   <style is:global>
     @media (min-width: 1024px) {
       .rks-cats > summary { display: none; }
-      .rks-cats > .rks-tree-wrap { display: block !important; }
+      .rks-cats > .rks-tree-wrap,
+      .rks-cats > .rks-panel-body { display: block !important; }
     }
     .rks-tree .rks-li { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 0.5rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
     .rks-tree .rks-leaf { padding-top: 0.25rem; padding-bottom: 0.25rem; }
@@ -1196,5 +1277,13 @@ const filters = [
     .rks-tree .rks-disc[open] > summary.rks-arrow::before { transform: rotate(90deg); }
     .rks-cats-arrow::before { content: ""; display: inline-block; color: rgba(229, 236, 246, 0.66); border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
     .rks-cats[open] > .rks-cats-toggle .rks-cats-arrow::before { transform: rotate(90deg); }
+    .rks-facet > summary { list-style: none; }
+    .rks-facet > summary::-webkit-details-marker { display: none; }
+    .rks-facet-arrow::before { content: ""; display: inline-block; color: rgba(229, 236, 246, 0.66); border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-facet[open] > summary .rks-facet-arrow::before { transform: rotate(90deg); }
+    .rks-facet-vals { max-height: 15rem; overflow-y: auto; }
+    .rks-filter input[type="number"]::-webkit-outer-spin-button,
+    .rks-filter input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .rks-filter input[type="number"] { -moz-appearance: textfield; }
   </style>
 </Layout>
