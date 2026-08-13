@@ -439,7 +439,38 @@ MOBILE_SUMMARY = (
     '</summary>'
 )
 
-# mobilny prepinac filtra (na desktope je panel vzdy otvoreny, viď .rks-cats CSS)
+# Bocne panely su <details class="rks-cats">: na mobile zbaliteľne, na desktope
+# rozbalene. Rozbalenie sa NEDA spravit cez CSS — Chrome skryva obsah zatvoreneho
+# <details> cez content-visibility: hidden na pseudoelemente ::details-content, nie
+# cez display:none na dietati, takze ani ".rks-cats > .rks-tree-wrap { display: block
+# !important }" ho neodkryje (dieta ma display:block, ale samotny <details> ma vysku 0).
+# Jedina spolahliva paka je atribut open:
+#   - do HTML ho zapiseme natvrdo, takze desktop je spravny aj bez JS a bez preblesku,
+#   - tento skript ho na uzkom okne zhodi a pri zmene sirky drzi stav v synchronizacii.
+# data-rks-auto oznacuje stav, ktory nastavil skript/HTML; ked panel prepne pouzivatel,
+# priznak zmizne a na mobile mu ho uz nezatvarame.
+PANEL_SYNC_SCRIPT = '''  <script is:inline>
+    (function () {
+      var mq = window.matchMedia('(min-width: 1024px)');
+      function sync() {
+        document.querySelectorAll('details.rks-cats').forEach(function (d) {
+          if (mq.matches) {
+            d.open = true;
+            d.dataset.rksAuto = '1';
+          } else if (d.dataset.rksAuto === '1') {
+            d.open = false;
+            d.dataset.rksAuto = '';
+          }
+        });
+      }
+      sync();
+      if (mq.addEventListener) mq.addEventListener('change', sync);
+      else if (mq.addListener) mq.addListener(sync);
+      document.addEventListener('astro:page-load', sync);
+    })();
+  </script>'''
+
+# mobilny prepinac filtra (na desktope je panel vzdy otvoreny, viď PANEL_SYNC_SCRIPT)
 FILTER_SUMMARY = (
     '<summary class="rks-cats-toggle cursor-pointer font-semibold lg:hidden '
     'flex items-center justify-between gap-2 rounded-lg bg-panel-soft px-4 py-3">'
@@ -491,11 +522,12 @@ const jsonld = %(JSONLD)s;
   <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
     <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
       <aside class="mb-8 lg:mb-0 lg:sticky lg:top-24 lg:self-start">
-        <details class="rks-cats rounded-xl border border-hairline p-4 lg:border-0 lg:p-0">
+        <details class="rks-cats rounded-xl border border-hairline p-4 lg:border-0 lg:p-0" data-rks-auto="1" open>
           %(MOBILE_SUMMARY)s
           <div class="rks-tree-wrap mt-3 lg:mt-0" set:html={sidebar} />
         </details>
       </aside>
+%(PANEL_SYNC_SCRIPT)s
 
       <div class="min-w-0">
         <nav class="text-sm text-muted mb-2" aria-label="Omrvinky">
@@ -640,13 +672,13 @@ const hasFilter = filters.length > 0 || freq !== null;
   <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
     <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
       <aside class="mb-8 lg:mb-0 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:pr-1">
-        <details class="rks-cats rounded-xl border border-hairline p-4 lg:border-0 lg:p-0">
+        <details class="rks-cats rounded-xl border border-hairline p-4 lg:border-0 lg:p-0" data-rks-auto="1" open>
           %(MOBILE_SUMMARY)s
           <div class="rks-tree-wrap mt-3 lg:mt-0" set:html={sidebar} />
         </details>
 
         {hasFilter && (
-          <details class="rks-cats rks-filter mt-4 lg:mt-8 rounded-xl border border-hairline p-4 lg:border-0 lg:p-0" data-rks-filter>
+          <details class="rks-cats rks-filter mt-4 lg:mt-8 rounded-xl border border-hairline p-4 lg:border-0 lg:p-0" data-rks-filter data-rks-auto="1" open>
             %(FILTER_SUMMARY)s
             <div class="rks-panel-body mt-3 lg:mt-0 lg:border-t lg:border-hairline lg:pt-4">
               <div class="flex items-baseline justify-between gap-3">
@@ -704,6 +736,7 @@ const hasFilter = filters.length > 0 || freq !== null;
           </details>
         )}
       </aside>
+%(PANEL_SYNC_SCRIPT)s
 
       <div class="min-w-0">
         <nav class="text-sm text-muted mb-2" aria-label="Omrvinky">
@@ -929,7 +962,8 @@ for src in ([] if INDEX_ONLY else sorted(products, key=lambda p: p['id'])):
         'P': js(pobj), 'SIDEBAR': js(sidebar), 'BREADCRUMB': js(bc),
         'CTA_HEADING': js(cta[0]), 'CTA_TEXT': js(cta[1]),
         'META': js(meta), 'JSONLD': js(jsonld),
-        'MOBILE_SUMMARY': MOBILE_SUMMARY, 'SIDEBAR_CSS': SIDEBAR_CSS,
+        'MOBILE_SUMMARY': MOBILE_SUMMARY, 'PANEL_SYNC_SCRIPT': PANEL_SYNC_SCRIPT,
+        'SIDEBAR_CSS': SIDEBAR_CSS,
     }
     open(os.path.join(OUTDIR, prod_slug[src['id']] + '.astro'), 'w', encoding='utf-8').write(content)
     n_prod += 1
@@ -1137,6 +1171,7 @@ for c in ([] if INDEX_ONLY else sorted(cats, key=lambda c: c['id'])):
         'FILTERS': js(cat_filters),
         'FREQ': js(cat_freq),
         'MOBILE_SUMMARY': MOBILE_SUMMARY,
+        'PANEL_SYNC_SCRIPT': PANEL_SYNC_SCRIPT,
         'FILTER_SUMMARY': FILTER_SUMMARY,
         'SIDEBAR_CSS': SIDEBAR_CSS,
         'FILTER_CSS': FILTER_CSS,
@@ -1206,6 +1241,7 @@ index_content = GRID_TEMPLATE % {
     'META': js(index_meta),
     'JSONLD': js(index_ld),
     'MOBILE_SUMMARY': MOBILE_SUMMARY,
+    'PANEL_SYNC_SCRIPT': PANEL_SYNC_SCRIPT,
     'FILTER_SUMMARY': FILTER_SUMMARY,
     'SIDEBAR_CSS': SIDEBAR_CSS,
     'FILTER_CSS': FILTER_CSS,
