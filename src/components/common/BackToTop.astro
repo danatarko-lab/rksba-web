@@ -1,0 +1,104 @@
+---
+/*
+  Tlačidlo „Späť hore“. Sedí v Layout.astro, takže ho majú všetky stránky, ktoré
+  cez tento layout prechádzajú (PageLayout + LandingLayout, MarkdownLayout, 404).
+  Rozcestník (SplashLayout) ho zámerne nemá — je to krátka vstupná brána bez
+  zdieľaných štýlov.
+
+  Bez závislostí: inline SVG, inline CSS a jeden delegovaný skript.
+*/
+---
+
+<button
+  type="button"
+  id="rks-back-to-top"
+  aria-label="Späť hore"
+  class="fixed z-50 inline-flex h-11 w-11 items-center justify-center rounded-full border border-hairline bg-panel text-default shadow-lg transition-colors hover:border-primary hover:bg-primary hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-link"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="h-5 w-5"
+    aria-hidden="true"
+  >
+    <path d="M12 19V5"></path>
+    <path d="m5 12 7-7 7 7"></path>
+  </svg>
+</button>
+
+<style is:global>
+  #rks-back-to-top {
+    /* env() kvôli gestovej lište na iOS; fallback 0px pre ostatné prehliadače */
+    right: 1rem;
+    bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+    opacity: 0;
+    visibility: hidden; /* nie len opacity — skryté tlačidlo nesmie byť v poradí tabulátora */
+    transform: translateY(0.5rem);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0.2s;
+  }
+
+  #rks-back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  @media (min-width: 640px) {
+    #rks-back-to-top {
+      right: 1.5rem;
+      bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+    }
+  }
+
+  /*
+    Rozbalené mobilné menu má vlastnú lištu fixnutú na bottom-0 cez celú šírku
+    (Header.astro) — tam by sa tlačidlo prekrývalo s vyhľadávaním a CTA.
+  */
+  body:has(#header.expanded) #rks-back-to-top {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #rks-back-to-top {
+      transition: none;
+    }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    // window prezije vymenu DOMu pri View Transitions, takze staci jedna registracia
+    if (window.__rksBackToTop) return;
+    window.__rksBackToTop = true;
+
+    const THRESHOLD = 600;
+
+    function update() {
+      const btn = document.getElementById('rks-back-to-top');
+      if (btn) btn.classList.toggle('is-visible', window.scrollY > THRESHOLD);
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    document.addEventListener('astro:page-load', update);
+
+    // delegovane: tlacidlo sa pri navigacii vymeni za novy element
+    document.addEventListener('click', function (e) {
+      const btn = e.target.closest && e.target.closest('#rks-back-to-top');
+      if (!btn) return;
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+      // tlacidlo sa o chvilu skryje; fokus nesmie ostat na skrytom prvku
+      btn.blur();
+    });
+
+    update();
+  })();
+</script>
