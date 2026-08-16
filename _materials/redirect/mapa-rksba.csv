@@ -36,3 +36,9 @@ stara_url,nova_url,typ,poznamka
 /produkty-katalog/*,/katalog-produktov,fallback,rksba zvysok sekcie
 /component/*,/,odpad,rksba joomla search
 /plugins/*,/,odpad,rksba joomla plugins
+/sluzby/radiove-siete/radiove-siete-legislativa,/bezpecnostne-systemy-radiove-siete/radiove-siete,sluzba,rksba search console 2026-08
+/sluzby/radiove-siete/radiove-siete-servis,/bezpecnostne-systemy-radiove-siete/radiove-siete,sluzba,rksba search console 2026-08
+/sluzby/radiove-siete/prenajom-radiovej-siete-flexibilne-riesenie-pre-vase-komunikacne-potreby,/bezpecnostne-systemy-radiove-siete/radiove-siete,sluzba,rksba search console 2026-08
+/sluzby/autonom-systemy/autonomne-systemy-varovania-a-vyrozumenia-osob-servis,/bezpecnostne-systemy-radiove-siete/autonomne-systemy-varovania,sluzba,rksba search console 2026-08
+/sluzby/servis-radiostanic.html,/bezpecnostne-systemy-radiove-siete/servis-radiostanic,sluzba,rksba search console 2026-08
+/index.php,/,stranka,rksba search console 2026-08 joomla vstupny bod
