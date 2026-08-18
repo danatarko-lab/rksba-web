@@ -17,6 +17,14 @@ export type Post = {
 export const energyMemo: Post[] = [
   {
     category: 'Energy Memo',
+    title: 'Batérie prišli aj k nám. Kedy sa firme oplatí úložisko?',
+    excerpt:
+      'V Novákoch spustili najväčšiu batériu na Slovensku (36 MW / 72 MWh). Kde je SK oproti Česku, koľko úložisko stojí a kedy dáva firme ekonomický zmysel.',
+    date: '16. 8. 2026',
+    href: '/energetika/blog/baterie-kedy-sa-oplati-firme',
+  },
+  {
+    category: 'Energy Memo',
     title: 'Zatmenie Slnka a elektrina: prečo sieť nespadne',
     excerpt:
       'Dnešné zatmenie zníži výrobu solárov v Európe až o 9,7 GW. Prečo sieť nespadne, čo to znamená pre Slovensko a Česko a čo si z toho má odniesť firma.',
