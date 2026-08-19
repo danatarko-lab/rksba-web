@@ -1,0 +1,110 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Predaj profesionálnych rádiostaníc a vysielačiek | RKS Bratislava',
+  description:
+    'RKS od roku 1991 predáva, programuje a servisuje profesionálne rádiostanice a vysielačky Motorola pre firmy na celom Slovensku. Autorizovaný partner Motorola Solutions. Cenová ponuka do 24 hodín.',
+};
+
+const faqs = [
+  {
+    q: 'Predávate vysielačky aj v malom počte?',
+    a: 'Áno. Dodávame od dvoch kusov po celé siete so stovkami staníc.',
+  },
+  {
+    q: 'Pomôžete s frekvenčným povolením?',
+    a: 'Áno. Žiadosť na Úrad pre reguláciu elektronických komunikácií a poštových služieb pripravíme a podáme za vás.',
+  },
+  {
+    q: 'Aký je rozdiel medzi hobby vysielačkou a profesionálnou rádiostanicou?',
+    a: 'Hobby vysielačka (PMR446) funguje bez povolenia, s malým dosahom a bez záruky spoľahlivosti. Profesionálna rádiostanica pracuje na pridelenej frekvencii, má vyšší výkon, odolnosť do priemyselného prostredia a servisnú podporu.',
+  },
+  {
+    q: 'Oplatí sa kúpa alebo prenájom?',
+    a: 'Pri nasadení nad 12 mesiacov vychádza kúpa lacnejšie. Prenájom dáva zmysel na eventy a krátkodobé projekty. Pripravíme porovnanie pre váš prípad.',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <nav class="text-sm text-muted mb-2" aria-label="Omrvinky">
+      <a class="hover:underline" href="/">Domov</a>
+      <span class="px-1">/</span>
+      <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+      <span class="px-1">/</span>
+      <span class="text-default">Predaj rádiostaníc</span>
+    </nav>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Predaj profesionálnych rádiostaníc a vysielačiek</h1>
+
+    <p class="text-lg text-muted mb-6 max-w-3xl">
+      RKS od roku 1991 predáva, programuje a servisuje profesionálne rádiostanice a vysielačky pre firmy na celom
+      Slovensku. Sme autorizovaný partner Motorola Solutions. Dodávame prenosné aj vozidlové rádiostanice, digitálne
+      systémy MOTOTRBO, ATEX vysielačky do výbušného prostredia, príslušenstvo a náhradné diely.
+    </p>
+
+    <div class="prose prose-lg max-w-none">
+      <p>
+        Ku každej dodávke zabezpečíme frekvenčné povolenie, naprogramovanie staníc, zaškolenie obsluhy a záručný aj
+        pozáručný servis. Cenu zostavujeme podľa počtu staníc, prostredia nasadenia a požiadaviek na pokrytie.
+      </p>
+
+      <h2>Čo dodávame</h2>
+      <ul>
+        <li>prenosné rádiostanice (vysielačky) pre firmy, priemysel a záchranné zložky,</li>
+        <li>vozidlové rádiostanice,</li>
+        <li>
+          digitálne rádiové systémy <a href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo"
+            >Motorola MOTOTRBO</a
+          >,
+        </li>
+        <li>ATEX vysielačky do výbušného prostredia,</li>
+        <li>príslušenstvo a náhradné diely (akumulátory, nabíjačky, náhlavné súpravy, antény).</li>
+      </ul>
+
+      <h2>Kúpa, alebo prenájom?</h2>
+      <p>
+        Pri dlhodobom nasadení (nad 12 mesiacov) vychádza kúpa lacnejšie. Na krátkodobé projekty a podujatia sa oplatí
+        skôr <a href="/bezpecnostne-systemy-radiove-siete/prenajom-radiostanic">prenájom rádiostaníc</a>. Pre váš prípad
+        pripravíme porovnanie.
+      </p>
+
+      <h2>Kompletný sortiment aj servis</h2>
+      <p>
+        Konkrétne modely a príslušenstvo nájdete v <a href="/katalog-produktov">katalógu produktov</a>. Zabezpečujeme aj
+        <a href="/bezpecnostne-systemy-radiove-siete/servis-radiostanic">záručný a pozáručný servis</a> a návrh a realizáciu
+        <a href="/bezpecnostne-systemy-radiove-siete/radiove-siete">profesionálnych rádiových sietí</a> pre výrobné areály
+        a kritickú infraštruktúru. Referencie z praxe nájdete na stránke
+        <a href="/referencie">referencie</a>.
+      </p>
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Časté otázky</h2>
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group rounded-xl border border-hairline p-5">
+            <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
+              {faq.q}
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">
+                +
+              </span>
+            </summary>
+            <p class="text-muted mt-3">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Vyžiadajte si cenovú ponuku</h2>
+      <p class="text-muted mb-6 max-w-xl mx-auto">
+        Napíšte nám, aké rádiostanice a v akom počte potrebujete. Pripravíme ponuku a odpovieme do 24 hodín.
+      </p>
+      <a href="/lp/konzultacia.html?utm_source=web&utm_campaign=web" class="btn-primary inline-flex"
+        >Vyžiadať cenovú ponuku</a
+      >
+    </div>
+  </section>
+</Layout>
