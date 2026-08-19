@@ -67,7 +67,7 @@ export const headerData = {
               href: getPermalink('/katalog-produktov/kategoria/varovacie-a-vyrozumievacie-systemy'),
             },
             { text: 'Evakuačné systémy', href: getPermalink('/katalog-produktov/kategoria/evakuacne-systemy') },
-            { text: 'Archív produktov', href: getPermalink('/katalog-produktov/kategoria/radiostanice') },
+            { text: 'Archív produktov', href: getPermalink('/katalog-produktov/kategoria/radiostanice-archiv') },
           ],
         },
         {
