@@ -310,11 +310,25 @@ def assign_slugs(items, kind, label_key):
 cat_slug, _seen_cat, cat_collisions = assign_slugs(cats, 'cat', 'name')
 prod_slug, _seen_prod, prod_collisions = assign_slugs(products, 'prod', 'title')
 
+# Archivne produktove duplikaty: rovnaky Motorola part number je aj v MOTOTRBO.
+# MOTOTRBO verzia je jedina stranka na cistej adrese, archivny dvojnik sa do nej
+# zlucuje - vlastnu stranku nedostane a vsetky odkazy nan vedu na MOTOTRBO.
+# (Archivne KATEGORIE sa nezlucuju, obsahuju genuine archivne produkty.)
+MERGED_PROD = {}
+for _p in products:
+    if _p.get('zdroj') == 'mototrbo':
+        continue
+    _base = slugify(_p['alias'])
+    _holder = _seen_prod.get(_base)
+    if _holder is not None and _holder != _p['id'] and _holder in MOTO_PROD_IDS:
+        MERGED_PROD[_p['id']] = _base
+
 def cat_url(cid):
     return CAT_BASE + '/' + cat_slug[cid]
 
 def prod_url(pid):
-    return ARCHIVE_BASE + '/' + prod_slug[pid]
+    # zluceny archivny duplikat ukazuje na MOTOTRBO verziu
+    return ARCHIVE_BASE + '/' + MERGED_PROD.get(pid, prod_slug[pid])
 
 # ---------------------------------------------------------------- sidebar
 def ancestors(cid):
@@ -963,6 +977,8 @@ const hasFilter = filters.length > 0 || freq !== null;
 # ---------------------------------------------------------------- generuj produkty
 n_prod = 0
 for src in ([] if INDEX_ONLY else sorted(products, key=lambda p: p['id'])):
+    if src['id'] in MERGED_PROD:
+        continue  # duplikat zluceny do MOTOTRBO verzie na cistej adrese
     slides = slides_for(src)
     pobj = {
         'title': src['title'],
