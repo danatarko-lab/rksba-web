@@ -7,6 +7,7 @@
  * Zdroje (stlpce: stara_url, nova_url, typ, poznamka):
  *   _materials/redirect/mapa-slovnik.csv
  *   _materials/redirect/mapa-rks-katalog.csv
+ *   _materials/redirect/mapa-mototrbo-archiv.csv
  *
  * Pravidla:
  *  - Riadok:  /stara/cesta   /nova/cesta   301
@@ -37,6 +38,7 @@ const MAPS = [
   join(root, '_materials/redirect/mapa-slovnik.csv'),
   join(root, '_materials/redirect/mapa-rks-katalog.csv'),
   join(root, '_materials/redirect/mapa-rksba.csv'),
+  join(root, '_materials/redirect/mapa-mototrbo-archiv.csv'),
 ];
 const OUT = join(root, 'public/_redirects');
 const DIST = join(root, 'dist');

@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-const sidebar = "<nav class=\"rks-tree text-sm\" aria-label=\"Kategórie produktov\"><ul class=\"space-y-1\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/radiostanice-2002\" class=\"rks-link text-default hover:text-link\">Rádiostanice<span class=\"text-muted text-xs ml-2\">773</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2\" class=\"rks-link text-default hover:text-link\">Prenosné rádiostanice<span class=\"text-muted text-xs ml-2\">632</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory\" class=\"rks-link text-primary font-semibold\">Akumulátory<span class=\"text-muted text-xs ml-2\">53</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Antény (DP)<span class=\"text-muted text-xs ml-2\">58</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DP)<span class=\"text-muted text-xs ml-2\">17</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dp\" class=\"rks-link text-default hover:text-link\">Iné (DP)<span class=\"text-muted text-xs ml-2\">138</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky-mototrbo\" class=\"rks-link text-default hover:text-link\">Nabíjačky<span class=\"text-muted text-xs ml-2\">37</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie\" class=\"rks-link text-default hover:text-link\">Nosenie<span class=\"text-muted text-xs ml-2\">97</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy\" class=\"rks-link text-default hover:text-link\">Náhlavné súpravy<span class=\"text-muted text-xs ml-2\">43</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony\" class=\"rks-link text-default hover:text-link\">Repromikrofóny<span class=\"text-muted text-xs ml-2\">39</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla\" class=\"rks-link text-default hover:text-link\">Slúchadlá<span class=\"text-muted text-xs ml-2\">72</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Softvér (DP)<span class=\"text-muted text-xs ml-2\">35</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prevadzace-mototrbo\" class=\"rks-link text-default hover:text-link\">Prevádzače<span class=\"text-muted text-xs ml-2\">22</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dr\" class=\"rks-link text-default hover:text-link\">Iné (DR)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dr\" class=\"rks-link text-default hover:text-link\">Softvér (DR)<span class=\"text-muted text-xs ml-2\">13</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/vozidlove-radiostanice-mototrbo\" class=\"rks-link text-default hover:text-link\">Vozidlové rádiostanice<span class=\"text-muted text-xs ml-2\">119</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny\" class=\"rks-link text-default hover:text-link\">Antény (DM)<span class=\"text-muted text-xs ml-2\">23</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dm-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DM)<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dm\" class=\"rks-link text-default hover:text-link\">Iné (DM)<span class=\"text-muted text-xs ml-2\">22</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/instalacia\" class=\"rks-link text-default hover:text-link\">Inštalácia<span class=\"text-muted text-xs ml-2\">29</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofony\" class=\"rks-link text-default hover:text-link\">Mikrofóny<span class=\"text-muted text-xs ml-2\">13</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/napajanie\" class=\"rks-link text-default hover:text-link\">Napájanie<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/reproduktory\" class=\"rks-link text-default hover:text-link\">Reproduktory<span class=\"text-muted text-xs ml-2\">5</span></a></li></ul></li></ul></li></ul></nav>";
+const sidebar = "<nav class=\"rks-tree text-sm\" aria-label=\"Kategórie produktov\"><ul class=\"space-y-1\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/radiostanice\" class=\"rks-link text-default hover:text-link\">Rádiostanice<span class=\"text-muted text-xs ml-2\">773</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-radiostanice\" class=\"rks-link text-default hover:text-link\">Prenosné rádiostanice<span class=\"text-muted text-xs ml-2\">632</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory\" class=\"rks-link text-primary font-semibold\">Akumulátory<span class=\"text-muted text-xs ml-2\">53</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-dp\" class=\"rks-link text-default hover:text-link\">Antény (DP)<span class=\"text-muted text-xs ml-2\">58</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dp\" class=\"rks-link text-default hover:text-link\">Bluetooth (DP)<span class=\"text-muted text-xs ml-2\">17</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dp\" class=\"rks-link text-default hover:text-link\">Iné (DP)<span class=\"text-muted text-xs ml-2\">138</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky\" class=\"rks-link text-default hover:text-link\">Nabíjačky<span class=\"text-muted text-xs ml-2\">37</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie\" class=\"rks-link text-default hover:text-link\">Nosenie<span class=\"text-muted text-xs ml-2\">97</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy\" class=\"rks-link text-default hover:text-link\">Náhlavné súpravy<span class=\"text-muted text-xs ml-2\">43</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony\" class=\"rks-link text-default hover:text-link\">Repromikrofóny<span class=\"text-muted text-xs ml-2\">39</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla\" class=\"rks-link text-default hover:text-link\">Slúchadlá<span class=\"text-muted text-xs ml-2\">72</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dp\" class=\"rks-link text-default hover:text-link\">Softvér (DP)<span class=\"text-muted text-xs ml-2\">35</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prevadzace\" class=\"rks-link text-default hover:text-link\">Prevádzače<span class=\"text-muted text-xs ml-2\">22</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dr\" class=\"rks-link text-default hover:text-link\">Iné (DR)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dr\" class=\"rks-link text-default hover:text-link\">Softvér (DR)<span class=\"text-muted text-xs ml-2\">13</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/vozidlove-radiostanice\" class=\"rks-link text-default hover:text-link\">Vozidlové rádiostanice<span class=\"text-muted text-xs ml-2\">119</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny\" class=\"rks-link text-default hover:text-link\">Antény (DM)<span class=\"text-muted text-xs ml-2\">23</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dm\" class=\"rks-link text-default hover:text-link\">Bluetooth (DM)<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dm\" class=\"rks-link text-default hover:text-link\">Iné (DM)<span class=\"text-muted text-xs ml-2\">22</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/instalacia\" class=\"rks-link text-default hover:text-link\">Inštalácia<span class=\"text-muted text-xs ml-2\">29</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofony\" class=\"rks-link text-default hover:text-link\">Mikrofóny<span class=\"text-muted text-xs ml-2\">13</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/napajanie\" class=\"rks-link text-default hover:text-link\">Napájanie<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/reproduktory\" class=\"rks-link text-default hover:text-link\">Reproduktory<span class=\"text-muted text-xs ml-2\">5</span></a></li></ul></li></ul></li></ul></nav>";
 const breadcrumb = [
   {
     "name": "Produkty",
@@ -13,11 +13,11 @@ const breadcrumb = [
   },
   {
     "name": "Rádiostanice",
-    "url": "/katalog-produktov/kategoria/radiostanice-2002"
+    "url": "/katalog-produktov/kategoria/radiostanice"
   },
   {
     "name": "Prenosné rádiostanice",
-    "url": "/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+    "url": "/katalog-produktov/kategoria/prenosne-radiostanice"
   },
   {
     "name": "Akumulátory",
@@ -59,35 +59,35 @@ const products = [
     "facets": "{\"kompatibilita\": [\"DP4401 Ex Ma\", \"DP4801 Ex Ma\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2000 mAh\"], \"prevedenie\": [\"IMPRES ATEX\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"500\"], \"prevadzkova-teplota\": [\"–10 °C až +50 °C\"], \"krytie\": [\"IP67 (pre ATEX prostredie:IP64)\"], \"vyzaduje-udrzbu\": [\"Áno\"]}"
   },
   {
-    "url": "/katalog-produktov/pmnn4251-mototrbo",
+    "url": "/katalog-produktov/pmnn4251",
     "img": "/images/katalog-produktov/20035/main.webp",
     "title": "PMNN4251",
     "desc": "Ni-Mh 1400 mAh akumulátor Ni-Mh 1400 mAh akumulátor Štandardný Ni-MH akumulátor, ktorý je súčasťou základnej dodávky rádiostaníc Motorola rady CP1x0 a DP1400.",
     "facets": "{\"kompatibilita\": [\"DP1400\"], \"zlozenie\": [\"Ni–Mh\"], \"kapacita\": [\"1400 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"400\"], \"prevadzkova-teplota\": [\"–20 °C až +60 °C\"], \"krytie\": [\"Neuvedené\"], \"vyzaduje-udrzbu\": [\"Áno\"]}"
   },
   {
-    "url": "/katalog-produktov/pmnn4253-mototrbo",
+    "url": "/katalog-produktov/pmnn4253",
     "img": "/images/katalog-produktov/20034/main.webp",
     "title": "PMNN4253",
     "desc": "Li-Ion 1600 mAh akumulátor Li-Ion 1600 mAh akumulátor Tenký akumulátor je súčasťou základnej dodávky rádiostaníc Motorola DP1400.",
     "facets": "{\"kompatibilita\": [\"DP1400\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"1600 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"400\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"Neuvedené\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
   },
   {
-    "url": "/katalog-produktov/pmnn4254-mototrbo",
+    "url": "/katalog-produktov/pmnn4254",
     "img": "/images/katalog-produktov/20033/main.webp",
     "title": "PMNN4254",
     "desc": "Li-Ion 2300 mAh akumulátor Li-Ion 2300 mAh akumulátor Vysokokapacitný Li-Ion akumulátor dovoľuje priebežné nabíjanie bez rizika pamäťového efektu.",
     "facets": "{\"kompatibilita\": [\"DP1400\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2300 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"Neuvedené\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
   },
   {
-    "url": "/katalog-produktov/pmnn4258-mototrbo",
+    "url": "/katalog-produktov/pmnn4258",
     "img": "/images/katalog-produktov/20497/main.webp",
     "title": "PMNN4258",
     "desc": "Li-Ion 2900 mAh akumulátor Li-Ion 2900 mAh akumulátor Vysokokapacitný Li-Ion akumulátor dovoľuje priebežné nabíjanie bez rizika pamäťového efektu.",
     "facets": "{\"kompatibilita\": [\"DP1400\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"2900 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Nie\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"Neuvedené\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
   },
   {
-    "url": "/katalog-produktov/pmnn4259-mototrbo",
+    "url": "/katalog-produktov/pmnn4259",
     "img": "/images/katalog-produktov/20465/main.webp",
     "title": "PMNN4259",
     "desc": "Li-Ion 2050 mAh Mag One akumulátor Li-Ion 2050 mAh Mag One akumulátor Vysokokapacitný Li-Ion akumulátor dovoľuje priebežné nabíjanie bez rizika pamäťového efektu.",
@@ -108,7 +108,7 @@ const products = [
     "facets": "{\"kompatibilita\": [\"Príslušenstvo\"], \"zlozenie\": [\"Li–Ion\"], \"kapacita\": [\"1800 mAh\"], \"prevedenie\": [\"STD\"], \"inteligentne-nabijanie\": [\"Áno\"], \"pocet-nabijacich-cyklov\": [\"300\"], \"prevadzkova-teplota\": [\"–10 °C až +60 °C\"], \"krytie\": [\"IP54\"], \"vyzaduje-udrzbu\": [\"Nie\"]}"
   },
   {
-    "url": "/katalog-produktov/pmnn4468-mototrbo",
+    "url": "/katalog-produktov/pmnn4468",
     "img": "/images/katalog-produktov/20494/main.webp",
     "title": "PMNN4468",
     "desc": "Li-Ion 2300 mAh akumulátor Li-Ion 2300 mAh akumulátor Vysokokapacitný Li-Ion akumulátor (BT100x) dovoľuje priebežné nabíjanie bez rizika pamäťového efektu.",
@@ -454,13 +454,13 @@ const jsonld = {
       "@type": "ListItem",
       "position": 3,
       "name": "Rádiostanice",
-      "item": "https://rksba.sk/katalog-produktov/kategoria/radiostanice-2002"
+      "item": "https://rksba.sk/katalog-produktov/kategoria/radiostanice"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Prenosné rádiostanice",
-      "item": "https://rksba.sk/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+      "item": "https://rksba.sk/katalog-produktov/kategoria/prenosne-radiostanice"
     },
     {
       "@type": "ListItem",

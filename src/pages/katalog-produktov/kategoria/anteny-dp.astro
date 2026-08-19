@@ -1,0 +1,1057 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const sidebar = "<nav class=\"rks-tree text-sm\" aria-label=\"Kategórie produktov\"><ul class=\"space-y-1\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/radiostanice\" class=\"rks-link text-default hover:text-link\">Rádiostanice<span class=\"text-muted text-xs ml-2\">773</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-radiostanice\" class=\"rks-link text-default hover:text-link\">Prenosné rádiostanice<span class=\"text-muted text-xs ml-2\">632</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory\" class=\"rks-link text-default hover:text-link\">Akumulátory<span class=\"text-muted text-xs ml-2\">53</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-dp\" class=\"rks-link text-primary font-semibold\">Antény (DP)<span class=\"text-muted text-xs ml-2\">58</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dp\" class=\"rks-link text-default hover:text-link\">Bluetooth (DP)<span class=\"text-muted text-xs ml-2\">17</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dp\" class=\"rks-link text-default hover:text-link\">Iné (DP)<span class=\"text-muted text-xs ml-2\">138</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky\" class=\"rks-link text-default hover:text-link\">Nabíjačky<span class=\"text-muted text-xs ml-2\">37</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie\" class=\"rks-link text-default hover:text-link\">Nosenie<span class=\"text-muted text-xs ml-2\">97</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy\" class=\"rks-link text-default hover:text-link\">Náhlavné súpravy<span class=\"text-muted text-xs ml-2\">43</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony\" class=\"rks-link text-default hover:text-link\">Repromikrofóny<span class=\"text-muted text-xs ml-2\">39</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla\" class=\"rks-link text-default hover:text-link\">Slúchadlá<span class=\"text-muted text-xs ml-2\">72</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dp\" class=\"rks-link text-default hover:text-link\">Softvér (DP)<span class=\"text-muted text-xs ml-2\">35</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prevadzace\" class=\"rks-link text-default hover:text-link\">Prevádzače<span class=\"text-muted text-xs ml-2\">22</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dr\" class=\"rks-link text-default hover:text-link\">Iné (DR)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dr\" class=\"rks-link text-default hover:text-link\">Softvér (DR)<span class=\"text-muted text-xs ml-2\">13</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/vozidlove-radiostanice\" class=\"rks-link text-default hover:text-link\">Vozidlové rádiostanice<span class=\"text-muted text-xs ml-2\">119</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny\" class=\"rks-link text-default hover:text-link\">Antény (DM)<span class=\"text-muted text-xs ml-2\">23</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dm\" class=\"rks-link text-default hover:text-link\">Bluetooth (DM)<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dm\" class=\"rks-link text-default hover:text-link\">Iné (DM)<span class=\"text-muted text-xs ml-2\">22</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/instalacia\" class=\"rks-link text-default hover:text-link\">Inštalácia<span class=\"text-muted text-xs ml-2\">29</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofony\" class=\"rks-link text-default hover:text-link\">Mikrofóny<span class=\"text-muted text-xs ml-2\">13</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/napajanie\" class=\"rks-link text-default hover:text-link\">Napájanie<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/reproduktory\" class=\"rks-link text-default hover:text-link\">Reproduktory<span class=\"text-muted text-xs ml-2\">5</span></a></li></ul></li></ul></li></ul></nav>";
+const breadcrumb = [
+  {
+    "name": "Produkty",
+    "url": "/produkty"
+  },
+  {
+    "name": "Katalóg produktov",
+    "url": "/katalog-produktov"
+  },
+  {
+    "name": "Rádiostanice",
+    "url": "/katalog-produktov/kategoria/radiostanice"
+  },
+  {
+    "name": "Prenosné rádiostanice",
+    "url": "/katalog-produktov/kategoria/prenosne-radiostanice"
+  },
+  {
+    "name": "Antény (DP)",
+    "url": null
+  }
+];
+const heading = "Antény (DP)";
+const popisHtml = "<h2>Katalóg antén pre rádiostanice Motorola</h2> <p>Pri výbere antény je dôležité poznať frekvenčné pásmo a prípadne presné frekvencie, pre ktoré by mala byť anténa používaná. Toto je dôležité najmä u antén, ktoré sú ladené len pre časť frekvenčného pásma. Na Slovensku sa bežne používajú pásma VHF&nbsp;a UHF.<br /> Výmena antény sa vykonáva jednoduchým naskrutkovaním.</p>";
+const intro = [];
+const subcats = [];
+const subcatsHeading = "";
+const products = [
+  {
+    "url": "/katalog-produktov/an000348a01",
+    "img": "/images/katalog-produktov/20921/main.webp",
+    "title": "AN000348A01",
+    "desc": "UHF anténa &nbsp;UHF anténa Širokopásmová stubby anténa určená&nbsp;pre rádiostanice&nbsp;rady ION, R7, R5.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Whip\"], \"kompatibilita\": [\"ION\", \"R7\", \"R5\"]}",
+    "freq": "[[400.0, 527.0]]"
+  },
+  {
+    "url": "/katalog-produktov/an000350a01",
+    "img": "/images/katalog-produktov/20919/main.webp",
+    "title": "AN000350A01",
+    "desc": "UHF anténa &nbsp;UHF anténa Krátka Stubby anténa určená&nbsp;pre rádiostanice&nbsp;rady ION a R7.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"ION\", \"R7\"]}",
+    "freq": "[[400.0, 450.0]]"
+  },
+  {
+    "url": "/katalog-produktov/an000351a01",
+    "img": "/images/katalog-produktov/20920/main.webp",
+    "title": "AN000351A01",
+    "desc": "UHF anténa UHF anténa Krátka stubby anténa určená&nbsp;pre rádiostanice&nbsp;rady ION a R7.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"ION\", \"R7\"]}",
+    "freq": "[[440.0, 490.0]]"
+  },
+  {
+    "url": "/katalog-produktov/had9742",
+    "img": "/images/katalog-produktov/20038/main.webp",
+    "title": "HAD9742",
+    "desc": "VHF anténa VHF anténa Stubby anténa určená&nbsp;pre rádiostanice Motorola rady DP1000.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP1400\"]}",
+    "freq": "[[146.0, 162.0]]"
+  },
+  {
+    "url": "/katalog-produktov/had9743",
+    "img": "/images/katalog-produktov/20112/main.webp",
+    "title": "HAD9743",
+    "desc": "VHF anténa VHF anténa Stubby anténa určená pre rádiostanice Motorola rady DP1000.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP1400\"]}",
+    "freq": "[[162.0, 174.0]]"
+  },
+  {
+    "url": "/katalog-produktov/nad6502",
+    "img": "/images/katalog-produktov/20475/main.webp",
+    "title": "NAD6502",
+    "desc": "VHF anténa VHF anténa Určená pre radiostanice Motorola.rady CP, GP kompaktné GP a DP1000.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Helical\"], \"kompatibilita\": [\"DP1400\"]}",
+    "freq": "[[146.0, 174.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4012",
+    "img": "/images/katalog-produktov/20037/main.webp",
+    "title": "PMAD4012",
+    "desc": "VHF anténa VHF anténa Stubby anténa určená&nbsp;pre rádiostanice Motorola rady DP1000.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP1400\"]}",
+    "freq": "[[136.0, 155.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4067",
+    "img": "/images/katalog-produktov/20282/main.webp",
+    "title": "PMAD4067",
+    "desc": "VHF anténa VHF anténa Helical anténa určená pre rádiostanice Motorola rady DP3000 odolné rádiostanice Motorola rady GP.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Helical\"], \"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"]}",
+    "freq": "[[136.0, 147.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4068",
+    "img": "/images/katalog-produktov/20281/main.webp",
+    "title": "PMAD4068",
+    "desc": "VHF anténa VHF anténa Helical anténa určená pre rádiostanice Motorola rady DP3000 a&nbsp;odolné rádiostanice Motorola rady GP.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Helical\"], \"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"]}",
+    "freq": "[[147.0, 160.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4069",
+    "img": "/images/katalog-produktov/20280/main.webp",
+    "title": "PMAD4069",
+    "desc": "VHF anténa VHF anténa Helical anténa určená pre rádiostanice Motorola rady DP3000 a odolné rádiostanice Motorola rady GP.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Helical\"], \"kompatibilita\": [\"DP3400\", \"DP3601\"]}",
+    "freq": "[[160.0, 174.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4086",
+    "img": "/images/katalog-produktov/20279/main.webp",
+    "title": "PMAD4086",
+    "desc": "VHF anténa VHF anténa PSM anténa.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"PSM\"], \"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"]}",
+    "freq": "[[150.0, 174.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4088",
+    "img": "/images/katalog-produktov/20277/main.webp",
+    "title": "PMAD4088",
+    "desc": "VHF anténa VHF anténa Helical anténa určená pre rádiostanice Motorola rady DP3000 a DP4000 s SMA konektorom.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Helical\"], \"kompatibilita\": [\"DP4401e\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"]}",
+    "freq": "[[136.0, 174.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4093",
+    "img": "/images/katalog-produktov/20276/main.webp",
+    "title": "PMAD4093",
+    "desc": "VHF anténa VHF anténa Stubby anténa určená pre rádiostanice Motorola rady DP3000 a DP4000 s SMA konektorom.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP4401e\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"]}",
+    "freq": "[[136.0, 147.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4094",
+    "img": "/images/katalog-produktov/20275/main.webp",
+    "title": "PMAD4094",
+    "desc": "VHF anténa VHF anténa Stubby anténa určená pre rádiostanice otorola rady DP3000 a DP4000 s SMA konektorom.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP4401e\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"]}",
+    "freq": "[[147.0, 160.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4095",
+    "img": "/images/katalog-produktov/20274/main.webp",
+    "title": "PMAD4095",
+    "desc": "VHF anténa VHF anténa Stubby anténa určená pre rádiostanice&nbsp;Motorola rady DP3000 a DP4000 s SMA konektorom.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP4401e\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"]}",
+    "freq": "[[160.0, 174.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4116",
+    "img": "/images/katalog-produktov/20273/main.webp",
+    "title": "PMAD4116",
+    "desc": "VHF/GPS anténa VHF/GPS anténa Helical anténa určená pre rádiostanice Motorola rady DP2000, DP4000, R7, R2, R5.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Helical\"], \"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"R7\", \"R7a\", \"R2\", \"R5\"]}",
+    "freq": "[[144.0, 165.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4117",
+    "img": "/images/katalog-produktov/20422/main.webp",
+    "title": "PMAD4117",
+    "desc": "VHF/GPS anténa VHF/GPS anténa Helical anténa určená pre rádiostanice Motorola rady DP2000, DP4000, R7, R2, R5.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Helical\"], \"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"R7\", \"R7a\", \"R2\", \"R5\"]}",
+    "freq": "[[136.0, 155.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4118",
+    "img": "/images/katalog-produktov/20272/main.webp",
+    "title": "PMAD4118",
+    "desc": "VHF/GPS anténa VHF/GPS anténa Helical anténa určená pre rádiostanice Motorola rady DP2000, DP4000, R7, R2, R5.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Helical\"], \"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801e\", \"R7\", \"R7a\", \"R2\", \"R5\"]}",
+    "freq": "[[152.0, 174.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4119",
+    "img": "/images/katalog-produktov/20117/main.webp",
+    "title": "PMAD4119",
+    "desc": "VHF/GPS anténa VHF/GPS anténa Stubby anténa určená pre rádiostanice Motorola rady DP2000, DP4000, DP3441, R7, R2, R5.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R7\", \"R7a\", \"R2\", \"R5\"]}",
+    "freq": "[[136.0, 148.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4120",
+    "img": "/images/katalog-produktov/20116/main.webp",
+    "title": "PMAD4120",
+    "desc": "VHF/GPS anténa VHF/GPS anténa Stubby anténa určená pre rádiostanice Motorola rady DP2000, DP4000, DP3441, R7, R2, R5.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R7\", \"R7a\", \"R2\", \"R5\"]}",
+    "freq": "[[146.0, 160.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4121",
+    "img": "/images/katalog-produktov/20115/main.webp",
+    "title": "PMAD4121",
+    "desc": "VHF anténa VHF anténa Stubby anténa určená pre rádiostanice Motorola rady DP2000, DP4000, DP3441, R7, R2, R5.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"R7\", \"R7a\", \"R2\", \"R5\"]}",
+    "freq": "[[160.0, 174.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4126",
+    "img": "/images/katalog-produktov/20321/main.webp",
+    "title": "PMAD4126",
+    "desc": "VHF anténa VHF anténa Helical anténa určená pre rádiostanice Motorola rady DP4000Ex určené do výbušného prostredia.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Helical\"], \"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"]}",
+    "freq": "[[136.0, 147.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4127",
+    "img": "/images/katalog-produktov/20323/main.webp",
+    "title": "PMAD4127",
+    "desc": "VHF anténa VHF anténa Helical anténa určená pre rádiostanice Motorola rady DP4000Ex určené do výbušného prostredia.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Helical\"], \"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"]}",
+    "freq": "[[147.0, 160.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4128",
+    "img": "/images/katalog-produktov/20325/main.webp",
+    "title": "PMAD4128",
+    "desc": "VHF anténa VHF anténa Helical anténa určená pre rádiostanice Motorola rady DP4000Ex určené do výbušného prostredia.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Helical\"], \"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"]}",
+    "freq": "[[160.0, 174.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4129",
+    "img": "/images/katalog-produktov/20326/main.webp",
+    "title": "PMAD4129",
+    "desc": "VHF anténa VHF anténa Stubby anténa určená pre rádiostanice Motorola rady DP4000Ex určené do výbušného prostredia.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"]}",
+    "freq": "[[136.0, 147.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4130",
+    "img": "/images/katalog-produktov/20327/main.webp",
+    "title": "PMAD4130",
+    "desc": "VHF anténa VHF anténa Stubby anténa určená pre rádiostanice Motorola rady DP4000Ex určené do výbušného prostredia.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"]}",
+    "freq": "[[147.0, 160.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4131",
+    "img": "/images/katalog-produktov/20328/main.webp",
+    "title": "PMAD4131",
+    "desc": "VHF anténa VHF anténa Stubby anténa určená pre rádiostanice Motorola rady DP4000Ex určené do výbušného prostredia.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"]}",
+    "freq": "[[160.0, 174.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4132",
+    "img": "/images/katalog-produktov/20329/main.webp",
+    "title": "PMAD4132",
+    "desc": "VHF anténa VHF anténa Širokopásmová helical anténa určená pre rádiostanice Motorola rady DP4000Ex určené do výbušného prostredia.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Helical\"], \"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"]}",
+    "freq": "[[136.0, 174.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4144",
+    "img": "/images/katalog-produktov/20488/main.webp",
+    "title": "PMAD4144",
+    "desc": "VHF anténa VHF anténa Stubby anténa určená pre rádiostanice Motorola rady SL1600.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"SL1600\", \"SL2600\"]}",
+    "freq": "[[136.0, 144.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4145",
+    "img": "/images/katalog-produktov/20489/main.webp",
+    "title": "PMAD4145",
+    "desc": "VHF anténa VHF anténa Stubby anténa určená pre rádiostanice Motorola rady SL1600.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"SL1600\", \"SL2600\"]}",
+    "freq": "[[144.0, 156.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4146",
+    "img": "/images/katalog-produktov/20490/main.webp",
+    "title": "PMAD4146",
+    "desc": "VHF anténa VHF anténa Stubby anténa určená pre rádiostanice Motorola rady SL1600.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"SL1600\", \"SL2600\"]}",
+    "freq": "[[155.0, 174.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4147",
+    "img": "/images/katalog-produktov/20527/main.webp",
+    "title": "PMAD4147",
+    "desc": "VHF/GPS anténa VHF/GPS anténa Širokopásmová whip anténa určená pre rádiostanice Motorola rady DP4000, R7, R2, R5.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Whip\"], \"kompatibilita\": [\"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"R7\", \"R7a\", \"R2\", \"R5\"]}",
+    "freq": "[[136.0, 174.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4154",
+    "img": "/images/katalog-produktov/20887/main.webp",
+    "title": "PMAD4154",
+    "desc": "VHF anténa VHF anténa Whip anténa určená pre rádiostanice Motorola rady SL1600.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Whip\"], \"kompatibilita\": [\"SL1600\", \"SL2600\"]}",
+    "freq": "[[136.0, 144.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4155",
+    "img": "/images/katalog-produktov/20888/main.webp",
+    "title": "PMAD4155",
+    "desc": "VHF anténa VHF anténa Whip anténa určená pre rádiostanice Motorola rady SL1600.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Whip\"], \"kompatibilita\": [\"SL1600\", \"SL2600\"]}",
+    "freq": "[[144.0, 156.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmad4156",
+    "img": "/images/katalog-produktov/20889/main.webp",
+    "title": "PMAD4156",
+    "desc": "VHF anténa VHF anténa Whip anténa určená pre rádiostanice Motorola rady SL1600.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Whip\"], \"kompatibilita\": [\"SL1600\", \"SL2600\"]}",
+    "freq": "[[156.0, 174.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4002",
+    "img": "/images/katalog-produktov/20036/main.webp",
+    "title": "PMAE4002",
+    "desc": "UHF anténa UHF anténa Stubby anténa určená&nbsp;pre rádiostanice&nbsp;rady GP,&nbsp;GP Atex, kompaktné rádiostanice Motorola rady GP a&nbsp;Motorola rady DP1000.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP1400\"]}",
+    "freq": "[[403.0, 433.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4003",
+    "img": "/images/katalog-produktov/20875/main.webp",
+    "title": "PMAE4003",
+    "desc": "UHF anténa UHF anténa Stubby anténa určená&nbsp;pre rádiostanice&nbsp;rady GP,&nbsp;GP Atex, kompaktné rádiostanice Motorola rady GP a&nbsp;Motorola rady DP1000.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP1400\"]}",
+    "freq": "[[430.0, 470.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4016",
+    "img": "/images/katalog-produktov/20477/main.webp",
+    "title": "PMAE4016",
+    "desc": "UHF anténa UHF anténa Určené pre rádiostanice Motorola rady DP1000.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Whip\"], \"kompatibilita\": [\"DP1400\"]}",
+    "freq": "[[403.0, 520.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4022",
+    "img": "/images/katalog-produktov/20847/main.webp",
+    "title": "PMAE4022",
+    "desc": "UHF anténa UHF anténa Whip anténa určená pre rádiostanice&nbsp;Motorola rady DP3000 a DP4000 s SMA konektorom.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Whip\"], \"kompatibilita\": [\"DP4401e\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"]}",
+    "freq": "[[403.0, 470.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4023",
+    "img": "/images/katalog-produktov/20271/main.webp",
+    "title": "PMAE4023",
+    "desc": "UHF anténa UHF anténa Stubby anténa určená pre rádiostanice Motorola rady GP a DP3000.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"]}",
+    "freq": "[[430.0, 470.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4047",
+    "img": "/images/katalog-produktov/20269/main.webp",
+    "title": "PMAE4047",
+    "desc": "UHF anténa ​UHF anténa Stubby anténa určená pre rádiostanice rady DP3000.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"]}",
+    "freq": "[[430.0, 470.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4049",
+    "img": "/images/katalog-produktov/20848/main.webp",
+    "title": "PMAE4049",
+    "desc": "UHF anténa &nbsp;UHF anténa Whip anténa určená pre rádiostanice Motorola rady DP3000 a DP4000 s SMA konektorom.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Whip\"], \"kompatibilita\": [\"DP4401e\", \"DP4801\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"]}",
+    "freq": "[[450.0, 470.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4069",
+    "img": "/images/katalog-produktov/20114/main.webp",
+    "title": "PMAE4069",
+    "desc": "UHF/GPS anténa UHF/GPS anténa Stubby anténa určená pre rádiostanice Motorola rady DP2000, DP4000, DP3441, R7, R2, R5.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"ION\", \"R7\", \"R7a\", \"R2\", \"R5\"]}",
+    "freq": "[[400.0, 450.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4070",
+    "img": "/images/katalog-produktov/20113/main.webp",
+    "title": "PMAE4070",
+    "desc": "UHF/GPS anténa UHF/GPS anténa Stubby anténa určená pre rádiostanice Motorola rady DP2000, DP4000, DP3441, R7, R2, R5.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"ION\", \"R7\", \"R7a\", \"R2\", \"R5\"]}",
+    "freq": "[[440.0, 490.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4076",
+    "img": "/images/katalog-produktov/20268/main.webp",
+    "title": "PMAE4076",
+    "desc": "UHF anténa UHF anténa ​ Stubby anténa určená pre rádiostanice Motorola rady SL4000.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"]}",
+    "freq": "[[420.0, 445.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4077",
+    "img": "/images/katalog-produktov/20267/main.webp",
+    "title": "PMAE4077",
+    "desc": "UHF anténa UHF anténa Stubby anténa určená pre rádiostanice Motorola rady SL4000.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"]}",
+    "freq": "[[438.0, 470.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4079",
+    "img": "/images/katalog-produktov/20423/main.webp",
+    "title": "PMAE4079",
+    "desc": "UHF/GPS anténa UHF/GPS anténa Whip anténa určená pre rádiostanice Motorola rady DP2000, DP4000, DP3441, R7, R2, R5.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Whip\"], \"kompatibilita\": [\"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"ION\", \"R7\", \"R7a\", \"R2\", \"R5\"]}",
+    "freq": "[[403.0, 527.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4081",
+    "img": "/images/katalog-produktov/20330/main.webp",
+    "title": "PMAE4081",
+    "desc": "UHF anténa UHF anténa Anténa monopól určená pre rádiostanice Motorola rady DP4000 Ex.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Monopól\"], \"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"]}",
+    "freq": "[[403.0, 433.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4082",
+    "img": "/images/katalog-produktov/20331/main.webp",
+    "title": "PMAE4082",
+    "desc": "UHF anténa UHF anténa Anténa monopól určená pre rádiostanice Motorola rady DP4000Ex určené do výbušného prostredia.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Monopól\"], \"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"]}",
+    "freq": "[[430.0, 470.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4083",
+    "img": "/images/katalog-produktov/20332/main.webp",
+    "title": "PMAE4083",
+    "desc": "UHF anténa UHF anténa Stubby anténa určená pre rádiostanice Motorola rady DP4000 Atex.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"]}",
+    "freq": "[[403.0, 433.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4084",
+    "img": "/images/katalog-produktov/20333/main.webp",
+    "title": "PMAE4084",
+    "desc": "UHF anténa UHF anténa Stubby anténa určená pre rádiostanice Motorola rady DP4000Ex určené do výbušného prostredia.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"]}",
+    "freq": "[[430.0, 470.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4085",
+    "img": "/images/katalog-produktov/20334/main.webp",
+    "title": "PMAE4085",
+    "desc": "UHF anténa UHF anténa Whip anténa určená pre rádiostanice Motorola rady DP4000Ex určené do výbušného prostredia.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Whip\"], \"kompatibilita\": [\"DP4401 Ex\", \"DP4801 Ex\", \"DP4401 Ex Ma\", \"DP4801 Ex Ma\"]}",
+    "freq": "[[403.0, 470.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4094",
+    "img": "/images/katalog-produktov/20532/main.webp",
+    "title": "PMAE4094",
+    "desc": "UHF anténa UHF anténa Stubby anténa určená pre rádiostanice Motorola rady SL1600.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"SL1600\", \"SL2600\"]}",
+    "freq": "[[420.0, 445.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4095",
+    "img": "/images/katalog-produktov/20487/main.webp",
+    "title": "PMAE4095",
+    "desc": "UHF anténa UHF anténa Stubby anténa určená pre rádiostanice Motorola rady SL1600.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"SL1600\", \"SL2600\"]}",
+    "freq": "[[435.0, 470.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4099",
+    "img": "/images/katalog-produktov/20914/main.webp",
+    "title": "PMAE4099",
+    "desc": "UHF anténa UHF anténa Stubby anténa určená pre rádiostanice Motorola rady SL1600.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"SL1600\", \"SL2600\"]}",
+    "freq": "[[445.0, 480.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4100",
+    "img": "/images/katalog-produktov/20849/main.webp",
+    "title": "PMAE4100",
+    "desc": "UHF anténa UHF anténa Stubby anténa&nbsp;určená pre rádiostanice Motorola rady DP3000 a DP4000 s SMA konektorom.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"Stubby\"], \"kompatibilita\": [\"DP4401e\", \"DP4801e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"]}",
+    "freq": "[[438.0, 470.0]]"
+  },
+  {
+    "url": "/katalog-produktov/pmae4024",
+    "img": "/images/katalog-produktov/20270/main.webp",
+    "title": "Ukončený predaj PMAE4024",
+    "desc": "UHF anténa UHF anténa Anténa monopól&nbsp;určená pre rádiostanice rady DP3000.",
+    "facets": "{\"navigacny-system\": [\"GPS\"], \"typ\": [\"Monopól\"], \"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"]}",
+    "freq": "[[430.0, 470.0]]",
+    "nedodavane": true
+  },
+  {
+    "url": "/katalog-produktov/pmad4087",
+    "img": "/images/katalog-produktov/20278/main.webp",
+    "title": "Ukončený predaj: PMAD4087",
+    "desc": "VHF anténa VHF anténa PSM anténa.",
+    "facets": "{\"navigacny-system\": [\"Nie\"], \"typ\": [\"PSM\"], \"kompatibilita\": [\"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\"]}",
+    "freq": "[[136.0, 153.0]]",
+    "nedodavane": true
+  }
+];
+const productsHeading = "";
+const notice = "";
+const noticeDetail = "";
+const ctaHeading = "Poradíme s výberom aj servisom";
+const ctaText = "Vyberáte rádiostanice Motorola MOTOTRBO alebo príslušenstvo k nim? Poradíme s výberom, dodávkou, programovaním aj servisom.";
+const metadata = {
+  "title": "Antény (DP), katalóg produktov | RKS",
+  "description": "Katalóg antén pre rádiostanice Motorola   Pri výbere antény je dôležité poznať frekvenčné pásmo a prípadne presné frekvencie, pre ktoré by mala byť anténa používaná.",
+  "robots": {
+    "index": false,
+    "follow": false
+  }
+};
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Produkty",
+      "item": "https://rksba.sk/produkty"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Katalóg produktov",
+      "item": "https://rksba.sk/katalog-produktov"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/radiostanice"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Prenosné rádiostanice",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/prenosne-radiostanice"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Antény (DP)",
+      "item": "https://rksba.sk/katalog-produktov/kategoria/anteny-dp"
+    }
+  ]
+};
+const filters = [
+  {
+    "key": "kompatibilita",
+    "nazov": "Kompatibilita",
+    "hodnoty": [
+      {
+        "hodnota": "DP4401e",
+        "pocet": 17
+      },
+      {
+        "hodnota": "DP4801e",
+        "pocet": 16
+      },
+      {
+        "hodnota": "DP3400",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP3601",
+        "pocet": 15
+      },
+      {
+        "hodnota": "DP3401",
+        "pocet": 14
+      },
+      {
+        "hodnota": "DP3600",
+        "pocet": 14
+      },
+      {
+        "hodnota": "R7",
+        "pocet": 13
+      },
+      {
+        "hodnota": "DP4401 Ex",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DP4401 Ex Ma",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DP4801 Ex",
+        "pocet": 12
+      },
+      {
+        "hodnota": "DP4801 Ex Ma",
+        "pocet": 12
+      },
+      {
+        "hodnota": "R5",
+        "pocet": 11
+      },
+      {
+        "hodnota": "DP4400",
+        "pocet": 10
+      },
+      {
+        "hodnota": "DP4400e",
+        "pocet": 10
+      },
+      {
+        "hodnota": "DP4401",
+        "pocet": 10
+      },
+      {
+        "hodnota": "DP4600",
+        "pocet": 10
+      },
+      {
+        "hodnota": "DP4600e",
+        "pocet": 10
+      },
+      {
+        "hodnota": "DP4601",
+        "pocet": 10
+      },
+      {
+        "hodnota": "DP4601e",
+        "pocet": 10
+      },
+      {
+        "hodnota": "DP4800",
+        "pocet": 10
+      },
+      {
+        "hodnota": "DP4800e",
+        "pocet": 10
+      },
+      {
+        "hodnota": "DP4801",
+        "pocet": 10
+      },
+      {
+        "hodnota": "R2",
+        "pocet": 10
+      },
+      {
+        "hodnota": "R7a",
+        "pocet": 10
+      },
+      {
+        "hodnota": "DP2400",
+        "pocet": 9
+      },
+      {
+        "hodnota": "DP2400e",
+        "pocet": 9
+      },
+      {
+        "hodnota": "DP2600",
+        "pocet": 9
+      },
+      {
+        "hodnota": "DP2600e",
+        "pocet": 9
+      },
+      {
+        "hodnota": "SL1600",
+        "pocet": 9
+      },
+      {
+        "hodnota": "SL2600",
+        "pocet": 9
+      },
+      {
+        "hodnota": "DP1400",
+        "pocet": 7
+      },
+      {
+        "hodnota": "DP3441",
+        "pocet": 6
+      },
+      {
+        "hodnota": "DP3441e",
+        "pocet": 6
+      },
+      {
+        "hodnota": "DP3661e",
+        "pocet": 6
+      },
+      {
+        "hodnota": "ION",
+        "pocet": 6
+      },
+      {
+        "hodnota": "SL4000",
+        "pocet": 2
+      },
+      {
+        "hodnota": "SL4000e",
+        "pocet": 2
+      },
+      {
+        "hodnota": "SL4010",
+        "pocet": 2
+      },
+      {
+        "hodnota": "SL4010e",
+        "pocet": 2
+      }
+    ]
+  },
+  {
+    "key": "navigacny-system",
+    "nazov": "Navigačný systém",
+    "hodnoty": [
+      {
+        "hodnota": "Nie",
+        "pocet": 35
+      },
+      {
+        "hodnota": "GPS",
+        "pocet": 23
+      }
+    ]
+  },
+  {
+    "key": "typ",
+    "nazov": "Typ",
+    "hodnoty": [
+      {
+        "hodnota": "Stubby",
+        "pocet": 31
+      },
+      {
+        "hodnota": "Helical",
+        "pocet": 12
+      },
+      {
+        "hodnota": "Whip",
+        "pocet": 10
+      },
+      {
+        "hodnota": "Monopól",
+        "pocet": 3
+      },
+      {
+        "hodnota": "PSM",
+        "pocet": 2
+      }
+    ]
+  }
+];
+const freq = {
+  "min": 136.0,
+  "max": 527.0,
+  "label": "136 – 527 MHz",
+  "placeholder": "napr. 450"
+};
+const hasFilter = filters.length > 0 || freq !== null;
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
+      <aside class="mb-8 lg:mb-0 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:pr-1">
+        <details class="rks-cats rounded-xl border border-hairline p-4 lg:border-0 lg:p-0" data-rks-auto="1" open>
+          <summary class="rks-cats-toggle cursor-pointer font-semibold lg:hidden flex items-center justify-between gap-2 rounded-lg bg-panel-soft px-4 py-3"><span>Kategórie produktov</span><span class="rks-cats-arrow" aria-hidden="true"></span></summary>
+          <div class="rks-tree-wrap mt-3 lg:mt-0" set:html={sidebar} />
+        </details>
+
+        {hasFilter && (
+          <details class="rks-cats rks-filter mt-4 lg:mt-8 rounded-xl border border-hairline p-4 lg:border-0 lg:p-0" data-rks-filter data-rks-auto="1" open>
+            <summary class="rks-cats-toggle cursor-pointer font-semibold lg:hidden flex items-center justify-between gap-2 rounded-lg bg-panel-soft px-4 py-3"><span>Filtrovať produkty</span><span class="rks-cats-arrow" aria-hidden="true"></span></summary>
+            <div class="rks-panel-body mt-3 lg:mt-0 lg:border-t lg:border-hairline lg:pt-4">
+              <div class="flex items-baseline justify-between gap-3">
+                <h2 class="text-sm font-semibold tracking-tight">Filtrovať</h2>
+                <button type="button" class="text-xs text-link hover:underline" data-rks-reset>Zrušiť filtre</button>
+              </div>
+              <p class="text-xs text-muted mt-1" data-rks-summary></p>
+
+              {freq && (
+                <div class="mt-4 pt-3 border-t border-hairline">
+                  <label class="block text-sm font-medium mb-2" for="rks-freq">Zadaj frekvenciu (MHz)</label>
+                  <div class="flex items-center gap-2">
+                    <input
+                      id="rks-freq"
+                      type="number"
+                      step="any"
+                      inputmode="decimal"
+                      placeholder={freq.placeholder}
+                      class="w-full min-w-0 rounded-lg border border-hairline bg-page px-3 py-2 text-sm"
+                      data-rks-freq
+                    />
+                    <button
+                      type="button"
+                      class="shrink-0 rounded-lg border border-hairline px-3 py-2 text-xs text-muted hover:text-link"
+                      aria-label="Zrušiť frekvenciu"
+                      data-rks-freq-clear
+                    >
+                      ✕
+                    </button>
+                  </div>
+                  <p class="text-xs text-muted mt-1">
+                    Rozsah v katalógu: {freq.label}. Zobrazia sa len produkty, ktorých rozsah zadanú frekvenciu obsahuje.
+                  </p>
+                </div>
+              )}
+
+              {filters.map((f, i) => (
+                <details class="rks-facet border-t border-hairline" open={i === 0}>
+                  <summary class="cursor-pointer select-none flex items-center justify-between gap-2 py-2 text-sm font-medium">
+                    <span>{f.nazov}</span>
+                    <span class="rks-facet-arrow" aria-hidden="true"></span>
+                  </summary>
+                  <div class="rks-facet-vals pb-3 pr-1 space-y-1">
+                    {f.hodnoty.map((v) => (
+                      <label class="flex items-center gap-2 text-sm cursor-pointer" data-rks-opt={f.key + '|~|' + v.hodnota}>
+                        <input type="checkbox" class="accent-primary" data-rks-f={f.key} value={v.hodnota} />
+                        <span class="flex-1">{v.hodnota}</span>
+                        <span class="text-muted text-xs tabular-nums" data-rks-cnt>{v.pocet}</span>
+                      </label>
+                    ))}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </details>
+        )}
+      </aside>
+  <script is:inline>
+    (function () {
+      var mq = window.matchMedia('(min-width: 1024px)');
+      function sync() {
+        document.querySelectorAll('details.rks-cats').forEach(function (d) {
+          if (mq.matches) {
+            d.open = true;
+            d.dataset.rksAuto = '1';
+          } else if (d.dataset.rksAuto === '1') {
+            d.open = false;
+            d.dataset.rksAuto = '';
+          }
+        });
+      }
+      sync();
+      if (mq.addEventListener) mq.addEventListener('change', sync);
+      else if (mq.addListener) mq.addListener(sync);
+      document.addEventListener('astro:page-load', sync);
+    })();
+  </script>
+
+      <div class="min-w-0">
+        <nav class="text-sm text-muted mb-2" aria-label="Omrvinky">
+          {breadcrumb.map((b, i) => (
+            <>
+              {i > 0 && <span class="px-1">/</span>}
+              {b.url ? <a class="hover:underline" href={b.url}>{b.name}</a> : <span>{b.name}</span>}
+            </>
+          ))}
+        </nav>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">{heading}</h1>
+
+        {notice && (
+          <div class="mb-8 rounded-xl border border-l-4 border-hairline border-l-secondary bg-panel p-5">
+            <p class="text-lg font-semibold tracking-tight">{notice}</p>
+            {noticeDetail && <p class="text-base text-muted mt-1">{noticeDetail}</p>}
+          </div>
+        )}
+
+        {intro.map((par) => (
+          <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
+        ))}
+
+        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+
+        {subcats.length > 0 && (
+          <>
+            {subcatsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-4 mb-4">{subcatsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {subcats.map((c) => (
+                <a href={c.url} class="group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        {products.length > 0 && (
+          <>
+            {productsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">{productsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4" data-rks-grid>
+              {products.map((c) => (
+                <a href={c.url} data-facets={c.facets} data-freq={c.freq} class="rks-card group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+            {hasFilter && (
+              <p class="hidden text-muted mt-6" data-rks-empty>Zvolenému filtru nezodpovedá žiadny produkt.</p>
+            )}
+          </>
+        )}
+
+        <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+          <h2 class="text-xl md:text-2xl font-semibold mb-3">{ctaHeading}</h2>
+          <p class="text-muted mb-6 max-w-xl mx-auto">{ctaText}</p>
+          <a href="/lp/konzultacia.html?utm_source=web&amp;utm_campaign=web" class="btn-primary inline-flex">Dohodnúť nezáväznú konzultáciu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+
+  {hasFilter && (
+    <script is:inline>
+      (function () {
+        var root = document.querySelector('[data-rks-filter]');
+        var grid = document.querySelector('[data-rks-grid]');
+        if (!root || !grid) return;
+        var cards = Array.prototype.slice.call(grid.querySelectorAll('.rks-card'));
+        var boxes = Array.prototype.slice.call(root.querySelectorAll('input[data-rks-f]'));
+        var summary = root.querySelector('[data-rks-summary]');
+        var empty = document.querySelector('[data-rks-empty]');
+        var freqInput = root.querySelector('[data-rks-freq]');
+        var parsed = cards.map(function (c) {
+          try { return JSON.parse(c.getAttribute('data-facets') || '{}'); } catch (e) { return {}; }
+        });
+        // [[min, max], ...] v MHz; prazdne pole = produkt nema frekvencny rozsah
+        var ranges = cards.map(function (c) {
+          try { return JSON.parse(c.getAttribute('data-freq') || '[]'); } catch (e) { return []; }
+        });
+        function selection() {
+          var m = {};
+          boxes.forEach(function (b) {
+            if (b.checked) { (m[b.getAttribute('data-rks-f')] = m[b.getAttribute('data-rks-f')] || []).push(b.value); }
+          });
+          return m;
+        }
+        function freqValue() {
+          if (!freqInput) return null;
+          var raw = (freqInput.value || '').trim().replace(',', '.');
+          if (!raw) return null;
+          var n = parseFloat(raw);
+          return isNaN(n) ? null : n;
+        }
+        function matches(i, m, mhz) {
+          if (mhz !== null) {
+            // produkt bez rozsahu sa pri aktivnom frekvencnom filtri skryva
+            var rr = ranges[i], hit = false;
+            for (var j = 0; j < rr.length; j++) {
+              if (mhz >= rr[j][0] && mhz <= rr[j][1]) { hit = true; break; }
+            }
+            if (!hit) return false;
+          }
+          var f = parsed[i];
+          for (var k in m) {
+            var have = f[k] || [];
+            var ok = m[k].some(function (v) { return have.indexOf(v) !== -1; });
+            if (!ok) return false;
+          }
+          return true;
+        }
+        function plural(n) {
+          return n === 1 ? 'produkt' : (n >= 2 && n <= 4 ? 'produkty' : 'produktov');
+        }
+        function apply() {
+          var m = selection(), mhz = freqValue(), shown = 0;
+          cards.forEach(function (c, i) {
+            var ok = matches(i, m, mhz);
+            c.style.display = ok ? '' : 'none';
+            if (ok) shown++;
+          });
+          // prepocitaj pocty: kolko by ostalo, keby sa pridala prave tato hodnota
+          root.querySelectorAll('label[data-rks-opt]').forEach(function (lab) {
+            var parts = lab.getAttribute('data-rks-opt').split('|~|');
+            var k = parts[0], v = parts[1];
+            var m2 = {}; for (var kk in m) m2[kk] = m[kk].slice();
+            m2[k] = [v];
+            var n = 0;
+            for (var i = 0; i < cards.length; i++) { if (matches(i, m2, mhz)) n++; }
+            lab.querySelector('[data-rks-cnt]').textContent = n;
+            var box = lab.querySelector('input');
+            lab.style.display = (n === 0 && !box.checked) ? 'none' : '';
+          });
+          // skupinu bez pouzitelnej hodnoty netreba zobrazovat
+          root.querySelectorAll('.rks-facet').forEach(function (d) {
+            var vis = Array.prototype.slice.call(d.querySelectorAll('label[data-rks-opt]')).some(function (l) {
+              return l.style.display !== 'none';
+            });
+            d.style.display = vis ? '' : 'none';
+          });
+          if (summary) {
+            summary.textContent = shown === cards.length
+              ? cards.length + ' ' + plural(cards.length)
+              : shown + ' z ' + cards.length + ' ' + plural(cards.length);
+          }
+          if (empty) empty.classList.toggle('hidden', shown !== 0);
+        }
+        boxes.forEach(function (b) { b.addEventListener('change', apply); });
+        if (freqInput) freqInput.addEventListener('input', apply);
+        var freqClear = root.querySelector('[data-rks-freq-clear]');
+        if (freqClear) freqClear.addEventListener('click', function () {
+          if (freqInput) freqInput.value = '';
+          apply();
+        });
+        var reset = root.querySelector('[data-rks-reset]');
+        if (reset) reset.addEventListener('click', function () {
+          boxes.forEach(function (b) { b.checked = false; });
+          if (freqInput) freqInput.value = '';
+          apply();
+        });
+        apply();
+      })();
+    </script>
+  )}
+
+  <style is:global>
+    @media (min-width: 1024px) {
+      .rks-cats > summary { display: none; }
+      .rks-cats > .rks-tree-wrap,
+      .rks-cats > .rks-panel-body { display: block !important; }
+    }
+    .rks-tree .rks-li { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 0.5rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-leaf { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .rks-tree .rks-li > .rks-link { min-width: 0; }
+    .rks-tree .rks-children { grid-column: 1 / -1; display: none; }
+    .rks-tree .rks-disc[open] ~ .rks-children { display: block; }
+    .rks-tree .rks-disc { display: inline-flex; }
+    .rks-tree summary.rks-arrow { list-style: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; color: rgba(229, 236, 246, 0.66); }
+    .rks-tree summary.rks-arrow::-webkit-details-marker { display: none; }
+    .rks-tree summary.rks-arrow::before { content: ""; border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-tree .rks-disc[open] > summary.rks-arrow::before { transform: rotate(90deg); }
+    .rks-cats-arrow::before { content: ""; display: inline-block; color: rgba(229, 236, 246, 0.66); border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-cats[open] > .rks-cats-toggle .rks-cats-arrow::before { transform: rotate(90deg); }
+    .rks-facet > summary { list-style: none; }
+    .rks-facet > summary::-webkit-details-marker { display: none; }
+    .rks-facet-arrow::before { content: ""; display: inline-block; color: rgba(229, 236, 246, 0.66); border-left: 5px solid currentColor; border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform .15s ease; }
+    .rks-facet[open] > summary .rks-facet-arrow::before { transform: rotate(90deg); }
+    .rks-facet-vals { max-height: 15rem; overflow-y: auto; }
+    .rks-filter input[type="number"]::-webkit-outer-spin-button,
+    .rks-filter input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .rks-filter input[type="number"] { -moz-appearance: textfield; }
+  </style>
+</Layout>

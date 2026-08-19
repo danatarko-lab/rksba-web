@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-const sidebar = "<nav class=\"rks-tree text-sm\" aria-label=\"Kategórie produktov\"><ul class=\"space-y-1\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/radiostanice-2002\" class=\"rks-link text-default hover:text-link\">Rádiostanice<span class=\"text-muted text-xs ml-2\">773</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2\" class=\"rks-link text-default hover:text-link\">Prenosné rádiostanice<span class=\"text-muted text-xs ml-2\">632</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory\" class=\"rks-link text-default hover:text-link\">Akumulátory<span class=\"text-muted text-xs ml-2\">53</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Antény (DP)<span class=\"text-muted text-xs ml-2\">58</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DP)<span class=\"text-muted text-xs ml-2\">17</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dp\" class=\"rks-link text-default hover:text-link\">Iné (DP)<span class=\"text-muted text-xs ml-2\">138</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky-mototrbo\" class=\"rks-link text-default hover:text-link\">Nabíjačky<span class=\"text-muted text-xs ml-2\">37</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie\" class=\"rks-link text-primary font-semibold\">Nosenie<span class=\"text-muted text-xs ml-2\">97</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy\" class=\"rks-link text-default hover:text-link\">Náhlavné súpravy<span class=\"text-muted text-xs ml-2\">43</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony\" class=\"rks-link text-default hover:text-link\">Repromikrofóny<span class=\"text-muted text-xs ml-2\">39</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla\" class=\"rks-link text-default hover:text-link\">Slúchadlá<span class=\"text-muted text-xs ml-2\">72</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dp-mototrbo\" class=\"rks-link text-default hover:text-link\">Softvér (DP)<span class=\"text-muted text-xs ml-2\">35</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prevadzace-mototrbo\" class=\"rks-link text-default hover:text-link\">Prevádzače<span class=\"text-muted text-xs ml-2\">22</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dr\" class=\"rks-link text-default hover:text-link\">Iné (DR)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dr\" class=\"rks-link text-default hover:text-link\">Softvér (DR)<span class=\"text-muted text-xs ml-2\">13</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/vozidlove-radiostanice-mototrbo\" class=\"rks-link text-default hover:text-link\">Vozidlové rádiostanice<span class=\"text-muted text-xs ml-2\">119</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny\" class=\"rks-link text-default hover:text-link\">Antény (DM)<span class=\"text-muted text-xs ml-2\">23</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dm-mototrbo\" class=\"rks-link text-default hover:text-link\">Bluetooth (DM)<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dm\" class=\"rks-link text-default hover:text-link\">Iné (DM)<span class=\"text-muted text-xs ml-2\">22</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/instalacia\" class=\"rks-link text-default hover:text-link\">Inštalácia<span class=\"text-muted text-xs ml-2\">29</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofony\" class=\"rks-link text-default hover:text-link\">Mikrofóny<span class=\"text-muted text-xs ml-2\">13</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/napajanie\" class=\"rks-link text-default hover:text-link\">Napájanie<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/reproduktory\" class=\"rks-link text-default hover:text-link\">Reproduktory<span class=\"text-muted text-xs ml-2\">5</span></a></li></ul></li></ul></li></ul></nav>";
+const sidebar = "<nav class=\"rks-tree text-sm\" aria-label=\"Kategórie produktov\"><ul class=\"space-y-1\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/radiostanice\" class=\"rks-link text-default hover:text-link\">Rádiostanice<span class=\"text-muted text-xs ml-2\">773</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prenosne-radiostanice\" class=\"rks-link text-default hover:text-link\">Prenosné rádiostanice<span class=\"text-muted text-xs ml-2\">632</span></a><details class=\"rks-disc\" open><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/akumulatory\" class=\"rks-link text-default hover:text-link\">Akumulátory<span class=\"text-muted text-xs ml-2\">53</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny-dp\" class=\"rks-link text-default hover:text-link\">Antény (DP)<span class=\"text-muted text-xs ml-2\">58</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dp\" class=\"rks-link text-default hover:text-link\">Bluetooth (DP)<span class=\"text-muted text-xs ml-2\">17</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dp\" class=\"rks-link text-default hover:text-link\">Iné (DP)<span class=\"text-muted text-xs ml-2\">138</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nabijacky\" class=\"rks-link text-default hover:text-link\">Nabíjačky<span class=\"text-muted text-xs ml-2\">37</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nosenie\" class=\"rks-link text-primary font-semibold\">Nosenie<span class=\"text-muted text-xs ml-2\">97</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/nahlavne-supravy\" class=\"rks-link text-default hover:text-link\">Náhlavné súpravy<span class=\"text-muted text-xs ml-2\">43</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/repromikrofony\" class=\"rks-link text-default hover:text-link\">Repromikrofóny<span class=\"text-muted text-xs ml-2\">39</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/sluchadla\" class=\"rks-link text-default hover:text-link\">Slúchadlá<span class=\"text-muted text-xs ml-2\">72</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dp\" class=\"rks-link text-default hover:text-link\">Softvér (DP)<span class=\"text-muted text-xs ml-2\">35</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/prevadzace\" class=\"rks-link text-default hover:text-link\">Prevádzače<span class=\"text-muted text-xs ml-2\">22</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dr\" class=\"rks-link text-default hover:text-link\">Iné (DR)<span class=\"text-muted text-xs ml-2\">3</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/softver-dr\" class=\"rks-link text-default hover:text-link\">Softvér (DR)<span class=\"text-muted text-xs ml-2\">13</span></a></li></ul></li><li class=\"rks-li\"><a href=\"/katalog-produktov/kategoria/vozidlove-radiostanice\" class=\"rks-link text-default hover:text-link\">Vozidlové rádiostanice<span class=\"text-muted text-xs ml-2\">119</span></a><details class=\"rks-disc\"><summary class=\"rks-arrow\" aria-label=\"Rozbaliť\"></summary></details><ul class=\"rks-children pl-3 mt-1 space-y-1 border-l border-hairline\"><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/anteny\" class=\"rks-link text-default hover:text-link\">Antény (DM)<span class=\"text-muted text-xs ml-2\">23</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/bluetooth-dm\" class=\"rks-link text-default hover:text-link\">Bluetooth (DM)<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/ine-dm\" class=\"rks-link text-default hover:text-link\">Iné (DM)<span class=\"text-muted text-xs ml-2\">22</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/instalacia\" class=\"rks-link text-default hover:text-link\">Inštalácia<span class=\"text-muted text-xs ml-2\">29</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/mikrofony\" class=\"rks-link text-default hover:text-link\">Mikrofóny<span class=\"text-muted text-xs ml-2\">13</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/napajanie\" class=\"rks-link text-default hover:text-link\">Napájanie<span class=\"text-muted text-xs ml-2\">6</span></a></li><li class=\"rks-leaf\"><a href=\"/katalog-produktov/kategoria/reproduktory\" class=\"rks-link text-default hover:text-link\">Reproduktory<span class=\"text-muted text-xs ml-2\">5</span></a></li></ul></li></ul></li></ul></nav>";
 const breadcrumb = [
   {
     "name": "Produkty",
@@ -13,11 +13,11 @@ const breadcrumb = [
   },
   {
     "name": "Rádiostanice",
-    "url": "/katalog-produktov/kategoria/radiostanice-2002"
+    "url": "/katalog-produktov/kategoria/radiostanice"
   },
   {
     "name": "Prenosné rádiostanice",
-    "url": "/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+    "url": "/katalog-produktov/kategoria/prenosne-radiostanice"
   },
   {
     "name": "Nosenie",
@@ -31,7 +31,7 @@ const subcats = [];
 const subcatsHeading = "";
 const products = [
   {
-    "url": "/katalog-produktov/3-bodove-puzdro-mototrbo",
+    "url": "/katalog-produktov/3-bodove-puzdro",
     "img": "/images/katalog-produktov/20561/main.webp",
     "title": "3 bodové puzdro",
     "desc": "3 bodové puzdro 3 bodové puzdro Puzdro ušité z nylonovej tkaniny čiernej farby je určené pre nosenie prenosnej rádiostanice Motorola na hrudi.&nbsp;Popruhy sú nastaviteľné.",
@@ -87,21 +87,21 @@ const products = [
     "facets": "{\"kompatibilita\": [\"DP1400\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
   },
   {
-    "url": "/katalog-produktov/hln9701-mototrbo",
+    "url": "/katalog-produktov/hln9701",
     "img": "/images/katalog-produktov/20419/main.webp",
     "title": "HLN9701",
     "desc": "Univerzálne nylonové púzdro Univerzálne nylonové púzdro&nbsp; Opaskové oko nylonového puzdra je možné navliecť na opasok, alebo je na opasok pripnúť.",
     "facets": "{\"kompatibilita\": [\"DP1400\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
   },
   {
-    "url": "/katalog-produktov/hln9714-mototrbo",
+    "url": "/katalog-produktov/hln9714",
     "img": "/images/katalog-produktov/20999/main.webp",
     "title": "HLN9714",
     "desc": "Spona na opasok (6 cm) Spona na opasok (6 cm) Plastová spona s pružinou pre umiestnenie na akumulátor a pre možnosť nosenia rádiostanice na opasok.",
     "facets": "{\"kompatibilita\": [\"R2\"], \"material\": [\"Plast\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
   },
   {
-    "url": "/katalog-produktov/hln9844-mototrbo",
+    "url": "/katalog-produktov/hln9844",
     "img": "/images/katalog-produktov/21000/main.webp",
     "title": "HLN9844",
     "desc": "Spona na opasok (5 cm) Spona na opasok (5 cm) Plastová spona s pružinou pre umiestnenie na akumulátor a pre možnosť nosenia rádiostanice na opasok.",
@@ -661,21 +661,21 @@ const products = [
     "facets": "{\"kompatibilita\": [\"DP1400\", \"DP2400\", \"DP2400e\", \"DP2600\", \"DP2600e\", \"DP4400\", \"DP4400e\", \"DP4401\", \"DP4401e\", \"DP4600\", \"DP4600e\", \"DP4601\", \"DP4601e\", \"DP4800\", \"DP4800e\", \"DP4801\", \"DP4801e\", \"DP3441\", \"DP3441e\", \"DP3661e\", \"DP3400\", \"DP3401\", \"DP3600\", \"DP3601\", \"SL1600\", \"SL2600\", \"SL4000\", \"SL4000e\", \"SL4010\", \"SL4010e\"], \"material\": [\"Nylonová tkanina\"], \"sposob-nosenia\": [\"Okolo pása\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Nie\"]}"
   },
   {
-    "url": "/katalog-produktov/rln5383-mototrbo",
+    "url": "/katalog-produktov/rln5383",
     "img": "/images/katalog-produktov/20416/main.webp",
     "title": "RLN5383",
     "desc": "Koženné púzdro s pevným pútkom Koženné púzdro s pevným pútkom Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
     "facets": "{\"kompatibilita\": [\"DP1400\"], \"material\": [\"Pevná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Nie\"], \"rychle-odopnutie\": [\"Áno\"]}"
   },
   {
-    "url": "/katalog-produktov/rln5384-mototrbo",
+    "url": "/katalog-produktov/rln5384",
     "img": "/images/katalog-produktov/20417/main.webp",
     "title": "RLN5384",
     "desc": "Kožené puzdro s otočným pútkom (6 cm) Kožené puzdro s otočným pútkom (6 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
     "facets": "{\"kompatibilita\": [\"DP1400\"], \"material\": [\"Jemná koža\"], \"sposob-nosenia\": [\"Na opasku\"], \"otocny-zaves\": [\"Áno\"], \"rychle-odopnutie\": [\"Áno\"]}"
   },
   {
-    "url": "/katalog-produktov/rln5385-mototrbo",
+    "url": "/katalog-produktov/rln5385",
     "img": "/images/katalog-produktov/20418/main.webp",
     "title": "RLN5385",
     "desc": "Kožené puzdro s otočným pútkom (7,6 cm) Kožené puzdro s otočným pútkom (7,6 cm) Odolné puzdro chráni rádiostanicu a súčasne umožňuje nerušené počúvanie komunikácie.",
@@ -743,13 +743,13 @@ const jsonld = {
       "@type": "ListItem",
       "position": 3,
       "name": "Rádiostanice",
-      "item": "https://rksba.sk/katalog-produktov/kategoria/radiostanice-2002"
+      "item": "https://rksba.sk/katalog-produktov/kategoria/radiostanice"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Prenosné rádiostanice",
-      "item": "https://rksba.sk/katalog-produktov/kategoria/prenosne-radiostanice-mototrbo-2"
+      "item": "https://rksba.sk/katalog-produktov/kategoria/prenosne-radiostanice"
     },
     {
       "@type": "ListItem",

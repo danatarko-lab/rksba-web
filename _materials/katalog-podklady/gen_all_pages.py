@@ -251,31 +251,64 @@ def slugify(s):
     s = re.sub(r'[^a-z0-9]+', '-', s).strip('-')
     return s or 'kat'
 
-# kategoriove slugy (deterministicky podla id), kolizie -> pripona -<id>
-cat_slug = {}
-_seen_cat = {}
-cat_collisions = []
-for c in sorted(cats, key=lambda c: c['id']):
-    base = slugify(c['alias'])
-    slug = base
-    if slug in _seen_cat:
-        slug = '%s-%d' % (base, c['id'])
-        cat_collisions.append((c['id'], c['name'], base, slug))
-    _seen_cat[slug] = c['id']
-    cat_slug[c['id']] = slug
+# ---------------------------------------------------------------- slug prioritizacia
+# MOTOTRBO je hlavny katalog a ma prednost na cistu (kanonicku) adresu.
+# Export z mototrbo.sk mal v aliase zapecene "-mototrbo" (a raz "-mototrbo-2"),
+# lebo part numbers koliduju so starym archivom. Ten sufix tu odstranujeme a
+# kolizna ARCHIVNA polozka dostane "-archiv". Zvysne kolizie riesi ako predtym
+# pripona -<id>. Mapa zodpoveda _materials/mototrbo/rename-plan.csv.
+MOTO_SLUG_FIX = {
+    20552: 'pmln6853',   # alias je pmln6852-mototrbo, ale ide o PMLN6853
+    20560: 'hkvn4407',   # alias je hkvn4405-mototrbo, ale ide o HKVN4407
+}
+_MOTO_SUFFIX_RE = re.compile(r'-mototrbo(-\d+)?$')
 
-# produktove slugy, kolizie -> pripona -<id>
-prod_slug = {}
-_seen_prod = {}
-prod_collisions = []
-for p in sorted(products, key=lambda p: p['id']):
-    base = slugify(p['alias'])
-    slug = base
-    if slug in _seen_prod:
-        slug = '%s-%d' % (base, p['id'])
-        prod_collisions.append((p['id'], p['title'], base, slug))
-    _seen_prod[slug] = p['id']
-    prod_slug[p['id']] = slug
+def moto_base(o, kind):
+    """Cisty slug pre MOTOTRBO polozku (bez migracnych sufixov)."""
+    if o['id'] in MOTO_SLUG_FIX:
+        return MOTO_SLUG_FIX[o['id']]
+    base = slugify(o['alias'])
+    stripped = _MOTO_SUFFIX_RE.sub('', base)
+    return stripped or base
+
+def assign_slugs(items, kind, label_key):
+    """MOTOTRBO prve (rezervuje si cisty slug), archiv az potom s -archiv."""
+    slug = {}
+    seen = {}
+    collisions = []
+    moto = [o for o in items if o.get('zdroj') == 'mototrbo']
+    rest = [o for o in items if o.get('zdroj') != 'mototrbo']
+    moto_ids = {o['id'] for o in moto}
+
+    for o in sorted(moto, key=lambda o: o['id']):
+        base = moto_base(o, kind)
+        s = base
+        if s in seen:
+            s = '%s-%d' % (base, o['id'])
+            collisions.append((o['id'], o[label_key], base, s))
+        seen[s] = o['id']
+        slug[o['id']] = s
+
+    for o in sorted(rest, key=lambda o: o['id']):
+        base = slugify(o['alias'])
+        s = base
+        if s in seen:
+            if seen[s] in moto_ids:
+                # cistu adresu drzi MOTOTRBO -> archiv ide na -archiv
+                s = '%s-archiv' % base
+                if s in seen:
+                    s = '%s-archiv-%d' % (base, o['id'])
+            else:
+                # kolizia archiv vs archiv: povodne spravanie, pripona -<id>
+                s = '%s-%d' % (base, o['id'])
+            collisions.append((o['id'], o[label_key], base, s))
+        seen[s] = o['id']
+        slug[o['id']] = s
+
+    return slug, seen, collisions
+
+cat_slug, _seen_cat, cat_collisions = assign_slugs(cats, 'cat', 'name')
+prod_slug, _seen_prod, prod_collisions = assign_slugs(products, 'prod', 'title')
 
 def cat_url(cid):
     return CAT_BASE + '/' + cat_slug[cid]
