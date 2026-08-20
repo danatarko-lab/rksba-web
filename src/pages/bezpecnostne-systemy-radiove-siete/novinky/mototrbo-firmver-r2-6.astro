@@ -1,0 +1,60 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Mototrbo firmvér R2.6 | Novinky MOTOTRBO | RKS',
+  description:
+    'Spoločnosť Motorola oznámila vydanie novej verzie softvéru pre digitálne rádiostanice Mototrbo ktorý rozširuje vlastnosti rádiostaníc o nové funkcie: Capacity Max - MOTOTRBO Capacity Max je DMR…',
+};
+
+const post = {
+  title: 'Mototrbo firmvér R2.6',
+  date: '16. 8. 2016',
+};
+
+const body =
+  '<p><a href="/bezpecnostne-systemy-radiove-siete/novinky/mototrbo-firmver-r2-6"></a></p>\n<p>Spoločnosť Motorola oznámila vydanie novej verzie softvéru pre digitálne rádiostanice Mototrbo ktorý rozširuje vlastnosti rádiostaníc o nové funkcie:</p>\r\n<p><strong>Capacity Max</strong> - MOTOTRBO Capacity Max je DMR zväzkové (trunkové) riešenie.</p>\r\n<p><strong>Indoor Location Tracking</strong> - Sledovanie polohy umožňuje sledovať používateľov rádiostaníc v budove alebo vo vnútorných priestoroch.</p>\r\n<p><strong>Podpora prevádzača SLR 8000<br /></strong></p>\r\n<p><strong>Radio Management 2.0</strong> - Aplikácia Radio Management je určená na konfiguráciu všetkých produktov systému MOTOTRBO vrátane trunkových kontrolerov, prevádzačov, vozidlových a prenosných rádiostaníc.</p>\r\n<p><strong>SLR 5000/8000 Real Time Clock and Time Stamp</strong> - Rozširuje schopnosti prevádzača SLR 5000 o konfiguráciu času a pridáva informáciu o časovej značke ku alarmom a udalostiam.</p>\r\n<p><strong>SLR 8000 Digital Local Audio</strong> - Prevádzač umožňuje užívateľovi prehrať hlasovú stopu na vybranom kanáli.</p>\r\n<p><strong>Wi-Fi Programming and Upgrade</strong> - Použitie Wi-Fi rozhrania pre programovanie rádiostanice prostredníctvom rádiovej siete (Over-the-Air Programming).</p>\r\n<p><strong>Call Alert Enhancement</strong> - Po prijatí Upozornenia na hovor sa používateľ môže teraz rozhodnúť, či zareaguje súkromným volaním iniciátora alebo uskutoční predvolený hovor prostredníctvom PTT.</p>\r\n<p><strong>Per Channel Output</strong> - Výstupné úrovne jednotlivých kanálov je možné teraz konfigurovať individuálne pomocou softvéru MOTOTRBO Customer Programming Software (CPS).</p>\r\n<p><strong>Voice Announcement for General Purpose Input Output (GPIO) Trigger for Channel Steering</strong> - Menežovanie hlasových oznámení pre vstupno-výstupné spúšťače s riadením kanálov.</p>\r\n<p><strong>Transmit Inhibit</strong> - Táto vlastnosť umožňuje prejsť do režimu v lietadle (Airplane Mode) – vypne všetky komunikačné siete.</p>\r\n<p><strong>Radio Audio Improvements</strong> - Výsledkom je o niečo lepší a čistejší zvuk.</p>';
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-3xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/novinky">Novinky MOTOTRBO</a>
+    <span class="px-1">/</span>
+    <span class="text-default">{post.title}</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-3">Novinky MOTOTRBO</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">{post.title}</h1>
+      <p class="mt-4 text-sm text-white/70">{post.date}</p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose prose-lg max-w-none rks-novinka" set:html={body} />
+
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-8 text-sm">
+      <a class="font-medium text-primary hover:underline" href="/bezpecnostne-systemy-radiove-siete/novinky"
+        >&larr; Všetky novinky</a
+      >
+      <a class="font-medium text-primary hover:underline" href="/katalog-produktov">Katalóg produktov &rarr;</a>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .rks-novinka :global(img) {
+    height: auto;
+    max-width: 100%;
+    border-radius: 0.5rem;
+  }
+  .rks-novinka :global(table) {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+</style>

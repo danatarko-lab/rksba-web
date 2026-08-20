@@ -1,0 +1,60 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Mototrbo firmvér R2.5 | Novinky MOTOTRBO | RKS',
+  description:
+    'Spoločnosť Motorola oznámila vydanie novej verzie softvéru pre digitálne rádiostanice Mototrbo ktorý rozširuje vlastnosti rádiostaníc o nové funkcie: Single input noise cancelling Najvyspelejšia…',
+};
+
+const post = {
+  title: 'Mototrbo firmvér R2.5',
+  date: '14. 12. 2015',
+};
+
+const body =
+  '<p><a href="/bezpecnostne-systemy-radiove-siete/novinky/mototrbo-firmver-r2-5"></a></p>\n<p>Spoločnosť Motorola oznámila vydanie novej verzie softvéru pre digitálne rádiostanice Mototrbo ktorý rozširuje vlastnosti rádiostaníc o nové funkcie:</p>\r\n<h2>Single input noise cancelling</h2>\r\n<p>Najvyspelejšia technológia spracovania zvuku, ktorá vylepšuje zrozumiteľnosť reči v mimoriadne hlučnom prostredí.</p>\r\n<h2>Dlhšie textové správy</h2>\r\n<p>Druhá generácia rádiostaníc MOTORBO dokáže prenášať textové správy o dĺžke až 280 znakov.</p>\r\n<h2>Podpora českého jazyka</h2>\r\n<p>Rádiostanice MOTOTRBO s displejom teraz podporujú aj český jazyk.</p>\r\n<p><img src="/images/novinky/Czech.jpg" alt="Czech" loading="lazy" decoding="async"></p>';
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-3xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/novinky">Novinky MOTOTRBO</a>
+    <span class="px-1">/</span>
+    <span class="text-default">{post.title}</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-3">Novinky MOTOTRBO</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">{post.title}</h1>
+      <p class="mt-4 text-sm text-white/70">{post.date}</p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose prose-lg max-w-none rks-novinka" set:html={body} />
+
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-8 text-sm">
+      <a class="font-medium text-primary hover:underline" href="/bezpecnostne-systemy-radiove-siete/novinky"
+        >&larr; Všetky novinky</a
+      >
+      <a class="font-medium text-primary hover:underline" href="/katalog-produktov">Katalóg produktov &rarr;</a>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .rks-novinka :global(img) {
+    height: auto;
+    max-width: 100%;
+    border-radius: 0.5rem;
+  }
+  .rks-novinka :global(table) {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+</style>

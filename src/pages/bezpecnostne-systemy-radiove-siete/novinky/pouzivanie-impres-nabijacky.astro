@@ -1,0 +1,60 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Používanie IMPRES nabíjačky | Novinky MOTOTRBO | RKS',
+  description:
+    'Článok popisuje správne používanie IMPRES nabíjačky. Akonáhle je IMPRES akumulátor správne vložený do nabíjačky, po jeho detekcii začne indikátor dobíjania svietiť. Nasledujúca tabuľka ukazuje,…',
+};
+
+const post = {
+  title: 'Používanie IMPRES nabíjačky',
+  date: '26. 9. 2014',
+};
+
+const body =
+  '<p><a href="/bezpecnostne-systemy-radiove-siete/novinky/pouzivanie-impres-nabijacky"></a></p>\n<p>Článok popisuje správne používanie IMPRES nabíjačky.</p>\r\n<p>Akonáhle je IMPRES akumulátor správne vložený do nabíjačky, po jeho detekcii začne indikátor dobíjania svietiť. Nasledujúca tabuľka ukazuje, ako čítať stav nabíjania akumulátora:</p>\r\n<p><img src="/images/novinky/IMPRES_Battery_Charging_LED_Explantions.jpg" alt="IMPRES Battery Charging LED Explantions" loading="lazy" decoding="async"></p>\r\n<div class="overflow-x-auto"><table>\r\n<tbody>\r\n<tr>\r\n<td><strong> LED Indikátor<br /></strong></td>\r\n<td><strong>Popis</strong></td>\r\n</tr>\r\n<tr>\r\n<td>Jedno zelené bliknutie</td>\r\n<td>Nabíjačka je správne zapnutá.</td>\r\n</tr>\r\n<tr>\r\n<td>Bliká červená</td>\r\n<td>Akumulátor sa nedá nabiť, alebo má zlý kontakt s nabíjačkou.</td>\r\n</tr>\r\n<tr>\r\n<td>Bliká oranžová</td>\r\n<td>Akumulátor je rozpoznaný nabíjačkou ale nabíjanie sa ešte nezačalo. (Buď je napätie akumulátora príliš nízke, alebo je akumulátor príliš studený alebo horúci. Akonáhle sa tento stav upraví, akumulátor sa automaticky začne nabíjať.)</td>\r\n</tr>\r\n<tr>\r\n<td>Trvalo svieti červená</td>\r\n<td>Režim rýchleho nabíjania.</td>\r\n</tr>\r\n<tr>\r\n<td>Bliká zelená</td>\r\n<td>Dokončené rýchlonabíjanie (Akumulátor je nabitý na 90%.) Akumulátor je v režime udržiavacieho nabíjania.</td>\r\n</tr>\r\n<tr>\r\n<td>Trvalo svieti zelená</td>\r\n<td>Nabíjanie je dokončené a akumulátor je nabitý na 100%.</td>\r\n</tr>\r\n<tr>\r\n<td>Bliká zelená a červená</td>\r\n<td>Nabíjačka dokončila nabíjanie a akumulátor je úplne nabitý. Akumulátor je možné používať, ale jeho životnosť sa skoro skončí.</td>\r\n</tr>\r\n<tr>\r\n<td>Trvalo svieti oranžová</td>\r\n<td>Akumulátor je v regeneračnom alebo inicializačnom režime. Doba po ktorú nabíjačka zostane v tomto stave, závisí od stavu nabitia akumulátora. Plne nabitý akumulátor vyžaduje viac času na regeneráciu ( 8 - 12 hodín alebo viac), než úplne vybitý akumulátor.</td>\r\n</tr>\r\n</tbody>\r\n</table></div>\r\n\r\n\r\n\r\n<h2>Nabíjanie akumulátora: Regenerácia vs rýchle nabíjanie</h2>\r\n<p>Exkluzívny napájací systém Motorola IMPRES môže optimalizovať životnosť akumulátora tým, že ponúka automatizovanú regeneráciu akumulátorov. Počas regenerácie nabíjačka úplne vybije a potom dobije akumulátor, čím prakticky eliminuje pamäťový efekt a zachová životný cyklus akumulátora. Plne nabitie akumulátora s regeneráciou môže trvať až 12 hodín. Ak chcete zastaviť automatickú regeneráciu, môžete jednoducho prepnúť nabíjačku na rýchle nabíjanie tým, že akumulátor vyberiete z nabíjačky a do 5 sekúnd ho vložíte späť. Farba LED diódy sa zmení z neprerušovaného oranžového svetla (regenerácia) na červenú (rýchle nabíjanie) a akumulátor sa začne nabíjať.</p>\r\n<h2>Akumulátor po životnosti (Bliká červená/zelená)</h2>\r\n<p>Aj keď je akumulátor plne nabitý, môže sa blížiť ku koncu svojej životnosti. IMPRES akumulátory majú priemernú životnosť 2-3 roky. Ak začne blikať zelená a červená LED, znamená to že bude potrebné IMPRES akumulátor nahradiť novým akumulátorom. Toto upozornenie pôsobí ako prevencia, takže nebudete zaskočení vybitým akumulátorom.</p>';
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-3xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/novinky">Novinky MOTOTRBO</a>
+    <span class="px-1">/</span>
+    <span class="text-default">{post.title}</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-3">Novinky MOTOTRBO</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">{post.title}</h1>
+      <p class="mt-4 text-sm text-white/70">{post.date}</p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose prose-lg max-w-none rks-novinka" set:html={body} />
+
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-8 text-sm">
+      <a class="font-medium text-primary hover:underline" href="/bezpecnostne-systemy-radiove-siete/novinky"
+        >&larr; Všetky novinky</a
+      >
+      <a class="font-medium text-primary hover:underline" href="/katalog-produktov">Katalóg produktov &rarr;</a>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .rks-novinka :global(img) {
+    height: auto;
+    max-width: 100%;
+    border-radius: 0.5rem;
+  }
+  .rks-novinka :global(table) {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+</style>

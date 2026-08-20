@@ -1,0 +1,60 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Ručný ovládací panel | Novinky MOTOTRBO | RKS',
+  description:
+    'Ručný ovládací panel určený pre vozidlové rádiostanice Mototrbo s farebným displejom ( DM4600 a DM4601 ) umožňuje maximálne flexibilnú inštaláciu rádiostanice vo vozidle a celkovú kontrolu nad jej…',
+};
+
+const post = {
+  title: 'Ručný ovládací panel',
+  date: '11. 12. 2014',
+};
+
+const body =
+  '<p><a href="/bezpecnostne-systemy-radiove-siete/novinky/rucny-ovladaci-panel"></a></p>\n<p>Ručný ovládací panel určený pre vozidlové rádiostanice Mototrbo s farebným displejom (<a href="/katalog-produktov/motorola-dm4600">DM4600 </a>a <a href="/katalog-produktov/motorola-dm4601">DM4601</a>) umožňuje maximálne flexibilnú inštaláciu rádiostanice vo vozidle a celkovú kontrolu nad jej obsluhou. Rádiostanica môže byť inštalovaná všade, kde je to najvýhodnejšie: za sedadlom, pod prístrojovou doskou, alebo v kufri auta. Ručný ovládací panel môže byť upevnený v blízkosti užívateľa na štandardnom držiaku externého mikrofónu (HLN9073). Krútená šnúra s dĺžkou 1,8 m sa dá natiahnuť až do dĺžky 3 m a v prípade potreby je možné ju predĺžiť pomocou 5 m predlžovacieho kábla.</p>\r\n<p>Ručný ovládací panel umožňuje užívateľom pohybovať sa vo vozidle a súčasne zostať v spojení. Posádka ambulancie, vodiči autobusov alebo kuriéri môžu ísť s ovládacou hlavu do zadnej časti vozidla a už nie sú obmedzení len na priestor sedadla vodiča. S plnohodnotnou klávesnicou, farebným displejom, ovládaním kanálov a hlasitosti, ručný ovládací panel ponúka kompletné funkcie prenosnej rádiostanice. Všade vo vozidle sú tak k dispozícii textové správy, nastavenia rádiostanice, pracovné príkazy, oznámenia a zoznam kontaktov.</p>\r\n<p>Ručný ovládací panel je možné používať vo všetkých systémoch Mototrbo vrátane Connect Plus.</p>\r\n<p>Sada<a href="/katalog-produktov/pmln7131"> PMLN7131</a> je tvorená nasledovnými položkami:</p>\r\n<ul>\r\n<li>Ručný ovládací panel so sponou</li>\r\n<li>Modul adaptéru pre rádiostanicu</li>\r\n<li>1,8 m dlhá krútená šnúra (dá sa natiahnuť až do dĺžky 3 m)</li>\r\n</ul>\r\n<p>Pod označením <a href="/katalog-produktov/pmkn4174">PMKN4174 </a> sa dodáva 5 m predlžovací kábel.</p>\r\n<p><img src="/images/novinky/PMLN7131.jpg" alt="PMLN7131" loading="lazy" decoding="async"></p>';
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-3xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/novinky">Novinky MOTOTRBO</a>
+    <span class="px-1">/</span>
+    <span class="text-default">{post.title}</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-3">Novinky MOTOTRBO</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">{post.title}</h1>
+      <p class="mt-4 text-sm text-white/70">{post.date}</p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose prose-lg max-w-none rks-novinka" set:html={body} />
+
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-8 text-sm">
+      <a class="font-medium text-primary hover:underline" href="/bezpecnostne-systemy-radiove-siete/novinky"
+        >&larr; Všetky novinky</a
+      >
+      <a class="font-medium text-primary hover:underline" href="/katalog-produktov">Katalóg produktov &rarr;</a>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .rks-novinka :global(img) {
+    height: auto;
+    max-width: 100%;
+    border-radius: 0.5rem;
+  }
+  .rks-novinka :global(table) {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+</style>

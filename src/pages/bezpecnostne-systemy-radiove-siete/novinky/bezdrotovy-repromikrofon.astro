@@ -1,0 +1,60 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Bezdrôtový repromikrofón | Novinky MOTOTRBO | RKS',
+  description:
+    'Motorola ponúka nové bezdrôtové komunikačné riešenie s veľkým dosahom ( Long Range Wireless Solution - MDRLN6551 ) pre vozidlové rádiostanice. Je určené hlavne pre pracovníkov, ktorí sa pohybujú v…',
+};
+
+const post = {
+  title: 'Bezdrôtový repromikrofón',
+  date: '12. 10. 2014',
+};
+
+const body =
+  '<p><a href="/bezpecnostne-systemy-radiove-siete/novinky/bezdrotovy-repromikrofon"></a></p>\n<p>Motorola ponúka nové bezdrôtové komunikačné riešenie s veľkým dosahom (<a href="/katalog-produktov/mdrln6551">Long Range Wireless Solution - MDRLN6551</a>) pre vozidlové rádiostanice.</p>\r\n<p>Je určené hlavne pre pracovníkov, ktorí sa pohybujú v teréne s vozidlami so zabudovanými rádiostanicami a často potrebujú komunikovať s dispečingom v situáciách, keď sa nachádzajú mimo vozidla.</p>\r\n<p><strong>Modelová situácia</strong></p>\r\n<p>Pri kontrole zariadenia, ku ktorému nie je prístup s autom, pracovník jednoducho zaparkuje auto do 100 metrov od zariadenia, vezme si so sebou bezdrôtový repromikrofón spárovaný s vozidlovou rádiostanicou, a priamo pri kontrolovanom zariadení môže komunikovať s dispečingom.</p>\r\n\r\n<p><img src="/images/novinky/RLN6551_The_Long_Range.jpg" alt="RLN6551 The Long Range" loading="lazy" decoding="async"></p>\r\n\r\n<p>Urobte svoju prácu bezpečnejšiou a efektívnejšou!</p>';
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-3xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/novinky">Novinky MOTOTRBO</a>
+    <span class="px-1">/</span>
+    <span class="text-default">{post.title}</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-3">Novinky MOTOTRBO</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">{post.title}</h1>
+      <p class="mt-4 text-sm text-white/70">{post.date}</p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose prose-lg max-w-none rks-novinka" set:html={body} />
+
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-8 text-sm">
+      <a class="font-medium text-primary hover:underline" href="/bezpecnostne-systemy-radiove-siete/novinky"
+        >&larr; Všetky novinky</a
+      >
+      <a class="font-medium text-primary hover:underline" href="/katalog-produktov">Katalóg produktov &rarr;</a>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .rks-novinka :global(img) {
+    height: auto;
+    max-width: 100%;
+    border-radius: 0.5rem;
+  }
+  .rks-novinka :global(table) {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+</style>

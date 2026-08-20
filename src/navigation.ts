@@ -81,6 +81,7 @@ export const headerData = {
               text: 'Newsletter „Potvrďte príjem“',
               href: getPermalink('/bezpecnostne-systemy-radiove-siete/newsletter'),
             },
+            { text: 'Novinky MOTOTRBO', href: getPermalink('/bezpecnostne-systemy-radiove-siete/novinky') },
             { text: 'RKS Chatbot', href: 'https://rks-radio-expert.vercel.app/' },
             { text: 'Q&A', href: getPermalink('/bezpecnostne-systemy-radiove-siete/q-a') },
           ],
