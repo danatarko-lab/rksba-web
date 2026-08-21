@@ -1,0 +1,142 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'MOTOTRBO Connect Plus: digitálny trunkový systém (DMR Tier II) | RKS',
+  description:
+    'MOTOTRBO Connect Plus je komplexný digitálny trunkový systém (DMR Tier II) s vyhradeným riadiacim kanálom, podporou až 250 lokalít a 3000 užívateľov na lokalitu. Návrh, dodávka a servis od RKS.',
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-4xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">
+      Digitálny systém MOTOTRBO
+    </a>
+    <span class="px-1">/</span>
+    <span class="text-default">Connect Plus</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-3">Systémové architektúry MOTOTRBO</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">MOTOTRBO Connect Plus</h1>
+      <p class="mt-4 text-base md:text-lg text-white/70">
+        Digitálny trunkový systém (DMR Tier II) s vyhradeným riadiacim kanálom pre regionálne siete.
+      </p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose prose-lg max-w-none">
+      <p>
+        Systém Connect Plus je najkomplexnejším trunkovým systémom pre rádiostanice MOTOTRBO, založeným na štandarde DMR
+        Tier II. Ponúka všetky výhody digitálnej rádiovej komunikácie: lepší zvuk, lepšie pokrytie, vyššiu výdrž
+        akumulátorov, plus rozsah a účinnosť trunkovej siete.
+      </p>
+      <p>
+        Spojením výhod modernej digitálnej rádiostanice s minimálnymi nákladmi na základnú infraštruktúru je Connect
+        Plus dobrou voľbou pre telekomunikačné systémy pre rôzne aplikácie vrátane aplikácií kritických pre bezpečnosť
+        verejnosti. Je najlepšou voľbou pre profesionálne digitálne trunkové (zväzkové) systémy na regionálnej úrovni, s
+        možnosťou postupne zvyšovať veľkosť systému.
+      </p>
+
+      <h2>Architektúra systému</h2>
+      <p>
+        Architektúra Connect Plus je založená na distribuovanej riadiacej technológii: miestne kontroléry vykonávajú
+        všetku prácu a riadenie a sú zodpovedné za poskytovanie základných služieb. Centrálny prepínač, typický pre
+        trunkové systémy na regionálnej úrovni, tu nie je potrebný, čím sa minimalizujú kapitálové investície aj náklady
+        na údržbu. Connect Plus umožňuje postupný nárast veľkosti systému z jednej lokality až na úroveň celého regiónu.
+      </p>
+      <p>
+        Na rozdiel od systémov Capacity Plus a Linked Capacity Plus využíva Connect Plus dedikovaný hardvérový kontrolér
+        (XRC 9000/9100) a <strong>vyhradený riadiaci kanál</strong>. Rádiostanice, ktoré nie sú zúčastnené v hovore,
+        vyhľadávajú a sledujú riadiaci kanál. Informácia potrebná na zostavenie hovoru sa prenáša na riadiacom kanáli a
+        na jej základe sú účastníci presunutí na pridelený hovorový kanál.
+      </p>
+      <p>
+        Systém podporuje až 15 prevádzačov (30 časových slotov) na jednu lokalitu a dokáže prepojiť až 250 lokalít.
+        Jeden timeslot v každej lokalite je vyhradený ako riadiaci kanál. V multilokalitnej prevádzke kontrolér sleduje
+        každú rádiostanicu prostredníctvom registračných a deregistračných správ, takže skupinové hovory prebiehajú len
+        v lokalitách, kde sú rádiostanice aktuálne registrované.
+      </p>
+
+      <h2>Hlavné komponenty</h2>
+      <ul>
+        <li>kontrolér XRC 9000/9100,</li>
+        <li>
+          prevádzače Motorola <a href="/katalog-produktov/motorola-mtr3000">MTR3000</a> a
+          <a href="/katalog-produktov/motorola-dr3000">DR3000</a>,
+        </li>
+        <li>hlasová brána XRT 9000/9100,</li>
+        <li>terminál systému riadenia,</li>
+        <li>dispečerský softvér (napríklad SmartPTT Plus).</li>
+      </ul>
+      <p><em>XRT 9100 a XRC 9100 majú oproti rade 9000 rýchlejší procesor.</em></p>
+
+      <h2>Podporované rádiostanice</h2>
+      <ul>
+        <li>
+          vozidlové <a href="/katalog-produktov/motorola-dm4400">DM4400</a> /
+          <a href="/katalog-produktov/motorola-dm4401">DM4401</a>,
+          <a href="/katalog-produktov/motorola-dm4600">DM4600</a> /
+          <a href="/katalog-produktov/motorola-dm4601">DM4601</a>,
+        </li>
+        <li>
+          prenosné štýlové <a href="/katalog-produktov/motorola-sl4000">SL4000</a> /
+          <a href="/katalog-produktov/motorola-sl4010">SL4010</a>,
+        </li>
+        <li>
+          prenosné do výbušného prostredia <a href="/katalog-produktov/motorola-dp4801-ex">DP4801Ex</a> /
+          <a href="/katalog-produktov/motorola-dp4401-ex">DP4401Ex</a>,
+        </li>
+        <li>
+          prenosné <a href="/katalog-produktov/motorola-dp4800">DP4800</a> /
+          <a href="/katalog-produktov/motorola-dp4801">DP4801</a>,
+          <a href="/katalog-produktov/motorola-dp4600">DP4600</a> /
+          <a href="/katalog-produktov/motorola-dp4601">DP4601</a>,
+          <a href="/katalog-produktov/motorola-dp4400">DP4400</a> /
+          <a href="/katalog-produktov/motorola-dp4401">DP4401</a>.
+        </li>
+      </ul>
+      <p><em>Všetky rádiostanice musia byť vybavené voliteľnou doskou so softvérom Connect Plus.</em></p>
+
+      <h2>Vlastnosti</h2>
+      <h3>Vysoká dostupnosť systému</h3>
+      <p>
+        Vyhradený riadiaci kanál umožňuje rýchly prístup k hlasovej a dátovej komunikácii aj pri veľmi silnej prevádzke.
+      </p>
+      <h3>Automatický roaming</h3>
+      <p>
+        Pri presúvaní z jednej lokality do druhej nemusíte ručne meniť kanál. Dynamický roaming vás automaticky
+        zaregistruje do najbližšej lokality, takže zostanete v spojení.
+      </p>
+      <h3>Automatický prístup ku kanálom</h3>
+      <p>
+        Pri silnej prevádzke sa už nemusíte opakovane dovolávať. Hovory sú zaraďované do fronty, kým nie je k dispozícii
+        voľný kanál, potom vás systém automaticky upozorní, že môžete dokončiť hovor.
+      </p>
+      <h3>Väčšia účinnosť systému</h3>
+      <p>
+        Užívatelia sú zaregistrovaní len v kontroléri najbližšej lokality, nie vo všetkých kontroléroch. Toto dynamické
+        prideľovanie využíva len zdroje potrebné na uskutočnenie hovoru, čím sa zvyšuje celková kapacita systému.
+      </p>
+      <h3>Podpora až 250 lokalít</h3>
+      <p>29 trunkových kanálov a 3000 užívateľov na jednu lokalitu.</p>
+    </div>
+
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-8 text-sm">
+      <a
+        class="font-medium text-primary hover:underline"
+        href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">&larr; Digitálny systém MOTOTRBO</a
+      >
+      <a class="font-medium text-primary hover:underline" href="/lp/konzultacia.html?utm_source=web&utm_campaign=web"
+        >Nezáväzná konzultácia &rarr;</a
+      >
+    </div>
+  </article>
+</Layout>

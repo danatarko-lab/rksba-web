@@ -1,0 +1,84 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'MOTOTRBO Linked Capacity Plus: trunk pre viac lokalít | RKS',
+  description:
+    'MOTOTRBO Linked Capacity Plus spája výhody Capacity Plus a IP Site Connect: trunkový systém pre viac ako tisíc užívateľov až v 15 lokalitách prepojených cez IP. Návrh, dodávka a servis od RKS.',
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-4xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">
+      Digitálny systém MOTOTRBO
+    </a>
+    <span class="px-1">/</span>
+    <span class="text-default">Linked Capacity Plus</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-3">Systémové architektúry MOTOTRBO</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">MOTOTRBO Linked Capacity Plus</h1>
+      <p class="mt-4 text-base md:text-lg text-white/70">
+        Trunkový systém pre viac ako tisíc užívateľov až v 15 lokalitách prepojených cez IP.
+      </p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose prose-lg max-w-none">
+      <p>
+        Linked Capacity Plus je trunková multikanálová konfigurácia rádiového systému pre viac lokalít, ktorá kombinuje
+        to najlepšie z konfigurácií <a href="/bezpecnostne-systemy-radiove-siete/mototrbo-capacity-plus"
+          >Capacity Plus</a
+        >
+        a <a href="/bezpecnostne-systemy-radiove-siete/mototrbo-ip-site-connect">IP Site Connect</a>. Umožňuje rozšíriť
+        trunkovú komunikáciu z jedinej lokality pripojením ďalších lokalít a prevádzačov prepojených prostredníctvom IP
+        siete, a zároveň zvyšuje kapacitu efektívnym viacnásobným využívaním kanálov v každej dostupnej lokalite.
+      </p>
+      <p>
+        Trunkový systém umožňuje zdieľanie viacerých kanálov, a teda vysoký objem hlasovej a dátovej komunikácie pre
+        viac ako tisíc užívateľov až v 15 lokalitách, bez nutnosti pridania novej frekvencie. Pri požiadavke na hovor je
+        okamžite vyčlenený voľný kanál, hovory prebiehajú na rôznych automaticky priraďovaných kanáloch a zásadne sa
+        znižuje pravdepodobnosť, že hovorový kanál bude obsadený.
+      </p>
+      <p>
+        Riadenie systému a prideľovanie kanálov si riadia samotné prevádzače prepojené prostredníctvom LAN/WAN. Systém
+        tak využíva vysokú kapacitu Capacity Plus aj schopnosť IP Site Connect pokryť veľké územie.
+      </p>
+      <p>
+        Pre prechod z konvenčného alebo IP Site systému je potrebný licenčný kľúč
+        <a href="/katalog-produktov/hkvn4108">HKVN4108</a> (DR3000) alebo
+        <a href="/katalog-produktov/hkvn4109">HKVN4109</a> (MTR3000). Pre prechod zo systému Capacity Plus je potrebný kľúč
+        <a href="/katalog-produktov/hkvn4063">HKVN4063</a> (DR3000) alebo
+        <a href="/katalog-produktov/hkvn4070">HKVN4070</a> (MTR3000).
+      </p>
+
+      <h2>Vlastnosti</h2>
+      <ul>
+        <li>podpora až 15 lokalít,</li>
+        <li>16 trunkových kanálov na jednu lokalitu,</li>
+        <li>8 dátových kanálov na jednu lokalitu,</li>
+        <li>až 254 hovorových skupín,</li>
+        <li>podpora MOTOTRBO funkcií,</li>
+        <li>podpora trunkových vlastností.</li>
+      </ul>
+    </div>
+
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-8 text-sm">
+      <a
+        class="font-medium text-primary hover:underline"
+        href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">&larr; Digitálny systém MOTOTRBO</a
+      >
+      <a class="font-medium text-primary hover:underline" href="/lp/konzultacia.html?utm_source=web&utm_campaign=web"
+        >Nezáväzná konzultácia &rarr;</a
+      >
+    </div>
+  </article>
+</Layout>

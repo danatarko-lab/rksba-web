@@ -23,6 +23,138 @@ const faqs = [
     a: 'Áno. MOTOTRBO podporuje viac úrovní šifrovania.',
   },
 ];
+
+// Systemove architektury MOTOTRBO (od zakladov po najvacsie trunkove systemy)
+const architektury = [
+  {
+    title: 'Digitálna technológia DMR',
+    desc: 'Ako funguje digitálny prenos, TDMA a triedy DMR Tier I až III.',
+    href: '/bezpecnostne-systemy-radiove-siete/mototrbo-dmr-technologia',
+  },
+  {
+    title: 'Priame spojenie',
+    desc: 'Najjednoduchšie riešenie pre jednu lokalitu do 100 rádiostaníc.',
+    href: '/bezpecnostne-systemy-radiove-siete/mototrbo-priame-spojenie',
+  },
+  {
+    title: 'Konvenčný systém',
+    desc: 'Pokrytie jednej lokality prevádzačom pre približne 200 účastníkov.',
+    href: '/bezpecnostne-systemy-radiove-siete/mototrbo-konvencny-system',
+  },
+  {
+    title: 'Capacity Plus',
+    desc: 'Trunkový systém pre rozšírenie kapacity až na 1600 užívateľov v jednej lokalite.',
+    href: '/bezpecnostne-systemy-radiove-siete/mototrbo-capacity-plus',
+  },
+  {
+    title: 'IP Site Connect',
+    desc: 'Prepojenie až 15 prevádzačov cez IP s automatickým roamingom.',
+    href: '/bezpecnostne-systemy-radiove-siete/mototrbo-ip-site-connect',
+  },
+  {
+    title: 'Linked Capacity Plus',
+    desc: 'Trunk pre viac ako tisíc užívateľov až v 15 lokalitách.',
+    href: '/bezpecnostne-systemy-radiove-siete/mototrbo-linked-capacity-plus',
+  },
+  {
+    title: 'Connect Plus',
+    desc: 'Komplexný trunkový systém DMR Tier II s vyhradeným riadiacim kanálom.',
+    href: '/bezpecnostne-systemy-radiove-siete/mototrbo-connect-plus',
+  },
+  {
+    title: 'Capacity Max',
+    desc: 'Vysoko zabezpečený trunk DMR Tier III pre až 250 lokalít.',
+    href: '/bezpecnostne-systemy-radiove-siete/mototrbo-capacity-max',
+  },
+  {
+    title: 'MOTOTRBO ION',
+    desc: 'Inteligentná rádiostanica s Androidom, hlas aj širokopásmové dáta.',
+    href: '/bezpecnostne-systemy-radiove-siete/mototrbo-ion',
+  },
+];
+
+// Aplikacie a softver pre MOTOTRBO
+const aplikacie = [
+  {
+    title: 'WAVE PTX',
+    desc: 'Push-to-talk medzi smartfónmi a rádiostanicami cez IP siete.',
+    href: '/bezpecnostne-systemy-radiove-siete/wave-ptx',
+  },
+  {
+    title: 'RDAC',
+    desc: 'Diagnostika a diaľkové riadenie prevádzačov.',
+    href: '/bezpecnostne-systemy-radiove-siete/mototrbo-rdac',
+  },
+  {
+    title: 'Radio Management a OTAP',
+    desc: 'Diaľkové programovanie rádiostaníc „vzduchom" a správa konfigurácií.',
+    href: '/bezpecnostne-systemy-radiove-siete/radio-management-otap',
+  },
+  {
+    title: 'SmartPTT',
+    desc: 'Dispečerský softvér: hlas, GPS, textové správy a záznam prevádzky.',
+    href: '/bezpecnostne-systemy-radiove-siete/smartptt',
+  },
+  {
+    title: 'Rozšírená záruka',
+    desc: 'Predĺžená 5-ročná záruka s podporou, opravami aj krytím opotrebenia.',
+    href: '/bezpecnostne-systemy-radiove-siete/rozsirena-zaruka',
+  },
+];
+
+// O prislusenstve MOTOTRBO (preco sa oplatia originalne doplnky Motorola)
+const prislusenstvo = [
+  {
+    title: 'Akumulátory a nabíjačky',
+    desc: 'Prečo sa oplatia originálne akumulátory a nabíjačky Motorola.',
+    href: '/bezpecnostne-systemy-radiove-siete/vyhody-akumulatorov-nabijaciek',
+  },
+  {
+    title: 'Energetický systém IMPRES',
+    desc: 'Automatická regenerácia akumulátorov a životnosť dlhšia až o 43 %.',
+    href: '/bezpecnostne-systemy-radiove-siete/vyhody-impres',
+  },
+  {
+    title: 'Bezdrôtové príslušenstvo',
+    desc: 'Bluetooth OCW príslušenstvo bez káblov, so šifrovaním a diskrétnosťou.',
+    href: '/bezpecnostne-systemy-radiove-siete/vyhody-bezdrotoveho-prislusenstva',
+  },
+  {
+    title: 'Repromikrofóny',
+    desc: 'RSM s Windportingom, IMPRES Audio a potlačením hluku (INC).',
+    href: '/bezpecnostne-systemy-radiove-siete/vyhody-repromikrofonov',
+  },
+  {
+    title: 'Slúchadlá',
+    desc: 'Jedno-, dvoj- a trojšnúrové modely pre diskrétnu komunikáciu.',
+    href: '/bezpecnostne-systemy-radiove-siete/vyhody-sluchadiel',
+  },
+  {
+    title: 'Náhlavné súpravy',
+    desc: 'Od ultraľahkých po masívne s ochranou sluchu až o 24 dB.',
+    href: '/bezpecnostne-systemy-radiove-siete/vyhody-nahlavnych-suprav',
+  },
+  {
+    title: 'Audiopríslušenstvo IMPRES',
+    desc: 'Automatická regulácia zosilnenia a potlačenie hluku pre zrozumiteľnosť.',
+    href: '/bezpecnostne-systemy-radiove-siete/vyhody-audioprislusenstva-impres',
+  },
+  {
+    title: 'Príslušenstvo na nosenie',
+    desc: 'Opaskové spony, nylonové a kožené púzdra, popruhy a vodotesné púzdra.',
+    href: '/bezpecnostne-systemy-radiove-siete/vyhody-prislusenstva-na-nosenie',
+  },
+  {
+    title: 'Príslušenstvo pre vozidlá',
+    desc: 'Mikrofóny, reproduktory, antény, montáž a kabeláž do vozidiel.',
+    href: '/bezpecnostne-systemy-radiove-siete/vyhody-prislusenstva-pre-vozidlo',
+  },
+  {
+    title: 'Špeciálne príslušenstvo',
+    desc: 'Diskrétne súpravy, kostné vedenie a repromikrofóny do extrémneho hluku.',
+    href: '/bezpecnostne-systemy-radiove-siete/vyhody-specialneho-prislusenstva',
+  },
+];
 ---
 
 <Layout metadata={metadata}>
@@ -75,6 +207,62 @@ const faqs = [
         konfiguráciu, školenie používateľov aj dlhodobý servis. Dodávame, konfigurujeme a servisujeme systémy Motorola
         MOTOTRBO.
       </p>
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Systémové architektúry MOTOTRBO</h2>
+    <p class="text-muted mb-6 max-w-3xl">
+      MOTOTRBO je stavebnicový systém. Podľa počtu užívateľov, počtu lokalít a požadovaného pokrytia navrhneme správnu
+      architektúru, od najjednoduchšieho priameho spojenia až po rozsiahle trunkové siete.
+    </p>
+    <div class="grid gap-4 sm:grid-cols-2 mb-4">
+      {
+        architektury.map((a) => (
+          <a
+            href={a.href}
+            class="block rounded-xl border border-hairline p-5 transition hover:border-primary/40 hover:bg-panel-soft"
+          >
+            <span class="font-medium text-default">{a.title}</span>
+            <span class="mt-1 block text-sm text-muted">{a.desc}</span>
+          </a>
+        ))
+      }
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Aplikácie a softvér</h2>
+    <p class="text-muted mb-6 max-w-3xl">
+      Systém MOTOTRBO dopĺňajú aplikácie pre dispečing, správu, diaľkové programovanie a prepojenie so smartfónmi.
+    </p>
+    <div class="grid gap-4 sm:grid-cols-2 mb-4">
+      {
+        aplikacie.map((a) => (
+          <a
+            href={a.href}
+            class="block rounded-xl border border-hairline p-5 transition hover:border-primary/40 hover:bg-panel-soft"
+          >
+            <span class="font-medium text-default">{a.title}</span>
+            <span class="mt-1 block text-sm text-muted">{a.desc}</span>
+          </a>
+        ))
+      }
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">O príslušenstve</h2>
+    <p class="text-muted mb-6 max-w-3xl">
+      Spoľahlivosť rádiostanice závisí aj od príslušenstva. Prečo sa oplatia originálne akumulátory, audiopríslušenstvo
+      a doplnky Motorola vysvetľujú nasledujúce články.
+    </p>
+    <div class="grid gap-4 sm:grid-cols-2 mb-4">
+      {
+        prislusenstvo.map((a) => (
+          <a
+            href={a.href}
+            class="block rounded-xl border border-hairline p-5 transition hover:border-primary/40 hover:bg-panel-soft"
+          >
+            <span class="font-medium text-default">{a.title}</span>
+            <span class="mt-1 block text-sm text-muted">{a.desc}</span>
+          </a>
+        ))
+      }
     </div>
 
     <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Časté otázky</h2>

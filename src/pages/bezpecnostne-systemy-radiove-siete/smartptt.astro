@@ -1,0 +1,105 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'MOTOTRBO SmartPTT: dispečerský softvér pre rádiové siete | RKS',
+  description:
+    'SmartPTT je dispečerský softvér pre digitálne rádiové siete MOTOTRBO: hlasové riadenie, GPS lokalizácia, textové správy, záznam prevádzky a prepojenie do telefónnej siete. Nasadenie a servis od RKS.',
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-4xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">
+      Digitálny systém MOTOTRBO
+    </a>
+    <span class="px-1">/</span>
+    <span class="text-default">SmartPTT</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-3">Aplikácie MOTOTRBO</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">SmartPTT</h1>
+      <p class="mt-4 text-base md:text-lg text-white/70">
+        Dispečerský softvér, ktorý koordinuje rádiové siete MOTOTRBO ľubovoľnej veľkosti a topológie.
+      </p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose prose-lg max-w-none">
+      <p>
+        SmartPTT je dispečerský softvér na koordináciu rádiových systémov, ktorý využíva všetky výhody digitálnej
+        platformy Motorola MOTOTRBO a dokáže riadiť účastnícke siete akejkoľvek veľkosti a topológie. Podporuje
+        digitálny aj analógový režim, čo uľahčuje postupný upgrade na nový štandard v zmiešanej prevádzke, kde sú
+        niektoré časti siete analógové a iné digitálne.
+      </p>
+      <p>
+        SmartPTT dispečerská konzola je softvérová aplikácia, ktorá môže byť v ľubovoľnej vzdialenosti od riadených
+        rádiových sietí, pripojená cez USB alebo Ethernet. Umožňuje rýchlo riadiť prevádzku rádiostaníc, posielať a
+        prijímať dátové správy, kontrolovať polohu cez GPS, komunikovať skupinovo aj individuálne, zaznamenávať rádiovú
+        prevádzku a históriu pohybu účastníkov, dynamicky preskupovať účastníkov, vykonávať diaľkový monitoring,
+        prepájať hovory do telefónnej siete (JTS), uskutočňovať plne duplexné spojenie cez SIP a automaticky určovať
+        polohu vozidla (AVL).
+      </p>
+
+      <h2>Pre koho je základná verzia určená</h2>
+      <p>Verzia SmartPTT je určená pre malé a stredne veľké rádiové systémy s týmito obmedzeniami:</p>
+      <ul>
+        <li>menší počet rádiových účastníkov (približne 50),</li>
+        <li>prepojenie do telefónnej siete je sekundárna požiadavka,</li>
+        <li>
+          k dispozícii je simplexná frekvencia, prípadne územie neumožňuje priame pripojenie prevádzača na rádioserver.
+        </li>
+      </ul>
+
+      <h2>Použitie</h2>
+      <p>
+        SmartPTT je optimálne riešenie pre dispečerské riadenie sietí založených na vozidlových rádiostaniciach MOTOTRBO
+        a použiteľné aj pre siete <a href="/bezpecnostne-systemy-radiove-siete/mototrbo-capacity-plus">Capacity Plus</a
+        >. Pri riešeniach založených na <a href="/bezpecnostne-systemy-radiove-siete/mototrbo-ip-site-connect"
+          >IP Site Connect</a
+        >, <a href="/bezpecnostne-systemy-radiove-siete/mototrbo-linked-capacity-plus">Linked Capacity Plus</a> alebo <a
+          href="/bezpecnostne-systemy-radiove-siete/mototrbo-connect-plus">Connect Plus</a
+        > je vhodnejšie riešenie SmartPTT Enterprise.
+      </p>
+
+      <h2>Architektúra</h2>
+      <p>
+        SmartPTT je založený na technológii klient-server a umožňuje výstavbu dispečerských systémov s ľubovoľným počtom
+        rádiových sietí a konzol. Konzoly riadia rádiové siete pomocou SmartPTT rádioserverov, s ktorými sú spojené cez
+        IP sieť. Rádioserver riadi účastníkov pomocou základňových rádiostaníc MOTOTRBO pripojených cez USB a audio
+        káble.
+      </p>
+
+      <h2>Štandardné vlastnosti</h2>
+      <ul>
+        <li>dispečerské riadenie,</li>
+        <li>záznam udalostí a hlasovej komunikácie,</li>
+        <li>GPS lokalizácia,</li>
+        <li>prenos dát a ukladanie.</li>
+      </ul>
+
+      <h2>Doplnkové vlastnosti</h2>
+      <ul>
+        <li>prepojenie s telefónnou sieťou,</li>
+        <li>web klient.</li>
+      </ul>
+    </div>
+
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-8 text-sm">
+      <a
+        class="font-medium text-primary hover:underline"
+        href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">&larr; Digitálny systém MOTOTRBO</a
+      >
+      <a class="font-medium text-primary hover:underline" href="/lp/konzultacia.html?utm_source=web&utm_campaign=web"
+        >Nezáväzná konzultácia &rarr;</a
+      >
+    </div>
+  </article>
+</Layout>

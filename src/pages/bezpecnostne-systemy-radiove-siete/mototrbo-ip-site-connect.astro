@@ -1,0 +1,123 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'MOTOTRBO IP Site Connect: prepojenie vzdialených lokalít | RKS',
+  description:
+    'MOTOTRBO IP Site Connect prepája až 15 prevádzačov cez LAN alebo internet do jedného systému s automatickým roamingom. Pokrytie výškových budov aj vzdialených lokalít. Návrh a servis od RKS.',
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-4xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">
+      Digitálny systém MOTOTRBO
+    </a>
+    <span class="px-1">/</span>
+    <span class="text-default">IP Site Connect</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-3">Systémové architektúry MOTOTRBO</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">MOTOTRBO IP Site Connect</h1>
+      <p class="mt-4 text-base md:text-lg text-white/70">
+        Prepojenie až 15 prevádzačov cez LAN alebo internet do jednej siete s automatickým roamingom.
+      </p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose prose-lg max-w-none">
+      <p>
+        Využívate pri podnikaní rádiovú komunikáciu medzi geograficky vzdialenými lokalitami alebo potrebujete zaistiť
+        bezproblémové pokrytie vo výškovej budove? Riešením je systém IP Site Connect prostredníctvom až 15 prevádzačov
+        prepojených cez LAN alebo internet. Takto prepojené lokality sa chovajú ako jeden veľký systém: všetci účastníci
+        môžu komunikovať navzájom, ako keby boli v jednej lokalite, resp. v dosahu jedného prevádzača.
+      </p>
+      <p>
+        Prechod účastníka z jednej lokality do druhej (roaming) je zabezpečený automaticky, bez nutnosti zmeny kanála na
+        rádiostanici a bez prerušenia komunikácie. Komunikácia môže byť hlasová, dátová, prípadne formou textových správ
+        alebo sledovania polohy cez GPS.
+      </p>
+      <p>
+        Ak je nastavené automatické pripájanie a signál zo súčasnej lokality je slabý alebo rádiostanica nedeteguje
+        žiadny signál, rádiostanica skenuje všetky dostupné lokality a pripojí sa k prevádzaču s najsilnejšou hodnotou
+        RSSI (Received Signal Strength Indicator). Pri ručnom hľadaní hľadá rádiostanica v roamingovom zozname ďalší
+        prevádzač, ktorý je aktuálne v dosahu, a pripojí sa naň.
+      </p>
+      <p>
+        <em
+          >Poznámka: Každý kanál môže mať povolenú funkciu Scan (Skenovanie) alebo Roam (Roaming), ale nie súčasne obe.</em
+        > Roamingový zoznam podporuje maximálne 16 kanálov vrátane zvoleného kanála. Medzi lokalitami prepojenými systémom
+        IP Site Connect je možné prenášať hovory aj krátke textové správy či dáta.
+      </p>
+
+      <h2>Scenáre použitia</h2>
+      <ol>
+        <li>pokrytie výškovej budovy rádiovým signálom,</li>
+        <li>pokrytie jednej väčšej lokality prekrývajúcimi sa lokalitami,</li>
+        <li>prepojenie vzdialených lokalít,</li>
+        <li>prepojenie prevádzačov pracujúcich v rôznych pásmach (VHF/UHF).</li>
+      </ol>
+
+      <h2>Riadenie a nároky na infraštruktúru</h2>
+      <p>
+        Riadenie systému zabezpečujú samotné prevádzače, ktoré si navzájom odovzdávajú informácie o rádiostaniciach vo
+        svojom dosahu. Minimálny garantovaný dátový tok je 175 kbps pre master a 160 kbps pre slave prevádzač Motorola
+        <a href="/katalog-produktov/motorola-dr3000">DR3000</a> s odozvou do 500 ms, čo dokáže splniť aj štandardné ADSL pripojenie.
+        Ak je z bezpečnostných dôvodov požadovaná zabezpečená komunikácia aj v rámci internetu (VPN linka), nároky na šírku
+        pásma vzrastú takmer na dvojnásobok (cca 750 kbps) a VPN vnáša do linky ďalšie oneskorenie.
+      </p>
+      <p>
+        Prevádzače musia byť nakonfigurované tak, že jeden plní funkciu hlavného/riadiaceho (Master Repeater) a ostatné
+        sú mu podriadené (Peer Repeater), pričom Master Repeater ako jediný musí mať pevnú IP adresu. Okrem prevádzačov
+        nie je potrebný žiadny ďalší MOTOTRBO hardvér (kontroléry, brány a podobne), takže ide o veľmi elegantný a
+        cenovo efektívny spôsob rozšírenia pokrytia.
+      </p>
+
+      <h2>Konfigurácie kanálov</h2>
+      <p>
+        Keďže MOTOTRBO prevádzače vďaka technológii TDMA poskytujú dva logické kanály súčasne (Slot 1 + Slot 2), systém
+        možno nakonfigurovať viacerými spôsobmi:
+      </p>
+      <ul>
+        <li>
+          <strong>jeden kanál lokálny, druhý globálny</strong> — najvýhodnejšia konfigurácia; ponecháva lokálnu komunikáciu
+          v každej lokalite (Slot 1) a zároveň rozširuje pokrytie na všetky lokality (Slot 2),
+        </li>
+        <li>
+          <strong>dva globálne kanály</strong> — žiadna lokalita nemá vlastnú lokálnu komunikáciu, obidva kanály komunikujú
+          vždy vo všetkých lokalitách,
+        </li>
+        <li>
+          <strong>dva lokálne kanály</strong> — obidva kanály sú použité len lokálne; rádiostanice môžu migrovať medzi lokalitami,
+          ale nekomunikujú globálne.
+        </li>
+      </ul>
+      <p>
+        <em
+          >Poznámka: Kapacita celého systému IP Site Connect je zhodná s kapacitou jednej lokality (pri dvoch kanáloch
+          cca 200 užívateľov). Nejde teda o zvýšenie kapacity, na to slúži</em
+        >
+        <a href="/bezpecnostne-systemy-radiove-siete/mototrbo-capacity-plus">Capacity Plus</a><em
+          >, ale o rozšírenie rozsahu pokrytia.</em
+        >
+      </p>
+    </div>
+
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-8 text-sm">
+      <a
+        class="font-medium text-primary hover:underline"
+        href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">&larr; Digitálny systém MOTOTRBO</a
+      >
+      <a class="font-medium text-primary hover:underline" href="/lp/konzultacia.html?utm_source=web&utm_campaign=web"
+        >Nezáväzná konzultácia &rarr;</a
+      >
+    </div>
+  </article>
+</Layout>

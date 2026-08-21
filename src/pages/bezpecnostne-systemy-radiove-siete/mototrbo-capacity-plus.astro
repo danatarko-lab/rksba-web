@@ -1,0 +1,92 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'MOTOTRBO Capacity Plus: trunkový systém pre jednu lokalitu | RKS',
+  description:
+    'MOTOTRBO Capacity Plus rozširuje kapacitu až na 1600 užívateľov v jednej lokalite bez pridávania frekvencií. Trunkový DMR systém pre haly, hotely, nemocnice a priemysel. Návrh, dodávka a servis od RKS.',
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-4xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">
+      Digitálny systém MOTOTRBO
+    </a>
+    <span class="px-1">/</span>
+    <span class="text-default">Capacity Plus</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-3">Systémové architektúry MOTOTRBO</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">MOTOTRBO Capacity Plus</h1>
+      <p class="mt-4 text-base md:text-lg text-white/70">
+        Trunkový systém na rozšírenie kapacity až na 1600 užívateľov v rámci jednej lokality.
+      </p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose prose-lg max-w-none">
+      <p>
+        Systém MOTOTRBO Capacity Plus je určený na <strong>rozšírenie kapacity</strong> účastníkov v rámci
+        <strong>jednej lokality</strong>. Ide o takzvaný <strong>trunkový systém</strong>, ktorý umožňuje zdieľanie
+        viacerých kanálov a tým vysoký objem hlasovej a dátovej komunikácie pre viac ako tisíc užívateľov v jednej
+        lokalite, bez nutnosti pridania novej frekvencie. Pri požiadavke na hovor je okamžite vyčlenený voľný kanál.
+        Hovory tak prebiehajú na rôznych kanáloch, ktoré sa priraďujú automaticky, a zásadne sa znižuje pravdepodobnosť,
+        že hovorový kanál bude obsadený.
+      </p>
+      <p>
+        Pri systéme Capacity Plus je možné spojiť do jedného celku maximálne 8 prevádzačov (pre 16 hlasových alebo
+        dátových kanálov) plus ďalších až 12 prevádzačov (pre 24 dátových kanálov), pričom toto prepojenie je
+        realizované cez LAN infraštruktúru.
+      </p>
+      <p>
+        Je ideálny pre rekreačné strediská, hotely, skladovacie priestory, nemocnice, výrobné haly aj ďalšie zariadenia
+        stredného až veľkého rozsahu, nachádzajúce sa v jednej lokalite. Systém umožní užívateľom rýchlo a efektívne
+        zdieľať veľké množstvo informácií potrebných pre ich činnosť, čo zvyšuje efektivitu a produktivitu práce.
+      </p>
+      <p>
+        Škálovateľný systém Capacity Plus umožňuje do rádiovej siete zapojiť až 1600 užívateľov, bez potreby pridávania
+        nových frekvencií. Je dostupný prostredníctvom softvérového upgradu rádiostaníc a prevádzačov, nie je potrebný
+        riadiaci kontrolér. Pre prechod z konvenčného alebo IP Site systému je potrebný licenčný kľúč
+        <a href="/katalog-produktov/hkvn4013">HKVN4013</a> (DR3000) alebo
+        <a href="/katalog-produktov/hkvn4045">HKVN4045</a> (MTR3000).
+      </p>
+
+      <h2>Vlastnosti</h2>
+      <ul>
+        <li>
+          poskytuje 5-krát vyššiu kapacitu voči analógovému konvenčnému systému a až 3-krát vyššiu voči analógovému
+          trunkovému (zväzkovému) systému,
+        </li>
+        <li>poskytuje 2-krát vyššiu kapacitu voči digitálnemu konvenčnému systému MOTOTRBO,</li>
+        <li>do zväzku je možné zapojiť až 16 digitálnych hovorových kanálov,</li>
+        <li>umožňuje využívať 24 ďalších vyhradených dátových kanálov,</li>
+        <li>kapacita až 1600 rádiostaníc,</li>
+        <li>integruje hlasové aj dátové aplikácie: GPS lokalizáciu, textové správy, telemetriu a ďalšie,</li>
+        <li>ponúka široké možnosti komunikácie so všetkými pracovníkmi naraz,</li>
+        <li>
+          podporuje softvér <a href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">RDAC</a>, ktorý
+          zaisťuje trvalý výkon systému MOTOTRBO,
+        </li>
+        <li>integrácia s existujúcimi systémami MOTOTRBO prebehne jednoduchým upgradom softvéru prevádzača.</li>
+      </ul>
+    </div>
+
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-8 text-sm">
+      <a
+        class="font-medium text-primary hover:underline"
+        href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">&larr; Digitálny systém MOTOTRBO</a
+      >
+      <a class="font-medium text-primary hover:underline" href="/lp/konzultacia.html?utm_source=web&utm_campaign=web"
+        >Nezáväzná konzultácia &rarr;</a
+      >
+    </div>
+  </article>
+</Layout>

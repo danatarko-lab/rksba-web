@@ -1,0 +1,73 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'MOTOTRBO Konvenčný systém: jedna lokalita, prevádzač | RKS',
+  description:
+    'MOTOTRBO Konvenčný systém: pokrytie jednej lokality prevádzačom pre približne 200 rádiostaníc. Digitálna kvalita zvuku, dva hovory na jednom kanáli, GPS, šifrovanie. Návrh a servis od RKS.',
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-4xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">
+      Digitálny systém MOTOTRBO
+    </a>
+    <span class="px-1">/</span>
+    <span class="text-default">Konvenčný systém</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-3">Systémové architektúry MOTOTRBO</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">MOTOTRBO Konvenčný systém</h1>
+      <p class="mt-4 text-base md:text-lg text-white/70">
+        Pokrytie jednej lokality prevádzačom pre približne 200 účastníkov.
+      </p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose prose-lg max-w-none">
+      <p>
+        Základné riešenie umožňujúce pokryť rádiovým signálom jednu lokalitu s približne 200 účastníkmi prostredníctvom
+        prevádzača poskytuje všetky výhody digitálnej komunikácie:
+      </p>
+      <ul>
+        <li>
+          vďaka vyššiemu výkonu prevádzača a citlivejšiemu prijímaču sa významne rozšíri oblasť pokrytia rádiovým
+          signálom,
+        </li>
+        <li>
+          možnosť uskutočňovať súčasne dva hovory na jednom kanáli, vďaka čomu môže jednu frekvenciu využívať
+          dvojnásobný počet užívateľov,
+        </li>
+        <li>utajenie (šifrovanie) hovorov,</li>
+        <li>GPS lokalizácia,</li>
+        <li>posielanie textových správ,</li>
+        <li>vyššia výdrž akumulátorov.</li>
+      </ul>
+
+      <h2>Rozsah systému</h2>
+      <ul>
+        <li>1 lokalita,</li>
+        <li>1 prevádzač,</li>
+        <li>do 200 rádiostaníc.</li>
+      </ul>
+    </div>
+
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-8 text-sm">
+      <a
+        class="font-medium text-primary hover:underline"
+        href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">&larr; Digitálny systém MOTOTRBO</a
+      >
+      <a class="font-medium text-primary hover:underline" href="/lp/konzultacia.html?utm_source=web&utm_campaign=web"
+        >Nezáväzná konzultácia &rarr;</a
+      >
+    </div>
+  </article>
+</Layout>

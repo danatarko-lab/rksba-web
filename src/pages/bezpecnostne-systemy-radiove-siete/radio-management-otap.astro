@@ -1,0 +1,85 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'MOTOTRBO Radio Management a OTAP: diaľkové programovanie | RKS',
+  description:
+    'MOTOTRBO Radio Management a OTAP (Over The Air Programming) umožňuje programovať rádiostanice na diaľku „vzduchom", spravovať až 5000 konfigurácií a centralizovať licencie. Nasadenie a servis od RKS.',
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-4xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">
+      Digitálny systém MOTOTRBO
+    </a>
+    <span class="px-1">/</span>
+    <span class="text-default">Radio Management a OTAP</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-3">Aplikácie MOTOTRBO</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">Radio Management a OTAP</h1>
+      <p class="mt-4 text-base md:text-lg text-white/70">
+        Diaľkové programovanie a správa rádiostaníc MOTOTRBO „vzduchom".
+      </p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose prose-lg max-w-none">
+      <p>
+        Aplikácia Radio Management pre správu rádiostaníc MOTOTRBO vám pomôže manažovať väčšie množstvo rádiostaníc,
+        zjednodušuje pracovné postupy, znižuje prestoje a šetrí peniaze. Vďaka funkcii Over The Air je možné programovať
+        rádiostanice v celej sieti na diaľku „vzduchom" a centralizovane registrovať funkcie a aktivovať licencie z
+        akéhokoľvek počítača.
+      </p>
+      <p>
+        Ak treba naprogramovať rádiostanicu alebo celú skupinu, tento proces zvyčajne prebieha u zákazníka alebo v
+        servisnom stredisku a môže byť časovo náročný. Práve preto MOTOTRBO CPS umožňuje programovanie parametrov
+        rádiostaníc vzduchom, čo sa označuje ako OTAP (Over The Air Programming).
+      </p>
+      <p>
+        Prostredníctvom jednej inštalácie OTAP môžete manažovať až 5000 konfigurácií rádiostaníc, jednotlivo alebo po
+        skupinách, prípadne spravovať ďalšie rádiostanice vo viacerých systémoch na rôznych miestach. OTAP umožňuje aj
+        vzdialené pripojenie k serveru, takže systémy MOTOTRBO manažujete kdekoľvek na svete cez internet.
+      </p>
+      <p>
+        Pre zvýšenie bezpečnosti OTAP poskytuje vzájomnú autentizáciu aplikácie a rádiostanice pomocou zdieľaného kľúča
+        a využíva existujúce over-the-air šifrovanie, čím zaisťuje, že aktualizácie konfigurácií nemožno zachytiť.
+      </p>
+      <p>
+        Aktualizáciu možno naplánovať na obdobie mimo špičky a vykonať bezobslužným dávkovým procesom. Keď rádiostanica
+        prijme novú konfiguráciu, jej užívateľ dostane jednorazovú možnosť ju prijať alebo odložiť na neskôr. OTAP
+        podporuje všetky systémové architektúry MOTOTRBO okrem
+        <a href="/bezpecnostne-systemy-radiove-siete/mototrbo-connect-plus">Connect Plus</a>, ktorý má vlastný protokol
+        na rekonfiguráciu vzduchom. Je podporované od druhej generácie rádiostaníc MOTOTRBO (firmvér R02.05.00) a možno
+        ho vykonávať len v digitálnom režime.
+      </p>
+
+      <h2>Komponenty systému</h2>
+      <p>
+        Srdcom každého OTAP systému je Radio Management Server, ktorý môže byť na počítači spoločne so štandardným
+        programovacím softvérom MOTOTRBO CPS. Programátor zariadenia je rozhranie medzi serverom a riadiacou
+        rádiostanicou; riadiacou rádiostanicou môže byť ľubovoľná MOTOTRBO rádiostanica, ktorá funguje ako rozhranie
+        vf-vzduch. Ako doplnok možno použiť Indikátor prítomnosti, ktorý spracúva ARS správy a informuje server o
+        prítomnosti rádiostanice v systéme.
+      </p>
+    </div>
+
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-8 text-sm">
+      <a
+        class="font-medium text-primary hover:underline"
+        href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">&larr; Digitálny systém MOTOTRBO</a
+      >
+      <a class="font-medium text-primary hover:underline" href="/lp/konzultacia.html?utm_source=web&utm_campaign=web"
+        >Nezáväzná konzultácia &rarr;</a
+      >
+    </div>
+  </article>
+</Layout>

@@ -1,0 +1,84 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'MOTOTRBO RDAC: diagnostika a diaľkové riadenie prevádzačov | RKS',
+  description:
+    'MOTOTRBO RDAC (Repeater Diagnostic and Control) umožňuje administrátorovi cez USB alebo LAN/WAN monitorovať a diaľkovo riadiť prevádzače MOTOTRBO: diagnostika, kontrola porúch a zmena parametrov. Od RKS.',
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-4xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">
+      Digitálny systém MOTOTRBO
+    </a>
+    <span class="px-1">/</span>
+    <span class="text-default">RDAC</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-3">Aplikácie MOTOTRBO</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">MOTOTRBO RDAC</h1>
+      <p class="mt-4 text-base md:text-lg text-white/70">
+        Diagnostika a diaľkové riadenie prevádzačov rádiového systému MOTOTRBO.
+      </p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose prose-lg max-w-none">
+      <p>
+        MOTOTRBO RDAC (Repeater Diagnostic and Control) je softvérová aplikácia, ktorá umožňuje systémovému
+        administrátorovi monitorovať a riadiť prevádzače rádiového systému Motorola MOTOTRBO. Aplikácia beží na počítači
+        a k prevádzaču (napríklad <a href="/katalog-produktov/motorola-dr3000">DR3000</a>) sa pripája priamo cez USB
+        port alebo vzdialene cez LAN/WAN.
+      </p>
+
+      <h2>1. Diagnostika</h2>
+      <p>Užívateľ zistí aktuálne prevádzkové parametre prevádzača:</p>
+      <ul>
+        <li>režim práce (digitálny alebo analógový),</li>
+        <li>vysielací výkon (W),</li>
+        <li>sila prijímaného signálu,</li>
+        <li>naprogramované kanály vrátane práve prevádzkovaného,</li>
+        <li>informácie o IP adrese a UDP portoch,</li>
+        <li>status prevádzačov (lokálny alebo systémový).</li>
+      </ul>
+
+      <h2>2. Kontrola</h2>
+      <p>RDAC zisťuje a posiela správy o neštandardných stavoch prevádzača:</p>
+      <ul>
+        <li>porucha prijímača,</li>
+        <li>porucha vysielača,</li>
+        <li>závada napájania,</li>
+        <li>prehriatie (funkčnosť ventilátora),</li>
+        <li>a ďalšie.</li>
+      </ul>
+
+      <h2>3. Riadenie</h2>
+      <p>Užívateľ môže meniť parametre prevádzača:</p>
+      <ul>
+        <li>aktivácia prevádzača,</li>
+        <li>zmena kanálov,</li>
+        <li>zmena výkonu,</li>
+        <li>reset prevádzača a ďalšie.</li>
+      </ul>
+    </div>
+
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-8 text-sm">
+      <a
+        class="font-medium text-primary hover:underline"
+        href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">&larr; Digitálny systém MOTOTRBO</a
+      >
+      <a class="font-medium text-primary hover:underline" href="/lp/konzultacia.html?utm_source=web&utm_campaign=web"
+        >Nezáväzná konzultácia &rarr;</a
+      >
+    </div>
+  </article>
+</Layout>
