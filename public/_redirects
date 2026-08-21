@@ -699,6 +699,7 @@
 /katalog-produktov/hln9073-archiv /katalog-produktov/hln9073 301
 /katalog-produktov/gln7318-archiv /katalog-produktov/gln7318 301
 /katalog-produktov/kategoria/produkty /katalog-produktov 301
+/novinky-firmy /bezpecnostne-systemy-radiove-siete/novinky 301
 /component/seoglossary/* /slovnik 301
 /component/search/* / 301
 /component/finder/* / 301
@@ -711,6 +712,29 @@
 /produkty-katalog/* /katalog-produktov 301
 /component/* / 301
 /plugins/* / 301
+/novinky-firmy/440-* /bezpecnostne-systemy-radiove-siete/novinky/mototrbo-ion 301
+/novinky-firmy/434-* /bezpecnostne-systemy-radiove-siete/novinky/mototrbo-firmver-r2-9 301
+/novinky-firmy/433-* /bezpecnostne-systemy-radiove-siete/novinky/atex-nabijacka 301
+/novinky-firmy/439-* /bezpecnostne-systemy-radiove-siete/novinky/mototrbo-sl2600-radiostanica 301
+/novinky-firmy/311-* /bezpecnostne-systemy-radiove-siete/novinky/mototrbo-dp3661-radiostanica 301
+/novinky-firmy/428-* /bezpecnostne-systemy-radiove-siete/novinky/mototrbo-firmver-r2-6 301
+/novinky-firmy/317-* /bezpecnostne-systemy-radiove-siete/novinky/mototrbo-slr8000-prevadzac 301
+/novinky-firmy/309-* /bezpecnostne-systemy-radiove-siete/novinky/nova-generacia-radiostanic 301
+/novinky-firmy/318-* /bezpecnostne-systemy-radiove-siete/novinky/system-capacity-max 301
+/novinky-firmy/298-* /bezpecnostne-systemy-radiove-siete/novinky/mototrbo-firmver-r2-5 301
+/novinky-firmy/297-* /bezpecnostne-systemy-radiove-siete/novinky/firmver-r2-4 301
+/novinky-firmy/325-* /bezpecnostne-systemy-radiove-siete/novinky/rucny-ovladaci-panel 301
+/novinky-firmy/349-* /bezpecnostne-systemy-radiove-siete/novinky/xbt-nahlavna-suprava 301
+/novinky-firmy/336-* /bezpecnostne-systemy-radiove-siete/novinky/ukoncenie-predaja-analogovych-radiostanic 301
+/novinky-firmy/291-* /bezpecnostne-systemy-radiove-siete/novinky/bezdrotovy-repromikrofon 301
+/novinky-firmy/314-* /bezpecnostne-systemy-radiove-siete/novinky/mototrbo-sl1600-radiostanica 301
+/novinky-firmy/334-* /bezpecnostne-systemy-radiove-siete/novinky/pouzivanie-impres-nabijacky 301
+/novinky-firmy/293-* /bezpecnostne-systemy-radiove-siete/novinky/kompaktna-cestovna-nabijacka 301
+/novinky-firmy/290-* /bezpecnostne-systemy-radiove-siete/novinky/mobilna-aplikacia-wave 301
+/novinky-firmy/315-* /bezpecnostne-systemy-radiove-siete/novinky/nove-digitalne-radiostanice 301
+/novinky-firmy/310-* /bezpecnostne-systemy-radiove-siete/novinky/mototrbo-dp3441-radiostanica 301
+/novinky-firmy/335-* /bezpecnostne-systemy-radiove-siete/novinky/starostlivost-o-akumulatory 301
+/novinky-firmy/312-* /bezpecnostne-systemy-radiove-siete/novinky/nove-atex-radiostanice 301
 # === END redirects-generuj.mjs ===
 
 # Rucne pravidla (mimo generovaneho bloku, regeneracia ich nezmaze).

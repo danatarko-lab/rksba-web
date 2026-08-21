@@ -39,6 +39,7 @@ const MAPS = [
   join(root, '_materials/redirect/mapa-rks-katalog.csv'),
   join(root, '_materials/redirect/mapa-rksba.csv'),
   join(root, '_materials/redirect/mapa-mototrbo-archiv.csv'),
+  join(root, '_materials/redirect/mapa-mototrbo.csv'),
 ];
 const OUT = join(root, 'public/_redirects');
 const DIST = join(root, 'dist');
