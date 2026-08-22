@@ -17,6 +17,14 @@ export type Post = {
 export const energyMemo: Post[] = [
   {
     category: 'Energy Memo',
+    title: 'Rekordný rok batérií: čo je za virálnym číslom 5 → 267',
+    excerpt:
+      'Na sieťach koluje graf rastu batérií z 5 na 267. Čo presne porovnáva, čo naozaj rastie (112 GW v 2025, +48 %) a prečo pre firmy rozhoduje, na čom batéria zarába.',
+    date: '24. 8. 2026',
+    href: '/energetika/blog/rekordny-rok-baterii',
+  },
+  {
+    category: 'Energy Memo',
     title: 'Batérie prišli aj k nám. Kedy sa firme oplatí úložisko?',
     excerpt:
       'V Novákoch spustili najväčšiu batériu na Slovensku (36 MW / 72 MWh). Kde je SK oproti Česku, koľko úložisko stojí a kedy dáva firme ekonomický zmysel.',

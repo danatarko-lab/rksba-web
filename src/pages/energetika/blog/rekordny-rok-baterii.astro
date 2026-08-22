@@ -1,0 +1,342 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import NewsletterCTA from '~/components/widgets/NewsletterCTA.astro';
+
+const metadata = {
+  title: 'Rekordný rok batérií: čo je za virálnym číslom 5 → 267 | RKS',
+  description:
+    'Batérie pridali v roku 2025 rekordných 112 GW (BNEF). Odkiaľ sa vzalo virálne 5 → 267, čo naozaj rastie a prečo pre firmy rozhoduje, na čom batéria zarába.',
+};
+
+const post = {
+  title: 'Rekordný rok batérií: čo je za číslom 5 → 267',
+  date: '24. 8. 2026',
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-3xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/energetika">Energetika</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/energetika/blog">Energy Memo</a>
+    <span class="px-1">/</span>
+    <span class="text-default">{post.title}</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-14 md:py-20">
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight">
+        Rekordný rok batérií: čo je za virálnym číslom 5 → 267
+      </h1>
+      <p class="mt-5 text-lg text-white/80">
+        Na sociálnych sieťach koluje graf rastu batérií z 5 na 267. Číslo je pôsobivé a rast je skutočný. Oplatí sa ale
+        vedieť, čo presne porovnáva — a čo z toho vyplýva pre firmy u nás.
+      </p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+    <p class="text-sm text-muted pb-8 mb-10 border-b border-hairline">
+      Energy Memo · {post.date}
+    </p>
+
+    <div class="prose prose-lg max-w-none">
+      <p>
+        V polovici augusta sa na LinkedIne a X rozšírilo porovnanie: batérie narástli „z 5 na 267". Skok od jedného z
+        prvých veľkých projektov k dnešnému globálnemu súčtu. Rast batérií je pritom naozaj rekordný — a jeho dôsledky
+        sú pre firmy konkrétnejšie než samotné virálne číslo.
+      </p>
+
+      <div class="not-prose my-8 border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        <p class="text-xs font-bold tracking-widest uppercase text-primary mb-3">V skratke</p>
+        <ul class="list-disc pl-5 space-y-1.5 text-muted">
+          <li>
+            „5 → 267" porovnáva jeden projekt z roku 2012 (5 MW v Oregone) s globálnym súčtom kapacity v roku 2025 (~267
+            GW podľa Wood Mackenzie). Je to ilustrácia rastu, žiadna dátová séria trhu.
+          </li>
+          <li>
+            Skutočný rast je rekordný: v roku 2025 pribudlo celosvetovo 112 GW / 307 GWh batérií, o 48 % viac než rok
+            predtým (BloombergNEF). Čína tvorila 54 % nových inštalácií.
+          </li>
+          <li>
+            Pre firmy v Európe rozhoduje, na čom batéria zarába. Na zrelých trhoch výnosy z frekvenčných služieb prudko
+            klesli a hodnota sa presúva k obchodovaniu s energiou.
+          </li>
+        </ul>
+      </div>
+
+      <h2>Odkiaľ sa vzalo číslo 5 → 267?</h2>
+      <p>
+        Číslo <strong>5 MW</strong> je výkon jednej z prvých veľkých lítiových batérií na svete — projektu v americkom Oregone
+        z roku 2012. Číslo <strong>267 GW</strong> (267 000 MW) je odhad celkovej globálne inštalovanej kapacity stacionárnych
+        úložísk v roku 2025 podľa Wood Mackenzie.<sup><a href="#zdroj-1">1</a></sup> Porovnanie teda kladie vedľa seba jeden
+        skorý pilotný projekt a dnešnú svetovú flotilu batérií.
+      </p>
+      <p>
+        Ako ilustrácia rastu je to pekné. Ako údaj o trhu zavádza. V roku 2012 nebolo na svete 5 MW batérií, to bol
+        výkon jedného projektu; globálna kapacita bola už vtedy vyššia. Analytik Jan Rosenow, ktorý porovnanie
+        spopularizoval, ho aj sám používa ako obraz technológie, ktorá prechádza z pilota do masového nasadenia —
+        podobne ako predtým solár a veterné elektrárne.<sup><a href="#zdroj-1">1</a></sup>
+      </p>
+      <p>
+        Aj samotný koncový bod závisí od zdroja a definície. Wood Mackenzie uvádza pre rok 2025 približne 267 GW,
+        štatistická ročenka Energy Institute (Statistical Review of World Energy) končí rok 2025 na približne
+        <strong>302 GW</strong>.<sup><a href="#zdroj-3">3</a></sup> Rád veličín potvrdzujú obe čísla; presná hodnota sa medzi
+        datasetmi líši. Práve preto je lepšie ako virálny graf používať overený ročný prírastok.
+      </p>
+
+      <h2>Skutočný rast je rekordný aj bez virálneho čísla</h2>
+      <p>
+        Podľa BloombergNEF pribudlo v roku 2025 celosvetovo <strong>112 GW / 307 GWh</strong> nových batérií, o
+        <strong>48 %</strong> viac než v roku 2024. Ročné inštalácie prvýkrát prekročili 100 GW — analytici hovoria o „ére
+        100 gigawattov". Rast ťahá Čína, ktorá tvorila <strong>54 %</strong> všetkých nových inštalácií; nasledujú Spojené
+        štáty s podielom 16 %.<sup><a href="#zdroj-2">2</a></sup>
+      </p>
+
+      <figure class="not-prose my-10 rounded-xl border border-hairline overflow-hidden bg-white">
+        <div class="px-6 pt-5 pb-1">
+          <p class="text-xs font-bold tracking-widest uppercase text-primary mb-1.5">Kto ťahá rekordný rok</p>
+          <p class="font-bold text-[#0B1F3A] leading-snug">Podiel na nových inštaláciách batérií vo svete, 2025</p>
+        </div>
+        <svg
+          class="block w-full h-auto px-4 pb-3"
+          viewBox="0 0 720 190"
+          role="img"
+          aria-label="Podiel na nových inštaláciách batérií vo svete v roku 2025. Čína 54 %, USA 16 %, zvyšok sveta 30 %."
+        >
+          <text x="185" y="46" text-anchor="end" font-family="Arial" font-size="13" font-weight="700" fill="#0B1F3A"
+            >Čína</text
+          >
+          <rect x="195" y="26" width="432" height="32" rx="4" fill="#0B1F3A"></rect>
+          <text x="635" y="46" font-family="Arial" font-size="13" font-weight="700" fill="#0B1F3A">54 %</text>
+
+          <text x="185" y="98" text-anchor="end" font-family="Arial" font-size="13" font-weight="700" fill="#0B1F3A"
+            >USA</text
+          >
+          <rect x="195" y="78" width="128" height="32" rx="4" fill="#1A1ADB"></rect>
+          <text x="331" y="98" font-family="Arial" font-size="13" font-weight="700" fill="#1A1ADB">16 %</text>
+
+          <text x="185" y="150" text-anchor="end" font-family="Arial" font-size="13" font-weight="700" fill="#0B1F3A"
+            >Zvyšok sveta</text
+          >
+          <rect x="195" y="130" width="240" height="32" rx="4" fill="#64748B"></rect>
+          <text x="443" y="150" font-family="Arial" font-size="13" font-weight="700" fill="#64748B">30 %</text>
+        </svg>
+        <figcaption class="text-sm text-muted px-6 pb-5 italic">
+          Globálny batériový boom je predovšetkým čínsky príbeh: Čína postavila viac než polovicu novej kapacity roku
+          2025.<sup><a href="#zdroj-2">2</a></sup>
+        </figcaption>
+      </figure>
+
+      <p>
+        Európa je menšia, no rastie rýchlo. V EÚ pribudlo v roku 2025 rekordných <strong>27,1 GWh</strong> batérií, o 45 %
+        viac než rok predtým, a celkovo tu je 77,3 GWh. Európska flotila sa od roku 2021 zväčšila desaťnásobne (zo 7,8 GWh)
+        a rast ťahajú veľké priemyselné (utility-scale) projekty, ktoré tvoria 55 % nových inštalácií.<sup
+          ><a href="#zdroj-4">4</a></sup
+        >
+      </p>
+
+      <h2>Pre firmu rozhoduje, na čom batéria zarába</h2>
+      <p>
+        S rastúcim počtom batérií sa na zrelých trhoch mení to, na čom zarábajú. Najviditeľnejší je príklad Veľkej
+        Británie. Frekvenčné služby — teda okamžité vyrovnávanie výkyvov v sieti — tvorili v roku 2022 približne
+        <strong>80 %</strong> príjmov typickej batérie. Do roku 2024 klesol ich podiel na približne <strong>20 %</strong
+        >.<sup><a href="#zdroj-5">5</a></sup>
+      </p>
+      <p>
+        Dôvod je jednoduchý. Trh s frekvenčnými službami je malý a batérií pribúdalo rýchlejšie, než trh dokázal
+        vstrebať. Ceny preto spadli: priemerný výnos klesol z vyše 110 000 libier na MW ročne (2022) na menej než 30 000
+        libier (2023). Hodnota sa presunula k obchodovaniu s energiou — arbitráž stúpla z 8 % na takmer polovicu príjmov
+        — a k platbám za kapacitu.<sup><a href="#zdroj-5">5</a></sup> Je to rovnaký mechanizmus ako pri solári: čím viac rovnakej
+        služby na trh pridáte, tým nižšia je jej jednotková cena.
+      </p>
+
+      <figure class="not-prose my-10 rounded-xl border border-hairline overflow-hidden bg-white">
+        <div class="px-6 pt-5 pb-1">
+          <p class="text-xs font-bold tracking-widest uppercase text-primary mb-1.5">
+            Kanibalizácia výnosov · Veľká Británia
+          </p>
+          <p class="font-bold text-[#0B1F3A] leading-snug">Skladba príjmov batérie: rok 2022 oproti 2024</p>
+        </div>
+        <svg
+          class="block w-full h-auto px-4 pb-3"
+          viewBox="0 0 820 250"
+          role="img"
+          aria-label="Skladba príjmov typickej batérie vo Veľkej Británii ako podiel na 100 %. Rok 2022: frekvenčné služby 80 %, obchodovanie s energiou 8 %, ostatné 12 %. Rok 2024: frekvenčné služby 20 %, obchodovanie s energiou 50 %, ostatné 30 %."
+        >
+          <!-- Legenda -->
+          <rect x="70" y="16" width="14" height="14" rx="2" fill="#0B1F3A"></rect>
+          <text x="92" y="28" font-family="Arial" font-size="15" fill="#0B1F3A">Frekvenčné služby</text>
+          <rect x="250" y="16" width="14" height="14" rx="2" fill="#1A1ADB"></rect>
+          <text x="272" y="28" font-family="Arial" font-size="15" fill="#0B1F3A">Obchodovanie s energiou</text>
+          <rect x="500" y="16" width="14" height="14" rx="2" fill="#64748B"></rect>
+          <text x="522" y="28" font-family="Arial" font-size="15" fill="#0B1F3A">Ostatné (kapacita a i.)</text>
+
+          <!-- Rok 2022 -->
+          <text x="58" y="102" text-anchor="end" font-family="Arial" font-size="15" font-weight="700" fill="#0B1F3A"
+            >2022</text
+          >
+          <rect x="70" y="70" width="582" height="52" rx="3" fill="#0B1F3A"></rect>
+          <text x="361" y="101" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700" fill="#ffffff"
+            >80 %</text
+          >
+          <rect x="654" y="70" width="56" height="52" rx="3" fill="#1A1ADB"></rect>
+          <text x="682" y="101" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#ffffff"
+            >8 %</text
+          >
+          <rect x="712" y="70" width="88" height="52" rx="3" fill="#64748B"></rect>
+          <text x="756" y="101" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#ffffff"
+            >12 %</text
+          >
+
+          <!-- Rok 2024 -->
+          <text x="58" y="172" text-anchor="end" font-family="Arial" font-size="15" font-weight="700" fill="#0B1F3A"
+            >2024</text
+          >
+          <rect x="70" y="140" width="144" height="52" rx="3" fill="#0B1F3A"></rect>
+          <text x="142" y="171" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700" fill="#ffffff"
+            >20 %</text
+          >
+          <rect x="216" y="140" width="363" height="52" rx="3" fill="#1A1ADB"></rect>
+          <text x="397" y="171" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700" fill="#ffffff"
+            >50 %</text
+          >
+          <rect x="581" y="140" width="219" height="52" rx="3" fill="#64748B"></rect>
+          <text x="690" y="171" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700" fill="#ffffff"
+            >30 %</text
+          >
+
+          <!-- Poznamka -->
+          <text x="70" y="232" font-family="Arial" font-size="13" fill="#64748B"
+            >Každý stĺpec = 100 % príjmov batérie v danom roku (približná skladba).</text
+          >
+        </svg>
+        <figcaption class="text-sm text-muted px-6 pb-5 italic">
+          Ako batérií pribúdalo, výnos z frekvenčných služieb (tmavá) sa stlačil a hlavným zdrojom sa stalo obchodovanie
+          s energiou (modrá).<sup><a href="#zdroj-5">5</a></sup>
+        </figcaption>
+      </figure>
+
+      <p>
+        Pre nás je to praktický signál. Slovenský aj český trh sú na začiatku: najväčšia slovenská batéria (Nováky, 36
+        MW / 72 MWh) slúži práve na reguláciu frekvencie a v Česku sa rozbieha vlna veľkých projektov.<sup
+          ><a href="#zdroj-6">6</a></sup
+        > Skúsenosť zrelých trhov hovorí, čo príde neskôr: keď batérií pribudne, samotná jedna služba na návratnosť prestane
+        stačiť. Projekt, ktorý zarába z viacerých zdrojov naraz, to ustojí.
+      </p>
+
+      <aside class="not-prose my-10 rounded-xl bg-[#0A2342] text-white p-8">
+        <p class="text-xs font-bold tracking-widest uppercase text-accent mb-3">Podstata veci</p>
+        <p class="text-xl leading-snug">
+          Ceny batérií padajú a kapacita rastie rekordne. <strong
+            >Hodnotu projektu určuje to, čo bude batéria robiť každú hodinu — a z čoho bude zarábať.</strong
+          >
+        </p>
+      </aside>
+
+      <h2>Čo z toho pre firmy: Pohľad RKS</h2>
+      <p class="font-semibold">Dobrý batériový projekt vie, čo bude robiť každú hodinu — a z čoho bude zarábať.</p>
+      <p>
+        Rekordný rast a klesajúce ceny robia batérie dostupnejšími. Pre firmu z toho vyplýva jedna otázka: čo bude
+        úložisko robiť počas dňa a ktoré služby mu zaplatia. Skúsenosť zrelých trhov ukazuje, že spoľahnúť sa na jednu
+        službu je riskantné — jej výnos s pribúdajúcou konkurenciou klesá.
+      </p>
+      <p>
+        Skôr než firma rieši batériu, oplatí sa poznať vlastné dáta: štvrťhodinovú spotrebu, špičky, rezervovanú
+        kapacitu a potenciál fotovoltiky. Na tomto základe sa dá navrhnúť úložisko so správnou veľkosťou, kombináciou
+        príjmov a reálnym výpočtom návratnosti.
+      </p>
+      <p class="not-italic text-xl font-medium border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        Čím je batéria bežnejšia, tým viac rozhoduje, čo bude robiť každú hodinu svojho života.
+      </p>
+
+      <h2>Súvisiace články</h2>
+      <ul>
+        <li>
+          <a href="/energetika/blog/baterie-kedy-sa-oplati-firme"
+            >Batérie prišli aj k nám. Kedy sa firme oplatí úložisko?</a
+          >
+        </li>
+        <li>
+          <a href="/energetika/blog/intersolar-2026-bateria-za-babku"
+            >Batéria za babku, hodnota inde: čo Intersolar 2026 ukázal o budúcnosti energetiky</a
+          >
+        </li>
+        <li>
+          <a href="/energetika/blog/sesfg-mnichov-2026"
+            >Budúcnosť firemnej energetiky: 10 trendov z konferencie v Mníchove</a
+          >
+        </li>
+      </ul>
+
+      <h2>Súvisiace témy</h2>
+      <ul>
+        <li><a href="/energetika/baterie-bess">Batériové úložiská (BESS)</a></li>
+        <li><a href="/energetika/energy-management">Čo je Energy Management System (EMS)</a></li>
+        <li><a href="/energetika/fotovoltika">Firemná fotovoltika</a></li>
+        <li><a href="/energetika/slovnik">Slovník energetických pojmov</a></li>
+      </ul>
+
+      <h2>Zdroje a poznámky</h2>
+      <ol>
+        <li id="zdroj-1">
+          Rosenow, J. (2026) Batteries are quietly rewiring the grid. Dostupné z:
+          <a href="https://janrosenow.substack.com/p/batteries-are-quietly-rewiring-the" rel="noopener"
+            >janrosenow.substack.com</a
+          > (stiahnuté: 21. augusta 2026). 5 MW projekt v Oregone (2012); ~267 000 MW globálne v 2025 (podľa Wood Mackenzie);
+          výhľad 800 000–1 200 000 MW do 2030 (Ember, IEA).
+        </li>
+        <li id="zdroj-2">
+          BloombergNEF (2026) Energy Storage Enters the 100-Gigawatt Era; ref. pv magazine, 11. mája 2026. Dostupné z:
+          <a
+            href="https://www.pv-magazine.com/2026/05/11/bloombergnef-confirms-energy-storage-has-reached-the-100-gw-era/"
+            rel="noopener">pv-magazine.com</a
+          > (stiahnuté: 21. augusta 2026). 112 GW / 307 GWh pridaných v 2025 (+48 % r/r); Čína 54 % nových inštalácií, USA
+          16 %.
+        </li>
+        <li id="zdroj-3">
+          Energy Institute (2026) Statistical Review of World Energy 2026; ref. Forbes, 16. augusta 2026. Dostupné z:
+          <a
+            href="https://www.forbes.com/sites/rrapier/2026/08/16/battery-storage-grew-66-in-2025-china-now-controls-nearly-half/"
+            rel="noopener">forbes.com</a
+          > (stiahnuté: 21. augusta 2026). Globálna kumulatívna kapacita ~301,7 GW ku koncu 2025 (zo 182 GW v 2024); Čína
+          ~144 GW (~48 % svetového súčtu).
+        </li>
+        <li id="zdroj-4">
+          SolarPower Europe (2026) EU Battery Storage Market Review 2025. Dostupné z:
+          <a
+            href="https://www.solarpowereurope.org/press-releases/new-report-eu-installs-27-1-g-wh-of-new-batteries-in-2025-as-utility-scale-storage-drives-record-growth"
+            rel="noopener">solarpowereurope.org</a
+          > (stiahnuté: 21. augusta 2026). EÚ +27,1 GWh v 2025 (+45 % r/r); kumulatív 77,3 GWh (10× od 2021); utility-scale
+          55 % nových inštalácií.
+        </li>
+        <li id="zdroj-5">
+          Rabobank (2026) Backup power for Europe – part 2: The UK's BESS leadership and evolving revenue stacks.
+          Dostupné z:
+          <a
+            href="https://www.rabobank.com/knowledge/d011469493-backup-power-for-europe-part-2-the-uk-s-bess-leadership-and-evolving-revenue-stacks"
+            rel="noopener">rabobank.com</a
+          > (stiahnuté: 21. augusta 2026). Frekvenčné služby 80 % (2022) → 20 % (2024); výnos vyše £110 000/MW/rok (2022)
+          → pod £30 000 (2023); arbitráž 8 % → ~50 %.
+        </li>
+        <li id="zdroj-6">
+          SITA Energetika (2026) Slovenské elektrárne spustili najväčšie batériové úložisko na Slovensku (Nováky).
+          Dostupné z:
+          <a
+            href="https://sita.sk/venergetike/slovenske-elektrarne-spustili-najvacsie-bateriove-ulozisko-na-slovensku-vzniklo-v-areali-byvalej-uholnej-elektrarne-novaky/"
+            rel="noopener">sita.sk</a
+          > (stiahnuté: 21. augusta 2026). Nováky 36 MW / 72 MWh, primárna regulácia frekvencie (FCR).
+        </li>
+      </ol>
+
+      <p class="text-sm text-muted italic">
+        Čísla sú overené proti primárnym zdrojom (BloombergNEF cez pv magazine, Energy Institute cez Forbes, SolarPower
+        Europe, Rabobank, Slovenské elektrárne cez SITA).
+      </p>
+    </div>
+
+    <NewsletterCTA />
+  </article>
+</Layout>
