@@ -27,7 +27,6 @@ const safe = (name) => name.replace(/\s+/g, '_');
 
 // --- 1. Kopirovanie z _materials/mototrbo/articles ---
 let copied = 0;
-let skippedNoSrc = false;
 function walk(dir) {
   for (const entry of readdirSync(dir)) {
     const p = join(dir, entry);
@@ -44,7 +43,6 @@ function walk(dir) {
 if (existsSync(SRC)) {
   walk(SRC);
 } else {
-  skippedNoSrc = true;
   console.log(`POZOR: ${SRC} neexistuje, kopirovanie preskocene (spustim len stahovanie gallery).`);
 }
 console.log(`Skopirovanych obrazkov z articles/: ${copied}`);
