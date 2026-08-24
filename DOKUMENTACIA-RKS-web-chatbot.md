@@ -1,7 +1,7 @@
 # RKS — Prevádzková a technická dokumentácia (web + chatbot)
 
 **Toto je JEDINÝ platný zdroj pravdy o webe rksba.sk a chatbote ai.rksba.sk.**
-Posledná aktualizácia: **18. 8. 2026**. Autor priebehu: Dana Tarko (+ Claude).
+Posledná aktualizácia: **24. 8. 2026**. Autor priebehu: Dana Tarko (+ Claude).
 
 Nahrádza a robí neplatnými: `RKS_Handover_web_chatbot.docx` (4. 8.), `HANDOVER-rks-2026-07-11.md`, `rksba_web_handoff.md` (20. 6.). Tie sú už len archív.
 
@@ -14,6 +14,7 @@ Nahrádza a robí neplatnými: `RKS_Handover_web_chatbot.docx` (4. 8.), `HANDOVE
 
 ## Changelog
 
+- **24. 8. 2026** — MOTOTRBO editoriálny obsah zo starého mototrbo.sk prenesený na nový web pod `/bezpecnostne-systemy-radiove-siete/` (rozcestník Digitálny systém MOTOTRBO + 9 architektúr + 5 aplikácií + 11 stránok o príslušenstve + 23 noviniek + 10 Q&A), všetko s obrázkami z originálu. Ide o iný celok než produktový katalóg (viď 3.9 vs 3.11). Redirect mapa mototrbo.sk pripravená (`_materials/redirect/mapa-mototrbo.csv`), zatiaľ NENASADENÁ — mototrbo.sk beží, presmerovanie sa spustí v pondelok po Richiho revízii. Publikovaný nový Energy Memo článok `/energetika/blog/rekordny-rok-baterii`.
 - **18. 8. 2026** — konsolidácia do jedného mastra v repe. Doplnené: MOTOTRBO migrácia katalógu (773 produktov, noindex), prestavaný katalóg, tlačidlo „Späť hore", doplnené redirecty zo Search Console, publikované Energy Memo články, upresnené „over" body (Hostcreators vs. Websupport). Kánonický host rksba.sk (www -> 301). Zapísané Cloudflare Custom rules; pravidlo „cp" pustené pre overené roboty (Googlebot).
 - **4. 8. 2026** — pôvodná verzia po spustení naostro (prehodenie DNS, SSL, indexovanie, doména chatbota, oprava vyhľadávania).
 
@@ -125,6 +126,19 @@ POZOR na edge cache: po úprave existujúcej stránky Cloudflare drží staré H
 ### 3.10 Drobnosti UI
 
 - Tlačidlo „Späť hore" (BackToTop.astro v Layout.astro) je na všetkých stránkach cez zdieľaný layout (1443 z 1450). Objaví sa po zascrollovaní, na mobile sa vyhýba lište menu.
+
+### 3.11 MOTOTRBO editoriálny obsah (migrácia z mototrbo.sk) — POZOR: iné než katalóg (3.9)
+
+Toto je editoriálny/marketingový obsah zo starého mototrbo.sk (nie produktové karty katalógu). Žije ako bežné `.astro` stránky pod `src/pages/bezpecnostne-systemy-radiove-siete/`, je indexovateľný a v dizajne nového webu.
+
+- **Rozcestník:** `/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo` (tri gridy: Systémové architektúry, Aplikácie a softvér, O príslušenstve). Pridaný aj do prehľadu vetvy (`index.astro`).
+- **9 systémových architektúr:** mototrbo-priame-spojenie, mototrbo-konvencny-system, mototrbo-ip-site-connect, mototrbo-capacity-plus, mototrbo-linked-capacity-plus, mototrbo-connect-plus, mototrbo-capacity-max, mototrbo-ion, mototrbo-dmr-technologia.
+- **5 aplikácií a softvéru:** wave-ptx, mototrbo-rdac, radio-management-otap, smartptt, rozsirena-zaruka.
+- **11 stránok o príslušenstve:** vyhody-akumulatorov-nabijaciek, vyhody-impres, vyhody-bezdrotoveho-prislusenstva, vyhody-repromikrofonov, vyhody-sluchadiel, vyhody-nahlavnych-suprav, vyhody-audioprislusenstva-impres, vyhody-prislusenstva-na-nosenie, vyhody-prislusenstva-pre-vozidlo, vyhody-specialneho-prislusenstva, vyhody-audioprislusenstva-pre-vozidlo.
+- **23 noviniek (2012–2021)** v `/bezpecnostne-systemy-radiove-siete/novinky/` + 10 nových otázok v `q-a.astro`.
+- **Obrázky:** stiahnuté z mototrbo.sk do `public/images/mototrbo/` (skript `scripts/kopiruj-mototrbo-obrazky.mjs`) a vložené do stránok anchor skriptom `scripts/vloz-mototrbo-obrazky.mjs` (idempotentný, kotví sa na nadpisy).
+- **Redirect mapa:** `_materials/redirect/mapa-mototrbo.csv` (Joomla SEF `/novinky-firmy/<id>-*` -> nové slugy). Pridaná do `scripts/redirects-generuj.mjs`, ale **zatiaľ NENASADENÁ** — čaká na Richiho revíziu; presmerovanie a odpojenie mototrbo.sk od domény sa spustí v pondelok.
+- **Otvorené (po revízii):** prepnúť odkaz „Rádiostanice MOTOROLA (DMR)" v menu z mototrbo.sk na tento rozcestník; spustiť redirecty.
 
 ---
 
@@ -244,8 +258,8 @@ Rollback (keby nový web zlyhal): vrátiť v Cloudflare apex na A @ 193.163.77.1
 
 **MOTOTRBO / katalóg**
 
-- Revízia: best-sellery vs. všetko + ktoré články/novinky (#129).
-- Step 3: slugy, redirect mapa mototrbo.sk, prelinkovanie, prepnutie na index (#130, #50).
+- Editoriálny obsah (architektúry, aplikácie, príslušenstvo, novinky, Q&A): HOTOVÉ a naživo, čaká Richiho revízia (viď 3.11). Po nej: nasadiť redirect mapu mototrbo.sk, prepnúť odkaz v menu, odpojiť mototrbo.sk od domény (pondelok).
+- Produktový katalóg (773 produktov, noindex): revízia best-sellery vs. všetko (#129); Step 3: slugy, redirect mapa, prelinkovanie, prepnutie na index (#130, #50).
 
 **Chatbot / infra hygiena**
 
