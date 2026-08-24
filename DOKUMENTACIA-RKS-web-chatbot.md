@@ -14,6 +14,7 @@ Nahrádza a robí neplatnými: `RKS_Handover_web_chatbot.docx` (4. 8.), `HANDOVE
 
 ## Changelog
 
+- **24. 8. 2026 (neskôr)** — Doplnené obrázky do noviniek MOTOTRBO (14 do tela článkov + 23 náhľadov v prehľade `/novinky/` cez `post.image` v `src/data/novinky.ts`). Na rozcestník `digitalny-system-mototrbo` pridaný odkaz na produktový katalóg. Nová sekcia 3.2.1 o obnove GitHub PAT (token „rksba-web" má expiráciu).
 - **24. 8. 2026** — MOTOTRBO editoriálny obsah zo starého mototrbo.sk prenesený na nový web pod `/bezpecnostne-systemy-radiove-siete/` (rozcestník Digitálny systém MOTOTRBO + 9 architektúr + 5 aplikácií + 11 stránok o príslušenstve + 23 noviniek + 10 Q&A), všetko s obrázkami z originálu. Ide o iný celok než produktový katalóg (viď 3.9 vs 3.11). Redirect mapa mototrbo.sk pripravená (`_materials/redirect/mapa-mototrbo.csv`), zatiaľ NENASADENÁ — mototrbo.sk beží, presmerovanie sa spustí v pondelok po Richiho revízii. Publikovaný nový Energy Memo článok `/energetika/blog/rekordny-rok-baterii`.
 - **18. 8. 2026** — konsolidácia do jedného mastra v repe. Doplnené: MOTOTRBO migrácia katalógu (773 produktov, noindex), prestavaný katalóg, tlačidlo „Späť hore", doplnené redirecty zo Search Console, publikované Energy Memo články, upresnené „over" body (Hostcreators vs. Websupport). Kánonický host rksba.sk (www -> 301). Zapísané Cloudflare Custom rules; pravidlo „cp" pustené pre overené roboty (Googlebot).
 - **4. 8. 2026** — pôvodná verzia po spustení naostro (prehodenie DNS, SSL, indexovanie, doména chatbota, oprava vyhľadávania).
@@ -72,6 +73,19 @@ Produkčný testovací origin webu: **https://rksba-web-6ht.pages.dev**. POZOR: 
 Web sa dá aktualizovať 24/7 a nezávisí od toho, kto má prístup do Cloudflare, lebo sa nasadzuje z GitHubu.
 
 POZOR na edge cache: po úprave existujúcej stránky Cloudflare drží staré HTML. Riešenie: Cloudflare dashboard -> doména rksba.sk -> Caching -> Configuration -> Purge Everything, potom na stránke Cmd+Shift+R. Nové stránky sa objavia hneď, len úpravy existujúcich treba prepláchnuť.
+
+### 3.2.1 GitHub prístupový token (PAT) — obnova
+
+Push na GitHub sa autentifikuje fine-grained Personal Access Tokenom „rksba-web" (uložený v macOS keychain). Token má expiráciu, GitHub pošle upozornenie 7 dní vopred. Keď vyprší, `git push` prestane fungovať („authentication failed"). Nasadenie webu na Cloudflare tým nie je ohrozené (ťahá z GitHubu cez vlastnú integráciu), len sa nedá pushnúť.
+
+Obnova (radšej priamo na github.com, nie cez tlačidlo v e-maile): Settings -> Developer settings -> Personal access tokens -> Fine-grained tokens -> rksba-web -> Regenerate (alebo nový token). Nastavenia:
+
+- Resource owner: **danatarko-lab**.
+- Repository access: **Only select repositories -> danatarko-lab/rksba-web** (NIE „Public repositories" — to je len read-only a na push nestačí).
+- Permissions (Repository): **Contents = Read and write**, **Workflows = Read and write** (Metadata ostáva read-only automaticky).
+- Expiration: nastaviť dátum (napr. 90 dní alebo 1 rok), nie „No expiration".
+
+Nový token sa zobrazí len raz — skopírovať a uložiť na Macu: spustiť `git push` a pri výzve vložiť token ako heslo. Ak to token nepýta a zlyhá starým, najprv `printf "protocol=https\nhost=github.com\n\n" | git credential-osxkeychain erase`, potom `git push`.
 
 ### 3.3 Build a deploy (technicky)
 
