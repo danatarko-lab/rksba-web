@@ -1,3 +1,5 @@
+> **⚠️ ARCHÍV — NEPLATNÉ (plánovací dokument z 20. 6. 2026).** Aktuálny a jediný platný zdroj pravdy je **`DOKUMENTACIA-RKS-web-chatbot.md`** v koreni repozitára. Tento súbor opisuje pôvodný MVP zámer, nezodpovedá dnešnému stavu webu a neudržiava sa. Ponechaný len ako história.
+
 # RKS Web Project — Handoff Document
 **Vytvorené:** 20. jún 2026
 **Pre:** Pokračovanie projektu v novom vlákne
@@ -7,7 +9,7 @@
 
 ## TL;DR (60 sekúnd)
 
-Dana Tarko buduje **nový B2B web pre RKS, spol. s r.o.** (slovenská technologická firma od 1991 s dvomi vetvami biznisu — Rádiokomunikácie a nová Energetika).
+Dana Tarko buduje **nový B2B web pre RKS, spol s r.o.** (slovenská technologická firma od 1991 s dvomi vetvami biznisu — Rádiokomunikácie a nová Energetika).
 
 **Vybraný stack:** Astro v6 + Tailwind v4 + Astrowind template, deploy na Vercel.
 **Cena:** ~15€/rok (vs ~165€/rok WordPress).
@@ -29,7 +31,7 @@ Dana Tarko buduje **nový B2B web pre RKS, spol. s r.o.** (slovenská technologi
 - SVJ chairperson Praha 3
 - Komunikuje analyticky, priamo, blunt, no-BS
 
-### RKS, spol. s r.o.
+### RKS, spol s r.o.
 - **IČO:** 30841275 · **DIČ:** 2020328398 · **IČ DPH:** SK2020328398
 - **Adresa:** Vajnorská 6A, 900 28 Ivanka pri Dunaji
 - **Fakturačná:** Rajecká 36, 821 07 Bratislava
