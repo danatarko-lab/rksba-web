@@ -333,7 +333,7 @@ const hasFilter = filters.length > 0 || freq !== null;
 
   {hasFilter && (
     <script is:inline>
-      (function () {
+      function rksInitFilter() {
         var root = document.querySelector('[data-rks-filter]');
         var grid = document.querySelector('[data-rks-grid]');
         if (!root || !grid) return;
@@ -430,7 +430,9 @@ const hasFilter = filters.length > 0 || freq !== null;
           apply();
         });
         apply();
-      })();
+      }
+      document.addEventListener('astro:page-load', rksInitFilter);
+      rksInitFilter();
     </script>
   )}
 
