@@ -60,8 +60,14 @@ cat_by_id = {c['id']: c for c in cats}
 children = {}
 for c in cats:
     children.setdefault(c['parent'], []).append(c)
+# Poradie radiostanicnych podkategorii: Prenosne -> Vozidlove -> Prevadzace
+# (Richi #2). Ostatne podkategorie ostavaju abecedne.
+RADIO_SUBCAT_ORDER = {'prenosné rádiostanice': 0, 'vozidlové rádiostanice': 1, 'prevádzače': 2}
+def _cat_sort_key(c):
+    n = c['name'].strip().lower()
+    return (RADIO_SUBCAT_ORDER.get(n, 99), n)
 for k in children:
-    children[k].sort(key=lambda c: c['name'].lower())
+    children[k].sort(key=_cat_sort_key)
 
 direct = {}
 for p in products:
@@ -456,12 +462,12 @@ def is_radio_branch(cid):
     return False
 
 # texty CTA podla vetvy a typu stranky
-CTA_RADIO_PRODUCT = ('Servis a príslušenstvo aj pre ukončené modely',
-    'Tento produkt už výrobca nedodáva, my ho stále servisujeme. Batérie, príslušenstvo a opravy '
-    'riešime aj pre ukončené modely.')
-CTA_RADIO_CATEGORY = ('Servis a príslušenstvo aj pre ukončené modely',
-    'Produkty z tejto kategórie už výrobca nedodáva, my ich stále servisujeme. Batérie, príslušenstvo '
-    'a opravy riešime aj pre ukončené modely.')
+CTA_RADIO_PRODUCT = ('Servis a príslušenstvo aj po ukončení výroby',
+    'Tento produkt už výrobca nedodáva, my ho stále servisujeme. Servis, batérie, príslušenstvo a opravy '
+    'robíme aj pre modely, ktorých výroba bola ukončená.')
+CTA_RADIO_CATEGORY = ('Servis a príslušenstvo aj po ukončení výroby',
+    'Produkty z tejto kategórie už výrobca nedodáva, my ich stále servisujeme. Servis, batérie, príslušenstvo '
+    'a opravy robíme aj pre modely, ktorých výroba bola ukončená.')
 CTA_SYSTEMS = ('Dodávka, inštalácia a servis',
     'Evakuačné a varovacie systémy navrhujeme, dodávame, inštalujeme a servisujeme. Radi pripravíme '
     'riešenie pre váš objekt.')
@@ -809,28 +815,9 @@ const hasFilter = filters.length > 0 || freq !== null;
 
         {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
 
-        {subcats.length > 0 && (
-          <>
-            {subcatsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-4 mb-4">{subcatsHeading}</h2>}
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {subcats.map((c) => (
-                <a href={c.url} class="group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
-                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
-                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
-                  </div>
-                  <div class="p-4 border-t border-hairline">
-                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
-                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
-                  </div>
-                </a>
-              ))}
-            </div>
-          </>
-        )}
-
         {products.length > 0 && (
           <>
-            {productsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">{productsHeading}</h2>}
+            {productsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-2 mb-4">{productsHeading}</h2>}
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4" data-rks-grid>
               {products.map((c) => (
                 <a href={c.url} data-facets={c.facets} data-freq={c.freq} class="rks-card group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
@@ -847,6 +834,25 @@ const hasFilter = filters.length > 0 || freq !== null;
             {hasFilter && (
               <p class="hidden text-muted mt-6" data-rks-empty>Zvolenému filtru nezodpovedá žiadny produkt.</p>
             )}
+          </>
+        )}
+
+        {subcats.length > 0 && (
+          <>
+            {subcatsHeading && <h2 class="text-2xl font-semibold tracking-tight mt-10 mb-4">{subcatsHeading}</h2>}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {subcats.map((c) => (
+                <a href={c.url} class="group block rounded-xl border border-hairline bg-panel overflow-hidden hover:shadow-md transition">
+                  <div class="aspect-square bg-white p-4 flex items-center justify-center">
+                    <img src={c.img} alt={c.title} class="max-h-full w-auto object-contain" loading="lazy" />
+                  </div>
+                  <div class="p-4 border-t border-hairline">
+                    <h3 class="font-semibold group-hover:text-link">{c.title}</h3>
+                    {c.desc && <p class="text-sm text-muted mt-1">{c.desc}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
           </>
         )}
 
@@ -1141,7 +1147,7 @@ def count_label(cid):
 
 def subcat_cards(cid):
     kids = [ch for ch in children.get(cid, []) if subtree.get(ch['id'], 0) > 0]
-    kids.sort(key=lambda c: c['name'].lower())
+    kids.sort(key=_cat_sort_key)
     return [{
         'url': cat_url(ch['id']),
         'img': rep_img(ch['id']),
@@ -1160,6 +1166,10 @@ def subtree_products(cid):
     return out
 
 # ---------------------------------------------------------------- generuj kategorie
+# Horna kategoria "Radiostanice" nema vlastne priame produkty, len 3 podkategorie
+# (Prenosne/Vozidlove/Prevadzace). Aby na nej boli rovno stanice s obrazkami (Richi #5),
+# nazbierame priame produkty tychto podkategorii = samotne radiostanice a prevadzace.
+RADIO_TOP_ID = next((cid for cid, s in cat_slug.items() if s == 'radiostanice'), None)
 n_cat = 0
 for c in ([] if INDEX_ONLY else sorted(cats, key=lambda c: c['id'])):
     if subtree.get(c['id'], 0) <= 0:
@@ -1168,6 +1178,10 @@ for c in ([] if INDEX_ONLY else sorted(cats, key=lambda c: c['id'])):
         continue  # umbrella (Produkty) reprezentuje uvodna stranka archivu
     subcats = subcat_cards(c['id'])
     shown_products = direct_products(c['id'])
+    if c['id'] == RADIO_TOP_ID and not shown_products:
+        shown_products = []
+        for ch in children.get(c['id'], []):
+            shown_products = shown_products + direct_products(ch['id'])
     prod_cards = product_cards(shown_products)
     # Jedina podkategoria je len zbytocny medzikrok: preskocime ju a ukazeme
     # rovno produkty z celeho podstromu.
