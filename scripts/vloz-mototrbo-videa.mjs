@@ -95,4 +95,6 @@ for (const [article, files] of Object.entries(MAP)) {
   console.log(`${article}: vložené ${newFiles.length} video(í)`);
 }
 console.log(`\nSpolu vložených videí: ${inserted}`);
-console.log('Potom spusti: npx prettier --write "src/pages/bezpecnostne-systemy-radiove-siete/*.astro" && npm run build && npm run check');
+console.log(
+  'Potom spusti: npx prettier --write "src/pages/bezpecnostne-systemy-radiove-siete/*.astro" && npm run build && npm run check'
+);
