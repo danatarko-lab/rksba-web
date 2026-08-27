@@ -1,0 +1,148 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Funkcie a softvér MOTOTRBO: licencie a rozšírenia | RKS',
+  description:
+    'Prehľad softvérových funkcií a licencií MOTOTRBO: prevod textu na hlas, potlačenie šumu SINC+, šifrovanie Enhanced Privacy, Man Down, pracovné príkazy, GPS, Bluetooth, Wi-Fi a správa systému. Nasadenie, licencie a servis od RKS.',
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-4xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">
+      Digitálny systém MOTOTRBO
+    </a>
+    <span class="px-1">/</span>
+    <span class="text-default">Funkcie a softvér</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-3">Digitálny systém MOTOTRBO</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">Funkcie a softvér MOTOTRBO</h1>
+      <p class="mt-4 text-base md:text-lg text-white/70">
+        Čo rádiostanica MOTOTRBO dokáže a ktoré funkcie sa aktivujú softvérovou licenciou.
+      </p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose prose-lg max-w-none">
+      <p>
+        Rádiostanica MOTOTRBO je platforma, ktorej schopnosti sa dajú postupne rozširovať. Základné funkcie sú súčasťou
+        prístroja, pokročilé funkcie sa aktivujú softvérovou licenciou (licenčným kľúčom) bez výmeny hardvéru. Vďaka
+        tomu si zákazník kúpi len to, čo potrebuje, a systém vie dokúpiť ďalšie funkcie neskôr.
+      </p>
+      <p>
+        Nižšie nájdete prehľad najčastejšie využívaných funkcií a licencií. S výberom, aktiváciou licencií aj nasadením
+        poradíme a zabezpečíme ich pre celú vašu flotilu rádiostaníc.
+      </p>
+
+      <h2>Zvuk a zrozumiteľnosť</h2>
+      <p>
+        <strong>Prevod textu na hlas (Text to Speech)</strong> prehrá používateľovi hlasom zvolený kanál alebo funkciu a umožňuje
+        vypočuť si prijaté textové správy a pracovné príkazy bez pohľadu na displej. Hodí sa pre obsluhu, ktorá má plné ruky
+        práce alebo pracuje za zníženej viditeľnosti. Dodáva sa ako licenčný kľúč pre rady DP3441, DP4000, SL4000, DM4000
+        a ich verzie „e".
+      </p>
+
+      <div class="not-prose my-6">
+        <video
+          controls
+          preload="metadata"
+          class="w-full rounded-lg border border-hairline bg-black"
+          title="MOTOTRBO Text to Speech"
+        >
+          <source src="/videos/mototrbo/MOTOTRBO_Experience_11_Text_to_Speech.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <p>
+        <strong>Potlačenie šumu SINC+ (Single Input Noise Cancellation)</strong> zvyšuje zrozumiteľnosť reči aj so štandardným
+        mikrofónom, takže v hlučnej prevádzke dosiahnete efekt porovnateľný s drahším príslušenstvom s duálnymi mikrofónmi.
+        Spolu s technológiou <strong>Intelligent Audio</strong>, ktorá automaticky prispôsobuje hlasitosť okolitému
+        hluku, tvorí základ dobrej počuteľnosti v priemysle.
+      </p>
+
+      <h2>Bezpečnosť a súkromie</h2>
+      <p>
+        <strong>Enhanced Privacy</strong> šifruje komunikáciu, aby ju nebolo možné odpočúvať bežným skenerom.
+        <strong>Transmit Interrupt</strong> umožňuje prerušiť prebiehajúci hovor prioritnou správou, čo je dôležité pri núdzových
+        situáciách. Funkcie <strong>Man Down</strong> a <strong>Lone Worker</strong> sledujú osamote pracujúceho zamestnanca:
+        pri páde, nehybnosti alebo nereagovaní automaticky vyšlú núdzový signál.
+      </p>
+
+      <h2>Práca a dispečing</h2>
+      <p>
+        Funkcia <strong>pracovných príkazov (Work Order Ticketing)</strong> posiela pracovníkom úlohy priamo do rádiostanice,
+        kde ich vidia na displeji a potvrdzujú ich stav. Rada SL má na to zjednodušené používateľské rozhranie, takže zadávanie
+        a odbavovanie úloh je rýchle aj v teréne.
+      </p>
+
+      <div class="not-prose my-6">
+        <video
+          controls
+          preload="metadata"
+          class="w-full rounded-lg border border-hairline bg-black"
+          title="MOTOTRBO SL Series, rozhranie pre pracovné príkazy"
+        >
+          <source
+            src="/videos/mototrbo/MOTOTRBO_SL_Series_A_Simplified_User_Interface_for_Work_Orders.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
+      <p>
+        Na plnohodnotný dispečing a evidenciu úloh naväzujú dispečerské aplikácie
+        <a href="/bezpecnostne-systemy-radiove-siete/smartptt">SmartPTT</a> a
+        <a href="/bezpecnostne-systemy-radiove-siete/wave-ptx">WAVE PTX</a>, ktoré prepájajú rádiostanice, mobily a
+        dispečing na jednej mape.
+      </p>
+
+      <h2>Poloha a pripojenie</h2>
+      <p>
+        Vybrané modely majú <strong>GPS</strong> na sledovanie polohy, <strong>Bluetooth</strong> pre bezdrôtové príslušenstvo
+        a <strong>Wi-Fi</strong> na diaľkovú správu a aktualizácie. GPS pozície sa dajú zobraziť v dispečerskej aplikácii,
+        takže máte prehľad o rozmiestnení tímu v areáli.
+      </p>
+
+      <h2>Správa a rozšírenie systému</h2>
+      <p>
+        Väčšie flotily sa spravujú centrálne. <a href="/bezpecnostne-systemy-radiove-siete/radio-management-otap"
+          >Radio Management a OTAP</a
+        > umožňuje programovať rádiostanice na diaľku „vzduchom",
+        <a href="/bezpecnostne-systemy-radiove-siete/mototrbo-rdac">RDAC</a> monitoruje stav prevádzačov a siete v reálnom
+        čase. Kapacitu systému rozšíria licencie
+        <a href="/bezpecnostne-systemy-radiove-siete/mototrbo-capacity-plus">Capacity Plus</a> a
+        <a href="/bezpecnostne-systemy-radiove-siete/mototrbo-linked-capacity-plus">Linked Capacity Plus</a>. K
+        dispozícii sú aj ďalšie licencie, napríklad manažment IMPRES akumulátorov, 5-Tone signalizácia či Digital
+        Telephone Patch pre prepojenie s telefónnou sieťou.
+      </p>
+
+      <h2>Ktoré funkcie potrebujete vy</h2>
+      <p>
+        Nie každá prevádzka potrebuje všetko. Podľa toho, či riešite bezpečnosť osamote pracujúcich, hlučné prostredie,
+        súkromie komunikácie alebo dispečing úloh, vám odporučíme konkrétnu kombináciu modelov a licencií a pripravíme
+        cenovú ponuku. Konkrétne licenčné kľúče nájdete v katalógu v kategóriách
+        <a href="/katalog-produktov/kategoria/softver-dp">Softvér (DP)</a> a
+        <a href="/katalog-produktov/kategoria/softver-dr">Softvér (DR)</a>.
+      </p>
+    </div>
+
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-8 text-sm">
+      <a
+        class="font-medium text-primary hover:underline"
+        href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">&larr; Digitálny systém MOTOTRBO</a
+      >
+      <a class="font-medium text-primary hover:underline" href="/lp/konzultacia.html?utm_source=web&utm_campaign=web"
+        >Nezáväzná konzultácia &rarr;</a
+      >
+    </div>
+  </article>
+</Layout>
