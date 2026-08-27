@@ -189,11 +189,19 @@ def fix_headings(h, title):
         h = h[m.end():]
     return re.sub(r'<(/?)h1\b', r'<\1h2', h, flags=re.I)
 
+# Zvysky z mototrbo.sk: vety odkazujuce na porovnavaciu tabulku parametrov a na
+# obrazok velkosti modelov, ktore sa pri migracii nepreniesli. Cely dangling <p>
+# odstranime (inak text odkazuje na nieco, co na stranke nie je).
+_DANGLING_REF = re.compile(
+    r'<p[^>]*>(?:(?!</p>).)*?(?:nasleduj\w*\s+tabu[ľl]\w*|nasleduj\w*\s+obr[áa]zku)(?:(?!</p>).)*?</p>',
+    re.I | re.S)
+
 def clean(h, kde='', title=None):
     """Kompletne vycistenie popisu po migracii (Joomla tagy, K2 galerie, mrtve odkazy)."""
     if not h:
         return h
     out = strip_joomla(h)
+    out = _DANGLING_REF.sub('', out)
     out = kill_dead_links(out, kde)
     if title is not None:
         out = fix_headings(out, title)
