@@ -189,6 +189,22 @@ def fix_headings(h, title):
         h = h[m.end():]
     return re.sub(r'<(/?)h1\b', r'<\1h2', h, flags=re.I)
 
+# Migracia z K2 nechala na zaciatku popisu kratky perex ako <p> a hned za nim
+# takmer identicky (dlhsi) uvod ako velky tucny <h2>, takze text vyzeral zdvojene
+# (Richi #2). Ak sa zaciatocny <p> a <h2> zhoduju v dlhom prefixe, necháme len
+# dlhsiu verziu ako normalny odstavec.
+_INTRO_DUP = re.compile(r'^\s*<p>(.*?)</p>\s*<h2\b[^>]*>(.*?)</h2>', re.S | re.I)
+
+def dedupe_intro(h):
+    m = _INTRO_DUP.match(h)
+    if not m:
+        return h
+    a, b = _plain(m.group(1)), _plain(m.group(2))
+    if min(len(a), len(b)) >= 20 and (a.startswith(b[:20]) or b.startswith(a[:20])):
+        keep = m.group(1) if len(a) >= len(b) else m.group(2)
+        return '<p>' + keep.strip() + '</p>' + h[m.end():]
+    return h
+
 # Zvysky z mototrbo.sk: vety odkazujuce na porovnavaciu tabulku parametrov a na
 # obrazok velkosti modelov, ktore sa pri migracii nepreniesli. Cely dangling <p>
 # odstranime (inak text odkazuje na nieco, co na stranke nie je).
@@ -203,6 +219,7 @@ def clean(h, kde='', title=None):
     out = strip_joomla(h)
     out = _DANGLING_REF.sub('', out)
     out = kill_dead_links(out, kde)
+    out = dedupe_intro(out)
     if title is not None:
         out = fix_headings(out, title)
     # az na konci: chyta aj odstavce, ktore ostali prazdne po vyhodenom obrazku/odkaze
@@ -390,7 +407,9 @@ def build_sidebar(current_id):
 
 # ---------------------------------------------------------------- pomocne
 def first_sentence(t):
-    t = (t or '').strip()
+    # htmlmod.unescape: v popis_text ostali entity ako &nbsp; ako holy text,
+    # ktore sa v kartach (JSX) zobrazovali doslovne (Richi #1).
+    t = htmlmod.unescape(t or '').strip()
     if not t:
         return ''
     m = re.match(r'(.+?[.!?])(\s|$)', t)
@@ -990,6 +1009,29 @@ const hasFilter = filters.length > 0 || freq !== null;
 </Layout>
 '''
 
+# ---------------------------------------------------------------- auto-link kodov dielov
+# V popisoch (napr. OBSAH DODÁVKY) su kody prislusenstva ako holy text; ak taky kod
+# zodpoveda produktu v katalogu, spravime z neho odkaz na jeho stranku (Richi #3).
+_CODE_RE = re.compile(r'^[A-Z]{2,6}[0-9][A-Z0-9]*$')
+CODE_URL = {}
+for _p in products:
+    _t = (_p['title'] or '').strip().upper()
+    if _CODE_RE.match(_t):
+        CODE_URL.setdefault(_t, prod_url(_p['id']))
+
+_CODE_TOKEN = re.compile(r'(?<![\w/-])([A-Z]{2,6}[0-9][A-Z0-9]{2,})(?![\w-])')
+
+def link_codes(html, self_url):
+    def repl(t):
+        def _one(m):
+            code = m.group(1)
+            url = CODE_URL.get(code)
+            if not url or url == self_url:
+                return code
+            return '<a href="%s" class="text-primary hover:underline">%s</a>' % (url, code)
+        return _CODE_TOKEN.sub(_one, t)
+    return _map_text(html, repl)
+
 # ---------------------------------------------------------------- generuj produkty
 n_prod = 0
 for src in ([] if INDEX_ONLY else sorted(products, key=lambda p: p['id'])):
@@ -999,8 +1041,10 @@ for src in ([] if INDEX_ONLY else sorted(products, key=lambda p: p['id'])):
     pobj = {
         'title': src['title'],
         'slides': slides,
-        'popis_html': clean(src['popis_html'],
-                            kde='produkt %d %s' % (src['id'], src['title']), title=src['title']),
+        'popis_html': link_codes(
+            clean(src['popis_html'], kde='produkt %d %s' % (src['id'], src['title']), title=src['title']),
+            prod_url(src['id']),
+        ),
         'parametre': src['parametre'],
         'dokumenty': [{'subor': d['subor'], 'titul': d['titul']} for d in src.get('attachments', []) if doc_exists(d['subor'])],
     }
