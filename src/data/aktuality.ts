@@ -92,6 +92,17 @@ export const energyMemo: Post[] = [
 // Vetva Bezpecnostne systemy a radiove siete (Newsletter)
 export const newsletter: Post[] = [
   {
+    number: '#004',
+    category: 'Newsletter',
+    series: 'Potvrďte príjem',
+    title: 'Kúpa alebo prenájom rádiostaníc? Počty pre firmy',
+    excerpt:
+      'Kedy sa firme oplatí rádiostanice kúpiť a kedy prenajať? Pri cene od 316 € a prenájme 48 €/mesiac vychádza bod zvratu okolo 7 mesiacov. Modelové scenáre, správa frekvencií aj odpisy.',
+    date: '2. 9. 2026',
+    author: 'Vladimír Svatý',
+    href: '/bezpecnostne-systemy-radiove-siete/newsletter/kupa-alebo-prenajom-radiostanic',
+  },
+  {
     number: '#003',
     category: 'Newsletter',
     series: 'Potvrďte príjem',

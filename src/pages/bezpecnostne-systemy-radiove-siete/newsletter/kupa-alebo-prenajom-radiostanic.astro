@@ -1,0 +1,360 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import NewsletterCTA from '~/components/widgets/NewsletterCTA.astro';
+
+const metadata = {
+  title: 'Kúpa alebo prenájom rádiostaníc? Počty pre firmy | Potvrďte príjem | RKS',
+  description:
+    'Kedy sa firme oplatí profesionálne rádiostanice (vysielačky) kúpiť a kedy prenajať? Pri cene rádiostanice od 316 € a prenájme 48 €/mesiac vychádza bod zvratu okolo 7 mesiacov. Modelové scenáre, správa frekvencií aj odpisy.',
+};
+
+const post = {
+  number: '#004',
+  title: 'Kúpa alebo prenájom rádiostaníc? Počty pre firmy',
+  dek: 'Bez marketingu a bez „záleží od potrieb". Konkrétne čísla, bod zvratu a modelové scenáre pre výrobu, sklady, eventy aj odstávky.',
+  date: '2. 9. 2026',
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-3xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/newsletter">Newsletter</a>
+    <span class="px-1">/</span>
+    <span class="text-default">Kúpa alebo prenájom rádiostaníc?</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-14 md:py-20">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-5">Potvrďte príjem · {post.number}</p>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight">{post.title}</h1>
+      <p class="mt-4 text-lg md:text-xl text-white/80 italic">{post.dek}</p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+    <p class="text-sm text-muted pb-8 mb-10 border-b border-hairline">Potvrďte príjem · {post.number} · {post.date}</p>
+
+    <div class="prose prose-lg max-w-none">
+      <p>
+        Pri rozhodovaní medzi kúpou a prenájmom rádiostaníc rozhoduje najmä dĺžka a intenzita používania. Keď k nim
+        pridáte servis, frekvencie a prevádzkovú flexibilitu, dá sa hranica medzi oboma modelmi pomerne dobre spočítať.
+      </p>
+      <p>
+        Pre praktický prepočet berieme reálne čísla z trhu: firma si kúpi rádiostanicu Motorola R2 za približne
+        <strong>316 €</strong> bez DPH, alebo si ju prenajme za <strong>48 € na mesiac</strong> (v prenájme RKS napríklad
+        model CP140). Ide o orientačný ekonomický model postavený na aktuálnej nákupnej cene základnej profesionálnej rádiostanice
+        a štandardnej sadzbe RKS za prenájom. Prenajímaná a kupovaná rádiostanica pritom nemusia byť funkčne totožné.
+      </p>
+
+      <div class="not-prose my-8 border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        <p class="text-xs font-bold tracking-widest uppercase text-primary mb-3">V skratke</p>
+        <ul class="list-disc pl-5 space-y-1.5 text-muted">
+          <li>
+            V základnom modeli (rádiostanica ~316 €, prenájom 48 €/mesiac) vychádza bod zvratu približne na 7 mesiacov.
+            Do tohto bodu je lacnejší prenájom, za ním kúpa.
+          </li>
+          <li>
+            Pri kúpe počítajte aj s mesačným poplatkom regulačnému úradu za správu pridelených frekvencií: 3 € do 5
+            rádiostaníc, 6 € do 10, 9 € nad 10. Poplatok je jeden pre celú sieť, rovnaký za všetky rádiostanice. Pri
+            prenájme sú frekvencie v cene.
+          </li>
+          <li>
+            V tomto modeli sa bod zvratu s počtom kusov takmer nemení; pri 5 aj pri 100 rádiostaniciach vychádza okolo
+            pol roka až tri štvrte roka.
+          </li>
+          <li>
+            Prenájom vyhráva pri krátkom a neistom používaní: odstávky, eventy, športové podujatia, sezóna, testovanie.
+            Najsilnejší je hybrid: vlastniť základ a špičky dopĺňať prenájmom.
+          </li>
+        </ul>
+      </div>
+
+      <h2>Kedy sa firme oplatí rádiostanice kúpiť a kedy prenajať?</h2>
+      <p>
+        V našom základnom modelovom scenári (rádiostanica za <strong>316 €</strong> a prenájom <strong
+          >48 € na kus a mesiac</strong
+        >) sa nákup zaplatí približne za <strong>7 mesiacov</strong> nepretržitého používania. Ide o jednoduchý cenový prepočet;
+        skutočný bod zvratu posúvajú náklady vlastníctva ako servis a batérie, o ktorých píšeme nižšie. Do tohto bodu je lacnejší
+        prenájom, za ním kúpa. S každým ďalším mesiacom sa rozdiel prehlbuje.
+      </p>
+
+      <figure class="not-prose my-10 rounded-xl border border-hairline overflow-hidden bg-white">
+        <div class="px-6 pt-5 pb-1">
+          <p class="text-xs font-bold tracking-widest uppercase text-primary mb-1.5">
+            Celkové náklady v čase · 20 rádiostaníc (R2 vs prenájom)
+          </p>
+          <p class="font-bold text-[#0B1F3A] leading-snug">
+            Kedy sa kúpa vyrovná prenájmu (kumulatívne náklady, € bez DPH)
+          </p>
+        </div>
+        <svg
+          class="block w-full h-auto px-4 pb-3"
+          viewBox="0 0 720 420"
+          role="img"
+          aria-label="Graf kumulatívnych nákladov pre 20 rádiostaníc. Kúpa začína na 6 320 € a so správou frekvencií rastie na približne 6 900 € za 60 mesiacov. Prenájom začína na nule a rastie na 57 600 € za 60 mesiacov. Krivky sa pretínajú približne v 7. mesiaci."
+        >
+          <line x1="70" y1="40" x2="70" y2="360" stroke="#c9d2de" stroke-width="1"></line>
+          <line x1="70" y1="360" x2="700" y2="360" stroke="#c9d2de" stroke-width="1"></line>
+          <line x1="70" y1="253" x2="700" y2="253" stroke="#eef1f6" stroke-width="1"></line>
+          <line x1="70" y1="147" x2="700" y2="147" stroke="#eef1f6" stroke-width="1"></line>
+          <text x="62" y="364" font-family="Arial" font-size="11" fill="#5b6677" text-anchor="end">0 €</text>
+          <text x="62" y="257" font-family="Arial" font-size="11" fill="#5b6677" text-anchor="end">20 000 €</text>
+          <text x="62" y="151" font-family="Arial" font-size="11" fill="#5b6677" text-anchor="end">40 000 €</text>
+          <text x="70" y="378" font-family="Arial" font-size="11" fill="#5b6677" text-anchor="middle">0</text>
+          <text x="194" y="378" font-family="Arial" font-size="11" fill="#5b6677" text-anchor="middle">12</text>
+          <text x="318" y="378" font-family="Arial" font-size="11" fill="#5b6677" text-anchor="middle">24</text>
+          <text x="442" y="378" font-family="Arial" font-size="11" fill="#5b6677" text-anchor="middle">36</text>
+          <text x="566" y="378" font-family="Arial" font-size="11" fill="#5b6677" text-anchor="middle">48</text>
+          <text x="690" y="378" font-family="Arial" font-size="11" fill="#5b6677" text-anchor="middle">60</text>
+          <text x="385" y="398" font-family="Arial" font-size="11.5" fill="#5b6677" text-anchor="middle"
+            >mesiace používania</text
+          >
+          <line x1="139" y1="150" x2="139" y2="360" stroke="#9aa7b5" stroke-width="1" stroke-dasharray="4 4"></line>
+          <circle cx="139" cy="326" r="5" fill="#0B1F3A"></circle>
+          <text x="147" y="150" font-family="Arial" font-size="12" font-weight="700" fill="#0B1F3A"
+            >Bod zvratu ≈ 7 mesiacov</text
+          >
+          <text x="147" y="166" font-family="Arial" font-size="11" fill="#5b6677"
+            >vľavo lacnejší prenájom · vpravo lacnejšia kúpa</text
+          >
+          <polyline points="70,360 194,299 318,237 442,176 566,114 690,53" fill="none" stroke="#1A1ADB" stroke-width="3"
+          ></polyline>
+          <polyline
+            points="70,326 194,326 318,325 442,325 566,324 690,324"
+            fill="none"
+            stroke="#0B1F3A"
+            stroke-width="3"></polyline>
+          <text x="686" y="48" font-family="Arial" font-size="12.5" font-weight="700" fill="#1A1ADB" text-anchor="end"
+            >Prenájom 57 600 €</text
+          >
+          <text x="686" y="312" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A" text-anchor="end"
+            >Kúpa ≈ 6 900 €</text
+          >
+        </svg>
+        <figcaption class="text-sm text-muted px-6 pb-5 italic">
+          Kúpa 20 rádiostaníc R2 (tmavá) je investícia ~6 300 € na začiatku a potom takmer stojí (správa frekvencií ~9
+          €/mesiac). Prenájom (modrá) štartuje od nuly a rastie o 960 €/mesiac. V tomto jednoduchom cenovom modeli
+          vzniká za päť rokov rozdiel viac než 50 000 € v prospech kúpy; reálny rozdiel znižujú servis, batérie a ďalšie
+          náklady vlastníctva.<sup><a href="#zdroj-1">1</a></sup>
+        </figcaption>
+      </figure>
+
+      <h2>Pri kúpe počítajte aj s frekvenciami</h2>
+      <p>
+        Vlastníctvo rádiostanice nie je jednorazový náklad. Kým prenájom má frekvencie vyriešené v cene, pri vlastnej
+        sieti platí firma regulačnému úradu mesačný poplatok za správu pridelených frekvencií.<sup
+          ><a href="#zdroj-2">2</a></sup
+        > Poplatok je jeden pre celú sieť a rovnaký za všetky rádiostanice; jeho výška závisí od počtu rádiostaníc. Je nízky
+        a bod zvratu prakticky neposúva, do kalkulácie ale patrí.
+      </p>
+
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Počet rádiostaníc</th>
+              <th>Poplatok / mesiac</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>do 5 rádiostaníc</td>
+              <td>3 €</td>
+            </tr>
+            <tr>
+              <td>do 10 rádiostaníc</td>
+              <td>6 €</td>
+            </tr>
+            <tr>
+              <td>nad 10 rádiostaníc</td>
+              <td>9 €</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Kúpa ako investícia: CAPEX a odpisy</h2>
+      <p>
+        Nákup má aj účtovnú stránku, ktorá zmierňuje jeho dopad na náklady. Jedna lacnejšia rádiostanica (napríklad R2
+        za 316 €) je pod hranicou 1 700 € pre dlhodobý hmotný majetok, takže sa spravidla zaúčtuje priamo do nákladov.<sup
+          ><a href="#zdroj-3">3</a></sup
+        > Celá rádiová sieť alebo systém, ktorých obstarávacia cena presiahne 1 700 €, sa účtujú ako dlhodobý hmotný majetok
+        (CAPEX) a odpisujú sa niekoľko rokov; rádiové a telekomunikačné zariadenia bývajú v prvej odpisovej skupine so štvorročným
+        odpisom. Investícia tak nezaťaží náklady celá v roku nákupu, ale sa rozloží cez odpisy. Prenájom je naopak celý priamym
+        nákladom (OPEX) v období, keď ho platíte. Konkrétne zaradenie a spôsob účtovania závisia od použitých účtovných štandardov,
+        internej smernice a daňového režimu danej spoločnosti.
+      </p>
+
+      <h2>Kedy prenájom vyhráva aj pri vyššej cene</h2>
+      <p>
+        Cena za deň prenájmu je vyššia než pomerná časť nákupu. Firma za ňu ale kupuje prevádzkovú hodnotu, ktorú pri
+        vlastníctve nemá: okamžitú dostupnosť, servis a výmenu poškodených kusov, náhradné batérie, vyriešené frekvencie
+        a žiadny viazaný kapitál. Prenájom dáva zmysel pri dočasných stavbách, odstávkach závodov, festivaloch, eventoch
+        a športových podujatiach, sezónnych prevádzkach, krátkodobých projektoch, testovaní technológie,
+        nepredvídateľnom počte pracovníkov, zahraničných projektoch a jednorazových bezpečnostných akciách.
+      </p>
+
+      <h2>Kedy kúpa ekonomicky vychádza lepšie</h2>
+      <p>
+        Pri každodennej výrobnej prevádzke, logistickom sklade, bezpečnostnej službe, facility managemente, energetike,
+        kritickej infraštruktúre alebo veľkom priemyselnom areáli sa investícia zaplatí rýchlo a po dosiahnutí bodu
+        zvratu môže rozdiel v celkových nákladoch v prospech vlastníctva ďalej rásť. Znaky takejto firmy: stabilný počet
+        používateľov, denná a dlhodobá prevádzka, dve až tri zmeny, vlastná infraštruktúra a integrácia do iných
+        systémov. Vlastníctvo tu prináša aj kontrolu nad konfiguráciou, bezpečnosťou a integráciou.
+      </p>
+
+      <h2>Kedy už nekupujete vysielačky, ale sieť</h2>
+      <p>
+        Hranica nie je počet kusov. Firma prestáva kupovať zariadenia a začína budovať sieť vo chvíli, keď potrebuje
+        súvislé pokrytie: prvý <strong>opakovač</strong> (rozširuje dosah a pokrýva priestory so slabým signálom ako haly
+        a suterény), antény a prepojenie staníc do skupín. Rozdiel medzi sieťou a systémom je pritom praktický.
+        <strong>Sieť je vrstva pokrytia a spojenia</strong> (opakovač, antény, pridelené frekvencie, roaming).
+        <strong>Systém je sieť doplnená o vrstvu riadenia a dát</strong>: dispečing, sledovanie GPS a nahrávanie
+        komunikácie, ďalej funkcie man-down a lone-worker, tiesňové tlačidlo a integrácie do IT a technológie. Pri sieti
+        aj systéme prestáva rozhodovať cena jednej rádiostanice a začína rozhodovať návrh pokrytia a služieb. Signál, že
+        prevádzka smeruje k systému: viac budov alebo rozľahlý areál, potreba komunikácie v priestoroch so slabým
+        pokrytím signálu, viac pracovných tímov s oddelenými kanálmi, viaczmenná prevádzka, požiadavka na lokalizáciu a
+        bezpečnosť pracovníka, alebo integrácia do IT.
+      </p>
+
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Scenár</th>
+              <th>Počet</th>
+              <th>Trvanie</th>
+              <th>Odporúčanie</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Malý sklad</td>
+              <td>10</td>
+              <td>trvalo, denne</td>
+              <td class="font-bold whitespace-nowrap">Kúpa</td>
+            </tr>
+            <tr>
+              <td>Výrobný závod</td>
+              <td>50</td>
+              <td>2–3 zmeny, celoročne</td>
+              <td class="font-bold whitespace-nowrap">Kúpa + sieť</td>
+            </tr>
+            <tr>
+              <td>Stavebný projekt</td>
+              <td>30</td>
+              <td>12 mesiacov</td>
+              <td class="font-bold whitespace-nowrap">Kúpa / hybrid</td>
+            </tr>
+            <tr>
+              <td>Event alebo športové podujatie</td>
+              <td>60</td>
+              <td>3 dni</td>
+              <td class="font-bold whitespace-nowrap">Prenájom</td>
+            </tr>
+            <tr>
+              <td>Kritická infraštruktúra</td>
+              <td>50+</td>
+              <td>trvalo, vlastná sieť</td>
+              <td class="font-bold whitespace-nowrap">Kúpa + systém</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-sm text-muted">
+        <strong>Kúpa + sieť</strong> = rádiostanice s vlastným pokrytím (opakovač, antény, frekvencie).
+        <strong>Kúpa + systém</strong> = sieť doplnená o riadenie a dáta: dispečing, GPS, nahrávanie a integrácie.
+      </p>
+
+      <p>
+        Pri týchto cenách je bod zvratu nízko, takže kúpa vyhráva už aj pri strednodobých projektoch. Stavba na 12
+        mesiacov je toho príklad: nákup 30 rádiostaníc (~9 500 €) je za rok lacnejší než prenájom (~17 300 €), a
+        rádiostanice zostanú firme na ďalší projekt. Prenájom si tu drží zmysel vtedy, keď firma nechce žiadnu zvyškovú
+        techniku ani administratívu okolo nej, alebo keď je projekt kratší.
+      </p>
+
+      <h2>Skryté náklady, na ktoré sa pri kúpe zabúda</h2>
+      <p>
+        Do porovnania patria aj náklady, ktoré prenájom zvyčajne zahŕňa v cene. Okrem mesačného poplatku za správu
+        frekvencií je to najmä batéria. Jej životnosť závisí od počtu nabíjacích cyklov, hĺbky vybitia, teploty a
+        spôsobu používania.<sup><a href="#zdroj-4">4</a></sup> Pri intenzívnej každodennej prevádzke preto treba počas životnosti
+        rádiostanice počítať aj s výmenami batérií. K tomu patrí servis a opravy a rezerva 5 až 10 % kusov na poškodené a
+        stratené rádiostanice. Pri prenájme tieto položky nesie prenajímateľ.
+      </p>
+
+      <aside class="not-prose my-10 rounded-xl bg-[#0A2342] text-white p-8">
+        <p class="text-xs font-bold tracking-widest uppercase text-accent mb-3">Podstata veci</p>
+        <p class="text-xl leading-snug">
+          Pri reálnych cenách sa kúpa zaplatí za necelý rok. <strong
+            >Prenájom potom predáva pružnosť a servis, a tie majú cenu práve pri krátkom a neistom používaní.</strong
+          >
+        </p>
+      </aside>
+
+      <h2>Čo z toho pre vašu firmu: Pohľad RKS</h2>
+      <p class="font-semibold">Kúpiť, alebo prenajať? Rozhodne váš prevádzkový profil.</p>
+      <p>
+        RKS navrhuje, dodáva a servisuje profesionálne rádiové siete vrátane Motorola MOTOTRBO a CALTTA, a ponúka aj
+        prenájom. Hranica medzi nákupom vysielačiek a vybudovaním siete pritom závisí od konkrétnej prevádzky.
+      </p>
+      <p>
+        Ak podobné rozhodnutie práve riešite, pokojne nám pošlite počet rádiostaníc a predpokladanú dobu používania.
+        Radi vám pomôžeme porovnať oba scenáre na reálnych číslach.
+      </p>
+      <p class="not-italic text-xl font-medium border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        Dobré rozhodnutie určuje váš prevádzkový profil, až potom cena jednej rádiostanice.
+      </p>
+
+      <h2>Súvisiace odkazy</h2>
+      <ul>
+        <li><a href="/bezpecnostne-systemy-radiove-siete/prenajom-radiostanic">Prenájom rádiostaníc</a></li>
+        <li><a href="/bezpecnostne-systemy-radiove-siete/predaj-radiostanic">Predaj rádiostaníc</a></li>
+        <li><a href="/bezpecnostne-systemy-radiove-siete/servis-radiostanic">Servis rádiostaníc</a></li>
+        <li><a href="/bezpecnostne-systemy-radiove-siete/radiove-siete">Rádiové siete</a></li>
+      </ul>
+
+      <h2>Zdroje a predpoklady</h2>
+      <ol>
+        <li id="zdroj-1">
+          Model TCO a break-even: prepočet RKS na vlastných cenách 2026, nákup Motorola R2 ~316 €/kus bez DPH, prenájom
+          48 €/kus/mesiac (v prenájme napr. Motorola CP140), mesačný poplatok regulačnému úradu za správu frekvencií 3 €
+          (do 5 rádiostaníc) / 6 € (do 10) / 9 € (nad 10), jeden pre celú sieť. Jednoduchý cenový bod zvratu ≈ 316 / 48
+          ≈ 7 mesiacov; správa frekvencií ho posúva len nepatrne, náklady vlastníctva (servis, batérie) ho mierne
+          predlžujú. Prenajímaná a kupovaná rádiostanica nemusia byť funkčne totožné.
+        </li>
+        <li id="zdroj-2">
+          Frekvencie: profesionálna rádiová sieť s vlastnými frekvenciami a opakovačmi potrebuje na Slovensku pridelenie
+          frekvencií a povolenie od regulačného úradu (Úrad pre reguláciu elektronických komunikácií a poštových
+          služieb, zákon č. 452/2021 Z. z.). Pásmo PMR446 sa dá používať bez povolenia.
+        </li>
+        <li id="zdroj-3">
+          Odpisy a hranica majetku: hranica 1 700 € pre dlhodobý hmotný majetok a odpisové skupiny podľa zákona č.
+          595/2003 Z. z. o dani z príjmov. Prehľad:
+          <a href="https://www.podnikajte.sk/odpisy/odpisove-skupiny-2026-ako-zaradit-majetok" rel="noopener"
+            >podnikajte.sk</a
+          > (1. skupina = 4 roky). Zaradenie a účtovanie závisia od použitých účtovných štandardov, internej smernice a daňového
+          režimu spoločnosti.
+        </li>
+        <li id="zdroj-4">
+          Životnosť Li-ion batérií: Battery University (BU-801b, 300–500 cyklov do 80 % kapacity); Motorola Solutions.
+          Dostupné z:
+          <a href="https://www.batteryuniversity.com/article/bu-801b-how-to-define-battery-life/" rel="noopener"
+            >batteryuniversity.com</a
+          >.
+        </li>
+      </ol>
+
+      <p class="text-sm text-muted italic">
+        Všetky čísla sú orientačné hodnoty pre rozhodovanie, bez DPH. Presná kalkulácia závisí od modelu rádiostaníc,
+        počtu kusov, dĺžky a intenzity prevádzky a príslušenstva.
+      </p>
+    </div>
+
+    <NewsletterCTA />
+  </article>
+</Layout>
