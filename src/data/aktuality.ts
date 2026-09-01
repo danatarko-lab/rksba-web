@@ -17,6 +17,14 @@ export type Post = {
 export const energyMemo: Post[] = [
   {
     category: 'Energy Memo',
+    title: 'Spotrebná daň z FVE: kedy ju firma platí a kedy nie',
+    excerpt:
+      'Česká colná správa spustila plošné kontroly fotovoltiky. Platí firma na Slovensku spotrebnú daň z vlastnej FVE? Rozhodujú tri veci: registrácia nad 50 kW, vznik dane a oslobodenie cez záruky pôvodu.',
+    date: '4. 9. 2026',
+    href: '/energetika/blog/spotrebna-dan-fve',
+  },
+  {
+    category: 'Energy Memo',
     title: 'ISO 50001 nie je povinné: čo firmám naozaj ukladá zákon',
     excerpt:
       'Firmy sa pýtajú, či musia mať certifikát ISO 50001. Zákon 321/2014 im ho nepredpisuje, ukladá povinnosť podľa § 14 a tú možno splniť tromi spôsobmi. A pravidlá sa čoskoro menia.',

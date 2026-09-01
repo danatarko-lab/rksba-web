@@ -1,0 +1,536 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import NewsletterCTA from '~/components/widgets/NewsletterCTA.astro';
+
+const metadata = {
+  title: 'Spotrebná daň z FVE: kedy ju platíte | Energy Memo | RKS',
+  description:
+    'Firmy s fotovoltikou sa pýtajú, či platia spotrebnú daň z elektriny. Čo platí do a nad 50 kW, kedy vzniká registrácia, ako funguje oslobodenie a akú úlohu majú záruky pôvodu.',
+};
+
+const post = {
+  title: 'Spotrebná daň z FVE: kedy ju firma platí a kedy nie',
+  date: '4. 9. 2026',
+};
+
+const faq = [
+  {
+    q: 'Platí firma spotrebnú daň z vlastnej fotovoltiky?',
+    a: 'Pri zariadení do 50 kW vrátane sa uplatňuje zjednodušený režim podľa § 15a; vlastná spotreba a zdieľanie takto vyrobenej elektriny sú za zákonných podmienok oslobodené. Nad 50 kW vznikajú registračné a evidenčné povinnosti, samotná registrácia však neznamená daň zo všetkej vyrobenej elektriny.',
+  },
+  {
+    q: 'Aká je sadzba spotrebnej dane z elektriny na Slovensku?',
+    a: 'Sadzba je 1,32 €/MWh podľa § 6 zákona č. 609/2007 Z. z. v znení účinnom v roku 2026.',
+  },
+  {
+    q: 'Je FVE do 50 kW oslobodená od spotrebnej dane?',
+    a: 'Pri fotovoltike do 50 kW vrátane platí zjednodušený režim podľa § 15a: vlastná spotreba aj zdieľanie takto vyrobenej elektriny sú za zákonných podmienok oslobodené. Pri viacerých zariadeniach je dôležité posúdiť, čo sa na účely zákona považuje za jedno zariadenie.',
+  },
+  {
+    q: 'Musí sa prevádzkovateľ FVE registrovať na colnom úrade?',
+    a: 'Nad 50 kW áno. Registrácia je administratívna povinnosť a neznamená automaticky daň zo všetkej vyrobenej elektriny.',
+  },
+  {
+    q: 'Oplatí sa predať záruky pôvodu?',
+    a: 'Rozhodnutie závisí od viac než trhovej ceny záruky. Firma porovnáva čistý výnos z jej predaja s daňovým, zmluvným a reportingovým efektom toho, že záruku už nepoužije na danú elektrinu. Marginálne ceny solárnych záruk v aukciách OKTE v roku 2026 kolísali a v niektorých aukciách presiahli daň 1,32 €/MWh.',
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'sk',
+  mainEntity: faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-3xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/energetika">Energetika</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/energetika/blog">Energy Memo</a>
+    <span class="px-1">/</span>
+    <span class="text-default">Spotrebná daň z FVE</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-14 md:py-20">
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight">
+        Spotrebná daň z FVE: kedy ju firma platí a kedy nie
+      </h1>
+      <p class="mt-5 text-lg text-white/80">
+        Česká colná správa spustila plošné kontroly prevádzkovateľov fotovoltiky. Na Slovensku platí vlastný režim a pri
+        spotrebnej dani z elektriny rozhodujú tri samostatné otázky.
+      </p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+    <p class="text-sm text-muted pb-8 mb-10 border-b border-hairline">Energy Memo · {post.date}</p>
+
+    <div class="prose prose-lg max-w-none">
+      <p>
+        Českým prevádzkovateľom fotovoltiky začala colná správa hromadne posielať výzvy na preukázanie správnej úhrady
+        dane z elektriny. Pre slovenské firmy z toho vyplýva jedna otázka: platíme spotrebnú daň z vlastnej fotovoltiky?
+        Pri firemnej fotovoltike rozhodujú aj nad rámec hranice 50 kW tri veci: registračná povinnosť, vznik dane na
+        konkrétnej elektrine a možnosť preukázať jej oslobodenie.
+      </p>
+
+      <div class="not-prose my-8 border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        <p class="text-xs font-bold tracking-widest uppercase text-primary mb-3">V skratke</p>
+        <ul class="list-disc pl-5 space-y-1.5 text-muted">
+          <li>
+            Pri fotovoltike (FVE) do 50 kW vrátane platí zjednodušený režim podľa § 15a: na výrobcu sa nevzťahujú
+            vybrané ustanovenia o vzniku dane, registrácii a evidencii a vlastná spotreba či zdieľanie sú za zákonných
+            podmienok oslobodené.
+          </li>
+          <li>
+            Nad 50 kW vzniká registračná a evidenčná povinnosť voči colnému úradu. Registrácia sama osebe neznamená daň
+            zo všetkej výroby.
+          </li>
+          <li>
+            Solárny pôvod elektriny oslobodenie sám osebe nezakladá. Oslobodenie sa preukazuje zárukou pôvodu (§ 7 ods.
+            1 písm. e).
+          </li>
+          <li>
+            Sadzba dane je 1,32 €/MWh. Marginálne ceny záruk pôvodu sa v roku 2026 pohybovali v niektorých aukciách nad
+            touto hodnotou, preto má nakladanie so zárukami aj daňový rozmer.
+          </li>
+        </ul>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Situácia</th>
+              <th>Čo firma rieši</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>FVE do 50 kW vrátane</td>
+              <td>Zjednodušený režim podľa § 15a, mimo registrácie</td>
+            </tr>
+            <tr>
+              <td>FVE nad 50 kW</td>
+              <td>Registrácia a evidencia na colnom úrade (§ 11, § 14)</td>
+            </tr>
+            <tr>
+              <td>Konkrétna MWh podlieha dani</td>
+              <td>Skontrolovať právny titul oslobodenia</td>
+            </tr>
+            <tr>
+              <td>Oslobodenie elektriny z OZE</td>
+              <td>Preukázanie zárukou pôvodu (§ 7 ods. 1 písm. e)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Hranica 50 kW rozhoduje, kto to vôbec rieši</h2>
+      <p>
+        Zjednodušený režim podľa § 15a zákona č. 609/2007 Z. z. sa vzťahuje na výrobcu elektriny z obnoviteľných zdrojov
+        v zariadení s celkovým inštalovaným výkonom do 50 kW vrátane. Na takého výrobcu sa nevzťahujú ustanovenia o
+        vzniku dane, registrácii a evidencii (§ 9 až 14 a § 41) a jeho vlastná spotreba alebo zdieľanie takto vyrobenej
+        elektriny sa považujú za oslobodené.<sup><a href="#zdroj-1">1</a></sup> Hranicu 50 kW zaviedla novela č. 326/2024
+        Z. z. s účinnosťou od 1. januára 2025, predtým platilo 10 kW. Novela č. 181/2025 Z. z. potom od 1. septembra 2025
+        rozšírila oslobodenie aj na zdieľanú elektrinu.<sup><a href="#zdroj-2">2</a></sup>
+      </p>
+      <p>
+        Finančná správa vo svojom metodickom usmernení rieši aj posudzovanie viacerých samostatných zariadení do 50 kW.<sup
+          ><a href="#zdroj-3">3</a></sup
+        > Pri konkrétnej konfigurácii je preto dôležité posúdiť, čo sa na účely zákona považuje za jedno zariadenie. Nad hranicou
+        50 kW sa výrobca dostáva do režimu registrácie a evidencie.
+      </p>
+
+      <h2>Registrácia nie je to isté ako daň</h2>
+      <p>
+        Pri fotovoltike nad 50 kW firmy najčastejšie zlievajú do jednej tri veci, ktoré zákon rieši samostatne.
+        Registrácia je administratívny vzťah k colnému úradu. Vznik daňovej povinnosti zákon viaže na konkrétne situácie
+        nakladania s elektrinou; jednou z nich je jej dodanie konečnému spotrebiteľovi. Oslobodenie je právny titul, na
+        základe ktorého sa daň na konkrétnu megawatthodinu neuplatní.
+      </p>
+
+      <h2>Tri otázky, ktoré rozhodnú o daňovom režime FVE</h2>
+      <p>
+        Namiesto jedného výpočtu pomôže rozhodovací postup. Firma s fotovoltikou nad 50 kW ním prejde od výkonu
+        zariadenia až po preukázanie oslobodenia na konkrétnej megawatthodine.
+      </p>
+
+      <figure class="not-prose my-10 rounded-xl border border-hairline overflow-hidden bg-white">
+        <div class="px-6 pt-5 pb-1">
+          <p class="text-xs font-bold tracking-widest uppercase text-primary mb-1.5">Rozhodovací postup</p>
+          <p class="font-bold text-[#0B1F3A] leading-snug">Kedy firma s FVE naozaj rieši spotrebnú daň</p>
+        </div>
+        <svg
+          class="block w-full h-auto px-4 pb-3"
+          viewBox="0 0 720 392"
+          role="img"
+          aria-label="Rozhodovací postup pre fotovoltiku. Krok 1: Má zariadenie výkon nad 50 kW? Ak nie, platí zjednodušený režim podľa paragrafu 15a mimo registrácie. Ak áno, nasleduje krok 2: registrácia a evidencia na colnom úrade. Krok 3: Vzniká na konkrétnej megawatthodine daňová povinnosť. Krok 4: Existuje právny titul oslobodenia, napríklad záruka pôvodu. Krok 5: Vieme oslobodenie preukázať a evidovať."
+        >
+          <defs>
+            <marker id="ah" markerWidth="9" markerHeight="9" refX="5" refY="4" orient="auto">
+              <path d="M0,0 L8,4 L0,8 Z" fill="#1A1ADB"></path>
+            </marker>
+          </defs>
+          <line x1="250" y1="60" x2="250" y2="82" stroke="#1A1ADB" stroke-width="2" marker-end="url(#ah)"></line>
+          <line x1="250" y1="128" x2="250" y2="150" stroke="#1A1ADB" stroke-width="2" marker-end="url(#ah)"></line>
+          <line x1="250" y1="202" x2="250" y2="224" stroke="#1A1ADB" stroke-width="2" marker-end="url(#ah)"></line>
+          <line x1="250" y1="276" x2="250" y2="298" stroke="#1A1ADB" stroke-width="2" marker-end="url(#ah)"></line>
+          <line x1="460" y1="37" x2="486" y2="37" stroke="#9aa6b6" stroke-width="2" marker-end="url(#ah)"></line>
+
+          <rect x="40" y="14" width="420" height="46" rx="6" fill="#0B1F3A"></rect>
+          <circle cx="66" cy="37" r="12" fill="#1A1ADB"></circle>
+          <text x="66" y="41" font-family="Arial" font-size="13" font-weight="700" fill="#fff" text-anchor="middle"
+            >1</text
+          >
+          <text x="88" y="41" font-family="Arial" font-size="13.5" font-weight="700" fill="#fff"
+            >Má zariadenie inštalovaný výkon nad 50 kW?</text
+          >
+          <rect x="486" y="14" width="200" height="46" rx="6" fill="#EAF2FF" stroke="#cdd8ea"></rect>
+          <text x="496" y="32" font-family="Arial" font-size="11.5" font-weight="700" fill="#0B1F3A">NIE → § 15a</text>
+          <text x="496" y="48" font-family="Arial" font-size="11" fill="#5b6677">zjednodušený režim</text>
+
+          <rect x="40" y="82" width="420" height="46" rx="6" fill="#fff" stroke="#1A1ADB"></rect>
+          <circle cx="66" cy="105" r="12" fill="#1A1ADB"></circle>
+          <text x="66" y="109" font-family="Arial" font-size="13" font-weight="700" fill="#fff" text-anchor="middle"
+            >2</text
+          >
+          <text x="88" y="102" font-family="Arial" font-size="13" font-weight="700" fill="#0B1F3A"
+            >Registrácia a evidencia na colnom úrade</text
+          >
+          <text x="88" y="117" font-family="Arial" font-size="11.5" fill="#5b6677">§ 11 a § 14</text>
+
+          <rect x="40" y="150" width="420" height="52" rx="6" fill="#fff" stroke="#1A1ADB"></rect>
+          <circle cx="66" cy="176" r="12" fill="#1A1ADB"></circle>
+          <text x="66" y="180" font-family="Arial" font-size="13" font-weight="700" fill="#fff" text-anchor="middle"
+            >3</text
+          >
+          <text x="88" y="173" font-family="Arial" font-size="13" font-weight="700" fill="#0B1F3A"
+            >Vzniká na konkrétnej MWh daňová povinnosť?</text
+          >
+          <text x="88" y="189" font-family="Arial" font-size="11.5" fill="#5b6677"
+            >dodanie, zdieľanie, nabíjacia stanica · § 9</text
+          >
+
+          <rect x="40" y="224" width="420" height="52" rx="6" fill="#fff" stroke="#1A1ADB"></rect>
+          <circle cx="66" cy="250" r="12" fill="#1A1ADB"></circle>
+          <text x="66" y="254" font-family="Arial" font-size="13" font-weight="700" fill="#fff" text-anchor="middle"
+            >4</text
+          >
+          <text x="88" y="247" font-family="Arial" font-size="13" font-weight="700" fill="#0B1F3A"
+            >Existuje právny titul oslobodenia?</text
+          >
+          <text x="88" y="263" font-family="Arial" font-size="11.5" fill="#5b6677"
+            >záruka pôvodu · § 7 ods. 1 písm. e)</text
+          >
+
+          <rect x="40" y="298" width="420" height="46" rx="6" fill="#0B1F3A"></rect>
+          <circle cx="66" cy="321" r="12" fill="#1A1ADB"></circle>
+          <text x="66" y="325" font-family="Arial" font-size="13" font-weight="700" fill="#fff" text-anchor="middle"
+            >5</text
+          >
+          <text x="88" y="325" font-family="Arial" font-size="13.5" font-weight="700" fill="#fff"
+            >Vieme oslobodenie preukázať a evidovať?</text
+          >
+        </svg>
+        <figcaption class="text-sm text-muted px-6 pb-5 italic">
+          Každý krok sa posudzuje samostatne a na úrovni jednotlivej megawatthodiny. Registrácia nad 50 kW otvára ďalšie
+          otázky, o výške dane rozhoduje až titul oslobodenia.
+        </figcaption>
+      </figure>
+
+      <ol>
+        <li>
+          Musíme sa registrovať? Rozhoduje inštalovaný výkon zariadenia, nad 50 kW vzniká registračná a evidenčná
+          povinnosť (§ 11 a § 14).
+        </li>
+        <li>
+          Vzniká na konkrétnej megawatthodine daňová povinnosť? Rozhoduje spôsob nakladania, za dodanie konečnému
+          spotrebiteľovi sa od 1. 9. 2025 považuje aj zdieľanie a dodanie na nabíjaciu stanicu (§ 9).
+        </li>
+        <li>
+          Je táto megawatthodina oslobodená a vieme to preukázať? Oslobodenie elektriny z OZE sa preukazuje zárukou
+          pôvodu (§ 7 ods. 1 písm. e).
+        </li>
+      </ol>
+
+      <p>
+        Registrácia platiteľa nad 50 kW teda neznamená daň 1,32 €/MWh zo všetkej výroby. Elektrina z obnoviteľného
+        zdroja môže byť oslobodená, ak firma jej pôvod preukáže zárukou pôvodu.<sup><a href="#zdroj-1">1</a></sup> Zároveň
+        platí obrátene, že samotný fakt solárneho pôvodu oslobodenie nezakladá, kým chýba použiteľná záruka.
+      </p>
+
+      <h2>Ekonomika záruky pôvodu</h2>
+      <p>
+        Záruka pôvodu má pri fotovoltike dvojakú rolu. Preukazuje obnoviteľný pôvod pre oslobodenie od dane a zároveň je
+        obchodovateľným aktívom. Vydáva sa po 1 MWh, je použiteľná 12 mesiacov od výroby a jej evidenciu vedie OKTE (§
+        8a a § 8b zákona č. 309/2009 Z. z.).<sup><a href="#zdroj-4">4</a></sup>
+      </p>
+      <p>
+        Marginálne ceny solárnych záruk pôvodu (produkt 6 až 9 mesiacov) v aukciách OKTE počas roka 2026 výrazne
+        kolísali. Vo februárovej aukcii sa priemer pohyboval okolo 0,67 €/MWh, teda pod sadzbou dane, v májovej dosiahli
+        marginálne ceny približne 1,95 €/MWh a v augustovej približne 1,62 €/MWh.<sup><a href="#zdroj-5">5</a></sup>
+      </p>
+      <p>
+        Rozdiel medzi trhovou cenou záruky a sadzbou dane 1,32 €/MWh sám osebe ešte neurčuje správne rozhodnutie.
+        Rozhoduje čistý ekonomický efekt v konkrétnom režime firmy. Ak firma záruku predá, na príslušnú megawatthodinu
+        môže stratiť možnosť preukázať oslobodenie. Ak na tejto elektrine zároveň vznikne daňová povinnosť a firma nemá
+        iný právny titul oslobodenia, patrí do prepočtu aj spotrebná daň 1,32 €/MWh.
+      </p>
+
+      <figure class="not-prose my-10 rounded-xl border border-hairline overflow-hidden bg-white">
+        <div class="px-6 pt-5 pb-1">
+          <p class="text-xs font-bold tracking-widest uppercase text-primary mb-1.5">Záruka pôvodu verzus daň</p>
+          <p class="font-bold text-[#0B1F3A] leading-snug">Použiť záruku na oslobodenie, alebo ju predať?</p>
+        </div>
+        <svg
+          class="block w-full h-auto px-4 pb-3"
+          viewBox="0 0 720 252"
+          role="img"
+          aria-label="Porovnanie v eurách na megawatthodinu. Spotrebná daň z elektriny 1,32. Marginálne solárne záruky pôvodu z aukcií OKTE 2026: február priemer približne 0,67, teda pod daňou; máj približne 1,95 a august približne 1,62, teda nad daňou."
+        >
+          <line x1="200" y1="26" x2="200" y2="222" stroke="#e4e8ef" stroke-width="1"></line>
+          <line x1="488" y1="26" x2="488" y2="222" stroke="#1A1ADB" stroke-width="1" stroke-dasharray="4 4"></line>
+          <text x="488" y="20" font-family="Arial" font-size="11" font-weight="700" fill="#1A1ADB" text-anchor="middle"
+            >daň 1,32</text
+          >
+
+          <text x="12" y="56" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A">Spotrebná daň</text>
+          <rect x="200" y="38" width="288" height="26" rx="3" fill="#0B1F3A"></rect>
+          <text x="498" y="56" font-family="Arial" font-size="13" font-weight="700" fill="#0B1F3A">1,32 €/MWh</text>
+
+          <text x="12" y="106" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A"
+            >Záruka · feb 2026</text
+          >
+          <rect x="200" y="88" width="146" height="26" rx="3" fill="#9a9af0"></rect>
+          <text x="356" y="106" font-family="Arial" font-size="13" font-weight="700" fill="#5b6677">0,67 €/MWh</text>
+
+          <text x="12" y="156" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A"
+            >Záruka · máj 2026</text
+          >
+          <rect x="200" y="138" width="425" height="26" rx="3" fill="#1A1ADB"></rect>
+          <text x="635" y="156" font-family="Arial" font-size="13" font-weight="700" fill="#1A1ADB">1,95 €/MWh</text>
+
+          <text x="12" y="206" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A"
+            >Záruka · aug 2026</text
+          >
+          <rect x="200" y="188" width="353" height="26" rx="3" fill="#3a3ae0"></rect>
+          <text x="563" y="206" font-family="Arial" font-size="13" font-weight="700" fill="#1A1ADB">1,62 €/MWh</text>
+
+          <text x="200" y="242" font-family="Arial" font-size="11.5" fill="#5b6677"
+            >Marginálne solárne záruky (6–9 mes.), aukcie OKTE 2026. Február priemer, orientačne.</text
+          >
+        </svg>
+        <figcaption class="text-sm text-muted px-6 pb-5 italic">
+          Cena záruky pôvodu sa v roku 2026 pohybovala pod sadzbou dane aj nad ňou. O výsledku rozhoduje čistý
+          ekonomický efekt v konkrétnom režime firmy.<sup><a href="#zdroj-5">5</a></sup>
+        </figcaption>
+      </figure>
+
+      <p>
+        V najjednoduchšom prípade môže byť 1,32 €/MWh orientačným referenčným bodom pri rozhodovaní, či záruku použiť na
+        preukázanie oslobodenia alebo ju predať. Skutočná ekonomika však závisí od toho, či predmetná elektrina vôbec
+        podlieha dani, od čistej realizovanej ceny záruky, poplatkov a ďalších zmluvných či reportingových súvislostí.
+      </p>
+
+      <h2>Modelový príklad: firma s 250 kW FVE</h2>
+      <p>
+        Modelový, teda nie reálny, prípad ukazuje, ako sa rozhodovací postup použije v praxi. Firma má fotovoltiku s
+        inštalovaným výkonom 250 kW. Časť elektriny spotrebuje priamo vo výrobe, časť dodá do siete a časť zdieľa do
+        iného odberného miesta. Čo musí posúdiť?
+      </p>
+      <ol>
+        <li>
+          Výkon a registrácia: 250 kW je nad 50 kW, zariadenie preto spadá do režimu registrácie a evidencie (§ 11 a §
+          14). Najprv treba posúdiť, čo sa na účely zákona považuje za jedno zariadenie.
+        </li>
+        <li>
+          Vlastná spotreba vo výrobe: pri elektrine spotrebovanej priamo vo výrobe treba posúdiť, či a kedy vzniká
+          daňová povinnosť a či existuje právny titul oslobodenia.
+        </li>
+        <li>
+          Dodávka do siete: elektrina dodaná do siete alebo obchodníkovi sa posudzuje podľa toho, komu a ako sa dodáva
+          (§ 9).
+        </li>
+        <li>
+          Zdieľanie do iného odberného miesta: zdieľanie sa od 1. 9. 2025 považuje za dodanie konečnému spotrebiteľovi,
+          treba posúdiť vznik dane aj prípadné oslobodenie.
+        </li>
+        <li>
+          Záruky pôvodu a evidencia: pre megawatthodiny, na ktoré si firma uplatňuje oslobodenie z OZE, pripraviť
+          preukázanie zárukou pôvodu a všetky toky zosúladiť s evidenciou.
+        </li>
+      </ol>
+      <p>
+        Konkrétny daňový výsledok závisí od posúdenia jednotlivých tokov a odporúčame ho potvrdiť s daňovým poradcom.<sup
+          ><a href="#zdroj-6">6</a></sup
+        >
+      </p>
+
+      <h2>Čo hrozí, ak firma povinnosti nesplní</h2>
+      <p>
+        Nesplnenie registrácie, nevedenie evidencie alebo nepodanie daňového priznania môže viesť k pokute podľa
+        daňového poriadku (zákon č. 563/2009 Z. z., § 154 a § 155). Výška pokuty závisí od typu porušenia a od
+        aktuálneho znenia daňového poriadku, presné zaradenie a sumu odporúčame overiť s daňovým poradcom.<sup
+          ><a href="#zdroj-6">6</a></sup
+        >
+      </p>
+      <p>
+        Preto sa pri fotovoltike nad 50 kW oplatí preveriť registráciu a mať zosúladené údaje o výrobe, spotrebe,
+        dodávke, zdieľaní a zárukách pôvodu. Pri kontrole môže colný úrad podľa § 45 daňového poriadku žiadať širokú
+        dokumentáciu.<sup><a href="#zdroj-6">6</a></sup>
+      </p>
+
+      <div class="not-prose my-8 border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        <p class="text-xs font-bold tracking-widest uppercase text-primary mb-3">
+          FVE nad 50 kW: čo si vo firme skontrolovať
+        </p>
+        <ul class="list-disc pl-5 space-y-1.5 text-muted">
+          <li>Rozhodnutie o registrácii a inštalovaný výkon každej výrobne.</li>
+          <li>Merania výroby, vlastnej spotreby, dodávky do siete a zdieľania, zosúladené s evidenciou podľa § 14.</li>
+          <li>
+            Faktúry za nákup a predaj elektriny a zmluvy s dodávateľom, obchodníkom, nájomcami a členmi zdieľania.
+          </li>
+          <li>Údaje z OKTE, záruky pôvodu a záznamy o ich prevode alebo použití.</li>
+        </ul>
+      </div>
+
+      <p>
+        Neskorá registrácia je možná, minulé daňové a sankčné následky však sama osebe nezmaže.<sup
+          ><a href="#zdroj-6">6</a></sup
+        >
+      </p>
+
+      <aside class="not-prose my-10 rounded-xl bg-[#0A2342] text-white p-8">
+        <p class="text-xs font-bold tracking-widest uppercase text-accent mb-3">Podstata veci</p>
+        <p class="text-xl leading-snug">
+          Pri fotovoltike nad 50 kW sú registrácia, vznik dane a oslobodenie tri samostatné otázky. <strong
+            >Zodpovedať treba každú zvlášť a na úrovni jednotlivej megawatthodiny.</strong
+          >
+        </p>
+      </aside>
+
+      <h2>Časté otázky</h2>
+      {
+        faq.map((f) => (
+          <>
+            <h3>{f.q}</h3>
+            <p>{f.a}</p>
+          </>
+        ))
+      }
+
+      <h2>Čo z toho pre firmy: Pohľad RKS</h2>
+      <p class="font-semibold">Pri fotovoltike rozhoduje, či viete každú megawatthodinu priradiť k správnemu režimu.</p>
+      <p>
+        Spotrebná daň, oslobodenie a ekonomika záruk pôvodu stoja na tom istom základe: na presných dátach o tom, koľko
+        elektriny firma vyrobí, koľko spotrebuje, koľko dodá alebo zdieľa a koľko má pokryté zárukami pôvodu.
+      </p>
+      <p>
+        RKS pomáha firmám zmapovať energetické toky, zosúladiť výrobu, spotrebu, dodávku a zdieľanie s dostupnými dátami
+        a pripraviť kvalitné podklady pre ekonomické rozhodovanie a odborné posúdenie daňového režimu. Pri zárukách
+        pôvodu sa potom dá rozhodovať na základe business case: či ich použiť na preukázanie oslobodenia, ponechať na
+        reporting alebo speňažiť. Daňový režim odporúčame pri nejasných prípadoch potvrdiť s daňovým poradcom.
+      </p>
+      <p class="not-italic text-xl font-medium border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        Najprv dáta o výrobe a spotrebe. Potom daňový režim. Až následne rozhodnutie o zárukách.
+      </p>
+
+      <h2>Súvisiace články</h2>
+      <ul>
+        <li>
+          <a href="/energetika/blog/iso-50001-nie-je-povinne">ISO 50001 nie je povinné: čo firmám naozaj ukladá zákon</a
+          >
+        </li>
+        <li>
+          <a href="/energetika/blog/rekordny-rok-baterii">Rekordný rok batérií: čo je za virálnym číslom 5 → 267</a>
+        </li>
+        <li>
+          <a href="/energetika/blog/baterie-kedy-sa-oplati-firme"
+            >Batérie prišli aj k nám. Kedy sa firme oplatí úložisko?</a
+          >
+        </li>
+      </ul>
+
+      <h2>Súvisiace témy</h2>
+      <ul>
+        <li><a href="/energetika/fotovoltika">Firemná fotovoltika</a></li>
+        <li><a href="/energetika/baterie-bess">Batériové úložiská (BESS)</a></li>
+        <li><a href="/energetika/slovnik">Slovník energetických pojmov</a></li>
+      </ul>
+
+      <h2>Zdroje</h2>
+      <ol>
+        <li id="zdroj-1">
+          Zákon č. 609/2007 Z. z. o spotrebnej dani z elektriny, uhlia a zemného plynu, v znení účinnom od 1. 1. 2026: §
+          6 (sadzba 1,32 €/MWh), § 7 ods. 1 písm. e) (oslobodenie), § 9 (vznik dane, zdieľanie a nabíjacia stanica ako
+          dodanie), § 11 a § 14 (registrácia a evidencia), § 15a (režim do 50 kW), § 43. Dostupné z:
+          <a href="https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2007/609/20260101" rel="noopener"
+            >slov-lex.sk</a
+          > (stiahnuté: 1. septembra 2026).
+        </li>
+        <li id="zdroj-2">
+          Zákon č. 326/2024 Z. z., ktorým sa hranica zjednodušeného režimu OZE v § 15a zákona č. 609/2007 Z. z. zvýšila
+          z 10 kW na 50 kW s účinnosťou od 1. januára 2025 (<a
+            href="https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2024/326/"
+            rel="noopener">slov-lex.sk</a
+          >); zákon č. 181/2025 Z. z. následne s účinnosťou od 1. septembra 2025 rozšíril oslobodenie aj na zdieľanú
+          elektrinu (<a href="https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2025/181/" rel="noopener"
+            >slov-lex.sk</a
+          >). Stiahnuté: 1. septembra 2026.
+        </li>
+        <li id="zdroj-3">
+          Finančná správa SR, metodické usmernenie k spotrebnej dani z elektriny (1/SPD/2025/IM): samostatné
+          posudzovanie viacerých zariadení do 50 kW. Dostupné z:
+          <a
+            href="https://www.financnasprava.sk/sk/podnikatelia/dane/spotrebne-dane/spotrebne-dane-elektrina-uhl"
+            rel="noopener">financnasprava.sk</a
+          > (stiahnuté: 1. septembra 2026).
+        </li>
+        <li id="zdroj-4">
+          Zákon č. 309/2009 Z. z. o podpore obnoviteľných zdrojov energie, § 8a a § 8b: záruka pôvodu sa vydáva po 1
+          MWh, je použiteľná 12 mesiacov od výroby, evidenciu vedie OKTE. Dostupné z:
+          <a href="https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2009/309/20260101" rel="noopener"
+            >slov-lex.sk</a
+          > (stiahnuté: 1. septembra 2026).
+        </li>
+        <li id="zdroj-5">
+          OKTE, a.s., výsledky elektronických aukcií záruk pôvodu v roku 2026 (24. aukcia z 5. februára, 25. aukcia z
+          20. mája, 26. aukcia z 13. augusta 2026): marginálne ceny solárnych záruk pôvodu (produkt 6 až 9 mesiacov)
+          približne 1,95 €/MWh v máji a 1,62 €/MWh v auguste, vo februárovej aukcii bol priemer približne 0,67 €/MWh.
+          Hodnoty sú orientačné a závisia od zdroja, veku a konkrétnej aukcie. Dostupné z:
+          <a href="https://www.okte.sk/sk/zaruky-povodu/aukcie/2026/" rel="noopener">okte.sk</a> (stiahnuté: 1. septembra
+          2026).
+        </li>
+        <li id="zdroj-6">
+          Zákon č. 563/2009 Z. z. (daňový poriadok), v znení účinnom od 1. 9. 2026: § 154 a § 155 (pokuty za
+          registráciu, evidenciu a priznanie), § 45 (doklady požadované pri kontrole). Dostupné z:
+          <a href="https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2009/563/20260901" rel="noopener"
+            >slov-lex.sk</a
+          > (stiahnuté: 1. septembra 2026).
+        </li>
+      </ol>
+
+      <p class="text-sm text-muted italic">
+        Legislatívne fakty sú overené proti oficiálnym časovým verziám na Slov-Lex a proti materiálom Finančnej správy
+        SR. Slov-Lex pri zákone č. 609/2007 Z. z. upozorňuje, že právne záväzné je znenie v PDF. Ceny záruk pôvodu
+        vychádzajú z výsledkov aukcií OKTE a sú orientačné. Daň z pridanej hodnoty, odvod do Národného jadrového fondu a
+        systém ETS2 sú mimo rozsahu tohto článku. Článok má informačný charakter a nenahrádza daňové poradenstvo; presné
+        sankčné pásma a posúdenie konkrétneho prípadu odporúčame overiť s daňovým poradcom alebo príslušným colným
+        úradom. Stav k 1. septembru 2026.
+      </p>
+    </div>
+
+    <NewsletterCTA />
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+</Layout>
