@@ -17,6 +17,14 @@ export type Post = {
 export const energyMemo: Post[] = [
   {
     category: 'Energy Memo',
+    title: 'ISO 50001 nie je povinné: čo firmám naozaj ukladá zákon',
+    excerpt:
+      'Firmy sa pýtajú, či musia mať certifikát ISO 50001. Zákon 321/2014 im ho nepredpisuje, ukladá povinnosť podľa § 14 a tú možno splniť tromi spôsobmi. A pravidlá sa čoskoro menia.',
+    date: '1. 9. 2026',
+    href: '/energetika/blog/iso-50001-nie-je-povinne',
+  },
+  {
+    category: 'Energy Memo',
     title: 'Rekordný rok batérií: čo je za virálnym číslom 5 → 267',
     excerpt:
       'Na sieťach koluje graf rastu batérií z 5 na 267. Čo presne porovnáva, čo naozaj rastie (112 GW v 2025, +48 %) a prečo pre firmy rozhoduje, na čom batéria zarába.',

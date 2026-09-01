@@ -1,0 +1,530 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import NewsletterCTA from '~/components/widgets/NewsletterCTA.astro';
+
+const metadata = {
+  title: 'ISO 50001 nie je povinné: čo firmám ukladá zákon | Energy Memo | RKS',
+  description:
+    'ISO 50001 na Slovensku nie je jedinou cestou. Zistite, čo dnes ukladá veľkým podnikom § 14 zákona o energetickej efektívnosti, kedy treba energetický audit a čo zmení nová európska smernica.',
+};
+
+const post = {
+  title: 'ISO 50001 nie je povinné: čo firmám naozaj ukladá zákon',
+  date: '1. 9. 2026',
+};
+
+const faq = [
+  {
+    q: 'Je ISO 50001 na Slovensku povinné?',
+    a: 'Zákon č. 321/2014 Z. z. nepredpisuje konkrétne ISO 50001. Veľkému podniku ukladá povinnosť podľa § 14, ktorú možno splniť aj energetickým auditom alebo certifikovaným ISO 14001 v zodpovedajúcom rozsahu. Certifikované ISO 50001 je jedna z možností.',
+  },
+  {
+    q: 'Ktoré firmy musia mať energetický audit?',
+    a: 'Povinnosť podľa § 14 sa dnes týka veľkých podnikov. Energetický audit aspoň raz za štyri roky je jednou z možností jej splnenia; alternatívou je certifikovaný systém manažérstva spĺňajúci podmienky zákona. Veľkým podnikom je ten, kto nie je mikropodnikom, malým ani stredným podnikom; status sa posudzuje podľa počtu pracovníkov, finančných ukazovateľov a podľa okolností aj údajov prepojených a partnerských podnikov.',
+  },
+  {
+    q: 'Nahrádza ISO 14001 energetický audit?',
+    a: 'Samotný certifikát ISO 14001 povinnosť nesplní. Rozhodujúci je konkrétny rozsah systému a to, či zodpovedá rozsahu, ktorý zákon vyžaduje, teda rozsahu správy z energetického auditu.',
+  },
+  {
+    q: 'Ako často musí veľký podnik vykonať energetický audit?',
+    a: 'Pri ceste energetického auditu je to aspoň raz za štyri roky. Pri certifikovanom systéme manažérstva zákon neukladá opakovať samostatný audit každé štyri roky; podmienkou je, aby systém zostal certifikovaný, a raz za štyri roky sa posiela súbor údajov do monitorovacieho systému.',
+  },
+  {
+    q: 'Čo sa zmení po transpozícii smernice (EÚ) 2023/1791?',
+    a: 'Základom povinnosti sa má stať spotreba energie namiesto veľkosti podniku: nad 85 TJ (približne 23 611 MWh) systém energetického manažérstva, nad 10 TJ (približne 2 778 MWh) energetický audit. Slovensko termín transpozície nestihlo a konečná podoba bude známa až po schválení nového zákona.',
+  },
+  {
+    q: 'Koľko je 10 TJ a 85 TJ v MWh?',
+    a: '1 TJ zodpovedá 277,78 MWh. Prah 10 TJ je približne 2 778 MWh za rok a prah 85 TJ približne 23 611 MWh za rok. Počíta sa priemerná ročná spotreba za tri roky za všetky nosiče energie spolu.',
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'sk',
+  mainEntity: faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-3xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/energetika">Energetika</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/energetika/blog">Energy Memo</a>
+    <span class="px-1">/</span>
+    <span class="text-default">ISO 50001 nie je povinné</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-14 md:py-20">
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight">
+        ISO 50001 nie je povinné: čo firmám naozaj ukladá zákon
+      </h1>
+      <p class="mt-5 text-lg text-white/80">
+        Firmy sa pýtajú, či musia mať certifikát ISO 50001. Zákon č. 321/2014 Z. z. im ho nepredpisuje. Ukladá povinnosť
+        podľa § 14, ktorú možno splniť viacerými spôsobmi, a pravidlá sa čoskoro menia.
+      </p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+    <p class="text-sm text-muted pb-8 mb-10 border-b border-hairline">Energy Memo · {post.date}</p>
+
+    <div class="prose prose-lg max-w-none">
+      <p>
+        Zákon č. 321/2014 Z. z. neukladá veľkým podnikom povinnosť zaviesť ISO 50001. Podľa § 14 majú tri možnosti:
+        zabezpečiť energetický audit, zaviesť certifikovaný systém energetického manažérstva alebo certifikovaný systém
+        environmentálneho manažérstva v zákonom požadovanom rozsahu. ISO 50001 je jeden zo spôsobov, ako druhú z týchto
+        možností naplniť. A práve základ tejto povinnosti sa má európskou smernicou zmeniť.
+      </p>
+
+      <div class="not-prose my-8 border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        <p class="text-xs font-bold tracking-widest uppercase text-primary mb-3">V skratke</p>
+        <ul class="list-disc pl-5 space-y-1.5 text-muted">
+          <li>
+            Zákon č. 321/2014 Z. z. neukladá povinnosť mať konkrétne ISO 50001. Povinnosť podľa § 14 majú veľké podniky
+            a spĺňa sa jednou z troch možností.
+          </li>
+          <li>
+            Možnosti sú energetický audit, certifikované ISO 50001, alebo certifikované ISO 14001 v rozsahu
+            zodpovedajúcom správe z energetického auditu.
+          </li>
+          <li>
+            Kritériom pre vznik povinnosti je dnes status veľkého podniku. Spotrebné prahy 10 TJ a 85 TJ zavádza až
+            európska smernica.
+          </li>
+          <li>
+            Európska smernica určuje povinnosti podľa spotreby: nad 85 TJ systém energetického manažérstva, nad 10 TJ
+            energetický audit. Slovensko termín transpozície nestihlo, nový zákon je v procese.
+          </li>
+        </ul>
+      </div>
+
+      <div class="not-prose my-8 rounded-xl border border-hairline overflow-hidden">
+        <p class="bg-[#0A2342] text-white text-xs font-bold tracking-widest uppercase px-6 py-3">
+          Čo platí k 1. septembru 2026
+        </p>
+        <div class="divide-y divide-hairline">
+          <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 px-6 py-3">
+            <div class="sm:w-28 shrink-0 text-xs font-bold uppercase tracking-wide text-primary pt-0.5">Dnes v SR</div>
+            <div class="text-sm text-default">
+              Rozhoduje status veľkého podniku a platí § 14 zákona č. 321/2014 Z. z.<sup><a href="#zdroj-2">2</a></sup>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 px-6 py-3">
+            <div class="sm:w-28 shrink-0 text-xs font-bold uppercase tracking-wide text-primary pt-0.5">
+              EÚ smernica
+            </div>
+            <div class="text-sm text-default">
+              Kritériom je priemerná ročná spotreba energie: nad 10 TJ energetický audit, nad 85 TJ systém energetického
+              manažérstva. Termíny podľa smernice: prvý audit najneskôr 11. októbra 2026, systém energetického
+              manažérstva najneskôr 11. októbra 2027.<sup><a href="#zdroj-1">1</a></sup>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 px-6 py-3">
+            <div class="sm:w-28 shrink-0 text-xs font-bold uppercase tracking-wide text-primary pt-0.5">Slovensko</div>
+            <div class="text-sm text-default">
+              Novú úpravu ešte nemá účinnú, preto sa firmy riadia aktuálnym slovenským zákonom.<sup
+                ><a href="#zdroj-5">5</a></sup
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Tri možnosti, ako splniť povinnosť podľa § 14</h2>
+      <p>
+        Paragraf 14 zákona č. 321/2014 Z. z. o energetickej efektívnosti, v znení účinnom od 1. augusta 2024, dáva
+        veľkému podniku tri možnosti. Prvou je energetický audit aspoň raz za štyri roky. Druhou je certifikovaný systém
+        energetického manažérstva (ISO 50001). Treťou je certifikovaný systém environmentálneho manažérstva (ISO 14001),
+        ktorého rozsah zodpovedá rozsahu správy z energetického auditu.<sup><a href="#zdroj-2">2</a></sup>
+      </p>
+      <p>
+        Tie možnosti sa líšia povahou. Energetický audit je odborné posúdenie, ktoré musí veľký podnik pri tejto forme
+        splnenia povinnosti zabezpečiť aspoň raz za štyri roky. Certifikovaný systém manažérstva je priebežný proces,
+        ktorý sa udržiava a periodicky recertifikuje. Kto zvolí certifikovaný systém, do jedného roka to oznámi
+        prevádzkovateľovi monitorovacieho systému, ktorým je Slovenská inovačná a energetická agentúra (SIEA), a aspoň
+        raz za štyri roky posiela súbor údajov. Pri systéme manažérstva zákon neukladá opakovať samostatný audit každé
+        štyri roky; trvalou podmienkou je, aby systém zostal certifikovaný.<sup><a href="#zdroj-2">2</a></sup>
+      </p>
+
+      <h2>Kto má povinnosť dnes</h2>
+      <p>
+        Veľkým podnikom je podľa § 3 zákona 321/2014 podnikateľ, ktorý nie je mikropodnikom, malým podnikom ani stredným
+        podnikom. Pri posudzovaní statusu sa zohľadňuje počet pracovníkov, finančné ukazovatele a podľa okolností aj
+        údaje partnerských a prepojených podnikov. Hranica 250 pracovníkov je preto dôležitá, pri konkrétnej spoločnosti
+        je však potrebné posúdiť jej status podľa pravidiel pre malé a stredné podniky ako celku.<sup
+          ><a href="#zdroj-2">2</a></sup
+        > Základným kritériom pre vznik povinnosti podľa dnešného § 14 je status veľkého podniku; spotrebné prahy 10 TJ a
+        85 TJ zavádza až európska smernica.
+      </p>
+      <p>
+        Zákon pozná úzku výnimku. Veľký podnik, ktorého celková spotreba energie za posledné štyri roky bola menšia ako
+        10 MWh, iba oznámi túto skutočnosť určenej organizácii a dostane potvrdenie o splnení povinnosti. Mieri na
+        subjekty, ktoré status veľkého podniku spĺňajú formálne a nemajú vlastnú prevádzku, napríklad holdingové
+        spoločnosti.<sup><a href="#zdroj-2">2</a></sup>
+      </p>
+      <p>
+        Dozor nad plnením povinnosti vykonáva od 1. augusta 2024 Úrad pre reguláciu sieťových odvetví (ÚRSO). SIEA vedie
+        zoznam energetických audítorov a prevádzkuje monitorovací systém energetickej efektívnosti; pokuty neukladá.<sup
+          ><a href="#zdroj-2">2</a></sup
+        ><sup><a href="#zdroj-3">3</a></sup> Za nezabezpečenie energetického auditu podľa § 14 hrozí pokuta od 500 do 30 000
+        € a ukladá sa opakovane, ak povinnosť zostane nesplnená.<sup><a href="#zdroj-2">2</a></sup>
+      </p>
+
+      <h2>ISO 50001 a ISO 14001: čo je čo</h2>
+      <p>
+        Zákon nikde neuvádza číslo normy. Používa slovné spojenie „certifikovaný systém". Norma je nástroj, ktorým sa
+        taký systém preukazuje.
+      </p>
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Skratka</th>
+              <th>Čo to je</th>
+              <th>Ako to nazýva zákon</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ISO 50001</td>
+              <td>systém energetického manažérstva</td>
+              <td>„certifikovaný systém energetického manažérstva"</td>
+            </tr>
+            <tr>
+              <td>ISO 14001</td>
+              <td>systém environmentálneho manažérstva</td>
+              <td>„certifikovaný systém environmentálneho manažérstva"</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Na Slovensku sa ISO 50001 vydáva ako STN EN ISO 50001:2020, so zmenou A1 z februára 2025.<sup
+          ><a href="#zdroj-4">4</a></sup
+        >
+      </p>
+      <p>
+        Certifikát ISO 14001 sám osebe povinnosť nesplní. Rozhodujúci je konkrétny rozsah systému a to, či zodpovedá
+        rozsahu, ktorý zákon vyžaduje, teda rozsahu správy z energetického auditu.<sup><a href="#zdroj-2">2</a></sup>
+      </p>
+
+      <h2>Čo sa mení: z veľkosti podniku na spotrebu energie</h2>
+      <p>
+        Smernica Európskeho parlamentu a Rady (EÚ) 2023/1791 o energetickej efektívnosti, prepracované znenie, mení
+        základ povinnosti. Namiesto veľkosti podniku bude rozhodovať spotreba energie za predchádzajúce tri roky,
+        počítaná za všetky nosiče energie spolu.<sup><a href="#zdroj-1">1</a></sup>
+      </p>
+      <p>
+        Podnik s priemernou ročnou spotrebou nad <strong>85 TJ</strong> (približne 23 611 MWh) má podľa smernice zaviesť systém
+        energetického manažérstva certifikovaný nezávislým subjektom podľa príslušných európskych alebo medzinárodných noriem.
+        Podnik so spotrebou nad <strong>10 TJ</strong> (približne 2 778 MWh), ktorý taký systém nemá, podlieha energetickému
+        auditu. Podnik s certifikovaným systémom environmentálneho manažérstva, ktorý zahŕňa energetický audit podľa prílohy
+        VI smernice, je od týchto povinností oslobodený priamo zo znenia smernice.<sup><a href="#zdroj-1">1</a></sup>
+      </p>
+      <p>
+        Smernica posúva audit ďalej za samotné zistenie stavu. Na jeho odporúčania má nadväzovať konkrétny a
+        realizovateľný akčný plán opatrení, ktoré sú technicky alebo ekonomicky uskutočniteľné, spolu s jeho predložením
+        vedeniu.<sup><a href="#zdroj-1">1</a></sup>
+      </p>
+      <p>
+        Ide o požiadavky smernice. Slovenský zákon 321/2014 dnes tieto prahy neobsahuje a konečná podoba slovenskej
+        transpozície bude známa až po schválení nového zákona.<sup><a href="#zdroj-1">1</a></sup><sup
+          ><a href="#zdroj-5">5</a></sup
+        >
+      </p>
+
+      <figure class="not-prose my-10 rounded-xl border border-hairline overflow-hidden bg-white">
+        <div class="px-6 pt-5 pb-1">
+          <p class="text-xs font-bold tracking-widest uppercase text-primary mb-1.5">Nové kritérium podľa smernice</p>
+          <p class="font-bold text-[#0B1F3A] leading-snug">Povinnosť podľa priemernej ročnej spotreby energie</p>
+        </div>
+        <svg
+          class="block w-full h-auto px-4 pb-3"
+          viewBox="0 0 720 250"
+          role="img"
+          aria-label="Povinnosť podľa priemernej ročnej spotreby energie za tri roky. Do 10 TJ, teda do 2 778 MWh: bez povinnosti podľa spotreby. Od 10 TJ do 85 TJ: energetický audit. Nad 85 TJ, teda nad 23 611 MWh: systém energetického manažérstva."
+        >
+          <rect x="20" y="86" width="176" height="78" rx="4" fill="#EAF2FF" stroke="#fff" stroke-width="3"></rect>
+          <text
+            x="108"
+            y="120"
+            font-family="Arial"
+            font-size="13.5"
+            font-weight="700"
+            fill="#0B1F3A"
+            text-anchor="middle">Bez povinnosti</text
+          >
+          <text x="108" y="138" font-family="Arial" font-size="12" fill="#5b6677" text-anchor="middle"
+            >podľa spotreby</text
+          >
+
+          <rect x="196" y="86" width="242" height="78" rx="4" fill="#1A1ADB" stroke="#fff" stroke-width="3"></rect>
+          <text x="317" y="130" font-family="Arial" font-size="15" font-weight="700" fill="#fff" text-anchor="middle"
+            >Energetický audit</text
+          >
+
+          <rect x="438" y="86" width="262" height="78" rx="4" fill="#0B1F3A" stroke="#fff" stroke-width="3"></rect>
+          <text x="569" y="122" font-family="Arial" font-size="15" font-weight="700" fill="#fff" text-anchor="middle"
+            >Systém energetického</text
+          >
+          <text x="569" y="142" font-family="Arial" font-size="15" font-weight="700" fill="#fff" text-anchor="middle"
+            >manažérstva</text
+          >
+
+          <line x1="196" y1="66" x2="196" y2="86" stroke="#0B1F3A" stroke-width="1.5"></line>
+          <text x="196" y="52" font-family="Arial" font-size="13" font-weight="700" fill="#0B1F3A" text-anchor="middle"
+            >10 TJ</text
+          >
+          <text x="196" y="34" font-family="Arial" font-size="11.5" fill="#5b6677" text-anchor="middle"
+            >≈ 2 778 MWh</text
+          >
+
+          <line x1="438" y1="66" x2="438" y2="86" stroke="#0B1F3A" stroke-width="1.5"></line>
+          <text x="438" y="52" font-family="Arial" font-size="13" font-weight="700" fill="#0B1F3A" text-anchor="middle"
+            >85 TJ</text
+          >
+          <text x="438" y="34" font-family="Arial" font-size="11.5" fill="#5b6677" text-anchor="middle"
+            >≈ 23 611 MWh</text
+          >
+
+          <text x="20" y="196" font-family="Arial" font-size="12.5" fill="#5b6677"
+            >Priemerná ročná spotreba energie za 3 roky, všetky nosiče spolu.</text
+          >
+          <text x="20" y="216" font-family="Arial" font-size="12.5" fill="#5b6677"
+            >Prahy podľa smernice (EÚ) 2023/1791. Šírky pásiem sú ilustračné a nezodpovedajú mierke.</text
+          >
+        </svg>
+        <figcaption class="text-sm text-muted px-6 pb-5 italic">
+          Smernica viaže povinnosť na spotrebu energie. Počet zamestnancov už o nej nerozhoduje. 1 TJ zodpovedá 277,78
+          MWh.<sup><a href="#zdroj-1">1</a></sup>
+        </figcaption>
+      </figure>
+
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Jednotka</th>
+              <th>Zodpovedá</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1 TJ</td>
+              <td>277,78 MWh</td>
+            </tr>
+            <tr>
+              <td>10 TJ (prah energetického auditu)</td>
+              <td>≈ 2 778 MWh za rok</td>
+            </tr>
+            <tr>
+              <td>85 TJ (prah systému energetického manažérstva)</td>
+              <td>≈ 23 611 MWh za rok</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Rýchly prepočet: ročnú spotrebu v MWh vydeľte 278 a získate približnú hodnotu v TJ. Počíta sa priemer za tri
+        roky za všetky nosiče energie spolu.
+      </p>
+
+      <p>
+        Termín na transpozíciu smernice bol 11. októbra 2025. Slovensko ho nestihlo. Nový zákon o energetickej
+        efektívnosti, ktorý má nahradiť zákon 321/2014, je stále v legislatívnom procese; v auguste 2026 ho prerokovala
+        Hospodárska a sociálna rada SR.<sup><a href="#zdroj-5">5</a></sup> Dovtedy platí § 14 v dnešnom znení a kritériom
+        zostáva status veľkého podniku.
+      </p>
+
+      <h2>Ako to vyriešilo Česko</h2>
+      <p>
+        Česko smernicu už transponovalo. Novela zákona č. 406/2000 Sb. o hospodárení energií, prijatá v rámci tzv. Lex
+        OZE III (zákon č. 87/2025 Sb.), platí od 1. januára 2026 a určuje povinnosti podľa spotreby.<sup
+          ><a href="#zdroj-6">6</a></sup
+        >
+      </p>
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Prah priemernej ročnej spotreby za 3 roky</th>
+              <th>Povinnosť</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>nad 85 TJ (23 611 MWh)</td>
+              <td>zaviesť a akreditovanou osobou certifikovať systém hospodárenia s energiou</td>
+            </tr>
+            <tr>
+              <td>nad 10 TJ (2 778 MWh)</td>
+              <td>energetický audit raz za štyri roky</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Lehota na zavedenie a certifikáciu systému je dva roky od vzniku povinnosti, teda pre existujúce podniky do 1.
+        januára 2028. Český zákon nepripúšťa náhradu environmentálnym systémom a žiada vždy systém hospodárenia s
+        energiou.<sup><a href="#zdroj-6">6</a></sup> Česká úprava ukazuje jeden konkrétny spôsob, ako možno požiadavky smernice
+        preniesť do národnej legislatívy. Slovenské pravidlá však nemusia byť totožné.
+      </p>
+
+      <h2>Čo by mala firma preveriť teraz</h2>
+      <p>Štyri otázky, ktoré firme ukážu, kde v tejto téme stojí.</p>
+      <ol>
+        <li>Spĺňame dnes definíciu veľkého podniku?</li>
+        <li>Kedy sme naposledy absolvovali energetický audit?</li>
+        <li>
+          Máme certifikovaný systém energetického alebo environmentálneho manažérstva a aký je jeho skutočný rozsah?
+        </li>
+        <li>Aká je naša priemerná ročná spotreba všetkých nosičov energie za posledné tri roky?</li>
+      </ol>
+      <p>
+        Prvé tri otázky určujú povinnosť podľa dnešného zákona. Štvrtá ukazuje, do akej kategórie môže firma spadnúť po
+        transpozícii novej smernice.
+      </p>
+
+      <aside class="not-prose my-10 rounded-xl bg-[#0A2342] text-white p-8">
+        <p class="text-xs font-bold tracking-widest uppercase text-accent mb-3">Podstata veci</p>
+        <p class="text-xl leading-snug">
+          Zákon nepredpisuje jednu konkrétnu cestu. <strong
+            >Veľkému podniku dnes umožňuje splniť povinnosť energetickým auditom alebo certifikovaným systémom
+            manažérstva, ktorý spĺňa zákonné podmienky.</strong
+          >
+        </p>
+      </aside>
+
+      <h2>Časté otázky</h2>
+      {
+        faq.map((f) => (
+          <>
+            <h3>{f.q}</h3>
+            <p>{f.a}</p>
+          </>
+        ))
+      }
+
+      <h2>Čo z toho pre firmy: Pohľad RKS</h2>
+      <p class="font-semibold">Z energetických dát sa dá vyťažiť viac než splnená povinnosť.</p>
+      <p>
+        Energetický audit môže firme priniesť podstatne viac než splnenie legislatívnej povinnosti. Kvalitné dáta o
+        spotrebe ukážu, kde firma energiu skutočne využíva, kde vznikajú špičky a kde existuje ekonomický priestor na
+        optimalizáciu.
+      </p>
+      <p>
+        RKS pomáha firmám pripraviť a vyhodnotiť energetické dáta, koordinovať energetický audit a oddeliť opatrenia s
+        reálnym ekonomickým prínosom od investícií, ktorých business case nevychádza. Kvalitne pripravené dáta znižujú
+        množstvo práce potrebnej na ich dodatočné získavanie a umožňujú audítorovi sústrediť sa na samotné vyhodnotenie
+        spotreby a opatrení.
+      </p>
+      <p class="not-italic text-xl font-medium border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        Najprv dáta. Potom business case. Až následne technológia.
+      </p>
+
+      <h2>Súvisiace články</h2>
+      <ul>
+        <li>
+          <a href="/energetika/blog/rekordny-rok-baterii">Rekordný rok batérií: čo je za virálnym číslom 5 → 267</a>
+        </li>
+        <li>
+          <a href="/energetika/blog/modernizacny-fond-slovensko"
+            >Európa rozdelila 2,5 miliardy na energetiku. Slovensko nedostalo nič. Prečo?</a
+          >
+        </li>
+        <li>
+          <a href="/energetika/blog/sesfg-mnichov-2026"
+            >Budúcnosť firemnej energetiky: 10 trendov z konferencie v Mníchove</a
+          >
+        </li>
+      </ul>
+
+      <h2>Súvisiace témy</h2>
+      <ul>
+        <li><a href="/energetika/energy-management">Čo je Energy Management System (EMS)</a></li>
+        <li><a href="/energetika/smart-building">Smart building</a></li>
+        <li><a href="/energetika/slovnik">Slovník energetických pojmov</a></li>
+      </ul>
+
+      <h2>Zdroje a poznámky</h2>
+      <ol>
+        <li id="zdroj-1">
+          Smernica Európskeho parlamentu a Rady (EÚ) 2023/1791 z 13. septembra 2023 o energetickej efektívnosti
+          (prepracované znenie), čl. 11 a čl. 36, príloha VI. Prah 85 TJ (systém energetického manažérstva), 10 TJ
+          (energetický audit), výnimka pri certifikovanom systéme environmentálneho manažérstva s auditom podľa prílohy
+          VI; termín transpozície čl. 5 až 11 do 11. októbra 2025. Dostupné z:
+          <a href="https://eur-lex.europa.eu/legal-content/SK/TXT/?uri=CELEX:32023L1791" rel="noopener"
+            >eur-lex.europa.eu</a
+          > (stiahnuté: 1. septembra 2026).
+        </li>
+        <li id="zdroj-2">
+          Zákon č. 321/2014 Z. z. o energetickej efektívnosti, v znení účinnom od 1. 8. 2024 (pôvodné znenie § 14
+          nahradila novela č. 419/2020 Z. z. s účinnosťou od 1. 1. 2021): § 3 (veľký podnik), § 14 (tri možnosti
+          splnenia povinnosti; oznámenie do jedného roka a súbor údajov aspoň raz za štyri roky pre monitorovací
+          systém), § 27 (dozor vykonáva Úrad pre reguláciu sieťových odvetví; kompetencia prešla zo Slovenskej obchodnej
+          inšpekcie novelou č. 143/2024 Z. z., Čl. VII, s účinnosťou od 1. 8. 2024), § 29 (za nezabezpečenie auditu
+          podľa § 14 pokuta od 500 do 30 000 €, ukladá sa opakovane). Dostupné z:
+          <a href="https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2014/321/" rel="noopener"
+            >slov-lex.sk (321/2014)</a
+          > a
+          <a href="https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2024/143/" rel="noopener"
+            >slov-lex.sk (143/2024)</a
+          > (stiahnuté: 1. septembra 2026).
+        </li>
+        <li id="zdroj-3">
+          SIEA, <em>Monitorovací systém energetickej efektívnosti</em> a <em>Zoznam energetických audítorov</em>.
+          Dostupné z:
+          <a href="https://www.siea.sk/monitorovaci-system/" rel="noopener">siea.sk/monitorovaci-system</a> a
+          <a
+            href="https://www.siea.sk/vzdelavanie-a-skusky/energeticky-auditor/zoznam-energetickych-auditorov/"
+            rel="noopener">siea.sk (zoznam audítorov)</a
+          > (stiahnuté: 1. septembra 2026).
+        </li>
+        <li id="zdroj-4">
+          ÚNMS SR, STN EN ISO 50001:2020 <em
+            >Systémy energetického manažérstva. Požiadavky s návodom na používanie (ISO 50001:2018)</em
+          >, vydaná 1. 2. 2020; Zmena A1 vyhlásená vo Vestníku ÚNMS 02/2025. Dostupné z:
+          <a href="https://normy.unms.sk/" rel="noopener">normy.unms.sk</a> (stiahnuté: 1. septembra 2026).
+        </li>
+        <li id="zdroj-5">
+          Stav transpozície EED na Slovensku k septembru 2026: nový zákon o energetickej efektívnosti stále v
+          legislatívnom procese (LP/2026/131), prerokovaný Hospodárskou a sociálnou radou SR dňa 24. augusta 2026, k
+          septembru 2026 neschválený a bez účinnosti; zákon 321/2014 naďalej platí. Európska komisia zaslala v novembri
+          2025 výzvy väčšine členských štátov pre neúplnú transpozíciu smernice 2023/1791. Dostupné z:
+          <a href="https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/LP/2026/131" rel="noopener"
+            >slov-lex.sk (LP/2026/131)</a
+          > (stiahnuté: 1. septembra 2026).
+        </li>
+        <li id="zdroj-6">
+          Zákon č. 406/2000 Sb. o hospodaření energií, § 9 v znení účinnom od 1. 1. 2026 (novela v rámci zákona č.
+          87/2025 Sb., tzv. Lex OZE III): prah nad 23 611 MWh (85 TJ) systém hospodárenia s energiou certifikovaný
+          akreditovanou osobou, nad 2 778 MWh (10 TJ) energetický audit raz za 4 roky; lehota na zavedenie a
+          certifikáciu systému 2 roky od vzniku povinnosti (existujúce subjekty do 1. 1. 2028); bez možnosti náhrady
+          environmentálnym systémom. Dostupné z:
+          <a href="https://www.zakonyprolidi.cz/cs/2000-406" rel="noopener">zakonyprolidi.cz</a> (stiahnuté: 1. septembra
+          2026).
+        </li>
+      </ol>
+
+      <p class="text-sm text-muted italic">
+        Legislatívne fakty sú overené proti primárnym zdrojom (eur-lex, slov-lex vrátane konsolidovaného 321/2014 a
+        novely 143/2024, zakonyprolidi.cz). Znenie a účinnosť nového slovenského zákona sa môžu počas legislatívneho
+        procesu zmeniť; stav je uvedený k septembru 2026. Prepočet jednotiek: 1 TJ = 277,78 MWh.
+      </p>
+    </div>
+
+    <NewsletterCTA />
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+</Layout>
