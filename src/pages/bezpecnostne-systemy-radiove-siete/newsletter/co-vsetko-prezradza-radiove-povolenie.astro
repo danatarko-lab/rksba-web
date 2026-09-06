@@ -7,14 +7,14 @@ import NewsletterCTA from '~/components/widgets/NewsletterCTA.astro';
 const metadata = {
   title: 'Viete, čo všetko o vašej firme prezrádza rádiové povolenie? | RKS',
   description:
-    'Pozdrav od riaditeľa, Newsletter č. 3. Dokument, ktorý väčšina firiem otvorí až vtedy, keď ho potrebuje. Čo prezrádza rádiové povolenie a kde požiadať o obnovu.',
+    'Pozdrav od riaditeľa, Newsletter č. 3. Dokument, ktorý väčšina firiem otvorí až vtedy, keď zistí, že im už neplatí. Čo prezrádza povolenie na používanie frekvencií a na čo si dať pozor.',
 };
 
 const post = {
   category: 'Newsletter',
   number: '#003',
   title: 'Viete, čo všetko o vašej firme prezrádza rádiové povolenie?',
-  dek: 'Dokument, ktorý väčšina firiem otvorí až vtedy, keď ho potrebuje.',
+  dek: 'Dokument, ktorý väčšina firiem otvorí až vtedy, keď zistí, že im už neplatí.',
   date: '4. 8. 2026',
   author: 'Vladimír Svatý',
   authorRole: 'CEO, RKS · v profesionálnej komunikácii od roku 1991',
@@ -66,14 +66,24 @@ const post = {
 
     <div class="prose prose-lg max-w-none">
       <p>
+        Ak vo vašej firme niekto zodpovedá za prevádzku, bezpečnosť alebo rádiovú komunikáciu, tieto informácie sú pre
+        neho.
+      </p>
+      <p>
         Keď sa vo firme mení vedenie, facility manažér alebo technický riaditeľ, odovzdajú sa budovy, autá, zmluvy či IT
         systémy.
       </p>
-      <p>Na jednu vec sa však zabúda prekvapivo často. <strong>Na rádiové povolenie.</strong></p>
       <p>
-        Pritom pri profesionálnych rádiových sieťach využívajúcich individuálne pridelené frekvencie ide o jeden z
-        kľúčových dokumentov. Obsahuje informácie o pridelených frekvenciách, platnosti povolenia, lokalite používania a
-        ďalších podmienkach prevádzky.
+        Na jednu vec sa však zabúda prekvapivo často. <strong
+          >Na povolenie na používanie frekvencií pre firemné rádiostanice.</strong
+        >
+      </p>
+      <p>
+        Pri profesionálnych rádiových sieťach s individuálne pridelenými frekvenciami ide o jeden z kľúčových dokumentov.
+        Formálne je to individuálne povolenie na používanie frekvencií, ktoré vydáva Úrad pre reguláciu elektronických
+        komunikácií a poštových služieb (ďalej regulačný úrad) ako rozhodnutie v oblasti správy frekvenčného spektra.
+        Vzťahuje sa na frekvencie, na ktorých vysielajú vaše firemné rádiostanice a vysielačky. Obsahuje informácie o
+        pridelených frekvenciách, platnosti povolenia, lokalite používania a ďalších podmienkach prevádzky.
       </p>
       <p>
         Počas rokov býva uložené v šanóne, na serveri alebo v zásuvke. Až kým sa niekto nepozrie na dátum platnosti.
@@ -114,8 +124,9 @@ const post = {
       <div class="rounded-xl border-l-4 border-primary bg-panel-soft p-5">
         <p class="font-semibold mb-2">Čo je prvá vec, ktorú na povolení kontrolujem?</p>
         <p class="text-muted">
-          <strong class="text-default">Platnosť. Nie frekvencie. Nie technické parametre. Dátum.</strong> Pri sieťach využívajúcich
-          individuálne pridelené frekvencie je platné povolenie základnou podmienkou ich prevádzky.
+          <strong class="text-default">Platnosť.</strong> Ako prvé sa pozriem na dátum, až potom na frekvencie a technické
+          parametre. Pri sieťach s pridelenými frekvenciami je platné povolenie základnou podmienkou prevádzky
+          rádiostaníc a vysielačiek.
         </p>
       </div>
       <div class="rounded-xl border-l-4 border-primary bg-panel-soft p-5">
@@ -145,12 +156,22 @@ const post = {
       </div>
     </div>
 
+    <!-- Callout: Pozor na úhradu -->
+    <div class="my-10 rounded-2xl border border-primary/20 bg-primary/5 p-8">
+      <p class="text-xs font-semibold tracking-widest text-primary uppercase mb-3">Pozor na úhradu</p>
+      <p class="text-muted">
+        Overte si, či platobné údaje z povolenia má k dispozícii vaše ekonomické oddelenie. Za povolenie sa regulačnému
+        úradu platí opakovaná úhrada za právo používať frekvencie. Jej výška závisí od pridelených frekvencií a počtu
+        rádiostaníc. Ak sa úhrada nezaplatí, regulačný úrad môže povolenie zrušiť.
+      </p>
+    </div>
+
     <!-- Callout: Dôležitá zmena od 1. 4. 2026 -->
     <div class="my-10 rounded-2xl border border-primary/20 bg-primary/5 p-8">
       <p class="text-xs font-semibold tracking-widest text-primary uppercase mb-3">Dôležitá zmena od 1. 4. 2026</p>
       <p class="text-xl md:text-2xl font-semibold leading-snug mb-4">Žiadosti o povolenie už len elektronicky</p>
       <p class="text-muted mb-4">
-        Individuálne povolenia vydáva Úrad pre reguláciu elektronických komunikácií a poštových služieb (RÚ).
+        Individuálne povolenia na používanie frekvencií vydáva regulačný úrad.
         <strong class="text-default">Od 1. 4. 2026 je možné podávať žiadosti už len elektronicky</strong>: cez úradný
         portál elektronických služieb alebo cez
         <a href="https://www.slovensko.sk/sk/titulna-stranka" class="text-primary hover:underline">slovensko.sk</a>.
@@ -191,10 +212,12 @@ const post = {
     <!-- Callout: Jedna myšlienka na záver -->
     <div class="my-10 rounded-2xl border border-primary/20 bg-primary/5 p-8">
       <p class="text-xs font-semibold tracking-widest text-primary uppercase mb-3">Jedna myšlienka na záver</p>
-      <p class="text-xl md:text-2xl font-semibold leading-snug mb-3">Rádiové povolenie je dôležitejšie, než sa zdá.</p>
+      <p class="text-xl md:text-2xl font-semibold leading-snug mb-3">
+        Povolenie na používanie frekvencií je dôležitejšie, než sa zdá.
+      </p>
       <p class="text-muted">
-        Je to jeden z kľúčových dokumentov, ktorý opisuje regulačné a technické parametre vašej rádiovej siete. A práve
-        preto sa oplatí vedieť, kde ho máte uložené, ešte skôr, než ho budete potrebovať.
+        Je to jeden z kľúčových dokumentov, ktorý opisuje regulačné a technické parametre vašej rádiovej siete. Preto sa
+        oplatí vedieť, kde ho máte uložené, ešte skôr, než ho budete súrne potrebovať.
       </p>
     </div>
 
@@ -222,7 +245,7 @@ const post = {
 
     <!-- CTA -->
     <div class="mt-12 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
-      <h2 class="text-xl md:text-2xl font-semibold mb-3">Viete, či je vaše rádiové povolenie ešte platné?</h2>
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Viete, či vám povolenie platí?</h2>
       <p class="text-muted mb-6 max-w-xl mx-auto">
         Ozvite sa nám, pomôžeme vám zorientovať sa v stave vašej siete aj povolenia.
       </p>
