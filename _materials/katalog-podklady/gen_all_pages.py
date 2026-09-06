@@ -377,7 +377,8 @@ def render_node(c, current_id, open_ids):
     cnt = subtree.get(c['id'], 0)
     cls = 'text-primary font-semibold' if c['id'] == current_id else 'text-default hover:text-link'
     name = esc(c['name'])
-    label = '<a href="%s" class="rks-link %s">%s<span class="text-muted text-xs ml-2">%d</span></a>' % (link, cls, name, cnt)
+    # Bez počtu produktov za názvom — recenzia (holé čísla v strome pôsobili zvláštne).
+    label = '<a href="%s" class="rks-link %s">%s</a>' % (link, cls, name)
     if kids:
         openattr = ' open' if c['id'] in open_ids else ''
         inner = ''.join(render_node(k, current_id, open_ids) for k in kids)
