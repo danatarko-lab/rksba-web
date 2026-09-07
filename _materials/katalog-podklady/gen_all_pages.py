@@ -270,9 +270,14 @@ CAT_POPIS_FIX = {
     ),
 }
 
+# Doplnok na koniec popisu kategorie (napr. odkaz na PDF). Kluc = id kategorie.
+# Napln sa az po prideleni slugov (nizsie), tu staci prazdny slovnik.
+CAT_POPIS_APPEND = {}
+
 def cat_popis(c):
-    return clean(CAT_POPIS_FIX.get(c['id'], c.get('popis_html', '') or ''),
-                 kde='kategoria %d %s' % (c['id'], c['name']), title=c['name'])
+    out = clean(CAT_POPIS_FIX.get(c['id'], c.get('popis_html', '') or ''),
+                kde='kategoria %d %s' % (c['id'], c['name']), title=c['name'])
+    return out + CAT_POPIS_APPEND.get(c['id'], '')
 
 # ---------------------------------------------------------------- slugify + kolizie
 def slugify(s):
@@ -340,6 +345,28 @@ def assign_slugs(items, kind, label_key):
 
 cat_slug, _seen_cat, cat_collisions = assign_slugs(cats, 'cat', 'name')
 prod_slug, _seen_prod, prod_collisions = assign_slugs(products, 'prod', 'title')
+
+# Recenzia: v zobrazovanych nazvoch kategorii sa nema ukazovat sufix rady
+# "(DP)" / "(DM)" / "(DR)" (interne helper oznacenia, pre web nepotrebne). Strip
+# robime AZ po prideleni slugov, takze URL (odvodene z povodneho nazvu) zostavaju
+# nezmenene.
+_CAT_SUFFIX_RE = re.compile(r'\s*\((?:DP|DM|DR)\)\s*$')
+for _c in cats:
+    _c['name'] = _CAT_SUFFIX_RE.sub('', _c['name'])
+
+# Recenzia (možnosť B): na stránku „Prenosné rádiostanice" doplníme odkaz na
+# stiahnutie kompletnej porovnávacej tabuľky MOTOTRBO (PDF). Súbor patrí do
+# public/dokumenty/ (nasadí sa spolu s webom).
+_PRENOSNE_ID = next((cid for cid, s in cat_slug.items() if s == 'prenosne-radiostanice'), None)
+if _PRENOSNE_ID is not None:
+    CAT_POPIS_APPEND[_PRENOSNE_ID] = (
+        '<div class="not-prose my-6">'
+        '<a class="inline-flex items-center gap-2 rounded-lg border border-primary/30 '
+        'bg-primary/5 px-4 py-2.5 text-sm font-semibold text-primary no-underline hover:bg-primary/10" '
+        'href="/dokumenty/mototrbo-porovnavacia-tabulka.pdf" target="_blank" rel="noopener">'
+        'Porovnávacia tabuľka MOTOTRBO (PDF)</a>'
+        '</div>'
+    )
 
 # Archivne produktove duplikaty: rovnaky Motorola part number je aj v MOTOTRBO.
 # MOTOTRBO verzia je jedina stranka na cistej adrese, archivny dvojnik sa do nej
@@ -1148,8 +1175,20 @@ def freq_filter_for(prods):
         'placeholder': 'napr. %s' % fmt_mhz(round((top[0] + top[1]) / 2)),
     }
 
+def _model_rank(title):
+    # Recenzia: rádiostanice zoradiť podľa obľúbenosti/predajnosti — najprv R2,
+    # potom R5, potom R7; ostatné modely ostávajú abecedne (ukončené modely majú
+    # v názve „Ukončený predaj:", takže spadnú prirodzene na koniec).
+    if re.match(r'^Motorola R2\b', title):
+        return 0
+    if re.match(r'^Motorola R5\b', title):
+        return 1
+    if re.match(r'^Motorola R7\b', title):
+        return 2
+    return 3
+
 def product_cards(prods):
-    prods = sorted(prods, key=lambda p: p['title'].lower())
+    prods = sorted(prods, key=lambda p: (_model_rank(p['title']), p['title'].lower()))
     out = []
     for p in prods:
         card = {
@@ -1231,10 +1270,9 @@ for c in ([] if INDEX_ONLY else sorted(cats, key=lambda c: c['id'])):
         continue  # umbrella (Produkty) reprezentuje uvodna stranka archivu
     subcats = subcat_cards(c['id'])
     shown_products = direct_products(c['id'])
-    if c['id'] == RADIO_TOP_ID and not shown_products:
-        shown_products = []
-        for ch in children.get(c['id'], []):
-            shown_products = shown_products + direct_products(ch['id'])
+    # Rozdelenie (recenzia, možnosť B): na hornej stránke „Rádiostanice" ukazujeme
+    # LEN dlaždice podkategórií (Prenosné / Vozidlové / Prevádzače), nie namiešaný
+    # zoznam všetkých modelov. Konkrétne modely sú až na podstránkach.
     prod_cards = product_cards(shown_products)
     # Jedina podkategoria je len zbytocny medzikrok: preskocime ju a ukazeme
     # rovno produkty z celeho podstromu.
