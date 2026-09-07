@@ -147,6 +147,13 @@
     "definicia": "Prachuvzdorné krytie a krytie pred vniknutím vody pri ponorení do hĺbky 1m na dobu 30 minút."
   },
   {
+    "id": 200,
+    "slug": "ip68",
+    "pojem": "IP68",
+    "kategoria": "Rádiostanice",
+    "definicia": "Prachuvzdorné krytie a krytie pred trvalým ponorením do vody, odolnejšie než IP67 (napr. do hĺbky 2 m na 2 hodiny)."
+  },
+  {
     "id": 10,
     "slug": "lone-worker",
     "pojem": "LONE WORKER",
