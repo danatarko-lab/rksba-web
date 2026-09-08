@@ -1,0 +1,407 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import NewsletterCTA from '~/components/widgets/NewsletterCTA.astro';
+
+const metadata = {
+  title: 'Capacity Plus vs IP Site Connect | MOTOTRBO Slovensko | RKS',
+  description:
+    'Porovnanie MOTOTRBO Capacity Plus, Capacity Plus Multi-Site a IP Site Connect: logický kanál, kapacita komunikácie, pokrytie, roaming a čo si zadefinovať pred návrhom siete.',
+};
+
+const post = {
+  number: '#005',
+  title: 'Pokrytie alebo kapacita? Capacity Plus vs. IP Site Connect',
+  dek: 'Dve riešenia MOTOTRBO pre dva rozdielne spôsoby komunikácie. O výbere rozhoduje spôsob komunikácie v rádiovej sieti, nie počet rádiostaníc.',
+  date: '9. 9. 2026',
+};
+
+const faq = [
+  {
+    q: 'Je 100 používateľov dôvod pre Capacity Plus?',
+    a: 'Nie. Sto ľudí môže vytvárať veľmi malý aj veľmi veľký objem prevádzky. Rozhoduje počet a súbeh hovorov počas špičky, počet skupín a požadovaná úroveň obsluhy.',
+  },
+  {
+    q: 'Máme tri haly. Potrebujeme IP Site Connect?',
+    a: 'Nie automaticky. Najprv treba zistiť, či haly spoľahlivo pokryje jeden vysielač alebo opakovač. Viac budov je otázka pokrytia. Samo o sebe neurčuje výber produktu.',
+  },
+  {
+    q: 'Je Capacity Plus to isté ako DMR Tier III trunking?',
+    a: 'Motorola označuje Capacity Plus ako digitálny trunking na platforme DMR. Štandardizovaný trunking podľa noriem ETSI (DMR Tier III) zodpovedá systému Capacity Max.',
+  },
+  {
+    q: 'Je Capacity Plus Multi-Site to isté ako Linked Capacity Plus?',
+    a: 'Áno. Capacity Plus Multi-Site je aktuálny názov riešenia historicky predávaného ako Linked Capacity Plus.',
+  },
+  {
+    q: 'Je Capacity Plus vždy lacnejší alebo drahší než IP Site Connect?',
+    a: 'Nie. Cena závisí od počtu vysielacích lokalít, opakovačov, frekvencií, antén, dátovej infraštruktúry, licencií, aplikácií, požadovanej redundancie a merania a montáže. Odlišná architektúra znamená, že univerzálny cenový pomer neexistuje.',
+  },
+  {
+    q: 'Kedy už treba Capacity Max?',
+    a: 'Pri výrazne vyššom rozsahu, centralizovanom systémovom riadení, funkcionalite DMR Tier III alebo pri formálne riešenej vysokej dostupnosti a redundancii.',
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'sk',
+  mainEntity: faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-3xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/newsletter">Newsletter</a>
+    <span class="px-1">/</span>
+    <span class="text-default">Capacity Plus vs. IP Site Connect</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-14 md:py-20">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-5">Potvrďte príjem · {post.number}</p>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight">{post.title}</h1>
+      <p class="mt-4 text-lg md:text-xl text-white/80 italic">{post.dek}</p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+    <p class="text-sm text-muted pb-8 mb-10 border-b border-hairline">Potvrďte príjem · {post.number} · {post.date}</p>
+
+    <div class="prose prose-lg max-w-none">
+      <p class="lead">
+        Dve firmy s rovnakým počtom vysielačiek môžu potrebovať rôzne rádiové systémy. Rozhoduje, akú oblasť požadujete
+        pokryť a koľko súbežných hovorov má prebiehať v čase špičky. Tento článok vysvetľuje rozdiel medzi MOTOTRBO
+        Capacity Plus a IP Site Connect a ako sa medzi nimi rozhodnúť.
+      </p>
+
+      <div class="not-prose my-8 border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        <p class="text-xs font-bold tracking-widest uppercase text-primary mb-3">Najkratšia odpoveď</p>
+        <p class="text-muted">
+          Ak požadujete vzájomnú komunikáciu vo viacerých lokalitách alebo budovách, riešite pokrytie a riešením je
+          systém <strong>IP Site Connect</strong>. Ak na jednej lokalite komunikuje súčasne veľa účastníkov, riešite
+          kapacitu komunikácie a riešením je systém <strong>Capacity Plus</strong>. Ak treba riešiť oboje naraz, do
+          úvahy prichádza systém <strong>Capacity Plus Multi-Site</strong>.
+        </p>
+      </div>
+
+      <p>
+        Obe architektúry patria do rodiny MOTOTRBO, riešia však odlišný návrhový problém. „Pokrytie verzus kapacita" je
+        dobrá orientačná skratka; technicky ide o rozdiel medzi konvenčnou multi-site sieťou a dynamicky trunkovým
+        single-site systémom.
+      </p>
+      <p>
+        Technicky presnejšie: IP Site Connect je konvenčná multi-site architektúra na rozšírenie pokrytia, Capacity Plus
+        je single-site dynamický trunking systém na efektívnejšie zdieľanie rádiových kanálov (frekvencií). Pri veľkých
+        sieťach vyžadujúcich redundanciu a centrálne riadenie prichádza do úvahy použiť systém Capacity Max.
+      </p>
+
+      <div class="not-prose my-8 border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        <p class="text-xs font-bold tracking-widest uppercase text-primary mb-3">V skratke</p>
+        <ul class="list-disc pl-5 space-y-1.5 text-muted">
+          <li><strong>IP Site Connect</strong> rieši pokrytie: cez dátovú sieť prepája viac lokalít do jednej konvenčnej siete.</li>
+          <li><strong>Capacity Plus</strong> rieši kapacitu: na jednej lokalite dynamicky zdieľa rádiové kanály (frekvencie) medzi tímami.</li>
+          <li>O výbere systému rozhoduje pokrytie a prevádzka v čase špičky. Sto rádiostaníc v sieti neznamená sto súčasných hovorov.</li>
+          <li>Ak sa požaduje pokrytie aj kapacita súčasne, existuje systém <strong>Capacity Plus Multi-Site</strong>; pri požiadavke centralizovaného riadenia <strong>Capacity Max</strong>.</li>
+        </ul>
+      </div>
+
+      <h2>Základné pojmy</h2>
+
+      <h3>Čo znamená logický komunikačný kanál</h3>
+      <p>
+        Každý opakovač pracuje na jednej frekvencii (fyzickom kanáli), pridelenej Úradom pre reguláciu elektronických
+        komunikácií a poštových služieb. Každý digitálny opakovač štandardu DMR rozdeľuje jeden fyzický rádiový kanál na
+        dva logické komunikačné kanály (časové sloty). Na každom logickom kanáli môže prebiehať fonická alebo dátová
+        komunikácia, takže opakovač umožňuje na jednej pridelenej frekvencii súčasne dva nezávislé hovory. Koľko ľudí ich
+        dokáže efektívne zdieľať v čase, závisí od spôsobu komunikácie.
+      </p>
+
+      <h3>Čo znamená kapacita rádiovej siete</h3>
+      <p>
+        Sto rádiostaníc neznamená sto súčasných hovorov. Rádiostanica, ktorá je v pohotovostnom režime, neobsadzuje
+        hovorový kanál. Jeden aktívny skupinový hovor obsadzuje jeden logický kanál bez ohľadu na to, či ho počúva päť
+        alebo päťdesiat členov skupiny. Základným návrhovým údajom je preto intenzita prevádzky v čase špičky, súbeh
+        hovorov, priemerná dĺžka hovoru a počet skupín (talkgroups) a ich súbeh. Počet rádiostaníc sám o sebe kapacitu
+        komunikácie neurčuje.<sup><a href="#z5">5</a></sup>
+      </p>
+
+      <h3>Čo znamená pokrytie</h3>
+      <p>
+        „Máme viac budov" ešte nie je argument pre nasadenie IP Site Connect. Podstatná otázka je, či požadované pracovné
+        priestory dokáže v požadovanej kvalite pokryť jeden vhodne navrhnutý opakovač. Pokrytie závisí od frekvencie,
+        vzdialenosti, terénu, výšky a polohy antény, stavebných konštrukcií, poschodí, kovových regálov, strojov a
+        lokálneho rušenia. Merania v betónových a priemyselných priestoroch potvrdzujú výraznú variabilitu útlmu signálu,
+        takže všeobecný model nenahrádza overenie na mieste.<sup><a href="#z6">6</a></sup>
+      </p>
+
+      <figure class="not-prose my-10 rounded-xl border border-hairline overflow-hidden bg-white">
+        <div class="px-6 pt-5 pb-1">
+          <p class="text-xs font-bold tracking-widest uppercase text-primary mb-1.5">Rozhodovacia matica</p>
+          <p class="font-bold text-[#0B1F3A] leading-snug">Ktorá architektúra podľa pokrytia a kapacity</p>
+        </div>
+        <svg
+          class="block w-full h-auto px-4 pb-3"
+          viewBox="0 0 720 470"
+          role="img"
+          aria-label="Rozhodovacia matica. Os pokrytie: jedna lokalita alebo viac lokalít. Os kapacita: konvenčná stačí alebo treba trunking. Kombinácie: jedna lokalita a konvenčná = jednoduchá konvenčná sieť; viac lokalít a konvenčná = IP Site Connect; jedna lokalita a trunking = Capacity Plus; viac lokalít a trunking = Capacity Plus Multi-Site."
+        >
+          <text x="435" y="30" font-family="Arial" font-size="12" font-weight="700" letter-spacing="2" fill="#0B1F3A" text-anchor="middle">POKRYTIE</text>
+          <text x="307" y="58" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A" text-anchor="middle">Jedna lokalita</text>
+          <text x="562" y="58" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A" text-anchor="middle">Viac lokalít</text>
+          <text x="34" y="235" font-family="Arial" font-size="12" font-weight="700" letter-spacing="2" fill="#0B1F3A" text-anchor="middle" transform="rotate(-90 34 235)">KAPACITA</text>
+          <text x="150" y="150" font-family="Arial" font-size="12" font-weight="700" fill="#0B1F3A" text-anchor="middle">Konvenčná</text>
+          <text x="150" y="165" font-family="Arial" font-size="12" font-weight="700" fill="#0B1F3A" text-anchor="middle">stačí</text>
+          <text x="150" y="315" font-family="Arial" font-size="12" font-weight="700" fill="#0B1F3A" text-anchor="middle">Treba</text>
+          <text x="150" y="330" font-family="Arial" font-size="12" font-weight="700" fill="#0B1F3A" text-anchor="middle">trunking</text>
+
+          <rect x="180" y="72" width="255" height="158" rx="4" fill="#EAF2FF" stroke="#fff" stroke-width="3"></rect>
+          <text x="307" y="145" font-family="Arial" font-size="14" font-weight="700" fill="#0B1F3A" text-anchor="middle">Jednoduchá</text>
+          <text x="307" y="164" font-family="Arial" font-size="14" font-weight="700" fill="#0B1F3A" text-anchor="middle">konvenčná sieť</text>
+
+          <rect x="435" y="72" width="255" height="158" rx="4" fill="#1A1ADB" stroke="#fff" stroke-width="3"></rect>
+          <text x="562" y="155" font-family="Arial" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">IP Site Connect</text>
+
+          <rect x="180" y="230" width="255" height="158" rx="4" fill="#1A1ADB" stroke="#fff" stroke-width="3"></rect>
+          <text x="307" y="305" font-family="Arial" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">Capacity Plus</text>
+          <text x="307" y="324" font-family="Arial" font-size="12" fill="#dfe4fb" text-anchor="middle">(single-site)</text>
+
+          <rect x="435" y="230" width="255" height="158" rx="4" fill="#0B1F3A" stroke="#fff" stroke-width="3"></rect>
+          <text x="562" y="305" font-family="Arial" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">Capacity Plus</text>
+          <text x="562" y="324" font-family="Arial" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">Multi-Site</text>
+
+          <text x="435" y="428" font-family="Arial" font-size="12.5" fill="#5b6677" text-anchor="middle">Pri veľkom rozsahu, redundancii a centrálnom riadení → zvážiť Capacity Max.</text>
+        </svg>
+        <figcaption class="text-sm text-muted px-6 pb-5 italic">
+          Architektúra sa vyberá podľa dvoch osí: koľko vysielacích lokalít treba na pokrytie a či konvenčná kapacita
+          zvláda súbeh hovorov. Capacity Plus Multi-Site bol predtým Linked Capacity Plus.<sup><a href="#z1">1</a></sup><sup
+            ><a href="#z2">2</a></sup
+          ><sup><a href="#z3">3</a></sup>
+        </figcaption>
+      </figure>
+
+      <h2>Architektúry MOTOTRBO</h2>
+
+      <h3>IP Site Connect (IPSC)</h3>
+      <p>
+        Konvenčný systém IP Site Connect rieši pokrytie: umožňuje prepojiť viac opakovačov cez dátovú sieť, čím prepája
+        viac lokalít do jednej konvenčnej siete. Konvenčný systém má skupiny staticky priradené ku kanálom, takže dve
+        veľmi aktívne skupiny môžu súperiť o rovnaký kanál, hoci iný kanál zostáva voľný.
+      </p>
+      <p>
+        Systém IP Site Connect umožňuje prepojenie až 15 opakovačov cez štandardnú dátovú (IP) sieť a vytvára z nich
+        jednu nesúvislú alebo súvislú oblasť pokrytia. Opakovače môžu byť rozmiestnené na vzájomne vzdialených
+        lokalitách (bez prekrytia dosahu vysielania alebo s prekrytím dosahu vysielania jednotlivých opakovačov). Koncové
+        rádiostanice možno nakonfigurovať tak, aby si samy vybrali opakovač, ktorý je v ich dosahu. Systém nevyužíva
+        architektúru centrálneho systémového kontroléra; komunikáciu koordinujú samotné opakovače na lokalitách.<sup
+          ><a href="#z1">1</a></sup
+        > Nasadzuje sa, keď jeden opakovač nepokryje požadované územie: viac budov, poschodí, rozľahlý areál alebo
+        geograficky oddelené pracoviská.
+      </p>
+
+      <h3>Capacity Plus (CPSS)</h3>
+      <p>
+        Trunkový systém Capacity Plus rieši kapacitu komunikácie: na jednej lokalite dynamicky zdieľa rádiové kanály
+        (frekvencie) medzi tímami. Zlučuje viaceré rádiové siete, napríklad oddelení závodu, do jedného systému a
+        optimalizuje využitie opakovačov.
+      </p>
+      <p>
+        Trunkový systém znamená, že všetky dostupné kanály sú zoskupené na jednej lokalite a systém ich dynamicky
+        prideľuje podľa okamžitého dopytu, čím obmedzuje nedostupnosť voľných kanálov.<sup><a href="#z2">2</a></sup>
+        Zamedzuje situácii, keď jedna skupina čaká na uvoľnenie obsadeného kanálu, zatiaľ čo iný kanál zostáva voľný.<sup
+          ><a href="#z2">2</a></sup
+        > Capacity Plus poskytuje až 16 hovorových a 24 dátových kanálov a v systéme môže byť zapojených až 1 600
+        rádiostaníc.<sup><a href="#z2">2</a></sup> Systém nepotrebuje vyhradený riadiaci kanál, a tak všetky logické
+        kanály možno využiť pre komunikáciu používateľov. Nasadzuje sa, keď je na jednej lokalite požiadavka na veľké
+        množstvo súčasných komunikácií, napríklad výrobné závody, sklady či letiská s dostatočným pokrytím z jedného
+        bodu.
+      </p>
+      <p>
+        Ak sa požaduje pokrytie aj kapacita súčasne, existuje systém <strong>Capacity Plus Multi-Site (CPMS)</strong>,
+        ktorého pôvodné označenie bolo <strong>Linked Capacity Plus</strong> a ktorý spája výhody IP Site Connect aj
+        Capacity Plus.<sup><a href="#z3">3</a></sup> Ak sa požaduje centralizované riadenie komunikácie, do úvahy
+        prichádza systém <strong>Capacity Max</strong>.
+      </p>
+
+      <h2>Porovnanie architektúr</h2>
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>IP Site Connect</th>
+              <th>Capacity Plus (single-site)</th>
+              <th>Capacity Plus Multi-Site</th>
+              <th>Capacity Max</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Typ</td><td>multi-site konvenčná</td><td>single-site trunking</td><td>multi-site trunking</td><td>trunking pre rozsiahle prevádzky, DMR Tier III</td></tr>
+            <tr><td>Rieši hlavne</td><td>pokrytie</td><td>kapacitu</td><td>pokrytie aj kapacitu</td><td>rozsah, redundancia, riadenie</td></tr>
+            <tr><td>Max. lokalít</td><td>15</td><td>1</td><td>až 15</td><td>veľký rozsah (regionálne limity sa líšia)</td></tr>
+            <tr><td>Kapacita / lokalita</td><td>podľa počtu kanálov</td><td>dynamické zdieľanie kanálov (až 16 digitálnych hlasových a až 24 vyhradených dátových kanálov)</td><td>trunking naprieč lokalitami (limit podľa verzie a regiónu)</td><td>výrazne vyššia</td></tr>
+            <tr><td>Roaming</td><td>áno</td><td>nie</td><td>áno</td><td>áno</td></tr>
+            <tr><td>Centrálny kontrolér</td><td>nie</td><td>nie</td><td>distribuované riadenie</td><td>áno (systémový server)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Modelové prevádzky</h2>
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Prevádzka</th>
+              <th>Kde začať</th>
+              <th>Čo ešte zmerať</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Sklad, 30 ľudí, 1 budova</td><td class="font-bold">Konvenčná single-site</td><td>prieskum pokrytia, počet skupín, súbeh hovorov, chladiarne a regály</td></tr>
+            <tr><td>Výrobný závod, 100 ľudí, viac hál</td><td class="font-bold">Podľa merania</td><td>Ak jeden vysielač pokryje areál a je vysoká prevádzka, Capacity Plus; ak dominuje pokrytie, IP Site Connect; ak oboje, Multi-Site</td></tr>
+            <tr><td>Logistické centrum, viac budov, vysoký súbeh dispečing/sklad/ostraha</td><td class="font-bold">Podľa merania</td><td>Ak jedna lokalita zabezpečí pokrytie, Capacity Plus; ak treba viac vysielacích lokalít aj vyššiu kapacitu, Capacity Plus Multi-Site</td></tr>
+            <tr><td>Tri oddelené prevádzky</td><td class="font-bold">IP Site Connect / Multi-Site</td><td>Kto volá medzi závodmi, roaming, spoľahlivosť dátového spojenia (WAN), lokálna špička</td></tr>
+            <tr><td>Rozľahlý areál, vysoký súbeh hovorov v špičke</td><td class="font-bold">Capacity Plus / Capacity Max</td><td>Počet vysielacích buniek, dispečing, dáta, redundancia, rast</td></tr>
+            <tr><td>Kritická infraštruktúra 24/7</td><td class="font-bold">Do hodnotenia Capacity Max</td><td>Redundancia napájania a dátového spojenia (WAN), poruchové scenáre, dohodnutá úroveň služby (SLA), monitoring</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Kedy už treba Capacity Max</h2>
+      <p>
+        Capacity Max je trunkový systém pre rozsiahle a kritické prevádzky s centralizovaným systémovým riadením a
+        redundanciou.<sup><a href="#z7">7</a></sup> Prichádza na rad, keď sa otázka mení z „koľko kanálov potrebujeme" na
+        „ako odstránime jednotlivé body zlyhania a ako centrálne riadime veľa lokalít". Presné limity a úroveň
+        redundancie sa overujú podľa aktuálnej dokumentácie Motorola Solutions.<sup><a href="#z7">7</a></sup>
+      </p>
+
+      <h2>Čo zmerať pred návrhom</h2>
+      <p>
+        Výber architektúry sa opiera o niekoľko vstupov, ktoré by mal integrátor zistiť ešte pred návrhom.<sup
+          ><a href="#z5">5</a></sup
+        > Pri návrhu priemyselných rádiových sietí preto RKS začína analýzou pokrytia, komunikačných skupín a prevádzky v
+        špičke a až potom vyberá konkrétny systém MOTOTRBO.
+      </p>
+      <div class="not-prose my-8 rounded-xl border border-hairline bg-panel p-6">
+        <p class="text-xs font-bold tracking-widest uppercase text-primary mb-4">Čo si zadefinovať pred návrhom siete</p>
+        <ul class="space-y-2.5 text-muted">
+          <li class="pl-6 relative"><span class="absolute left-0 text-primary font-bold">✓</span>Kde presne musí spojenie fungovať, vrátane podzemných priestorov, schodísk, technologických priestorov a vonkajších plôch.</li>
+          <li class="pl-6 relative"><span class="absolute left-0 text-primary font-bold">✓</span>Koľko skupín bude sieť používať.</li>
+          <li class="pl-6 relative"><span class="absolute left-0 text-primary font-bold">✓</span>Či je požiadavka na individuálne a núdzové volania.</li>
+          <li class="pl-6 relative"><span class="absolute left-0 text-primary font-bold">✓</span>Koľko súčasných hovorov prebieha v špičke.</li>
+          <li class="pl-6 relative"><span class="absolute left-0 text-primary font-bold">✓</span>Ktoré tímy potrebujú komunikovať medzi lokalitami.</li>
+          <li class="pl-6 relative"><span class="absolute left-0 text-primary font-bold">✓</span>Aké dátové, lokalizačné a dispečerské funkcie sú potrebné.</li>
+          <li class="pl-6 relative"><span class="absolute left-0 text-primary font-bold">✓</span>Akú dostupnosť a odolnosť voči poruchám prevádzka vyžaduje.</li>
+          <li class="pl-6 relative"><span class="absolute left-0 text-primary font-bold">✓</span>Ako má sieť rásť počas svojej životnosti.</li>
+        </ul>
+      </div>
+
+      <div class="not-prose my-8 border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        <p class="text-xs font-bold tracking-widest uppercase text-primary mb-3">Čo z tohto článku nevyplýva</p>
+        <p class="text-muted">
+          Z počtu rádiostaníc ani počtu budov nemožno bez ďalších údajov určiť správnu architektúru siete. Capacity
+          Plus, IP Site Connect ani Capacity Max by sa nemali vyberať iba podľa veľkosti firmy. Rozhodnutie vyžaduje
+          minimálne posúdenie pokrytia, komunikačnej prevádzky, dostupnosti a budúceho rastu.
+        </p>
+      </div>
+
+      <aside class="not-prose my-10 rounded-xl bg-[#0A2342] text-white p-8">
+        <p class="text-xs font-bold tracking-widest uppercase text-accent mb-3">Podstata veci</p>
+        <p class="text-xl leading-snug">
+          Dobrá architektúra začína správnym určením problému: pokrytie, kapacita, dostupnosť alebo ich kombinácia.
+          <strong>Preto sa architektúra vyberá až po zmeraní pokrytia a súbehu prevádzky.</strong>
+        </p>
+      </aside>
+
+      <h2>Časté otázky</h2>
+      {
+        faq.map((f) => (
+          <div class="mb-5">
+            <p class="font-semibold text-default mb-1">{f.q}</p>
+            <p class="text-muted mt-0">{f.a}</p>
+          </div>
+        ))
+      }
+
+      <h2>Čo z toho pre vašu firmu: Pohľad RKS</h2>
+      <p class="font-semibold">Správny systém sa začína analýzou a meraním vašej prevádzky.</p>
+      <p>
+        RKS navrhuje, realizuje a servisuje profesionálne rádiové siete Motorola MOTOTRBO pre priemyselné podniky na
+        Slovensku, vrátane systémov Capacity Plus, IP Site Connect, Capacity Plus Multi-Site a Capacity Max. Pri návrhu
+        začíname prieskumom pokrytia a analýzou prevádzky počas špičky, až potom vyberáme architektúru.
+      </p>
+      <p class="not-italic text-xl font-medium border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        Najprv zmerajte problém. Až potom vyberajte systém.
+      </p>
+
+      <h2>Súvisiace odkazy</h2>
+      <ul>
+        <li><a href="/bezpecnostne-systemy-radiove-siete/radiove-siete">Rádiové siete</a></li>
+        <li><a href="/bezpecnostne-systemy-radiove-siete/predaj-radiostanic">Predaj rádiostaníc</a></li>
+        <li><a href="/bezpecnostne-systemy-radiove-siete/servis-radiostanic">Servis rádiostaníc</a></li>
+        <li><a href="/bezpecnostne-systemy-radiove-siete/prenajom-radiostanic">Prenájom rádiostaníc</a></li>
+      </ul>
+
+      <h2>Zdroje a technická revízia</h2>
+      <ol>
+        <li id="z1">
+          Motorola Solutions, <em>MOTOTRBO IP Site Connect</em> (EMEA): až 15 lokalít prepojených cez štandardnú dátovú
+          (IP) sieť, konvenčná multi-site architektúra bez centrálneho systémového kontroléra. Dostupné z:
+          <a href="https://www.motorolasolutions.com/en_xu/products/mototrbo/mototrbo-ip-site-connect.html" rel="noopener">motorolasolutions.com</a>
+          (stiahnuté: 10. septembra 2026).
+        </li>
+        <li id="z2">
+          Motorola Solutions, <em>MOTOTRBO Capacity Plus</em>: single-site digitálny trunking; EMEA stránka uvádza až 16
+          hlasových ciest, 24 dátových ciest a 1 600 rádiostaníc, iné aktuálne materiály 12 / 24 / 1 200 (číslo je
+          regionálne/verziovo závislé). Dostupné z:
+          <a href="https://www.motorolasolutions.com/en_us/products/mototrbo-systems/mototrbo-capacity-plus.html" rel="noopener">motorolasolutions.com</a>
+          (stiahnuté: 10. septembra 2026).
+        </li>
+        <li id="z3">
+          Motorola Solutions, <em>MOTOTRBO Capacity Plus Multi-Site</em> (predtým Linked Capacity Plus): multi-site
+          trunking, wide-area pokrytie a roaming, až 15 lokalít. Dostupné z:
+          <a href="https://www.motorolasolutions.com/en_us/products/mototrbo-systems/linked-capacity-plus.html" rel="noopener">motorolasolutions.com</a>
+          (stiahnuté: 10. septembra 2026).
+        </li>
+        <li id="z4">
+          Rozlíšenie DMR Tier II / Tier III: Motorola Solutions DMR/tier a Capacity Max dokumentácia; ETSI TS 102 361
+          (DMR). Capacity Plus je proprietárny/dynamický trunking na platforme DMR, Tier III trunking zodpovedá Capacity
+          Max.
+        </li>
+        <li id="z5">
+          Teletraffic a Grade of Service: ITU-T Rec. E.600 (intenzita prevádzky, busy hour, holding time, congestion).
+          Dostupné z: <a href="https://www.itu.int/rec/T-REC-E.600/en" rel="noopener">itu.int</a> (stiahnuté: 10.
+          septembra 2026).
+        </li>
+        <li id="z6">
+          Rádiofrekvenčné šírenie v budovách a priemysle: NTIA/ITS propagation resources a odborné merania útlmu v
+          betónových a NLOS prostrediach (dôvod robiť site-specific meranie namiesto všeobecného modelu).
+        </li>
+        <li id="z7">
+          Motorola Solutions, <em>MOTOTRBO Capacity Max</em>: enterprise trunkovaný systém kompatibilný s DMR Tier III,
+          centralizované riadenie a redundancia; regionálne limity (napr. počet lokalít) sa v materiáloch líšia.
+          Dostupné z:
+          <a href="https://www.motorolasolutions.com/en_us/products/mototrbo-systems/mototrbo-capacity-max.html" rel="noopener">motorolasolutions.com</a>
+          (stiahnuté: 10. septembra 2026).
+        </li>
+      </ol>
+
+      <p class="text-sm text-muted italic">
+        Technické parametre sú z aktuálnej dokumentácie Motorola Solutions; niektoré maximá sa medzi regiónmi a verziami
+        líšia, preto ich uvádzame s označením zdroja a regiónu. Posledná technická revízia obsahu: 10. septembra 2026.
+      </p>
+    </div>
+
+    <NewsletterCTA />
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+</Layout>

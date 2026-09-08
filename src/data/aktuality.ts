@@ -100,6 +100,17 @@ export const energyMemo: Post[] = [
 // Vetva Bezpecnostne systemy a radiove siete (Newsletter)
 export const newsletter: Post[] = [
   {
+    number: '#005',
+    category: 'Newsletter',
+    series: 'Potvrďte príjem',
+    title: 'Pokrytie alebo kapacita? Capacity Plus vs. IP Site Connect',
+    excerpt:
+      'Dve firmy s rovnakým počtom vysielačiek môžu potrebovať rôzne rádiové systémy. IP Site Connect rieši pokrytie, Capacity Plus kapacitu. Ako sa medzi MOTOTRBO architektúrami rozhodnúť.',
+    date: '9. 9. 2026',
+    author: 'Vladimír Svatý',
+    href: '/bezpecnostne-systemy-radiove-siete/newsletter/capacity-plus-vs-ip-site-connect',
+  },
+  {
     number: '#004',
     category: 'Newsletter',
     series: 'Potvrďte príjem',
