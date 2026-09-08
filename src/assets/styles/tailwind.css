@@ -306,6 +306,16 @@ hr {
 }
 
 /*
+  Zarovnanie textu článkov a popisov do bloku (aj vpravo). Delenie slov
+  (hyphens, lang=sk) zabraňuje veľkým medzerám v úzkych stĺpcoch. Platí len na
+  odseky a odrážky; nadpisy, popisky, tabuľky a boxy s .not-prose ostávajú vľavo.
+*/
+.prose :is(p, li):not(:where(.not-prose, .not-prose *)) {
+  text-align: justify;
+  hyphens: auto;
+}
+
+/*
   Biele dlaždice zámerne neriešia farbu textu — obsahujú len obrázky (logá
   klientov, skeny certifikátov, fotky produktov). Popisky ležia mimo nich,
   na tmavom paneli.

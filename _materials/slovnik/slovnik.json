@@ -359,7 +359,7 @@
   {
     "id": 201,
     "slug": "mandown",
-    "pojem": "MANDOWN",
+    "pojem": "Mandown",
     "kategoria": "Rádiostanice",
     "definicia": "Funkcia muž v núdzi spustí núdzový alarm, keď rádiostanica zaznamená, že užívateľ spadol alebo dlhší čas zostal v nehybnej či naklonenej polohe. Zvyšuje bezpečnosť pracovníkov v teréne."
   },
@@ -397,5 +397,12 @@
     "pojem": "CONNECT PLUS",
     "kategoria": "Systémy",
     "definicia": "Multilokalitný digitálny trunkový systém pre platformu MOTOTRBO, ktorý prepája viacero lokalít do jednej siete a spravuje prevádzku veľkého počtu užívateľov na rozsiahlom území."
+  },
+  {
+    "id": 207,
+    "slug": "mandown",
+    "pojem": "MAN DOWN",
+    "kategoria": "Rádiostanice",
+    "definicia": "Funkcia muž v núdzi spustí núdzový alarm, keď rádiostanica zaznamená, že užívateľ spadol alebo dlhší čas zostal v nehybnej či naklonenej polohe. Zvyšuje bezpečnosť pracovníkov v teréne."
   }
 ]
