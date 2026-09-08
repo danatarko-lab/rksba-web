@@ -355,5 +355,47 @@
     "pojem": "LINKED_CAPACITY PLUS",
     "kategoria": "Systémy",
     "definicia": "Linked Capacity Plus je multilokalitný digitálny trunkový systém pre platformu MOTOTRBO. Využíva vysokú kapacitu systému Capacity Plus a schopnosti systému IP Site Connect pokryť veľké územie, pre udržanie spojenia užívateľov na rôznych miestach."
+  },
+  {
+    "id": 201,
+    "slug": "mandown",
+    "pojem": "MANDOWN",
+    "kategoria": "Rádiostanice",
+    "definicia": "Funkcia muž v núdzi spustí núdzový alarm, keď rádiostanica zaznamená, že užívateľ spadol alebo dlhší čas zostal v nehybnej či naklonenej polohe. Zvyšuje bezpečnosť pracovníkov v teréne."
+  },
+  {
+    "id": 202,
+    "slug": "wi-fi",
+    "pojem": "Wi-Fi",
+    "kategoria": "Rádiostanice",
+    "definicia": "Integrované pripojenie Wi-Fi umožňuje bezdrôtovú aktualizáciu firmvéru a vzdialenú správu rádiostanice, napríklad hromadné preprogramovanie bez fyzického pripojenia káblom."
+  },
+  {
+    "id": 203,
+    "slug": "indoor-location",
+    "pojem": "INDOOR LOCATION",
+    "kategoria": "Rádiostanice",
+    "definicia": "Sledovanie polohy rádiostanice vo vnútri budov, kde nie je dostupný signál GPS. Poloha sa určuje pomocou Bluetooth majákov rozmiestnených v objekte."
+  },
+  {
+    "id": 204,
+    "slug": "direct-mode",
+    "pojem": "DIRECT MODE",
+    "kategoria": "Systémy",
+    "definicia": "Priama komunikácia medzi dvoma rádiostanicami bez využitia prevádzača alebo inej infraštruktúry. Používa sa na kratší dosah alebo tam, kde nie je pokrytie siete."
+  },
+  {
+    "id": 205,
+    "slug": "capacity-max",
+    "pojem": "CAPACITY MAX",
+    "kategoria": "Systémy",
+    "definicia": "Digitálny trunkový systém najvyššej triedy pre platformu MOTOTRBO. Určený pre veľké prevádzky s vysokým počtom užívateľov a viacerými lokalitami, s pokročilým riadením a zabezpečením."
+  },
+  {
+    "id": 206,
+    "slug": "connect-plus",
+    "pojem": "CONNECT PLUS",
+    "kategoria": "Systémy",
+    "definicia": "Multilokalitný digitálny trunkový systém pre platformu MOTOTRBO, ktorý prepája viacero lokalít do jednej siete a spravuje prevádzku veľkého počtu užívateľov na rozsiahlom území."
   }
 ]
