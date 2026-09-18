@@ -92209,14 +92209,12 @@
   "title": "PMAE40003",
   "alias": "pmae40003",
   "category": {
-   "id": 80,
-   "name": "Antény (CP)",
+   "id": 2006,
+   "name": "Antény (DP)",
    "path": [
-    "Produkty",
     "Rádiostanice",
     "Prenosné rádiostanice",
-    "Komerčné rádiostanice",
-    "Antény (CP)"
+    "Antény (DP)"
    ]
   },
   "popis_html": "<p>Krátka stubby anténa je ideálna pre vysielačky nosené na opasku. Táto odolná, 9 cm krátka UHF anténa pracuje v pásme 430–470 MHz.</p>",
