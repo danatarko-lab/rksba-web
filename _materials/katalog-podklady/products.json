@@ -9183,8 +9183,8 @@
     "Antény (CP)"
    ]
   },
-  "popis_html": "<p> UHF anténa</p>",
-  "popis_text": "UHF anténa",
+  "popis_html": "<div class=\"not-prose my-4 rounded-lg border-l-4 border-red-600 bg-red-50 p-4 text-[#0B1F3A]\"><strong>Ukončený predaj.</strong> Náhrada je <a href=\"/katalog-produktov/pmae40003\" class=\"text-primary hover:underline font-semibold\">PMAE40003</a>.</div> <p> UHF anténa</p>",
+  "popis_text": "Ukončený predaj. Náhrada je PMAE40003. UHF anténa",
   "parametre": [
    {
     "nazov": "Frekvenčný  rozsah",
@@ -92203,5 +92203,50 @@
   "image_caption": "PMNN4543",
   "zdroj": "mototrbo",
   "k2_id": 1071
+ },
+ {
+  "id": 21072,
+  "title": "PMAE40003",
+  "alias": "pmae40003",
+  "category": {
+   "id": 80,
+   "name": "Antény (CP)",
+   "path": [
+    "Produkty",
+    "Rádiostanice",
+    "Prenosné rádiostanice",
+    "Komerčné rádiostanice",
+    "Antény (CP)"
+   ]
+  },
+  "popis_html": "<p>Krátka stubby anténa je ideálna pre vysielačky nosené na opasku. Táto odolná, 9 cm krátka UHF anténa pracuje v pásme 430–470 MHz.</p>",
+  "popis_text": "Krátka stubby anténa je ideálna pre vysielačky nosené na opasku. Táto odolná, 9 cm krátka UHF anténa pracuje v pásme 430–470 MHz.",
+  "parametre": [
+   {
+    "nazov": "Frekvenčný rozsah",
+    "hodnota": "430 – 470 MHz"
+   },
+   {
+    "nazov": "Pásmo",
+    "hodnota": "UHF"
+   },
+   {
+    "nazov": "Typ",
+    "hodnota": "Stubby"
+   },
+   {
+    "nazov": "Dĺžka",
+    "hodnota": "9 cm"
+   },
+   {
+    "nazov": "GPS",
+    "hodnota": "Nie"
+   }
+  ],
+  "obrazok": "",
+  "obrazok_metoda": "manual",
+  "galeria": [],
+  "attachments": [],
+  "image_caption": "PMAE40003"
  }
 ]
