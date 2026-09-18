@@ -100,6 +100,17 @@ export const energyMemo: Post[] = [
 // Vetva Bezpecnostne systemy a radiove siete (Newsletter)
 export const newsletter: Post[] = [
   {
+    number: '#006',
+    category: 'Newsletter',
+    series: 'Potvrďte príjem',
+    title: 'Rádiová sieť alebo rádiový systém? Kde končí kopa vysielačiek a začína riešenie',
+    excerpt:
+      'Sieť rieši pokrytie a spojenie, systém pridáva riadenie a dáta: dispečing, GPS, alarmy, integrácie. Kedy firma prechádza od jedného k druhému a prečo prestáva rozhodovať cena jednej vysielačky.',
+    date: '18. 9. 2026',
+    author: 'Vladimír Svatý',
+    href: '/bezpecnostne-systemy-radiove-siete/newsletter/radiova-siet-alebo-system',
+  },
+  {
     number: '#005',
     category: 'Newsletter',
     series: 'Potvrďte príjem',

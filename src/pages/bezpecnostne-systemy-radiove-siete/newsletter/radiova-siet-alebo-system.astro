@@ -1,0 +1,346 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import NewsletterCTA from '~/components/widgets/NewsletterCTA.astro';
+
+const metadata = {
+  title: 'Rádiová sieť alebo rádiový systém? Kde končí technika a začína riešenie | Potvrďte príjem | RKS',
+  description:
+    'Aký je rozdiel medzi rádiovou sieťou a rádiovým systémom? Sieť rieši pokrytie a spojenie, systém pridáva riadenie a dáta. Kedy firma prechádza od jedného k druhému a čo to stojí — prakticky a s číslami 2026.',
+};
+
+const post = {
+  number: '#006',
+  title: 'Rádiová sieť alebo rádiový systém? Kde končí kopa vysielačiek a začína riešenie',
+  dek: 'O tom, či firma kupuje techniku alebo stavia riešenie, rozhoduje spôsob, akým je komunikácia zapojená do prevádzky.',
+  date: '18. 9. 2026',
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-3xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/newsletter">Newsletter</a>
+    <span class="px-1">/</span>
+    <span class="text-default">Rádiová sieť alebo rádiový systém?</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 py-14 md:py-20">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-5">Potvrďte príjem · {post.number}</p>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight">{post.title}</h1>
+      <p class="mt-4 text-lg md:text-xl text-white/80 italic">{post.dek}</p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
+    <p class="text-sm text-muted pb-8 mb-10 border-b border-hairline">Potvrďte príjem · {post.number} · {post.date}</p>
+
+    <div class="prose prose-lg max-w-none">
+      <p class="lead">
+        V <a href="/bezpecnostne-systemy-radiove-siete/newsletter/capacity-plus-vs-ip-site-connect">predchádzajúcom vydaní</a>
+        sme ukázali, že pri väčších prevádzkach prestáva rozhodovať cena jednej rádiostanice. Toto vydanie odpovedá na
+        otázku, ktorá za tým stojí: čo je vlastne rádiová <strong>sieť</strong>, čo rádiový <strong>systém</strong> a kedy
+        firma prechádza od jedného k druhému.
+      </p>
+
+      <p class="not-prose my-8 text-2xl font-bold text-[#0B1F3A] leading-snug border-l-4 border-primary pl-5">
+        Sieť rieši, kto sa dovolá. Systém rieši, čo sa má vďaka tomu stať.
+      </p>
+
+      <div class="not-prose my-8 border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        <p class="text-xs font-bold tracking-widest uppercase text-primary mb-3">V skratke</p>
+        <ul class="list-disc pl-5 space-y-1.5 text-muted">
+          <li><strong>Sieť</strong> rieši pokrytie, kapacitu a spojenie. <strong>Systém</strong> pridáva riadenie a dáta: dispečing, GPS, nahrávanie, bezpečnostné alarmy, integrácie a správu flotily.</li>
+          <li>O hranici rozhoduje, čo musí komunikácia v prevádzke zabezpečiť. Počet vysielačiek je vstup pre dimenzovanie.</li>
+          <li>Malá bezpečnostná služba s osamelými pracovníkmi môže potrebovať <strong>systém</strong> už pri pár desiatkach staníc; stovka rádiostaníc na veľkom podujatí môže fungovať v jednoduchej rádiovej <strong>sieti</strong>.</li>
+          <li>Pri väčšej architektúre klesá v celkovom rozhodnutí význam ceny jednej vysielačky.</li>
+        </ul>
+      </div>
+
+      <h2>Aký je rozdiel medzi sieťou a systémom?</h2>
+      <p>
+        Skôr než čokoľvek iné treba povedať jednu poctivú vec: profesionálna DMR komunikácia nemá normou stanovenú
+        hranicu, pri ktorej sa „sieť" mení na „systém". Norma ETSI pracuje s režimami (priama, konvenčná a trunková
+        prevádzka) a výrobcovia slovo „systém" používajú široko; Motorola ho uvádza už pri jednom konvenčnom
+        opakovači.<sup><a href="#z1">1</a></sup> Nasledujúce rozdelenie je praktická prevádzková taxonómia; norma ETSI ho
+        takto nevymedzuje.
+      </p>
+      <p>
+        Úplnejšie povedané: <strong>rádiová sieť rieši, kto sa s kým a odkiaľ dovolá; rádiový systém pridáva centrálne
+        riadenie, prevádzkové dáta, bezpečnostné workflow, audit a integrácie s ďalšou technológiou.</strong>
+      </p>
+      <p>
+        Praktická hranica nastáva vo chvíli, keď prevádzka od rádiovej platformy očakáva viac než pokrytie, kapacitu a
+        roaming: dispečer má mať možnosť lokalizovať rádiostanice a udalosti, alarm má vyvolať konkrétnu reakciu,
+        komunikácia sa má zaznamenať, technológia sa má ovládať alebo má byť flotila centrálne spravovaná. Presne túto
+        vrstvu pokrývajú dispečerské platformy ako SmartPTT a TRBOnet.<sup><a href="#z3">3</a></sup>
+      </p>
+
+      <figure class="not-prose my-10 rounded-xl border border-hairline overflow-hidden bg-white">
+        <div class="px-6 pt-5 pb-1">
+          <p class="text-xs font-bold tracking-widest uppercase text-primary mb-1.5">Od vysielačky po systém</p>
+          <p class="font-bold text-[#0B1F3A] leading-snug">Kde končí sieť a kde začína systém</p>
+        </div>
+        <svg
+          class="block w-full h-auto px-4 pb-3"
+          viewBox="0 0 720 300"
+          role="img"
+          aria-label="Štyri vrstvy: rádiostanice (priama komunikácia), opakovač (pokrytie a kapacita), viac lokalít a trunking (roaming, súbežnosť) tvoria sieť; dispečing, dáta a bezpečnosť tvoria systém."
+        >
+          <text x="260" y="34" font-family="Arial" font-size="14" font-weight="700" letter-spacing="3" fill="#0B1F3A" text-anchor="middle">SIEŤ</text>
+          <line x1="40" y1="46" x2="476" y2="46" stroke="#c9d2de" stroke-width="1.5"></line>
+          <text x="260" y="66" font-family="Arial" font-size="11.5" fill="#5b6677" text-anchor="middle">pokrytie · kapacita · spojenie</text>
+          <text x="588" y="34" font-family="Arial" font-size="14" font-weight="700" letter-spacing="3" fill="#0B1F3A" text-anchor="middle">SYSTÉM</text>
+          <line x1="486" y1="46" x2="690" y2="46" stroke="#c9d2de" stroke-width="1.5"></line>
+          <text x="588" y="66" font-family="Arial" font-size="11.5" fill="#5b6677" text-anchor="middle">riadenie a dáta</text>
+
+          <line x1="481" y1="58" x2="481" y2="252" stroke="#9aa7b5" stroke-width="1" stroke-dasharray="4 4"></line>
+
+          <rect x="40" y="92" width="138" height="62" rx="4" fill="#9db4e8"></rect>
+          <text x="109" y="128" font-family="Arial" font-size="12" font-weight="700" fill="#0B1F3A" text-anchor="middle">Rádiostanice</text>
+          <rect x="183" y="92" width="138" height="62" rx="4" fill="#5b78d6"></rect>
+          <text x="252" y="128" font-family="Arial" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Opakovač</text>
+          <rect x="326" y="92" width="150" height="62" rx="4" fill="#1A1ADB"></rect>
+          <text x="401" y="124" font-family="Arial" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Viac lokalít /</text>
+          <text x="401" y="138" font-family="Arial" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">trunking</text>
+          <rect x="486" y="92" width="204" height="62" rx="4" fill="#0B1F3A"></rect>
+          <text x="588" y="124" font-family="Arial" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Dispečing · dáta ·</text>
+          <text x="588" y="138" font-family="Arial" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">bezpečnosť</text>
+
+          <text x="109" y="178" font-family="Arial" font-size="11" fill="#5b6677" text-anchor="middle">priama komunikácia</text>
+          <text x="252" y="178" font-family="Arial" font-size="11" fill="#5b6677" text-anchor="middle">pokrytie + kapacita</text>
+          <text x="401" y="178" font-family="Arial" font-size="11" fill="#5b6677" text-anchor="middle">roaming, súbežnosť</text>
+          <text x="588" y="178" font-family="Arial" font-size="11" fill="#5b6677" text-anchor="middle">GPS, nahrávanie,</text>
+          <text x="588" y="192" font-family="Arial" font-size="11" fill="#5b6677" text-anchor="middle">alarmy, integrácie</text>
+        </svg>
+        <figcaption class="text-sm text-muted px-6 pb-5 italic">
+          Prvé tri vrstvy tvoria sieť: riešia pokrytie, kapacitu a pohyb používateľov. Systém pridáva riadenie a dáta.
+          Hranica nastáva vtedy, keď firma od komunikácie potrebuje dispečing, záznam, bezpečnostný proces alebo
+          integráciu.
+        </figcaption>
+      </figure>
+
+      <h2>Od vysielačky po systém: štyri vrstvy</h2>
+      <p>
+        Najjednoduchšia architektúra je priama komunikácia <em>rádiostanica–rádiostanica</em> bez pevnej infraštruktúry.
+        Dosah sa nedá presne určiť; rozhoduje výkon, frekvencia, terén, stavebné materiály, anténa a jej umiestnenie. V
+        sklade tienia oceľové regály, v budovách železobetón, opláštené haly a podzemie. Preto pri návrhu zaváži viac
+        meranie na mieste a mapa pokrytia než teoretický dosah.<sup><a href="#z2">2</a></sup>
+      </p>
+      <p>
+        Prvou infraštruktúrnou vrstvou je <strong>opakovač</strong>. Umiestni sa na najvhodnejšie miesto z pohľadu
+        pokrytia signálom, prijme vysielanie a odvysiela ho ďalej; Motorola SLR5500 podporuje výkon do 50 W a nepretržitú
+        prevádzku.<sup><a href="#z2">2</a></sup> Jeden DMR nosný kanál poskytuje dve TDMA časové pozície, teda dve súbežné
+        komunikačné cesty. Ďalšie opakovače sa riešia z dvoch odlišných dôvodov: pre <strong>pokrytie</strong> (ďalšia
+        budova, podzemie, vzdialená časť areálu) alebo pre <strong>kapacitu</strong> (viac súbežných hovorov).
+      </p>
+      <p>
+        Pri viacerých lokalitách vstupuje do hry <strong>IP Site Connect</strong>, ktorý prepája opakovače cez IP a
+        umožňuje automatický roaming medzi oblasťami pokrytia. Pri vyššej prevádzke pridáva <strong>trunking</strong>
+        dynamické zdieľanie kanálov; Motorola Capacity Plus v jednej lokalite zvláda 16 hlasových ciest, 24 dátových
+        ciest a do 1 600 rádiostaníc.<sup><a href="#z4">4</a></sup> Ide o maximálne technické možnosti platformy. Skutočnú
+        potrebu kanálov a rádiostaníc určuje prevádzka konkrétnej firmy. Trunking stále patrí do sieťovej vrstvy; rieši
+        kapacitu a prideľovanie rádiových zdrojov.
+      </p>
+      <p>
+        Systémová vrstva prichádza s <strong>dispečingom</strong>. Dispečerské softvéry SmartPTT a TRBOnet pridávajú
+        konzolu, nahrávanie hlasu, GPS a históriu pohybu, geofencing, správu alarmov a telemetriu (napríklad ovládanie
+        brán).<sup><a href="#z3">3</a></sup> Diaľkové programovanie rádiostaníc „vzduchom" (OTAP) zabezpečuje softvér
+        MOTOTRBO Radio Management. GPS získava prevádzkovú hodnotu až v spojení s dispečerom, mapou, alarmom a definovanou
+        reakciou.
+      </p>
+
+      <h2>Kedy už projekt smeruje k systému?</h2>
+      <p>
+        Univerzálne číslo typu „od 50 rádiostaníc treba systém" v normách ani u výrobcov neexistuje. Lepší rozhodovací
+        model sleduje súbeh pokrytia, kapacity, prevádzkovej kritickosti a požadovaných funkcií.
+      </p>
+
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Signál v prevádzke</th>
+              <th>Kam posúva projekt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Pokrytie je jediný problém</td><td>Rádiová <strong>sieť</strong> s opakovačom</td></tr>
+            <tr><td>Viac budov alebo oddelených lokalít</td><td>Multi-site <strong>sieť</strong> a roaming</td></tr>
+            <tr><td>Nedostatok súbežnej kapacity hovorov</td><td>Ďalšie kanály alebo trunking</td></tr>
+            <tr><td>Centrálny dispečer, záznam, GPS a alarm workflow</td><td class="font-bold">Systém</td></tr>
+            <tr><td>Integrácia do telefónie, technológie alebo IT</td><td class="font-bold">Systém</td></tr>
+            <tr><td>Stovky rádiostaníc a časté zmeny konfigurácie</td><td class="font-bold">Systém (OTAP / správa flotily)</td></tr>
+            <tr><td>Výpadok komunikácie má vysoký prevádzkový dopad</td><td class="font-bold">Systém s redundanciou</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Práve preto počet vysielačiek neposkytuje spoľahlivú hranicu. Orientačne sa dá stretnúť so <strong>systémom</strong>
+        pri 20 rádiostaniciach a s konvenčnou <strong>sieťou</strong> pri 100 rádiostaniciach. Tieto počty sú ilustrácia
+        rozhodovacieho princípu; technický návrh sa dimenzuje podľa pokrytia signálom, súbežnej prevádzky, aplikácií a
+        požadovanej dostupnosti.
+      </p>
+
+      <h2>Prečo pri systéme prestáva rozhodovať cena jednej vysielačky</h2>
+      <p>
+        Rádiostanica je koncový prvok. Vlastnosti a dostupnosť celku určujú rádiové lokality, počet kanálov, anténne
+        systémy, napájanie, servery, dispečing, bezpečnostné workflow a integrácie. Rozdiel 100 € na jednej rádiostanici
+        je pri 150 kusoch 15 000 €, no infraštruktúra, softvér a montáž môžu samostatne tvoriť desiatky tisíc eur.
+        Porovnávať sa preto oplatí cez celkové náklady prevádzky. S rastúcou komplexnosťou systému klesá význam ceny
+        jedného terminálu v celkovom investičnom rozhodnutí.
+      </p>
+
+      <figure class="not-prose my-10 rounded-xl border border-hairline overflow-hidden bg-white">
+        <div class="px-6 pt-5 pb-1">
+          <p class="text-xs font-bold tracking-widest uppercase text-primary mb-1.5">
+            Rádová veľkosť nákladov · orientačné ceny RKS 2026, bez DPH
+          </p>
+          <p class="font-bold text-[#0B1F3A] leading-snug">Prečo cena jednej vysielačky prestáva rozhodovať</p>
+        </div>
+        <svg
+          class="block w-full h-auto px-4 pb-3"
+          viewBox="0 0 720 232"
+          role="img"
+          aria-label="Porovnanie rádovej ceny: rádiostanica 500 až 1000 €, rádiová lokalita 7000 až 10000 €, dispečerský softvér 20000 € pre 50 užívateľov, riadiaci softvér systému 150000 € pre 500 užívateľov."
+        >
+          <line x1="200" y1="20" x2="200" y2="212" stroke="#e4e8ef" stroke-width="1"></line>
+          <text x="12" y="61" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A">Rádiostanica</text>
+          <rect x="200" y="42" width="6" height="26" rx="2" fill="#5E6B78"></rect>
+          <text x="214" y="61" font-family="Arial" font-size="12.5" font-weight="700" fill="#5E6B78">500–1 000 €</text>
+          <text x="12" y="109" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A">Rádiová lokalita</text>
+          <rect x="200" y="90" width="24" height="26" rx="2" fill="#1A1ADB"></rect>
+          <text x="232" y="109" font-family="Arial" font-size="12.5" font-weight="700" fill="#1A1ADB">7 000–10 000 €</text>
+          <text x="12" y="157" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A">Dispečing (softvér)</text>
+          <rect x="200" y="138" width="48" height="26" rx="2" fill="#1A1ADB"></rect>
+          <text x="256" y="157" font-family="Arial" font-size="12.5" font-weight="700" fill="#1A1ADB">20 000 €</text>
+          <text x="12" y="205" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A">Riadiaci softvér systému</text>
+          <rect x="200" y="186" width="360" height="26" rx="2" fill="#0B1F3A"></rect>
+          <text x="568" y="205" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A">150 000 €</text>
+        </svg>
+        <figcaption class="text-sm text-muted px-6 pb-5 italic">
+          Orientačné ceny RKS (2026, bez DPH). Dispečerský softvér je uvedený pre 50 užívateľov, riadiaci softvér systému
+          pre 500 užívateľov, teda desaťnásobok; ceny softvéru závisia od zvolených opcií. Lacnejšie rádiostanice (okolo
+          316 €) sa do väčších rádiových sietí nedajú integrovať. Cena jednej rádiostanice sa v tomto ráde stráca.<sup
+            ><a href="#z5">5</a></sup
+          >
+        </figcaption>
+      </figure>
+
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Prevádzka</th>
+              <th>Rádiostanice</th>
+              <th>Klasifikácia</th>
+              <th>Z čoho sa skladá</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Sklad s jednou halou</td><td>25–40</td><td class="font-bold">Sieť</td><td>1 opakovač, anténa, napájanie</td></tr>
+            <tr><td>Rozľahlý výrobný areál</td><td>80–150</td><td class="font-bold">Systém</td><td>2–4 opakovače, dispečing, GPS a alarmy, napájanie</td></tr>
+            <tr><td>Viaclokalitová logistika (3 sklady)</td><td>40–70 / lokalita</td><td class="font-bold">Systém</td><td>opakovače na lokalitu, IP prepojenie a roaming, centrálny dispečing</td></tr>
+            <tr><td>Kritická infraštruktúra 24/7</td><td>100–300</td><td class="font-bold">Systém s vysokou dostupnosťou</td><td>redundantné rádiové lokality, zálohované servery, monitoring, diagnostický systém</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-muted">
+        Rozpočet rastie s počtom rádiových lokalít, mierou redundancie a rozsahom softvéru. Rádovú veľkosť jednotlivých
+        položiek ukazuje graf vyššie.
+      </p>
+
+      <p>
+        Pri väčšej architektúre sa mení aj samotná ekonomika investície: z nákupu jednotlivých vysielačiek sa stáva
+        obstaranie funkčného celku. Tejto téme sa budeme venovať v samostatnom vydaní.
+      </p>
+
+      <h2>Frekvencie: čo PMR446 nezvládne</h2>
+      <p>
+        Profesionálna sieť s vlastnými frekvenciami a opakovačmi potrebuje na Slovensku aj v Česku individuálne povolenie
+        na používanie frekvencií od regulačného úradu.<sup><a href="#z6">6</a></sup> Bezlicenčné pásmo PMR446 (ručné
+        stanice s max. výkonom 0,5 W a s pevne integrovanou anténou) opakovače a infraštruktúru nepovoľuje, takže
+        neposlúži ako zjednodušená podniková sieť. Správny pojem je pritom povolenie na používanie frekvencií.
+      </p>
+
+      <aside class="not-prose my-10 rounded-xl bg-[#0A2342] text-white p-8">
+        <p class="text-xs font-bold tracking-widest uppercase text-accent mb-3">Podstata veci</p>
+        <p class="text-xl leading-snug">
+          Firma začína stavať systém vo chvíli, keď od komunikácie potrebuje riadenie, dáta, bezpečnostný proces alebo
+          integráciu. <strong>Počet vysielačiek je vstup pre dimenzovanie; hranicu určuje spôsob, akým je komunikácia
+          zapojená do prevádzky.</strong>
+        </p>
+      </aside>
+
+      <h2>Čo z toho pre vašu firmu: Pohľad RKS</h2>
+      <p class="font-semibold">Dobrý návrh sa začína mapou vašej prevádzky.</p>
+      <p>
+        RKS navrhuje, dodáva a servisuje rádiové siete aj celé systémy vrátane Motorola MOTOTRBO a CALTTA. Pri návrhu sa
+        začína prieskumom pokrytia a otázkou, čo má komunikácia v prevádzke zabezpečiť.
+      </p>
+      <p class="not-italic text-xl font-medium border-l-4 border-primary bg-primary/5 rounded-r-lg p-5">
+        Sieť rieši, kto sa dovolá. Systém rieši, čo sa má vďaka tomu stať.
+      </p>
+
+      <h2>Súvisiace odkazy</h2>
+      <ul>
+        <li><a href="/bezpecnostne-systemy-radiove-siete/radiove-siete">Rádiové siete</a></li>
+        <li><a href="/bezpecnostne-systemy-radiove-siete/newsletter/capacity-plus-vs-ip-site-connect">Capacity Plus vs. IP Site Connect</a></li>
+        <li><a href="/bezpecnostne-systemy-radiove-siete/predaj-radiostanic">Predaj rádiostaníc</a></li>
+        <li><a href="/bezpecnostne-systemy-radiove-siete/servis-radiostanic">Servis rádiostaníc</a></li>
+      </ul>
+
+      <h2>Zdroje a predpoklady</h2>
+      <ol>
+        <li id="z1">
+          ETSI DMR (režimy priama/konvenčná/trunková prevádzka) a systémové architektúry výrobcu: Motorola Solutions,
+          <em>MOTOTRBO SLR5500 Repeater — Product Data Sheet</em>. Dostupné z:
+          <a href="https://www.motorolasolutions.com/content/dam/msi/docs/EA_Collaterals/ENGLISH/MOTOTRBO/Repeaters/SLR5500_datasheet_ENG.pdf" rel="noopener">motorolasolutions.com</a>
+          (stiahnuté: 3. septembra 2026).
+        </li>
+        <li id="z2">
+          Motorola Solutions, <em>MOTOTRBO SLR5500</em>: výkon do 50 W, 100 % duty cycle, podporované architektúry;
+          faktory dosahu (výkon, frekvencia, terén, materiály, anténa). Datasheet ako vyššie.
+        </li>
+        <li id="z3">
+          SmartPTT, <em>SmartPTT Enterprise</em>: <a href="https://smartptt.com/products/smartptt-enterprise/" rel="noopener">smartptt.com</a>;
+          TRBOnet, <em>TRBOnet Enterprise</em>: <a href="https://trbonet.com/products/enterprise/" rel="noopener">trbonet.com</a>
+          (dispečing, nahrávanie, GPS, geofencing, alarmy, telemetria, OTAP). Stiahnuté: 3. septembra 2026.
+        </li>
+        <li id="z4">
+          Motorola Solutions, <em>MOTOTRBO Capacity Plus (Single-Site)</em>: EMEA stránka uvádza až 16 hlasových ciest,
+          24 dátových ciest a do 1 600 rádiostaníc na lokalitu; staršie a iné materiály uvádzajú 12 / 24 / 1 200 (číslo je
+          regionálne a verziovo závislé). Dostupné z:
+          <a href="https://www.motorolasolutions.com/content/dam/msi/docs/business/_documents/brochure/_static_files/mototrbo_capacity_plus_brochure.pdf" rel="noopener">motorolasolutions.com</a>
+          (stiahnuté: 3. septembra 2026).
+        </li>
+        <li id="z5">
+          Orientačné interné ceny RKS (2026), bez DPH, pre rádovú ilustráciu: rádiostanica 500–1 000 €, rádiová lokalita
+          7 000–10 000 €, dispečerský softvér 20 000 € (pre 50 užívateľov), riadiaci softvér systému 150 000 € (pre 500
+          užívateľov). Ceny softvéru závisia od zvolených opcií. Ide o cenové rozpätia, nie o cenník konkrétneho
+          projektu; výsledná cena závisí od konfigurácie a rozsahu.
+        </li>
+        <li id="z6">
+          Frekvencie: SK: zákon č. 452/2021 Z. z. o elektronických komunikáciách (§ 34, § 35; individuálne povolenie,
+          lehota spravidla do 6 týždňov),
+          <a href="https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2021/452" rel="noopener">slov-lex.sk</a>; PMR446
+          podľa VPR-08/2022 (446,0–446,2 MHz, 0,5 W). CZ: ČTÚ, VO-R/3/6.2016-9 (PMR446, zákaz opakovačov a pevnej
+          infraštruktúry),
+          <a href="https://ctu.gov.cz/sites/default/files/obsah/ctu/vseobecne-opravneni-c.vo-r/3/6.2016-9/obrazky/vo-r03-062016-09.pdf" rel="noopener">ctu.gov.cz</a>.
+          Stiahnuté: 3. septembra 2026.
+        </li>
+      </ol>
+
+      <p class="text-sm text-muted italic">
+        Technické parametre sú overené v dokumentácii výrobcov, ceny sú orientačné benchmarky z verejných cenníkov 2026.
+        Rozdelenie na „sieť" a „systém" je praktická prevádzková taxonómia; norma ETSI ani výrobca ju takto nevymedzujú.
+      </p>
+    </div>
+
+    <NewsletterCTA />
+  </article>
+</Layout>
