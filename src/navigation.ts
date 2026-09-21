@@ -34,6 +34,10 @@ export const headerData = {
               text: 'Digitalizácia sietí',
               href: getPermalink('/bezpecnostne-systemy-radiove-siete/digitalizacia-sieti'),
             },
+            {
+              text: 'Digitálny systém MOTOTRBO',
+              href: getPermalink('/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo'),
+            },
           ],
         },
         {
