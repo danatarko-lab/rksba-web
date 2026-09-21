@@ -517,9 +517,8 @@ def is_radio_branch(cid):
     return False
 
 # texty CTA podla vetvy a typu stranky
-CTA_RADIO_PRODUCT = ('Servis a príslušenstvo aj po ukončení výroby',
-    'Tento produkt už výrobca nedodáva, my ho stále servisujeme. Servis, batérie, príslušenstvo a opravy '
-    'robíme aj pre modely, ktorých výroba bola ukončená.')
+CTA_RADIO_PRODUCT = ('Servis aj po ukončení výroby',
+    'Servis, batérie, príslušenstvo robíme aj pre modely, ktorých výroba bola ukončená.')
 CTA_RADIO_CATEGORY = ('Servis a príslušenstvo aj po ukončení výroby',
     'Produkty z tejto kategórie už výrobca nedodáva, my ich stále servisujeme. Servis, batérie, príslušenstvo '
     'a opravy robíme aj pre modely, ktorých výroba bola ukončená.')
