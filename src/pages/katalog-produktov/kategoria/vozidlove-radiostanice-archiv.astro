@@ -21,7 +21,8 @@ const breadcrumb = [
   }
 ];
 const heading = "Vozidlové rádiostanice";
-const popisHtml = "<p> Vozidlové rádiostanice (niekedy označované ako mobilné rádiostanice) sú rádiostanice určené hlavne pre montáž do vozidiel. Tieto rádiostanice sa však dajú využiť aj ako súčasť mnohých aplikácií (špeciálne základňové stanice, retranslačné stanice, zvukový záznam prevádzky rádiovej siete, prepojenie s dispečerskými pultmi, a pod.)</p> <p> Naša spoločnosť ponúka rádiostanice renomovanej americkej spoločnosti Motorola, ktoré sa delia podľa spôsobu komunikácie na analógové (rada CM a GM) a na digitálne (rada MOTOTRBO DM). Tieto rádiostanice používajú VHF alebo UHF pásmo.</p> <p> Vozidlové rádiostanice sú určené do vozidiel osobných, nákladných a špeciálne upravených, vozidlové antény sú umiestnené väčšinou na strechách vozidiel. Rádiostanice sú napájané z vozidlových akumulátorov.</p> <p> Vozidlové rádiostanice sa používajú aj ako dispečerské stanovištia, základňové antény sú umiestňované na strechách budov. V tomto prípade sú rádiostanice napájané zo sieťových zdrojov alebo zo zálohovaných sieťových zdrojov.</p> <p> Oproti prenosným rádiostaniciam sa vyznačujú vyšším vysielacím výkonom, a teda aj vyšším dosahom. Pokrývajú tak rozľahlé územia v okolí vozidla alebo dispečerského pracoviska.</p> <p> Široká modelová rada týchto rádiostaníc MOTOROLA umožňuje nájsť optimálne riešenie pre každého. Vozidlové rádiostanice je možné použiť iba na základe licencie pridelenej TÚ SR (Telekomunikačnom úradom SR).</p>";
+const popisHtml = "<p>Vozidlové rádiostanice (niekedy označované ako mobilné rádiostanice) sú rádiostanice určené hlavne pre montáž do vozidiel.</p>";
+const popisRest = "<p>Tieto rádiostanice sa však dajú využiť aj ako súčasť mnohých aplikácií (špeciálne základňové stanice, retranslačné stanice, zvukový záznam prevádzky rádiovej siete, prepojenie s dispečerskými pultmi, a pod.)</p><p> Naša spoločnosť ponúka rádiostanice renomovanej americkej spoločnosti Motorola, ktoré sa delia podľa spôsobu komunikácie na analógové (rada CM a GM) a na digitálne (rada MOTOTRBO DM). Tieto rádiostanice používajú VHF alebo UHF pásmo.</p> <p> Vozidlové rádiostanice sú určené do vozidiel osobných, nákladných a špeciálne upravených, vozidlové antény sú umiestnené väčšinou na strechách vozidiel. Rádiostanice sú napájané z vozidlových akumulátorov.</p> <p> Vozidlové rádiostanice sa používajú aj ako dispečerské stanovištia, základňové antény sú umiestňované na strechách budov. V tomto prípade sú rádiostanice napájané zo sieťových zdrojov alebo zo zálohovaných sieťových zdrojov.</p> <p> Oproti prenosným rádiostaniciam sa vyznačujú vyšším vysielacím výkonom, a teda aj vyšším dosahom. Pokrývajú tak rozľahlé územia v okolí vozidla alebo dispečerského pracoviska.</p> <p> Široká modelová rada týchto rádiostaníc MOTOROLA umožňuje nájsť optimálne riešenie pre každého. Vozidlové rádiostanice je možné použiť iba na základe licencie pridelenej TÚ SR (Telekomunikačnom úradom SR).</p>";
 const intro = [];
 const subcats = [
   {
@@ -194,7 +195,13 @@ const hasFilter = filters.length > 0 || freq !== null;
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
         ))}
 
-        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+        {popisHtml && <div class="prose prose-lg max-w-none mb-3" set:html={popisHtml} />}
+        {popisRest && (
+          <details class="mb-8 rks-popis-more">
+            <summary class="cursor-pointer select-none font-medium text-primary hover:underline">Zobraziť viac</summary>
+            <div class="prose prose-lg max-w-none mt-3" set:html={popisRest} />
+          </details>
+        )}
 
         {products.length > 0 && (
           <>

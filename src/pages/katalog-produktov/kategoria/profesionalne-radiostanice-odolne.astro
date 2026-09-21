@@ -25,7 +25,8 @@ const breadcrumb = [
   }
 ];
 const heading = "Profesionálne rádiostanice odolné";
-const popisHtml = "Produkty už nie sú v predaji, aktuálnu ponuku nájdete na www.mototrbo.sk <p> Efektívna komunikácia je tiež kľúčom k udržaniu úspechu a na uľahčenie Vašej práce. Odpoveďou na Vaše požiadavky sú profesionálne rádiostanice rady GP. Rozsiahly výskum ukázal, že rôzne odbory kladú aj rôzne nároky na spojenie. Preto spoločnosť Motorola ponúka vo svojej rade GP rádiostanice s rôznymi vlastnosťami. Každá z nich má svoje vlastné ľahko ovládateľné funkcie, ktoré Vám umožnia vytvárať cielené rádiové skupiny.</p> <p> Ručné (prenosné) profesionálne rádiostanice GP-R sú malé, kompaktné rádiostanice funkčne zhodné s rádiostanicami GP, ale oproti nim sú vyrábané vo zvlášť odolnom prevedení ktoré chráni tieto modely rádiostaníc pred vniknutí vody pri ponorení do hĺbky 1m až na dobu 30 minút. (Krytie IP67)</p>";
+const popisHtml = "";
+const popisRest = "Produkty už nie sú v predaji, aktuálnu ponuku nájdete na www.mototrbo.sk <p> Efektívna komunikácia je tiež kľúčom k udržaniu úspechu a na uľahčenie Vašej práce. Odpoveďou na Vaše požiadavky sú profesionálne rádiostanice rady GP. Rozsiahly výskum ukázal, že rôzne odbory kladú aj rôzne nároky na spojenie. Preto spoločnosť Motorola ponúka vo svojej rade GP rádiostanice s rôznymi vlastnosťami. Každá z nich má svoje vlastné ľahko ovládateľné funkcie, ktoré Vám umožnia vytvárať cielené rádiové skupiny.</p> <p> Ručné (prenosné) profesionálne rádiostanice GP-R sú malé, kompaktné rádiostanice funkčne zhodné s rádiostanicami GP, ale oproti nim sú vyrábané vo zvlášť odolnom prevedení ktoré chráni tieto modely rádiostaníc pred vniknutí vody pri ponorení do hĺbky 1m až na dobu 30 minút. (Krytie IP67)</p>";
 const intro = [];
 const subcats = [
   {
@@ -229,7 +230,13 @@ const hasFilter = filters.length > 0 || freq !== null;
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
         ))}
 
-        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+        {popisHtml && <div class="prose prose-lg max-w-none mb-3" set:html={popisHtml} />}
+        {popisRest && (
+          <details class="mb-8 rks-popis-more">
+            <summary class="cursor-pointer select-none font-medium text-primary hover:underline">Zobraziť viac</summary>
+            <div class="prose prose-lg max-w-none mt-3" set:html={popisRest} />
+          </details>
+        )}
 
         {products.length > 0 && (
           <>

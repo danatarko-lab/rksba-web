@@ -21,7 +21,8 @@ const breadcrumb = [
   }
 ];
 const heading = "Prenosné rádiostanice";
-const popisHtml = "<p> Prenosné ručné rádiostanice patria nepochybne k najdôležitejším a najzákladnejším prvkom komunikácie v privátnych rádiových sieťach. Ručné rádiostanice sú určené ako pre profesionálne použitie, tak i pre voľný čas.</p> <p> Naša spoločnosť ponúka rádiostanice renomovanej americkej spoločnosti Motorola, ktoré sa delia podľa spôsobu komunikácie na analógové (rada CP a GP) a na digitálne (rada Mototrbo). Prenosné rádiostanice používajú VHF alebo UHF pásmo.</p> <p> Digitálnym rádiostaniciam Mototrbo patrí budúcnosť, poskytujú vyššiu úroveň služieb v porovnaní s analógovými rádiostanicami. Ich najväčšou výhodou je že na jednej frekvencii môžu prebiehať súčasne dva hovory.</p> <p> Špeciálnou kategóriou rádiostaníc sú tzv. Marine (lodné) rádiostanice japonskej značky ICOM. Jedná sa o lodné/ručné VHF rádiostanice ktoré sú určené pre námornú, pobrežnú a riečnu komunikáciu na medzinárodných námorných kanáloch v pásme 156-162 MHz. Sú prispôsobené námorným podmienkam, väčšinou sú vodotesné a s priamym navolením dorozumievacieho a bezpečnostného kanálu 16 (CH16). Ich výkon býva 5W a dá sa v prípade potreby znížiť na 1W. Ďalej majú navolené METEO kanály s predpoveďou počasia. Marine rádiostanice vyžadujú povolenie pri vnútrozemskej vodnej alebo námornej prevádzke.</p>";
+const popisHtml = "<p>Prenosné ručné rádiostanice patria nepochybne k najdôležitejším a najzákladnejším prvkom komunikácie v privátnych rádiových sieťach.</p>";
+const popisRest = "<p>Ručné rádiostanice sú určené ako pre profesionálne použitie, tak i pre voľný čas.</p><p> Naša spoločnosť ponúka rádiostanice renomovanej americkej spoločnosti Motorola, ktoré sa delia podľa spôsobu komunikácie na analógové (rada CP a GP) a na digitálne (rada Mototrbo). Prenosné rádiostanice používajú VHF alebo UHF pásmo.</p> <p> Digitálnym rádiostaniciam Mototrbo patrí budúcnosť, poskytujú vyššiu úroveň služieb v porovnaní s analógovými rádiostanicami. Ich najväčšou výhodou je že na jednej frekvencii môžu prebiehať súčasne dva hovory.</p> <p> Špeciálnou kategóriou rádiostaníc sú tzv. Marine (lodné) rádiostanice japonskej značky ICOM. Jedná sa o lodné/ručné VHF rádiostanice ktoré sú určené pre námornú, pobrežnú a riečnu komunikáciu na medzinárodných námorných kanáloch v pásme 156-162 MHz. Sú prispôsobené námorným podmienkam, väčšinou sú vodotesné a s priamym navolením dorozumievacieho a bezpečnostného kanálu 16 (CH16). Ich výkon býva 5W a dá sa v prípade potreby znížiť na 1W. Ďalej majú navolené METEO kanály s predpoveďou počasia. Marine rádiostanice vyžadujú povolenie pri vnútrozemskej vodnej alebo námornej prevádzke.</p>";
 const intro = [];
 const subcats = [
   {
@@ -212,7 +213,13 @@ const hasFilter = filters.length > 0 || freq !== null;
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
         ))}
 
-        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+        {popisHtml && <div class="prose prose-lg max-w-none mb-3" set:html={popisHtml} />}
+        {popisRest && (
+          <details class="mb-8 rks-popis-more">
+            <summary class="cursor-pointer select-none font-medium text-primary hover:underline">Zobraziť viac</summary>
+            <div class="prose prose-lg max-w-none mt-3" set:html={popisRest} />
+          </details>
+        )}
 
         {products.length > 0 && (
           <>

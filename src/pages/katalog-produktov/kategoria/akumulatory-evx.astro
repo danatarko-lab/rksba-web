@@ -25,7 +25,8 @@ const breadcrumb = [
   }
 ];
 const heading = "Akumulátory (EVX)";
-const popisHtml = "Katalóg akumulátorov pre rádiostanice Motorola rady VX <p> Akumulátory nevyberajte vždy podľa kapacity, ale taktiež podľa chemického zloženia a prostredia, v ktorom rádiostanicu používate. Akumulátory pre rádiostanice sa podľa zloženia delia na:</p> <ul> <li> Ni-Cd (Niklo-kadmiové), ich dovoz do EÚ bol ukončený</li> <li> Ni-MH (Nikel-metalhydridové)</li> <li> Li-Ion (Líthium-Ionové)</li></ul> <p> Všeobecne možno povedať, že Ni-Cd a Ni-MH batérie trpia tzv. pamäťovým efektom, na rozdiel od Li-Ion, ktoré sú vybavené obvodmi zaisťujúcimi nízke samovybíjanie. Li-Ion akumulátory nie sú však vhodné pre použitie pri nízkych teplotách (menej ako -10 °C).<br> V tomto článku nájdete tipy ktoré vám pomôžu udržať vysoký výkon a dlhú životnosť akumulátorov Motorola.</p> <p> Spoločnosť Motorola venuje kvalite svojich akumulátorov veľkú pozornosť a podrobuje ich náročným testom.</p>";
+const popisHtml = "";
+const popisRest = "Katalóg akumulátorov pre rádiostanice Motorola rady VX <p> Akumulátory nevyberajte vždy podľa kapacity, ale taktiež podľa chemického zloženia a prostredia, v ktorom rádiostanicu používate. Akumulátory pre rádiostanice sa podľa zloženia delia na:</p> <ul> <li> Ni-Cd (Niklo-kadmiové), ich dovoz do EÚ bol ukončený</li> <li> Ni-MH (Nikel-metalhydridové)</li> <li> Li-Ion (Líthium-Ionové)</li></ul> <p> Všeobecne možno povedať, že Ni-Cd a Ni-MH batérie trpia tzv. pamäťovým efektom, na rozdiel od Li-Ion, ktoré sú vybavené obvodmi zaisťujúcimi nízke samovybíjanie. Li-Ion akumulátory nie sú však vhodné pre použitie pri nízkych teplotách (menej ako -10 °C).<br> V tomto článku nájdete tipy ktoré vám pomôžu udržať vysoký výkon a dlhú životnosť akumulátorov Motorola.</p> <p> Spoločnosť Motorola venuje kvalite svojich akumulátorov veľkú pozornosť a podrobuje ich náročným testom.</p>";
 const intro = [];
 const subcats = [];
 const subcatsHeading = "";
@@ -216,7 +217,13 @@ const hasFilter = filters.length > 0 || freq !== null;
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
         ))}
 
-        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+        {popisHtml && <div class="prose prose-lg max-w-none mb-3" set:html={popisHtml} />}
+        {popisRest && (
+          <details class="mb-8 rks-popis-more">
+            <summary class="cursor-pointer select-none font-medium text-primary hover:underline">Zobraziť viac</summary>
+            <div class="prose prose-lg max-w-none mt-3" set:html={popisRest} />
+          </details>
+        )}
 
         {products.length > 0 && (
           <>

@@ -29,7 +29,8 @@ const breadcrumb = [
   }
 ];
 const heading = "Nabíjačky (CP)";
-const popisHtml = "Katalóg nabíjačiek pre rádiostanice Motorola. <p> Väčšina rádiostaníc Motorola je dodávaná spoločne s nabíjačkou akumulátorov. Výnimku tvoria rádiostanice Motorola rady GP, ktoré sú štandardne dodávané bez nabíjačky. Okrem jednoduchých, jednomiestnych stolových nabíjačiek existujú autonabíjačky a 6-miestne nabíjačky. Tieto 6-miestne nabíjačky sú vhodné predovšetkým na pracoviská, kde sa rádiostanice nabíjajú na jednom mieste a ušetria Vám tým miesto a tiež množstvo káblov. Niektoré nabíjačky sú typu IMPRES, a umožňujú komunikáciu s akumulátormi (zistenie stavu batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, a pod).</p>";
+const popisHtml = "";
+const popisRest = "Katalóg nabíjačiek pre rádiostanice Motorola. <p> Väčšina rádiostaníc Motorola je dodávaná spoločne s nabíjačkou akumulátorov. Výnimku tvoria rádiostanice Motorola rady GP, ktoré sú štandardne dodávané bez nabíjačky. Okrem jednoduchých, jednomiestnych stolových nabíjačiek existujú autonabíjačky a 6-miestne nabíjačky. Tieto 6-miestne nabíjačky sú vhodné predovšetkým na pracoviská, kde sa rádiostanice nabíjajú na jednom mieste a ušetria Vám tým miesto a tiež množstvo káblov. Niektoré nabíjačky sú typu IMPRES, a umožňujú komunikáciu s akumulátormi (zistenie stavu batérie, sledovanie nabíjacích cyklov, alebo odhad počtu cyklov do konca životnosti akumulátora, a pod).</p>";
 const intro = [];
 const subcats = [];
 const subcatsHeading = "";
@@ -220,7 +221,13 @@ const hasFilter = filters.length > 0 || freq !== null;
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
         ))}
 
-        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+        {popisHtml && <div class="prose prose-lg max-w-none mb-3" set:html={popisHtml} />}
+        {popisRest && (
+          <details class="mb-8 rks-popis-more">
+            <summary class="cursor-pointer select-none font-medium text-primary hover:underline">Zobraziť viac</summary>
+            <div class="prose prose-lg max-w-none mt-3" set:html={popisRest} />
+          </details>
+        )}
 
         {products.length > 0 && (
           <>

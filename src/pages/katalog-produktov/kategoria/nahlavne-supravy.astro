@@ -25,7 +25,8 @@ const breadcrumb = [
   }
 ];
 const heading = "Náhlavné súpravy";
-const popisHtml = "<h2>Katalóg náhlavných súprav pre rádiostanice Motorola</h2> <p>Náhlavná súprava spája slúchadlo a mikrofón do jedného kusa a uvoľní používateľovi obe ruky. Používa sa tam, kde treba komunikovať potichu, dlhé hodiny alebo v hluku — v ostrahe, logistike, výrobe či pri obsluhe strojov. Správna voľba závisí od úrovne okolitého hluku, dĺžky nosenia a požiadavky na diskrétnosť alebo ochranu sluchu.</p> <p>Náhlavné súpravy poskytujú diskrétnosť slúchadiel, spolu s väčším pohodlím alebo ochranou sluchu. Špeciálne náhlavné súpravy s označením Temple Transducer využívajú na prenos zvuku kostné vedenie, čo umožňuje čistú komunikáciu aj v extrémne hlučnom prostredí.</p> <p>Príslušenstvo podobne ako rádiostanice prechádza zrýchleným testom životnosti (Motorola Accelerated Life Test), ktorý simuluje 5 rokov náročného užívania v praxi.</p> <p><iframe src=\"https://www.youtube-nocookie.com/embed/sm7BjeCzYl8\" title=\"Motorola Accelerated Life Test\" loading=\"lazy\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen style=\"width:100%;aspect-ratio:16/9;height:auto;border-radius:8px\"></iframe></p>";
+const popisHtml = "<p>Náhlavná súprava spája slúchadlo a mikrofón do jedného kusa a uvoľní používateľovi obe ruky.</p>";
+const popisRest = "<h2>Katalóg náhlavných súprav pre rádiostanice Motorola</h2><p>Používa sa tam, kde treba komunikovať potichu, dlhé hodiny alebo v hluku — v ostrahe, logistike, výrobe či pri obsluhe strojov. Správna voľba závisí od úrovne okolitého hluku, dĺžky nosenia a požiadavky na diskrétnosť alebo ochranu sluchu.</p><p>Náhlavné súpravy poskytujú diskrétnosť slúchadiel, spolu s väčším pohodlím alebo ochranou sluchu. Špeciálne náhlavné súpravy s označením Temple Transducer využívajú na prenos zvuku kostné vedenie, čo umožňuje čistú komunikáciu aj v extrémne hlučnom prostredí.</p> <p>Príslušenstvo podobne ako rádiostanice prechádza zrýchleným testom životnosti (Motorola Accelerated Life Test), ktorý simuluje 5 rokov náročného užívania v praxi.</p> <p><iframe src=\"https://www.youtube-nocookie.com/embed/sm7BjeCzYl8\" title=\"Motorola Accelerated Life Test\" loading=\"lazy\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen style=\"width:100%;aspect-ratio:16/9;height:auto;border-radius:8px\"></iframe></p>";
 const intro = [];
 const subcats = [];
 const subcatsHeading = "";
@@ -785,7 +786,13 @@ const hasFilter = filters.length > 0 || freq !== null;
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
         ))}
 
-        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+        {popisHtml && <div class="prose prose-lg max-w-none mb-3" set:html={popisHtml} />}
+        {popisRest && (
+          <details class="mb-8 rks-popis-more">
+            <summary class="cursor-pointer select-none font-medium text-primary hover:underline">Zobraziť viac</summary>
+            <div class="prose prose-lg max-w-none mt-3" set:html={popisRest} />
+          </details>
+        )}
 
         {products.length > 0 && (
           <>

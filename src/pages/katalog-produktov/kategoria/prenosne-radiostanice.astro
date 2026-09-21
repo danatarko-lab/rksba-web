@@ -21,7 +21,8 @@ const breadcrumb = [
   }
 ];
 const heading = "Prenosné rádiostanice";
-const popisHtml = "<p>Najvyššia digitálna modelová rada profesionálnych rádiostaníc Motorola DP - MOTOTRBO je dnes štandardom pre najvýkonnejšiu bezdrôtovú komunikáciu. Rádiostanice umožňujú okrem digitálnej prevádzky aj prevádzku analógovú. Okrem základných funkcií umožňujú rádiostanice rady Motorola DP a SL prenášať aj krátke textové správy (podobné SMS) a dáta. Najčastejšie sú využívané veľkými firmami a organizáciami a zložkami integrovaného záchranného systému. Modely so vstavaným GPS modulom môžu byť využité aj pre sledovanie pozície rádiostanice.</p> <p><span>Porovnanie parametrov jednotlivých modelov nájdete v nasledujúcej&nbsp;</span>tabuľke<span>.</span></p><div class=\"not-prose my-6\"><a class=\"inline-flex items-center gap-2 rounded-lg border border-primary/30 bg-primary/5 px-4 py-2.5 text-sm font-semibold text-primary no-underline hover:bg-primary/10\" href=\"/dokumenty/mototrbo-porovnavacia-tabulka.pdf\" target=\"_blank\" rel=\"noopener\">Porovnávacia tabuľka MOTOTRBO (PDF)</a></div>";
+const popisHtml = "<p>Najvyššia digitálna modelová rada profesionálnych rádiostaníc Motorola DP - MOTOTRBO je dnes štandardom pre najvýkonnejšiu bezdrôtovú komunikáciu.</p>";
+const popisRest = "<p>Rádiostanice umožňujú okrem digitálnej prevádzky aj prevádzku analógovú. Okrem základných funkcií umožňujú rádiostanice rady Motorola DP a SL prenášať aj krátke textové správy (podobné SMS) a dáta. Najčastejšie sú využívané veľkými firmami a organizáciami a zložkami integrovaného záchranného systému. Modely so vstavaným GPS modulom môžu byť využité aj pre sledovanie pozície rádiostanice.</p><p><span>Porovnanie parametrov jednotlivých modelov nájdete v nasledujúcej&nbsp;</span>tabuľke<span>.</span></p><div class=\"not-prose my-6\"><a class=\"inline-flex items-center gap-2 rounded-lg border border-primary/30 bg-primary/5 px-4 py-2.5 text-sm font-semibold text-primary no-underline hover:bg-primary/10\" href=\"/dokumenty/mototrbo-porovnavacia-tabulka.pdf\" target=\"_blank\" rel=\"noopener\">Porovnávacia tabuľka MOTOTRBO (PDF)</a></div>";
 const intro = [];
 const subcats = [
   {
@@ -845,7 +846,13 @@ const hasFilter = filters.length > 0 || freq !== null;
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
         ))}
 
-        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+        {popisHtml && <div class="prose prose-lg max-w-none mb-3" set:html={popisHtml} />}
+        {popisRest && (
+          <details class="mb-8 rks-popis-more">
+            <summary class="cursor-pointer select-none font-medium text-primary hover:underline">Zobraziť viac</summary>
+            <div class="prose prose-lg max-w-none mt-3" set:html={popisRest} />
+          </details>
+        )}
 
         {products.length > 0 && (
           <>

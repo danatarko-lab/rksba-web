@@ -25,7 +25,8 @@ const breadcrumb = [
   }
 ];
 const heading = "Nosenie";
-const popisHtml = "<h2>Katalóg puzdier a iného príslušenstva na nosenie rádiostaníc Motorola</h2> <p>Od klipu na opasok až po opaskové alebo náprsné puzdra, Motorola doplnky pomáhajú chrániť rádiostanicu . Pri výrobe sú použité prevažne materiály ako koža, koženka a umelé materiály (napr. Nylon). Spravidla sa puzdrá líšia podľa typu rádiostanice (s displejom, klávesnicou, typom a teda hrúbkou&nbsp; použitých akumulátorov). Iba univerzálne puzdrá je možné použiť pre akýkoľvek typ rádiostanice Motorola (okrem ATEX). Väčšina puzdier chráni pred mechanickým poškodením, menej už pred prachom a inými nečistotami&nbsp;a pred vniknutím vody.</p>";
+const popisHtml = "<p>Od klipu na opasok až po opaskové alebo náprsné puzdra, Motorola doplnky pomáhajú chrániť rádiostanicu .</p>";
+const popisRest = "<h2>Katalóg puzdier a iného príslušenstva na nosenie rádiostaníc Motorola</h2><p>Pri výrobe sú použité prevažne materiály ako koža, koženka a umelé materiály (napr. Nylon). Spravidla sa puzdrá líšia podľa typu rádiostanice (s displejom, klávesnicou, typom a teda hrúbkou&nbsp; použitých akumulátorov). Iba univerzálne puzdrá je možné použiť pre akýkoľvek typ rádiostanice Motorola (okrem ATEX). Väčšina puzdier chráni pred mechanickým poškodením, menej už pred prachom a inými nečistotami&nbsp;a pred vniknutím vody.</p>";
 const intro = [];
 const subcats = [];
 const subcatsHeading = "";
@@ -1122,7 +1123,13 @@ const hasFilter = filters.length > 0 || freq !== null;
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
         ))}
 
-        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+        {popisHtml && <div class="prose prose-lg max-w-none mb-3" set:html={popisHtml} />}
+        {popisRest && (
+          <details class="mb-8 rks-popis-more">
+            <summary class="cursor-pointer select-none font-medium text-primary hover:underline">Zobraziť viac</summary>
+            <div class="prose prose-lg max-w-none mt-3" set:html={popisRest} />
+          </details>
+        )}
 
         {products.length > 0 && (
           <>

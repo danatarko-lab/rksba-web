@@ -21,7 +21,8 @@ const breadcrumb = [
   }
 ];
 const heading = "Evakuačný rozhlasový systém SX-2000";
-const popisHtml = "<p> Systém pre rozsiahle inštalácie, riadený a kontrolovaný po sieti, umožňuje prepojenie vzdialených lokalít. SX-2000 predstavuje nový štandard pre vysoko výkonné systémy bez kompromisov.</p> <p> Nová výbava systému umožňuje znásobiť jeho kapacitu tym, že umožňuje centrálne riadenie všetkých jeho komponentov, ktoré môžu byť rozmiestnené v rôznych lokalitách. Toto riešenie je ideálne ako pre veľké inštalácie združujúcej rad rôznych objektov tak pre lokálne systémy. Systém je preto vhodný napríklad pre letiská, stanice, továrne, obchodné centrá aj veľké administratívne budovy. Všestrannosť systému zabezpečujú jeho ďalšie vlastnosti ako je zdvojenie napájacích zdrojov a redundantné zálohovanie pri poruchách zabezpečenia, čo znižuje náklady na celý systém. Systém tiež obsahuje požiarny mikrofón, ktorý možno uplatniť v núdzových situáciách. Komponenty rady SX-2000 umožňujú realizovať ideálny zvukový systém, ktorý vyhovie prakticky všetkým požiadavkám.</p> <ul> <li> Integrované hlasové evakuačné a informačné hlásenia</li> <li> Digitálna kontrola systému</li> <li> Možnosť realizácie decentralizovaných podsystémov</li> <li> DSP ​​(digitálny procesor) pre vysoko kvalitné hlásenia a prenos hudby</li> <li> Simultánny prenos štyroch rôznych núdzových hlásení</li></ul> <p> <strong>Systém SX-2000 sa skladá z nasledujúcich komponentov:</strong><br> SX-2000SM, SX-2100AI a SX-2100AO/2000AO tvoria minimálny systém s 8-mi audiovstupmi a 8-mi audiovýstupmi. Systém je rozšíriteľný, maximálna kapacita je 64 audiovstupov, 256 audiovýstupov, 1416 riadiacích vstupov a 1416 riadiacích výstupov.</p> <p> <strong>Ukážka zostavy:</strong></p>";
+const popisHtml = "<p>Systém pre rozsiahle inštalácie, riadený a kontrolovaný po sieti, umožňuje prepojenie vzdialených lokalít.</p>";
+const popisRest = "<p>SX-2000 predstavuje nový štandard pre vysoko výkonné systémy bez kompromisov.</p><p> Nová výbava systému umožňuje znásobiť jeho kapacitu tym, že umožňuje centrálne riadenie všetkých jeho komponentov, ktoré môžu byť rozmiestnené v rôznych lokalitách. Toto riešenie je ideálne ako pre veľké inštalácie združujúcej rad rôznych objektov tak pre lokálne systémy. Systém je preto vhodný napríklad pre letiská, stanice, továrne, obchodné centrá aj veľké administratívne budovy. Všestrannosť systému zabezpečujú jeho ďalšie vlastnosti ako je zdvojenie napájacích zdrojov a redundantné zálohovanie pri poruchách zabezpečenia, čo znižuje náklady na celý systém. Systém tiež obsahuje požiarny mikrofón, ktorý možno uplatniť v núdzových situáciách. Komponenty rady SX-2000 umožňujú realizovať ideálny zvukový systém, ktorý vyhovie prakticky všetkým požiadavkám.</p> <ul> <li> Integrované hlasové evakuačné a informačné hlásenia</li> <li> Digitálna kontrola systému</li> <li> Možnosť realizácie decentralizovaných podsystémov</li> <li> DSP ​​(digitálny procesor) pre vysoko kvalitné hlásenia a prenos hudby</li> <li> Simultánny prenos štyroch rôznych núdzových hlásení</li></ul> <p> <strong>Systém SX-2000 sa skladá z nasledujúcich komponentov:</strong><br> SX-2000SM, SX-2100AI a SX-2100AO/2000AO tvoria minimálny systém s 8-mi audiovstupmi a 8-mi audiovýstupmi. Systém je rozšíriteľný, maximálna kapacita je 64 audiovstupov, 256 audiovýstupov, 1416 riadiacích vstupov a 1416 riadiacích výstupov.</p> <p> <strong>Ukážka zostavy:</strong></p>";
 const intro = [];
 const subcats = [
   {
@@ -212,7 +213,13 @@ const hasFilter = filters.length > 0 || freq !== null;
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
         ))}
 
-        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+        {popisHtml && <div class="prose prose-lg max-w-none mb-3" set:html={popisHtml} />}
+        {popisRest && (
+          <details class="mb-8 rks-popis-more">
+            <summary class="cursor-pointer select-none font-medium text-primary hover:underline">Zobraziť viac</summary>
+            <div class="prose prose-lg max-w-none mt-3" set:html={popisRest} />
+          </details>
+        )}
 
         {products.length > 0 && (
           <>

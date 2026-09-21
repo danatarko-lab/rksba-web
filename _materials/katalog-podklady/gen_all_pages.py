@@ -279,6 +279,41 @@ def cat_popis(c):
                 kde='kategoria %d %s' % (c['id'], c['name']), title=c['name'])
     return out + CAT_POPIS_APPEND.get(c['id'], '')
 
+# Rozdeli popis kategorie na viditelnu PRVU VETU a zvysok (skryty pod "Zobrazit viac").
+# Uvodny redundantny nadpis (napr. "Katalog X pre radiostanice Motorola"), ktory
+# duplikuje nazov kategorie (H1), sa presuva do skryteho zvysku. Prvu vetu delime len
+# ak je prvy odsek cisty text; inak zobrazime cely prvy odsek ako lead (bezpecne pri
+# odsekoch s inline znackami).
+def split_popis(html):
+    h = (html or '').strip()
+    if not h:
+        return '', ''
+    lead_heading = ''
+    m = _LEAD_HEADING.match(h)
+    if m:
+        lead_heading = h[:m.end()].strip()
+        h = h[m.end():].strip()
+    pm = re.match(r'(?is)<p>(.*?)</p>(.*)$', h)
+    if not pm:
+        return '', (lead_heading + ' ' + h).strip()
+    first_inner = pm.group(1).strip()
+    tail = pm.group(2).strip()
+    if '<' not in first_inner:
+        sm = re.match(r'(?s)(.*?[.!?])\s+(.+)$', first_inner)
+        if sm:
+            lead, remainder = sm.group(1).strip(), sm.group(2).strip()
+        else:
+            lead, remainder = first_inner, ''
+    else:
+        lead, remainder = first_inner, ''
+    rest = ''
+    if remainder:
+        rest += '<p>' + remainder + '</p>'
+    rest += tail
+    if lead_heading:
+        rest = lead_heading + rest
+    return ('<p>' + lead + '</p>'), rest.strip()
+
 # ---------------------------------------------------------------- slugify + kolizie
 def slugify(s):
     s = unicodedata.normalize('NFKD', str(s))
@@ -759,6 +794,7 @@ const sidebar = %(SIDEBAR)s;
 const breadcrumb = %(BREADCRUMB)s;
 const heading = %(HEADING)s;
 const popisHtml = %(POPIS)s;
+const popisRest = %(POPIS_REST)s;
 const intro = %(INTRO)s;
 const subcats = %(SUBCATS)s;
 const subcatsHeading = %(SUBHEAD)s;
@@ -867,7 +903,13 @@ const hasFilter = filters.length > 0 || freq !== null;
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
         ))}
 
-        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+        {popisHtml && <div class="prose prose-lg max-w-none mb-3" set:html={popisHtml} />}
+        {popisRest && (
+          <details class="mb-8 rks-popis-more">
+            <summary class="cursor-pointer select-none font-medium text-primary hover:underline">Zobraziť viac</summary>
+            <div class="prose prose-lg max-w-none mt-3" set:html={popisRest} />
+          </details>
+        )}
 
         {products.length > 0 && (
           <>
@@ -1307,11 +1349,13 @@ for c in ([] if INDEX_ONLY else sorted(cats, key=lambda c: c['id'])):
     else:
         cat_filters = []
         cat_freq = None
+    _cat_lead, _cat_rest = split_popis(cat_popis(c))
     content = GRID_TEMPLATE % {
         'SIDEBAR': js(build_sidebar(c['id'])),
         'BREADCRUMB': js(bc),
         'HEADING': js(c['name']),
-        'POPIS': js(cat_popis(c)),
+        'POPIS': js(_cat_lead),
+        'POPIS_REST': js(_cat_rest),
         'NOTICE': js(DISCONTINUED_NOTE if c['id'] in DISCONTINUED_CATS else ''),
         'NOTICE_DETAIL': js(DISCONTINUED_DETAIL if c['id'] in DISCONTINUED_CATS else ''),
         'INTRO': js([]),
@@ -1384,6 +1428,7 @@ index_content = GRID_TEMPLATE % {
     ]),
     'HEADING': js('Katalóg produktov'),
     'POPIS': js(''),
+    'POPIS_REST': js(''),
     'INTRO': js(intro),
     'SUBCATS': js(top_cards),
     'SUBHEAD': js(''),

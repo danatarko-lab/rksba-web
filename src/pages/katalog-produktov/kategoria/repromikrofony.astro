@@ -25,7 +25,8 @@ const breadcrumb = [
   }
 ];
 const heading = "Repromikrofóny";
-const popisHtml = "<h2>Katalóg audio príslušenstva pre rádiostanice Motorola</h2> <p>Repromikrofón (RSM) je kombinovaný reproduktor a mikrofón, ktorý sa nosí na klope alebo pleci a káblom sa prepojí s rádiostanicou na opasku. Používateľ tak počúva aj hovorí bez toho, aby stanicu vyberal z puzdra — praktické najmä pri fyzickej práci a častej komunikácii.</p> <p>Repromikrofóny (RSM) poskytujú lepší zvukový výkon a pohodlnejší prístup ku kľúčovým funkciám rádiostanice, bez nutnosti jej vybratia z opasku alebo puzdra. Motorola na uspokojenie rôznych potrieb a podmienok užívateľov ponúka široký výber repromikrofónov.</p>";
+const popisHtml = "<p>Repromikrofón (RSM) je kombinovaný reproduktor a mikrofón, ktorý sa nosí na klope alebo pleci a káblom sa prepojí s rádiostanicou na opasku.</p>";
+const popisRest = "<h2>Katalóg audio príslušenstva pre rádiostanice Motorola</h2><p>Používateľ tak počúva aj hovorí bez toho, aby stanicu vyberal z puzdra — praktické najmä pri fyzickej práci a častej komunikácii.</p><p>Repromikrofóny (RSM) poskytujú lepší zvukový výkon a pohodlnejší prístup ku kľúčovým funkciám rádiostanice, bez nutnosti jej vybratia z opasku alebo puzdra. Motorola na uspokojenie rôznych potrieb a podmienok užívateľov ponúka široký výber repromikrofónov.</p>";
 const intro = [];
 const subcats = [];
 const subcatsHeading = "";
@@ -762,7 +763,13 @@ const hasFilter = filters.length > 0 || freq !== null;
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
         ))}
 
-        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+        {popisHtml && <div class="prose prose-lg max-w-none mb-3" set:html={popisHtml} />}
+        {popisRest && (
+          <details class="mb-8 rks-popis-more">
+            <summary class="cursor-pointer select-none font-medium text-primary hover:underline">Zobraziť viac</summary>
+            <div class="prose prose-lg max-w-none mt-3" set:html={popisRest} />
+          </details>
+        )}
 
         {products.length > 0 && (
           <>

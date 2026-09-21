@@ -21,7 +21,8 @@ const breadcrumb = [
   }
 ];
 const heading = "Prevádzače";
-const popisHtml = "<p>Prevádzač (repeater) je zariadenie, ktoré významným spôsobom zlepšuje parametre rádiovej siete.</p> <p>Prevádzače systému Motorola MOTOTRBO dovoľujú digitálnym rádiostaniciam rady Mototrbo využiť maximum z možností digitálnej bezdrôtovej komunikácie. Okrem prenosu hlasu a dát prevádzače umožňujú súčasné nezávislé uskutočňovanie dvoch hovorov na jednom kanáli vďaka technológii časového zdieľania kanála, čím zvyšuje kapacitu siete.</p> <p>Prevádzač obsahuje tiež rovnaký algoritmus na odstránenie chýb ako rádiostanice, čím sa ešte zvyšuje kvalita a dosah prenosu.</p> <p>Prevádzka s&nbsp;využitím prevádzača umožňuje:</p> <ul> <li>Všetky typy volaní</li> <li>Všetky typy digitálnej signalizácie</li> </ul> <p>Prevádzač prináša nasledujúce výhody:</p> <ul> <li>Lepšie pokrytie (v prípade strategického umiestnenia)</li> <li>Kvalitnú komunikáciu medzi jednotlivými rádiostanicami (nielen medzi základňou a ostatnými rádiostanicami)</li> <li>Možnosť využitia ďalšieho kanálu, na ktorom môže prebiehať súčasne iná relácia</li> <li>Prevádzač poskytuje informácie o: obsadenosti kanála, spôsobe prevádzky, kto volá, typ hovoru...</li> </ul>";
+const popisHtml = "<p>Prevádzač (repeater) je zariadenie, ktoré významným spôsobom zlepšuje parametre rádiovej siete.</p>";
+const popisRest = "<p>Prevádzače systému Motorola MOTOTRBO dovoľujú digitálnym rádiostaniciam rady Mototrbo využiť maximum z možností digitálnej bezdrôtovej komunikácie. Okrem prenosu hlasu a dát prevádzače umožňujú súčasné nezávislé uskutočňovanie dvoch hovorov na jednom kanáli vďaka technológii časového zdieľania kanála, čím zvyšuje kapacitu siete.</p> <p>Prevádzač obsahuje tiež rovnaký algoritmus na odstránenie chýb ako rádiostanice, čím sa ešte zvyšuje kvalita a dosah prenosu.</p> <p>Prevádzka s&nbsp;využitím prevádzača umožňuje:</p> <ul> <li>Všetky typy volaní</li> <li>Všetky typy digitálnej signalizácie</li> </ul> <p>Prevádzač prináša nasledujúce výhody:</p> <ul> <li>Lepšie pokrytie (v prípade strategického umiestnenia)</li> <li>Kvalitnú komunikáciu medzi jednotlivými rádiostanicami (nielen medzi základňou a ostatnými rádiostanicami)</li> <li>Možnosť využitia ďalšieho kanálu, na ktorom môže prebiehať súčasne iná relácia</li> <li>Prevádzač poskytuje informácie o: obsadenosti kanála, spôsobe prevádzky, kto volá, typ hovoru...</li> </ul>";
 const intro = [];
 const subcats = [
   {
@@ -237,7 +238,13 @@ const hasFilter = filters.length > 0 || freq !== null;
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
         ))}
 
-        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+        {popisHtml && <div class="prose prose-lg max-w-none mb-3" set:html={popisHtml} />}
+        {popisRest && (
+          <details class="mb-8 rks-popis-more">
+            <summary class="cursor-pointer select-none font-medium text-primary hover:underline">Zobraziť viac</summary>
+            <div class="prose prose-lg max-w-none mt-3" set:html={popisRest} />
+          </details>
+        )}
 
         {products.length > 0 && (
           <>

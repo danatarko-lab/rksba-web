@@ -29,7 +29,8 @@ const breadcrumb = [
   }
 ];
 const heading = "Inštalácia (CM)";
-const popisHtml = "<strong>Príslušenstvo pre inštaláciu základňových komerčných rádiostaníc rady CM.</strong>";
+const popisHtml = "";
+const popisRest = "<strong>Príslušenstvo pre inštaláciu základňových komerčných rádiostaníc rady CM.</strong>";
 const intro = [];
 const subcats = [];
 const subcatsHeading = "";
@@ -244,7 +245,13 @@ const hasFilter = filters.length > 0 || freq !== null;
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
         ))}
 
-        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+        {popisHtml && <div class="prose prose-lg max-w-none mb-3" set:html={popisHtml} />}
+        {popisRest && (
+          <details class="mb-8 rks-popis-more">
+            <summary class="cursor-pointer select-none font-medium text-primary hover:underline">Zobraziť viac</summary>
+            <div class="prose prose-lg max-w-none mt-3" set:html={popisRest} />
+          </details>
+        )}
 
         {products.length > 0 && (
           <>

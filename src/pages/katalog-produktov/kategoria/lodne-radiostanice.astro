@@ -21,7 +21,8 @@ const breadcrumb = [
   }
 ];
 const heading = "Lodné rádiostanice";
-const popisHtml = "<p> Japonská spoločnosť ICOM so sídlom v Osake, je od svojho založenia v roku 1954 spoľahlivým výrobcom pozemných pohyblivých rádiostaníc, amatérskych rádií, námorných rádiostaníc, navigácií, leteckých rádiostaníc a komunikačných prijímačov.<br> Vysokú kvalitu svojej produkcie ICOM zabezpečuje vďaka tomu, že celá produkcia je vyrábaná v Japonsku. Rádiostanice spĺňajú prísne požiadavky amerických vojenských štandardov odolnosti (MIL-STD 810F), a sú používane napr. americkým ministerstvom obrany, americkým vojnovým námorníctvom a mnohými ďalšími profesionálnymi organizáciami. V súčasnosti ICOM predáva svoje výrobky vo viac ako 80 krajinách sveta.<br> Viac informácií nájdete nájdete na stránke výrobcu.</p> <p> V našej ponuke nájdete tzv. Marine/lodné rádiostanice. Sú to ručné VHF rádiostanice určené pre námornú, pobrežnú a riečnu komunikáciu na medzinárodných námorných kanáloch v pásme 156-162MHz. Majú všeobecne výhody VHF rádiostaníc, teda lepšie šírenie elektromagnetických vĺn a prenikanie terénom ako UHF rádiostanice. Sú prispôsobené námorným podmienkam - väčšinou vodotesné a s priamym navolením dorozumievacieho a bezpečnostného kanála 16 (CH16). Ak potrebujete pomoc, stačí stlačiť toto tlačidlo a všetci na mori vás budú počuť.</p> <p> Tieto stanice sú určené pre vnútrozemskú vodnú i námornú prevádzku. Umožnia Vám dohovoriť sa aj s rádiostanicami zabudovanými priamo na lodiach, ktoré využívajú anténu na sťažni a tak je možné komunikovať na väčšie vzdialenosti. (viď obrázok dole).</p>";
+const popisHtml = "<p>Japonská spoločnosť ICOM so sídlom v Osake, je od svojho založenia v roku 1954 spoľahlivým výrobcom pozemných pohyblivých rádiostaníc, amatérskych rádií, námorných rádiostaníc, navigácií, leteckých rádiostaníc a komunikačných prijímačov.<br> Vysokú kvalitu svojej produkcie ICOM zabezpečuje vďaka tomu, že celá produkcia je vyrábaná v Japonsku. Rádiostanice spĺňajú prísne požiadavky amerických vojenských štandardov odolnosti (MIL-STD 810F), a sú používane napr. americkým ministerstvom obrany, americkým vojnovým námorníctvom a mnohými ďalšími profesionálnymi organizáciami. V súčasnosti ICOM predáva svoje výrobky vo viac ako 80 krajinách sveta.<br> Viac informácií nájdete nájdete na stránke výrobcu.</p>";
+const popisRest = "<p> V našej ponuke nájdete tzv. Marine/lodné rádiostanice. Sú to ručné VHF rádiostanice určené pre námornú, pobrežnú a riečnu komunikáciu na medzinárodných námorných kanáloch v pásme 156-162MHz. Majú všeobecne výhody VHF rádiostaníc, teda lepšie šírenie elektromagnetických vĺn a prenikanie terénom ako UHF rádiostanice. Sú prispôsobené námorným podmienkam - väčšinou vodotesné a s priamym navolením dorozumievacieho a bezpečnostného kanála 16 (CH16). Ak potrebujete pomoc, stačí stlačiť toto tlačidlo a všetci na mori vás budú počuť.</p> <p> Tieto stanice sú určené pre vnútrozemskú vodnú i námornú prevádzku. Umožnia Vám dohovoriť sa aj s rádiostanicami zabudovanými priamo na lodiach, ktoré využívajú anténu na sťažni a tak je možné komunikovať na väčšie vzdialenosti. (viď obrázok dole).</p>";
 const intro = [];
 const subcats = [
   {
@@ -255,7 +256,13 @@ const hasFilter = filters.length > 0 || freq !== null;
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
         ))}
 
-        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+        {popisHtml && <div class="prose prose-lg max-w-none mb-3" set:html={popisHtml} />}
+        {popisRest && (
+          <details class="mb-8 rks-popis-more">
+            <summary class="cursor-pointer select-none font-medium text-primary hover:underline">Zobraziť viac</summary>
+            <div class="prose prose-lg max-w-none mt-3" set:html={popisRest} />
+          </details>
+        )}
 
         {products.length > 0 && (
           <>

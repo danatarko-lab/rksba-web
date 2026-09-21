@@ -14,6 +14,7 @@ const breadcrumb = [
 ];
 const heading = "Katalóg produktov";
 const popisHtml = "";
+const popisRest = "";
 const intro = [
   "Katalóg produktov RKS: rádiostanice (vysielačky), evakuačné systémy a varovacie systémy. Pri rádiostaniciach nájdete aj ukončené modely, ktoré stále servisujeme a dodávame k nim príslušenstvo.",
   "Aktuálny katalóg Motorola MOTOTRBO nájdete na <a class=\"text-primary hover:underline\" href=\"https://mototrbo.sk\">mototrbo.sk</a>."
@@ -172,7 +173,13 @@ const hasFilter = filters.length > 0 || freq !== null;
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
         ))}
 
-        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+        {popisHtml && <div class="prose prose-lg max-w-none mb-3" set:html={popisHtml} />}
+        {popisRest && (
+          <details class="mb-8 rks-popis-more">
+            <summary class="cursor-pointer select-none font-medium text-primary hover:underline">Zobraziť viac</summary>
+            <div class="prose prose-lg max-w-none mt-3" set:html={popisRest} />
+          </details>
+        )}
 
         {products.length > 0 && (
           <>

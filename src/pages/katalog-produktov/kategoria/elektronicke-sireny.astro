@@ -21,7 +21,8 @@ const breadcrumb = [
   }
 ];
 const heading = "Elektronické sirény";
-const popisHtml = "<p> Elektronické sirény sú nosným technickým prvkom systémov varovania a vyrozumenia obyvateľstva. Samotné elektronické sirény spĺňajú prísne parametre a požiadavky dané vyhláškou č. 348/1998 Z.z. a zároveň parametre dané technickými podmienkami Úradu CO Ministerstva vnútra SR. Jednou z „najdrastickejších“ je požiadavka zabezpečovať varovanie obyvateľstva a vyrozumenie osôb po dobu najmenej 72 h od výpadku primárneho zdroja energie, čo v praxi znamená, že siréna musí po tejto dobe dokázať spustiť jedenkrát šesťminútový stály tón plus 3× hovorenú informáciu „Pozor, ohrozenie vodou“.</p> <p> Veľmi významná a výhodná je možnosť smerovania výkonu 300 - 3 000 W (bežne do 1 800 W), čo umožňuje efektívne pokryť územie potenciálne ohrozené následkami havárie. Dosiahnutá je minimálna energetická náročnosť systému. Ďalšia dôležitá a najdrahšia časť AuS - komunikačný systém - umožňuje veľmi dôležitú diagnostiku sirén, t. j. kontrolu ich funkčnosti. Siréna sa v pravidelných intervaloch sama skontroluje a vysiela do riadiaceho centra chybové hlásenie - o ľahkej poruche, keď ešte je schopná vyslať varovný signál, a tiež o ťažkej poruche, keď je pre varovanie nefunkčná.</p>";
+const popisHtml = "<p>Elektronické sirény sú nosným technickým prvkom systémov varovania a vyrozumenia obyvateľstva.</p>";
+const popisRest = "<p>Samotné elektronické sirény spĺňajú prísne parametre a požiadavky dané vyhláškou č. 348/1998 Z.z. a zároveň parametre dané technickými podmienkami Úradu CO Ministerstva vnútra SR. Jednou z „najdrastickejších“ je požiadavka zabezpečovať varovanie obyvateľstva a vyrozumenie osôb po dobu najmenej 72 h od výpadku primárneho zdroja energie, čo v praxi znamená, že siréna musí po tejto dobe dokázať spustiť jedenkrát šesťminútový stály tón plus 3× hovorenú informáciu „Pozor, ohrozenie vodou“.</p><p> Veľmi významná a výhodná je možnosť smerovania výkonu 300 - 3 000 W (bežne do 1 800 W), čo umožňuje efektívne pokryť územie potenciálne ohrozené následkami havárie. Dosiahnutá je minimálna energetická náročnosť systému. Ďalšia dôležitá a najdrahšia časť AuS - komunikačný systém - umožňuje veľmi dôležitú diagnostiku sirén, t. j. kontrolu ich funkčnosti. Siréna sa v pravidelných intervaloch sama skontroluje a vysiela do riadiaceho centra chybové hlásenie - o ľahkej poruche, keď ešte je schopná vyslať varovný signál, a tiež o ťažkej poruche, keď je pre varovanie nefunkčná.</p>";
 const intro = [];
 const subcats = [];
 const subcatsHeading = "";
@@ -212,7 +213,13 @@ const hasFilter = filters.length > 0 || freq !== null;
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
         ))}
 
-        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+        {popisHtml && <div class="prose prose-lg max-w-none mb-3" set:html={popisHtml} />}
+        {popisRest && (
+          <details class="mb-8 rks-popis-more">
+            <summary class="cursor-pointer select-none font-medium text-primary hover:underline">Zobraziť viac</summary>
+            <div class="prose prose-lg max-w-none mt-3" set:html={popisRest} />
+          </details>
+        )}
 
         {products.length > 0 && (
           <>

@@ -25,7 +25,8 @@ const breadcrumb = [
   }
 ];
 const heading = "Profesionálne rádiostanice";
-const popisHtml = "Produkty už nie sú v predaji, aktuálnu ponuku nájdete na www.mototrbo.sk <p> Efektívna komunikácia je kľúčom k dosiahnutiu úspechu a zjednodušeniu vášho života ako profesionála. Profesionálne analógové vozidlové (mobilné) rádiostanice radu Motorola GM sú tým správnym riešením. Rádiostanice ponúkajú celý rad funkcií - od praktickej rádiostanice so základnými funkciami až po rádiostanicu, ktorá je vybavená celou škálou pokročilých funkcií.</p> <p> Rádiostanice rady GM sú primárne určené pre využitie vo väčších rádiokomunikačných systémoch alebo dispečerských sieťach, ktoré využívajú signalizáciu medzi užívateľskými stanicami a sú riadené dispečerom. Ergonomická a kompaktná konštrukcia rádiostaníc umožňuje optimálnu inštaláciu a zároveň zabezpečuje ich odolnosť voči nepriaznivým podmienkam pri prevádzke v náročných oblastiach ako sú hasičský a policajný zbor, záchranné služby, armáda, stavebníctvo, lesná správa, zimná údržba a pod.</p> <p> Zákazníkovi sa prispôsobujú naprogramovaním množstva funkcií, pričom zostávajú jednoduché na ovládanie. Sú odolné voči prachu, bežným pádom, stekajúcej vode a hrubému zaobchádzaniu.</p> <p> Tieto rádiostanice je možné použiť iba na základe licencie pridelenej Telekomunikačným úradom SR.</p>";
+const popisHtml = "";
+const popisRest = "Produkty už nie sú v predaji, aktuálnu ponuku nájdete na www.mototrbo.sk <p> Efektívna komunikácia je kľúčom k dosiahnutiu úspechu a zjednodušeniu vášho života ako profesionála. Profesionálne analógové vozidlové (mobilné) rádiostanice radu Motorola GM sú tým správnym riešením. Rádiostanice ponúkajú celý rad funkcií - od praktickej rádiostanice so základnými funkciami až po rádiostanicu, ktorá je vybavená celou škálou pokročilých funkcií.</p> <p> Rádiostanice rady GM sú primárne určené pre využitie vo väčších rádiokomunikačných systémoch alebo dispečerských sieťach, ktoré využívajú signalizáciu medzi užívateľskými stanicami a sú riadené dispečerom. Ergonomická a kompaktná konštrukcia rádiostaníc umožňuje optimálnu inštaláciu a zároveň zabezpečuje ich odolnosť voči nepriaznivým podmienkam pri prevádzke v náročných oblastiach ako sú hasičský a policajný zbor, záchranné služby, armáda, stavebníctvo, lesná správa, zimná údržba a pod.</p> <p> Zákazníkovi sa prispôsobujú naprogramovaním množstva funkcií, pričom zostávajú jednoduché na ovládanie. Sú odolné voči prachu, bežným pádom, stekajúcej vode a hrubému zaobchádzaniu.</p> <p> Tieto rádiostanice je možné použiť iba na základe licencie pridelenej Telekomunikačným úradom SR.</p>";
 const intro = [];
 const subcats = [
   {
@@ -241,7 +242,13 @@ const hasFilter = filters.length > 0 || freq !== null;
           <p class="text-lg text-muted mb-4 max-w-2xl" set:html={par} />
         ))}
 
-        {popisHtml && <div class="prose prose-lg max-w-none mb-8" set:html={popisHtml} />}
+        {popisHtml && <div class="prose prose-lg max-w-none mb-3" set:html={popisHtml} />}
+        {popisRest && (
+          <details class="mb-8 rks-popis-more">
+            <summary class="cursor-pointer select-none font-medium text-primary hover:underline">Zobraziť viac</summary>
+            <div class="prose prose-lg max-w-none mt-3" set:html={popisRest} />
+          </details>
+        )}
 
         {products.length > 0 && (
           <>
