@@ -194,15 +194,25 @@ def fix_headings(h, title):
 # (Richi #2). Ak sa zaciatocny <p> a <h2> zhoduju v dlhom prefixe, necháme len
 # dlhsiu verziu ako normalny odstavec.
 _INTRO_DUP = re.compile(r'^\s*<p>(.*?)</p>\s*<h2\b[^>]*>(.*?)</h2>', re.S | re.I)
+# Niektore produkty maju perex zdvojeny ako dva takmer identicke <p> odstavce
+# (napr. "<p>Plastovy hacik na popruh</p> <p>Plastovy hacik na popruh</p>").
+_INTRO_DUP_PP = re.compile(r'^\s*<p>(.*?)</p>\s*<p>(.*?)</p>', re.S | re.I)
 
 def dedupe_intro(h):
     m = _INTRO_DUP.match(h)
-    if not m:
+    if m:
+        a, b = _plain(m.group(1)), _plain(m.group(2))
+        if min(len(a), len(b)) >= 20 and (a.startswith(b[:20]) or b.startswith(a[:20])):
+            keep = m.group(1) if len(a) >= len(b) else m.group(2)
+            return '<p>' + keep.strip() + '</p>' + h[m.end():]
         return h
-    a, b = _plain(m.group(1)), _plain(m.group(2))
-    if min(len(a), len(b)) >= 20 and (a.startswith(b[:20]) or b.startswith(a[:20])):
-        keep = m.group(1) if len(a) >= len(b) else m.group(2)
-        return '<p>' + keep.strip() + '</p>' + h[m.end():]
+    # zdvojeny <p> + <p>: zlucime len ked su temer identicke (jeden je prefixom druheho)
+    m = _INTRO_DUP_PP.match(h)
+    if m:
+        a, b = _plain(m.group(1)), _plain(m.group(2))
+        if a and b and (a == b or (min(len(a), len(b)) >= 20 and (a.startswith(b) or b.startswith(a)))):
+            keep = m.group(1) if len(a) >= len(b) else m.group(2)
+            return '<p>' + keep.strip() + '</p>' + h[m.end():]
     return h
 
 # Zvysky z mototrbo.sk: vety odkazujuce na porovnavaciu tabulku parametrov a na
@@ -1228,6 +1238,31 @@ def _model_rank(title):
         return 2
     return 3
 
+def _block_texts(h):
+    """Text jednotlivych blokov (odstavce, nadpisy) vo vycistenom popise."""
+    out = []
+    for m in re.finditer(r'<(p|h[1-6]|li)\b[^>]*>(.*?)</\1>', h, re.S | re.I):
+        t = htmlmod.unescape(re.sub(r'<[^>]+>', ' ', m.group(2)))
+        t = re.sub(r'\s+', ' ', t).strip()
+        if t:
+            out.append(t)
+    return out
+
+def card_desc(p):
+    """Prva veta popisu pre kartu v mriezke. Vychadza z vycisteneho popis_html
+       (rovnaka deduplikacia ako na stranke produktu), aby sa nezobrazoval
+       zdvojeny perex z K2 migracie (Richi: zdvojene popisy pod produktami).
+       Ak je prvy blok len kratky perex bez interpunkcie a nasleduje telo,
+       pouzijeme prvu vetu tela, aby na karte bola jedna prva veta iba raz."""
+    cleaned = clean(p.get('popis_html') or '', title=p.get('title'))
+    blocks = _block_texts(cleaned) if cleaned else []
+    if blocks:
+        first = blocks[0]
+        if not re.search(r'[.!?]', first) and len(blocks) > 1:
+            return first_sentence(blocks[1])
+        return first_sentence(first)
+    return first_sentence(p.get('popis_text') or '')
+
 def product_cards(prods):
     prods = sorted(prods, key=lambda p: (_model_rank(p['title']), p['title'].lower()))
     out = []
@@ -1236,7 +1271,7 @@ def product_cards(prods):
             'url': prod_url(p['id']),
             'img': '/images/katalog-produktov/%d/main.webp' % p['id'],
             'title': p['title'],
-            'desc': first_sentence(p['popis_text']),
+            'desc': card_desc(p),
         }
         f = card_facets(p)
         if f:
