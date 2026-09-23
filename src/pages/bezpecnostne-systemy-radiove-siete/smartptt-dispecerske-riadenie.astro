@@ -1,0 +1,78 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'SmartPTT: dispečerské riadenie | MOTOTRBO | RKS',
+  description: 'Dispečerské riadenie SmartPTT: individuálne, skupinové a konferenčné hovory, záznam prevádzky, riadenie pracovných príkazov, núdzové volania a diaľkový monitoring rádiostaníc MOTOTRBO.',
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-4xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">Digitálny systém MOTOTRBO</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/smartptt">SmartPTT</a>
+    <span class="px-1">/</span>
+    <span class="text-default">Dispečerské riadenie</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-3">SmartPTT · Aplikácie MOTOTRBO</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">Dispečerské riadenie</h1>
+      <p class="mt-4 text-base md:text-lg text-white/70">Individuálne, skupinové aj spoločné hovory s dispečerskou konzolou SmartPTT.</p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose prose-lg max-w-none">
+      <p>Dispečerská konzola SmartPTT dáva operátorovi kompletnú kontrolu nad rádiovou prevádzkou MOTOTRBO. Medzi jej funkcie patria:</p>
+      <ul>
+        <li>individuálne, skupinové a spoločné hovory z dispečerskej konzoly</li>
+        <li>organizovanie konferenčných hovorov vybraným užívateľom alebo skupinám</li>
+        <li>záznam všetkých hovorov v sieti aj medzi jednotlivými účastníkmi</li>
+        <li>riadenie pracovných príkazov (Job Ticketing)</li>
+        <li>osamelý pracovník (Lone Worker)</li>
+        <li>klávesové skratky pre rýchly prístup k súkromným a skupinovým hovorom</li>
+        <li>identifikácia volajúceho (Caller ID)</li>
+        <li>diaľkové monitorovanie</li>
+        <li>núdzové volania</li>
+        <li>hlasové hovory a textové správy medzi dispečermi (Intercom)</li>
+        <li>kontrola prítomnosti rádiostaníc v sieti</li>
+        <li>oznámenie prichádzajúceho hovoru</li>
+        <li>blokovanie užívateľa na jednej alebo na všetkých frekvenciách</li>
+        <li>hlasové oznámenia</li>
+        <li>kategorizácia účastníkov</li>
+      </ul>
+      <h2>Podporované dispečerské konzoly</h2>
+      <ul>
+        <li>konvenčné PC</li>
+        <li>all-in-one PC s dotykovým displejom</li>
+        <li>dispečerské terminály</li>
+      </ul>
+      <h2>Prispôsobenie rozhrania</h2>
+      <ul>
+        <li>podpora Drag and Drop pre nastavenie polohy a veľkosti panelov</li>
+        <li>podpora multidotykových displejov</li>
+        <li>podpora pre vlastné konzoly</li>
+      </ul>
+      <h2>Typy hlasovej komunikácie</h2>
+      <ul>
+        <li>užívatelia rádiostaníc MOTOTRBO (všetky typy hovorov podporovaných platformou)</li>
+        <li>užívatelia analógových rádiostaníc (volania do základňovej stanice)</li>
+        <li>účastníci telefónnych liniek (full duplex cez SIP protokol)</li>
+        <li>ostatné SmartPTT dispečerské konzoly (full duplex hlasové volania a textové správy)</li>
+      </ul>
+      <p>Logovací systém SmartPTT ukladá záznamy hovorov vo formáte MP3. Súbory možno prehrať priamo na dispečerskej konzole alebo bežným prehrávačom z priečinka, kde sú uložené.</p>
+    </div>
+
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-8 text-sm">
+      <a class="font-medium text-primary hover:underline" href="/bezpecnostne-systemy-radiove-siete/smartptt">&larr; SmartPTT</a>
+      <a class="font-medium text-primary hover:underline" href="/lp/konzultacia.html?utm_source=web&utm_campaign=web">Nezáväzná konzultácia &rarr;</a>
+    </div>
+  </article>
+</Layout>

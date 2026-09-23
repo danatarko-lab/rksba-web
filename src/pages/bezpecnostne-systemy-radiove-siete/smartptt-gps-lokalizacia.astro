@@ -1,0 +1,59 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'SmartPTT: GPS lokalizácia a sledovanie polohy | MOTOTRBO | RKS',
+  description: 'SmartPTT GPS/AVL: sledovanie polohy rádiostaníc MOTOTRBO v reálnom čase, história pohybu, geofencing, rôzne typy máp a export súradníc do KML pre Google Earth.',
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-4xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">Digitálny systém MOTOTRBO</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/smartptt">SmartPTT</a>
+    <span class="px-1">/</span>
+    <span class="text-default">GPS lokalizácia</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-3">SmartPTT · Aplikácie MOTOTRBO</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">GPS lokalizácia</h1>
+      <p class="mt-4 text-base md:text-lg text-white/70">Sledovanie polohy rádiostaníc MOTOTRBO s GPS prijímačom v reálnom čase.</p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose prose-lg max-w-none">
+      <p>SmartPTT umožňuje dispečerom sledovať polohu rádiostaníc MOTOTRBO s integrovaným GPS prijímačom.</p>
+      <h2>Výhody GPS sledovacieho systému</h2>
+      <ul>
+        <li>presné GPS súradnice užívateľov</li>
+        <li>dozor nad účastníkmi, ktorí sa pohybujú v nebezpečných oblastiach</li>
+        <li>záznamy o tom, kde a kedy sa účastník nachádzal</li>
+      </ul>
+      <h2>Základné funkcie SmartPTT GPS/AVL</h2>
+      <ul>
+        <li>zobrazenie pozície účastníka v reálnom čase</li>
+        <li>ukladanie dát o polohe účastníka</li>
+        <li>animácia pohybu účastníka</li>
+        <li>zobrazenie pohybu účastníkov v danom období</li>
+        <li>sledovanie vstupu a odchodu zo zóny (geofencing)</li>
+        <li>zistenie polohy na vyžiadanie (stlačením tlačidla)</li>
+        <li>podpora rôznych typov máp (vektorové, rastrové aj on-line)</li>
+        <li>export súradníc do formátu KML (pre sledovanie polohy v Google Earth)</li>
+      </ul>
+      <p>V konzole SmartPTT možno otvoriť niekoľko máp rôznych typov a pohodlne si ich usporiadať na obrazovke. Mapu je možné otvoriť aj v samostatnom okne a umiestniť ju na externom displeji alebo veľkoplošnom paneli.</p>
+    </div>
+
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-8 text-sm">
+      <a class="font-medium text-primary hover:underline" href="/bezpecnostne-systemy-radiove-siete/smartptt">&larr; SmartPTT</a>
+      <a class="font-medium text-primary hover:underline" href="/lp/konzultacia.html?utm_source=web&utm_campaign=web">Nezáväzná konzultácia &rarr;</a>
+    </div>
+  </article>
+</Layout>

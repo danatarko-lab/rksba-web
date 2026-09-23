@@ -1,0 +1,55 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'SmartPTT: prepojenie s telefónnou sieťou | MOTOTRBO | RKS',
+  description: 'SmartPTT prepája rádiostanice MOTOTRBO s telefónnou sieťou cez bránu v radioserveri a SIP protokol, s full duplex hovormi, autorizáciou užívateľov a záznamom do MP3.',
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-4xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">Digitálny systém MOTOTRBO</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/smartptt">SmartPTT</a>
+    <span class="px-1">/</span>
+    <span class="text-default">Prepojenie s telefónnou sieťou</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-3">SmartPTT · Aplikácie MOTOTRBO</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">Prepojenie s telefónnou sieťou</h1>
+      <p class="mt-4 text-base md:text-lg text-white/70">Hovory medzi rádiostanicami MOTOTRBO a telefónnou sieťou cez SIP.</p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose prose-lg max-w-none">
+      <p>Softvér SmartPTT umožňuje prostredníctvom brány prepojenie do telefónnej siete a hovory medzi užívateľmi rádiostaníc MOTOTRBO a účastníkmi telefónnej siete.</p>
+      <p>Brána je softvérový komponent obsiahnutý v radioserveri SmartPTT. Pripojenie k telefónnej sieti sa vykonáva cez SIP protokol prostredníctvom VoIP brány pripojenej do pobočkovej ústredne.</p>
+      <h2>Vlastnosti</h2>
+      <ul>
+        <li>volanie na jednu rádiostanicu alebo skupinu rádiostaníc z bežného telefónu</li>
+        <li>možnosť autorizovať užívateľov rádiostaníc na hovory do telefónnej siete</li>
+        <li>záznam hovorov vo formáte MP3</li>
+        <li>full duplex spojenie medzi telefónom a dispečerskou konzolou</li>
+      </ul>
+      <h2>Ako vyvolať telefónny hovor</h2>
+      <ul>
+        <li>vytočením ID účastníka alebo skupiny z telefónu</li>
+        <li>vytočením telefónneho čísla z rádiostanice</li>
+        <li>spojením telefónu a rádiostanice cez dispečerskú konzolu</li>
+      </ul>
+    </div>
+
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-8 text-sm">
+      <a class="font-medium text-primary hover:underline" href="/bezpecnostne-systemy-radiove-siete/smartptt">&larr; SmartPTT</a>
+      <a class="font-medium text-primary hover:underline" href="/lp/konzultacia.html?utm_source=web&utm_campaign=web">Nezáväzná konzultácia &rarr;</a>
+    </div>
+  </article>
+</Layout>

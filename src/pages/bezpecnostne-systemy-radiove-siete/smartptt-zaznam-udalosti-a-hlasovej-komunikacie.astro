@@ -1,0 +1,45 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'SmartPTT: záznam udalostí a hlasovej komunikácie | MOTOTRBO | RKS',
+  description: 'SmartPTT ukladá udalosti systému MOTOTRBO (hovory, správy, statusy, GPS) do databázy MS SQL a záznam hlasu do MP3, s distribuovaným ukladaním na strane klienta aj servera.',
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-4xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">Digitálny systém MOTOTRBO</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/smartptt">SmartPTT</a>
+    <span class="px-1">/</span>
+    <span class="text-default">Záznam udalostí a hlasovej komunikácie</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-3">SmartPTT · Aplikácie MOTOTRBO</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">Záznam udalostí a hlasovej komunikácie</h1>
+      <p class="mt-4 text-base md:text-lg text-white/70">Ukladanie všetkých udalostí aj hlasovej komunikácie v systéme MOTOTRBO.</p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose prose-lg max-w-none">
+      <p>SmartPTT ukladá dáta o všetkých udalostiach v systéme, ako sú telefónne hovory, hlasové hovory, textové správy, zmena statusu, zamknutie rádiostanice aj GPS súradnice, do databázy. Na ukladanie používa MS SQL Server (v inštalačnom balíčku je zahrnutá bezplatná verzia MS SQL Express).</p>
+      <h2>Záznam hlasových hovorov</h2>
+      <p>SmartPTT ukladá hlasové hovory do vybranej zložky vo formáte MP3. K súborom možno nastaviť značky pre ich ľahšiu identifikáciu a zoskupovanie.</p>
+      <h2>Distribuované ukladanie</h2>
+      <p>SmartPTT umožňuje ukladať dáta a nahrávky na strane klienta aj na strane servera a podporuje konfigurovateľné pravidlá pre spracovanie udalostí na konzole dispečera aj na serveri.</p>
+    </div>
+
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-8 text-sm">
+      <a class="font-medium text-primary hover:underline" href="/bezpecnostne-systemy-radiove-siete/smartptt">&larr; SmartPTT</a>
+      <a class="font-medium text-primary hover:underline" href="/lp/konzultacia.html?utm_source=web&utm_campaign=web">Nezáväzná konzultácia &rarr;</a>
+    </div>
+  </article>
+</Layout>

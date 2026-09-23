@@ -1,0 +1,52 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'SmartPTT: prenos dát a ukladanie | MOTOTRBO | RKS',
+  description: 'SmartPTT: textové správy, integrácia e-mailu, správca úloh, telemetria (GPIO), riadenie statusov a ukladanie všetkých udalostí do MS SQL vrátane záznamu hlasu do MP3 a reportov.',
+};
+---
+
+<Layout metadata={metadata}>
+  <nav class="mx-auto max-w-4xl px-4 sm:px-6 pt-6 text-sm text-muted" aria-label="Omrvinky">
+    <a class="hover:underline" href="/">Domov</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete">Bezpečnostné systémy a rádiové siete</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/digitalny-system-mototrbo">Digitálny systém MOTOTRBO</a>
+    <span class="px-1">/</span>
+    <a class="hover:underline" href="/bezpecnostne-systemy-radiove-siete/smartptt">SmartPTT</a>
+    <span class="px-1">/</span>
+    <span class="text-default">Prenos dát a ukladanie</span>
+  </nav>
+
+  <div class="bg-gradient-to-br from-[#0A2342] via-[#13234D] to-primary text-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+      <p class="text-xs font-semibold tracking-widest text-accent uppercase mb-3">SmartPTT · Aplikácie MOTOTRBO</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">Prenos dát a ukladanie</h1>
+      <p class="mt-4 text-base md:text-lg text-white/70">Textové správy, telemetria, správa úloh a záznam dát v SmartPTT.</p>
+    </div>
+  </div>
+
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose prose-lg max-w-none">
+      <h2>Textové správy</h2>
+      <p>Z konzoly SmartPTT môžete poslať textovú správu konkrétnemu užívateľovi rádiostanice MOTOTRBO alebo skupine užívateľov. Užívatelia rádiostaníc s displejom a klávesnicou môžu odpovedať na dispečerskú konzolu textovou správou.</p>
+      <h2>Integrácia elektronickej pošty</h2>
+      <p>Umožňuje posielať krátke textové správy užívateľom rádiostaníc prostredníctvom e-mailu a duplikovať textové správy z rádiovej siete na zadanú e-mailovú adresu.</p>
+      <h2>Správca úloh</h2>
+      <p>SmartPTT umožňuje dispečerovi prideľovať úlohy užívateľom rádiostaníc MOTOTRBO a sledovať ich stav. Prehľadná tabuľka umožňuje rýchle radenie úloh podľa názvu, stavu, miesta určenia, užívateľa, času vytvorenia aj času zmeny stavu.</p>
+      <h2>Telemetria</h2>
+      <p>Dispečerská konzola SmartPTT dokáže využiť GPIO kontakty účastníckej stanice MOTOTRBO a monitorovať aj ovládať vstupy a výstupy rádiostanice.</p>
+      <h2>Riadenie statusov</h2>
+      <p>SmartPTT umožňuje nastaviť ľubovoľný zoznam statusov, každému priradiť inú farbu, a priraďovať ich účastníkom cez konzolu alebo stlačením tlačidla na rádiostanici. Filtrovanie statusov umožňuje rýchlo vybrať skupinu účastníkov s daným statusom.</p>
+      <h2>Ukladanie a reporty</h2>
+      <p>SmartPTT zaznamenáva všetky systémové udalosti (registrácia, hlasové volania, textové správy, zmeny statusov, telemetria, GPS aj hovory do telefónnej siete). Na ukladanie používa MS SQL Server (bezplatná verzia MS SQL Express je súčasťou inštalácie), hlasové hovory ukladá do MP3. Prezerač udalostí umožňuje filtrovanie, zoskupovanie a triedenie záznamov a súčasťou je aj generátor reportov (napríklad aktivita alebo lokalizácia účastníka).</p>
+    </div>
+
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-8 text-sm">
+      <a class="font-medium text-primary hover:underline" href="/bezpecnostne-systemy-radiove-siete/smartptt">&larr; SmartPTT</a>
+      <a class="font-medium text-primary hover:underline" href="/lp/konzultacia.html?utm_source=web&utm_campaign=web">Nezáväzná konzultácia &rarr;</a>
+    </div>
+  </article>
+</Layout>
