@@ -1249,18 +1249,15 @@ def _block_texts(h):
     return out
 
 def card_desc(p):
-    """Prva veta popisu pre kartu v mriezke. Vychadza z vycisteneho popis_html
-       (rovnaka deduplikacia ako na stranke produktu), aby sa nezobrazoval
-       zdvojeny perex z K2 migracie (Richi: zdvojene popisy pod produktami).
-       Ak je prvy blok len kratky perex bez interpunkcie a nasleduje telo,
-       pouzijeme prvu vetu tela, aby na karte bola jedna prva veta iba raz."""
+    """Zakladny (kratky) popis pre kartu v mriezke = PRVY blok vycisteneho
+       popis_html (perex). Ostatne vety a informacie sa zobrazuju az po
+       rozkliknuti produktu. Berieme len prvy blok, takze sa perex nezlepi
+       s telom popisu (Richi/Dana: na karte len zakladny popis, napr.
+       NNTN8298 -> "Dvojsnurove sluchadla do usi")."""
     cleaned = clean(p.get('popis_html') or '', title=p.get('title'))
     blocks = _block_texts(cleaned) if cleaned else []
     if blocks:
-        first = blocks[0]
-        if not re.search(r'[.!?]', first) and len(blocks) > 1:
-            return first_sentence(blocks[1])
-        return first_sentence(first)
+        return first_sentence(blocks[0])
     return first_sentence(p.get('popis_text') or '')
 
 def product_cards(prods):
