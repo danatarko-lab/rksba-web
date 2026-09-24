@@ -91989,7 +91989,7 @@
  {
   "id": 21069,
   "alias": "gkn6266",
-  "title": "GKN6266 Napájací kábel k rádiostanici",
+  "title": "GKN6266",
   "category": {
    "id": 2017,
    "name": "Napájanie",
@@ -91999,8 +91999,8 @@
     "Napájanie"
    ]
   },
-  "popis_html": " <p>Jednosmerný napájací kábel slúži na pripojenie stolového napájacieho zdroja stolného počítača s mobilnou rádiostanicou, ktorá je namontovaná v podstavci.</p> <p>Určené pre rádiostanice Motorola rady DM1000, DM2000, DM4000</p>",
-  "popis_text": "Jednosmerný napájací kábel slúži na pripojenie stolového napájacieho zdroja stolného počítača s mobilnou rádiostanicou, ktorá je namontovaná v podstavci. Určené pre rádiostanice Motorola rady DM1000, DM2000, DM4000",
+  "popis_html": " <p>Napájací kábel k rádiostanici</p> <p>Jednosmerný napájací kábel slúži na pripojenie stolového napájacieho zdroja stolného počítača s mobilnou rádiostanicou, ktorá je namontovaná v podstavci.</p> <p>Určené pre rádiostanice Motorola rady DM1000, DM2000, DM4000</p>",
+  "popis_text": "Napájací kábel k rádiostanici. Jednosmerný napájací kábel slúži na pripojenie stolového napájacieho zdroja stolného počítača s mobilnou rádiostanicou, ktorá je namontovaná v podstavci. Určené pre rádiostanice Motorola rady DM1000, DM2000, DM4000",
   "parametre": [
    {
     "nazov": "Kompatibilita",
