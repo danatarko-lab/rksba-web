@@ -5,7 +5,7 @@ import NewsletterCTA from '~/components/widgets/NewsletterCTA.astro';
 const metadata = {
   title: 'Rádiová sieť alebo rádiový systém? Kde končí technika a začína riešenie | Potvrďte príjem | RKS',
   description:
-    'Aký je rozdiel medzi rádiovou sieťou a rádiovým systémom? Sieť rieši pokrytie a spojenie, systém pridáva riadenie a dáta. Kedy firma prechádza od jedného k druhému a čo to stojí — prakticky a s číslami 2026.',
+    'Aký je rozdiel medzi rádiovou sieťou a rádiovým systémom? Sieť rieši pokrytie a spojenie, systém pridáva riadenie a dáta. Kedy firma prechádza od jedného k druhému — prakticky a s príkladmi z praxe.',
 };
 
 const post = {
@@ -189,47 +189,11 @@ const post = {
       <h2>Prečo pri systéme prestáva rozhodovať cena jednej vysielačky</h2>
       <p>
         Rádiostanica je koncový prvok. Vlastnosti a dostupnosť celku určujú rádiové lokality, počet kanálov, anténne
-        systémy, napájanie, servery, dispečing, bezpečnostné workflow a integrácie. Rozdiel 100 € na jednej rádiostanici
-        je pri 150 kusoch 15 000 €, no infraštruktúra, softvér a montáž môžu samostatne tvoriť desiatky tisíc eur.
-        Porovnávať sa preto oplatí cez celkové náklady prevádzky. S rastúcou komplexnosťou systému klesá význam ceny
-        jedného terminálu v celkovom investičnom rozhodnutí.
+        systémy, napájanie, servery, dispečing, bezpečnostné workflow a integrácie. Rozdiel v cene jednej rádiostanice je
+        aj pri väčšom počte kusov len zlomkom celkovej investície; infraštruktúra, softvér a montáž tvoria samostatné,
+        podstatne väčšie položky. Porovnávať sa preto oplatí cez celkové náklady prevádzky. S rastúcou komplexnosťou
+        systému klesá význam ceny jedného terminálu v celkovom investičnom rozhodnutí.
       </p>
-
-      <figure class="not-prose my-10 rounded-xl border border-hairline overflow-hidden bg-white">
-        <div class="px-6 pt-5 pb-1">
-          <p class="text-xs font-bold tracking-widest uppercase text-primary mb-1.5">
-            Rádová veľkosť nákladov · orientačné ceny RKS 2026, bez DPH
-          </p>
-          <p class="font-bold text-[#0B1F3A] leading-snug">Prečo cena jednej vysielačky prestáva rozhodovať</p>
-        </div>
-        <svg
-          class="block w-full h-auto px-4 pb-3"
-          viewBox="0 0 720 232"
-          role="img"
-          aria-label="Porovnanie rádovej ceny: rádiostanica 500 až 1000 €, rádiová lokalita 7000 až 10000 €, dispečerský softvér 20000 € pre 50 užívateľov, riadiaci softvér systému 150000 € pre 500 užívateľov."
-        >
-          <line x1="200" y1="20" x2="200" y2="212" stroke="#e4e8ef" stroke-width="1"></line>
-          <text x="12" y="61" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A">Rádiostanica</text>
-          <rect x="200" y="42" width="6" height="26" rx="2" fill="#5E6B78"></rect>
-          <text x="214" y="61" font-family="Arial" font-size="12.5" font-weight="700" fill="#5E6B78">500–1 000 €</text>
-          <text x="12" y="109" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A">Rádiová lokalita</text>
-          <rect x="200" y="90" width="24" height="26" rx="2" fill="#1A1ADB"></rect>
-          <text x="232" y="109" font-family="Arial" font-size="12.5" font-weight="700" fill="#1A1ADB">7 000–10 000 €</text>
-          <text x="12" y="157" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A">Dispečing (softvér)</text>
-          <rect x="200" y="138" width="48" height="26" rx="2" fill="#1A1ADB"></rect>
-          <text x="256" y="157" font-family="Arial" font-size="12.5" font-weight="700" fill="#1A1ADB">20 000 €</text>
-          <text x="12" y="205" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A">Riadiaci softvér systému</text>
-          <rect x="200" y="186" width="360" height="26" rx="2" fill="#0B1F3A"></rect>
-          <text x="568" y="205" font-family="Arial" font-size="12.5" font-weight="700" fill="#0B1F3A">150 000 €</text>
-        </svg>
-        <figcaption class="text-sm text-muted px-6 pb-5 italic">
-          Orientačné ceny RKS (2026, bez DPH). Dispečerský softvér je uvedený pre 50 užívateľov, riadiaci softvér systému
-          pre 500 užívateľov, teda desaťnásobok; ceny softvéru závisia od zvolených opcií. Lacnejšie rádiostanice (okolo
-          316 €) sa do väčších rádiových sietí nedajú integrovať. Cena jednej rádiostanice sa v tomto ráde stráca.<sup
-            ><a href="#z5">5</a></sup
-          >
-        </figcaption>
-      </figure>
 
       <div class="overflow-x-auto">
         <table>
@@ -250,8 +214,7 @@ const post = {
         </table>
       </div>
       <p class="text-sm text-muted">
-        Rozpočet rastie s počtom rádiových lokalít, mierou redundancie a rozsahom softvéru. Rádovú veľkosť jednotlivých
-        položiek ukazuje graf vyššie.
+        Rozpočet rastie s počtom rádiových lokalít, mierou redundancie a rozsahom softvéru.
       </p>
 
       <p>
@@ -262,7 +225,7 @@ const post = {
       <h2>Frekvencie: čo PMR446 nezvládne</h2>
       <p>
         Profesionálna sieť s vlastnými frekvenciami a opakovačmi potrebuje na Slovensku aj v Česku individuálne povolenie
-        na používanie frekvencií od regulačného úradu.<sup><a href="#z6">6</a></sup> Bezlicenčné pásmo PMR446 (ručné
+        na používanie frekvencií od regulačného úradu.<sup><a href="#z5">5</a></sup> Bezlicenčné pásmo PMR446 (ručné
         stanice s max. výkonom 0,5 W a s pevne integrovanou anténou) opakovače a infraštruktúru nepovoľuje, takže
         neposlúži ako zjednodušená podniková sieť. Správny pojem je pritom povolenie na používanie frekvencií.
       </p>
@@ -319,12 +282,6 @@ const post = {
           (stiahnuté: 3. septembra 2026).
         </li>
         <li id="z5">
-          Orientačné interné ceny RKS (2026), bez DPH, pre rádovú ilustráciu: rádiostanica 500–1 000 €, rádiová lokalita
-          7 000–10 000 €, dispečerský softvér 20 000 € (pre 50 užívateľov), riadiaci softvér systému 150 000 € (pre 500
-          užívateľov). Ceny softvéru závisia od zvolených opcií. Ide o cenové rozpätia, nie o cenník konkrétneho
-          projektu; výsledná cena závisí od konfigurácie a rozsahu.
-        </li>
-        <li id="z6">
           Frekvencie: SK: zákon č. 452/2021 Z. z. o elektronických komunikáciách (§ 34, § 35; individuálne povolenie,
           lehota spravidla do 6 týždňov),
           <a href="https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2021/452" rel="noopener">slov-lex.sk</a>; PMR446
@@ -336,8 +293,8 @@ const post = {
       </ol>
 
       <p class="text-sm text-muted italic">
-        Technické parametre sú overené v dokumentácii výrobcov, ceny sú orientačné benchmarky z verejných cenníkov 2026.
-        Rozdelenie na „sieť" a „systém" je praktická prevádzková taxonómia; norma ETSI ani výrobca ju takto nevymedzujú.
+        Technické parametre sú overené v dokumentácii výrobcov. Rozdelenie na „sieť" a „systém" je praktická prevádzková
+        taxonómia; norma ETSI ani výrobca ju takto nevymedzujú.
       </p>
     </div>
 
