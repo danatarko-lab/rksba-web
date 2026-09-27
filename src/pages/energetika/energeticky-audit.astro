@@ -1,0 +1,325 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Energetický audit pre firmy | Povinnosť, audit a úspory | RKS',
+  description:
+    'Energetický audit pre firmy: overte si zákonnú povinnosť, pripravte podklady pre Zelenú podnikom a zistite, kde má vaša firma potenciál úspor energie.',
+};
+
+const CALC = 'https://mampovinnostenergetickehoauditu.sk';
+
+const vystupy = [
+  'energetickú bilanciu podniku alebo prevádzky',
+  'vyhodnotenie súčasnej spotreby energie',
+  'identifikáciu možností úspor',
+  'návrh konkrétnych opatrení energetickej efektívnosti',
+  'technické a ekonomické vyhodnotenie opatrení',
+  'podklady potrebné pre monitorovací systém',
+  'pri účelovom audite podklady požadované konkrétnou schémou podpory',
+];
+
+const postup = [
+  { title: 'Zber dát', desc: 'Spotreba elektriny, plynu, tepla, palív a ďalších relevantných energetických nosičov.' },
+  { title: 'Energetická bilancia', desc: 'Zistíme, kde a na čo sa energia v prevádzke reálne využíva.' },
+  {
+    title: 'Návrh a vyhodnotenie',
+    desc: 'Identifikujeme možnosti úspor a posúdime ich technický a ekonomický prínos.',
+  },
+  { title: 'Správa a výstupy', desc: 'Pripravíme auditnú správu a potrebné podklady podľa účelu auditu.' },
+];
+
+const faqs = [
+  {
+    q: 'Ako často sa musí energetický audit opakovať?',
+    a: 'Podľa aktuálne platného zákona č. 321/2014 Z. z. sa povinný energetický audit vykonáva najmenej raz za štyri roky. Povinnosť možno za zákonom stanovených podmienok splniť aj zavedením certifikovaného systému energetického alebo environmentálneho manažérstva.',
+  },
+  {
+    q: 'Kto môže vypracovať energetický audit?',
+    a: 'Energetický audit vedie odborne spôsobilý energetický audítor zapísaný v zozname energetických audítorov, ktorý vedie SIEA. RKS zabezpečuje tím, dáta, koordináciu a odborné spracovanie zákazky; odbornú zodpovednosť za audit nesie audítor.',
+  },
+  {
+    q: 'Ako dlho trvá energetický audit?',
+    a: 'Závisí od veľkosti a zložitosti prevádzky, počtu energetických nosičov a dostupnosti podkladov. Podstatnú časť času tvorí zber dát a spracovanie energetickej bilancie, preto sa audit neplánuje na posledný týždeň pred termínom.',
+  },
+  {
+    q: 'Aké podklady od nás budete potrebovať?',
+    a: 'Najmä údaje o spotrebe (elektrina, plyn, teplo, palivá a ďalšie nosiče), informácie o prevádzke, technológiách a prevádzkových časoch. Nepotrebujete hľadať všetky faktúry naraz, presný zoznam upresníme podľa účelu auditu a rozsahu prevádzky.',
+  },
+  {
+    q: 'Aký je rozdiel medzi povinným a účelovým energetickým auditom?',
+    a: 'Povinný audit vyplýva zo zákona pre veľké podniky a hodnotí spotrebu podniku ako celku. Účelový audit sa vypracúva pre konkrétny účel, napríklad ako povinná súčasť žiadosti o poukážku v projekte Zelená podnikom, a zameriava sa na formu energie, ktorú má nahradiť podporované zariadenie.',
+  },
+];
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Energetický audit pre firmy',
+  name: 'Energetický audit pre firmy',
+  provider: {
+    '@type': 'Organization',
+    name: 'RKS, spol. s r.o.',
+    url: 'https://rksba.sk',
+  },
+  areaServed: { '@type': 'Country', name: 'Slovensko' },
+  url: 'https://rksba.sk/energetika/energeticky-audit',
+  description:
+    'Energetický audit pre firmy: zmapovanie energetickej bilancie, identifikácia úspor a ekonomické vyhodnotenie opatrení. Povinný aj účelový audit (Zelená podnikom) v spolupráci s energetickým audítorom zo zoznamu SIEA.',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+    <nav class="text-sm text-muted mb-2" aria-label="Omrvinky">
+      <a class="hover:underline" href="/">Domov</a>
+      <span class="px-1">/</span>
+      <a class="hover:underline" href="/energetika">Energetika</a>
+      <span class="px-1">/</span>
+      <span class="text-default">Energetický audit pre firmy</span>
+    </nav>
+
+    <p class="text-sm font-medium uppercase tracking-wider text-primary mb-3">
+      Energetické riešenia pre firmy a budovy
+    </p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">Energetický audit pre firmy</h1>
+    <p class="text-xl md:text-2xl text-muted mb-6">
+      Zistite, kde vaša firma spotrebúva energiu, kde vznikajú straty a ktoré opatrenia sa ekonomicky oplatia.
+    </p>
+
+    <p class="text-lg border-l-4 border-primary bg-primary/5 rounded-r-lg p-4 mb-6">
+      Energetický audit premieňa údaje o spotrebe na konkrétny podklad pre rozhodovanie. Zmapuje energetickú bilanciu
+      podniku, identifikuje možnosti úspor a ekonomicky vyhodnotí navrhované opatrenia.
+    </p>
+
+    <p class="text-lg text-muted mb-8">
+      Pre niektoré podniky je energetický audit zákonnou povinnosťou. Pre iné je podmienkou získania podpory alebo
+      spôsobom, ako rozhodnúť, do ktorých energetických opatrení má zmysel investovať.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-3 mb-4">
+      <a href="/lp/konzultacia.html?utm_source=web&utm_campaign=energetika" class="btn-primary inline-flex justify-center"
+        >Dohodnúť nezáväznú konzultáciu</a
+      >
+      <a
+        href={CALC}
+        rel="noopener"
+        class="inline-flex justify-center items-center rounded-lg border border-primary px-5 py-2.5 font-medium text-primary hover:bg-primary/5"
+        >Overiť, či máme povinnosť energetického auditu →</a
+      >
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+      <h2>Kto má dnes povinnosť energetického auditu?</h2>
+      <p>
+        Podľa aktuálne platného zákona č. 321/2014 Z. z. sa povinnosť energetického auditu vzťahuje na
+        <strong>veľké podniky</strong>. Audit sa vykonáva najmenej raz za štyri roky. Povinnosť možno za zákonom
+        stanovených podmienok splniť aj zavedením certifikovaného systému energetického manažérstva alebo certifikovaného
+        systému environmentálneho manažérstva.<sup><a href="#z1">1</a></sup>
+      </p>
+      <p>
+        Určenie, či podnik patrí medzi veľké podniky, nemusí byť vždy jednoduché, najmä pri partnerských a prepojených
+        podnikoch.
+      </p>
+      <div class="not-prose my-6 rounded-xl border border-primary/30 bg-primary/5 p-5">
+        <p class="font-semibold mb-1">Nie ste si istí, či sa povinnosť týka aj vás?</p>
+        <a href={CALC} rel="noopener" class="font-medium text-primary hover:underline">Overiť povinnosť v kalkulačke →</a>
+      </div>
+
+      <h2>Od roku 2027 sa pravidlá môžu výrazne zmeniť</h2>
+      <p>
+        Vládny návrh nového zákona o energetickej efektívnosti mení základné kritérium: namiesto veľkosti podniku má o
+        povinnosti rozhodovať jeho <strong>energetická spotreba</strong>.
+      </p>
+      <p>
+        Vláda návrh schválila 26. augusta 2026 a do Národnej rady SR bol doručený 28. augusta 2026; 17. septembra 2026 ho
+        parlament posunul do druhého čítania. Navrhovaná účinnosť zákona je 1. januára 2027. Keďže legislatívny proces
+        ešte nie je ukončený, parametre sa môžu zmeniť.<sup><a href="#z2">2</a></sup>
+      </p>
+      <p>Podľa aktuálneho znenia návrhu:</p>
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Priemerná ročná spotreba podniku</th>
+              <th>Navrhovaná povinnosť</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>nad 10 TJ (≈ 2 778 MWh)</td>
+              <td>energetický audit raz za 4 roky</td>
+            </tr>
+            <tr>
+              <td>nad 85 TJ (≈ 23 611 MWh)</td>
+              <td>certifikovaný systém energetického manažérstva alebo príslušný systém environmentálneho manažérstva</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Spotreba sa má určovať ako priemer celkovej ročnej energetickej spotreby všetkých energetických nosičov
+        vstupujúcich do podniku za predchádzajúce tri roky. Návrh zároveň obsahuje prechodné pravidlo, podľa ktorého sa
+        podnikateľ s konečnou energetickou spotrebou nad 10 TJ v roku 2023, 2024 alebo 2025 má zaregistrovať do registra
+        podnikov energetického auditu do 30. júna 2027.<sup><a href="#z2">2</a></sup>
+      </p>
+      <div class="not-prose my-6 rounded-xl border-l-4 border-accent bg-accent/10 p-5">
+        <p class="text-sm">
+          <strong>Dôležité:</strong> Ide o vládny návrh zákona, nie o aktuálne platnú právnu úpravu. Túto stránku
+          aktualizujeme podľa ďalšieho priebehu legislatívneho procesu.
+        </p>
+      </div>
+
+      <h2>Energetický audit pre Zelenú podnikom</h2>
+      <p>
+        Účelový energetický audit je povinnou súčasťou žiadosti o poukážku v projekte Zelená podnikom. Bez hotovej správy
+        z auditu nie je možné žiadosť podať.<sup><a href="#z3">3</a></sup> Audit identifikuje opatrenia na zníženie
+        energetickej náročnosti a potenciál nákladovo efektívneho využitia obnoviteľných zdrojov.
+      </p>
+      <p>
+        To má praktický dôsledok: odporúčaný výkon podporovaného zariadenia sa stanovuje s ohľadom na predpokladanú
+        spotrebu energie po realizácii úsporných opatrení navrhnutých v audite. Audit teda môže priamo ovplyvniť návrh a
+        podporovaný výkon <a href="/energetika/fotovoltika">fotovoltiky</a>, tepelného čerpadla alebo ďalšieho zariadenia.
+      </p>
+      <p>
+        Na vypracovanie energetického auditu je v projekte aktuálne možné získať podporu vo výške 45 % oprávnených
+        výdavkov, najviac 2 500 €.<sup><a href="#z3">3</a></sup>
+      </p>
+      <div class="not-prose my-6">
+        <a
+          href="/lp/konzultacia.html?utm_source=web&utm_campaign=energetika"
+          class="inline-flex items-center rounded-lg border border-primary px-5 py-2.5 font-medium text-primary hover:bg-primary/5"
+          >Potrebujem audit pre Zelenú podnikom →</a
+        >
+      </div>
+
+      <h2>Čo získate z energetického auditu?</h2>
+      <p>
+        Dobrý energetický audit nemá skončiť v zásuvke. Má vám ukázať, kde energiu spotrebúvate a ktoré opatrenia majú
+        technický a ekonomický zmysel. Výstup môže zahŕňať najmä:
+      </p>
+      <ul>
+        {vystupy.map((v) => <li>{v}</li>)}
+      </ul>
+      <p>
+        Výsledkom teda nie je iba splnená povinnosť, ale podklad pre rozhodovanie o ďalších investíciách do energetiky.
+      </p>
+
+      <h2>Ako robíme energetický audit v RKS?</h2>
+      <p>
+        Energetický audit vedie energetický audítor zapísaný v zozname energetických audítorov SIEA. RKS zabezpečuje tím,
+        dáta, koordináciu a odborné spracovanie zákazky.<sup><a href="#z4">4</a></sup> Proces má štyri základné kroky:
+      </p>
+      <div class="not-prose my-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          postup.map((s, i) => (
+            <div class="rounded-xl border border-hairline bg-panel p-5">
+              <div class="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white text-sm font-semibold mb-3">
+                {i + 1}
+              </div>
+              <p class="font-semibold mb-1">{s.title}</p>
+              <p class="text-sm text-muted">{s.desc}</p>
+            </div>
+          ))
+        }
+      </div>
+      <p>
+        Vy komunikujete s jedným partnerom. Odbornú zodpovednosť za energetický audit nesie energetický audítor.
+      </p>
+
+      <h2>Neviete, či sa vás povinnosť týka? Zistite to za približne 3 minúty</h2>
+      <p>
+        Pripravili sme kalkulačku, ktorá orientačne vyhodnotí váš prípad podľa aktuálne platnej legislatívy aj podľa
+        pripravovanej zmeny zákona. Nepotrebujete hľadať všetky faktúry, stačí orientačná spotreba a základné údaje o
+        podniku. Výsledok vám ukáže:
+      </p>
+      <ul>
+        <li>či vám môže vzniknúť povinnosť energetického auditu,</li>
+        <li>ako ste na tom voči navrhovaným spotrebným prahom,</li>
+        <li>ktoré termíny je potrebné sledovať,</li>
+        <li>aký ďalší krok má zmysel preveriť.</li>
+      </ul>
+      <div class="not-prose my-6">
+        <a href={CALC} rel="noopener" class="btn-primary inline-flex">Overiť povinnosť energetického auditu</a>
+        <p class="text-sm text-muted mt-3">
+          Výsledok kalkulačky je orientačný a nenahrádza odborné ani právne posúdenie konkrétneho prípadu.
+        </p>
+      </div>
+
+      <h2>Energetický audit nezačína posledný týždeň pred termínom</h2>
+      <p>
+        Na kvalitný audit je potrebné zhromaždiť údaje o spotrebe, technológiách a prevádzke, spracovať energetickú
+        bilanciu a vyhodnotiť opatrenia. Ak ste blízko zákonného limitu, pripravujete investíciu do energetiky alebo
+        chcete požiadať o podporu, má zmysel preveriť situáciu vopred.
+      </p>
+
+      <h2>Súvisiace riešenia</h2>
+      <ul>
+        <li><a href="/energetika/fotovoltika">Fotovoltika (FVE)</a></li>
+        <li><a href="/energetika/baterie-bess">Batériové úložisko (BESS)</a></li>
+        <li><a href="/energetika/energy-management">Energy Management (EMS)</a></li>
+      </ul>
+    </div>
+
+    <h2 class="text-2xl font-semibold tracking-tight mt-14 mb-6">Časté otázky</h2>
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group rounded-xl border border-hairline p-5">
+            <summary class="cursor-pointer list-none font-medium marker:hidden flex justify-between items-center gap-4">
+              {faq.q}
+              <span class="text-primary transition group-open:rotate-45" aria-hidden="true">
+                +
+              </span>
+            </summary>
+            <p class="text-muted mt-3">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Preverte svoju situáciu vopred</h2>
+      <p class="text-muted mb-6 max-w-xl mx-auto">
+        Začnime nezáväznou konzultáciou. Zistíme, či sa vás povinnosť týka, aké podklady budete potrebovať a či má audit
+        zmysel spojiť s prípravou investície alebo žiadosti o podporu.
+      </p>
+      <a href="/lp/konzultacia.html?utm_source=web&utm_campaign=energetika" class="btn-primary inline-flex"
+        >Dohodnúť nezáväznú konzultáciu</a
+      >
+    </div>
+
+    <div class="prose prose-lg max-w-none mt-14 pt-8 border-t border-hairline">
+      <h2 class="text-lg">Zdroje</h2>
+      <ol class="text-sm">
+        <li id="z1">
+          Zákon č. 321/2014 Z. z. o energetickej efektívnosti (povinnosť energetického auditu pre veľké podniky, interval
+          najmenej raz za 4 roky, alternatíva certifikovaného systému manažérstva). Dostupné z:
+          <a href="https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2014/321/" rel="noopener">slov-lex.sk</a>.
+        </li>
+        <li id="z2">
+          Vládny návrh zákona o energetickej efektívnosti (parlamentná tlač 1475): schválený vládou 26. 8. 2026, doručený
+          do NR SR 28. 8. 2026, 17. 9. 2026 posunutý do druhého čítania; navrhovaná účinnosť 1. 1. 2027. Prahy 10 TJ / 85
+          TJ a prechodné pravidlá podľa aktuálneho znenia návrhu. Zdroje:
+          <a href="https://www.nrsr.sk/web/?sid=zakony" rel="noopener">nrsr.sk</a>,
+          <a href="https://www.teraz.sk/ekonomika/novy-zakon-o-energetickej-efektivnost/992913-clanok.html" rel="noopener">teraz.sk</a>.
+        </li>
+        <li id="z3">
+          Zelená podnikom, <em>Energetický audit</em> (účelový audit ako povinná súčasť žiadosti; podpora 45 % oprávnených
+          výdavkov, najviac 2 500 €). Dostupné z:
+          <a href="https://zelenapodnikom.sk/ako-na-to/energeticky-audit/" rel="noopener">zelenapodnikom.sk</a>.
+        </li>
+        <li id="z4">
+          SIEA, <em>Zoznam energetických audítorov</em> (vedený a aktualizovaný SIEA). Dostupné z:
+          <a href="https://www.siea.sk/" rel="noopener">siea.sk</a>.
+        </li>
+      </ol>
+      <p class="text-sm text-muted italic">
+        Informácie o platnej aj pripravovanej legislatíve sú orientačné a nenahrádzajú odborné ani právne posúdenie
+        konkrétneho prípadu. Stav legislatívneho procesu k septembru 2026.
+      </p>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+</Layout>

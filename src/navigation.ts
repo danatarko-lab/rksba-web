@@ -99,6 +99,7 @@ export const headerData = {
           text: 'Riešenia',
           links: [
             { text: 'Základné informácie', href: getPermalink('/energetika') },
+            { text: 'Energetický audit', href: getPermalink('/energetika/energeticky-audit') },
             { text: 'Energy Management (EMS)', href: getPermalink('/energetika/energy-management') },
             { text: 'Fotovoltika (FVE)', href: getPermalink('/energetika/fotovoltika') },
             { text: 'Batérie (BESS)', href: getPermalink('/energetika/baterie-bess') },
