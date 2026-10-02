@@ -1773,7 +1773,7 @@
   "id": 139,
   "name": "Prenosné rádiostanice analógové VX",
   "alias": "prenosne-radiostanice-analogove-vx",
-  "parent": 2,
+  "parent": 5,
   "path": [
    "Produkty",
    "Rádiostanice",
@@ -1786,7 +1786,7 @@
   "id": 140,
   "name": "Prenosné rádiostanice digitálne EVX",
   "alias": "prenosne-radiostanice-digitalne-evx",
-  "parent": 2,
+  "parent": 5,
   "path": [
    "Produkty",
    "Rádiostanice",
@@ -1799,7 +1799,7 @@
   "id": 141,
   "name": "Vozidlové rádiostanice analógové VX",
   "alias": "vozidlove-radiostanice-analogove-vx",
-  "parent": 2,
+  "parent": 6,
   "path": [
    "Produkty",
    "Rádiostanice",
