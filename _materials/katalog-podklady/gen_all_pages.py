@@ -245,6 +245,12 @@ DISCONTINUED_CATS = {
 DISCONTINUED_NOTE = 'Už sa nedodáva'
 DISCONTINUED_DETAIL = ('Produkty z tejto kategórie sú v archíve. Servis, náhradné diely '
                        'a náhradné riešenie vieme zabezpečiť, ozvite sa nám.')
+# Vyrazna archivna nota nad KAZDOU archivnou (nie-MOTOTRBO) kategoriou aj produktom,
+# aby bolo na prvy pohlad jasne, ze ide o archiv (Dana: "ked kliknem na archiv,
+# nic mi nehovori, ze je to archiv").
+ARCHIVE_NOTE = 'Archív'
+ARCHIVE_DETAIL = ('Tento produktový rad sa už nedodáva. Servis, batérie, náhradné diely '
+                  'a príslušenstvo zabezpečujeme aj naďalej, ozvite sa nám.')
 
 # Popisy, ktore migracia z Joomly rozsypala a nedaju sa opravit strojovo.
 # Kluc je id kategorie, hodnota nahradi cely popis_html.
@@ -668,6 +674,8 @@ const ctaHeading = %(CTA_HEADING)s;
 const ctaText = %(CTA_TEXT)s;
 const metadata = %(META)s;
 const jsonld = %(JSONLD)s;
+const notice = %(NOTICE)s;
+const noticeDetail = %(NOTICE_DETAIL)s;
 ---
 
 <Layout metadata={metadata}>
@@ -691,6 +699,13 @@ const jsonld = %(JSONLD)s;
           ))}
         </nav>
         <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">{p.title}</h1>
+
+        {notice && (
+          <div class="mb-8 rounded-xl border border-l-4 border-hairline border-l-secondary bg-panel p-5">
+            <p class="text-lg font-semibold tracking-tight">{notice}</p>
+            {noticeDetail && <p class="text-base text-muted mt-1">{noticeDetail}</p>}
+          </div>
+        )}
 
         <div class="rks-gallery relative max-w-md mb-8" data-rks-gallery>
           <div class="rks-track flex overflow-x-auto snap-x snap-mandatory scroll-smooth rounded-xl border border-hairline bg-white" data-track>
@@ -1150,6 +1165,8 @@ for src in ([] if INDEX_ONLY else sorted(products, key=lambda p: p['id'])):
         'P': js(pobj), 'SIDEBAR': js(sidebar), 'BREADCRUMB': js(bc),
         'CTA_HEADING': js(cta[0]), 'CTA_TEXT': js(cta[1]),
         'META': js(meta), 'JSONLD': js(jsonld),
+        'NOTICE': js(ARCHIVE_NOTE if not is_moto_prod(src['id']) else ''),
+        'NOTICE_DETAIL': js(ARCHIVE_DETAIL if not is_moto_prod(src['id']) else ''),
         'MOBILE_SUMMARY': MOBILE_SUMMARY, 'PANEL_SYNC_SCRIPT': PANEL_SYNC_SCRIPT,
         'SIDEBAR_CSS': SIDEBAR_CSS,
     }
@@ -1388,8 +1405,10 @@ for c in ([] if INDEX_ONLY else sorted(cats, key=lambda c: c['id'])):
         'HEADING': js(c['name']),
         'POPIS': js(_cat_lead),
         'POPIS_REST': js(_cat_rest),
-        'NOTICE': js(DISCONTINUED_NOTE if c['id'] in DISCONTINUED_CATS else ''),
-        'NOTICE_DETAIL': js(DISCONTINUED_DETAIL if c['id'] in DISCONTINUED_CATS else ''),
+        'NOTICE': js(ARCHIVE_NOTE if not is_moto_cat(c['id']) else ''),
+        'NOTICE_DETAIL': js(
+            DISCONTINUED_DETAIL if c['id'] in DISCONTINUED_CATS
+            else (ARCHIVE_DETAIL if not is_moto_cat(c['id']) else '')),
         'INTRO': js([]),
         'SUBCATS': js(subcats),
         'SUBHEAD': js('Podkategórie' if subcats else ''),

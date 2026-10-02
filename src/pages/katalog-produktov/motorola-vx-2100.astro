@@ -128,6 +128,8 @@ const jsonld = [
     ]
   }
 ];
+const notice = "Archív";
+const noticeDetail = "Tento produktový rad sa už nedodáva. Servis, batérie, náhradné diely a príslušenstvo zabezpečujeme aj naďalej, ozvite sa nám.";
 ---
 
 <Layout metadata={metadata}>
@@ -170,6 +172,13 @@ const jsonld = [
           ))}
         </nav>
         <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">{p.title}</h1>
+
+        {notice && (
+          <div class="mb-8 rounded-xl border border-l-4 border-hairline border-l-secondary bg-panel p-5">
+            <p class="text-lg font-semibold tracking-tight">{notice}</p>
+            {noticeDetail && <p class="text-base text-muted mt-1">{noticeDetail}</p>}
+          </div>
+        )}
 
         <div class="rks-gallery relative max-w-md mb-8" data-rks-gallery>
           <div class="rks-track flex overflow-x-auto snap-x snap-mandatory scroll-smooth rounded-xl border border-hairline bg-white" data-track>
